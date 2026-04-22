@@ -122,4 +122,7 @@
     ventCrawlIcon: lesser
   - type: RMCActionOrder
     id: CMXenoLesserDrone
-  - type: ExcludedFromKingVote
+#  - type: ExcludedFromKingVote – Sich
+  - type: XenoEvolution # Sich
+    strains:
+    - RMCXenoLesserCarrier

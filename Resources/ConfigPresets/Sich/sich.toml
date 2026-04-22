@@ -72,9 +72,13 @@ auto_balance_min = 4
 auto_balance_max = 6
 bioscan_initial_delay_seconds = 600
 bioscan_base_cooldown_seconds = 900
-king_vote_candidate_time_requirement = 10
-boons_live_marine_requirement = 6
-royal_resin_every_minutes = 10
+burrowed_larva_evolution_points_per = 500 # 250 в оригіналі
+
+## Зміни щодо пілонів та бонусів від них
+king_vote_candidate_time_requirement = 10 # 50 в оригіналі
+boons_live_marine_requirement = 6 # 12 в оригіналі
+royal_resin_every_minutes = 5 # Як в оригіналі
+communication_tower_xeno_takeover_minutes = 45 # 55 в оригіналі
 
 [ic]
 #Додає описи для персонажів та тех. штука

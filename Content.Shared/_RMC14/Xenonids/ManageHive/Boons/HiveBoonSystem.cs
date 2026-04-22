@@ -158,13 +158,13 @@ public sealed class HiveBoonSystem : EntitySystem
     private void OnActivateFireResistance(HiveBoonActivateFireResistanceEvent ev)
     {
         EnsureComp<HiveBoonFireImmunityComponent>(ev.Boon);
-        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "The Queen has imbued us with flame-resistant chitin for 5 minutes.");
+        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "Королева на 5 хвилин дала нам вогнестійкий хітин!"); // Sich. Переклад
     }
 
     private void OnActivateLarvaSurge(HiveBoonActivateLarvaSurgeEvent ev)
     {
-        _hive.IncreaseBurrowedLarva(ev.Hive, 5);
-        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "The Queen has awakened 5 extra burrowed larva to join the hive!");
+        _hive.IncreaseBurrowedLarva(ev.Hive, 1); // Sich. 5 в оригіналі
+        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "Королева розбудила додаткову заховану лярву, яка приєдналася до вулика!"); // Sich. Переклад та 5 в оригіналі
     }
 
     private void OnActivateKing(HiveBoonActivateKingEvent ev)

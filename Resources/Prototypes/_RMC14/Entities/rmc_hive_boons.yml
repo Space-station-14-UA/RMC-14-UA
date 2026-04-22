@@ -20,12 +20,12 @@
 - type: entity
   parent: RMCHiveBoonBase
   id: RMCHiveBoonLarvaSurge
-  name: Пробудження Лярв
-  description: Приводить 5 нових схованих лярв у вулик.
+  name: Пробудження Лярви
+  description: Приводить нову сховану лярв у вулик.
   components:
   - type: HiveBoonDefinition
-    cost: 5
-    reusable: false
+    cost: 1 # Sich. 5 в оригіналі. Кількість також зменшена у HiveBoonSystem.cs
+    reusable: true # Sich. false в оригіналі
     duplicateId: RMCHiveBoonLarvaSurge
     event: !type:HiveBoonActivateLarvaSurgeEvent
 

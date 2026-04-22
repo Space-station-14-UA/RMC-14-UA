@@ -143,7 +143,7 @@
   - type: VentCrawler
     ventCrawlIcon: parasite
   - type: Unshieldable
-  - type: ExcludedFromKingVote
+#  - type: ExcludedFromKingVote – Sich
 
 - type: entity
   parent: CMXenoParasiteBase
