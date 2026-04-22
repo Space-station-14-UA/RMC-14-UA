@@ -2,11 +2,17 @@
 rmc-xeno-name-leader = Лідер
 
 rmc-xeno-name = {$baseName} ({$prefix}{$postfix})
-rmc-xeno-young = Молодий {$baseName}
-rmc-xeno-mature = Зрілий {$baseName}
-rmc-xeno-elder = Старший {$baseName}
-rmc-xeno-ancient = Давній {$baseName}
-rmc-xeno-prime = Первісний {$baseName}
+rmc-xeno-young = Молода {$baseName}
+rmc-xeno-mature = Зріла {$baseName}
+rmc-xeno-elder = Старша {$baseName}
+rmc-xeno-ancient = Давня {$baseName}
+rmc-xeno-prime = Первісна {$baseName}
+#Sich start
+rmc-xeno-apex = Щось {$baseName}
+rmc-xeno-legendary = Легендарна {$baseName}
+rmc-xeno-royal = Щооось {$baseName}
+rmc-xeno-forever = Піднесена {$baseName}
+#Sich end
 
 rmc-xeno-mature-parasite = Юний {$baseName}
 rmc-xeno-elder-parasite = Ветеран {$baseName}
@@ -14,15 +20,9 @@ rmc-xeno-ancient-parasite = Зловісний {$baseName}
 rmc-xeno-prime-parasite = Безжальний {$baseName}
 
 # Only 1 because getting king multiple times will be rare
-rmc-xeno-mature-king = Безжальний {$baseName}
+rmc-xeno-mature-king = Безжальна {$baseName}
 
 # Only 3 because it's a larva
 rmc-xeno-young-larva = Мала {$baseName}
 rmc-xeno-mature-larva = Зріла {$baseName}
 rmc-xeno-elder-larva = Велика {$baseName}
-
-sich-xeno-young-queen = Молода {$baseName}
-sich-xeno-mature-queen = Зріла {$baseName}
-sich-xeno-elder-queen = Старша {$baseName}
-sich-xeno-ancient-queen = Давня {$baseName}
-sich-xeno-prime-queen = Первісна {$baseName}

@@ -174,3 +174,8 @@
   - type: XenoHidden
   - type: FixedIdentity
     name: rmc-lesser-carrier
+  - type: XenoStrain # Sich
+    name: sich-xeno-lesser-carrier-name
+    description: sich-xeno-lesser-carrier-description
+    popup: sich-xeno-lesser-carrier-popup
+

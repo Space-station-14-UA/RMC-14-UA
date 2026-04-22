@@ -275,14 +275,6 @@
   - type: RemoveComponents
     components:
     - type: Gibbable
-  - type: XenoRankNames # Sich. Єдина в жіночому роді
-    rankNames:
-      0: sich-xeno-young-queen
-      2: sich-xeno-mature-queen
-      3: sich-xeno-elder-queen
-      4: sich-xeno-ancient-queen
-      5: sich-xeno-prime-queen
-      6: sich-xeno-prime-queen
 
 - type: entity
   parent: RMCXenoQueenBase
