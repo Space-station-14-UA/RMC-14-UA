@@ -95,7 +95,7 @@ public sealed class XenoEvolutionBui : BoundUserInterface
 
             if (strain.TryGetComponent(out XenoStrainComponent? strainComp))
             {
-                name = $"{Loc.GetString(strainComp.Name)} {name}";
+                name = $"{name} {Loc.GetString(strainComp.Name)}"; // Sich. Змінено порядок
                 description = strainComp.Description;
             }
 
