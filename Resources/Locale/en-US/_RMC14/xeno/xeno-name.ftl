@@ -8,9 +8,9 @@ rmc-xeno-elder = Старша {$baseName}
 rmc-xeno-ancient = Давня {$baseName}
 rmc-xeno-prime = Первісна {$baseName}
 #Sich start
-rmc-xeno-apex = Щось {$baseName}
+rmc-xeno-apex = Панівна {$baseName}
+rmc-xeno-royal = Монарша {$baseName}
 rmc-xeno-legendary = Легендарна {$baseName}
-rmc-xeno-royal = Щооось {$baseName}
 rmc-xeno-forever = Піднесена {$baseName}
 #Sich end
 
@@ -26,3 +26,6 @@ rmc-xeno-mature-king = Безжальна {$baseName}
 rmc-xeno-young-larva = Мала {$baseName}
 rmc-xeno-mature-larva = Зріла {$baseName}
 rmc-xeno-elder-larva = Велика {$baseName}
+
+sich-xeno-forever-queen = Імператриця
+sich-xeno-forever-bloody-queen = Кривава Імператриця

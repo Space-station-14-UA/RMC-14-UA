@@ -14,8 +14,8 @@ public sealed partial class XenoRankNamesComponent : Component
         {4, "rmc-xeno-ancient"},
         {5, "rmc-xeno-prime"},
         {6, "rmc-xeno-apex"}, // Sich. Розширені назви
-        {7, "rmc-xeno-legendary"}, // Sich. Розширені назви
-        {8, "rmc-xeno-royal"}, // Sich. Розширені назви
+        {7, "rmc-xeno-royal"}, // Sich. Розширені назви
+        {8, "rmc-xeno-legendary"}, // Sich. Розширені назви
         {9, "rmc-xeno-forever"} // Sich. Розширені назви
     };
 }

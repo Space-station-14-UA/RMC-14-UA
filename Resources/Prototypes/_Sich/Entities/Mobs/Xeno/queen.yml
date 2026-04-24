@@ -40,3 +40,15 @@
   # Прибирання необхідності чекати 10 хвилин
   - type: XenoMaturing
     delay: 0
+  # Кривава Імператриця
+  - type: XenoRankNames
+    rankNames:
+      0: rmc-xeno-young
+      2: rmc-xeno-mature
+      3: rmc-xeno-elder
+      4: rmc-xeno-ancient
+      5: rmc-xeno-prime
+      6: rmc-xeno-apex
+      7: rmc-xeno-royal
+      8: rmc-xeno-legendary
+      9: sich-xeno-forever-bloody-queen

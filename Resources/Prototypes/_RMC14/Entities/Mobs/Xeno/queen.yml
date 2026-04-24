@@ -275,6 +275,17 @@
   - type: RemoveComponents
     components:
     - type: Gibbable
+  - type: XenoRankNames # Sich. Імператриця за 1500 годин
+    rankNames:
+      0: rmc-xeno-young
+      2: rmc-xeno-mature
+      3: rmc-xeno-elder
+      4: rmc-xeno-ancient
+      5: rmc-xeno-prime
+      6: rmc-xeno-apex
+      7: rmc-xeno-royal
+      8: rmc-xeno-legendary
+      9: sich-xeno-forever-queen
 
 - type: entity
   parent: RMCXenoQueenBase

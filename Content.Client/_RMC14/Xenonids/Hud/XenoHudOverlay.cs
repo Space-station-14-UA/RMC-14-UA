@@ -273,7 +273,7 @@ public sealed class XenoHudOverlay : Overlay
         var ranks = _entity.EntityQueryEnumerator<XenoRankComponent, SpriteComponent, TransformComponent>();
         while (ranks.MoveNext(out var uid, out var comp, out var sprite, out var xform))
         {
-            if (comp.Rank < 2 || comp.Rank > 8 || _xenoMaturingQuery.HasComp(uid)) // Sich. Шеврони Міюгі. comp.Rank > 6 в оригіналі
+            if (comp.Rank < 2 || comp.Rank > 9 || _xenoMaturingQuery.HasComp(uid)) // Sich. Шеврони Міюгі. comp.Rank > 6 в оригіналі
                 continue;
 
             if (xform.MapID != args.MapId)
