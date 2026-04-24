@@ -40,6 +40,9 @@
   # Прибирання необхідності чекати 10 хвилин
   - type: XenoMaturing
     delay: 0
+  # Більш цінна для інтелу
+  - type: IntelRecoverCorpseObjectiveOnDeath
+    value: 2.1 # 1.4 в звичайної
   # Кривава Імператриця
   - type: XenoRankNames
     rankNames:
