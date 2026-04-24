@@ -8,7 +8,7 @@ rmc-xeno-elder = Старша {$baseName}
 rmc-xeno-ancient = Давня {$baseName}
 rmc-xeno-prime = Первісна {$baseName}
 #Sich start
-rmc-xeno-apex = Панівна {$baseName}
+rmc-xeno-apex = Верховна {$baseName}
 rmc-xeno-royal = Монарша {$baseName}
 rmc-xeno-legendary = Легендарна {$baseName}
 rmc-xeno-forever = Піднесена {$baseName}

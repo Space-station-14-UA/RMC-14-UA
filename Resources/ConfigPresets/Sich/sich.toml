@@ -72,6 +72,7 @@ auto_balance_min = 4
 auto_balance_max = 6
 bioscan_initial_delay_seconds = 600
 bioscan_base_cooldown_seconds = 900
+hide_player_identities = false
 burrowed_larva_evolution_points_per = 500 # 250 в оригіналі
 
 ## Зміни щодо пілонів та бонусів від них
