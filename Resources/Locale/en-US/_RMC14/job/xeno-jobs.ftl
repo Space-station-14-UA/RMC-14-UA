@@ -41,8 +41,8 @@ CMJobXenoQueen = Королева
 cm-job-name-xeno-ravager = Жнець
 CMJobXenoRavager = Жнець
 
-cm-job-name-xeno-runner = Бігунша
-CMJobXenoRunner = Бігунша
+cm-job-name-xeno-runner = Бігунка
+CMJobXenoRunner = Бігунка
 
 cm-job-name-xeno-sentinel = Вартова
 CMJobXenoSentinel = Вартова

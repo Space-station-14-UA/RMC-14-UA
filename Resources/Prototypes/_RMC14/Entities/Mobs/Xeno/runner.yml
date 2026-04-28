@@ -9,7 +9,7 @@
   - RMCXenoMobCollision
   - RMCXenoVentCrawler
   id: CMXenoRunnerBase
-  name: Бігунша
+  name: Бігунка
   description: Невеличка червона та дуже аеродинамічна чужопланетна істота, схоже її лапи створені для бігу.
   components:
   - type: GhostRole
