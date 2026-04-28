@@ -193,7 +193,7 @@
   suffix: Алмаєр
   components:
   - type: RMCApc
-    startingCell: RMCPowerCellHigh
+    startingCell: RMCPowerCell # Sich. RMCPowerCellHigh в оригіналі, зменшення заряду в 10 разів
   - type: ContainerContainer
     containers:
       rmc_apc_power_cell: !type:ContainerSlot
