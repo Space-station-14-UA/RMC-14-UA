@@ -301,6 +301,8 @@
         crate: RMCCrateRestrictedEquipmentArmorB12
       - cost: 2000
         crate: RMCCrateRestrictedEquipmentIntelSupportKit
+      - cost: 10000 # Sich
+        crate: SichCrateRestrictedEquipmentChairSupplyDrop
     - name: Витратники
       entries:
       - cost: 2000
@@ -335,10 +337,12 @@
         crate: RMCCrateXM51
       - cost: 4000
         crate: RMCCrateM85A1
-#      - cost: 6000 – Sich. Імба зброя, тимчасова міра
-#        crate: RMCCrateML66D
-#      - cost: 6000
-#        crate: RMCCrateM2C
+      - cost: 10000 # Sich. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
+        crate: RMCCrateML66D
+      - cost: 10000 # Sich. Теж саме, що й трохи вище
+        crate: RMCCrateM2C
+      - cost: 10000 # Sich. Повернуто, бо чому ні
+        crate: RMCCrateSmartGunSet
     - name: Спеціальна Амуніція
       entries:
       - cost: 4000

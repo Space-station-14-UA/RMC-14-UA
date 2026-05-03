@@ -1,0 +1,44 @@
+# Стілець для скиду морпіхів з подів для поставок. Поки тут лише це.
+## Чому? Бо звучить круто.
+- type: entity
+  parent: CMSeatBase
+  id: SichChairSupplyDropeOfficeDark
+  name: Модуль ОСДМСТ
+  description: "Особиста Система Десантування Морпіха Стільцевого Типу.\nОстання розробка КМПОН, найкраще, що ви бачили у своєму житті та підберіть ще штук 10 епітетів та ви все одно не зможете описати крутість цієї штуковини.\n\nМи додали підлокітники, парашут та шматок теплового щита знятого з зламаної евакуаційної капсули до звичайного офісного стільця та це 100% витримає скидання системою, якою кидають ящики з припасами. Сер, так точно, сер!\n\nЯкщо придивитися до днища, то там можна помітити написані маркером символи 'SolStar', 'J.Karter' та якісь дивні порізи від кігтів."
+  suffix: Січ
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Furniture/chairs.rsi
+    state: officechair_parachute
+  - type: CrashLandable
+  - type: CanBeSupplyDropped
+    landingDamage:
+      types:
+        Blunt: 1000 # У ящика 5000, менше, бо твоя дупа легше :godo:
+  - type: Corrodible
+    timeToApply: 10 # 4 в звичайного
+    structure: true
+  - type: MeleeReceivedMultiplier # Його так просто не зламати, бо укріплений!
+    xenoDamage:
+      types:
+        Slash: 25 # як 10 ударів дрона
+    otherMultiplier: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250 # 50 в звичайного, цей укріплений
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CMSheetMetal1: # 1 в звичайного, цей крутіше
+            min: 3
+            max: 5
+          RMCParachute: # Ну а як ще це скидувати?
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

@@ -7,7 +7,7 @@
   - RMCXenoVentCrawler
   id: CMXenoLesserDrone
   name: Мала Дрон
-  description: Чужопланетна істота з повноцінними лапами та малим хоботом. Виглядає… малою.
+  description: Чужопланетна істота з повноцінними лапами та малим хоботом. Виглядає... малою.
   components:
   - type: GhostRole
     name: cm-job-name-xeno-lesser-drone

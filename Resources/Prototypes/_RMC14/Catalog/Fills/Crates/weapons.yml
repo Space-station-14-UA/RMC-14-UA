@@ -45,7 +45,7 @@
 - type: entity
   parent: RMCCrateWeapons
   id: RMCCrateSmartGunSet
-  name: Набір системи СмартГану МЛ66А
+  name: Ящик з набором системи СмартГан МЛ66А (1 комплект)
   components:
   - type: StorageFill
     contents:

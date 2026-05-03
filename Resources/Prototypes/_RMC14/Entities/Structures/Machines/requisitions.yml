@@ -168,7 +168,7 @@
   - type: RequisitionsElevator
   - type: CargoSellBlacklist
   - type: WarpPoint
-    location: the pit
+    location: Велична Яма # Sich, бо це назва
 
 - type: entity
   parent: CMBaseStructureCorrodible

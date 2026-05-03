@@ -13,42 +13,41 @@
 
 - type: entity
   parent: BaseStructure
+  id: SichStatueBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Furniture/statues.rsi
+    drawdepth: Mobs
+    noRot: true
+    offset: "0.0,0.5"
+
+- type: entity
+  parent: SichStatueBase
   id: SichStatueNich
   name: статуя героя
   suffix: Ніч
-  description: "Кам'яна статуя на честь героя КМПОН. Золотими літерами викарбувано ім'я: Еікіі 'Ніч' та перераховано всіх паразитів вбитих трубою"
+  description: "Кам'яна статуя на честь героя КМПОН, який служив у рядах 3-ої роти 'Січові стрільці', 2-го батальйону 'Пікуючі Соколи', 3-го Полку, 4-ої Бойової Дивізії, приєднаної до сил КМПОН-3 'Геркулес'.\nЗолотими літерами викарбувано ім'я:\"Еікіі 'Ніч'\" та перераховано всіх паразитів вбитих трубою."
   components:
   - type: Sprite
-    sprite: _Sich/Structures/Furniture/statues.rsi
     state: nich
-    drawdepth: Mobs
-    noRot: true
-    offset: "0.0,0.5"
 
 - type: entity
-  parent: BaseStructure
+  parent: SichStatueBase
   id: SichStatueNyavka
   name: статуя героя
   suffix: Нявка
-  description: "Кам'яна статуя на честь героя КМПОН. Золотими літерами викарбувано ім'я: Куроме 'Нявка' Нявковська та зазначено її виразну любов до міномету"
+  description: "Кам'яна статуя на честь героя КМПОН, яка служила у рядах 3-ої роти 'Січові стрільці', 2-го батальйону 'Пікуючі Соколи', 3-го Полку, 4-ої Бойової Дивізії, приєднаної до сил КМПОН-3 'Геркулес'.\nЗолотими літерами викарбувано ім'я: \"Куроме 'Нявка' Нявковська\" та зазначено її виразну любов до міномету."
   components:
   - type: Sprite
-    sprite: _Sich/Structures/Furniture/statues.rsi
     state: nyavka
-    drawdepth: Mobs
-    noRot: true
-    offset: "0.0,0.5"
 
 - type: entity
-  parent: BaseStructure
+  parent: SichStatueBase
   id: SichStatueSyrena
   name: статуя героя
   suffix: Сирена
-  description: "Кам'яна статуя на честь героя КМПОН. Золотими літерами викарбувано ім'я: Джек 'Сирена' Картер та слова  «ОБ...Куд.- ПОБ?!»"
+  description: "Кам'яна статуя на честь героя КМПОН, який служив у рядах 3-ої роти 'Січові стрільці', 2-го батальйону 'Пікуючі Соколи', 3-го Полку, 4-ої Бойової Дивізії, приєднаної до сил КМПОН-3 'Геркулес'.\nЗолотими літерами викарбувано ім'я: \"Джек 'Сирена' Картер\" та слова: «ОБ... Куд-... ПОБ?!»"
   components:
   - type: Sprite
-    sprite: _Sich/Structures/Furniture/statues.rsi
     state: syrena
-    drawdepth: Mobs
-    noRot: true
-    offset: "0.0,0.5"

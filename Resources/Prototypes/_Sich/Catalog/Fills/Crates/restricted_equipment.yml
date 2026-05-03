@@ -1,0 +1,12 @@
+- type: entity
+  id: SichCrateRestrictedEquipmentChairSupplyDrop
+  parent: RMCCrateSecureGear
+  name: Ящик з комплектом для висадки морпіха
+  components:
+  - type: StorageFill
+    contents:
+    - id: SichChairSupplyDropeOfficeDark
+#    - id: RMCSuitEVAUNMC – занадто дорого
+    - id: RMCMaskBreath
+    - id: RMCDoubleEmergencyOxygenTankFilled
+    - id: SichPaperChairSupplyDropeInstruction
