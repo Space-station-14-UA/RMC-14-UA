@@ -2,7 +2,7 @@
   parent: BaseHiveStructure
   id: HiveCoreXeno
   name: ядро вулика
-  description: Велика пульсуюча маса. Це виглядає дуже живим.
+  description: Величезна та жахлива пульсуюча маса. Це виглядає дуже живим й важливим.
   components:
   - type: Transform
     anchored: true
@@ -91,7 +91,7 @@
   id: HiveCoreXenoConstructionNode
   parent: BaseHiveStructureNode
   name: ядро вулика
-  description: Дивна смикаючася грудка. Схоже на якийсь маркер.
+  description: Дивна смикаючася купка смоли. Після завершення стане головною структурою вулика. Схоже на якийсь маркер.
   suffix: Construction
   components:
   - type: Sprite

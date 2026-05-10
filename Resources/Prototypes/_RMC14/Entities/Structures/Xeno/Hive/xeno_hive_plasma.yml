@@ -1,8 +1,8 @@
 - type: entity
   id: HivePlasmaTreeXeno
   parent: BaseHiveStructure
-  name: plasma tree
-  description: A tree-shaped node whose "berries" are filled with glowing blue liquid that drips from them.
+  name: плазмове дерево
+  description: Деревоподібна структура з смоли на якій висять «ягоди» наповнені світною блакитною рідиною, яка періодично капає з них.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/hive_structures.rsi
@@ -36,8 +36,8 @@
 - type: entity
   id: HivePlasmaTreeXenoConstructionNode
   parent: BaseHiveStructureNode
-  name: plasma tree
-  description: Making glowing blue "berries", replenishing plasma reserves of the sisters around it.
+  name: плазмове дерево
+  description: Деревоподібна структура з смоли на якій висять «ягоди» наповнені світною блакитною рідиною. Після завершення буде давати всім ксестрам поряд з ним додаткову плазму під час відпочинку. Схоже на якийсь маркер.
   suffix: Construction
   components:
   - type: Sprite

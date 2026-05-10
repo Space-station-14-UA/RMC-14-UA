@@ -1,7 +1,7 @@
 - type: entity
   id: HiveAcidPillarXeno
-  name: acid pillar
-  description: A tall pillar that is capable of firing weak acid.
+  name: кислотний стовп
+  description: Високий стовп, який дуже схожий на турель. Направляє потоки кислоти на горящих ксестер, щоб тушити їх та на будь-яких інкубаторів, щоб вбити їх.
   components:
   - type: Transform
     anchored: true

@@ -1,8 +1,8 @@
 - type: entity
   id: HiveEggMorpherXeno
   parent: BaseHiveStructure
-  name: Яйцетворець
-  description: Огидний створювач біомаси з запахом гниючого м’яса. Здатен самостійно створювати паразитів.
+  name: яйцетворець
+  description: Огидний переробник біомаси від якого тхне гнилою плоттю. Самостійно створює паразитів в необмежених кількостях.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/hive_structures.rsi
@@ -76,8 +76,8 @@
 - type: entity
   id: HiveEggMorpherXenoConstructionNode
   parent: BaseHiveStructureNode
-  name: Яйцетворець
-  description: Огидний створювач біомаси з запахом гниючого м’яса. Схоже на якийсь маркер.
+  name: яйцетворець
+  description: Огидний переробник біомаси від якого тхне гнилою плоттю. Після завершення буде створювати паразитів в необмежених кількостях. Схоже на якийсь маркер.
   suffix: Construction
   components:
   - type: Sprite

@@ -1,8 +1,8 @@
 - type: entity
   id: HiveClusterXeno
   parent: BaseHiveStructure
-  name: Кластер Вулика
-  description: Велика грудка слизької маси. Ритмічно пульсує, ніби щось перекачує в траву під нею...
+  name: кластер вулика
+  description: Велика купа слизької маси. Ритмічно пульсує, ніби щось перекачує в траву під собою...
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/hive_cluster.rsi
@@ -51,8 +51,8 @@
 - type: entity
   id: HiveClusterXenoConstructionNode
   parent: BaseHiveStructureNode
-  name: Кластер Вулика
-  description: Велика грудка слизької маси. Схоже на якийсь маркер.
+  name: кластер вулика
+  description: Велика купка слизької маси. Після завершення створить спеціальну траву навколо себе, гарну для затримання інкубаторів чи зон з іншими структурами. Схоже на якийсь маркер.
   components:
   - type: Sprite
     color: '#FFFFFFAA'

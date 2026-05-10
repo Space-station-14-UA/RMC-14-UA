@@ -1,8 +1,8 @@
 - type: entity
   id: HiveRecoveryNodeXeno
   parent: BaseHiveStructure
-  name: Вузол Відновлення
-  description: Тепле, заспокійливе джерело світла, що пульсує з тихим гудінням. 
+  name: вузол відновлення
+  description: Деревоподібна структура з смоли на якій знаходяться «почки» наповнені фіолетовою рідиною. Від неї чутно постійний тихий гул.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/hive_structures.rsi
@@ -36,8 +36,8 @@
 - type: entity
   id: HiveRecoveryNodeXenoConstructionNode
   parent: BaseHiveStructureNode
-  name: Вузол Відновлення
-  description: Тепле, заспокійливе джерело світла, що пульсує з тихим гудінням. Схоже на якийсь маркер.
+  name: вузол відновлення
+  description: Деревоподібна структура з смоли на якій знаходяться «почки» наповнені фіолетовою рідиною. Після завершення допомагає швидше відновлюватися всім ксестрам навколо нього під час відпочинку. Схоже на якийсь маркер.
   suffix: Construction
   components:
   - type: Sprite
