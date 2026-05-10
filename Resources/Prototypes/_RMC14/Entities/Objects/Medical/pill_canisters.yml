@@ -461,8 +461,8 @@
 - type: entity
   parent: RMCPillCanisterNoSkill
   id: RMCPillCanisterIronNoSkill
-  name: iron pill bottle
-  description: It's an airtight container for storing medication. It's labeled "FN (Iron 10u, Nutriment 5u, No OD) Used to quickly restore blood."
+  name: пляшечка пігулок заліза
+  description: Це герметичний контейнер для зберігання ліків. На ньому є напис «ЗП (FN) (10 одиниць Заліза та 5 Поживних Речовин). Використовується для швидкого відновлення рівня крові.»
   suffix: Iron, 16, No Skill
   components:
   - type: Item

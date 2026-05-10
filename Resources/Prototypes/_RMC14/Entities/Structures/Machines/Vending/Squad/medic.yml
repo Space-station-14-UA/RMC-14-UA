@@ -66,6 +66,9 @@
 #      - id: CMPillCanisterTramadol
 #        points: 5
 #        recommended: true
+      - id: RMCPillCanisterIron # Sich. Залізо БМам
+        points: 5
+        recommended: true
     - name: Автоінжектори
       entries:
       - id: CMBicaridineAutoInjector
@@ -578,7 +581,7 @@
   description: An automated gear rack for specialized chemicals for the medical assistants.
   components:
   - type: CMAutomatedVendor
-    jobs: 
+    jobs:
     - CMRoyalMarinesMedicPVE
     pointsType: Chemicals
     sections:
