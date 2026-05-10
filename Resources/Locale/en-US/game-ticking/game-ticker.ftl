@@ -8,14 +8,14 @@ game-ticker-delay-start = Початок раунду відкладено на 
 game-ticker-pause-start = Початок раунду призупинено.
 game-ticker-pause-start-resumed = Відлік початку раунду відновлено.
 game-ticker-player-join-game-message = Вітаємо й ласкаво просимо до Космодесанту! Якщо ви граєте вперше, обов'язково прочитайте правила гри і не бійтеся звертатися за допомогою до LOOC (локальний OOC) або OOC (зазвичай доступний лише між раундами).
-game-ticker-get-info-text = Вітаємо та ласкаво просимо до лав [color=white]Космодесанту Січі![/color]
+game-ticker-get-info-text = Вітаємо та ласкаво просимо до лав [color=white]Космодесанту Мрії![/color]
                             Поточний раунд: [color=white]#{$roundId}[/color]
                             Поточна кількість гравців: [color=white]{$playerCount}[/color]
                             Поточна мапа: [color=white]{$mapName}[/color]
                             Поточна планета: [color=white]{$planetName}[/color]
                             Поточний режим гри: [color=white]{$gmTitle}[/color]
                             >[color=yellow]{$desc}[/color]
-game-ticker-get-info-preround-text = Вітаємо та ласкаво просимо у [color=white]Космодесанті Січі![/color]
+game-ticker-get-info-preround-text = Вітаємо та ласкаво просимо у [color=white]Космодесанті Мрії![/color]
                             Поточний раунд: [color=white]#{$roundId}[/color]
                             Поточна кількість гравців: [color=white]{$playerCount}[/color] ([color=white]{$readyCount}[/color] {$readyCount ->
                                 [one] готовий
