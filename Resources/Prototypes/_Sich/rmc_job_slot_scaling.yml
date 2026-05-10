@@ -1,0 +1,22 @@
+# Заміняє подібне з Prototypes\_RMC14\rmc_job_slot_scaling.yml. Додає по одному ОРу, Спецу та ОСГ при онлайні 30+
+- type: entity
+  id: SichJobSlotScaling
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: JobSlotScaling
+    jobs:
+      CMIntelOfficer:
+        factor: 25
+        c: 1
+        min: 1
+        max: 2
+      CMWeaponsSpecialist:
+        factor: 25
+        c: 1
+        min: 2
+        max: 3
+      CMSmartGunOperator:
+        factor: 25
+        c: 1
+        min: 2
+        max: 3
