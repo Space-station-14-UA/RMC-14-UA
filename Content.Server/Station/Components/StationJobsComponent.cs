@@ -79,5 +79,5 @@ public sealed partial class StationJobsComponent : Component
     public Dictionary<ProtoId<JobPrototype>, int[]> SetupAvailableJobs = default!;
 
     [DataField]
-    public EntProtoId<JobSlotScalingComponent>? JobSlotScaling = "RMCJobSlotScaling";
+    public EntProtoId<JobSlotScalingComponent>? JobSlotScaling = "SichJobSlotScaling"; // Sich. RMCJobSlotScaling в оригіналі
 }

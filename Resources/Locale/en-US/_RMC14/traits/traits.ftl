@@ -3,7 +3,7 @@ rmc-trait-category-inconveniences = Акценти
 rmc-trait-russian-accent-name = руснявий акцент
 rmc-trait-russian-accent-desc = «у мєня чєлюсть рускоязічна». Іді нахуй.
 
-rmc-trait-french-accent-name = Французький акцент (відсутній переклад)
+rmc-trait-french-accent-name = Французький акцент (повний переклад)
 rmc-trait-french-accent-desc = Здається, у вашому акценті є певна «je ne sais quoi». Вітання з космічної Франції!
 
 rmc-trait-mobster-accent-name = Гангстерський акцент (відсутній переклад)

@@ -8,20 +8,24 @@ namespace Content.Server._RMC14.Speech.EntitySystems;
 public sealed class VulpkaninAccentSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    
+
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<VulpkaninAccentComponent, AccentGetEvent>(OnAccent);
     }
-    
+
     private void OnAccent(EntityUid uid, VulpkaninAccentComponent component, AccentGetEvent args)
     {
         var message = args.Message;
-        
+
         message = Regex.Replace(message, "r+", _random.Pick(new List<string> { "rr", "rrr" }));
         message = Regex.Replace(message, "R+", _random.Pick(new List<string> { "RR", "RRR" }));
-        
+        // Sich start. Локалізація
+        message = Regex.Replace(message, "р+", _random.Pick(new List<string> { "рр", "ррр" }));
+        message = Regex.Replace(message, "Р+", _random.Pick(new List<string> { "РР", "РРР" }));
+        // Sich end
+
         args.Message = message;
     }
 }

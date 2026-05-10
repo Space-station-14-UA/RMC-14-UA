@@ -5,6 +5,7 @@ namespace Content.Server.Speech.EntitySystems;
 
 /// <summary>
 /// System that gives the speaker a faux-French accent.
+/// Sich. Локалізовано Pgriha за ідеєю France
 /// </summary>
 public sealed class FrenchAccentSystem : EntitySystem
 {
@@ -13,6 +14,18 @@ public sealed class FrenchAccentSystem : EntitySystem
     private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
     private static readonly Regex RegexStartH = new(@"(?<!\w)h", RegexOptions.IgnoreCase);
     private static readonly Regex RegexSpacePunctuation = new(@"(?<=\w\w)[!?;:](?!\w)", RegexOptions.IgnoreCase);
+    // Sich start. Локалізація. Частина лише малі, бо великі однакові з латинськими
+    private static readonly Regex RegexUpperCyrillicR = new(@"[Р]");
+    private static readonly Regex RegexLowerCyrillicR = new(@"[р]");
+    private static readonly Regex RegexUpperCyrillicS = new(@"[С]");
+    private static readonly Regex RegexLowerCyrillicS = new(@"[с]");
+    private static readonly Regex RegexLowerCyrillicK = new(@"[к]");
+    private static readonly Regex RegexLowerCyrillicT = new(@"[т]");
+    private static readonly Regex RegexUpperCyrillicL = new(@"[Л]");
+    private static readonly Regex RegexLowerCyrillicL = new(@"[л]");
+    private static readonly Regex RegexUpperCyrillicF = new(@"[Ф]");
+    private static readonly Regex RegexLowerCyrillicF = new(@"[ф]");
+    // Sich end
 
     public override void Initialize()
     {
@@ -25,14 +38,14 @@ public sealed class FrenchAccentSystem : EntitySystem
     {
         var msg = message;
 
-        msg = _replacement.ApplyReplacements(msg, "french");
+        msg = _replacement.ApplyReplacements(msg, "sichfrench"); // Sich. french в оригіналі, локалізація (french так то не існує у файлах)
 
         // replaces h with ' at the start of words.
         msg = RegexStartH.Replace(msg, "'");
 
         // spaces out ! ? : and ;.
         msg = RegexSpacePunctuation.Replace(msg, " $&");
-        
+
         // replaces th with 'z or 's depending on the case
         foreach (Match match in RegexTh.Matches(msg))
         {
@@ -49,6 +62,18 @@ public sealed class FrenchAccentSystem : EntitySystem
                 msg = msg.Substring(0, match.Index) + "'" + c + msg.Substring(idxLetter);
             }
         }
+        // Sich start. Локалізація
+        msg = RegexUpperCyrillicR.Replace(msg, "R");
+        msg = RegexLowerCyrillicR.Replace(msg, "r");
+        msg = RegexUpperCyrillicS.Replace(msg, "S");
+        msg = RegexLowerCyrillicS.Replace(msg, "s");
+        msg = RegexLowerCyrillicK.Replace(msg, "k");
+        msg = RegexLowerCyrillicT.Replace(msg, "t");
+        msg = RegexUpperCyrillicL.Replace(msg, "L");
+        msg = RegexLowerCyrillicL.Replace(msg, "l");
+        msg = RegexUpperCyrillicF.Replace(msg, "F");
+        msg = RegexLowerCyrillicF.Replace(msg, "f");
+        // Sich end.
 
         return msg;
     }
