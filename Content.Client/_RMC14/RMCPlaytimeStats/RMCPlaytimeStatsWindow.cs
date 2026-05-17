@@ -117,7 +117,7 @@ public sealed partial class RMCPlaytimeStatsWindow : FancyWindow
                 _ => "hudxenoupgrade8-ui"
             };
 
-            return new SpriteSpecifier.Rsi(new ResPath("/Textures/_RMC14/Interface/xeno_hud.rsi"), iconName);
+            return new SpriteSpecifier.Rsi(new ResPath("/Textures/_Sich/Interface/xeno_hud.rsi"), iconName); // Sich. "/Textures/_RMC14/Interface/xeno_hud.rsi" в оригіналі
         }
 
         foreach (var type in GetMedalTypesDescending(medalType.Value))
