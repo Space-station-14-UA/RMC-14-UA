@@ -1,9 +1,10 @@
-# Версія королева для випадків, коли у морпіхів сильна раундстарт перевага над вуликом. Застосовується адміністрацією вручну
+## Версія королеви для випадків, коли у морпіхів сильна раундстарт перевага над вуликом. Застосовується адміністрацією вручну
 - type: entity
   parent: CMXenoQueen
-  id: SichXenoQueenPlus
+  id: SichXenoQueenBloody
   name: Кривава Королева
   description: Велетенська чужопланетна істота від кроків якої тремтить земля. Найбільша та найжорстокіша. Вона вкрита якоюсь жахливою червоною смолою, виглядає ще більш загрозливо...
+  suffix: Січ
   components:
   # Час ставати червоною
   - type: Sprite
@@ -55,3 +56,53 @@
       7: rmc-xeno-royal
       8: rmc-xeno-legendary
       9: sich-xeno-forever-bloody-queen
+
+## Версія з старими спрайтами
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoQueen ]
+  id: SichXenoQueenOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
+      sprite: _RMC14/Mobs/OldXenonids/Queen/ovipositor.rsi
+    - map: [ "enum.RMCDamageVisualLayers.Base" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Left" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Right" ]
+      visible: false
+    - map: [ "enum.RMCShieldVisuals.Base" ]
+      sprite: _RMC14/Effects/xeno_shields.rsi
+      visible: false
+  - type: Xeno
+    hudOffset: -0.05,0.15
+
+## Версія кривавої з старими спрайтами
+- type: entity
+  parent: [ SichXenoBaseOld, SichXenoQueenBloody ]
+  id: SichXenoQueenBloodyOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+      color: "#BB0A1E"
+    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
+      sprite: _RMC14/Mobs/OldXenonids/Queen/ovipositor.rsi
+      color: "#BB0A1E"
+    - map: [ "enum.RMCDamageVisualLayers.Base" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Left" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Right" ]
+      visible: false
+    - map: [ "enum.RMCShieldVisuals.Base" ]
+      sprite: _RMC14/Effects/xeno_shields.rsi
+      visible: false
+  - type: Xeno
+    hudOffset: -0.05,0.15

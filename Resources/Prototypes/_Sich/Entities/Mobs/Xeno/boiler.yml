@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoBoiler ]
+  id: SichXenoBoilerOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Boiler/boiler.rsi
+  - type: Xeno
+    hudOffset: 0,0.35
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoSpitterOld

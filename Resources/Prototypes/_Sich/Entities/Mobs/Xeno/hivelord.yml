@@ -1,0 +1,41 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoHivelord ]
+  id: SichXenoHivelordOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Hivelord/hivelord.rsi
+  - type: Xeno
+    hudOffset: 0,0.35
+  - type: XenoEvolution
+    strains:
+    - SichXenoHivelordResinWhispererOld
+    - SichXenoHivelordDesignerOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoDroneOld
+
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoHivelordResinWhisperer ]
+  id: SichXenoHivelordResinWhispererOld
+  suffix: Трав'яна, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Hivelord/resin_whisperer_hivelord.rsi
+  - type: Xeno
+    hudOffset: 0,0.35
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoDroneOld
+
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoHivelordDesigner ]
+  id: SichXenoHivelordDesignerOld
+  suffix: Дизайнерка, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Hivelord/hivelord.rsi # designer_hivelord.rsi, спрайти відсутні
+  - type: Xeno
+    hudOffset: 0,0.35
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoDroneOld

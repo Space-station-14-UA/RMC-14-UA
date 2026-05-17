@@ -1,0 +1,32 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoLurker ]
+  id: SichXenoLurkerOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Lurker/lurker.rsi
+  - type: Xeno
+    hudOffset: 0,0.16
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoRavagerOld
+    strains:
+    - SichXenoLurkerVampireOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoRunnerOld
+
+- type: entity
+  parent: [ SichXenoBaseOld, RMCXenoLurkerVampire ]
+  id: SichXenoLurkerVampireOld
+  suffix: Вампір, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Lurker/vampire_lurker.rsi
+  - type: Xeno
+    hudOffset: 0,0.16
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoRavagerOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoRunnerOld

@@ -1,0 +1,66 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoDrone ]
+  id: SichXenoDroneOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Drone/drone.rsi
+  - type: Xeno
+    hudOffset: -0.1,0.15
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoCarrierOld
+    - SichXenoBurrowerOld
+    - SichXenoHivelordOld
+    evolvesToWithoutPoints:
+    - SichXenoQueenOld
+    strains:
+    - SichXenoDroneGardenerOld
+    - SichXenoDroneHealerOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoLarvaOld
+
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoDroneGardener ]
+  id: SichXenoDroneGardenerOld
+  suffix: Садівниця, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Drone/gardener_drone.rsi
+  - type: XenoFruitPlanterVisuals
+    rsi: _RMC14/Mobs/OldXenonids/Drone/gardener_drone.rsi
+    prefix: gardener
+  - type: Xeno
+    hudOffset: 0,0.15
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoCarrierOld
+    - SichXenoBurrowerOld
+    - SichXenoHivelordOld
+    evolvesToWithoutPoints:
+    - SichXenoQueenOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoLarvaOld
+
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoDroneHealer ]
+  id: SichXenoDroneHealerOld
+  suffix: Цілителька, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Drone/healer_drone.rsi
+  - type: RMCXenoDamageVisuals
+    prefix: drone
+  - type: Xeno
+    hudOffset: 0,0.15
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoCarrierOld
+    - SichXenoBurrowerOld
+    - SichXenoHivelordOld
+    evolvesToWithoutPoints:
+    - SichXenoQueenOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoLarvaOld

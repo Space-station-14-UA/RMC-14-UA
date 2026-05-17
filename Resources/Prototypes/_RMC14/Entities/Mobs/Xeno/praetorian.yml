@@ -150,6 +150,7 @@
     - RMCXenoPraetorianOppressor
     - RMCXenoPraetorianVanguard
     - RMCXenoPraetorianValkyrie
+    - SichXenoPraetorianWarden # Sich. Повернення Наглядача
   - type: AcidTrap
   - type: RMCActionOrder
     id: CMXenoPraetorian

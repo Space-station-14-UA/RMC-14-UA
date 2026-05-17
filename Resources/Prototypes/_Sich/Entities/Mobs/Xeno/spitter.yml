@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoSpitter ]
+  id: SichXenoSpitterOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Spitter/spitter.rsi
+  - type: Xeno
+    hudOffset: -0.15,0.2
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoBoilerOld
+    - SichXenoPraetorianOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoSentinelOld

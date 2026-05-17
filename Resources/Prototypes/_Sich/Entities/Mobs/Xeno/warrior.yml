@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoWarrior ]
+  id: SichXenoWarriorOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Warrior/warrior.rsi
+  - type: Xeno
+    hudOffset: -0.15,0.4
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoCrusherOld
+    - SichXenoPraetorianOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoDefenderOld

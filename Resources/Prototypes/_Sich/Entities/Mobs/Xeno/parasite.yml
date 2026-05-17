@@ -1,0 +1,21 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoParasite ]
+  id: SichXenoParasiteOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Parasite/parasite.rsi
+  - type: Xeno
+    hudOffset: 0,0.4
+  - type: XenoEvolution
+    strains:
+    - SichXenoParasiteWatcherOld
+
+- type: entity
+  parent: [ SichXenoBaseOld, RMCXenoParasiteWatcher ]
+  id: SichXenoParasiteWatcherOld
+  suffix: Спостерігач, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Parasite/parasite.rsi # watcher_parasite.rsi, але вони фактично однакові та вотчера якийсь багнутий
+  - type: Xeno
+    hudOffset: 0,0.4

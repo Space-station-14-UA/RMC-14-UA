@@ -1,0 +1,16 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoSentinel ]
+  id: SichXenoSentinelOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Sentinel/sentinel.rsi
+  - type: Xeno
+    hudOffset: -0.15,0.2
+  - type: XenoEvolution
+    evolvesTo:
+    - SichXenoSpitterOld
+    evolvesToWithoutPoints:
+    - SichXenoQueenOld
+  - type: XenoDevolve
+    devolvesTo:
+    - SichXenoLarvaOld

@@ -1,0 +1,6 @@
+- type: entity
+  parent: [ SichXenoBaseOld, CMXenoLesserDrone ]
+  id: SichXenoLesserDroneOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/LesserDrone/lesser_drone.rsi
