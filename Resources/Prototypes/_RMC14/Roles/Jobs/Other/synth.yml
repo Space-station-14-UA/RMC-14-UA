@@ -73,7 +73,7 @@
         types:
           Blunt: 35
     - type: Synth
-  hidden: true
+#  hidden: true – Sich
 
 - type: startingGear
   id: RMCGearSyntheticEquipped

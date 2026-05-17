@@ -27,6 +27,7 @@ sich-guide-entry-rules-general-roleplay-standards = Загальні Станд�
 sich-guide-entry-rules-marine-character-names = Імена персонажів
 sich-guide-entry-rules-marine-roleplay = Відіграш Морпіхів
 sich-guide-entry-rules-command-roleplay = Відіграш Командування
+sich-guide-entry-rules-synth-roleplay = Відіграш Синтетиків
 sich-guide-entry-rules-xeno-roleplay = Відіграш Ксеноїдів
 sich-guide-entry-rules-survivor-roleplay = Відіграш Вцілілих
 sich-guide-entry-rules-hostile-faction-roleplay = Відіграш Ворожих Фракцій

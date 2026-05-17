@@ -177,6 +177,7 @@
   - SichCharacterNames
   - SichMarineRoleplay
   - SichCommandRoleplay
+  - SichSynthRoleplay
   - SichXenoRoleplay
   - SichSurvivorRoleplay
   - SichHostileFactionRoleplay
@@ -211,21 +212,28 @@
 
 - type: guideEntry
   parent: RMC
+  id: SichSynthRoleplay
+  name: sich-guide-entry-rules-synth-roleplay
+  priority: 5
+  text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/SynthRoleplay.xml"
+
+- type: guideEntry
+  parent: RMC
   id: SichXenoRoleplay
   name: sich-guide-entry-rules-xeno-roleplay
-  priority: 5
+  priority: 6
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/XenoRoleplay.xml"
 
 - type: guideEntry
   parent: RMC
   id: SichSurvivorRoleplay
   name: sich-guide-entry-rules-survivor-roleplay
-  priority: 6
+  priority: 7
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/SurvivorRoleplay.xml"
 
 - type: guideEntry
   parent: RMC
   id: SichHostileFactionRoleplay
   name: sich-guide-entry-rules-hostile-faction-roleplay
-  priority: 7
+  priority: 8
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/HostileFactionRoleplay.xml"

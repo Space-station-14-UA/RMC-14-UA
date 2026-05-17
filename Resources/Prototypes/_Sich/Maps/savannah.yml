@@ -25,9 +25,9 @@
             CMMilitaryPolice: [3, 3]
 #            CMProvostInspector: [1, 1] – сенс нам від нього, плюс поки нікому вайтліст не видавали
 
-            # Підтримка. 7 загалом
+            # Підтримка. 7-8 загалом
             CMAuxiliarySupportOfficer: [1, 1]
-            CMIntelOfficer: [1, 1]
+            CMIntelOfficer: [1, 1] # 2 від ~20 готових
             CMPilotDropship: [1, 1]
             CMPilotGunship: [1, 1]
             CMDropshipCrewChief: [2, 2]
@@ -49,16 +49,17 @@
             CMQuartermaster: [1, 1]
             CMCargoTech: [2, 2]
 
-            # Морпіхи. 26 загалом (плюс нескінченні стрільці)
+            # Морпіхи. 26-28 загалом (плюс нескінченні стрільці)
             CMSquadLeader: [4, 4]
             CMFireteamLeader: [4, 4]
-            CMSmartGunOperator: [2, 2]
-            CMWeaponsSpecialist: [2, 2]
+            CMSmartGunOperator: [2, 2] # 3 від 12-20 готових
+            CMWeaponsSpecialist: [2, 2] # 3 від 12-20 готових
             CMCombatTech: [6, 6]
             CMHospitalCorpsman: [8, 8]
             CMRifleman: [-1, -1]
 
-            # Інші. 4 загалом
+            # Інші. 4-5 загалом
             CMCorrespondent: [2, 2]
             CMLiaison: [1, 1]
             CMMessTech: [1, 1]
+            RMCJobSynthetic: [1, 1] # від 10 готових

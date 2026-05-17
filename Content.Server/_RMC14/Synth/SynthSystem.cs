@@ -43,8 +43,8 @@ public sealed class SynthSystem : SharedSynthSystem
         }
 
         var repOverrideComp = EnsureComp<RMCHumanoidRepresentationOverrideComponent>(ent);
-        repOverrideComp.Species = ent.Comp.SpeciesName;
-        repOverrideComp.Age = ent.Comp.Generation;
+        repOverrideComp.Species = ent.Comp.Generation; // Sich. Поміняно місцями з ent.Comp.SpeciesName для перекладу
+        repOverrideComp.Age = ent.Comp.SpeciesName; // Sich
         Dirty(ent, repOverrideComp);
 
         if (!HasComp<BodyComponent>(ent.Owner))

@@ -1,24 +1,24 @@
-rmc-species-name-synth = Synthetic
+rmc-species-name-synth = Синтетик
 
-rmc-species-synth-programming-prevents-use = Your programming prevents you from using {THE($tool)}!
+rmc-species-synth-programming-prevents-use = Ваша програма не дає вам використовувати {$tool}!
 
-rmc-species-synth-generation-first = First Generation
-rmc-species-synth-generation-second = Second Generation
-rmc-species-synth-generation-third = Third Generation
+rmc-species-synth-generation-first = Першого Покоління
+rmc-species-synth-generation-second = Другого Покоління
+rmc-species-synth-generation-third = Третього Покоління
 
-rmc-species-synth-defib-attempt = You can't defibrilate {$target}. You need a synthetic reset key for reboot!
-rmc-species-synth-reset-key-invalid = You can't use the reset key on them, they aren't a synth!
+rmc-species-synth-defib-attempt = Ви не можете дефібрилювати {$target}. Вам потрібен ключ перезавантаження синтетика!
+rmc-species-synth-reset-key-invalid = Ви не можете використовувати ключ перезавантаження на цьому, це не синтетик!
 
-rmc-synth-repair-brute-start-others = {THE($user)} begins fixing some dents on {THE($target)}'s {$limb}.
-rmc-synth-repair-brute-start-self = You begin to carefully patch some dents on your {$limb} so as not to void your warranty.
-rmc-synth-repair-brute-start-target-self = You begin fixing some dents on {THE($target)}'s {$limb}.
+rmc-synth-repair-brute-start-others = {$user} починає відновлювати пошкоджений корпус {$target} в районі {$limb}.
+rmc-synth-repair-brute-start-self = Ви починаєте обережно відновлювати пошкоджений корпус в районі {$limb}, щоб не анулювати вашу гарантію.
+rmc-synth-repair-brute-start-target-self = Ви починаєте відновлювати пошкоджений корпус {$target} в районі {$limb}.
 
-rmc-synth-repair-burn-start-others = {THE($user)} begins fixing some burn damage on {THE($target)}'s {$limb}.
-rmc-synth-repair-burn-start-self = You begin to carefully repair some burn damage on your {$limb} so as not to void your warranty.
-rmc-synth-repair-burn-start-target-self = You begin repairing some burn damage on {THE($target)}'s {$limb}.
+rmc-synth-repair-burn-start-others = {$user} починає відновлювати пропалений корпус {$target} в районі {$limb}.
+rmc-synth-repair-burn-start-self = Ви починаєте обережно відновлювати пропалений корпус в районі {$limb} щоб не анулювати вашу гарантію.
+rmc-synth-repair-burn-start-target-self = Ви починаєте відновлювати пропалений корпус {$target} в районі {$limb}.
 
-rmc-synth-repair-brute-finish-self = You patch some dents on {THE($target)}'s {$limb} with {THE($tool)}.
-rmc-synth-repair-burn-finish-self = You repair some burn damage on {THE($target)}'s {$limb} with {THE($tool)}.
+rmc-synth-repair-brute-finish-self = Ви відновлюєте частину пошкоджень корпуса {$target} в районі {$limb} за допомогою {$tool}.
+rmc-synth-repair-burn-finish-self = Ви відновлюєте частину пропалів корпуса {$target} в районі {$limb} за допомогою {$tool}.
 
-rmc-synth-repair-brute-finish = {THE($user)} patches some dents on {THE($target)}'s {$limb} with {THE($tool)}.
-rmc-synth-repair-burn-finish = {THE($user)} repairs some burn damage on {THE($target)}'s {$limb} with {THE($tool)}.
+rmc-synth-repair-brute-finish = {$user} відновлює частину пошкоджень корпуса {$target} в районі {$limb} за допомогою {$tool}.
+rmc-synth-repair-burn-finish = {$user} відновлює частину пропалів корпуса {$target} в районі {$limb} за допомогою {$tool}.
