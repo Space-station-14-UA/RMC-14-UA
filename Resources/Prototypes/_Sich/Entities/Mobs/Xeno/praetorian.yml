@@ -21,7 +21,6 @@
     - ActionXenoAidRejuvenate
     - ActionXenoRetrieve
     - ActionXenoDevolve
-    hidden: true
   - type: XenoStrain
     name: sich-xeno-warden-name
     description: sich-xeno-warden-description
@@ -72,6 +71,7 @@
       whitelist:
         components:
         - XenoHeavy
+  - type: XenoHidden
   - type: AcidTrap
 
 ## Версії з старими спрайтами
