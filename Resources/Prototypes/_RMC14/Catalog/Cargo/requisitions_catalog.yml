@@ -337,9 +337,9 @@
         crate: RMCCrateXM51
       - cost: 4000
         crate: RMCCrateM85A1
-      - cost: 10000 # Sich. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
+      - cost: 8000 # Sich. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
         crate: RMCCrateML66D
-      - cost: 10000 # Sich. Теж саме, що й трохи вище
+      - cost: 8000 # Sich. Теж саме, що й трохи вище
         crate: RMCCrateM2C
       - cost: 10000 # Sich. Повернуто, бо чому ні
         crate: RMCCrateSmartGunSet

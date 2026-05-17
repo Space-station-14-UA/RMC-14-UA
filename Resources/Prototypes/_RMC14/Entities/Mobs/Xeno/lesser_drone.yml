@@ -77,7 +77,7 @@
       types:
         Heat: 15
   - type: RMCGibOnDeath
-    gibChance: 1.0
+    gibChance: 0.75 # Sich. 1.0 в оригіналі
   - type: RMCSpawnEntitiesOnGib
     entities:
     - RMCDecalSpawnerGibsLesserDrone

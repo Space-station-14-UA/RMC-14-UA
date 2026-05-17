@@ -298,6 +298,13 @@
   - UNMCSquadPatchRMC
   - SquadArmbandRMC
   - PatchPeaceRMC
+  # Sich start
+  - PatchWeYaRMC
+  - PatchWeYaRMCSquare
+  - PatchWeYaRMCBlack
+  - PatchTSERMC
+  - PatchOliveBranch
+  # Sich end
 
 # Accessories
 - type: loadoutGroup

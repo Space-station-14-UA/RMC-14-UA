@@ -115,8 +115,8 @@
 - type: entity
   parent: ActionXenoBase
   id: ActionXenoAidHeal
-  name: Aid Xenonid Healing (100 plasma, 100+ health reserves)
-  description: Heals a nearby ally Xeno. Healing another Xeno will also heal you, and half your remaining health reserves will be consumed for extra healing. [color=red]This can't heal ignited xenonids![/color]
+  name: Зцілення Ксестри (100 плазми, 100+ люті)
+  description: Лікує обрану Ксестру. Також лікує й вас. Може бути застосовано на відстані до 1.5 тайла. Має спільну затримку з Допомогою Ксестрі в 10 секунд. [color=red]Це не може лікувати підпалених ксестер![/color]
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -141,8 +141,8 @@
 - type: entity
   parent: ActionXenoBase
   id: ActionXenoAidRejuvenate
-  name: Aid Xenonid Rejuvenate (100 plasma, 100 health reserves)
-  description: Remove ailments and stuns from a far away ally Xeno.
+  name: Допомога Ксестрі (100 плазми, 100 люті)
+  description: Прибирає всі послаблення та оглушення з обраної Ксестри. Може бути застосовано на відстані до 8 тайлів. Має спільну затримку з Зціленням Ксестри в 10 секунд.
   components:
   - type: Action
     itemIconStyle: NoItem

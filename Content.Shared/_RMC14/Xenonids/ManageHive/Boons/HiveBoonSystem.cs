@@ -469,7 +469,7 @@ public sealed class HiveBoonSystem : EntitySystem
 
             var areaName = _area.GetAreaName(tower);
             _marineAnnounce.AnnounceToMarines(Loc.GetString("rmc-boon-pylon-announcement-marine", ("area", areaName)));
-            _xenoAnnounce.AnnounceSameHiveDefaultSound(newWeedSource, $"Ми взяли під контроль Вухо Вежу інкубаторів у {areaName}.\n\nТепер ми отримаємо королівське желе з Пілона Вулику. Захищайте його!"); // Sich. Переклад
+            _xenoAnnounce.AnnounceSameHiveDefaultSound(newWeedSource, $"Ми взяли під контроль Вухо Вежу інкубаторів у {areaName}.\n\nТепер ми отримуємо королівське желе з Пілона Вулику кожні 5 хвилин. Захищайте його!"); // Sich. Переклад
         }
 
         if (!TryComp(newWeedSource, out XenoWeedsComponent? newWeedSourceComp) ||
@@ -855,7 +855,7 @@ public sealed class HiveBoonSystem : EntitySystem
                 Dirty(boons);
 
                 var sound = new BioscanComponent().XenoSound;
-                _xenoAnnounce.AnnounceToHive(default, uid, "Вулик тепер готовий розпочати створення Його Величності, для цього треба отримати контроль над обоами Вухо Вежами інкубаторів.", sound); // Sich. Переклад
+                _xenoAnnounce.AnnounceToHive(default, uid, "Вулик тепер готовий розпочати створення Його Величності, для цього треба отримати контроль над обома Вухо Вежами інкубаторів.", sound); // Sich. Переклад
             }
         }
         catch (Exception e)

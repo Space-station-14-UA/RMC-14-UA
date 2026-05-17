@@ -41,8 +41,8 @@
     plasma: 10
     maxPlasma: 10
     plasmaRegenOnWeeds: 0.1
-  - type: RMCGibOnDeath
-    gibChance: 0.25
+#  - type: RMCGibOnDeath – Sich
+#    gibChance: 0.25
   - type: RMCSpawnEntitiesOnGib
     entities:
     # - RMCDecalSpawnerGibsLarva # TODO

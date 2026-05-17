@@ -174,6 +174,12 @@
   - type: XenoHidden
   - type: FixedIdentity
     name: rmc-lesser-carrier
+  - type: RMCGibOnDeath # Sich
+    gibChance: 0.5
+  - type: RMCSpawnEntitiesOnGib # Sich
+    entities:
+    - RMCDecalSpawnerGibsLesserDrone
+    - RMCGibEffectXenoLesserDrone
   - type: XenoStrain # Sich. Більше не адмеме
     name: sich-xeno-lesser-carrier-name
     description: sich-xeno-lesser-carrier-description
