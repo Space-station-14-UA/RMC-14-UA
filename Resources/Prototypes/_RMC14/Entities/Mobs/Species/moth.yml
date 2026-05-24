@@ -16,14 +16,16 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Moth # Sich. Перенесено з КД
-    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] # Sich додала Flap. Перенесено з Губа. Вже є у Візардів, як з'явиться в РМС – видалити наше
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] # Sich. Додано Flap
+  - type: BodyEmotes # Sich. Зроблено заради Flap, вже є в Білді візардів, як буде оновлення від них – видалити нашу
+    soundsId: SichMothBodyEmotes
   - type: TypingIndicator
     proto: moth
-  - type: Vocal # Sich
+  - type: Vocal
     sounds:
-      Male: SichMaleMoth
-      Female: SichFemaleMoth
-      Unsexed: SichMaleMoth
+      Male: RMCMaleMoth
+      Female: RMCFemaleMoth
+      Unsexed: RMCMaleMoth
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:

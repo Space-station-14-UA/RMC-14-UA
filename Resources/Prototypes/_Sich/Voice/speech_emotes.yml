@@ -1,27 +1,49 @@
 # Тут емоції перенесені з інших білдів, бо... Бо чому ні?
+# Англомовні трігери зроблені для тих, хто звик їми користуватися
+
 ## Емоція перенесена з Губу, також була додана в білд Візардів, але біс зна, коли це буде перенесено в РМС. Тож, коли нарешті зроблять – видалити ось це
 - type: emote
   id: Flap
   name: sich-chat-emote-name-flap
-  category: Vocal
+  category: Hands # Не дуже "руки", але до голосових їй ще далі
   available: false
   icon: _Sich/Interface/Emotes/flap.png
   whitelist:
     components:
-      - Vocal
+    - Hands
   blacklist:
     components:
     - BorgChassis
   chatMessages: ["sich-chat-emote-msg-flap"]
   chatTriggers:
-   - маше крилами
-   - машуть крилами
-   - трепушить крилами
-   - трепушать крилами
-   - тріпотить крилами
-   - тріпотять крилами
+    - flap
+    - flaps
+    - flapped
+    - flapping
+    - flutter
+    - flutters
+    - fluttering
+    - fluttered
+    - flap wings
+    - flaps wings
+    - flutter wings
+    - flutters wings
+    - flaps his wings
+    - flaps her wings
+    - flaps their wings
+    - flaps its wings
+    - flutters his wings
+    - flutters her wings
+    - flutters their wings
+    - flutters its wings
+    - маше крилами
+    - машуть крилами
+    - трепушить крилами
+    - трепушать крилами
+    - тріпотить крилами
+    - тріпотять крилами
 
-# Емоції взяті з Старлайту/Губа для авалі. Іконка РМСна, бо оригінальні русняві
+## Емоції далі взяті з Старлайту/Губа для авалі. Іконка РМСна, бо оригінальні русняві
 - type: emote
   id: Call
   name: sich-chat-emote-name-call
@@ -30,16 +52,20 @@
   icon: _RMC14/Actions/species_emotes.rsi/peep.png
   whitelist:
     components:
-      - Vocal
+    - Vocal
   blacklist:
     components:
     - BorgChassis
   chatMessages: ["sich-chat-emote-msg-call"]
   chatTriggers:
-   - співає
-   - співають
-   - наспівує
-   - наспівають
+    - call
+    - calls
+    - calling
+    - called
+    - співає
+    - співають
+    - наспівує
+    - наспівають
 
 - type: emote
   id: Scree
@@ -49,14 +75,18 @@
   icon: _RMC14/Actions/species_emotes.rsi/peep.png
   whitelist:
     components:
-      - Vocal
+    - Vocal
   blacklist:
     components:
     - BorgChassis
   chatMessages: ["sich-chat-emote-msg-scree"]
   chatTriggers:
-   - чірікає
-   - чірікають
+    - scree
+    - screes
+    - screeing
+    - screed
+    - чірікає
+    - чірікають
 
 - type: emote
   id: Squawk
@@ -66,32 +96,40 @@
   icon: _RMC14/Actions/species_emotes.rsi/peep.png
   whitelist:
     components:
-      - Vocal
+    - Vocal
   blacklist:
     components:
     - BorgChassis
   chatMessages: ["sich-chat-emote-msg-squawk"]
   chatTriggers:
-   - каркає
-   - каркають
-   - кряче
-   - крячуть
+    - squawk
+    - squawks
+    - squawking
+    - squawked
+    - каркає
+    - каркають
+    - кряче
+    - крячуть
 
 - type: emote
   id: Wurble
   name: sich-chat-emote-name-wurble
   category: Vocal
   available: false
-  icon: _RMC14/Actions/species_emotes.rsi/peep.png
+  icon: _RMC14/Actions/species_emotes.rsi/purr.png # Це фактично мурчання
   whitelist:
     components:
-      - Vocal
+    - Vocal
   blacklist:
     components:
     - BorgChassis
   chatMessages: ["sich-chat-emote-msg-wurble"]
   chatTriggers:
-   - вурчить
-   - вурчать
-   - воркоче
-   - воркочуть
+    - wurble
+    - wurbles
+    - wurbling
+    - wurblbed
+    - вурчить
+    - вурчать
+    - воркоче
+    - воркочуть

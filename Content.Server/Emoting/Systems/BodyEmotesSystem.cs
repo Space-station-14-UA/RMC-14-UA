@@ -40,8 +40,8 @@ public sealed class BodyEmotesSystem : EntitySystem
     private bool TryEmoteHands(EntityUid uid, EmotePrototype emote, BodyEmotesComponent component)
     {
         // check that user actually has hands to do emote sound
-        if (!TryComp(uid, out HandsComponent? hands) || hands.Count <= 0)
-            return false;
+//        if (!TryComp(uid, out HandsComponent? hands) || hands.Count <= 0) – Sich. Дайте жукам махати крилами без рук. Прибрати, як буде додано нью-мед та можливість нормально відривати кінцівки
+//            return false;
 
         return _chat.TryPlayEmoteSound(uid, component.Sounds, emote);
     }

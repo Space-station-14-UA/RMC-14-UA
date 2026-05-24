@@ -1,21 +1,4 @@
 - type: emoteSounds
-  parent: UnisexMoth
-  id: SichUnisexMoth
-  params:
-    variation: 0.125
-  sounds:
-    Flap: # Все зроблено заради цієї емоції
-      path: /Audio/_Sich/Voice/Moth/moth_flap.ogg
-
-- type: emoteSounds
-  parent: [SichUnisexMoth, RMCBaseMaleSounds]
-  id: SichMaleMoth
-
-- type: emoteSounds
-  parent: [SichUnisexMoth, RMCBaseFemaleSounds]
-  id: SichFemaleMoth
-
-- type: emoteSounds
   id: SichUnisexAvali
   params:
     variation: 0.125
@@ -66,3 +49,12 @@
 - type: emoteSounds
   parent: [SichUnisexAvali, RMCFemaleHuman]
   id: SichFemaleAvali
+
+- type: emoteSounds
+  parent: GeneralBodyEmotes
+  id: SichMothBodyEmotes
+  sounds:
+    Flap:
+      path: /Audio/_Sich/Voice/Moth/moth_flap.ogg
+      params:
+        variation: 0.125

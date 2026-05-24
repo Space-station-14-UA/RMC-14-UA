@@ -497,8 +497,8 @@
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: Moth
-    speechSounds: Moth # Sich. Перенесено з КД
-    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] # Sich додала Flap. Перенесено з Губа
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
   - type: FaxableObject
     insertingState: inserting_mothroach
   - type: MothAccent
@@ -3143,7 +3143,7 @@
     factions:
     - Syndicate
   - type: Access
-    tags: 
+    tags:
     - NuclearOperative
     - SyndicateAgent
   - type: MeleeWeapon

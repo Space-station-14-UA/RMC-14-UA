@@ -1,0 +1,29 @@
+# Адаптація всіляких тварин під умови механік РМС (нема атмосфери, не треба гост роль)
+## Так, лише ніаножук. Ця міль класна. Питання?
+- type: entity
+  parent: [RMCSimpleMob, MobMothroach]
+  id: SichMobMothroach
+  name: тарганоміль
+  description: Це чарівно-пустотливий побічний продукт численних спроб генетично змішати молей з тарганами. Бззз!
+  suffix: Січ
+  components:
+  - type: GhostRole
+    prob: 0
+  - type: PressureImmunity
+  - type: Respirator
+    minSaturation: 5.0
+  - type: Temperature
+    heatDamageThreshold: 423
+    coldDamageThreshold: 0
+  - type: Speech
+    speechVerb: Moth
+    speechSounds: Moth # Перенесено з КД
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] # Додано Flap
+  - type: BodyEmotes # Зроблено заради Flap, вже є в Білді візардів, як буде оновлення від них – видалити нашу
+    soundsId: SichMothBodyEmotes
+  - type: Vocal
+    sounds:
+      Male: RMCMaleMoth
+      Female: RMCFemaleMoth
+      Unsexed: RMCMaleMoth
+    wilhelmProbability: 0.001
