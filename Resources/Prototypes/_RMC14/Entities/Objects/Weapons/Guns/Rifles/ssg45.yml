@@ -2,7 +2,7 @@
   parent: [ CMBaseWeaponRifle, RMCBaseWeaponMagazineVisuals ]
   id: RMCWeaponRifleSSG45NoLock
   name: ССГ-45 бойова гвинтівка
-  description: A hard-hitting, prototype assault rifle typically found in the hands of Weston-Yamada’s PMC teams. Exclusively produced in corporate white.
+  description: Надійний прототип штурмової гвинтівки, який зазвичай використовується в командах ПВК Вестон-Ямада. Виготовляється виключно в білому кольорі.
   suffix: No ID Lock
   components:
   - type: Sprite

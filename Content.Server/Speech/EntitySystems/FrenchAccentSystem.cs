@@ -1,5 +1,6 @@
 using Content.Server.Speech.Components;
 using System.Text.RegularExpressions;
+using Robust.Shared.Random; // Sich
 
 namespace Content.Server.Speech.EntitySystems;
 
@@ -10,6 +11,7 @@ namespace Content.Server.Speech.EntitySystems;
 public sealed class FrenchAccentSystem : EntitySystem
 {
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Sich
 
     private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
     private static readonly Regex RegexStartH = new(@"(?<!\w)h", RegexOptions.IgnoreCase);
@@ -63,16 +65,19 @@ public sealed class FrenchAccentSystem : EntitySystem
             }
         }
         // Sich start. Локалізація
-        msg = RegexUpperCyrillicR.Replace(msg, "R");
-        msg = RegexLowerCyrillicR.Replace(msg, "r");
-        msg = RegexUpperCyrillicS.Replace(msg, "S");
-        msg = RegexLowerCyrillicS.Replace(msg, "s");
-        msg = RegexLowerCyrillicK.Replace(msg, "k");
-        msg = RegexLowerCyrillicT.Replace(msg, "t");
-        msg = RegexUpperCyrillicL.Replace(msg, "L");
-        msg = RegexLowerCyrillicL.Replace(msg, "l");
-        msg = RegexUpperCyrillicF.Replace(msg, "F");
-        msg = RegexLowerCyrillicF.Replace(msg, "f");
+        if (_random.Prob(0.5f))
+        {
+            msg = RegexUpperCyrillicR.Replace(msg, "R");
+            msg = RegexLowerCyrillicR.Replace(msg, "r");
+            msg = RegexUpperCyrillicS.Replace(msg, "S");
+            msg = RegexLowerCyrillicS.Replace(msg, "s");
+            msg = RegexLowerCyrillicK.Replace(msg, "k");
+            msg = RegexLowerCyrillicT.Replace(msg, "t");
+            msg = RegexUpperCyrillicL.Replace(msg, "L");
+            msg = RegexLowerCyrillicL.Replace(msg, "l");
+            msg = RegexUpperCyrillicF.Replace(msg, "F");
+            msg = RegexLowerCyrillicF.Replace(msg, "f");
+        }
         // Sich end.
 
         return msg;

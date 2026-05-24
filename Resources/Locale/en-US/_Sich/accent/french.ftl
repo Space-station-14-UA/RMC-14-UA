@@ -7,7 +7,6 @@ accent-french-words-2 = ні
 accent-french-words-replace-2 = non
 
 accent-french-words-3 = йдемо
-accent-french-words-3-2 = пішли
 accent-french-words-replace-3 = allons-y
 
 accent-french-words-4 = вперед
@@ -30,12 +29,9 @@ accent-french-words-8-3 = се ля ві
 accent-french-words-replace-8 = ainsi va la vie
 
 accent-french-words-9 = сука
-accent-french-words-9-2 = сук
 accent-french-words-replace-9 = chika
 
-accent-french-words-10 = блять
-accent-french-words-10-2 = бля
-accent-french-words-10-3 = блядь
+accent-french-words-10 = бля
 accent-french-words-replace-10 = pulяin
 
 accent-french-words-11 = круасан
@@ -51,8 +47,6 @@ accent-french-words-14 = багети
 accent-french-words-replace-14 = baguettes
 
 accent-french-words-15 = кава
-accent-french-words-15-2 = кофе
-accent-french-words-15-3 = кохфе
 accent-french-words-replace-15 = café
 
 accent-french-words-16 = чому так
@@ -88,7 +82,6 @@ accent-french-words-replace-24 = stupiднутий
 
 accent-french-words-25 = швидкий
 accent-french-words-25-2 = швидко
-accent-french-words-25-3 = швидше
 accent-french-words-replace-25 = rapide
 
 accent-french-words-26 = курва
@@ -117,7 +110,6 @@ accent-french-words-replace-32 = guerкуlес
 accent-french-words-33 = преторіанець
 accent-french-words-33-2 = претор
 accent-french-words-33-3 = проетор
-accent-french-words-33-4 = прет
 accent-french-words-replace-33 = prétorien
 
 accent-french-words-34 = можливо
@@ -155,3 +147,53 @@ accent-french-words-41 = силач
 accent-french-words-41-2 = сильний
 accent-french-words-41-3 = сильна
 accent-french-words-replace-41 = fort
+
+accent-french-words-42 = візьми
+accent-french-words-42-2 = взяв
+accent-french-words-42-3 = взяла
+accent-french-words-replace-42 = prends-le
+
+accent-french-words-43 = поклади
+accent-french-words-43-2 = поклав
+accent-french-words-43-3 = поклала
+accent-french-words-replace-43 = dépôt
+
+accent-french-words-44 = бомба
+accent-french-words-replace-44 = bombe
+
+accent-french-words-45 = граната
+accent-french-words-45-2 = гранати
+accent-french-words-replace-45 = grenade
+
+accent-french-words-46 = великий
+accent-french-words-46-2 = велика
+accent-french-words-46-3 = великі
+accent-french-words-replace-46 = super
+
+accent-french-words-47 = невидимий
+accent-french-words-47-2 = невидимка
+accent-french-words-replace-47 = invisible
+
+accent-french-words-48 = командир
+accent-french-words-replace-48 = commandant
+
+accent-french-words-49 = капітан
+accent-french-words-49-2 = капітанша
+accent-french-words-replace-49 = capitaine
+
+accent-french-words-50 = шеф
+accent-french-words-replace-50 = chef
+
+accent-french-words-51 = ліки
+accent-french-words-replace-51 = médecine
+
+accent-french-words-52 = набої
+accent-french-words-replace-52 = balles
+
+accent-french-words-53 = труба
+accent-french-words-53-2 = ракетник
+accent-french-words-replace-53 = tube
+
+accent-french-words-54 = розвідник
+accent-french-words-54-2 = скаут
+accent-french-words-replace-54 = scout

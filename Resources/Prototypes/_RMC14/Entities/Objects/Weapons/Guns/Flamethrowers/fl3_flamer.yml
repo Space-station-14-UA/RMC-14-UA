@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: RMCWeaponFlamer
   id: RMCWeaponFL3Flamer
-  name: flammenwerfer 3 heavy incineration unit
-  description: A heavy industrial incineration unit produced by the Weston Corporation and later by Weston-Yamada. Often found among foliage cleaning missions on frontier colonies, it usually isn't seen in combat, but is devastating when actually used.
+  name: Фламменверфер-3 важка вогнеметна установка
+  description: Важка вогнеметна установка з німецьким корінням, яку спочатку виробляла корпорація Вестон, а пізніше й Вестон-Ямада. Часто зустрічається під час місій з очищення "листя" на прикордонних колоніях, зазвичай не зустрічається в бою, але є руйнівною при реальному використанні.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Flamethrower/FL3/fl3_inhands.rsi
@@ -80,8 +80,8 @@
 - type: entity
   parent: RMCTankFlamer
   id: RMCTankFlamerFL3
-  name: FW3 heavy incinerator tank
-  description: A heavy, high capacity tank utilized by the Flammenwerfer 3 Heavy Incineration Unit. This one has a blue, heat-resistant Weston-Yamada logo on it.
+  name: ФВ3 великий бак з паливом
+  description: Важкий резервуар великої місткості, що використовується вогнеметною установкою Фламменверфер-3. На нього нанесений синій термостійкий логотип Вестон-Ямада.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/fl3.rsi
@@ -111,8 +111,8 @@
 - type: entity
   parent: RMCTankFlamerFL3
   id: RMCTankFlamerFL3Whiteout
-  name: FW3 heavy incinerator tank (EX)
-  description: A heavy fuel tank of Ultra Thick Napthal Fuel type EX, a sticky combustible liquid chemical that burns so hot it melts straight through most flame-resistant materials, utilized by the Flammenwerfer 3 Heavy Incineration Unit. This has a blue, heat-resistant Weston-Yamada logo on it. Handle with care.
+  name: ФВ3 великий бак з паливом (ЕІкс)
+  description: Важкий резервуар великої місткості з особливим напалмом ЕІкс, який здатен пропалювати майже будь-який захист від вогню за лічені секунди. Використовується вогнеметною установкою Фламменверфер-3. На нього нанесений синій термостійкий логотип Вестон-Ямада. Використовуйте та зберігайте з обережністю.
   components:
   - type: SolutionContainerManager
     solutions:

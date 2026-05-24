@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: RMCDeskFlag # TODO RMC14
-  name: old USMC desk flag
-  description: A relic of a bygone era, you roughly remember learning about it in history class, the flag of the once great United States Marine Corps. Semper Fi.
+  name: старий настільний прапор КМПСШ
+  description: Реліквія минулої епохи, ви приблизно пам'ятаєте, як вивчали це на уроках історії, прапор Корпусу Морської Піхоти Сполучених Штатів. Формування, на основі якого було створено КМПОН. Semper Fi (Завжди Вірний)!
   components:
   - type: Transform
     anchored: false

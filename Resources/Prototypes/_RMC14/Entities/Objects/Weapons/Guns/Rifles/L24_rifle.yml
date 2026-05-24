@@ -1,8 +1,8 @@
 - type: entity
   parent: [ CMBaseWeaponRifle, RMCBaseWeaponMagazineVisuals ]
   id: RMCWeaponRifleL24
-  name: L24 rifle
-  description: A rare sight, this rifle is most commonly seen in the hands of the Three Suns Empire's Royal Crown Marines units. Compared to the M54C MK2, it has noticeably improved handling and vastly improved performance. This one is painted in the purple-blue camouflage of the RCM.
+  name: Л24 гвинтівка
+  description: Рідкісний екземпляр, який зазвичай можна побачити в Королівської Морпіхоти ІТС. В порівнянні з М54С МК2 має легшу конструкцію та покращену точність, хоча й по надійності він програє.
   suffix: Filled
   components:
   - type: Sprite
@@ -193,8 +193,8 @@
 - type: entity
   parent: CMMagazineRifleBase
   id: RMCMagazineRifleL24
-  name: L24 Magazine (8.88x51mm)
-  description: "A magazine of 8.88x51mm rounds for use in the L24 rifle."
+  name: Л24 магазин (8.88х51 мм)
+  description: Магазин з звичайними набоями калібру 8.88х51 мм для гвинтівок Л24.
   components:
   - type: Tag
     tags:
@@ -221,8 +221,8 @@
 - type: entity
   parent: RMCMagazineRifleL24
   id: RMCMagazineRifleL24AP
-  description: "A magazine of armor-piercing 8.88x51mm rounds for use in the L24 rifle."
-  name: L24 AP Magazine (8.88x51mm)
+  description: Магазин з бронебійними набоями калібру 8.88х51 мм для гвинтівок Л24.
+  name: Л24 ББ магазин (8.88х51 мм)
   suffix: AP
   components:
   - type: Tag
@@ -251,8 +251,8 @@
 - type: entity
   parent: RMCMagazineRifleL24
   id: RMCMagazineRifleL24HEAP
-  description: "A magazine of high-explosive armor-piercing 8.88x51mm rounds for use in the L24 rifle."
-  name: L24 HEAP Magazine (8.88x51mm)
+  description: Магазин з вибухово-бронебійними набоями калібру 8.88х51 мм для гвинтівок Л24.
+  name: Л24 ВБ магазин (8.88х51 мм)
   suffix: HEAP
   components:
     - type: Tag
@@ -279,8 +279,8 @@
 - type: entity
   parent: RMCMagazineRifleL24
   id: RMCMagazineRifleL24Incendiary
-  description: "A magazine of incendiary 8.88x51mm rounds for use in the L24 rifle."
-  name: L24 Incendiary Magazine (8.88x51mm)
+  description: Магазин з запальними набоями калібру 8.88х51 мм для гвинтівок Л24.
+  name: Л24 запальний магазин (8.88х51 мм)
   suffix: Incendiary
   components:
     - type: Tag
@@ -307,8 +307,8 @@
 - type: entity
   parent: RMCMagazineRifleL24
   id: RMCMagazineRifleL24Extended
-  description: "An extended magazine of 8.88x51mm rounds for use in the L24 rifle."
-  name: L24 Extended Magazine (8.88x51mm)
+  description: Розширений магазин з звичайними набоями калібру 8.88х51 мм для гвинтівок Л24.
+  name: Л24 розширений магазин (8.88х51 мм)
   suffix: Extended
   components:
     - type: Tag
@@ -336,8 +336,8 @@
 - type: entity
   parent: CMBaseCartridgeRifle
   id: RMCCartridgeRifleL24
-  name: Cartridge (8.88x51mm)
-  description: A 8.88x51mm rifle cartridge
+  name: набій (8.88х51 мм)
+  description: Звичайний набій для гвинтівки калібру 8.88х51 мм.
   components:
   - type: Tag
     tags:
@@ -349,8 +349,8 @@
 - type: entity
   parent: CMBaseCartridgeRifle
   id: RMCCartridgeRifleL24AP
-  name: AP Cartridge (8.88x51mm)
-  description: A 8.88x51mm AP rifle cartridge
+  name: ББ набій (8.88х51 мм)
+  description: Бронебійни набій для гвинтівки калібру 8.88х51 мм.
   components:
   - type: Tag
     tags:
@@ -362,8 +362,8 @@
 - type: entity
   parent: CMBaseCartridgeRifle
   id: RMCCartridgeRifleL24HEAP
-  name: HEAP Cartridge (8.88x51mm)
-  description: A 8.88x51mm HEAP rifle cartridge
+  name: ВБ набій (8.88х51 мм)
+  description: Вибухово-бронебіний набій для гвинтівки калібру 8.88х51 мм.
   components:
   - type: Tag
     tags:
@@ -375,8 +375,8 @@
 - type: entity
   parent: CMBaseCartridgeRifle
   id: RMCCartridgeRifleL24Incendiary
-  name: Incendiary Cartridge (8.88x51mm)
-  description: A 8.88x51mm Incendiary rifle cartridge
+  name: запальний набій (8.88х51 мм)
+  description: Запальний набій для гвинтівки калібру 8.88х51 мм.
   components:
   - type: Tag
     tags:

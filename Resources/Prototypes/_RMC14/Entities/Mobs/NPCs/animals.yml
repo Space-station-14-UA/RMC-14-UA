@@ -362,12 +362,12 @@
 - type: entity
   parent: [RMCSimpleMob, MobCatCalico]
   id: CMMobJones
-  name: Джонс
+  name: Василь # Sich. Джонс в оригіналі, але у нас це став кіт Сирени (PERKARTER в ДС)
   description: Старий, колись безпритульний кіт, походження якого ніхто й не згадає.
   components:
   - type: WarpPoint
     follow: true
-    location: Джонс # Sich, бо це назва
+    location: Василь # Sich, бо це назва
   - type: CrashLandable
   - type: PressureImmunity
   - type: Respirator

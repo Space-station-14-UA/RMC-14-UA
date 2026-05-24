@@ -14,15 +14,15 @@ round_end_sound_collection = "CMRoundEnd"
 contraband_examine = false
 panic_bunker.enabled = false
 round_end_pvs_overrides = false
-round_restart_time = 180
+round_restart_time = 180 # 3 хвилини
 lobbyduration = 300 # 5 хвилин
 
 [infolinks]
 discord = " https://discord.gg/MMUsHnH2Tt"
 github = "https://github.com/Space-station-14-UA/RMC-14-UA"
-patreon = "https://send.monobank.ua/jar/8nmcqa8vnz" # Патреон, але монобанка, бо підтримка серверу йде саме через неї
+patreon = "https://donatello.to/Salco" # Патреон, але Донателло, бо підтримка серверу йде саме через нього
 website = "https://ss14.com.ua/"
-wiki = "https://wiki.rouny-ss14.com" #Наша вікі жива умовно, тому легше посилатися на офіційну
+wiki = "https://wiki.rouny-ss14.com" # Наша вікі жива умовно, тому легше посилатися на офіційну
 
 [server]
 #Базові налаштування для відображення гайдів та правил Січі
@@ -54,7 +54,7 @@ xeno_damage_dealt_multiplier = 0.85
 survivors_minimum = 0
 survivors_maximum = 3
 marines_per_survivor = 15
-job_slot_scaling = true # Тестова зміна
+job_slot_scaling = true
 distress_xenos_minimum = 1
 emote_cooldown_seconds = 0
 force_hijack_end_time_minutes = 15
@@ -98,7 +98,7 @@ motd = "Вітаємо на сервері Морпіхоти Мрії! Якщо
 #Поради (вже тут, але не перекладені)
 dataset = "RMC_Tips"
 login_dataset = "RMC_Tips"
-out_of_game_frequency = 115
+out_of_game_frequency = 150 # lobbyduration/2, 2.5 хвилини
 
 [vote]
 #Приколи з голосуванням для РМС. Відредаговано під наші потреби

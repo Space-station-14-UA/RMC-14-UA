@@ -1,6 +1,6 @@
 ﻿- type: entity
   parent: [ CMBaseWeaponRifle, RMCBaseWeaponMagazineVisuals ]
-  name: М54С штурмова гвинтівка МК1
+  name: М54С МК1 штурмова гвинтівка
   id: RMCWeaponRifleM54CMK1
   description: Старіша конструкція штурмової гвинтівки М54С, що зазвичай використовується КМПОН. Використовує безгільзові набої 10х24 мм, але потребує власних досить рідкісних магазинів.
   components:

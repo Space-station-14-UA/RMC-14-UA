@@ -1,8 +1,8 @@
 - type: entity
   parent: [ CMBaseWeaponRifle, RMCBaseWeaponMagazineVisuals ]
   id: RMCWeaponRifleL24B
-  name: L24B rifle
-  description: A rare sight, this rifle is most commonly seen in the hands of the Three Suns Empire's Royal Crown Marine units. This particular model was modified to facilitate RCM operations in tight quarters.
+  name: Л24Б гвинтівка
+  description: Рідкісний екземпляр, який зазвичай можна побачити в Королівської Морпіхоти ІТС. В порівнянні з М54С МК2 має легшу конструкцію та покращену точність, хоча й по надійності він програє. Цю конкретну модель було модифіковано для боїв в закритих приміщеннях.
   suffix: Filled
   components:
   - type: Sprite

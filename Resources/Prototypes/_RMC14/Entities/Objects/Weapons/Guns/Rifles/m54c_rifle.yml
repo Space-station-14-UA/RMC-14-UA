@@ -1,6 +1,6 @@
 - type: entity
   parent: [ CMBaseWeaponRifle, RMCBaseWeaponMagazineVisuals ]
-  name: М54С штурмова гвинтівка МК2
+  name: М54С МК2 штурмова гвинтівка
   id: RMCWeaponRifleM54C
   description: Стандартна штурмова гвинтівка КМПОН. Якщо існує синонім слову універсальність в світі зброї, то це саме вона. Використовує безгільзові набої 10х24 мм.
   components:
@@ -307,7 +307,7 @@
 - type: entity
   parent: RMCWeaponRifleM54CWhite
   id: RMCWeaponRifleM54CWhiteCommando
-  description: A Weston-Yamada creation, this M54C MK2 comes equipped in corporate white. Uses 10x24mm caseless ammunition.
+  description: Цей М54С МК2 творіння Вестон-Ямада за ліцензією, постачається у фірмовому білому кольорі. Використовує безгільзові набої 10х24 мм.
   suffix: Commando
   components:
   - type: ItemSlots

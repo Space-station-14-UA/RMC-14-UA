@@ -85,7 +85,7 @@ rmc-ui-shoutout-marine = [bold]Операцію профінансував [colo
 rmc-ui-shoutout-xeno = [bold]Вулик засновано завдяки [color=purple]{$name}[/color]![/bold]
 
 rmc-ui-discord = Дискорд
-rmc-ui-patreon = Монобанка
+rmc-ui-patreon = Донателло
 
 rmc-other-credits-tab = Інше
 
