@@ -491,3 +491,8 @@
   parent: SMCAreaSavannah
   id: SMCAreaSavannahToilets # Додано білдом Січі
   name: Вбиральні
+
+- type: entity
+  parent: SMCAreaSavannah
+  id: SMCAreaSavannahOuter # Додано білдом Січі
+  name: Зовнішня обшивка

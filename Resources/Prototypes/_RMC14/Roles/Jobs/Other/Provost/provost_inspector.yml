@@ -55,6 +55,7 @@
       background:
         sprite: /Textures/_RMC14/Interface/map_blips.rsi
         state: background_mp
+  hidden: true # Sich. Не має сенсу у нас
 
 - type: entity
   parent: CMSpawnPointJobBase

@@ -12,17 +12,22 @@
         min: 1
         max: 2
       CMWeaponsSpecialist:
-        factor: 7 # ~21 готовий для 3 спеців
+        factor: 7 # 13-20 готовий для 3 спеців
         c: 1
         min: 2
         max: 3
       CMSmartGunOperator:
-        factor: 7 # ~21 готовий для 3 ОСГ
+        factor: 7 # 13-20 готовий для 3 ОСГ
         c: 1
         min: 2
         max: 3
       RMCJobSynthetic:
-        factor: 10 # ~10 готових для 1 синта
+        factor: 7 # 7-12 готових для 1 синта
         c: 1
         min: 0
         max: 1
+      CMMessTech:
+        factor: 10 # ~20 готових для 2 коків
+        c: 1
+        min: 1
+        max: 2

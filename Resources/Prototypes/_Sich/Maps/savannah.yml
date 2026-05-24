@@ -3,7 +3,7 @@
   mapName: Саванна
   mapPath: /Maps/_Sich/savannah.yml
   minPlayers: 0
-  maxPlayers: 50
+  maxPlayers: 75
   maxRandomOffset: 0
   randomRotation: false
   stations:
@@ -13,7 +13,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'ДКП-Саванна "Січ"' # LSC-Savannah. Landing Ship Carrier – Десантний Корабель-Перевізник. Назва корабля "Січ", тип Саванна.
         - type: StationJobs
-          availableJobs: # 59 (61 загалом), плюс нескінченні стрільці
+          availableJobs: # 59-64 (67 загалом), плюс нескінченні стрільці
             # Командування. 4 загалом
             CMCommandingOfficer: [1, 1]
             CMExecutiveOfficer: [1, 1]
@@ -58,8 +58,8 @@
             CMHospitalCorpsman: [8, 8]
             CMRifleman: [-1, -1]
 
-            # Інші. 4-5 загалом
+            # Інші. 4-6 загалом
             CMCorrespondent: [2, 2]
             CMLiaison: [1, 1]
-            CMMessTech: [1, 1]
+            CMMessTech: [1, 1] # 2 від 20 готових
             RMCJobSynthetic: [1, 1] # від 10 готових
