@@ -8,6 +8,7 @@
   text: "/ServerInfo/Guidebook/_Sich/Rules/Overview.xml"
   children:
   - SichRuleChanges
+  - SichRMCRuleChanges
   - SichBanTypes
   - SichAdmin
   - SichRespawn
@@ -24,23 +25,30 @@
 
 - type: guideEntry
   parent: RMC
+  id: SichRMCRuleChanges
+  name: sich-guide-entry-rules-changes
+  priority: 2
+  text: "/ServerInfo/Guidebook/_Sich/Rules/RMCChanges.xml"
+
+- type: guideEntry
+  parent: RMC
   id: SichBanTypes
   name: sich-guide-entry-rules-ban-types
-  priority: 2
+  priority: 3
   text: "/ServerInfo/Guidebook/_Sich/Rules/BanTypes.xml"
 
 - type: guideEntry
   parent: RMC
   id: SichAdmin
   name: sich-guide-entry-rules-admin
-  priority: 3
+  priority: 4
   text: "/ServerInfo/Guidebook/_Sich/Rules/Admin.xml"
 
 - type: guideEntry
   parent: RMC
   id: SichRespawn
   name: sich-guide-entry-rules-respawn
-  priority: 4
+  priority: 5
   text: "/ServerInfo/Guidebook/_Sich/Rules/Respawn.xml"
 
 ## Правила нульової толерантності
@@ -48,7 +56,7 @@
   parent: RMC
   id: SichZeroToleranceRules
   name: sich-guide-entry-rules-zero-tolerance
-  priority: 5
+  priority: 6
   text: "/ServerInfo/Guidebook/_Sich/Rules/RulesZeroTolerance.xml"
   children:
   - SichAge
@@ -97,7 +105,7 @@
   parent: RMC
   id: SichCoreRules
   name: sich-guide-entry-rules-core
-  priority: 6
+  priority: 7
   text: "/ServerInfo/Guidebook/_Sich/Rules/RulesCore.xml"
   children:
   - RMCLanguage
@@ -170,7 +178,7 @@
   parent: RMC
   id: SichRoleplayStandardsRules
   name: sich-guide-entry-rules-roleplay-standards
-  priority: 7
+  priority: 8
   text: "/ServerInfo/Guidebook/_Sich/Rules/RulesRoleplay.xml"
   children:
   - SichGeneralRoleplayStandards
