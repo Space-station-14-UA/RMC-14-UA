@@ -73,6 +73,8 @@
         - XenoHeavy
   - type: XenoHidden
   - type: AcidTrap
+  - type: RMCActionOrder
+    id: SichXenoPraetorianWarden
 
 ## Версії з старими спрайтами
 - type: entity

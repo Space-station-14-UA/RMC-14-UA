@@ -184,3 +184,5 @@
     name: sich-xeno-lesser-carrier-name
     description: sich-xeno-lesser-carrier-description
     popup: sich-xeno-lesser-carrier-popup
+  - type: RMCActionOrder # Sich. Збереження біндів
+    id: RMCXenoLesserCarrier
