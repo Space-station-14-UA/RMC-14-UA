@@ -100,7 +100,7 @@
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: warrior
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.2
+    value: 0.7 # Sich. 0.2 в оригіналі
   - type: FixedIdentity
     name: cm-job-name-xeno-warrior
   - type: RMCSurgeryXenoHeart

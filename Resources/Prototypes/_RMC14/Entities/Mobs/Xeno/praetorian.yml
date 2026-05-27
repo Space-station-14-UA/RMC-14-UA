@@ -115,7 +115,7 @@
         components:
         - XenoHeavy
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.7
+    value: 1.2 # Sich. 0.7 в оригіналі
   - type: FixedIdentity
     name: cm-job-name-xeno-praetorian
   - type: RMCSurgeryXenoHeart

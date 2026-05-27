@@ -57,8 +57,8 @@
 - type: entity
   parent: CMSurgeryBase
   id: RMCSurgeryAlienHeartRemoval
-  name: Experimental Harvesting Surgery
-  description: Harvest the heart of an deceased alien.
+  name: Експерементальне видалення органа
+  description: Діставання серця мертвого ксеноїда
   components:
   - type: CMSurgery
     priority: -1

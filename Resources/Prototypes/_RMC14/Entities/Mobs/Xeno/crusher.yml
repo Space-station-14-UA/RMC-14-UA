@@ -106,7 +106,7 @@
   - type: StunOnExplosionReceived
     weak: false
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.7
+    value: 1.2 # Sich. 0.7 в оригіналі
   - type: TantrumSpeedBuff
   - type: FixedIdentity
     name: cm-job-name-xeno-crusher

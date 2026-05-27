@@ -95,7 +95,7 @@
   - type: FixedIdentity
     name: cm-job-name-xeno-hivelord
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.2
+    value: 0.7 # Sich. 0.2 в оригіналі
   - type: RMCSurgeryXenoHeart
     item: RMCOrganXenoHeartT2
 

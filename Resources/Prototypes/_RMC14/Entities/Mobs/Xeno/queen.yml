@@ -256,7 +256,7 @@
       components:
       - RMCFireImmunityBypass  # Only fires with this component can bypass immunity
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 1.4
+    value: 2 # Sich. 1.4 в оригіналі
   - type: QueenEyeAction
   - type: StunFriendlyXenoOnStep
     whitelist:

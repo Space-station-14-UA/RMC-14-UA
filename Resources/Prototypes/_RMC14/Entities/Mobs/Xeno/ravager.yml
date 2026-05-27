@@ -129,7 +129,7 @@
     debuffModifier: 1.2
   - type: RMCImmuneToFireTileDamage
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.7
+    value: 1.2 # Sich. 0.7 в оригіналі
   - type: TantrumSpeedBuff
   - type: XenoCruelty
   - type: TacticalMapIcon

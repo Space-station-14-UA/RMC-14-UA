@@ -160,7 +160,7 @@
       groups:
         Brute: 20
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 1.4
+    value: 2 # Sich. 1.4 в оригіналі
   - type: XenoRankNames
     rankNames:
       2: rmc-xeno-mature-king

@@ -1,6 +1,6 @@
 - type: body
   id: Xenonid
-  name: "xenonid"
+  name: ксеноїд
   root: head
   slots:
     head:

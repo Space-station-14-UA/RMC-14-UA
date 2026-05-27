@@ -54,6 +54,7 @@
     plasma: 250
   - type: XenoSecretionLimited
     id: HiveAcidPillarXeno
+    amount: 2 # Sich. 1 в оригіналі
   - type: DeletedByWeedKiller
   - type: Flammable
     fireSpread: false

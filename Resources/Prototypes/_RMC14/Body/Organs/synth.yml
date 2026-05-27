@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
   id: RMCOrganSynthBrain
-  name: brain
+  name: мозок
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Misc/prosthetic_brain.rsi

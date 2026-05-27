@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: RMCOrganXenoHeart
-  name: acidic heart
-  description: Acidic heart removed from a xenonid. It spews droplets of acid every so often.
+  name: кислотне серце
+  description: Кислотне серце, видалене з ксеноїда. Схоже, воно вже не буде битися, але в ньому все ще є небезпечна кислота.
   components:
   - type: XenoHeart
   - type: Corrodible
@@ -20,6 +20,9 @@
     size: Tiny
   - type: Sprite
     state: heart_t1
+  - type: IntelRetrieveItemObjective # Sich
+    state: Active
+    value: 0.1
 
 - type: entity
   parent: RMCOrganXenoHeart
@@ -29,6 +32,9 @@
     size: Small
   - type: Sprite
     state: heart_t2
+  - type: IntelRetrieveItemObjective # Sich
+    state: Active
+    value: 0.2
 
 - type: entity
   parent: RMCOrganXenoHeart
@@ -38,6 +44,9 @@
     size: Normal
   - type: Sprite
     state: heart_t3
+  - type: IntelRetrieveItemObjective # Sich
+    state: Active
+    value: 0.4
 
 - type: entity
   parent: RMCOrganXenoHeart
@@ -48,3 +57,6 @@
   - type: Sprite
     state: heart_t3
     scale: 1.25, 1.25
+  - type: IntelRetrieveItemObjective # Sich
+    state: Active
+    value: 0.8

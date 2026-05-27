@@ -118,7 +118,7 @@
     baseWalkSpeed: 5.55
     baseSprintSpeed: 10
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.1
+    value: 0.4 # 0.1 в оригіналі
   - type: MobCollision
     minimumSpeedModifier: 0.1
   - type: FixedIdentity

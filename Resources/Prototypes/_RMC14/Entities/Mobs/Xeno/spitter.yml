@@ -113,7 +113,7 @@
       state: spitter
   - type: AcidTrap
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.2
+    value: 0.7 # Sich. 0.2 в оригіналі
   - type: FixedIdentity
     name: cm-job-name-xeno-spitter
   - type: RMCSurgeryXenoHeart

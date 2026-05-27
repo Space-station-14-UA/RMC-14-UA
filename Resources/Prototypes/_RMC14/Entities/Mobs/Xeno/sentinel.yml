@@ -95,7 +95,7 @@
     cost: 70
     spray: XenoAcidSprayTrapWeak
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.1
+    value: 0.4 # 0.1 в оригіналі
   - type: FixedIdentity
     name: cm-job-name-xeno-sentinel
   - type: RMCSurgeryXenoHeart

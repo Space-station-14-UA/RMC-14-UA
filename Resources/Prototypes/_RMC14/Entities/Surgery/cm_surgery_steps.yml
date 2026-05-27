@@ -159,7 +159,7 @@
 - type: entity
   parent: CMSurgeryStepBase
   id: RMCSurgeryCutExoskeleton
-  name: Cut exoskeleton carapace
+  name: Розріжте панцир екзоскелета
   components:
   - type: CMSurgeryStep
     skill: 2
@@ -174,7 +174,7 @@
 - type: entity
   parent: CMSurgeryStepBase
   id: RMCSurgeryOpenExoskeleton
-  name: Pry exoskeleton open
+  name: Відкрийте екзоскелет
   components:
   - type: CMSurgeryStep
     skill: 2
@@ -189,7 +189,7 @@
 - type: entity
   parent: CMSurgeryStepBase
   id: RMCSurgerySevereXenoConnections
-  name: Sever organ connections
+  name: Переріжте з'єднання органів
   components:
   - type: CMSurgeryStep
     skill: 2
@@ -204,7 +204,7 @@
 - type: entity
   parent: CMSurgeryStepBase
   id: RMCSurgeryRemoveXenoOrgan
-  name: Remove xenonid organ
+  name: Видаліть орган ксеноїда
   components:
   - type: CMSurgeryStep
     skill: 2
