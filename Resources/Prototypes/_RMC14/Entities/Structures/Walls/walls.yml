@@ -187,9 +187,9 @@
 - type: entity
   parent: RMCBaseWallReinforced
   id: CMWallReinforced
-  components:
-  - type: Corrodible
-    minimumAcidStrength: Strong
+#  components:
+#  - type: Corrodible – Sich. Реверт, лише заважає
+#    minimumAcidStrength: Strong
 
 - type: entity
   parent: RMCBaseWallReinforced

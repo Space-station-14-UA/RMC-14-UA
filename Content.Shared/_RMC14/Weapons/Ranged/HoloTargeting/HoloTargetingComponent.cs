@@ -15,7 +15,7 @@ public sealed partial class HoloTargetingComponent : Component
     ///     this amount of stacks or more.
     /// </summary>
     [DataField]
-    public float MaxStacks = 100f;
+    public float MaxStacks = 300f; // Sich. 100 в оригіналі. 30% замість 10%
 
     /// <summary>
     ///     The decay rate of the applied holo stacks

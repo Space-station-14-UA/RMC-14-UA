@@ -195,7 +195,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30
+        Piercing: 35 # Sich. 30 в оригіналі, плюс бафнутий голотрекінг
   - type: HoloTargeting
 
 - type: entity

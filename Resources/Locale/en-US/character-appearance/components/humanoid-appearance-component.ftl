@@ -1,2 +1,2 @@
 humanoid-appearance-component-unknown-species = Особа
-humanoid-appearance-component-examine = { CAPITALIZE(SUBJECT($user)) } { $user } { INDEFINITE($age) } { $age } { $species }.
+humanoid-appearance-component-examine = { CAPITALIZE(SUBJECT($user)) } { $species } { $age }.

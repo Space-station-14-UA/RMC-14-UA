@@ -1,0 +1,19 @@
+- type: entity
+  parent: RMCScabbardShotgun
+  id: SichScabbardShotgunSG
+  name: піхви МЛ66А для дробовика М42A2
+  description: Піхви для дробовика М42A2, що під'єднується до бойового кріплення МЛ66A.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Back/Scabbards/shotgun.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Back/Scabbards/shotgun.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: ClothingIgnoreBlockBackpack
+  - type: ClothingRequireEquipped
+    whitelist:
+      components:
+      - SmartGun

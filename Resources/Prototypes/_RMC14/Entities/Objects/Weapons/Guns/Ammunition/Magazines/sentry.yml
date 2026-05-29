@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: CMMagazineRifleBase
   id: RMCMagazineSentry
-  name: М30 барабанний магазин (10x28 мм)
+  name: М30 барабанний магазин (10х28 мм)
   description: 500-ти набійний магазин безгільзових набоїв калібру 10x28мм для вартової турелі ОН 571-С. Просто вставте його в патронний відсік.
   components:
   - type: Item
@@ -105,7 +105,7 @@
       map: ["enum.GunVisualLayers.Mag"]
     - state: flametank_strip
       color: "#00b8ff"
-  
+
 - type: entity
   parent: BaseMagazineRifle
   id: RMCMagazineSentryFireSmoke

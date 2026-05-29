@@ -70,6 +70,8 @@
         points: 15
     - name: Предмети Одягу
       entries:
+      - id: SichScabbardShotgunSG # Sich
+        points: 15
       - id: RMCScabbardMacheteSGFilled
         points: 15
       - id: RMCPouchFuelTank
