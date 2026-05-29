@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: RMCNanoMed
   id: RMCVendorLifeboatMedical
-  name: lifeboat medical cabinet
-  description: A wall-mounted cabinet containing medical supplies vital to survival. While better equipped, it can only refill basic supplies.
+  name: медична шафка шатла евакуації
+  description: Настінна шафа з базовими для виживання медикаментами.
   components:
   - type: Transform
     anchored: false
@@ -16,17 +16,17 @@
   - type: CMAutomatedVendor
     hackable: false
     sections:
-    - name: Autoinjectors
+    - name: Автоніжектори
       entries:
       # - id: CMPainStopAutoinjector
       #   amount: 8
       - id: CMTricordrazineAutoInjectorNoSkill
         amount: 8
-    - name: Devices
+    - name: Пристрої
       entries:
       - id: CMHealthAnalyzer
         amount: 8
-    - name: Field Supplies
+    - name: Перша Допомога
       entries:
       - id: CMBurnKit10
         amount: 8
@@ -42,8 +42,8 @@
 - type: entity
   parent: ColMarTechBase
   id: RMCVendorLifeboatWall
-  name: lifeboat wall cabinet
-  description: A wall-mounted emergency cabinet containing survival supplies.
+  name: загальна шафка шатла евакуації
+  description: Настінна шафа з базовими для виживання речами.
   components:
   - type: Sprite
     drawdepth: WallMountedItems
@@ -53,13 +53,13 @@
   - type: CMAutomatedVendor
     hackable: false
     sections:
-    - name: Food and beverage
+    - name: Їжа та вода
       entries:
        - id: CMMRE
          amount: 25
        - id: CMDrinkWEYAWaterBottle30
          amount: 25
-    - name: Utility
+    - name: Інструменти
       entries:
       - id: CMPackFlare
         amount: 5
@@ -69,9 +69,16 @@
         amount: 5
 #      - id: # deck of playing cards
 #        amount: 5
-    - name: Clothing
+    - name: Одяг
       entries:
+      - id: JumpsuitMarine # Sich
+        amount: 10
+      - id: CMBootsBlack # Sich
+        amount: 10
       - id: CMMaskGas
         amount: 15
       - id: CMMaskCoif
         amount: 15
+      - id: BedrollFolded # Sich
+        amount: 10
+

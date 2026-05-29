@@ -215,7 +215,7 @@
 
 - type: rmcConstruction
   id: RMCOfficeChairWhiteBuild
-  name: біле офісне крісло
+  name: світле офісне крісло
   prototype: CMChairOfficeWhite
   materialCost: 5
   restrictedTags: [RMCSeat]

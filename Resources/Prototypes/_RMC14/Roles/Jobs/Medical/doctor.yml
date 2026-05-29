@@ -16,6 +16,7 @@
   supervisors: cm-job-supervisors-cmo
   accessGroups:
   - CMMedbay
+  - Researcher # Sich
   roleWeight: 0.25
   special:
   - !type:AddComponentSpecial

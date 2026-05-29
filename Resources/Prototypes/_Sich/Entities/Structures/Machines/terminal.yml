@@ -1,16 +1,18 @@
 - type: entity
+  parent: [ BaseMachinePowered, RMCConstructibleMachine ]
   id: SichTerminalInput
-  parent: BaseStructureComputer
-  name: Термінал комунікації
-  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
+  name: термінал комунікації
+  suffix: Січ, Ввід
+  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
   components:
+  - type: Transform
+    anchored: false
+    noRot: false
   - type: Sprite
     sprite: _Sich/Structures/Machines/console.rsi
     state: console
   - type: SichTerminal
     isInput: true
-  - type: Clickable
-  - type: Rotatable
   - type: ActivatableUI
     key: enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key
   - type: UserInterface
@@ -20,17 +22,25 @@
   - type: ItemSlots
     slots:
       id_card:
-        name: ID Card
+        name: ID-картка
         whitelist:
           components:
           - IdCard
           - Pda
-
+  - type: WallMount
+    arc: 360
+  - type: EmitSoundOnUIOpen
+    sound:
+      collection: RMCKeyboardTyping
+      params:
+        volume: -1
+  - type: Corrodible
+    isCorrodible: false
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -42,46 +52,26 @@
             max: 1
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: RemoveComponents
+    components:
+    - type: ApcPowerReceiver
+    - type: Anchorable
 
 - type: entity
+  parent: SichTerminalInput
   id: SichTerminalOutput
-  parent: BaseStructureComputer
-  name: Термінал комунікації
-  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
+  suffix: Січ, Перегляд
+  description: Корпоративний термінал для перегляду каналу зв'язку Ве-Я та їх представника.
   components:
-  - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
-    state: console
   - type: SichTerminal
     isInput: false
-  - type: Clickable
-  - type: Rotatable
-  - type: ActivatableUI
-    key: enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key:
-        type: SichTerminalBoundUserInterface
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SichTerminalBroken:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+  - type: RemoveComponents
+    components:
+    - type: ItemSlots
 
 - type: entity
-  id: SichTerminalBroken
   parent: ComputerBroken
+  id: SichTerminalBroken
   name: зламаний термінал комунікації
   description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
   components:

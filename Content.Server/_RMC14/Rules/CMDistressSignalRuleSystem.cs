@@ -863,7 +863,7 @@ public sealed class CMDistressSignalRuleSystem : GameRuleSystem<CMDistressSignal
             spawnedDropships = true;
             var dropshipMap = _mapManager.CreateMap();
             var dropshipPoints = EntityQueryEnumerator<DropshipDestinationComponent, TransformComponent>();
-            var ships = new[] { new ResPath("/Maps/_Sich/alamo.yml"), new ResPath("/Maps/_Sich/normandy.yml") }; // Sich. Pathes changed
+            var ships = new[] { new ResPath("/Maps/_Sich/Shuttles/alamo.yml"), new ResPath("/Maps/_Sich/Shuttles/normandy.yml") }; // Sich. Змінено шляхи на наші
             var shipIndex = 0;
             while (dropshipPoints.MoveNext(out var destinationId, out _, out var destTransform))
             {

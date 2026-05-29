@@ -50,7 +50,7 @@
   id: CMChair
   name: стілець
   description: Прямокутний металевий каркас на чотирьох ніжках зі спинкою. Призначений для більш-менш зручного сидячого положення.
-  components: 
+  components:
 #  - type: Transform - Sich. Крутити та тягати стільці.
 #    anchored: true
 #  - type: Physics
@@ -137,7 +137,7 @@
   parent: CMSeatBase
   id: CMChairComfy
   name: зручний стілець
-  description: Стілець зі шкіряною оббивкою та регульованим підголовником. У такому можна сидіти вічно.  
+  description: Стілець зі шкіряною оббивкою та регульованим підголовником. У такому можна сидіти вічно.
   placement:
     mode: SnapgridCenter
   components:
@@ -281,7 +281,7 @@
 - type: entity
   parent: CMChairOfficeDark
   id: CMChairOfficeWhite
-  name: біле офісне крісло
+  name: світле офісне крісло
   components:
   - type: Sprite
     state: officechair_white

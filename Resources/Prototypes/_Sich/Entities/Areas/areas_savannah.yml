@@ -1,3 +1,4 @@
+# Початково мапа Тунгусочки (Tunguso4ka), але вже довгий час перероблюється Пігріхою (Pgriha) під потреб нашого серверу. Помітки Sich start/end зроблені на прототипах яких не було в оригіналі
 # Структура:
 # . Тех. Приміщення
 # . Коридори (загальні)
@@ -152,15 +153,17 @@
   id: SMCAreaSavannahPortPointDefense
   name: Аварійні Порти Стикування Лівого Борту
 
+## Sich start
 - type: entity
   parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahArmory # Додано білдом Січі
+  id: SMCAreaSavannahArmory
   name: Зброярня Брігу
 
 - type: entity
   parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahObservationRoom # Додано білдом Січі
+  id: SMCAreaSavannahObservationRoom
   name: Кімната Спостереження
+## Sich end
 
 # КОМАНДУВАННЯ
 
@@ -177,7 +180,24 @@
 - type: entity
   parent: SMCAreaSavannahCommand
   id: SMCAreaSavannahLiaison
+  name: Приймальня Представника
+
+## Sich start
+- type: entity
+  parent: SMCAreaSavannahLiaison
+  id: SMCAreaSavannahLiaisonOffice
   name: Офіс Представника
+
+- type: entity
+  parent: SMCAreaSavannahLiaison
+  id: SMCAreaSavannahLiaisonCabinet
+  name: Кабінет Представника
+
+- type: entity
+  parent: SMCAreaSavannahLiaison
+  id: SMCAreaSavannahLiaisonStorage
+  name: Склад Представника
+## Sich end
 
 - type: entity
   parent: SMCAreaSavannahCommand
@@ -227,10 +247,12 @@
   - type: Area
     retrieveItemObjective: true
 
+## Sich start
 - type: entity
   parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahSynthetic # Додано (перенесено) білдом Січі
+  id: SMCAreaSavannahSynthetic
   name: Сховище Синтетиків
+## Sich end
 
 # МЕДИЧНИЙ
 
@@ -258,25 +280,45 @@
   id: SMCAreaSavannahMedicalPreparation
   name: Медичні Казарми
 
+## Sich start
 - type: entity
   parent: SMCAreaSavannahMedical
   id: SMCAreaSavannahMedicalResearch
   name: Лабораторія
+  components:
+  - type: Area
+    retrieveItemObjective: true
+
+- type: entity
+  parent: SMCAreaSavannahMedicalResearch
+  id: SMCAreaSavannahMedicalResearchContaimentCell
+  name: Камери Утримування Лабораторії
+
+- type: entity
+  parent: SMCAreaSavannahMedicalResearch
+  id: SMCAreaSavannahMedicalResearchStorage
+  name: Склад Лабораторії
+
+- type: entity
+  parent: SMCAreaSavannahMedicalResearch
+  id: SMCAreaSavannahMedicalResearchChemistry
+  name: Хімічна Лабораторії
 
 - type: entity
   parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalMorgue # Додано білдом Січі
+  id: SMCAreaSavannahMedicalMorgue
   name: Морг
 
 - type: entity
   parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalCMO # Додано білдом Січі
+  id: SMCAreaSavannahMedicalCMO
   name: Офіс Головного Лікаря
 
 - type: entity
   parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalRestroom # Додано білдом Січі
+  id: SMCAreaSavannahMedicalRestroom
   name: Кімната Відпочинку Медичного
+## Sich end
 
 # ПІДТРИМКА
 
@@ -317,6 +359,13 @@
   parent: SMCAreaSavannahAuxiliary
   id: SMCAreaSavannahCanteen
   name: Їдальня
+
+## Sich start
+- type: entity
+  parent: SMCAreaSavannahAuxiliary
+  id: SMCAreaSavannahBotany
+  name: Ботаніка
+## Sich end
 
 # КАЗАРМИ
 
@@ -417,7 +466,7 @@
     state: lifeboat_pump
   - type: Area
     hijackEvacuationArea: true
-    hijackEvacuationWeight: 0.25 # 0.1 в оригіналі. Змінено білдом Січі
+    hijackEvacuationWeight: 0.25 # 0.1 в оригіналі
     hijackEvacuationType: Add
 
 - type: entity
@@ -477,22 +526,24 @@
   id: SMCAreaSavannahChurch
   name: Церква
 
+## Sich start
 - type: entity
   parent: SMCAreaSavannah
-  id: SMCAreaSavannahPress # Додано білдом Січі
+  id: SMCAreaSavannahPress
   name: Офіс Преси
 
 - type: entity
   parent: SMCAreaSavannah
-  id: SMCAreaSavannahDisposals # Додано білдом Січі
+  id: SMCAreaSavannahDisposals
   name: Смітник
 
 - type: entity
   parent: SMCAreaSavannah
-  id: SMCAreaSavannahToilets # Додано білдом Січі
+  id: SMCAreaSavannahToilets
   name: Вбиральні
 
 - type: entity
   parent: SMCAreaSavannah
-  id: SMCAreaSavannahOuter # Додано білдом Січі
+  id: SMCAreaSavannahOuter
   name: Зовнішня обшивка
+## Sich end

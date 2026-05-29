@@ -34,3 +34,11 @@
   components:
   - type: Sprite
     state: shuttle
+
+- type: entity
+  parent: SMCAreaShuttleDrop
+  id: SMCAreaShuttleLifeboat
+  name: Евакуаціний шатл Промінчик
+  components:
+  - type: Sprite
+    state: shuttle

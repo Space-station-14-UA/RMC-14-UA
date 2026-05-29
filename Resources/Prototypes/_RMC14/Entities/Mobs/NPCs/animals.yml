@@ -130,6 +130,10 @@
   id: RMCMobMouseDoc
   name: Док
   description: Старший мишачий дослідник з Альмаєра, який також працює на Саванні. Йому подобається сир, експерименти та вибухи!
+  components:
+  - type: UserIFF # Sich. Щоб турелі його не розстрілювали
+    factions:
+    - FactionMarine
 
 - type: entity
   name: пацюк

@@ -1,0 +1,20 @@
+# На заміну оригінальним, бо у нас власна версія
+- type: entity
+  parent: MarkerBase
+  id: SMCSpawnerLifeboat
+  name: спавнер евакуаційного човника
+  description: Поставити в нижній лівий край місця під човник.
+  components:
+  - type: Sprite
+    state: green
+  - type: GridSpawner
+    spawn: "/Maps/_Sich/Shuttles/lifeboat.yml"
+    offset: 12.5,2.5
+
+- type: entity
+  parent: RMCSpawnerEvacuationPodSouth
+  id: SMCSpawnerEvacuationPodWestLiaison
+  suffix: Січ, Захід, Представник
+  components:
+  - type: GridSpawner
+    spawn: "/Maps/_Sich/Shuttles/escape_pod_west_liaison.yml"

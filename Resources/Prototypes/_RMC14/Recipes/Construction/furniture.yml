@@ -46,7 +46,7 @@
 
 - type: construction
   parent: RMC
-  name: біле офісне крісло
+  name: світле офісне крісло
   id: CMChairOfficeWhite
   graph: CMSeat
   startNode: start

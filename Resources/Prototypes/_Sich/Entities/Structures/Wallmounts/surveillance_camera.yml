@@ -1,0 +1,19 @@
+- type: entity
+  parent: RMCMonitorCameraAlmayer
+  id: SMCMonitorCameraLifeboat
+  name: монітор камер шатла
+  description: Використовується для перегляду камер шатла.
+  suffix: Січ, Евакуаційний шатл
+  components:
+  - type: RMCCameraComputer
+    protoIds:
+    - SMCSurveillanceCameraLifeboat
+
+- type: entity
+  parent: RMCSurveillanceCameraAlmayer
+  id: SMCSurveillanceCameraLifeboat
+  description: Використовується для спостереженням за Шатлом евакуації.
+  suffix: Січ, Евакуаційний шатл
+  components:
+  - type: RMCCamera
+    id: SMCSurveillanceCameraLifeboat

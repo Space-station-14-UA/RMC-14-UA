@@ -23,7 +23,9 @@
     soundsId: SichMothBodyEmotes
   - type: Vocal
     sounds:
-      Male: RMCMaleMoth
-      Female: RMCFemaleMoth
-      Unsexed: RMCMaleMoth
-    wilhelmProbability: 0.001
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
+  - type: UserIFF
+    factions:
+    - FactionMarine

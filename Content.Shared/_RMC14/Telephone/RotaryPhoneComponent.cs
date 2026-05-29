@@ -11,7 +11,7 @@ namespace Content.Shared._RMC14.Telephone;
 public sealed partial class RotaryPhoneComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public string Category = "Almayer";
+    public string Category = "Саванна"; // Sich. Almayer в оригіналі
 
     [DataField, AutoNetworkedField]
     public bool CanDnd;
