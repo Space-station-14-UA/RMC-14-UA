@@ -1,8 +1,8 @@
 - type: entity
   parent: RMCCrateAmmo
-  id: SichRMCCrateBoxBulletsSmartGun
+  id: SichCrateBoxBulletsSmartGun
   name: Коробка набоїв для СмартГану МЛ66А (3000 шт 10х30 мм)
   components:
   - type: StorageFill
     contents:
-    - id: SichRMCBoxBulletsSmartGun
+    - id: SichBoxBulletsSmartGun

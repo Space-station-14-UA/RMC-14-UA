@@ -827,6 +827,13 @@
         amount: 1
         doAfter: 0.25
 
+    # Sich. СГ
+    - to: SichBoxBulletsSmartGunEmpty
+      steps:
+      - material: RMCSheetCardboard
+        amount: 1
+        doAfter: 0.25
+
   # Why the fuck do you even need these nodes???
 
   # M54C
@@ -960,3 +967,7 @@
     entity: RMCBoxFlashlightsEmpty
   - node: RMCBoxMagazinePowerCellsHigh
     entity: RMCBoxMagazinePowerCellsHigh
+
+  # Sich. СГ
+  - node: SichBoxBulletsSmartGunEmpty
+    entity: SichBoxBulletsSmartGunEmpty

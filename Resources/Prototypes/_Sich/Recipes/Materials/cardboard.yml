@@ -1,0 +1,5 @@
+- type: rmcConstruction
+  parent: RMCCardboardBuildBase
+  id: SichBoxBulletsSmartGunEmptyBuild
+  name: коробка для набоїв СмартГану (10х30мм)
+  prototype: SichBoxBulletsSmartGunEmpty

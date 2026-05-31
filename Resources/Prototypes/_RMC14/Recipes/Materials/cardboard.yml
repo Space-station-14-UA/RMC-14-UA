@@ -92,6 +92,7 @@
   - RMCBoxBulletsSMGAPEmptyBuild
   - RMCBoxBulletsPistolEmptyBuild
   - RMCBoxBulletsPistolAPEmptyBuild
+  - SichBoxBulletsSmartGunEmptyBuild # Sich
 
 - type: rmcConstruction
   parent: RMCCardboardBuildBase
