@@ -1,5 +1,7 @@
 # Адаптація всіляких тварин під умови механік РМС (нема атмосфери, не треба гост роль)
-## Так, лише ніаножук. Ця міль класна. Питання?
+## Так, лише ніаножук й вже не один. Ці молі класні. Питання?
+
+# Тварини
 - type: entity
   parent: [RMCSimpleMob, MobMothroach]
   id: SichMobMothroach
@@ -29,3 +31,62 @@
   - type: UserIFF
     factions:
     - FactionMarine
+
+- type: entity
+  parent: SichMobMothroach
+  id: SichMobMothroachSynth
+  name: синтетична тарганоміль
+  description: Це чарівно-пустотливий побічний продукт розробки синтетиків у вигляді ніан. Роботичне бззз!
+  suffix: Січ, Адмеме
+  components:
+  - type: Sprite
+    sprite: _Sich/Mobs/Pets/synth_mothroach.rsi
+  - type: Synth
+  - type: CMArmor # Так, її не знищити
+    immuneToAP: true
+    melee: 50
+    bullet: 50
+    bio: 50
+    explosionArmor: 100
+  - type: RMCImmuneToFireTileDamage
+  - type: CanEscapeInventory
+    baseResistTime: 0.5 # 5 в оригінальної
+  - type: TacticalMapIcon
+    icon:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: synth
+  - type: RemoveComponents
+    components:
+    - type: ReplacementAccent # Вона може повноцінно балакати
+      accent: mothroach
+
+# Спавнера
+- type: entity
+  parent: MarkerBase
+  id: SMCSpawnMobMothroach
+  name: спавнер тарганомолі
+  suffix: Січ
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: icon
+      sprite: Mobs/Animals/mothroach/mothroach.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - SichMobMothroach
+
+- type: entity
+  parent: MarkerBase
+  id: SMCSpawnMobMothroachSynth
+  name: спавнер синтетичної тарганомолі
+  suffix: Січ
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: icon
+      sprite: _Sich/Mobs/Pets/synth_mothroach.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - SichMobMothroachSynth

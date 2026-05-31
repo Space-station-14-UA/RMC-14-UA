@@ -1,0 +1,43 @@
+# Для офісу корпората Саванни, спрайти від Міюгі
+- type: entity
+  parent: BaseStructure
+  id: SichBathGold
+  name: шикарна ванна
+  description: Вишукана та досконала, про таку звичайний люд й мріяти не може! Прекрасне місце для відпочинку чи навіть сну.
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Furniture/bath.rsi
+    state: bath_gold
+    drawdepth: OverMobs # Залізти в вану, а не на неї
+  - type: Climbable
+  - type: SolutionContainerManager
+    solutions:
+      drainBuffer:
+        maxVol: 500
+  - type: RMCSinkWater
+  - type: Drain
+    autoDrain: true
+  - type: DumpableSolution
+    solution: drainBuffer
+  - type: Damageable
+    damageContainer: StructuralMarine
+    damageModifierSet: StructuralMarine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CMSheetMetal1: # Бо ванна
+            min: 5
+            max: 5
+          IngotGold: # Бо золота
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

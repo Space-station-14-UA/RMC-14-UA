@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "All Rights Reserved. Do not use this without Miyugi (Discord) permission. Зроблено Miyugi для білду РМС Мрії",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "bath_gold"
+        }
+    ]
+}

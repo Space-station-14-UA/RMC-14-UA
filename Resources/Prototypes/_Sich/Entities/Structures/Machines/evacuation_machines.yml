@@ -4,6 +4,7 @@
   id: SMCSpawnerLifeboat
   name: спавнер евакуаційного човника
   description: Поставити в нижній лівий край місця під човник.
+  suffix: Січ, Власна версія
   components:
   - type: Sprite
     state: green
@@ -11,6 +12,7 @@
     spawn: "/Maps/_Sich/Shuttles/lifeboat.yml"
     offset: 12.5,2.5
 
+# Для корпората Саванни
 - type: entity
   parent: RMCSpawnerEvacuationPodSouth
   id: SMCSpawnerEvacuationPodWestLiaison

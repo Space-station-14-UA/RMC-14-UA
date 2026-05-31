@@ -30,6 +30,10 @@
     - Blinded
     - Deaf
     - Unconscious
+  - type: RemoveComponents # Sich
+    components:
+    - type: Thirst
+    - type: Hunger
 
 - type: entity
   id: RMCSmallHost
@@ -49,6 +53,10 @@
     damageCap: 0
     heatDamageThreshold: 423
     coldDamageThreshold: 0
+  - type: RemoveComponents # Sich
+    components:
+    - type: Thirst
+    - type: Hunger
 
 - type: entity
   parent: [RMCSimpleMob, MobMonkey, RMCSmallHost]
