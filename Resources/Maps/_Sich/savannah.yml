@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.2-fix-physics
   forkId: ""
   forkVersion: ""
-  time: 05/31/2026 01:15:06
-  entityCount: 14725
+  time: 05/31/2026 01:21:08
+  entityCount: 14727
 maps:
 - 1
 grids:
@@ -41150,7 +41150,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -334094.38
+      secondsUntilStateChange: -334438.5
       state: Opening
   - uid: 95
     components:
@@ -53150,6 +53150,11 @@ entities:
     components:
     - type: Transform
       pos: -25.025457,120.65211
+      parent: 1
+  - uid: 14727
+    components:
+    - type: Transform
+      pos: -25.07442,128.51987
       parent: 1
 - proto: CMFolderWhite
   entities:
@@ -102538,6 +102543,11 @@ entities:
     components:
     - type: Transform
       pos: 39.5,92.5
+      parent: 1
+  - uid: 14726
+    components:
+    - type: Transform
+      pos: -26.5,117.5
       parent: 1
 - proto: RMCExtinguisherCabinetFilled
   entities:
