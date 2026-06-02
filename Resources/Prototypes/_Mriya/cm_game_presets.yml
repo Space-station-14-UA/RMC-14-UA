@@ -2,7 +2,7 @@
   id: MRDistressSandbox
   name: mriya-calmed-sandbox-preset-title
   description: mriya-calmed-sandbox-preset-description
-  showInVote: true
+  showInVote: false
   rules:
   - SichCalmed
   - SandboxRule
