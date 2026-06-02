@@ -1,7 +1,7 @@
 - type: gamePreset
   id: MRSandbox
   name: mriya-sandbox-preset-title
-  description: mriya-calmed-sandbox-preset-description
+  description: mriya-sandbox-preset-description
   showInVote: false
   rules:
   - SichCalmed
