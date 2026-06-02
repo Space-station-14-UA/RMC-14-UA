@@ -10,8 +10,6 @@
   showInVote: true
   rules:
   - SichCalmed
-  
-
 - type: gamePreset
   id: SichEventSunRiders
   alias:
