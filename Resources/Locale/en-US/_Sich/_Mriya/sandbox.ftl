@@ -1,2 +1,2 @@
 mriya-sandbox-preset-title = Пісочниця
-mriya-calmed-sandbox-preset-description = Режим пісочниці на базі знайомого режиму Спокій
+mriya-sandbox-preset-description = Будуйте, тестуйте, розважайтеся (не заважаючи іншим)! Всі мають доступ до меню спавну об'єктів.
