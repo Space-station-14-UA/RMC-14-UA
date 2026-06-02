@@ -1,6 +1,6 @@
 - type: gamePreset
   id: MRSandbox
-  name: mriya-calmed-sandbox-preset-title
+  name: mriya-sandbox-preset-title
   description: mriya-calmed-sandbox-preset-description
   showInVote: false
   rules:
