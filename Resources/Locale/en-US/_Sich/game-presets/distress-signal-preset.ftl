@@ -6,3 +6,6 @@ sich-event-preset-description = Проводиться повноцінний і
 
 sich-event-clf-preset-title = Сигнал Лиха (ФВК)
 sich-event-clf-preset-description = З ще одної планети отримано сигнал СОС. На цей раз це партизани з Фронту Визволення Колоній. Зупиніть їх!
+
+mriya-sandbox-preset-title = Пісочниця
+mriya-sandbox-preset-description = Будуйте, тестуйте, розважайтеся (не заважаючи іншим)! Всі мають доступ до меню спавну об'єктів.
