@@ -28,7 +28,7 @@
     tags:
     - DoorBumpOpener
     - RMCSynthGrabbable
-  - type: Butcherable
+  - type: Butcherable # Mriya
     spawned:
     - id: FoodMeatXeno
       amount: 6

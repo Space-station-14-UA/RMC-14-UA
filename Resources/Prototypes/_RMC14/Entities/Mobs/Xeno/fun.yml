@@ -180,7 +180,7 @@
     entities:
     - RMCDecalSpawnerGibsLesserDrone
     - RMCGibEffectXenoLesserDrone
-  - type: Butcherable
+  - type: Butcherable # Mriya
     spawned:
     - id: FoodMeatXeno
       amount: 2

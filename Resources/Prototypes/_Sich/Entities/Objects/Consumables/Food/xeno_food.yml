@@ -2,7 +2,7 @@
   parent: CMFoodBase
   id: MRFoodParasiteLeg
   name: лапки паразита
-  description: Колись вони бігали, а тепер час з'їсти їх та побігти далі
+  description: Колись вони бігали, а тепер час з'їсти їх та побігти далі.
   components:
   - type: FlavorProfile
     flavors:
@@ -15,7 +15,7 @@
   - type: Food
     transferAmount: 2
   - type: Sprite
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
     state: parasiteleg
   - type: SolutionContainerManager
     solutions:
@@ -30,7 +30,7 @@
           Quantity: 4
   - type: Item
     size: Tiny
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
   - type: Extractable
     grindableSolutionName: food
   - type: InjectableSolution
@@ -42,7 +42,7 @@
   parent: CMFoodBase
   id: MRFoodParasiteLegCooked
   name: смажені лапки паразита
-  description: Смажені лапи паразита ксеноморфів... Пахне цікаво
+  description: Смажені лапи паразита ксеноморфів... Пахне цікаво.
   components:
   - type: FlavorProfile
     flavors:
@@ -55,7 +55,7 @@
   - type: Food
     transferAmount: 2
   - type: Sprite
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
     state: parasiteleg-cooked
   - type: SolutionContainerManager
     solutions:
@@ -70,7 +70,7 @@
           Quantity: 2
   - type: Item
     size: Tiny
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
   - type: Extractable
     grindableSolutionName: food
   - type: InjectableSolution
@@ -82,7 +82,7 @@
   parent: FoodBowlBase
   id: MRFoodQueenSalad
   name: салат Королева
-  description: Салат "Королева" - пряме переосмислення салату "Цезар", в умовах коли з м'ясу бігає лише ворог
+  description: Салат "Королева" – пряме переосмислення салату "Цезар", в умовах коли з м'яса бігає лише ворог.
   components:
   - type: FlavorProfile
     flavors:
@@ -94,7 +94,7 @@
     sprite: Objects/Consumable/Food/bowl.rsi
     layers:
     - state: bowl
-    - sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    - sprite: _Sich/Objects/Consumable/Food/xeno.rsi
       state: queen
   - type: SolutionContainerManager
     solutions:
@@ -121,7 +121,7 @@
   parent: CMFoodBase
   id: MRFoodLarvaCooked
   name: смажена лярва
-  description: Це смажена лярва під лимонним соком. Певно не настільки гумова на смак, якщо думати що це була майбутня королева
+  description: Це смажена лярва під лимонним соком. Певно не настільки гумова на смак, якщо думати, що це була майбутня королева.
   components:
   - type: FlavorProfile
     flavors:
@@ -135,7 +135,7 @@
   - type: Food
     transferAmount: 4
   - type: Sprite
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
     state: embryo_cooked
   - type: SolutionContainerManager
     solutions:
@@ -150,7 +150,7 @@
           Quantity: 3
   - type: Item
     size: Small
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
   - type: Extractable
     grindableSolutionName: food
   - type: InjectableSolution
@@ -162,7 +162,7 @@
   parent: CMFoodBase
   id: MRFoodParasitelegs
   name: паразитоніжка
-  description: Паразитична багатоніжка! Варто за нею пильно слідкувати, хто зна чи має вона план втечі
+  description: Паразитична багатоніжка! Варто за нею пильно слідкувати, хто зна, чи має вона план втечі.
   components:
   - type: FlavorProfile
     flavors:
@@ -180,7 +180,7 @@
     slice: MRFoodParasitelegsHalf
     count: 2
   - type: Sprite
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
     state: parasitelegs
   - type: SolutionContainerManager
     solutions:
@@ -195,7 +195,7 @@
           Quantity: 6
   - type: Item
     size: Small
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
   - type: Extractable
     grindableSolutionName: food
   - type: InjectableSolution
@@ -207,7 +207,7 @@
   parent: CMFoodBase
   id: MRFoodParasitelegsHalf
   name: половина паразитоніжок
-  description: Половина ніжок, все ще можуть втікти, але на 3 ніжки повільніше
+  description: Половина ніжок, все ще можуть втікти, але на 3 ніжки повільніше.
   components:
   - type: FlavorProfile
     flavors:
@@ -222,7 +222,7 @@
   - type: Food
     transferAmount: 3
   - type: Sprite
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
     state: parasitelegs-half
   - type: SolutionContainerManager
     solutions:
@@ -237,7 +237,7 @@
           Quantity: 3
   - type: Item
     size: Small
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
   - type: Extractable
     grindableSolutionName: food
   - type: InjectableSolution
@@ -255,8 +255,8 @@
     tags:
     - Ingredient
   - type: Sprite
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
     state: claw
   - type: Item
     size: Small
-    sprite: _Mriya/Objects/Consumable/Food/xeno.rsi
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
