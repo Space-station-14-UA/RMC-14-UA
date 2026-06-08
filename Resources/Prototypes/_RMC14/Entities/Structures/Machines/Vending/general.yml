@@ -2,8 +2,8 @@
 - type: entity
   parent: ColMarTechBaseAnchorable
   id: CMVendorCassettes
-  name: Rec-Vend
-  description: Contains We-Ya approved recreational items, like Cassette Players and Cards.
+  name: Роз-Мат
+  description: Містить рекреаційні предмети, схвалені Вестон-Ямада, такі як касети, журнали та карти.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/cassette_player.rsi
@@ -29,18 +29,20 @@
         amount: 10
       - id: RMCCassetteTapeRedQwesta
         amount: 10
-#      - id: RMCCassetteTapeBolgarich - русняве
+#      - id: RMCCassetteTapeBolgarich – Sich. русняве
 #        amount: 10
       - id: RMCCassetteTapeQwertyquerty
         amount: 10
       - id: RMCCassetteTapePigeonBeans
         amount: 10
-      - id: RMCSichCassetteTape
+      # Sich start
+      - id: SichCassetteTapeFire
         amount: 10
-      - id: RMCSichCassetteTapeManSoldWorld
+      - id: SichCassetteTapeManSoldWorld
         amount: 10
-      - id: RMCSichCassetteTapeUa
+      - id: SichCassetteTapeUa
         amount: 10
+      # Sich end
       - id: RMCCassetteTapeCustom
         amount: 20
     - name: Cards

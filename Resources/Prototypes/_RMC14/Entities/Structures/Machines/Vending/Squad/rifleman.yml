@@ -240,7 +240,7 @@
         points: 15
       - id: CMPamphletEngineer
         points: 15
-      - id: SichCMPamphletFireman # Sich
+      - id: SichPamphletFireman # Sich
         points: 5
     - name: Ключі Шифрування
       entries:

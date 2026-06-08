@@ -1,15 +1,15 @@
 - type: entity
   abstract: true
   parent: RMCCassetteTapeBase
-  id: RMCSichCassetteTapeBase
+  id: SichCassetteTapeBase
   components:
   - type: Sprite
     sprite: _Sich/Objects/Devices/cassette_player.rsi
 
 # Січ
 - type: entity
-  parent: RMCSichCassetteTapeBase
-  id: RMCSichCassetteTape
+  parent: SichCassetteTapeBase
+  id: SichCassetteTapeFire
   name: запальна касета
   description: Касета з композиціями, під які ваша смерть буде виглядати красиво. Спеціально для роти "Січові Стрільці" КМПОН!
   components:
@@ -26,8 +26,8 @@
     - /Audio/_Sich/Jukebox/paint_it_black.ogg
 
 - type: entity
-  parent: RMCSichCassetteTapeBase
-  id: RMCSichCassetteTapeManSoldWorld
+  parent: SichCassetteTapeBase
+  id: SichCassetteTapeManSoldWorld
   name: касета продавшого світ
   description: Касета від того, хто продав світ. Спеціально для роти "Січові Стрільці" КМПОН!
   components:
@@ -40,8 +40,8 @@
     - /Audio/_Sich/Jukebox/snake_eater.ogg
 
 - type: entity
-  parent: RMCSichCassetteTapeBase
-  id: RMCSichCassetteTapeUa
+  parent: SichCassetteTapeBase
+  id: SichCassetteTapeUa
   name: українська касета
   description: Касета з збірником українських композицій. Спеціально для роти "Січові Стрільці" КМПОН!
   components:

@@ -33,3 +33,14 @@
   showInVote: false
   rules:
   - SichDistressSignalCLF
+
+- type: gamePreset
+  id: MRSandbox
+  alias:
+  - sandbox
+  name: mriya-sandbox-preset-title
+  description: mriya-sandbox-preset-description
+  showInVote: false
+  rules:
+  - SichCalmed
+  - Sandbox

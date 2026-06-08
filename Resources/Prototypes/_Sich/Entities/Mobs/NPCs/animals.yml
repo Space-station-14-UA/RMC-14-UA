@@ -41,6 +41,8 @@
   components:
   - type: Sprite
     sprite: _Sich/Mobs/Pets/synth_mothroach.rsi
+  - type: Clothing
+    sprite: _Sich/Mobs/Pets/synth_mothroach.rsi
   - type: Synth
   - type: CMArmor # Так, її не знищити
     immuneToAP: true

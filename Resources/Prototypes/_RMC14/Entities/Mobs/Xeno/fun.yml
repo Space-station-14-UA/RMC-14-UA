@@ -39,6 +39,7 @@
   - CMXenoTail
   - CMXenoFlammable
   - RMCXenoSpeechSounds
+  - RMCXenoVentCrawler # Sich
   id: RMCXenoLesserCarrier
   name: Мала Носійка
   description: Дивна на вигляд інопланетна істота. Схоже по ній повзають дивні крапобоподібні істоти. Виглядає... малою.
@@ -174,9 +175,10 @@
   - type: XenoHidden
   - type: FixedIdentity
     name: rmc-lesser-carrier
-  - type: RMCGibOnDeath # Sich
+  # Sich start. Більше не адмеме, наші фікси
+  - type: RMCGibOnDeath
     gibChance: 0.5
-  - type: RMCSpawnEntitiesOnGib # Sich
+  - type: RMCSpawnEntitiesOnGib
     entities:
     - RMCDecalSpawnerGibsLesserDrone
     - RMCGibEffectXenoLesserDrone
@@ -184,9 +186,12 @@
     spawned:
     - id: FoodMeatXeno
       amount: 2
-  - type: XenoStrain # Sich. Більше не адмеме
+  - type: XenoStrain
     name: sich-xeno-lesser-carrier-name
     description: sich-xeno-lesser-carrier-description
     popup: sich-xeno-lesser-carrier-popup
-  - type: RMCActionOrder # Sich. Збереження біндів
+  - type: VentCrawler
+    ventCrawlIcon: lesser
+  - type: RMCActionOrder # Збереження біндів
     id: RMCXenoLesserCarrier
+  # Sich end

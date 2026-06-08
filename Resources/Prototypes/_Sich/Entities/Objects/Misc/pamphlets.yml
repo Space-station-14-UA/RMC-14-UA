@@ -1,6 +1,6 @@
 - type: entity
   parent: CMPamphlet
-  id: SichCMPamphletSherpa
+  id: SichPamphletSherpa
   name: довідник шерпи
   description: Тут описується, як правильно переносити важкі речі.
   components:
@@ -29,7 +29,7 @@
 # Я тільки зараз зрозумів, як воно схоже на шерпу, тому це фактично буде те саме, але на мінімалках. . .
 - type: entity
   parent: CMPamphlet
-  id: SichCMPamphletFireman
+  id: SichPamphletFireman
   name: довідник перенесення на плечах
   description: Тут описується, як правильно переносити людей на собі.
   components:

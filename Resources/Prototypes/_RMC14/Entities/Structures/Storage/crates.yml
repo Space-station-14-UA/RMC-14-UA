@@ -623,6 +623,8 @@
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _RMC14/Structures/Storage/Crates/secure_hydro.rsi
+  - type: AccessReader # Sich. Для Саванни та логіки
+    access: [["CMAccessKitchen"]]
 
 - type: entity
   parent: RMCCrateSecure
