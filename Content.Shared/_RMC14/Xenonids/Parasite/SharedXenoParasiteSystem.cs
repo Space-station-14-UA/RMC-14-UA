@@ -600,7 +600,7 @@ public abstract partial class SharedXenoParasiteSystem : EntitySystem
         parasite.Comp.FallOffAt = _timing.CurTime + parasite.Comp.FallOffDelay;
         Dirty(parasite);
 
-        RemCompDeferred<RMCGibOnDeathComponent>(parasite); // No gibbing on someone's face
+//        RemCompDeferred<RMCGibOnDeathComponent>(parasite); // No gibbing on someone's face – Mriya. Гіб на обличчі!
         RemCompDeferred<ParasiteAIComponent>(parasite);
         var ev = new XenoParasiteInfectEvent(victim, parasite.Owner);
         RaiseLocalEvent(victim, ev, true);
