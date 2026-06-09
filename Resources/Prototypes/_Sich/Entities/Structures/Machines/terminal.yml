@@ -1,56 +1,10 @@
-- type: entity
-  id: SichTerminalInputCorporate
-  suffix: Вхід (Корпорат)
-  parent: BaseStructureComputer
-  name: термінал комунікації
-  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
-  components:
-  - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
-    state: console
-  - type: SichTerminal
-    isInput: true
-    requiredAccesses:
-    - RMCAccessWeYa
-  - type: Clickable
-  - type: Rotatable
-  - type: ActivatableUI
-    key: enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key:
-        type: SichTerminalBoundUserInterface
-  - type: ItemSlots
-    slots:
-      id_card:
-        name: ID Card
-        whitelist:
-          components:
-          - IdCard
-          - Pda
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SichTerminalBroken:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-
+# Звичайний
 - type: entity
   parent: [ BaseMachinePowered, RMCConstructibleMachine ]
-  id: SichTerminalInput
-
+  id: MRTerminalInput
   name: термінал комунікації
-  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
+  description: Термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  suffix: Мрія, Ввід
   components:
   - type: Transform
     anchored: false
@@ -76,7 +30,6 @@
           components:
           - IdCard
           - Pda
-
   - type: Destructible
     thresholds:
     - trigger:
@@ -88,7 +41,7 @@
           collection: GlassBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          SichTerminalBroken:
+          MRTerminalBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
@@ -99,21 +52,44 @@
     - type: Anchorable
 
 - type: entity
-  parent: SichTerminalInput
-  id: SichTerminalOutput
+  parent: MRTerminalInput
+  id: MRTerminalInputCorporate
+  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  suffix: Мрія, Ввід (Корпорат)
+  components:
+  - type: SichTerminal
+    isInput: true
+    requiredAccesses:
+    - RMCAccessWeYa
 
-  name: термінал комунікації
+- type: entity
+  parent: MRTerminalInput
+  id: MRTerminalInputCommand
+  description: Офіцерський термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  suffix: Мрія, Ввід (Командування)
+  components:
+  - type: SichTerminal
+    isInput: true
+    requiredAccesses:
+    - RMCAccessCommand
+
+- type: entity
+  parent: MRTerminalInput
+  id: MRTerminalOutput
   description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
+  suffix: Мрія, Перегляд
   components:
   - type: SichTerminal
     isInput: false
   - type: RemoveComponents
     components:
     - type: ItemSlots
+    - type: ApcPowerReceiver
+    - type: Anchorable
 
 - type: entity
   parent: ComputerBroken
-  id: SichTerminalBroken
+  id: MRTerminalBroken
   name: зламаний термінал комунікації
   description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
   components:
@@ -121,153 +97,63 @@
     sprite: _Sich/Structures/Machines/console.rsi
     state: broken
 
-
+# Настінний
 - type: entity
-  id: SichWallTerminalInputCorporate
-  suffix: Вхід (Корпорат)
-  parent: BaseStructureComputer
+  parent: MRTerminalInput
+  id: MRWallmountTerminalInput
   name: настінний термінал комунікації
-  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
+  description: Термінал для прямого каналу зв'язку з Ве-Я з вашої стіни! Має слот для ID-картки.
+  suffix: Мрія, Ввід
   components:
   - type: Sprite
     sprite: _Sich/Structures/Machines/console.rsi
     state: wall
   - type: WallMount
     arc: 360
-  - type: SichTerminal
-    isInput: true
-    requiredAccesses:
-    - RMCAccessWeYa
-  - type: Clickable
-  - type: Rotatable
-  - type: ActivatableUI
-    key: enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key:
-        type: SichTerminalBoundUserInterface
-  - type: ItemSlots
-    slots:
-      id_card:
-        name: ID Card
-        whitelist:
-          components:
-          - IdCard
-          - Pda
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 250
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          SichWallTerminalBroken:
+          MRWallmountTerminalBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
 - type: entity
-  id: SichWallTerminalInput
-  suffix: Вхід (Командний)
-  parent: BaseStructureComputer
-  name: настінний термінал комунікації
-  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
-  components:
-  - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
-    state: wall
-  - type: WallMount
-    arc: 360
-  - type: SichTerminal
-    isInput: true
-    requiredAccesses:
-    - RMCAccessCommand
-    - CMAccessCO
-    - CMAccessCMO
-    - CMAccessCE
-    - CMAccessCMP
-    - CMAccessQM
-    - CMAccessASO
-  - type: Clickable
-  - type: Rotatable
-  - type: ActivatableUI
-    key: enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key:
-        type: SichTerminalBoundUserInterface
-  - type: ItemSlots
-    slots:
-      id_card:
-        name: ID Card
-        whitelist:
-          components:
-          - IdCard
-          - Pda
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SichWallTerminalBroken:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+  parent: [ MRWallmountTerminalInput, MRTerminalInputCorporate ]
+  id: MRWallmountTerminalInputCorporate
+  suffix: Мрія, Ввід (Корпорат)
 
 - type: entity
-  id: SichWallTerminalOutput
-  suffix: Вихід
-  parent: BaseStructureComputer
-  name: настінний термінал комунікації
+  parent: [ MRWallmountTerminalInput, MRTerminalInputCommand ]
+  id: MRWallmountTerminalInputCommand
+  suffix: Мрія, Ввід (Командування)
+
+- type: entity
+  parent: MRWallmountTerminalInput
+  id: MRWallmountTerminalOutput
   description: Корпоративний термінал для прямого каналу зв'язку з представниками та КМПОН.
+  suffix: Мрія, Перегляд
   components:
-  - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
-    state: wall
-  - type: WallMount
-    arc: 360
   - type: SichTerminal
     isInput: false
-  - type: Clickable
-  - type: Rotatable
-  - type: ActivatableUI
-    key: enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key:
-        type: SichTerminalBoundUserInterface
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SichWallTerminalBroken:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+  - type: RemoveComponents
+    components:
+    - type: ItemSlots
+    - type: ApcPowerReceiver
+    - type: Anchorable
 
 - type: entity
-  id: SichWallTerminalBroken
   parent: ComputerBroken
+  id: MRWallmountTerminalBroken
   name: зламаний настінний термінал комунікації
   description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
   components:
