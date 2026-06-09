@@ -25,10 +25,10 @@ namespace Content.Client.Ghost
 
         private bool _ghostVisibility = true;
 
-        private bool GhostVisibility
+        public bool GhostVisibility // Mriya: toggle ghost bubbles
         {
             get => _ghostVisibility;
-            set
+            private set // // Mriya: toggle ghost bubbles
             {
                 if (_ghostVisibility == value)
                 {

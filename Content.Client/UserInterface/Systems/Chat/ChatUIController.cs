@@ -967,7 +967,8 @@ public sealed partial class ChatUIController : UIController
                 if (_ghost is not {IsGhost: true})
                     break;
 
-                AddSpeechBubble(msg, SpeechBubble.SpeechType.Say);
+                if (_config.GetCVar(CCVars.DeadAboveGhostShow) && _ghost.GhostVisibility) // Mriya: toggle ghost bubbles
+                    AddSpeechBubble(msg, SpeechBubble.SpeechType.Say); // Mriya: toggle ghost bubbles
                 break;
 
             case ChatChannel.Emotes:

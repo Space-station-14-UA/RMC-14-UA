@@ -57,6 +57,7 @@ ui-options-show-combat-mode-indicators = Показувати індикатор
 ui-options-opaque-storage-window = Непрозоре вікно сховища
 ui-options-show-ooc-patron-color = Показувати колір Патрона у OOC
 ui-options-show-looc-on-head = Показати повідомлення ЛOOC над головами персонажів
+ui-options-show-dead-on-ghost = Показати повідомлення мертвого чату над головами привидів
 ui-options-fancy-speech = Показати імена в бульбашках
 ui-options-fancy-name-background = Додати фон до імен у бульбашках
 ui-options-vsync = Вертикальна синхронізація
