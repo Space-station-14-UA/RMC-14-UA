@@ -276,7 +276,25 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
             HasComp<XenoProjectileComponent>(args.Source))
         {
             args.Cancelled = true;
+            return;
         }
+
+        if (ent.Comp.Detonated || ent.Comp.Destroyed ||
+            !TryComp(ent, out DamageableComponent? damageable))
+        {
+            return;
+        }
+
+        var currentDamage = damageable.TotalDamage.Float();
+        var incomingDamage = args.Damage.GetTotal().Float();
+        if (currentDamage < ent.Comp.DisableDamage &&
+            (incomingDamage <= 0 || currentDamage + incomingDamage < ent.Comp.DisableDamage))
+        {
+            return;
+        }
+
+        args.Cancelled = true;
+        DefuseDestroyedCharge(ent);
     }
 
     private void OnDamageChanged(Entity<BTPRMCNuclearChargeComponent> ent, ref DamageChangedEvent args)
