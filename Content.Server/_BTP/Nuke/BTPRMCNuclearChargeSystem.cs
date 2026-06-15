@@ -65,6 +65,12 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
         var query = EntityQueryEnumerator<BTPRMCNuclearChargeComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var charge, out var xform))
         {
+            if (charge.Destroyed)
+            {
+                QueueDel(uid);
+                continue;
+            }
+
             if (charge.Detonated)
             {
                 if (_timing.CurTime < charge.NukeMapAt)
@@ -98,7 +104,7 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
             if (!charge.ThemeStarted && remaining <= ThemeLeadTime)
             {
                 charge.ThemeStarted = true;
-                _audio.PlayGlobal(charge.WarheadThemeSound, Filter.Broadcast(), true);
+                charge.WarheadThemeStream = _audio.PlayGlobal(charge.WarheadThemeSound, Filter.Broadcast(), true, charge.WarheadThemeSound.Params)?.Entity;
             }
 
             if (remaining > TimeSpan.Zero)
@@ -274,17 +280,23 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
 
     private void OnDestroyed(Entity<BTPRMCNuclearChargeComponent> ent, ref DestructionEventArgs args)
     {
-        if (ent.Comp.Detonated)
+        if (ent.Comp.Detonated || ent.Comp.Destroyed)
             return;
 
+        ent.Comp.Destroyed = true;
+        ent.Comp.Armed = false;
+        ent.Comp.Activating = false;
         StopWarningSiren(ent.Comp);
+        StopWarheadTheme(ent.Comp);
         Announce("Критична помилка протоколів ядерного ураження у зв'язку з надзначними фізичними пошкодженнями боєголовки, порушуючі архітектуру запуску");
         AnnounceXenos("Верховна Королева повідомляє: Винищувач-вуликів знешкоджено. Боєголовка більше не становить загрози для Вулика.");
+        QueueDel(ent);
     }
 
     private void OnTerminating(Entity<BTPRMCNuclearChargeComponent> ent, ref EntityTerminatingEvent args)
     {
         StopWarningSiren(ent.Comp);
+        StopWarheadTheme(ent.Comp);
     }
 
     private string FormatRemaining(int seconds)
@@ -321,6 +333,7 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
         AnnounceXenos("Верховна Королева попереджає: Винищувач-вуликів детонував. Вулик має покинути приречену зону.");
 
         StopWarningSiren(charge);
+        StopWarheadTheme(charge);
         _audio.PlayGlobal(charge.MapExplosionSound, Filter.BroadcastMap(coordinates.MapId), true);
         _audio.PlayGlobal(charge.FlybyExplosionSound, GetAwayFromMapFilter(coordinates.MapId), true);
         _rmcNuke.NukeMap(coordinates.MapId);
@@ -349,6 +362,11 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
     private void StopWarningSiren(BTPRMCNuclearChargeComponent charge)
     {
         charge.WarningSirenStream = _audio.Stop(charge.WarningSirenStream);
+    }
+
+    private void StopWarheadTheme(BTPRMCNuclearChargeComponent charge)
+    {
+        charge.WarheadThemeStream = _audio.Stop(charge.WarheadThemeStream);
     }
 
     private bool HasAuthenticationDisk(Entity<BTPRMCNuclearChargeComponent> ent)

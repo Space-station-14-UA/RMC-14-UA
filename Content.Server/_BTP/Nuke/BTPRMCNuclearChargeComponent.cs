@@ -44,9 +44,11 @@ public sealed partial class BTPRMCNuclearChargeComponent : Component
     public bool Activating;
     public bool Armed;
     public bool Detonated;
+    public bool Destroyed;
     public bool ThemeStarted;
     public TimeSpan DetonatesAt;
     public TimeSpan NukeMapAt;
     public EntityUid? WarningSirenStream;
+    public EntityUid? WarheadThemeStream;
     public readonly HashSet<int> AnnouncedAtSeconds = new();
 }
