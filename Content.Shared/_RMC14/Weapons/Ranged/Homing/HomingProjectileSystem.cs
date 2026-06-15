@@ -73,13 +73,22 @@ public sealed class HomingProjectileSystem : EntitySystem
         var query = EntityQueryEnumerator<HomingProjectileComponent>();
         while (query.MoveNext(out var projectile, out var component))
         {
-            if(!TryComp(projectile, out PhysicsComponent? physics))
+            if (TerminatingOrDeleted(projectile) ||
+                !TryComp(projectile, out PhysicsComponent? physics) ||
+                !TryComp(projectile, out TransformComponent? projectileTransform))
                 continue;
 
             // Get the map coordinates and the direction
             var target = component.Target;
-            var targetCoords = _transform.GetMapCoordinates(target, Transform(target));
-            var projectileCoords = _transform.GetMapCoordinates(projectile, Transform(projectile));
+            if (TerminatingOrDeleted(target) ||
+                !TryComp(target, out TransformComponent? targetTransform))
+            {
+                _toRemove.Add(projectile);
+                continue;
+            }
+
+            var targetCoords = _transform.GetMapCoordinates(target, targetTransform);
+            var projectileCoords = _transform.GetMapCoordinates(projectile, projectileTransform);
             if (targetCoords.MapId != projectileCoords.MapId)
             {
                 _toRemove.Add(projectile);
@@ -89,7 +98,7 @@ public sealed class HomingProjectileSystem : EntitySystem
             var direction = targetCoords.Position - projectileCoords.Position;
 
             // Remove the homing component once the projectile gets close to it's target.
-            if (_transform.InRange(Transform(projectile).Coordinates, Transform(target).Coordinates, 1f))
+            if (_transform.InRange(projectileTransform.Coordinates, targetTransform.Coordinates, 1f))
             {
                 _toRemove.Add(projectile);
                 continue;
@@ -114,6 +123,9 @@ public sealed class HomingProjectileSystem : EntitySystem
         {
             foreach (var remove in _toRemove)
             {
+                if (TerminatingOrDeleted(remove))
+                    continue;
+
                 RemComp<HomingProjectileComponent>(remove);
             }
         }
