@@ -41,6 +41,9 @@ public sealed partial class BTPRMCNuclearChargeComponent : Component
     [DataField]
     public float ExplosionMaxTileIntensity = 400;
 
+    [DataField]
+    public float DisableDamage = 350;
+
     public bool Activating;
     public bool Armed;
     public bool Detonated;

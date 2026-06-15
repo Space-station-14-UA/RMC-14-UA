@@ -54,6 +54,7 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
         SubscribeLocalEvent<BTPRMCNuclearChargeComponent, BTPNukeActivateDoAfterEvent>(OnActivateDoAfter);
         SubscribeLocalEvent<BTPRMCNuclearChargeComponent, UnanchorAttemptEvent>(OnUnanchorAttempt);
         SubscribeLocalEvent<BTPRMCNuclearChargeComponent, BeforeDamageChangedEvent>(OnBeforeDamageChanged);
+        SubscribeLocalEvent<BTPRMCNuclearChargeComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<BTPRMCNuclearChargeComponent, DestructionEventArgs>(OnDestroyed);
         SubscribeLocalEvent<BTPRMCNuclearChargeComponent, EntityTerminatingEvent>(OnTerminating);
     }
@@ -278,7 +279,26 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
         }
     }
 
+    private void OnDamageChanged(Entity<BTPRMCNuclearChargeComponent> ent, ref DamageChangedEvent args)
+    {
+        if (args.Damageable.TotalDamage.Float() < ent.Comp.DisableDamage)
+            return;
+
+        DefuseDestroyedCharge(ent);
+    }
+
     private void OnDestroyed(Entity<BTPRMCNuclearChargeComponent> ent, ref DestructionEventArgs args)
+    {
+        DefuseDestroyedCharge(ent);
+    }
+
+    private void OnTerminating(Entity<BTPRMCNuclearChargeComponent> ent, ref EntityTerminatingEvent args)
+    {
+        StopWarningSiren(ent.Comp);
+        StopWarheadTheme(ent.Comp);
+    }
+
+    private void DefuseDestroyedCharge(Entity<BTPRMCNuclearChargeComponent> ent)
     {
         if (ent.Comp.Detonated || ent.Comp.Destroyed)
             return;
@@ -288,15 +308,9 @@ public sealed partial class BTPRMCNuclearChargeSystem : EntitySystem
         ent.Comp.Activating = false;
         StopWarningSiren(ent.Comp);
         StopWarheadTheme(ent.Comp);
-        Announce("Критична помилка протоколів ядерного ураження у зв'язку з надзначними фізичними пошкодженнями боєголовки, порушуючі архітектуру запуску");
+        Announce("Фізично неможливо синхронізовано активувати боєзапас у зв'язку зі значними фізичними пошкодженнями систем запуску.");
         AnnounceXenos("Верховна Королева повідомляє: Винищувач-вуликів знешкоджено. Боєголовка більше не становить загрози для Вулика.");
         QueueDel(ent);
-    }
-
-    private void OnTerminating(Entity<BTPRMCNuclearChargeComponent> ent, ref EntityTerminatingEvent args)
-    {
-        StopWarningSiren(ent.Comp);
-        StopWarheadTheme(ent.Comp);
     }
 
     private string FormatRemaining(int seconds)
