@@ -24,6 +24,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.NameModifier.EntitySystems;
+using Content.Shared.Nuke;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Storage;
@@ -76,6 +77,8 @@ public sealed class IntelSystem : EntitySystem
     private static readonly EntProtoId ExperimentalDevicesProto = "RMCIntelRetrieveHealthAnalyzer";
     // private static readonly EntProtoId ResearchPaperProto = "RMCIntelResearchPaper";
     // private static readonly EntProtoId VialBoxProto = "RMCIntelVialBox";
+    private static readonly EntProtoId RMCNukeDiskProto = "RMCNukeDisk";
+    private const string RMCNukeDiskPrototypeId = "RMCNukeDisk";
 
     private readonly Dictionary<IntelSpawnerType, float> _paperScrapChances = new()
     {
@@ -627,6 +630,70 @@ public sealed class IntelSystem : EntitySystem
         return items;
     }
 
+    private void EnsureSingleRMCNukeDisk()
+    {
+        var disks = new List<EntityUid>();
+        var diskQuery = EntityQueryEnumerator<NukeDiskComponent, MetaDataComponent>();
+        while (diskQuery.MoveNext(out var uid, out _, out var metadata))
+        {
+            if (metadata.EntityPrototype?.ID == RMCNukeDiskPrototypeId)
+                disks.Add(uid);
+        }
+
+        for (var i = 1; i < disks.Count; i++)
+        {
+            QueueDel(disks[i]);
+        }
+
+        if (disks.Count > 0)
+            return;
+
+        SpawnRMCNukeDisk();
+    }
+
+    private void SpawnRMCNukeDisk()
+    {
+        List<Entity<IntelSpawnerComponent>>? spawners = null;
+        var type = _random.Pick(_diskChances);
+        if (!_spawners.TryGetValue(type, out spawners) ||
+            spawners.Count <= 0)
+        {
+            foreach (var candidates in _spawners.Values)
+            {
+                if (candidates.Count <= 0)
+                    continue;
+
+                spawners = candidates;
+                break;
+            }
+        }
+
+        if (spawners == null ||
+            spawners.Count <= 0)
+        {
+            return;
+        }
+
+        var spawner = _random.Pick(spawners);
+        var coords = _transform.GetMoverCoordinates(spawner);
+        var disk = Spawn(RMCNukeDiskProto, coords);
+
+        _nearby.Clear();
+        _entityLookup.GetEntitiesInRange(coords, 0.5f, _nearby, LookupFlags.Uncontained);
+
+        foreach (var nearby in _nearby)
+        {
+            if (HasComp<StorageComponent>(nearby) &&
+                _storage.Insert(nearby, disk, out _))
+            {
+                break;
+            }
+
+            if (_entityStorage.Insert(disk, nearby))
+                break;
+        }
+    }
+
     public Entity<IntelTechTreeComponent> EnsureTechTree()
     {
         if (TryGetTechTree(out var tree))
@@ -687,6 +754,8 @@ public sealed class IntelSystem : EntitySystem
             }
 
             var tree = EnsureTechTree();
+            EnsureSingleRMCNukeDisk();
+
             var lows = SpawnIntel(PaperScrapProto, _paperScraps, _paperScrapChances);
             var mediums = SpawnIntel(ProgressReportProto, _progressReports, _progressReportChances);
             mediums.AddRange(SpawnIntel(FolderProto, _folders, _folderChances));

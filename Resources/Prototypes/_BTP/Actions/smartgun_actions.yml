@@ -1,0 +1,29 @@
+- type: entity
+  parent: ActionMarineToggleable
+  id: BTPActionToggleM52Optics
+  name: Toggle M52 optics
+  description: Toggles the M52 smartgun visor's widened camera view.
+  components:
+  - type: Action
+    icon:
+      sprite: _BTP/Objects/Clothing/Eyes/Glasses/m52_smartgun_visor.rsi
+      state: icon_on
+    useDelay: 0.25
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:BtpSmartGunOpticsActionEvent
+
+- type: entity
+  parent: ActionMarineToggleable
+  id: BTPActionSmartGunTargetLock
+  name: Smartgun target lock
+  description: Toggles target lock mode. Use the weapon's unique action to lock the entity under your cursor or clear the current lock.
+  components:
+  - type: Action
+    icon:
+      sprite: _BTP/Actions/smartgun_target_lock.rsi
+      state: icon
+    useDelay: 0.25
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:BtpSmartGunTargetLockActionEvent

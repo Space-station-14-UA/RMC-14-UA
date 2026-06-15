@@ -123,7 +123,11 @@ public sealed class RMCSizeStunSystem : EntitySystem
             if (_entityWhitelist.IsWhitelistFail(stun.Whitelist, args.Target))
                 continue;
 
-            var distance = (_transform.GetMoverCoordinates(args.Target).Position - bullet.Comp.ShotFrom.Value.Position).Length();
+            var targetMap = _transform.GetMapCoordinates(args.Target);
+            if (targetMap.MapId != bullet.Comp.ShotFrom.Value.MapId)
+                return;
+
+            var distance = (targetMap.Position - bullet.Comp.ShotFrom.Value.Position).Length();
             if (distance > stun.MaxRange || _stand.IsDown(args.Target))
                 return;
 
@@ -202,7 +206,11 @@ public sealed class RMCSizeStunSystem : EntitySystem
             _physics.SetAngularVelocity(target, 0f, body: physics);
         }
 
-        var vec = _transform.GetMoverCoordinates(target).Position - knockedBackFrom.Value.Position;
+        var targetMap = _transform.GetMapCoordinates(target);
+        if (targetMap.MapId != knockedBackFrom.Value.MapId)
+            return;
+
+        var vec = targetMap.Position - knockedBackFrom.Value.Position;
         if (vec.Length() != 0)
         {
             _rmcPulling.TryStopPullsOn(target);

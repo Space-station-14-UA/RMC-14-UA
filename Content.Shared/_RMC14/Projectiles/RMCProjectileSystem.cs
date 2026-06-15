@@ -10,6 +10,7 @@ using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Whitelist;
 using Robust.Shared.Network;
+using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
@@ -80,7 +81,10 @@ public sealed class RMCProjectileSystem : EntitySystem
         if (projectile.Comp.ShotFrom == null || projectile.Comp.MinRemainingDamageMult < 0)
             return;
 
-        var distance = (_transform.GetMoverCoordinates(args.Target).Position - projectile.Comp.ShotFrom.Value.Position).Length();
+        var targetCoords = _transform.GetMoverCoordinates(args.Target);
+        if (!TryGetMapDistance(projectile.Comp.ShotFrom.Value, targetCoords, out var distance, out _, out _))
+            return;
+
         var minDamage = args.Damage.GetTotal() * projectile.Comp.MinRemainingDamageMult;
         foreach (var threshold in projectile.Comp.Thresholds)
         {
@@ -150,7 +154,8 @@ public sealed class RMCProjectileSystem : EntitySystem
 
             var accuracy = projectile.Comp.Accuracy;
             var targetCoords = _transform.GetMoverCoordinates(args.OtherEntity);
-            var distance = (targetCoords.Position - projectile.Comp.ShotFrom.Value.Position).Length();
+            if (!TryGetMapDistance(projectile.Comp.ShotFrom.Value, targetCoords, out var distance, out var shotFromMap, out var targetMap))
+                return;
 
             foreach (var threshold in projectile.Comp.Thresholds)
             {
@@ -171,7 +176,7 @@ public sealed class RMCProjectileSystem : EntitySystem
                 accuracy -= threshold.Falloff * pastRange;
             }
 
-            if (!_examine.InRangeUnOccluded(_transform.ToMapCoordinates(projectile.Comp.ShotFrom.Value), _transform.ToMapCoordinates(targetCoords), distance, null))
+            if (!_examine.InRangeUnOccluded(shotFromMap, targetMap, distance, null))
                 accuracy += (int)AccuracyModifiers.TargetOccluded;
 
             if (!projectile.Comp.IgnoreFriendlyEvasion && IsProjectileTargetFriendly(projectile.Owner, args.OtherEntity))
@@ -191,6 +196,21 @@ public sealed class RMCProjectileSystem : EntitySystem
 
         projectile.Comp.Dodged.Add(netOther);
         Dirty(projectile);
+    }
+
+    private bool TryGetMapDistance(EntityCoordinates from, EntityCoordinates to, out float distance, out MapCoordinates fromMap, out MapCoordinates toMap)
+    {
+        fromMap = _transform.ToMapCoordinates(from);
+        toMap = _transform.ToMapCoordinates(to);
+
+        if (fromMap.MapId != toMap.MapId || fromMap.MapId == MapId.Nullspace)
+        {
+            distance = 0;
+            return false;
+        }
+
+        distance = (toMap.Position - fromMap.Position).Length();
+        return true;
     }
 
     private bool IsProjectileTargetFriendly(EntityUid projectile, EntityUid target)

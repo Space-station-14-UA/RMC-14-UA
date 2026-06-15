@@ -1,0 +1,26 @@
+- type: entity
+  parent: RMCBaseEquipmentCase
+  id: BTPRMCML86ArSmartGunEquipmentCase
+  name: ML86Ar smartgun system case
+  description: A large equipment case containing an ML86Ar smartgun, ergonomic harness, M52 visor, magazines, power cell, and launcher module.
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+      map: [ base ]
+    - state: smartgun
+      map: [ label ]
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,13,1
+  - type: StorageFill
+    contents:
+    - id: BTPRMCGlassesM52SmartGunSight
+    - id: BTPRMCSmartGunML86Ar
+    - id: BTPRMCAttachmentML86ArGrenadeLauncher
+    - id: RMCPowerCellSmartgun
+    - id: BTPCMArmorML86ArErgonomicHarness
+    - id: RMCMagazineSmartGun
+    - id: RMCMagazineSmartGun
+    - id: RMCMagazineSmartGun

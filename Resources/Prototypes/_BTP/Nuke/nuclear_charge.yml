@@ -1,0 +1,70 @@
+- type: explosion
+  id: BTPNuke
+  damagePerIntensity:
+    types:
+      Blunt: 500
+      Heat: 500
+      Structural: 1000
+  tileBreakChance: [0, 0.5, 1]
+  tileBreakIntensity: [0, 10, 30]
+  tileBreakRerollReduction: 20
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireColor: Transparent
+  sound:
+    path: /Audio/_BTP/Nuke/Nuke_explosion_map_sound.ogg
+    params:
+      maxDistance: 300
+      volume: 2
+  smallSound:
+    path: /Audio/_BTP/Nuke/Nuke_explosion_map_sound.ogg
+    params:
+      maxDistance: 300
+      volume: 2
+
+- type: entity
+  parent: [BaseStructureDynamic, StructureWheeled]
+  id: BTPRMCNuclearCharge
+  name: nuclear fission explosive
+  description: A Franco-Weston nuclear fission explosive released through ARES strategic area denial authorization.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Machines/Nuke.rsi
+    state: nuke
+    noRot: true
+    offset: 0,0.35
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: null
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MaxDamage
+    max: 350
+  - type: InteractionOutline
+  - type: AccessReader
+    access: [["RMCAccessCommand"]]
+  - type: ItemSlots
+    slots:
+      btp-rmc-nuke-disk:
+        name: nuclear authentication disk
+        swap: false
+        insertSound:
+          path: /Audio/Machines/terminal_insert_disc.ogg
+        ejectSound:
+          path: /Audio/Machines/terminal_insert_disc.ogg
+        whitelist:
+          components:
+          - NukeDisk
+  - type: ContainerContainer
+    containers:
+      btp-rmc-nuke-disk: !type:ContainerSlot
+  - type: BTPRMCNuclearCharge

@@ -423,6 +423,33 @@ public abstract class SharedXenoHiveSystem : EntitySystem
         SetHiveBurrowedLarva(hive, hive.Comp.BurrowedLarva + amount);
     }
 
+    public void RemoveTunnelFromHiveLists(EntityUid tunnel)
+    {
+        var hives = EntityQueryEnumerator<HiveComponent>();
+        while (hives.MoveNext(out var uid, out var hive))
+        {
+            List<string>? toRemove = null;
+            foreach (var (name, hiveTunnel) in hive.HiveTunnels)
+            {
+                if (hiveTunnel != tunnel)
+                    continue;
+
+                toRemove ??= new List<string>();
+                toRemove.Add(name);
+            }
+
+            if (toRemove == null)
+                continue;
+
+            foreach (var name in toRemove)
+            {
+                hive.HiveTunnels.Remove(name);
+            }
+
+            Dirty(uid, hive);
+        }
+    }
+
     private void SetHiveBurrowedLarva(Entity<HiveComponent> hive, int larva)
     {
         var initialValue = hive.Comp.BurrowedLarva;

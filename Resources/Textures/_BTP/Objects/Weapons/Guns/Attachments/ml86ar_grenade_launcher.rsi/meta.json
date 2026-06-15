@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Sprites by DanEps for SS14 UA BTP",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon-closed"
+    },
+    {
+      "name": "icon-open"
+    },
+    {
+      "name": "icon-enabled"
+    }
+  ]
+}

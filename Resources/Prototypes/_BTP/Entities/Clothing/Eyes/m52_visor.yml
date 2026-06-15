@@ -1,0 +1,33 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: BTPRMCGlassesM52SmartGunSight
+  name: M52 smartgun visor
+  description: A smartgun visor with night vision and a stabilized widened camera view. It works only while carrying a smartgun.
+  components:
+  - type: Item
+    storedRotation: 0
+  - type: Sprite
+    sprite: _BTP/Objects/Clothing/Eyes/Glasses/m52_smartgun_visor.rsi
+    layers:
+    - state: icon
+      map: [ "icon" ]
+  - type: Clothing
+    sprite: _BTP/Objects/Clothing/Eyes/Glasses/m52_smartgun_visor.rsi
+  - type: NightVisionItem
+    skills:
+      RMCSkillSmartGun: 1
+    defaultState: half
+  - type: BtpSmartGunOptics
+    zoom: 1.25, 1.25
+    pvsIncrease: 0.6
+  - type: ClothingRequireEquipped
+    whitelist:
+      components:
+      - SmartGun
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.NightVisionItemVisuals.Active:
+        icon:
+          True: { state: icon_on }
+          False: { state: icon }

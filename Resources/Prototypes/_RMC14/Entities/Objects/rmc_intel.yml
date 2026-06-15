@@ -347,6 +347,19 @@
           icon:
             sprite: _RMC14/Interface/map_blips.rsi # Іконка мапи, бо прикольна
             state: aegisob
+        - name: Стратегічний ядерний заряд
+          description: Ядерний фугасний заряд Франко-Вестонської виробничої лінії, санкціонований для протоколу повного заперечення зони. Після розшифрування розвідданих і авторизації актив буде переданий логістиці через АТСС.
+          cost: 10
+          timeLock: 9999m
+          events:
+          - !type:TechLogisticsDeliveryEvent
+            object: BTPRMCNuclearCharge
+          - !type:TechAnnounceEvent
+            author: СПЕЦІАЛЬНІ АКТИВИ САВАННИ АВТОРИЗОВАНО
+            message: Стратегічний ядерний заряд було санкціоновано. Ядерний фугасний актив буде передано логістиці через АТСС.
+          icon:
+            sprite: _RMC14/Structures/Machines/Nuke.rsi
+            state: nuke
 - type: Tag
   id: RMCIntelItem
 

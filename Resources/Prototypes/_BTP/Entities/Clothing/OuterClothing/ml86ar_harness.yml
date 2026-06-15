@@ -1,0 +1,33 @@
+- type: entity
+  parent: [ RMCAllowSuitStorageClothingSmartgunner, CMArmorM3Medium ]
+  id: BTPCMArmorML86ArErgonomicHarness
+  name: ML86Ar ergonomic harness
+  description: A lighter smartgun harness for the ML86Ar with an adaptive load-bearing frame.
+  components:
+  - type: Sprite
+    sprite: _BTP/Objects/Clothing/OuterClothing/Armor/ml86ar_harness.rsi
+  - type: Clothing
+    sprite: _BTP/Objects/Clothing/OuterClothing/Armor/ml86ar_harness.rsi
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,1
+  - type: CMArmor
+    melee: 15
+    bullet: 15
+    bio: 10
+    explosionArmor: 10
+  - type: RMCArmorSpeedTier
+    speedTier: light
+  - type: ClothingSpeedModifier
+    walkModifier: 0.86
+    sprintModifier: 0.86
+  - type: Corrodible
+    isCorrodible: false
+  - type: ClothingBlockBackpack
+  - type: SmartGunArmor
+  - type: BtpTackleResistance
+    chanceMultiplier: 0.82
+    stunMultiplier: 0.82
+  - type: ItemCamouflage
+    camouflageVariations: { }

@@ -1,0 +1,47 @@
+- type: entity
+  parent: RMCAttachmentU1GrenadeLauncher
+  id: BTPRMCAttachmentML86ArGrenadeLauncher
+  name: ML86Ar underbarrel grenade launcher
+  description: A rail-mounted grenade launcher module for the ML86Ar smartgun.
+  components:
+  - type: Sprite
+    sprite: _BTP/Objects/Weapons/Guns/Attachments/ml86ar_grenade_launcher.rsi
+    layers:
+    - state: icon-closed
+      map: [ "enum.BreechVisuals.Open" ]
+  - type: RMCSelectiveFire
+    baseFireRate: 0.5
+  - type: ShootAtFixedPoint
+    shootArcProj: true
+    maxFixedRange: 7
+  - type: GenericVisualizer
+    visuals:
+      enum.BreechVisuals.Open:
+        enum.BreechVisuals.Open:
+          True: { state: icon-open }
+          False: { state: icon-closed }
+  - type: AttachableToggleable
+    userOnly: true
+    attachedOnly: true
+    supercedeHolder: true
+    wieldedUseOnly: true
+    activatePopupText: attachable-popup-switch-to-generic
+    deactivatePopupText: attachable-popup-switch-from-generic
+    actionName: Switch to ML86Ar grenade launcher
+    actionDesc: Switches the smartgun to its underbarrel grenade launcher module.
+    icon:
+      sprite: _BTP/Objects/Weapons/Guns/Attachments/ml86ar_grenade_launcher.rsi
+      state: icon-closed
+    iconActive:
+      sprite: _BTP/Objects/Weapons/Guns/Attachments/ml86ar_grenade_launcher.rsi
+      state: icon-enabled
+  - type: AttachableVisuals
+    rsi: /Textures/_BTP/Objects/Weapons/Guns/Attachments/ml86ar_grenade_launcher_overlay.rsi
+    offset: 0.1875, -0.125
+    redrawOnAppearanceChange: true
+  - type: Tag
+    tags:
+    - BTPRMCAttachmentML86ArGrenadeLauncher
+
+- type: Tag
+  id: BTPRMCAttachmentML86ArGrenadeLauncher

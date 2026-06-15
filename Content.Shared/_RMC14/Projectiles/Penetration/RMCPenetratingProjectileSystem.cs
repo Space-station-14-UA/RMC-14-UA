@@ -2,6 +2,7 @@ using Content.Shared._RMC14.Stun;
 using Content.Shared._RMC14.Xenonids.Construction;
 using Content.Shared.Physics;
 using Content.Shared.Projectiles;
+using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
 
 namespace Content.Shared._RMC14.Projectiles.Penetration;
@@ -114,8 +115,9 @@ public sealed class RMCPenetratingProjectileSystem : EntitySystem
         if(ent.Comp.ShotFrom == null)
             return;
 
-        var distanceTravelled =
-            (_transform.GetMoverCoordinates(ent).Position - ent.Comp.ShotFrom.Value.Position).Length();
+        if (!TryGetMapDistance(ent.Comp.ShotFrom.Value, _transform.GetMoverCoordinates(ent), out var distanceTravelled))
+            return;
+
         var range = ent.Comp.Range - distanceTravelled;
 
         ent.Comp.HitTargetIds.Add(GetNetEntity(args.Target).Id);
@@ -126,6 +128,21 @@ public sealed class RMCPenetratingProjectileSystem : EntitySystem
 
         args.Projectile.Comp.ProjectileSpent = false;
         Dirty(args.Projectile);
+    }
+
+    private bool TryGetMapDistance(EntityCoordinates from, EntityCoordinates to, out float distance)
+    {
+        var fromMap = _transform.ToMapCoordinates(from);
+        var toMap = _transform.ToMapCoordinates(to);
+
+        if (fromMap.MapId != toMap.MapId || fromMap.MapId == MapId.Nullspace)
+        {
+            distance = 0;
+            return false;
+        }
+
+        distance = (toMap.Position - fromMap.Position).Length();
+        return true;
     }
 }
 

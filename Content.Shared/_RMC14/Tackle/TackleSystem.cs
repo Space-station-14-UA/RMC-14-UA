@@ -1,3 +1,4 @@
+using Content.Shared._BTP.Tackle;
 using Content.Shared._RMC14.Hands;
 using Content.Shared._RMC14.Marines.Skills;
 using Content.Shared._RMC14.Pulling;
@@ -9,6 +10,7 @@ using Content.Shared.Database;
 using Content.Shared.Effects;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Inventory;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
@@ -40,6 +42,7 @@ public sealed class TackleSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedGunSystem _gunSystem = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
 
     private readonly List<EntityUid> _trackersToRemove = new();
 
@@ -47,6 +50,8 @@ public sealed class TackleSystem : EntitySystem
     {
         SubscribeLocalEvent<TackleableComponent, CMDisarmEvent>(OnDisarmed, before: [typeof(SharedHandsSystem), typeof(SharedStaminaSystem)]);
         SubscribeLocalEvent<RMCDisarmableComponent, CMDisarmEvent>(OnDisarmed, before: [typeof(SharedHandsSystem), typeof(SharedStaminaSystem)]);
+        SubscribeLocalEvent<InventoryComponent, GetBtpTackleResistanceEvent>(_inventory.RelayEvent);
+        SubscribeLocalEvent<BtpTackleResistanceComponent, InventoryRelayedEvent<GetBtpTackleResistanceEvent>>(OnGetTackleResistance);
 
         SubscribeLocalEvent<TackledRecentlyByComponent, ComponentRemove>(OnByRemove);
         SubscribeLocalEvent<TackledRecentlyByComponent, EntityTerminatingEvent>(OnByRemove);
@@ -82,9 +87,11 @@ public sealed class TackleSystem : EntitySystem
         if (_net.IsClient)
             return;
 
+        var resistance = GetTackleResistance(target);
+        var tackleChance = tackle.Chance * Math.Clamp(resistance.ChanceMultiplier, 0f, 1f);
         var random = _random.NextFloat(0, 1);
 
-        if ((tracker.Count < tackle.Min || tackle.Chance < random) &&
+        if ((tracker.Count < tackle.Min || tackleChance < random) &&
             tracker.Count < tackle.Max)
         {
             _adminLog.Add(LogType.RMCTackle, $"{ToPrettyString(user)} tried to tackle {ToPrettyString(target)}.");
@@ -131,7 +138,21 @@ public sealed class TackleSystem : EntitySystem
             stun = _random.Next(tackle.StunMin, tackle.StunMax);
 
         stun *= 2;
+        stun *= Math.Clamp(resistance.StunMultiplier, 0f, 1f);
         _stun.TryParalyze(target, stun, true);
+    }
+
+    private GetBtpTackleResistanceEvent GetTackleResistance(EntityUid target)
+    {
+        var ev = new GetBtpTackleResistanceEvent(SlotFlags.OUTERCLOTHING | SlotFlags.INNERCLOTHING);
+        RaiseLocalEvent(target, ref ev);
+        return ev;
+    }
+
+    private void OnGetTackleResistance(Entity<BtpTackleResistanceComponent> ent, ref InventoryRelayedEvent<GetBtpTackleResistanceEvent> args)
+    {
+        args.Args.ChanceMultiplier *= ent.Comp.ChanceMultiplier;
+        args.Args.StunMultiplier *= ent.Comp.StunMultiplier;
     }
 
     private void OnDisarmed(Entity<RMCDisarmableComponent> target, ref CMDisarmEvent args)

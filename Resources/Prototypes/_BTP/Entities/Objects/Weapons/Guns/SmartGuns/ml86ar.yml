@@ -1,0 +1,90 @@
+- type: entity
+  parent: RMCSmartGunNoCamo
+  id: BTPRMCSmartGunML86Ar
+  name: ML86Ar ergonomic smartgun
+  description: An ergonomic smartgun adapted for sustained expeditionary combat. It supports a secondary drum and a target lock module.
+  components:
+  - type: Sprite
+    sprite: _BTP/Objects/Weapons/Guns/SmartGuns/ml86ar.rsi
+    layers:
+    - state: base
+      sprite: _BTP/Objects/Weapons/Guns/SmartGuns/ml86ar.rsi
+    - state: mag-0
+      sprite: _BTP/Objects/Weapons/Guns/SmartGuns/ml86ar.rsi
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Clothing
+    sprite: _BTP/Objects/Weapons/Guns/SmartGuns/ml86ar.rsi
+  - type: MagazineAmmoProvider
+    autoEject: true
+    secondaryMagazineSlot: gun_magazine_secondary
+    secondaryMagazineFireRateMultiplier: 2
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_magazine_secondary: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+      cell_slot: !type:ContainerSlot { }
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: RMCMagazineSmartGun
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_sg_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_sg_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazineSmartGun
+      gun_magazine_secondary:
+        name: Secondary magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_sg_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_sg_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazineSmartGun
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: RMCPowerCellSmartgun
+        whitelist:
+          components:
+          - SmartGunBattery
+  - type: RMCWeaponDamageFalloff
+    rangeFlat: 3
+  - type: BtpSmartGunTargetLock
+    range: 15
+    projectileSpeed: 90
+    actionId: BTPActionSmartGunTargetLock
+    lockSound: /Audio/_BTP/Weapons/SmartGun/target_locked.ogg
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - BTPRMCAttachmentML86ArGrenadeLauncher
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-rail: -0.1875, 0.125
+  - type: GunToggleableAmmo
+    settings:
+    - damage:
+        types:
+          Piercing: 30
+      armorPiercing: 0
+      name: rmc-toggleable-ammo-highly-precise
+      icon:
+        sprite: _RMC14/Actions/marine_smart_gun_actions.rsi
+        state: ammo_swap_normal
+    - damage:
+        types:
+          Piercing: 25
+      armorPiercing: 40
+      name: rmc-toggleable-ammo-armor-shredding
+      icon:
+        sprite: _RMC14/Actions/marine_smart_gun_actions.rsi
+        state: ammo_swap_ap
