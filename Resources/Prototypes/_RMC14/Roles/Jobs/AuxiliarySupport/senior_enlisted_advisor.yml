@@ -4,12 +4,39 @@
   name: cm-job-name-senior-enlisted-advisor
   description: cm-job-description-senior-enlisted-advisor
   playTimeTracker: CMJobSeniorEnlistedAdvisor
-  ranks: # TODO Selectable Ranks for SEA
+#  requirements: – Mriya. Якщо ми даємо людині вайтліст, то вона вже достатньо награла
+#  - !type:DepartmentTimeRequirement
+#    department: CMSquad
+#    time: 54000 # 15 hours
+#  - !type:TotalJobsTimeRequirement
+#    group: CMJobsEngineering
+#    time: 36000 # 10 hours
+#  - !type:DepartmentTimeRequirement
+#    department: CMMilitaryPolice
+#    time: 54000 # 15 hours
+#  - !type:TotalJobsTimeRequirement
+#    group: CMJobsMedical
+#    time: 54000 # 15 hours
+#  - !type:DepartmentTimeRequirement
+#    department: CMCommand
+#    time: 54000 # 15 hours
+#  - !type:DepartmentTimeRequirement
+#    department: CMRequisitions
+#    time: 36000 # 10 hours
+  ranks:
     RMCRankSergeantMajor:
     - !type:RoleTimeRequirement
       role: CMJobSeniorEnlistedAdvisor
       time: 252000 # 70 hours
+    RMCRankMasterGunnerySergeant:
+    - !type:RoleTimeRequirement
+      role: CMJobSeniorEnlistedAdvisor
+      time: 252000 # 70 hours
     RMCRankFirstSergeant:
+    - !type:RoleTimeRequirement
+      role: CMJobSeniorEnlistedAdvisor
+      time: 36000 # 10 hours
+    RMCRankMasterSergeant:
     - !type:RoleTimeRequirement
       role: CMJobSeniorEnlistedAdvisor
       time: 36000 # 10 hours

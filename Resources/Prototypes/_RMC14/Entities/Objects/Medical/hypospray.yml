@@ -2,7 +2,7 @@
   parent: BaseItem
   id: CMHypospray
   name: гіпоспрей
-  description: Гіпоспрей DeForest Medical Corporation™ – це стерильний автоінжектор з повітряною голкою для швидкого введення ліків пацієнтам.
+  description: Гіпоспрей Авант Біомедікал – це стерильний автоінжектор з повітряною голкою для швидкого введення ліків пацієнтам.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Medical/hypospray.rsi
@@ -90,3 +90,13 @@
     containers:
       vial:
       - RMCVialTricordrazine
+
+- type: entity
+  parent: CMHypospray
+  id: RMCHyposprayFilledEpi
+  suffix: Filled, Epinephrine
+  components:
+  - type: ContainerFill
+    containers:
+      vial:
+      - RMCVialEpinephrine

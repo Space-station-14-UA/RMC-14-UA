@@ -3,11 +3,11 @@
 
 # Тварини
 - type: entity
-  parent: [RMCSimpleMob, MobMothroach]
+  parent: [RMCRodent, MobMothroach]
   id: SichMobMothroach
   name: тарганоміль
   description: Це чарівно-пустотливий побічний продукт численних спроб генетично змішати молей з тарганами. Бззз!
-  suffix: Січ
+  suffix: Мрія, Ніаножук
   components:
   - type: GhostRole
     prob: 0
@@ -28,6 +28,8 @@
       Male: UnisexMoth
       Female: UnisexMoth
       Unsexed: UnisexMoth
+  - type: Inventory
+    templateId: Sichmothroach
   - type: UserIFF
     factions:
     - FactionMarine
@@ -36,8 +38,8 @@
   parent: SichMobMothroach
   id: SichMobMothroachSynth
   name: синтетична тарганоміль
-  description: Це чарівно-пустотливий побічний продукт розробки синтетиків у вигляді ніан. Роботичне бззз!
-  suffix: Січ, Адмеме
+  description: "Це чарівно-пустотливий побічний продукт розробки синтетиків у вигляді ніан. Роботичне бззз!\nМає ледь помітний напис \"Прототип Люнет\" на лівому крилі."
+  suffix: Мрія, Ніаножук, Адмеме
   components:
   - type: Sprite
     sprite: _Sich/Mobs/Pets/synth_mothroach.rsi
@@ -53,12 +55,112 @@
   - type: RMCImmuneToFireTileDamage
   - type: CanEscapeInventory
     baseResistTime: 0.5 # 5 в оригінальної
+  - type: StunOnHit # Щоб кусати тих, хто чипає
+    whitelist:
+      components:
+      - Marine
+  - type: StaminaDamageOnHit
+    damage: 100
+  - type: MeleeRequiresSkill # Щоб не могли бити нею
+    skills:
+      RMCSkillPolice: 3
+  - type: Skills
+    skills:
+      RMCSkillPolice: 3
   - type: TacticalMapIcon
     icon:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: synth
+  - type: Puller
+    needsHands: false
+  - type: VentCrawler
+    ventCrawlIcon: lesser
+  - type: RMCTrayCrawler
+  # Вбудована гарнітура старт
+  - type: CMGhost
+  - type: ViewIntelObjectives
+  - type: GrantAreaInfo
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.TacticalMapUserUi.Key:
+        type: TacticalMapUserBui
+      enum.ViewIntelObjectivesUI.Key:
+        type: ViewIntelObjectivesBui
+        requireInputValidation: false
+      enum.SquadLeaderTrackerUI.Key:
+        type: SquadInfoBui
+      enum.DialogUiKey.Key:
+        type: DialogBui
+  - type: TacMapMarineAlert
+  - type: TacticalMapUser
+    actionId: RMCActionOpenTacticalMapGhost
+    marines: true
+    xenos: true
+    liveUpdate: true
+  - type: ShowMarineIcons
+    factions:
+    - UNMC
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Hivemind
+    - MarineCommon
+    - MarineCommand
+    - MarineMilitaryPolice
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - MarineEngineer
+    - MarineMedical
+    - MarineRequisition
+    - MarineJTAC
+    - MarineIntel
+  - type: ActiveRadio
+    channels:
+    - Hivemind
+    - MarineCommon
+    - MarineCommand
+    - MarineMilitaryPolice
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - MarineEngineer
+    - MarineMedical
+    - MarineRequisition
+    - MarineJTAC
+    - MarineIntel
+  - type: SquadLeaderTracker
+    mode: Synthetic
+    trackerModes:
+    - Synthetic
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - AuxiliarySupportOfficer
+    - StaffOfficer
+    - ChiefMilitaryPolice
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SquadLeader
+    - PrimaryLandingZone
+  # Вбудована гарнітура все
+  - type: Access
+    groups:
+    - ShipMasterAccess
+    - Corp
+    - Colony
+    - Synth
   - type: RemoveComponents
     components:
+    - type: Destructible # Щоб не розривало на шмаття
     - type: ReplacementAccent # Вона може повноцінно балакати
       accent: mothroach
 
@@ -67,7 +169,7 @@
   parent: MarkerBase
   id: SMCSpawnMobMothroach
   name: спавнер тарганомолі
-  suffix: Січ
+  suffix: Мрія
   components:
   - type: Sprite
     layers:
@@ -82,7 +184,7 @@
   parent: MarkerBase
   id: SMCSpawnMobMothroachSynth
   name: спавнер синтетичної тарганомолі
-  suffix: Січ
+  suffix: Мрія
   components:
   - type: Sprite
     layers:

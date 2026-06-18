@@ -12,8 +12,6 @@
   name: Дрон
   description: Чужопланетна істота з повноцінними лапами та малим хоботом, яка видається досить універсальною.
   components:
-  - type: GhostRole
-    name: cm-job-name-xeno-drone
   - type: MobState
     allowedStates:
     - Alive
@@ -100,6 +98,10 @@
     - CMXenoCarrier
     - CMXenoBurrower
     - CMXenoHivelord
+    earlyEvolvesTo:
+    - CMXenoLurker
+    - CMXenoSpitter
+    - CMXenoWarrior
     evolvesToWithoutPoints:
     - CMXenoQueen
   - type: Evasion
@@ -153,6 +155,7 @@
     - DoorXenoResin
     - XenoStickyResin
     - XenoFastResin
+    - XenoResinSpikes
   - type: VentCrawler
     ventCrawlIcon: drone
   - type: RMCActionOrder

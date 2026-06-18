@@ -7,6 +7,7 @@
   name: гарнітура
   description: Оновлений, модульний інтерком який кріпиться на голову. Приймає ключі шифрування.
   components:
+  - type: RMCCryoUnavailableOnStore
   - type: ContainerContainer
     containers:
       key_slots: !type:Container
@@ -53,11 +54,12 @@
       - CMEncryptionKeyCommon
   - type: GrantAreaInfo
   - type: GrantTacMapAlert
-  - type: GrantSquadLeaderTracker # Sich
+  - type: GrantSquadLeaderTracker # Mriya
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
+    - SeniorEnlistedAdvisor
     - PrimaryLandingZone
 
 - type: entity
@@ -86,16 +88,20 @@
   - type: RMCHeadset
     radioTextIncrease: 3
   - type: GrantSquadLeaderTracker
-    defaultMode: CommandingOfficer # Sich
+    defaultMode: CommandingOfficer # Mriya
     trackerModes:
-    - CommandingOfficer # Sich
-    - ExecutiveOfficer # Sich
-    - AuxiliarySupportOfficer # Sich
-    - StaffOfficer # Sich
-    - ChiefMilitaryPolice # Sich
-    - ChiefEngineer # Sich
-    - ChiefMedicalOfficer # Sich
-    - Quartermaster # Sich
+    # Mriya start
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - AuxiliarySupportOfficer
+    - StaffOfficer
+    - ChiefMilitaryPolice
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    # Mriya end
     - SquadLeader
     - PrimaryLandingZone
 
@@ -124,7 +130,7 @@
     cooldown: 60
   - type: RMCHeadset
     radioTextIncrease: 3
-  - type: GrantSquadLeaderTracker # Sich
+  - type: GrantSquadLeaderTracker # Mriya
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -133,14 +139,15 @@
     - StaffOfficer
     - ChiefMilitaryPolice
     - ChiefEngineer
-    - ChiefMedicalOfficer
     - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
     - PrimaryLandingZone
 
 - type: entity
   parent: RMCHeadsetShip
   id: CMHeadsetEngineer
-  name: гарнітура інженерного
+  name: гарнітура інженера
   description: Придатна для координації реновацій та орбітальних бомбардувань. Міцної та надійної конструкції.
   components:
   - type: Sprite
@@ -154,15 +161,18 @@
     defaultMode: ChiefEngineer
     trackerModes:
     - ChiefEngineer
-    - CommandingOfficer # Sich
-    - ExecutiveOfficer # Sich
-    - SquadLeader # Sich
-    - PrimaryLandingZone # Sich
+    # Mriya start
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - SeniorEnlistedAdvisor
+    - SquadLeader
+    - PrimaryLandingZone
+    # Mriya end
 
 - type: entity
   parent: RMCHeadsetShip
   id: CMHeadsetRequisition
-  name: гарнітура логістики
+  name: гарнітура логіста
   description: Використовується Вантажниками, легка та портативна.
   components:
   - type: Sprite
@@ -180,14 +190,17 @@
     defaultMode: Quartermaster
     trackerModes:
     - Quartermaster
-    - AuxiliarySupportOfficer # Sich
-    - CommandingOfficer # Sich
-    - ExecutiveOfficer # Sich
+    # Mriya start
+    - AuxiliarySupportOfficer
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - SeniorEnlistedAdvisor
+    # Mriya end
 
 - type: entity
   parent: CMHeadsetRequisition
   id: CMHeadsetChef
-  name: гарнітура кухні
+  name: гарнітура кухаря
   description: Використовується корабельним кухонним персоналом, заповнена шумом шиплячих каструль.
   components:
   - type: ContainerFill
@@ -199,7 +212,7 @@
 - type: entity
   parent: RMCHeadsetShip
   id: CMHeadsetMedical
-  name: гарнітура медичного
+  name: гарнітура медика
   description: Гарнітура, яка використовується досвідченим персоналом медичного відділку.
   components:
   - type: Sprite
@@ -213,10 +226,13 @@
     defaultMode: ChiefMedicalOfficer
     trackerModes:
     - ChiefMedicalOfficer
-    - CommandingOfficer # Sich
-    - ExecutiveOfficer # Sich
-    - SquadLeader # Sich
-    - PrimaryLandingZone # Sich
+    # Mriya start
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - SeniorEnlistedAdvisor
+    - SquadLeader
+    - PrimaryLandingZone
+    # Mriya end
 
 - type: entity
   parent: RMCHeadsetShip
@@ -235,9 +251,12 @@
     defaultMode: ChiefMedicalOfficer
     trackerModes:
     - ChiefMedicalOfficer
-    - CommandingOfficer # Sich
-    - ExecutiveOfficer # Sich
-    - PrimaryLandingZone # Sich
+    # Mriya start
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - SeniorEnlistedAdvisor
+    - PrimaryLandingZone
+    # Mriya end
 
 - type: entity
   parent: RMCHeadsetShip
@@ -265,6 +284,15 @@
     cooldown: 60
   - type: RMCHeadset
     radioTextIncrease: 3
+  - type: GrantSquadLeaderTracker # Mriya
+    defaultMode: CommandingOfficer
+    trackerModes:
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - AuxiliarySupportOfficer
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    - PrimaryLandingZone
 
 - type: entity
   parent: RMCHeadsetShip
@@ -284,7 +312,10 @@
     trackerModes:
     - ChiefMilitaryPolice
     - MilitaryWarden
-    - ProvostInspector
+    # Mriya start
+    #- ProvostInspector – не використовується у нас
+    - SeniorEnlistedAdvisor
+    # Mriya end
 
 - type: entity
   parent: CMHeadsetMPO
@@ -299,16 +330,19 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    - AuxiliarySupportOfficer # Sich
-    - StaffOfficer # Sich
-    - ChiefEngineer # Sich
-    - ChiefMedicalOfficer # Sich
-    - Quartermaster # Sich
-    - SquadLeader # Sich
-    - PrimaryLandingZone # Sich
+    # Mriya start
+    - AuxiliarySupportOfficer
+    - StaffOfficer
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    - SquadLeader
+    - PrimaryLandingZone
+    # Mriya end
     - ChiefMilitaryPolice
     - MilitaryWarden
-    - ProvostInspector # Sich
 
 - type: entity
   parent: RMCHeadsetShip
@@ -339,12 +373,16 @@
     - CommandingOfficer
     - ExecutiveOfficer
     - AuxiliarySupportOfficer
-    - StaffOfficer # Sich
-    - ChiefEngineer # Sich
-    - ChiefMedicalOfficer # Sich
-    - Quartermaster # Sich
+    # Mriya start
+    - StaffOfficer
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    # Mriya end
     - MilitaryWarden
-    - ProvostInspector
+    #- ProvostInspector – Mriya
 
 - type: entity
   parent: CMHeadsetCMP
@@ -359,7 +397,11 @@
     - ExecutiveOfficer
     - AuxiliarySupportOfficer
     - ChiefMilitaryPolice
-    - ProvostInspector
+    # Mriya start
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    # Mriya end
+    #- ProvostInspector – Mriya
 
 - type: entity
   parent: RMCHeadsetShip
@@ -378,7 +420,7 @@
     cooldown: 60
   - type: RMCHeadset
     radioTextIncrease: 3
-  - type: GrantSquadLeaderTracker # Sich
+  - type: GrantSquadLeaderTracker # Mriya
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -389,6 +431,9 @@
     - ChiefEngineer
     - ChiefMedicalOfficer
     - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    - SquadLeader
     - PrimaryLandingZone
 
 - type: entity
@@ -413,7 +458,7 @@
       key_slots:
       - CMEncryptionKeyCommon
       - CMEncryptionKeyPilot
-  - type: RMCRadioFilter # Sich
+  - type: RMCRadioFilter # Mriya
     disabledChannels:
     - MarineAlpha
     - MarineBravo
@@ -429,12 +474,15 @@
     defaultMode: AuxiliarySupportOfficer
     trackerModes:
     - AuxiliarySupportOfficer
-    - CommandingOfficer # Sich
-    - ExecutiveOfficer # Sich
-    - PilotGunship # Sich
-    - PilotDropship # Sich
-    - DropshipCrewChief # Sich
-    - PrimaryLandingZone # Sich
+    # Mriya start
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - PilotGunship
+    - PilotDropship
+    - DropshipCrewChief
+    - SeniorEnlistedAdvisor
+    - PrimaryLandingZone
+    # Mriya end
 
 - type: entity
   parent: RMCHeadsetMarine
@@ -457,12 +505,20 @@
     - MarineFoxtrot
   - type: RMCHeadset
     radioTextIncrease: 3
+  - type: EncryptionKeyHolder
+    defaultChannel: MarineIntel
   - type: GrantSquadLeaderTracker
     defaultMode: AuxiliarySupportOfficer
     trackerModes:
-    - CommandingOfficer # Sich
-    - ExecutiveOfficer # Sich
+    # Mriya start
+    - CommandingOfficer
+    - ExecutiveOfficer
+    # Mriya end
     - AuxiliarySupportOfficer
+    # Mriya start
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    # Mriya end
     - SquadLeader
     - FireteamLeader
     - PrimaryLandingZone
@@ -471,7 +527,7 @@
   parent: RMCHeadsetShip
   id: RMCHeadsetLiaison
   name: гарнітура представника корпорації
-  description: Використовується ПК задля переконування людей підписати угоди про нерозголошення.
+  description: Використовується Представником Корпорації задля переконування людей підписати угоди про нерозголошення.
   components:
   - type: Sprite
     state: we_ya_headset
@@ -486,6 +542,30 @@
     - WeYa
   - type: GrantSquadLeaderTracker
     defaultMode: DirectorPmc
+    trackerModes:
+    - DirectorPmc
+    - LeaderPmc
+    - CorporateLiaison
+
+- type: entity
+  parent: RMCHeadsetShip
+  id: RMCHeadsetExecutiveBodyguard
+  name: гарнітура корпоративного охоронця
+  description: Використовується Корпоративним Охоронцем, заради забезпечення безпеки Представника Корпорації.
+  components:
+  - type: Sprite
+    state: we_ya_headset
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - CMEncryptionKeyCommon
+      - RMCEncryptionKeyExecutiveBodyguard
+  - type: GrantMarineIcons
+    factions:
+    - UNMC
+    - WeYa
+  - type: GrantSquadLeaderTracker
+    defaultMode: CorporateLiaison
     trackerModes:
     - DirectorPmc
     - LeaderPmc
@@ -525,13 +605,18 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    - AuxiliarySupportOfficer # Sich
-    - StaffOfficer # Sich
-    - ChiefMilitaryPolice # Sich
-    - ChiefEngineer # Sich
-    - ChiefMedicalOfficer # Sich
-    - Quartermaster # Sich
-    - PrimaryLandingZone # Sich
+    # Mriya start
+    - AuxiliarySupportOfficer
+    - StaffOfficer
+    - ChiefMilitaryPolice
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    - SquadLeader
+    - PrimaryLandingZone
+    # Mriya end
 
 - type: entity
   parent: RMCHeadsetShip
@@ -583,12 +668,16 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    - AuxiliarySupportOfficer # Sich
-    - StaffOfficer # Sich
+    # Mriya start
+    - AuxiliarySupportOfficer
+    - StaffOfficer
     - ChiefMilitaryPolice
-    - ChiefEngineer # Sich
-    - ChiefMedicalOfficer # Sich
-    - Quartermaster # Sich
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    # Mriya end
     - Rifleman
 
 - type: entity
@@ -611,12 +700,16 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    - AuxiliarySupportOfficer # Sich
-    - StaffOfficer # Sich
-    - ChiefMilitaryPolice # Sich
-    - ChiefEngineer # Sich
-    - ChiefMedicalOfficer # Sich
-    - Quartermaster # Sich
+    # Mriya end
+    - AuxiliarySupportOfficer
+    - StaffOfficer
+    - ChiefMilitaryPolice
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SeniorEnlistedAdvisor
+    - Synthetic
+    # Mriya end
     - SquadLeader
     - PrimaryLandingZone
 
@@ -626,3 +719,34 @@
   id: RMCHeadsetPrisoner
   name: гарнітура в'язня
   description: Гарнітура, яка видається в'язням, як і зазначено Морським Правом.
+
+# Tanker headset
+- type: entity
+  parent: RMCHeadsetShip
+  id: RMCHeadsetCrewman
+  name: гарнітура оператора транспорту
+  description: Видаєтся операторам транспорту КМПОН. Має нестандарту дужку.
+  components:
+  - type: Sprite
+    state: mcom_headset
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - CMEncryptionKeyCommon
+      - CMEncryptionKeyCrewman
+  - type: HeadsetMultiBroadcast
+    cooldown: 60
+  - type: RMCHeadset
+    radioTextIncrease: 3
+  - type: GrantSquadLeaderTracker
+    defaultMode: CommandingOfficer
+    trackerModes:
+    - CommandingOfficer
+    - ExecutiveOfficer
+    # Mriya start
+    - AuxiliarySupportOfficer
+    - StaffOfficer
+    - SeniorEnlistedAdvisor
+    - SquadLeader
+    - PrimaryLandingZone
+    # Mriya end

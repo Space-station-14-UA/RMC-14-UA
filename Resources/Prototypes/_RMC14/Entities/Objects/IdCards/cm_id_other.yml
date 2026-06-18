@@ -232,6 +232,15 @@
     - RMCWeYa
 
 - type: entity
+  parent: RMCIDCardPMC
+  id: RMCIDCardExecutiveBodyguard
+  components:
+  - type: ItemIFF
+    factions:
+    - FactionMarine
+    - FactionWeYa
+
+- type: entity
   parent: CMIDCardLanyard
   id: RMCIDCardBureauObserver
   name: bureau observer ID card
@@ -330,15 +339,15 @@
   suffix: Survivor
   components:
   - type: PresetIdCard
-    job: RMCJobSyntheticColony
+    job: RMCSyntheticColony
   - type: ItemIFF
     factions:
     - FactionSurvivor
 
 - type: entity
   id: RMCIDCardAegis
-  name: AEGIS Access Badge
-  description: High-Level AEGIS Access Badge, granting access to many of their restricted areas and equipment. Required to unlock AEGIS crates.
+  name: ключ-карта доступу ЕГІДА
+  description: Ключ-картка високого рівня доступу корпорації ЕГІДА, що надає доступ до всіх їх найважливіших розробок. Саме нею можна відкрити безпечні контейнери ЕГІДА!
   components:
   - type: WarpPoint
   - type: Sprite
@@ -362,12 +371,65 @@
 - type: entity
   parent: RMCIDCardAegis
   id: RMCIDCardAegisIntel
-  name: AEGIS Access Badge
+#  name: AEGIS Access Badge – Sich
   suffix: Intel-giving
-  description: High-Level AEGIS Access Badge, granting access to many of their restricted areas and equipment. Required to unlock AEGIS crates. It has some blood on it.
+  description: Ключ-картка високого рівня доступу корпорації ЕГІДА, що надає доступ до всіх їх найважливіших розробок. Саме нею можна відкрити безпечні контейнери ЕГІДА! Вона чомусь вкрита кров'ю...
   components:
   - type: IntelRescueSurvivorObjective
     value: 2
   - type: Sprite
     sprite: _RMC14/Objects/CMIDs/aegis.rsi
     state: bloody
+
+
+# CBRN
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: CMDogtagCBRNRifleman
+  name: CBRN Rifleman's dogtags
+  components:
+  - type: PresetIdCard
+    job: RMCCBRNRifleman
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: CMDogtagCBRNCombatTech
+  name: CBRN Combat Technician's dogtags
+  components:
+  - type: PresetIdCard
+    job: RMCCBRNCombatTech
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: CMDogtagCBRNFTL
+  name: CBRN Fireteam Leader's dogtags
+  components:
+  - type: PresetIdCard
+    job: RMCCBRNFireteamLeader
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: CMDogtagCBRNSL
+  name: CBRN Squad Leader's dogtags
+  components:
+  - type: PresetIdCard
+    job: RMCCBRNSquadLeader
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: CMDogtagCBRNWS
+  name: CBRN Weapons Specialist's dogtags
+  components:
+  - type: PresetIdCard
+    job: RMCCBRNWS
+
+- type: entity
+  parent: CMIDCardStandardDogtag
+  id: CMDogtagCBRNMedic
+  name: CBRN Hospital Corpsman's dogtags
+  components:
+  - type: PresetIdCard
+    job: RMCCBRNMedic
+
+

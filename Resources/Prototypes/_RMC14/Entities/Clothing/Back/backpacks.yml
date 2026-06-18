@@ -200,6 +200,9 @@
       Classic: _RMC14/Objects/Clothing/Back/Backpacks/Marines/mortar/jungle-desert-classic.rsi
       Snow: _RMC14/Objects/Clothing/Back/Backpacks/Marines/mortar/snow-urban.rsi
       Urban: _RMC14/Objects/Clothing/Back/Backpacks/Marines/mortar/snow-urban.rsi
+  - type: GuideHelp
+    guides:
+    - RMCGuideRoleMortar
 
 - type: entity
   parent: CMBackpack
@@ -258,7 +261,6 @@
   name: ВРС загального призначення
   description: Поєднання ременів та пласталевого каркасу що дозволяє переносити громіздкі коробки. Незважаючи на скромність конструкції, далеко не кожен зможе нести цей тягар.
   components:
-  - type: SichSherpaItem # Sich
   - type: Item
     size: Huge
     sprite: _RMC14/Objects/Clothing/Back/Backpacks/Marines/standard.rsi
@@ -268,36 +270,24 @@
     layers:
     - state: ammo_pack-0
       map: ["enum.StorageFillLayers.Fill"]
-#  - type: ClothingSpeedModifier - Sich
-#    walkModifier: 0.910
-#    sprintModifier: 0.850
-#  - type: HeldSpeedModifier
-#    walkModifier: 0.600
-#    sprintModifier: 0.600
+  - type: ClothingSpeedModifier
+    walkModifier: 0.910
+    sprintModifier: 0.850
+  - type: HeldSpeedModifier
   - type: StorageFillVisualizer
     fillBaseName: ammo_pack
     maxFillLevels: 4
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,7,1 #4 slots Sich
+    - 0,0,5,1 #3 slots
     whitelist:
-      tags: #Sich
+      tags:
       - RMCAmmoBox
-      - RMCFlareBox
-      - SichBulletBoxSmartGun
-  - type: LimitedStorage # Sich
-    limits:
-    - popup: rmc-storage-limit-one-bulletbox-smartgun
-      whitelist:
-        tags:
-        - SichBulletBoxSmartGun
-    - popup: rmc-storage-limit-not-flarebox
-      blacklist:
-        tags:
-        - RMCFlareBox
-      whitelist: null
-      count: 3
+      components:
+      - EmptySandbag
+      - FullSandbag
+      - RMCFoldingBarricadeStack
   - type: CMStorageVisualizer
     storageClosed: null
     storageOpen: null
@@ -319,23 +309,8 @@
       components:
       - EmptySandbag
       - FullSandbag
+      - RMCFoldingBarricadeStack
       - MortarShell
-
-- type: entity
-  parent: CMBackpackWelder
-  id: RMCBackpackWelderPMC
-  name: наплічник техніка ПВК з паливом для зварки
-  description: Ергономічний, захищений, з високою ємністю, створений для найманців Вестон-Ямада. Цей містить бак з рідиною для заправки зварювальних апаратів.
-  components:
-  - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Back/Backpacks/PMC/welder.rsi
-    layers:
-    - state: icon
-  - type: CMStorageVisualizer
-    storageClosed: null
-    storageOpen: null
-  - type: ItemCamouflage
-    camouflageVariations: {}
 
 - type: entity
   parent: RMCSatchelPMC
@@ -382,6 +357,91 @@
     - 0,0,20,1 # 21 Slots
 
 - type: entity
+  parent: RMCBackpackRCMSmallPVP
+  id: RMCBackpackRCMSmallPVPLieutenant
+  suffix: PVP, RCM, Filled Lieutenant
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMAdvFirstAidKitFilled
+    - id: RMCDefibrillatorCompact
+    - id: RMCPacketGrenadeIncendiaryFilled # TODO RMC14 R2175
+    - id: CMPacketGrenadeHighExplosiveFilled # TODO RMC14 R2175
+    - id: RMCSyringeCase
+    - id: RMCPackFlareL96
+    - id: RMCMagazineRifleL24
+
+- type: entity
+  parent: RMCBackpackRCMSmallPVP
+  id: RMCBackpackRCMSmallPVPMajor
+  suffix: PVP, RCM, Filled Major
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMAdvFirstAidKitFilled
+    - id: RMCDefibrillatorCompact
+    - id: RMCPacketGrenadeIncendiaryFilled # TODO RMC14 R2175
+    - id: CMPacketGrenadeHighExplosiveFilled # TODO RMC14 R2175
+    - id: RMCSyringeCase
+    - id: RMCPackFlareL96
+
+- type: entity
+  parent: RMCBackpackRCMSmallPVP
+  id: RMCBackpackRCMSmallPVPMarksman
+  suffix: PVP, RCM, Filled Marksman
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCMagazineRifleL24AP
+    - id: RMCPacketGrenadeIncendiaryFilled # TODO RMC14 R2175
+    - id: CMPacketGrenadeHighExplosiveFilled # TODO RMC14 R2175
+    - id: RMCPackFlareL96
+
+- type: entity
+  parent: RMCBackpackRCMSmallPVP
+  id: RMCBackpackRCMSmallPVPRifleman
+  suffix: PVP, RCM, Filled Rifleman
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCMagazineRifleL83A3AP
+    - id: RMCMagazineRifleL83A3
+    - id: RMCPacketGrenadeIncendiaryFilled # TODO RMC14 R2175
+    - id: CMPacketGrenadeHighExplosiveFilled # TODO RMC14 R2175
+    - id: RMCPackFlareL96
+
+- type: entity
+  parent: RMCBackpackRCMSmallPVP
+  id: RMCBackpackRCMSmallPVPSmartgun
+  suffix: PVP, RCM, Filled Smartgun
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMFirstAidKitFilled
+    - id: RMCPowerCellSmartgun
+    - id: RMCMagazineSmartGunHT
+      amount: 2
+    - id: RMCPacketGrenadeIncendiaryFilled # TODO RMC14 R2175
+    - id: CMPacketGrenadeHighExplosiveFilled # TODO RMC14 R2175
+    - id: RMCPackFlareL96
+
+- type: entity
+  parent: RMCBackpackRCMSmallPVP
+  id: RMCBackpackRCMSmallPVPTeamlead
+  suffix: PVP, RCM, Filled Teamlead
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMAdvFirstAidKitFilled
+    - id: RMCDefibrillatorCompact
+    - id: RMCSyringeCase
+    - id: CMCautery
+    - id: RMCPacketGrenadeIncendiaryFilled # TODO RMC14 R2175
+    - id: CMPacketGrenadeHighExplosiveFilled # TODO RMC14 R2175
+    - id: RMCMagazineRifleL24
+    - id: RMCPackFlareL96
+
+- type: entity
   parent: CMPersonalStorageBase
   id: RMCBackpackRCMMedium
   name: standard RCM backpack
@@ -405,7 +465,7 @@
     - 0,0,17,1
   - type: StorageCloseOnMove
     skipInHand: true
-    
+
 - type: entity
   parent: RMCBackpackRCMMedium
   id: RMCBackpackRCMMediumPVP
@@ -415,6 +475,24 @@
     maxItemSize: Normal
     grid:
     - 0,0,23,1 # 24 Slots
+
+- type: entity
+  parent: RMCBackpackRCMMediumPVP
+  id: RMCBackpackRCMMediumPVPFilled
+  suffix: PVP, RCM, Filled Captain
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMAdvFirstAidKitFilled
+    - id: RMCDefibrillatorCompact
+    - id: RMCPacketGrenadeIncendiaryFilled
+    - id: CMPacketGrenadeHighExplosiveFilled
+    - id: RMCHeadRoyalBeret
+    - id: RMCMaskGasRCM
+    - id: RMCSyringeCase
+    - id: CMPortableSurgicalBedSpawnFolded
+    - id: RMCTacticalPrybar
+    - id: RMCMRETSE
 
 - type: entity
   parent: CMBackpack
@@ -438,7 +516,7 @@
     maxItemSize: Normal
     grid:
     - 0,0,23,1
-      
+
 - type: entity
   parent: RMCBackpackRCMLarge
   id: RMCBackpackRCMLargePVP
@@ -506,9 +584,27 @@
     - 0,0,23,1 # 24 Slots
 
 - type: entity
-  parent: RMCBackpackRCMMedicPVP 
+  parent: RMCBackpackRCMMedicPVP
+  id: RMCBackpackRCMMedicPVPFilled
+  suffix: PVP, RCM, Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMAdvFirstAidKitFilled
+    - id: RMCDefibrillatorCompact
+    - id: RMCPacketGrenadeIncendiaryFilled # TODO RMC14 R2175
+    - id: CMPacketGrenadeHighExplosiveFilled # TODO RMC14 R2175 // Why the FUCK does the medic get nades?
+    - id: RMCHeadRoyalBeret
+    - id: RMCMaskGasRCM
+    - id: RMCSyringeCase
+    - id: CMPortableSurgicalBedSpawnFolded
+    - id: RMCTacticalPrybar
+    - id: RMCMRETSE
+
+- type: entity
+  parent: RMCBackpackRCMMedicPVP
   id: RMCBackpackRCMMedicPVPFilledParaMedic
-  suffix: Filled, Paramarine Medic
+  suffix: PVP, RCM, Filled Paramarine
   components:
     - type: StorageFill
       contents:
@@ -517,3 +613,19 @@
         - id: CMFireExtinguisherPortable
         - id: CMDefibrillator
         - id: CMHealthAnalyzer
+
+- type: entity
+  parent: RMCSatchelPMC
+  id: RMCBackpackBobda
+  name: back mounted Bobda vending machine
+  description: The loading mechanism for the Bobda Slinger Supremo and a portable Bobda vendor!
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Back/Backpacks/Civilians/bobda.rsi
+  - type: Storage
+    grid:
+    - 0,0,29,1 # 30
+    storageOpenSound:
+      path:  /Audio/Machines/machine_vend.ogg
+      params:
+        volume: -7

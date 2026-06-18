@@ -126,7 +126,12 @@
     ventCrawlIcon: lesser
   - type: RMCActionOrder
     id: CMXenoLesserDrone
-#  - type: ExcludedFromKingVote – Sich
-  - type: XenoEvolution # Sich
+#  - type: ExcludedFromKingVote – Mriya
+  - type: MindTakeoverBehavior
+    ejectFromLarvaQueues: false
+  - type: RemoveComponents
+    components:
+    - type: CanBeLarvaQueued
+  - type: XenoEvolution # Mriya
     strains:
     - RMCXenoLesserCarrier

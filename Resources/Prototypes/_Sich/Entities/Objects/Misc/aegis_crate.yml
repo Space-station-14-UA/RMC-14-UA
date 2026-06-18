@@ -1,0 +1,8 @@
+# Для заміни ядерки на ЕГІДу, такий ж ящик, але відкривається будь-який офіцером
+- type: entity
+  parent: RMCAegisBox
+  id: MRAegisBoxCommand
+  description: Безпечний ящик для транспортування обладнання ЕГІДА. Здається достатньо міцним, щоб витримати будь-що. Якщо він закритий, то для розблокування потрібен офіцер.
+  components:
+    - type: AccessReader
+      access: [["RMCAccessCommand"]]

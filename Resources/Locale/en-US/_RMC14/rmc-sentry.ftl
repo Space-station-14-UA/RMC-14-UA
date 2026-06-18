@@ -32,32 +32,5 @@ rmc-sentry-disassemble-finish-others = {$user} склав {$sentry}.
 
 rmc-sentry-unanchor-is-on = {CAPITALIZE($sentry)} наразі активна. Двигуни заважають вам безпечно її скласти.
 
-health-examinable-sentry-none = Виглядає повністю цілою.
-
-health-examinable-sentry-Blunt-10 = [color=yellow]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-HAVE($target)} кілька вм'ятин.[/color]
-health-examinable-sentry-Blunt-25 = [color=orange]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} доволі побита.[/color]
-health-examinable-sentry-Blunt-50 = [color=red]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} вкрита величезними вм'ятинами![/color]
-health-examinable-sentry-Blunt-75 = [color=crimson]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} майже розсипалася![/color]
-
-health-examinable-sentry-Slash-10 = [color=yellow]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-HAVE($target)} кілька подряпин.[/color]
-health-examinable-sentry-Slash-25 = [color=orange]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} доволі подряпана.[/color]
-health-examinable-sentry-Slash-50 = [color=red]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} уся вкрита товстими тріщинами![/color]
-health-examinable-sentry-Slash-75 = [color=crimson]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} от-от розпадеться![/color]
-
-health-examinable-sentry-Piercing-10 = [color=yellow]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-HAVE($target)} кілька дірок.[/color]
-health-examinable-sentry-Piercing-25 = [color=orange]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-HAVE($target)} багацько дірок.[/color]
-health-examinable-sentry-Piercing-50 = [color=red]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} роздірявлена вкрай![/color]
-health-examinable-sentry-Piercing-75 = [color=crimson]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} майже знищена![/color]
-
-health-examinable-sentry-Heat-10 = [color=yellow]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-HAVE($target)} трохи роз'їдена.[/color]
-health-examinable-sentry-Heat-25 = [color=orange]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} доволі роз'їдена.[/color]
-health-examinable-sentry-Heat-50 = [color=red]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-HAVE($target)} дуже роз'їдена![/color]
-health-examinable-sentry-Heat-75 = [color=crimson]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} майже розвалилася![/color]
-
-health-examinable-sentry-Shock-10 = [color=yellow]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-HAVE($target)} трохи обпалена.[/color]
-health-examinable-sentry-Shock-25 = [color=orange]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} злегка обвуглена.[/color]
-health-examinable-sentry-Shock-50 = [color=red]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} іскриться![/color]
-health-examinable-sentry-Shock-75 = [color=crimson]{CAPITALIZE(SUBJECT($target))} ледве функціонує![/color]
-
 rmc-sentry-not-emergency = {CAPITALIZE($deployer)} можна активувати лише в екстрених випадках.
 rmc-sentry-deploy = Ви встановили {$spawned}

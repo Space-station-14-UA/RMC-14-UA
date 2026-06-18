@@ -3,6 +3,7 @@
   parent: PottedPlantRandom
   id: CMPottedPlantRandom
   name: спавнер випадкових горщиків з рослинами
+  suffix: RMC
   components:
   - type: RandomSpawner
     offset: 0

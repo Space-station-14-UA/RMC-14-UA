@@ -127,5 +127,11 @@ rmc-job-name-corp-dep-director = WE-YA Deputy Director
 rmc-ghost-name-corp-director = WE-YA Director (Neutral)
 rmc-job-name-corp-director = WE-YA Director
 
+# CL Bodyguard
+rmc-job-name-executive-bodyguard = Корпоративний Охоронець
+rmc-job-description-executive-bodyguard = Захищайте Представника Корпорації та його офіс. Пам'ятайте, що ви лише доповнення до Представника. Не полишайте його та не створюйте зайвих проблем.
+rmc-job-prefix-executive-bodyguard = КО
+RMCWeYaExecutiveBodyguard = Корпоративний Охоронець
+
 # Corpses
 rmc-job-name-pmc-operator-corpse = PMC Operator

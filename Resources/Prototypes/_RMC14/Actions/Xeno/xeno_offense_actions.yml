@@ -11,13 +11,15 @@
       state: corrosive_acid
     checkCanInteract: false
   - type: TargetAction
+    repeat: true
   - type: EntityTargetAction
+    toggleOutline: false
     event: !type:XenoCorrosiveAcidEvent
       acidId: XenoAcidNormal
       strength: Normal
       plasmaCost: 100
       time: 50 # seconds
-      dps: 8
+      dps: 7.2
       expendableLightDps: 2.5
 
 - type: entity
@@ -41,14 +43,16 @@
       state: corrosive_acid
     checkCanInteract: false
   - type: TargetAction
+    repeat: true
   - type: EntityTargetAction
+    toggleOutline: false
     event: !type:XenoCorrosiveAcidEvent
       acidId: XenoAcidWeak
       strength: Weak
       plasmaCost: 75
       time: 125 # seconds or 2~ minutes
-      dps: 4
-      expendableLightDps: 0.3
+      dps: 3.6
+      expendableLightDps: 0.8
 
 - type: entity
   parent: ActionXenoAcidNormal
@@ -63,14 +67,16 @@
       state: corrosive_acid
     checkCanInteract: false
   - type: TargetAction
+    repeat: true
   - type: EntityTargetAction
+    toggleOutline: false
     event: !type:XenoCorrosiveAcidEvent
       acidId: XenoAcidStrong
       strength: Strong
       plasmaCost: 125
       time: 20 # seconds
-      dps: 20
-      expendableLightDps: 23.4375
+      dps: 18
+      expendableLightDps: 35
 
 - type: entity
   parent: ActionXenoAcidNormal
@@ -85,7 +91,9 @@
       state: corrosive_acid
     checkCanInteract: false
   - type: TargetAction
+    repeat: true
   - type: EntityTargetAction
+    toggleOutline: false
     event: !type:XenoCorrosiveAcidEvent
       acidId: XenoAcidStrong
       strength: Strong
@@ -93,8 +101,8 @@
       energyCost: 100
       applyTimeMultiplier: 0.25
       time: 20 # seconds
-      dps: 20
-      expendableLightDps: 23.4375
+      dps: 18
+      expendableLightDps: 35
 
 - type: entity
   id: ActionXenoRegurgitate
@@ -154,8 +162,40 @@
 - type: entity
   parent: ActionXenoTailStabCorrosive
   id: ActionXenoTailStabBoiler
-  name: Кислотний Удар Хвостом
-  description: Атакуйте хвостом в заданому напрямку. Перезарядка відбуватиметься швидше, якщо ви промахнулися. [color=red]Впорскує в ціль розбавлену молекулярну кислоту чи нейротоксин, з часом завдає шкоду або тимчасово позбавляє її можливості рухатися. Що саме зробить ця атака, залежить від обраного типу газу.[/color]
+  name: Corrosive Tail Stab
+  description: Strikes the targeted enemy or barricade. The cooldown is faster if you miss. [color=red]It also injects diluted molecular acid or neurotoxin into the target, dealing damage or stunning over time. Which type depends on current gas type.[/color]
+
+- type: entity
+  id: ActionXenoTailStabLance
+  parent: ActionXenoTailStab
+  name: Хвостовий укол списом
+  components:
+  - type: ActionSharedCooldown
+    id: ActionXenoTailStabLance
+    ids:
+    - ActionXenoTailStabLanceAlt
+    cooldown: 10
+
+- type: entity
+  id: ActionXenoTailStabLanceAlt
+  parent: ActionXenoTailStabLance
+  name: Хвостовий удар списом
+  description: Атакуйте хвостом в заданому напрямку, завдаючи невеликої бронебійної шкоди. Перезарядка дії відбуватиметься швидше, якщо ви промахнулися.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: tail_attack
+    useDelay: 3
+  - type: WorldTargetAction
+    event: !type:XenoTailStabEvent
+      useAltTailStab: True
+  - type: ActionSharedCooldown
+    id: ActionXenoTailStabLanceAlt
+    ids:
+    - ActionXenoTailStabLance
+    cooldown: 3
 
 - type: entity
   id: ActionXenoLeap
@@ -269,7 +309,7 @@
 - type: entity
   id: ActionXenoHeadbutt
   parent: ActionXenoBase
-  name: Удар Головою (10) # TODO RMC14 proper plasma costs
+  name: Удар Головою
   description: Нападає на вказаного ворога і відкидає першого враженого на вашому шляху, злегка пробиваючи броню. Завдає менше шкоди, але має більшу силу відкидання, коли гребінь опущений.
   components:
   - type: Action
@@ -277,15 +317,17 @@
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
       state: headbutt
-    useDelay: 6
+    useDelay: 4
   - type: TargetAction
     range: 3.5
     deselectOnMiss: false
   - type: EntityTargetAction
     event: !type:XenoHeadbuttActionEvent
+    whitelist:
+      components:
+      - Marine
+      - Xeno
   - type: XenoOffensiveAction
-  - type: XenoActionPlasma
-    cost: 10
 
 - type: entity
   parent: CMGuidebookActionXenoBase
@@ -298,7 +340,7 @@
 - type: entity
   id: ActionXenoTailSweep
   parent: ActionXenoBase
-  name: Обертовий Удар Хвостом (10) # TODO RMC14 proper plasma costs
+  name: Обертовий Удар Хвостом (10) # See XenoTailSweepComponent.cs for cost
   description: Змусьте усіх інкубаторів навколо вас впасти.
   components:
   - type: Action
@@ -306,7 +348,7 @@
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
       state: tail_sweep
-    useDelay: 15
+    useDelay: 11
   - type: InstantAction
     event: !type:XenoTailSweepActionEvent
   - type: RMCDazeableAction
@@ -332,6 +374,7 @@
       state: xeno_spit
     useDelay: 1.5 # Sich. 2 в оригіналі
   - type: TargetAction
+    repeat: true
     range: 15
     checkCanAccess: false
   - type: EntityTargetAction
@@ -352,6 +395,7 @@
       state: acid_shotgun
     useDelay: 7
   - type: TargetAction
+    repeat: true
     range: 15
     checkCanAccess: false
   - type: EntityTargetAction
@@ -380,6 +424,7 @@
       state: xeno_spit
     useDelay: 1.5 # Sich. 2.5 в оригіналі
   - type: TargetAction
+    repeat: true
     range: 15
     checkCanAccess: false
   - type: EntityTargetAction
@@ -751,7 +796,7 @@
       state: ready_charge
     useDelay: 14
   - type: TargetAction
-    range: 9
+    range: 7
     checkCanAccess: false
   - type: WorldTargetAction
     event: !type:XenoChargeActionEvent
@@ -922,8 +967,8 @@
 - type: entity
   parent: ActionXenoBase
   id: ActionXenoImpale
-  name: Проколоти (80)
-  description: Пронижіть ворога своїм хвостом. Двічі б'є по позначеній цілі і знімає позначку. Пробиває деяку броню.
+  name: Пронизування (80)
+  description: Пронизує ворога хвостом. Завдаючи удару двічі по позначеному ворогу та забирає позначку. Пробиває частину броні. [color=green]Атакуючи чи використовуючи Пронизування на ворога з критичною позначкою повертає перезарядку.[/color]
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -932,8 +977,9 @@
       state: prae_impale
     useDelay: 13
   - type: TargetAction
-    range: 1.5
+    range: 2
     deselectOnMiss: false
+    repeat: true
   - type: EntityTargetAction
     event: !type:XenoImpaleActionEvent
   - type: XenoOffensiveAction
@@ -941,12 +987,13 @@
   - type: XenoActionPlasma
     cost: 80
   - type: RMCCooldownOnMiss
+    missCooldown: 0.7
 
 - type: entity
   parent: ActionXenoBase
   id: ActionXenoTailTrip
-  name: Змах Хвостом (30)
-  description: Обеззброює та приголомшує ворога. Позначеного ворога приголомшує на довший період, а також знімає з нього позначку.
+  name: Підсічка хвостом (30)
+  description: Розброює та заціплює не позначеного ворога. Приголошмує та заціплює на довший час позначений ворог і видаляє позначку. [color=green]Атакуючи або використовуючи Підсічку хвостом на ворога з критичною позначкою, ви отримуєте повернення перезарядки.[/color]
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -957,6 +1004,7 @@
   - type: TargetAction
     range: 2
     deselectOnMiss: false
+    repeat: true
   - type: EntityTargetAction
     event: !type:XenoTailTripActionEvent
   - type: XenoOffensiveAction
@@ -964,6 +1012,7 @@
     cost: 30
   - type: ActionBlockIfResting
   - type: RMCCooldownOnMiss
+    missCooldown: 0.7
 
 - type: entity
   parent: ActionXenoBase
@@ -1511,3 +1560,92 @@
     deselectOnMiss: false
   - type: WorldTargetAction
     event: !type:XenoDestroyActionEvent
+
+# Trapper Actions
+- type: entity
+  parent: ActionXenoBase
+  id: ActionXenoAcidMine
+  name: Кислотна Міна (40)
+  description: Викликати кислотний вибух у вказаному місці. Кожне влучення скорочує перезарядку Розгортання пасток. Посилені міни завдають більше шкоди та вкривають ворогів кислотою.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: acid_mine
+    useDelay: 5.5
+  - type: XenoAcidMine
+    actionIconEmpowered:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: acid_mine_empowered
+  - type: TargetAction
+    deselectOnMiss: false
+    checkCanAccess: false
+    repeat: true
+    range: 14 #Actual range on the AcidMine component.
+  - type: WorldTargetAction
+    event: !type:XenoAcidMineActionEvent
+  - type: ActionBlockIfResting
+
+- type: entity
+  parent: CMGuidebookActionXenoBase
+  id: RMCGuidebookActionXenoAcidMine
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: acid_mine
+
+- type: entity
+  id: ActionXenoAcidShotgun
+  parent: ActionXenoBase
+  name: Кислотний залп (40)
+  description: Випускає кілька кислотних снарядів, що завдають підвищеної шкоди захопленим цілям. Кожне влучення дає заряд Проникливості, що може посилити Розгортання пасток. Влучення по захопленій цілі дає 10 зарядів.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: acid_shotgun
+    useDelay: 13
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenoAcidShotgunActionEvent
+  - type: ActionBlockIfResting
+  - type: XenoActionPlasma
+    cost: 40
+
+- type: entity
+  id: ActionXenoDeployTraps
+  parent: ActionXenoBase
+  name: Розгортання пасток (60)
+  description: Розгортає лінію пасток. При 10 зарядах проникливості отримує посилення. Посилені пастки зачіплюють довше і посилюють вашу кислотну міну.
+  components:
+  - type: Action
+    useDelay: 20.5
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: gas_mine
+  - type: XenoDeployTraps
+    actionIconEmpowered:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: gas_mine_empowered
+  - type: TargetAction
+    checkCanAccess: false
+    deselectOnMiss: false
+    repeat: true
+    range: 14
+  - type: WorldTargetAction
+    event: !type:XenoDeployTrapsActionEvent
+  - type: XenoActionPlasma
+    cost: 60
+
+- type: entity
+  parent: CMGuidebookActionXenoBase
+  id: RMCGuidebookActionXenoDeployTraps
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: gas_mine

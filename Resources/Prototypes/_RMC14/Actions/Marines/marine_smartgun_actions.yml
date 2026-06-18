@@ -20,7 +20,7 @@
   parent: ActionMarineBase
   id: RMCActionToggleAmmo
   name: Перемкнути Тип Набоїв
-  description: Перемикання типу набоїв Смартгану. [color=red]Ви можете активувати це, натиснувши унікальну клавішу для дій зі зброєю, за замовчуванням пробіл![/color]
+  description: Перемикання типу набоїв СмартГана. [color=red]Ви можете активувати це, натиснувши унікальну клавішу для дій зі зброєю, за замовчуванням пробіл![/color]
   components:
   - type: Action
     icon:
@@ -90,52 +90,3 @@
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:ToggleableMotionDetectorActionEvent
-
-# Guidebook
-- type: entity
-  parent: RMCGuidebookActionSmartGunBase
-  id: RMCGuidebookActionIFF
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: iff_toggle_on
-
-- type: entity
-  parent: RMCGuidebookActionSmartGunBase
-  id: RMCGuidebookActionMotionDetector
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: motion_detector
-
-- type: entity
-  parent: RMCGuidebookActionSmartGunBase
-  id: RMCGuidebookActionToggleAmmoOff
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: ammo_swap_normal
-
-- type: entity
-  parent: RMCGuidebookActionSmartGunBase
-  id: RMCGuidebookActionToggleAmmoOn
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: ammo_swap_ap
-
-- type: entity
-  parent: RMCGuidebookActionSmartGunBase
-  id: RMCGuidebookActionToggleRecoil
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: recoil_compensation
-
-- type: entity
-  parent: RMCGuidebookActionSmartGunBase
-  id: RMCGuidebookActionToggleAutoFire
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: autofire

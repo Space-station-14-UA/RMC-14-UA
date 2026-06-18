@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Screenshot Dmytr0",
+    "size": {
+        "x": 346,
+        "y": 226
+    },
+    "states": [
+        {
+            "name": "mortar_interface"
+        }
+    ]
+}

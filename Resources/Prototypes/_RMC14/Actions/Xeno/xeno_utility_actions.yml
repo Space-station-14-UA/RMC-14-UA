@@ -185,6 +185,21 @@
 
 - type: entity
   parent: ActionXenoBase
+  id: ActionXenoHiveLeaderSquad
+  name: View Hive Team
+  description: Opens your hive squad panel, showing your team members and allowing you to send announcements to them.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: xeno_lead
+    useDelay: 1
+  - type: InstantAction
+    event: !type:HiveLeaderSquadActionEvent
+
+- type: entity
+  parent: ActionXenoBase
   id: ActionXenoLeader
   name: Обрати/Слідкувати за Лідерами
   description: Дає чи знімає з ксеноїдів статус лідера або дає вам спостерігати за ними. Підвищення ксеноїда до лідера дасть йому випромінювати ваші активні наразі феромони, але тільки коли ви в кладці.

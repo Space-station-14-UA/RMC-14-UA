@@ -59,8 +59,8 @@
 - type: entity
   parent: RMCBoxBulletsBase
   id: RMCBoxBulletsRifle
-  name: rifle ammunition box (10x24mm)
-  description: A 10x24mm ammunition box. Used to refill M54C MK1, MK2, M4SPR and M54CE2 HAR magazines. It comes with a leather strap allowing someone to wear it on their back.
+  name: коробка набоїв для гвинтівок (10х24 мм)
+  description: Коробка з набоями калібру 10х24 мм. Використовується для поповнення магазинів М54С МК1, МК2, М4СПГ та М54СЕ2 ВШГ. Має шкіряну лямку, що дозволяє носити її на спині.
   components:
   - type: Sprite
     layers:
@@ -79,6 +79,37 @@
     bulletType: RMCBoxBulletsRifle
 
 - type: entity
+  parent: RMCBoxBulletsBase
+  id: RMCBoxBulletsRifleType71
+  name: rifle ammunition box (5.45x39mm)
+  description: A 5.45x39mm ammunition box. Used to refill Type 71 magazines. It comes with a leather strap allowing to wear it on the back.
+  components:
+  - type: Sprite
+    layers:
+    - state: rifle_box
+      color: "#515237"
+    - state: rifle_box_marking
+      color: "#7c4c1b"
+    - state: rifle_box_generic
+      color: "#ffcb26"
+    - state: rifle_ammo_full_rounds_base
+      map: [ "enum.BulletBoxLayers.Fill" ]
+    - state: rifle_ammo_full_rounds_color
+      map: [ "enum.BulletBoxLayers2.Fill" ]
+      color: "#ffc000"
+  - type: BulletBox
+    bulletType: RMCBoxBulletsRifleType71
+
+- type: entity
+  parent: RMCBoxBulletsRifleType71
+  id: RMCBoxBulletsRifleType71HalfEmpty
+  suffix: Half Empty
+  components:
+  - type: BulletBox
+    bulletType: RMCBoxBulletsRifleType71
+    amount: 300
+
+- type: entity
   parent: RMCBoxBulletsRifle
   id: RMCBoxBulletsRifleEmpty
   suffix: Empty
@@ -93,8 +124,8 @@
 - type: entity
   parent: RMCBoxBulletsBase
   id: RMCBoxBulletsRifleAP
-  name: rifle ammunition box (10x24mm AP)
-  description: A 10x24mm armor-piercing ammunition box. Used to refill M54C MK2, and M4SPR AP magazines. It comes with a leather strap allowing someone to wear it on their back.
+  name: коробка набоїв для гвинтівок (10х24 мм ББ)
+  description: Коробка з бронебійними набоями калібру 10х24 мм. Використовується для поповнення ББ магазинів M54C МК1, МК2, та М4СПГ. Має шкіряну лямку, що дозволяє носити її на спині.
   components:
   - type: Sprite
     layers:
@@ -127,8 +158,8 @@
 - type: entity
   parent: RMCBoxBulletsBase
   id: RMCBoxBulletsSMG
-  name: SMG ammunition box (10x20mm)
-  description: A 10x20mm ammunition box. Used to refill M63 HV and extended magazines. It comes with a leather strap allowing someone to wear it on their back.
+  name: коробка набоїв для ПК (10х20 мм)
+  description: Коробка з набоями калібру 10х20 мм. Використовується для поповнення розширених та звичайних магазинів М63. Має шкіряну лямку, що дозволяє носити її на спині.
   components:
   - type: Sprite
     layers:
@@ -161,8 +192,8 @@
 - type: entity
   parent: RMCBoxBulletsBase
   id: RMCBoxBulletsSMGAP
-  name: SMG ammunition box (10x20mm AP)
-  description: A 10x20mm armor-piercing ammunition box. Used to refill M63 AP magazines. It comes with a leather strap allowing someone to wear it on their back.
+  name: коробка набоїв для ПК (10х20 мм ББ)
+  description: Коробка з бронебійними набоями калібру 10х20 мм. Використовується для поповнення ББ магазинів М63. Має шкіряну лямку, що дозволяє носити її на спині.
   components:
   - type: Sprite
     layers:
@@ -195,8 +226,8 @@
 - type: entity
   parent: RMCBoxBulletsBase
   id: RMCBoxBulletsSmartGun
-  name: коробка з набоями CмартГана (10х30 мм)
-  description: Коробка з набоями калібру 10х30 мм. Використовується для поповнення барабанів СмартГана. Оснащена шкіряним ременем, що дозволяє носити її на спині.
+  name: коробка набоїв для CмартГана (10х30 мм)
+  description: Коробка з набоями калібру 10х30 мм. Використовується для поповнення барабанних магазинів СмартГана. Має шкіряну лямку, що дозволяє носити її на спині.
   components:
   - type: Sprite
     layers:
@@ -295,7 +326,7 @@
     bulletType: RMCBoxBulletsPistolAP
     amount: 0
 
-# 8.88x51mm
+# 7x43mm
 
 - type: entity
   parent: RMCBoxBulletsBase
@@ -358,6 +389,8 @@
   - type: BulletBox
     bulletType: RMCBoxBulletsRifleL90AP
     amount: 0
+
+# 8.88x51mm
 
 - type: entity
   parent: RMCBoxBulletsBase

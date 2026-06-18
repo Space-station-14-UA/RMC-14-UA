@@ -59,7 +59,9 @@
             CMRifleman: [-1, -1]
 
             # Інші. 4-6 загалом
-            CMCorrespondent: [2, 2]
+            CMCorrespondent: [1, 1]
+            CMCombatCorrespondent: [1, 1]
             CMLiaison: [1, 1]
+            RMCWeYaExecutiveBodyguard: [1, 1]
             CMMessTech: [1, 1] # 2 від 20 готових
             RMCJobSynthetic: [1, 1] # від 10 готових

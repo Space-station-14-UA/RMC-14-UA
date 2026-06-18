@@ -5,6 +5,7 @@
   components:
   - type: Area
     avoidBioscan: true
+    alwaysPowered: true
 
 - type: entity
   parent: SMCAreaERT

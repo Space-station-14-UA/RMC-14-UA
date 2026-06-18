@@ -16,3 +16,18 @@ CMJobMilitaryPolice = Військовий Поліціянт
 
 rmc-job-name-honor-guard = Почесна Варта
 rmc-job-prefix-honor-guard = ПВ
+
+rmc-ghost-role-information-riot-control-rules = You are a [color=red][bold]Riot Control Member[/bold][/color]. You are not hostile to any faction.
+                                             You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                             You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                             You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+
+rmc-job-name-riot-control = Придушувач Заворушень Морпіхоти
+rmc-ghost-name-riot-control = Придушувач Заворушень Морпіхоти
+rmc-ghost-role-information-riot-control-description = Забезпечте відновлення порядку та дотримання Морського Права.
+
+rmc-job-name-riot-control-leader = Лідер Придушувачів Заворушень Морпіхоти
+rmc-ghost-name-chief-riot-control = Лідер Придушувачів Заворушень Морпіхоти
+
+rmc-job-prefix-rmp = ПЗМ
+rmc-job-prefix-rmpl = ЛПЗМ

@@ -9,8 +9,6 @@
   name: Король
   description: Кінець. Ось справді найгірша та найжорстокіша істота!
   components:
-  - type: GhostRole
-    name: rmc-job-name-xeno-king
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/King/king.rsi
   - type: MobState

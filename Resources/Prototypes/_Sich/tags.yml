@@ -4,3 +4,7 @@
 
 - type: Tag
   id: SichScarf
+
+# Для шерпи
+- type: Tag
+  id: SichFlareBox

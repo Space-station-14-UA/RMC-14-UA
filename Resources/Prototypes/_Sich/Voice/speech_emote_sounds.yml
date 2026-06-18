@@ -17,7 +17,7 @@
       collection: SichAvaliWhistle
     Call:
       collection: SichAvaliCall
-    Chirp:
+    RMCAvaliChirp:
       collection: SichAvaliChirp
     Hiss:
       path: /Audio/_Sich/Voice/Avali/avali_hiss.ogg

@@ -15,3 +15,7 @@
 - type: trackerMode
   id: DropshipCrewChief
   job: CMDropshipCrewChief
+
+- type: trackerMode
+  id: Synthetic
+  job: RMCJobSynthetic

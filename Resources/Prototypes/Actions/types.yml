@@ -46,11 +46,12 @@
 - type: entity
   parent: BaseAction
   id: ActionScream
-  name: Scream
-  description: AAAAAAAAAAAAAAAAAAAAAAAAA
+  name: Кричати
+  description: ААААААААААААААААААААААААААААА
   components:
   - type: Action
     useDelay: 20
+    priority: -50 # Mriya. Кричати - важливо
     icon: Interface/Actions/scream.png
     checkCanInteract: false
   - type: InstantAction
@@ -70,8 +71,8 @@
 - type: entity
   parent: BaseToggleAction
   id: ActionToggleLight
-  name: Toggle Light
-  description: Turn the light on and off.
+  name: Увімкнути/вимкнути світло
+  description: Вмикає або вимикає світло.
   components:
   - type: Action
     useDelay: 1
@@ -302,8 +303,8 @@
 - type: entity
   parent: BaseMentalAction
   id: ActionSleep
-  name: Sleep
-  description: Go to sleep.
+  name: Спати
+  description: Почати спати.
   components:
   - type: Action
     icon: { sprite: Clothing/Head/Hats/pyjamasyndicatered.rsi, state: icon }
@@ -313,8 +314,8 @@
 - type: entity
   parent: BaseMentalAction
   id: ActionWake
-  name: Wake up
-  description: Stop sleeping.
+  name: Прокинутися
+  description: Перестати спати.
   components:
   - type: Action
     startDelay: true
@@ -362,8 +363,8 @@
 - type: entity
   parent: BaseToggleAction
   id: ActionToggleWagging
-  name: Wagging Tail
-  description: Start or stop wagging your tail.
+  name: Махати хвостом
+  description: Почати або перестати махати хвостом.
   components:
   - type: Action
     icon: { sprite: Mobs/Customization/reptilian_parts.rsi, state: tail_smooth_behind }

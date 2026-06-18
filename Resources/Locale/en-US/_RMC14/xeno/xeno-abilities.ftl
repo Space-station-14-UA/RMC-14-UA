@@ -14,6 +14,24 @@ rmc-xeno-internal-health-increase-user = Ми відчуваємо, як наш�
 rmc-xeno-not-enough-fury = Ми ще недостатньо розлючені для цього!
 rmc-xeno-fury-increase-user = Нас переповнює лють!
 
+# Queen psychic communication
+rmc-xeno-psychic-whisper-message = Whisper to {$target}.
+rmc-xeno-psychic-whisper-sent = We whisper to {$target}.
+rmc-xeno-psychic-target-unknown = that mind
+rmc-xeno-psychic-radiance-message = Radiate a psychic message.
+rmc-xeno-psychic-radiance-no-targets = There are no nearby minds to radiate to.
+rmc-xeno-psychic-radiance-sent = We radiate our thoughts to {$count} nearby minds.
+rmc-xeno-psychic-give-order-message = Give an order to {$target}.
+rmc-xeno-psychic-give-order-must-watch = We must be watching a sister to give an order.
+rmc-xeno-psychic-give-order-sent = We give an order to {$target}.
+rmc-xeno-psychic-target-invalid = That mind is no longer within our reach.
+rmc-xeno-psychic-message-xeno = [color=#921992][font size=14][bold]The voice of {$queen} resonates in your head:[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-message-alien = [color=#921992][font size=14][bold]You hear a strange, alien voice in your head:[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-message-order = [color=#921992][font size=14][bold]{$queen} commands you:[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-ghost-whisper = [color=#921992][font size=14][bold]Psychic Whisper ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-ghost-radiance = [color=#921992][font size=14][bold]Psychic Radiance ({$queen}, {$count} recipients):[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-ghost-order = [color=#921992][font size=14][bold]Psychic Order ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
+
 # Acid reserves
 rmc-xeno-not-enough-acid = У вас недостатньо накопиченої кислоти!
 rmc-xeno-acid-increase-user = Ви відчуваєте, як ваші запаси кислоти зростають!
@@ -56,8 +74,31 @@ rmc-xeno-evolution-cant-evolve-recent-queen-death-seconds = Ви маєте за
 rmc-xeno-evolution-cant-evolve-caste-cooldown = Ми ще не можемо знову еволюціонувати в цей каст (залишилось {$minutes} хвилин і {$seconds} секунд).
 rmc-xeno-evolution-failed-early-weeds = Вулик ще недостатньо розвинений, щоб ви могли еволюціонувати без трави!
 rmc-xeno-evolution-failed-bad-location = Ви не можете еволюціонувати тут.
+rmc-xeno-evolution-failed-marines-dropped = Небесені інкубатори вже приземлилися, ми більше не можемо еволюціонувати в цю форму.
+rmc-xeno-evolution-failed-queen-exists = Вулик вже має королеву!
 rmc-xeno-evolution-start-self = Ми починаємо викручуватись і корчитись.
 rmc-xeno-evolution-start-others = {$xeno} починає викручуватись і корчитись.
+
+# Insight
+rmc-xeno-insight-empower = We have gained sufficient insight in our prey to empower our next Deploy Traps!
+
+# Deploy Traps
+rmc-xeno-deploy-traps-self = We create a sudden surge of traps!
+rmc-xeno-deploy-traps-others = The sapper creates a sudden surge of traps!
+rmc-xeno-deploy-traps-empower = We have tapped into our reserves to prepare a stronger Acid Mine!
+rmc-xeno-deploy-traps-range-fail = That target is too far away!
+rmc-xeno-deploy-traps-see-fail = There's something in the way!
+
+
+# Acid Mine
+rmc-xeno-acid-mine-self = We coax a hidden mine to detonate!
+rmc-xeno-acid-mine-others = The sapper coaxes a hidden mine to detonate!
+rmc-xeno-acid-mine-range-fail = That target is too far away!
+rmc-xeno-acid-mine-see-fail = There's something in the way!
+
+# Adrenaline Surge
+rmc-xeno-adrenaline-surge-ready = You feel your adrenaline glands refill! Your speed boost will activate again.
+rmc-xeno-adrenaline-surge-start = Your adrenaline surges to enhance your speed!
 
 # Fortify
 cm-xeno-fortify-cant-headbutt = Не можна битися головою під час укріплення!
@@ -81,6 +122,16 @@ cm-xeno-acid-not-corrodible = Ви не можете розчинити {$target
 cm-xeno-acid-already-corroding = {CAPITALIZE($target)} вже піддається впливу кислоти!
 rmc-xeno-acid-structure-unmeltable = Ми можемо розплавляти лише барикади та предмети!
 rmc-xeno-acid-too-weak = {CAPITALIZE($target)} не розплавити нашою слабкою кислотою.
+rmc-acid-pickup-blocked = {CAPITALIZE($target)} вкрито кислотою!
+rmc-acid-hole-already-weakened = Вона вже ослаблена.
+rmc-acid-hole-only-small-xenos = Тільки малі ксестри зможуть пролізти у цей отвір.
+rmc-acid-hole-too-large-non-xeno = Ви занадто великі, щоб пролізти в цей отвір.
+rmc-acid-hole-wrong-side = Вам треба підійти до входу, щоб пройти через цей отвір!
+rmc-acid-hole-entrance-blocked = Щось блокує цю сторону отвору.
+rmc-acid-hole-no-exit = Тут нема куди пролазити через отвір.
+rmc-acid-hole-blocked = Щось блокує іншу сторону отвору.
+rmc-acid-hole-repair-blocked = Стіна проламана та повинна бути полагоджена спочатку.
+rmc-acid-hole-repair-requires-nailgun = Вам потрібен цвяхостріл.
 
 # Paralyzing Slash
 cm-xeno-paralyzing-slash-activate = Наступний наш удар буде з нейротоксином!
@@ -286,8 +337,9 @@ rmc-xeno-sacrifice-heal-target-enviorment = {$healer_xeno} вибухає в п�
 rmc-xeno-sacrifice-heal-announce = ;НАША СЕСТРА НЕ ЗАГИНЕ!!!
 
 # Dodge
-rmc-xeno-dodge-self = Тепер ми можемо ухилятися від ворогів!
-rmc-xeno-dodge-end = Ми більше не можемо ухилятися від ворогів!
+rmc-xeno-dodge-self = Тепер ми можемо ухилятися від ворогів та союзників!
+rmc-xeno-dodge-end = Ми більше не можемо ухилятися від ворогів та союзників!
+rmc-xeno-dodge-end-manual = We end our dance early!
 
 # Vanguard Shield
 rmc-xeno-shield-vanguard-hit = Наш щит прийняв удар!
@@ -407,3 +459,18 @@ rmc-doomed-fail = Воно не працює...
 # Destroy
 rmc-destroy-cant-reach = Ми не можемо дістатися того місця!
 rmc-destroy-cant-area = Ми не можемо стрибнути туди!
+
+# Queen Eye
+rmc-xeno-weeds-no-nearby-node = Нам треба, щоб трава була ближче!
+rmc-xeno-queen-eye-no-weeds = Ми не можемо рухати око туди, там нема трави!
+rmc-xeno-queen-eye-expand-weeds-name = Розширити Траву (50)
+rmc-xeno-queen-eye-expand-weeds-desc = Розширює траву далі, або створює вузол на вже існуючій.
+
+# Swift Steps
+rmc-xeno-swift-steps-self = We narrowly dodge {THE($bullet)}!
+rmc-xeno-swift-steps-others = {CAPITALIZE(THE($user))} darts aside, evading {THE($bullet)}!
+
+# Finesse
+rmc-xeno-marked-critical-apply = You feel fear washing down your spine... you could be next!
+rmc-xeno-marked-critical-disappear = You calm down and get back to your senses.
+rmc-xeno-marked-critical-consumed = You've been knocked back to your senses!

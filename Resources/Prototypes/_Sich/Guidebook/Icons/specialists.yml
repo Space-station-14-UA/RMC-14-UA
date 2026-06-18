@@ -1,0 +1,47 @@
+# Іконки
+- type: entity
+  id: MRGuidebookActionSniperBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _RMC14/Actions/marine_sniper_actions.rsi
+
+- type: entity
+  parent: MRGuidebookActionSniperBase
+  id: MRGuidebookActionAimedShot
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: sniper_aim
+
+- type: entity
+  parent: MRGuidebookActionSniperBase
+  id: MRGuidebookActionToggleLaserOn
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: sniper_toggle_laser_on
+
+- type: entity
+  parent: MRGuidebookActionSniperBase
+  id: MRGuidebookActionToggleLaserOff
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: sniper_toggle_laser_off
+
+- type: entity
+  parent: MRGuidebookActionSniperBase
+  id: MRGuidebookActionSpotTarget
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: spotter_target
+
+- type: entity
+  parent: MRGuidebookActionSniperBase
+  id: MRGuidebookActionGhilliePreparePosition
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: prepare_position

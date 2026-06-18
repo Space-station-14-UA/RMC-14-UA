@@ -6,3 +6,4 @@ rmc-repairable-start-self = Ви почали лагодити {$target}
 rmc-repairable-start-others = {$user} почав лагодити {$target}
 rmc-repairable-finish-self = Ви полагодили {$target}
 rmc-repairable-finish-others = {$user} полагодив {$target}
+rmc-repairable-alt-repair = Полагодити

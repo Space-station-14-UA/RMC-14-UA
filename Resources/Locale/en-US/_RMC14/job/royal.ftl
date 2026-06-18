@@ -5,8 +5,8 @@
 
 rmc-ghost-role-information-rcm-description = Забезпечте виживання корабля ОН, ліквідуйте будь-яких ворогів та надайте екіпажу будь-яку можливу допомогу.
 
-rmc-ghost-name-rcm-sgo = Оператор СмартГану Королівської Морпіхоти (Дружні)
-rmc-job-name-rcm-sgo = Оператор СмартГану Королівської Морпіхоти
+rmc-ghost-name-rcm-sgo = Оператор СмартГана Королівської Морпіхоти (Дружні)
+rmc-job-name-rcm-sgo = Оператор СмартГана Королівської Морпіхоти
 rmc-job-prefix-rcm-sgo = КМП ОСГ
 
 rmc-ghost-name-rcm-commando = Royal Crown Marines Rifleman (Friendly)

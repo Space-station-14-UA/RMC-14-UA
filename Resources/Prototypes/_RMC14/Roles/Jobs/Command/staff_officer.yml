@@ -66,6 +66,7 @@
     - type: RMCTrackable # Sich
     - type: MutinyEligible
     - type: RMCAwardRecommendation
+    - type: SeeNewPlayers
 
 - type: startingGear
   id: CMGearStaffOfficer

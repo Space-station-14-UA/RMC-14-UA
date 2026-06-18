@@ -49,7 +49,7 @@ namespace Content.Server._RMC14.Mobs
             bars.DamageContainers.Add("Biological");
             EnsureComp<ShowHealthIconsComponent>(uid);
             EnsureComp<CMGhostXenoHudComponent>(uid);
-            EnsureComp<PropCallingComponent>(uid);
+//            EnsureComp<PropCallingComponent>(uid); – Mriya. Не використовується у нас
         }
 
         private void OnMarineHudAction(EntityUid uid, CMGhostComponent comp, ToggleMarineHudActionEvent args)

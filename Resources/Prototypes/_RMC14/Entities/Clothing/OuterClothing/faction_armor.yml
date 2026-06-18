@@ -98,35 +98,8 @@
     walkModifier: 0.725
     sprintModifier: 0.725
 
-# Freelancer
-- type: entity
-  parent: RMCArmorSPP
-  id: CMArmorFreelancer
-  name: кіраса фрілансера
-  description: Броньована захисна нагрудна пластина, зібрана з різних деталей. Вона чудово тримає удар, адже майстерність виготовлення висока, а дизайн повторює подібні броні у СПН та КМПОН. Багато досвідчених майстрів серед фрилансерів виготовляють такі жилети приблизно по одному на місяць.
-  components:
-  - type: Sprite
-    sprite: _RMC14/Objects/Clothing/OuterClothing/freelancer.rsi
-  - type: CMArmor
-    melee: 25 # CLOTHING_ARMOR_MEDIUMHIGH
-    bullet: 25
-    bio: 15
-    explosionArmor: 20
-  - type: RMCArmorSpeedTier
-    speedTier: light
-  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_LIGHT
-    walkModifier: 0.725
-    sprintModifier: 0.725
-  - type: ExplosionResistance
-    damageCoefficient: 0
-    worn: false
-  - type: Storage
-    grid:
-    - 0,0,3,1 # 2 slots
-    maxItemSize: Small
 
 # Colonial militia
-# TODO: implement storage whitelist for this
 - type: entity
   parent: ClothingOuterStorageBase
   id: RMCCoatMilitia
@@ -142,21 +115,24 @@
     melee: 20 # CLOTHING_ARMOR_MEDIUM
     bullet: 15 # CLOTHING_ARMOR_MEDIUMLOW (bullets)
     explosionArmor: 20 # CLOTHING_ARMOR_MEDIUM
+    bio: 15 # CLOTHING_ARMOR_MEDIUMLOW
   - type: RMCArmorSpeedTier
-    speedTier: light
-  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_LIGHT
-    walkModifier: 0.725
-    sprintModifier: 0.725
+    speedTier: medium
+  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
+    walkModifier: 0.897
+    sprintModifier: 0.897
   - type: Storage
+    maxItemSize: Small
     grid:
     - 0,0,3,1 # 2 slots
+  - type: CMHardArmor
   - type: FixedItemSizeStorage
   - type: IgnoreContentsSize
     items:
       tags:
-      - RMCMagazineMar50LMG
-      - RMCMagazineRifleMAR40
-      - RMCMagazineSMGMAC15
+      - CMMagazineRifle
+      - CMMagazineSmg
+      - CMMagazineSniper
 
 - type: entity
   parent: RMCCoatMilitia
@@ -168,16 +144,7 @@
     sprite: _RMC14/Objects/Clothing/OuterClothing/Militia/vest.rsi
   - type: Clothing
     sprite: _RMC14/Objects/Clothing/OuterClothing/Militia/vest.rsi
-  - type: RMCArmorSpeedTier
-    speedTier: very light
-  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
-    walkModifier: 0.897
-    sprintModifier: 0.897
-  - type: IgnoreContentsSize
-    items:
-      tags:
-      - RMCMagazineRifleMAR40
-      - RMCMagazineSMGMAC15
+  # TODO BODY_FLAG_CHEST|BODY_FLAG_GROIN for armor protection flags
 
 - type: entity
   parent: RMCCoatMilitia
@@ -189,14 +156,10 @@
     sprite: _RMC14/Objects/Clothing/OuterClothing/Militia/brace.rsi
   - type: Clothing
     sprite: _RMC14/Objects/Clothing/OuterClothing/Militia/brace.rsi
-  - type: RMCArmorSpeedTier
-    speedTier: very light
-  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
-    walkModifier: 0.897
-    sprintModifier: 0.897
+  # TODO BODY_FLAG_GROIN|BODY_FLAG_ARMS|BODY_FLAG_LEGS for armor protection flags
 
 - type: entity
-  parent: RMCCoatMilitia
+  parent: RMCCoatMilitiaBrace
   id: RMCCoatMilitiaHauberk
   name: половина кольчуги колоніальної міліції
   description: Кольчуга члена колоніальної міліції, виготовлений із вареної шкіри та деяких сучасних броньованих пластин. Хоча це не найпотужніший вид броні і примітивний порівняно з більшістю сучасних захисних костюмів, він надає носію майже повну свободу рухів, що відповідає потребам місцевих колоністів. Також його швидко одягнути, легко сховати і дешево виготовляти у великих майстернях. Цей ще більш легкий варіант має відсутні деякі частини на руках.
@@ -205,11 +168,6 @@
     sprite: _RMC14/Objects/Clothing/OuterClothing/Militia/hauberk.rsi
   - type: Clothing
     sprite: _RMC14/Objects/Clothing/OuterClothing/Militia/hauberk.rsi
-  - type: RMCArmorSpeedTier
-    speedTier: very light
-  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
-    walkModifier: 0.897
-    sprintModifier: 0.897
 
 - type: entity
   parent: RMCCoatMilitia
@@ -219,6 +177,9 @@
   description: Кольчуга ополченця-колоніста, створений із кип'яченої шкіри та кількох сучасних бронепластин. Хоча він поступається більшості сучасних видів броні і не забезпечує високого рівня захисту, цей обладунок дарує власникові майже ідеальну рухливість, що відповідає потребам місцевих колоністів. Його також швидко вдягати, легко сховати та дешево виготовляти у великих майстернях. Цей екземпляр має додаткові ремені, переплетені з пластинами, які дозволяють користувачу стріляти зі здобутого СмартГана, хоч і дещо незручно.
   components:
   - type: SmartGunArmor
+  - type: Storage
+    grid:
+    - 0,0,5,1 # 3 slots
 
 # Mercenaries
 # TODO: implement storage whitelist for this
@@ -300,6 +261,16 @@
     explosionArmor: 70 # CLOTHING_ARMOR_GIGAHIGH
   - type: ItemCamouflage
     camouflageVariations: { }
+
+- type: entity
+  parent: RMCArmorMercenaryHEFA
+  id: RMCArmorMercenaryHEFAFilled
+  suffix: HEFA, Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMGrenadeFrag
+      amount: 3
 
 # Riot armor
 - type: entity

@@ -17,7 +17,7 @@
     - hisses
     - hissing
     - hissed
-    - шипить # Sich. До кінця прототипу наше додавання
+    - шипить # Mriya. До кінця прототипу наше додавання
     - шиплять
 
 - type: emote
@@ -42,7 +42,7 @@
     - miaus
     - nya
     - nyas
-    - мявчить # Sich. До кінця прототипу наше додавання
+    - мявчить # Mriya. До кінця прототипу наше додавання
     - мявчать
     - нявчить
     - нявчать
@@ -73,7 +73,7 @@
     - mews
     - mewing
     - mewed
-    - мєвкає # Sich. До кінця прототипу наше додавання
+    - мєвкає # Mriya. До кінця прототипу наше додавання
     - мєвкають
 
 - type: emote
@@ -97,7 +97,7 @@
     - growls!
     - growling
     - growled
-    - гарчить # Sich. До кінця прототипу наше додавання
+    - гарчить # Mriya. До кінця прототипу наше додавання
     - гарчать
 
 - type: emote
@@ -118,7 +118,7 @@
     - purrs
     - purring
     - purred
-    - мурчить # Sich. До кінця прототипу наше додавання
+    - мурчить # Mriya. До кінця прототипу наше додавання
     - мурчать
     - мурликає
     - мурличуть
@@ -152,7 +152,7 @@
     - barked.
     - barked!
     - barking.
-    - гавкає # Sich. До кінця прототипу наше додавання
+    - гавкає # Mriya. До кінця прототипу наше додавання
     - гавкають
     - тявкає
     - тявкають
@@ -180,7 +180,7 @@
     - snarled.
     - snarled!
     - snarling.
-    - огризається # Sich. До кінця прототипу наше додавання
+    - огризається # Mriya. До кінця прототипу наше додавання
     - огризаються
 
 - type: emote
@@ -206,7 +206,7 @@
     - whined.
     - whined!
     - whining.
-    - скиглить # Sich. До кінця прототипу наше додавання
+    - скиглить # Mriya. До кінця прототипу наше додавання
     - скиглять
     - скавчить
     - скавчать
@@ -233,7 +233,7 @@
     - yips.
     - yips?
     - yips!
-    - їпає # Sich. До кінця прототипу наше додавання
+    - їпає # Mriya. До кінця прототипу наше додавання
     - їпають
 
 - type: emote
@@ -261,7 +261,7 @@
     - gnashes her teeth
     - gnashes his teeth
     - gnashes its teeth
-    - скрежетить # Sich. До кінця прототипу наше додавання
+    - скрежетить # Mriya. До кінця прототипу наше додавання
     - скрежетять
     - скрежетить зубами
     - скережетять зубами
@@ -296,7 +296,7 @@
     - trills angrily
     - trills angrily.
     - trills angrily!
-    - гнівається # Sich. До кінця прототипу наше додавання
+    - гнівається # Mriya. До кінця прототипу наше додавання
     - гніваються
 
 - type: emote
@@ -319,7 +319,7 @@
     - peeps
     - peeps.
     - peeps!
-    - піпає # Sich. До кінця прототипу наше додавання
+    - піпає # Mriya. До кінця прототипу наше додавання
     - піпають
 
 - type: emote
@@ -342,7 +342,7 @@
     - trills
     - trills.
     - trills!
-    - треліть # Sich. До кінця прототипу наше додавання
+    - треліть # Mriya. До кінця прототипу наше додавання
     - трелять
     - трелить
 
@@ -366,7 +366,7 @@
     - warbles
     - warbles.
     - warbles!
-    - тьохкає # Sich. До кінця прототипу наше додавання
+    - тьохкає # Mriya. До кінця прототипу наше додавання
     - тьохкають
 
 # Reptilian
@@ -409,7 +409,7 @@
   available: false
   icon: Interface/Emotes/squish.png # todo: new icons?
   whitelist:
-    components: 
+    components:
     - Vocal
   blacklist:
     components:
@@ -418,7 +418,7 @@
   chatTriggers:
   - bubbles
   - bubbling
-  - булькає # Sich. До кінця прототипу наше додавання
+  - булькає # Mriya. До кінця прототипу наше додавання
   - булькають
 
 - type: emote
@@ -428,7 +428,7 @@
   available: false
   icon: Interface/Emotes/squish.png # todo: new icons?
   whitelist:
-    components: 
+    components:
     - Vocal
   blacklist:
     components:
@@ -437,7 +437,7 @@
   chatTriggers:
   - pops
   - popping
-  - попає # Sich. До кінця прототипу наше додавання
+  - попає # Mriya. До кінця прототипу наше додавання
   - попають
 
 - type: emote
@@ -447,7 +447,7 @@
   available: false
   icon: Interface/Emotes/squish.png # todo: new icons?
   whitelist:
-    components: 
+    components:
     - Vocal
   blacklist:
     components:
@@ -456,9 +456,39 @@
   chatTriggers:
   - wobbles
   - wobbling
-  - wibbles 
+  - wibbles
   - wibbling
-  - дрижжить # Sich. До кінця прототипу наше додавання
+  - дрижжить # Mriya. До кінця прототипу наше додавання
   - дрижжать
   - коливається
   - коливаються
+
+#Avali
+- type: emote
+  id: RMCAvaliChirp
+  name: rmc-emote-name-avali-chirp
+  category: Vocal
+  available: false
+  icon: _RMC14/Actions/species_emotes.rsi/peep.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["rmc-emote-avali-chirp"]
+  chatTriggers:
+  - chirp
+  - chirps
+  - chirping
+  - chirped
+  - tweet
+  - tweets
+  - tweeting
+  - tweeted
+  - cheep
+  - cheeps
+  - cheeping
+  - cheeped
+  - цвірінькає # Mriya. До кінця прототипу наше додавання
+  - цвірінькають

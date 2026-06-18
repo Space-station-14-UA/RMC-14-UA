@@ -1,0 +1,16 @@
+# Наша версія спавнерів шатлів, відповідно, з нашими шатлами. Не питайте чому вони у категорії структур-машин, це місце обрали офіційки
+- type: entity
+  parent: CMDropshipDestination
+  id: MMCDropshipDestinationAlamo
+  suffix: Аламо
+  components:
+  - type: DropshipDestination
+    spawn: "/Maps/_Sich/Shuttles/alamo.yml"
+
+- type: entity
+  parent: CMDropshipDestination
+  id: MMCDropshipDestinationNormandy
+  suffix: Нормандія
+  components:
+  - type: DropshipDestination
+    spawn: "/Maps/_Sich/Shuttles/normandy.yml"

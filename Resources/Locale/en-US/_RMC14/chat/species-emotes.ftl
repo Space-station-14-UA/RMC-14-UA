@@ -22,8 +22,12 @@ rmc-emote-whine = скавчить.
 rmc-emote-howl = виє.
 rmc-emote-yip = їпає.
 
-rmc-emote-name-gnash = Скрежетіти
+rmc-emote-name-gnash = Скрежетіти зубами
 rmc-emote-gnash = скрежетить зубами.
+
+rmc-emote-name-avali-chirp = Цвірінькати
+
+rmc-emote-avali-chirp = цвірінькає.
 
 rmc-emote-name-r-rattle = Гриміти хвостом
 
