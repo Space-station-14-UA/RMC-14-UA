@@ -1,150 +1,150 @@
 <Document>
-#Постачання
+#Requisitions
 
-[bold]Увага, Вантажнику.[/bold]
+[bold]Attention, Requisitions Technician.[/bold]
 
-Початок операції: активуйте консоль, підніміть жалюзі та займіть свій пост. Ви є основною логістичною ланкою в системі постачання Морської Піхоти. Ваш обов'язок – забезпечувати своєчасний розподіл усіх матеріальних засобів: від штатних боєприпасів до потужних вибухових засобів.
+Commence operations: activate the console, raise the shutters, and assume your post. You are the primary logistical link in the Marine Corps supply network. It is your duty to ensure the timely distribution of all materiel, ranging from standard-issue ammunition to high-yield explosives.
 
-[bold]Майте на увазі[/bold]: морський піхотинець без постачання та з порожнім магазином є втратою бойової ефективності й загрозою для виконання операції. Підтримуйте безперервність постачання за будь-яких обставин.
+[bold]Be advised[/bold]: a Marine without supplies and operating on an empty magazine is a compromised asset and a threat to operational effectiveness. Maintain supply integrity at all times.
 
-##Стійка Постачання
-Ласкаво просимо на посаду Вантажника на Стійці Постачання. Це хребет усього відділу Постачання – проста, стандартна та вкрай важлива робота. Ваше завдання просте: натиснути кнопку, підняти жалюзі та приступити до роботи. Зараз година пік, і морські піхотинці готуються до висадки. Вони не люблять затримок і не звикли чекати.
+##The Line
+Welcome to the Line Technician post. This is the backbone of Requisitions — basic, standard, and essential grunt work. Your job is simple: hit the button, raise the shutter, and get to work. It's rush hour, and the Marines are gearing up for deployment. They don't like delays — and they don't wait.
 
-Морські піхотинці постійно звертатимуться до вас із запитами на різноманітне спорядження. Будьте уважними та не дозволяйте великій кількості запитів вибити вас із колії. Завжди перевіряйте, чи морський піхотинець уже одягнений у штатну броню, перш ніж схвалювати його запит.
+Marines will come to you requesting a wide range of supplies. Stay sharp and don't get overwhelmed by their demands. Always verify that the Marine is wearing standard-issue armor before approving any order.
 
-Ви маєте право відхилити будь-який запит, якщо він є надмірним, необґрунтованим або призначений для одного морського піхотинця без належної причини. Підтримуйте дисципліну та дотримуйтесь протоколів постачання.
+You are authorized to deny any request that is excessive, unreasonable, or intended for a single Marine without proper justification. Maintain discipline and uphold supply protocol.
 <Box>
-  <GuideEntityEmbed Entity="MRLineGuideBook" Caption="Стійка Постачання"/>
+  <GuideEntityEmbed Entity="RMCTheLineGuideBook" Caption="The Line"/>
 </Box>
-Ви, Вантажнику, контролюєте ситуацію. Займіть своє місце та будьте напоготові. Помаранчева кнопка керування дозволяє вам відкривати та закривати жалюзі. Підтримуйте порядок і ефективність за будь-яких обставин.
+You, Technician, are in control. Take your seat and get comfortable — but stay alert. You command the shutters using the orange control button. Maintain order and efficiency at all times.
 <Box>
-  <GuideEntityEmbed Entity="ColMarTechCargoAttachments" Caption="стійка оснащення"/>
-  <GuideEntityEmbed Entity="ColMarTechCargoGuns" Caption="стійка амуніції"/>
+  <GuideEntityEmbed Entity="ColMarTechCargoAttachments" Caption="attachements vendor"/>
+  <GuideEntityEmbed Entity="ColMarTechCargoGuns" Caption="armaments vendor"/>
 </Box>
 <Box>
-  <GuideEntityEmbed Entity="ColMarTechCargoAmmo" Caption="стійка боєприпасів"/>
-  <GuideEntityEmbed Entity="ColMarTechCargoUniform" Caption="стійка додаткового спорядження"/>
+  <GuideEntityEmbed Entity="ColMarTechCargoAmmo" Caption="munitions vendor"/>
+  <GuideEntityEmbed Entity="ColMarTechCargoUniform" Caption="surplus vendor"/>
 </Box>
-У вашому розпорядженні чотири стійки постачання: [bold]Оснащення, Амуніція, Боєприпаси та Додаткове спорядження[/bold]. Використовуйте їх розумно для оснащення наших сил. Від вас очікуються точність, швидкість та дисципліна.
+You have four supply vendors at your disposal: [bold]Attachments, Armaments, Munitions, and Surplus[/bold]. Use them wisely to equip our forces. Precision, speed, and discipline are expected.
 
-Позаду вас розташовані стійки оснащення, амуніції та боєприпасів. Стійку додаткового спорядження можна знайти в кімнаті західніше від вас.
+From left to right you have the attachments, armaments, and munitions vendor. The surplus vendor can be found just south of you in storage.
 
-- Стійка оснащення: Містить усі модифікації для зброї, які можуть знадобитися морському піхотинцю. Якщо запит стосується цієї стійки – видавайте все необхідне.
-- Стійка амуніції: Містить зброю, вибухівку, а також ремені, підсумки та рюкзаки. Видавайте спорядження в межах розумного.
-- Стійка боєприпасів: Містить усі види боєприпасів – від штатних набоїв до бронебійних і навіть барабанів для МЛ66А. Видавайте все в межах розумного.
-- Стійка додаткового спорядження: Містить ключі доступу для гарнітур, форму, броню та шоломи. Видавайте все, що морські піхотинці запитують із цієї стійки.
+- Attachments vendor: This vendor has all the attachments a Marine could need. Give them anything they ask if it comes from this vendor.
+- Armaments vendor: This vendor contains armaments like guns, grenades, but also belts, pouches, and backpacks. Give Marines from this vendor anything within reason.
+- Munitions vendor: This vendor contains ammunition—everything from standard issue to AP and even ML66A drums. Give Marines anything within reason.
+- Surplus vendor: This vendor contains headset keys, uniform, armor, and helmets. Give Marines anything they ask from this vendor.
 
-##Консоль АТСС
-Консоль керування Автоматичною Транспортно-Складською Системою (АТСС) – один із найважливіших інструментів у Постачанні. Він дозволяє вам замовляти нестандартні та спеціалізовані товари, які рідко доступні на борту "Саванни". Однак будьте обережні – ви працюєте з обмеженим бюджетом. Не виділяйте весь бюджет на один запит.
+##ASRS Terminal
+The ASRS terminal is one of your most critical tools in Requisitions. It enables you to order non-standard and specialized equipment that is rarely available aboard the Almayer. However, exercise caution — you are working within a limited budget. Do not allocate all your resources to a single request.
 
-[bold]Пам'ятайте[/bold]: ви відповідаєте за постачання кожного морського піхотинця. Надавайте пріоритет ефективності, балансу та стратегічному передбаченню в кожному рішенні.
+[bold]Remember[/bold]: you are responsible for supplying every Marine. Prioritize efficiency, balance, and strategic foresight in every Decision.
 
 <Box>
-  <GuideEntityEmbed Entity="CMASRSConsole" Caption="Консоль АТСС"/>
+  <GuideEntityEmbed Entity="CMASRSConsole" Caption="ASRS Console"/>
 </Box>
 
-Однак Вантажнику, завжди узгоджуйте будь-які замовлення зі своїм [color=#FFA500]Офіцером Логістики[/color], а за його відсутності – з найстаршим членом Командування. Контроль закупівель, запасів та бюджету є необхідною умовою ефективної роботи відділу.
+However, Technician, always consult your [color=#FFA500]Logistics Officer[/color] before placing any orders — or, in their absence, the most senior member of the Requisitions staff. Maintaining oversight of purchases, inventory, and budget is essential to the effective operation of the department.
 
-[bold]Пам'ятайте[/bold]: зв'язок має вирішальне значення. Слідкуйте за радіоефіром, зберігайте ситуаційну обізнаність та завжди знайте, який загін запросив ті чи інші товари.
+[bold]Remember[/bold]: communication is critical. Monitor your radio traffic, maintain situational awareness, and ensure you know which squad has requested which supplies.
 
-[color=#FF0000][bold]УВАГА!!![/bold][/color] Під час оформлення замовлень [bold]ВІДСУТНЄ ВІКНО ПІДТВЕРДЖЕННЯ[/bold]. Будьте уважні та завжди [bold]ЧИТАЙТЕ[/bold] і [bold]ПЕРЕВІРЯЙТЕ[/bold], що саме ви замовляєте. Помилкові замовлення призводять до марнування ресурсів та зайвих витрат бюджету.
+[color=#FF0000][bold]WARNING!!![bold][/color] There is [color=#FF0000][bold]NO[/bold][/color] confirmation when ordering any items so be careful and make sure to [bold]READ[/bold] and [bold]MAKE SURE[/bold] what you are ordering to not order the wrong supplies that will just go to waste and to not waste budget.
 
-Консоль АТСС проста, але ефективна:
+The ASRS terminal is simple yet effective:
 <Box>
-  <GuideEntityEmbed Entity="MRATSSInterfaceGuideBook" Caption="інтерфейс АТСС"/>
+  <GuideEntityEmbed Entity="RMCASRSinterfaceGuideBook" Caption="ASRS interface"/>
 </Box>
-- Положення платформи: Платформа може перебувати в піднятому або опущеному положенні. Замовлення можна оформлювати незалежно від її положення, навіть під час руху. Проте ящики з'являться лише після того, як платформа змінить положення з опущеного на підняте.
-- Бюджет постачання: Відображає поточний бюджет відділу. Його значення автоматично збільшується та зменшується залежно від витрат і надходжень.
-- Замовити предмети: Тут можна замовляти всі доступні предмети та припаси. Будьте уважні під час навігації по меню. Якщо не можете знайти потрібний предмет, скористайтеся рядком пошуку!
+- Platform position: This can be Lowered or Raised. Supplies can be ordered no matter the position of the platform—even in transit. However, crates will only appear if the platform changes from Lowered to Raised.
+- Supply budget: This shows the current budget. It will automatically decrease and increase.
+- Order items: This allows you to order all the items and supplies. Be careful navigating it. If you are lost remember to use the search bar!
 
-Консоль АТСС містить безліч предметів – настільки багато, що значна їх частина є зайвою або взагалі малокорисною. На практиці ви регулярно замовлятимете лише кілька категорій:
-- Спеціальна амуніція: спеціалізовані боєприпаси, які використовуються лише обмеженим колом морських піхотинців. Також вони доволі дорогі.
-- Амуніція: зазвичай це дорогі, але надзвичайно ефективні боєприпаси для боротьби з пріоритетними цілями, такі як 10x24-мм бронебійні набої, мінометні снаряди або барабани МЛ66А для Операторів СмартГанів.
-- Вибухівка: гранати ВІРЗ та ФПП коштують дорого, але можуть кардинально змінити ситуацію на полі бою. За можливості забезпечуйте ними морських піхотинців.
-- Інженерне: зазвичай це метал та пласталь. [bold]НАПОЛЕГЛИВО[/bold] рекомендується не замовляти їх без крайньої потреби.
+The ASRS terminal contains many, many, many items—most that are redundant or straight up useless. There is only a key selection of items that you will be ordering on a standard basis:
+- Weapon Specialist Ammunition: This is highly specialized ammunition used only by a select few Marines. It's also quite expensive.
+- Non-standard Ammunition: This is usually ammunition that is highly effective against high-value targets but also expensive, like 10x24mm AP ammo, mortar shells, or ML66A drums for smartgun operators.
+- High Explosives: The 30mm Grenades HIDP and HEDP variants are expensive but can be a game changer. Make sure to supply them to the Marines if possible.
+- Engineering materials: Usually metal, plasteel, or batteries. It is [bold]HEAVILY[/bold] recommended that you do not order these unless absolutely necessary.
 
-[bold]Пам'ятайте[/bold]: перш ніж оформлювати замовлення, завжди звертайтеся до інших відділів щодо необхідних матеріалів та припасів. Наприклад, Інженерний відділ може безкоштовно забезпечити вас металом та пласталю, не витрачаючи бюджет Постачання. Зручно, чи не так?
+[bold]Remember[/bold] to always ask other departments for materials and supplies before ordering. Like Engineering—they can supply you with metal and batteries without you having to spend any budget. How convenient!
 
-##Яма
-Будьте пильними, Вантажнику! Дивіться під ноги – ви ж не хочете опинитися у низу? Закінчивши всі справи забирайтеся геть від платформи та тримайтеся подалі від перил. Це [bold]Яма[/bold]. [bold]БЕЗДОННА ЯМА!![/bold]
+##The Pit
+Stay sharp, Technician. Watch your step—you don't want to end up as just another name on the list. Clear all hazards immediately, and keep away from the railing. This is [bold]The Pit[/bold].
 
--[italic]Тут на нашій землі багато різних яв. Але немає глибшої за бездонну яму, яка, як ви бачите – бездонна.[/italic]
+Any items ordered via the ASRS terminal or ARES dispatch will be delivered here. Crates can be sold and invoices returned at this station.
 
-Будь-які товари, замовлені через консоль АТСС або диспетчерську службу ARES, будуть доставлені сюди. Ящики можна продавати.
-
-[bold]Проштампуйте все. Без винятків.[/bold]
+[bold]Stamp everything. No exceptions.[/bold]
 <Box>
-  <GuideEntityEmbed Entity="RMCPitRasedGuideBook" Caption="Яма (платформа піднята)"/>
-  <GuideEntityEmbed Entity="RMCPitLowerdGuideBook" Caption="Яма (платформа опущена)"/>
+  <GuideEntityEmbed Entity="RMCPitRasedGuideBook" Caption="Pit (raised)"/>
+  <GuideEntityEmbed Entity="RMCPitLowerdGuideBook" Caption="Pit (lowered)"/>
 </Box>
-Будьте пильними біля Ями. Після того, як опустять платформу, вона стане найбільшою небезпекою у всій вашій робочій зоні. Будете давати ґафа, й можете опинитися внизу.
+Stay alert near The Pit. Once it's lowered, it becomes the biggest hazard in your entire work zone. Sleep on the job, and you might not wake up.
 
-Як уже згадувалося раніше, ящики доставляються разом із накладною. Відкрипіть їх. Проштампуйте їх. Отримайте свою виплату. Усі люблять безкоштовні гроші, але це не благодійність. Для обробки накладну не потрібно тримати прикріпленою до ящика. Вона може лежати окремо – це не проблема. Просто [bold]не загубіть її.[/bold]
+As previously stated, crates are delivered with invoices. Remove them. Stamp them. Get your payout. Everyone likes free money—but this isn't charity. The invoice doesn't need to be attached to the crate to be processed. Loose is fine. Just [bold]don't[/bold] lose it.
 <Box>
- <GuideEntityEmbed Entity="RMCGuidebookPaperRequisitionsWritten" Caption="Не задтверджена накладна, яка нічого не варта"/>
- <GuideEntityEmbed Entity="CMStampApproved" Caption="Штамп про задтвердження"/>
- <GuideEntityEmbed Entity="RMCGuidebookPaperRequisitionsStamped" Caption="Задтверджена накладна"/>
+ <GuideEntityEmbed Entity="RMCGuidebookPaperRequisitionsWritten" Caption="A blank invoice worth nothing"/>
+ <GuideEntityEmbed Entity="CMStampApproved" Caption="An approval stamp"/>
+ <GuideEntityEmbed Entity="RMCGuidebookPaperRequisitionsStamped" Caption="An approved invoice"/>
  </Box>
-Слухайте, Вантажнику. Ящики – один з ваших найважливіших ресурсів – не забувайте про це. Їх можна продати за фіксовану суму, але що ще важливіше, вони використовуються для скидання постачання на землю. Завжди тримайте запас.
+Listen up, Technician. Crates are one of your most vital resources—don't forget it. They can be sold for a fixed amount, but more importantly, they're used for supply drops. Always keep a healthy stock.
 
-Дерев'яні ящики можна виготовити з дошок, але пам'ятайте: вони не мають перепродажної цінності. Їх єдине призначення – для скидання постачання. Використовуйте їх відповідно.
+Show some respect to Engineering, they can route crates to you from around the Almayer if you ask properly. Maintain good relations.
+
+Wooden crates can be crafted from lumber, but remember this: they hold no resale value. Their only purpose is for supply drops. Use them accordingly.
 <Box>
-  <GuideEntityEmbed Entity="RMCCrateBase" Caption="Металевий ящик"/>
+  <GuideEntityEmbed Entity="RMCCrateBase" Caption="Metal Crate"/>
 </Box>
-##Поди скидання
-Тепер, Вантажнику, ранкова метушня позаду. Але робота ще не закінчена. Час пакувати припаси для відправки на землю. У морських піхотинців швидко закінчуються набої, а наше завдання – забезпечувати їх усім необхідним.
+##Supply Drops
+Now Technician, morning rush is done. But we are not. It's time to pack supplies to be sent groundside—Marines run out of bullets fast and we have to supply. Make four crates and place them each on their respective squad drop pads.
 <Box>
-  <GuideEntityEmbed Entity="MRPodsGuideBook" Caption="Поди скидання"/>
+  <GuideEntityEmbed Entity="RMCSupplyDropPadsGuideBook" Caption="Supply pads"/>
 </Box>
-У вашому розпорядженні п'ять подів скидання. Але слухайте уважно – регулярно ви працюватимете лише з чотирма з них.
+You've got five drop pads, Technician. But listen close—you'll be using four of them on the regular.
 
-Зліва направо вони розташовані в алфавітному порядку: [color=#FF0000][bold]Альфа[/bold][/color], [color=#FFEF00][bold]Браво[/bold][/color], [color=#800080][bold]Чарлі[/bold][/color] та [color=#000080][bold]Дельта[/bold][/color]. Саме з ними ви матимете справу найчастіше. Це стандартні поди загонів. Знайте їх. Використовуйте їх. Комплектуйте їх правильно.
+From left to right, they go alphabetically: [color=#FF0000][bold]Alpha[/bold][/color], [color=#FFEF00][bold]Bravo[/bold][/color], [color=#800080][bold]Charlie[/bold][/color], [color=#000080][bold]Delta[/bold][/color]. These are your bread and butter—the standard squad pads. Know them. Use them. Pack them right.
 
-П'ятий под – [color=#32CD32][bold]Ехо[/bold][/color]. Він відрізняється від інших. Його використовують лише для екстрених вантажних скидань: термінового поповнення запасів, доставки критично важливого спорядження або порятунку ситуації в останню хвилину. Не використовуйте його без прямої необхідності.
+The fifth pad is [color=#32CD32][bold]Echo[/bold][/color]. That one's different. It's reserved for emergency drops only—priority resupplies, critical gear, last-minute saves. Don't touch it unless you're told.
 
-Неправильне використання майданчика Ехо – швидкий спосіб розлютити морських піхотинців та БІЦ. Тож беріться до роботи й підтримуйте загони забезпеченими.
+Misusing Echo is a good way to Displease the marines and CIC fast. Get to work and keep the squads supplied.
 
-БІЦ контролює чотири ящики загонів. Лише вони можуть скинути ящик на землю. Ваше завдання – правильно їх укомплектувати та запечатати. Якщо ящик відкритий – він нікуди не полетить.
+CIC controls the four squad crates. Only they can greenlight a drop planetside. Your job is to pack them tight and seal them. If the crate's open, it's going nowhere.
 
-Под Ехо працює інакше. Він перебуває під контролем Постачання – тобто під вашим контролем. Запуск здійснюється через консоль, розташовану поруч з подом. Але пам'ятайте: для скидання через Ехо потрібні точні координати – довгота та широта. Морський піхотинець на землі передасть вам ці дані. Немає координат – немає скиду. Не імпровізуйте.
+Echo Pad's a different story. That one falls under Requisitions control—your control. You'll launch it from the console just above the pad. But heads up: Echo drops need exact coordinates—longitude and latitude. A Marine groundside will feed you those numbers. No coords, no drop. Don't improvise.
 
-[bold]Укомплектуйте. Запечатайте. Відправте.[/bold]
+[bold]Get it packed. Get it sealed. Get it done.[/bold]
 
-Морські піхотинці можуть запитувати найрізноманітніші припаси, але деякі категорії повинні потрапляти до вантажних ящиків практично завжди. Це базовий набір, необхідний для підтримання боєздатності загонів.
+Marines can request all kinds of supplies—but some must always be packed, no matter what. These are your standard loadouts, the bare minimum to keep the squads combat-effective and breathing.
 
-- Боєприпаси: набої, необхідні морським піхотинцям для ведення бою. Приклади: магазини для М54С, М4СПГ, картечні набої для дробовиків, барабани МЛ66А тощо.
-- Медичне забезпечення: засоби першої допомоги, які дозволяють морським піхотинцям залишатися в строю. Приклади: марля, мазь, автоінжектори, дефібрилятори тощо.
-- Додаткове спорядження: інструменти та обладнання, необхідні для ефективного виконання завдань. Приклади: набір маркувальних флаєрів М-94, набір сигнальних флаєрів М-89С, детектор руху, лазерний цілевказівник, далекомір тощо.
-- Інше: усе, що не входить до перелічених категорій, але було запитане морськими піхотинцями. Приклади: шоломи, модифікації зброї, їжа тощо.
+- Ammunition: The bullets a marine needs to stay in the fight. Examples: M54C Regular, M4SPR Regular, Buckshot Shotgun Shells, ML66A Smartgun Drum, et cetera.
+- Medical: The first aid to keep a marine going on the field. Examples: Gauze, Ointment, Pressurized Canisters, Defibrilators, et cetera.
+- Utility: The tools and equipment marines need to stay effective. Examples: M-94 Flare Pack, M-89S Signal Flare Pack, Motion Detector, Laser Designator, Rangefinder, et cetera.
+- Miscellaneous: Anything else a marine requests that isn't mentioned above. Examples: Helmets, Attachments, MREs, et cetera.
 
-##Базова підготовка
-Стійка працює. Ящики заповнені. Запаси добігають кінця. Час братися до наступної роботи, Вантажнику. Картон знаходиться у західній кімнаті в кутку, там само, де розташована стійка додаткового спорядження. Заберіть його та починайте виготовляти ящики для магазинів.
+##Basic Packing
+Line's secured. Crates are packed. Supplies running low. Time to move, Techie. Cardboard's in South Storage—same location as the surplus vendor. Retrieve it and start fabricating ammo boxes.
 
-Ресурси Постачання вичерпуються. Стійки спорожніли. Час переміщатися до Казарм Загонів – тепер це ваша станція пакування магазинів. І запам'ятайте, Вантажнику: стійки морської піхоти для вас недоступні. Усі матеріали для пакування повинен видавати [color=#FFA500]Офіцер Логістики[/color]. Дотримуйтеся цього порядку.
+Requisitions are tapped. Vendors are dry. Time to relocate to the Squad Preparation Room—that's your new ammo-packing station. Listen up, Techie: Marine ammo vendors are off-limits. You'll need the [color=#FFA500]Logistics Officer[/color] to issue all packing supplies. Proceed accordingly.
 <Box>
-  <GuideEntityEmbed Entity="ColMarTechEquipment" Caption="стійка морських піхотинців"/>
+  <GuideEntityEmbed Entity="ColMarTechEquipment" Caption="Weapons rack"/>
 </Box>
-Боєприпаси отримані – час переходити до пакування. Натисніть ([color=yellow][keybind="g"][/color]), щоб відкрити меню будівництва, та скористайтеся рядком пошуку для знаходження потрібних ящиків. Основними ящиками для пакування є М54С, М4СПГ та М63. Натисніть ([color=yellow][keybind="z"][/color]), щоб розмістити ящик, відкрийте його та використайте ([color=yellow][keybind="ALT + ліва кнопка миші"][/color]), щоб підняти. Після цього просто натискайте ([color=yellow][keybind="лівою кнопкою миші"][/color]) по ящику, тримаючи магазин у руці, щоб заповнити його.
+Now the ammunition is dispensed—let's get to packing, Technician. Let's make a box. Press ([color=yellow][keybind="g"][/color]) to open the build menu and use the search bar to find the boxes you will craft. There are three basic boxes you will pack: M54C, SPR, and M63. Press ([color=yellow][keybind="z"][/color]) to place it down, open it, and ([color=yellow][keybind="alt left click"][/color]) to pick it up. Now simply ([color=yellow][keybind="left click"][/color]) on the boxes with a magazine in hand to pack.
 <Box>
-  <GuideEntityEmbed Entity="RMCBoxMagazineRifleM54C" Caption="ящик М54С"/>
-  <GuideEntityEmbed Entity="RMCBoxMagazineRifleM4SPR" Caption="ящик М4СПГ"/>
-  <GuideEntityEmbed Entity="RMCBoxMagazineSMGM63" Caption="ящик М63"/>
+  <GuideEntityEmbed Entity="RMCBoxMagazineRifleM54C" Caption="M54C regular"/>
+  <GuideEntityEmbed Entity="RMCBoxMagazineRifleM4SPR" Caption="M4SPR regular"/>
+  <GuideEntityEmbed Entity="RMCBoxMagazineSMGM63" Caption="M63 regular"/>
 </Box>
-Завжди підтримуйте запас штатних магазинів. Без виправдань і без марнотратства бюджету. Стандартні припаси мають критичне значення для виконання операції. Слідкуйте, щоб резерви були повністю укомплектовані та готові до відправки морським піхотинцям на поверхню. Пам'ятайте, Вантажнику: ви є однією з найважливіших ланок Постачання. Тримайте склади заповненими, а ящики – готовими до відправки.
+Maintain a steady stock of standard-issue ammunition at all times. No excuses, no budget wasted. Regular supplies are mission-critical. Ensure reserves are full and ready for deployment to Marines groundside. Remember this, Technician: you're a vital asset to Requisitions. Keep those crates stacked high and constant.
 
-##Вантажник
-Вантажнику, ти є основою всього Постачання – ніколи про це не забувай. Недооціни свою роль, і вся система почне руйнуватися. Без тебе логістика зупиниться. Будь пильним. Будь незамінним.
+##Requisition Technician
+Requisition Technician, you're the backbone of Requisitions—never forget it. Underestimate your role, and the whole system starts to break down. Without you, logistics grinds to a halt. Stay sharp. Stay essential.
 <Box>
-  <GuideEntityEmbed Entity="RMCCargotechGuideBook" Caption="іконка Вантажника"/>
+  <GuideEntityEmbed Entity="RMCCargotechGuideBook" Caption="Requisition Technician symbol"/>
 </Box>
-Як Вантажник, ти безпосередньо підпорядковуєшся [color=#FFA500]Офіцеру Логістики[/color]. Його накази – твоє все. Виконуй їх швидко, і Постачання залишатиметься забезпеченим та готовим до роботи. Ти починаєш службу в званні E1 "рядовий" – основі всього. Заслужи свої нашивки дисципліною та наполегливістю. Просувайся до E2 "РПК", а потім до E3 "молодший капрал". Залишайся зосередженим. Залишайся наполегливим. Не сходь з обраного шляху, Вантажнику.
+Requisitons Technician you answer directly to the [color=#FFA500]Logistics Officer[/color]. Their orders are your mission. Execute swiftly, and Requisitions stays stocked and operational. You begin at rank E1—the foundation. Earn your stripes through discipline and drive. Push forward to E2, then E3. Stay focused. Stay relentless. Stay the course, Techie.
 
-Морські піхотинці можуть бути вищими за званням, але звання не надає влади у відділі Постачання. Саме ти вирішуєш, схвалити чи відхилити їхній запит. Лише [color=#FFA500]Офіцер Логістики[/color] або [color=#008000]Командування[/color] можуть скасувати твоє рішення. Не дозволяй себе залякати. Не піддавайся тиску. Стій твердо, Вантажнику. Тримай рубіж.
+Marines may outrank you on paper, but rank doesn't equal authority in Requisitions. You hold the power to approve or deny their requests. Only the [color=#FFA500]Logistics Officer[/color] or the [color=#008000]Commander[/color] can override your call. Do not be intimidated. Do not be pressured. Stand firm, Technician. Hold the line.
 
-##Офіцер Логістики
-[color=#FFA500]Офіцер Логістики[/color] – найвища ланка у відділі Постачання та ваш безпосередній керівник. Він відповідає за всі аспекти логістики, постачання та вантажних операцій. Жоден ящик не вирушить без його схвалення. Саме він ухвалює рішення щодо схвалення або відхилення замовлень і запитів. Його рішення є остаточним – у межах розумного. Лише [color=#008000]Командування[/color] Саванни має над ним владу. Навіть офіцери вищого звання не можуть скасувати рішення [color=#FFA500]Офіцера Логістики[/color] у питаннях Постачання. Знайте ієрархію. Поважайте субординацію.
+##Logistics Officer
+The [color=#FFA500]Logistics Officer[/color] top of the chain in Requisitions. Your direct superior. They command every facet of logistics, supply, and cargo operations. No crate moves without their say-so. They authorize and deny. Everything they deem necessary. Their word stands—within reason. Only the [color=#008000]Commander[/color] of the Almayer holds authority over them. Not even a higher-ranking officer can override the [color=#FFA500]Logistics Officer[/color] command in matters of Requisitons. Know the hierarchy. Respect the chain.
 <Box>
-  <GuideEntityEmbed Entity="RMCLogisticsofficerGuideBook" Caption="іконка Офіцера Логістики"/>
+  <GuideEntityEmbed Entity="RMCLogisticsofficerGuideBook" Caption="Logistics Officer Symbol"/>
 </Box>
-[color=#FFA500]Офіцер Логістики[/color] починає службу у званні O1 "Другий лейтенант". Завдяки професіоналізму та результатам він може підвищитися до O2 "Перший лейтенант". На його плечах лежить увесь тягар Постачання та повний контроль над його діяльністю. [color=#FFA500]Офіцер Логістики[/color] підпорядковується [color=#008000]Командуванню[/color]. Лише [color=#008000]Командування[/color] Саванни може віддавати йому накази. Але пам'ятайте: [color=#FFA500]Офіцер Логістики[/color] має прямі повноваження лише в межах відділу Постачання.
+The [color=#FFA500]Logistics Officer[/color] enters at O1. With grit and performance, they climb to O2. They bear the weight of Requisitions and command its full operational power.The [color=#FFA500]Logistics Officer[/color] reports to the [color=#008000]Commander[/color]. Only the [color=#008000]Commander[/color] of the Almayer may issue them orders. But remeber the [color=#FFA500]Logistics Officer[/color] [bold]only[/bold] has direct authority within Requisitions.
 </Document>

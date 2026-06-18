@@ -1,147 +1,109 @@
 <Document>
-    # Операції з мінометом: короткий посібник
+    # Mortar Operations: Quick Guide
 
-    Міномет – це потужна [italic]зброя непрямої вогневої підтримки[/italic], здатна вести вогонь вибуховими мінами через перешкоди та на великі відстані. Оволодіння ним вимагає практики та хорошої координації.
+    The mortar is a powerful [italic]indirect fire support weapon[/italic], capable of launching explosive shells over obstacles and at long distances. Mastering it requires practice and good communication.
     <GuideEntityEmbed Entity="RMCMortarKit"/>
 
-    ## Необхідні умови для роботи
-    Перед початком роботи з мінометом переконайтеся, що ви відповідаєте таким вимогам:
+    ## Prerequisites for Operation
+    Ensure you meet these requirements before operating a mortar:
 
-    -[bold]Навичка[/bold]: Мінімум [color=#FFFF00]1 рівень інженерної навички[/color]. Довідник всередині комплекту міномета надасть її, якщо ваша роль її не має.
-    -[bold]Гайковий ключ[/bold]: Потрібен для переміщення міномета. Стандартно входить до комплекту. Міномет розгортається, якщо тримати його в руці та використати кнопку взаємодії [color=#FFA500][keybind="ActivateItemInHand"][/color]
-    -[bold]Далекомір/Лазерний цілевказіник та ключ КАТА[/bold]:
+    -[bold]Skill[/bold]: Minimum [color=#FFFF00]1 Engineering Skill[/color]. A pamphlet inside the mortar kit will give you it if your role doesn't have it.
+    -[bold]A Wrench[/bold]: To move the mortar around. Comes standard with the kit. The mortar is deployed by having it in your hand using the interact button [color=#FFA500][keybind="ActivateItemInHand"][/color]
+    -[bold]Targeting Aid and JTAC Key[/bold]:
     <Box>
         <GuideEntityEmbed Entity="RMCRangefinder"/>
         <GuideEntityEmbed Entity="RMCLaserDesignator"/>
     </Box>  <Box>
-    <GuideEntityEmbed Entity="CMEncryptionKeyJTAC" Caption="Ключ КАТА, необхідний для отримання координат від ваших побратимів"/>
+    <GuideEntityEmbed Entity="CMEncryptionKeyJTAC" Caption="JTAC Key, essential for receiving coordinates from other marines"/>
 </Box>
 
-    ## Типи мін
+    ## The Shell Types
 
     <Box HorizontalAlignment="Left">  <GuideEntityEmbed Entity="RMCMortarShellHE"/> </Box>
 
-    - При ударі детонує потужним [color=#FFA500]вибухом[/color].
-    - Відкидає та оглушує все в радіусі вибуху.
-    - Урон від самого вибуху доволі незначний.
-    - Осколково-фугасні міни найкраще підходять для оглушення ворогів і зачистки ворожих позицій.
-    - Основне застосування: [italic]безпосереднє ураження ворогів і споруд.[/italic]
+    - Detonates with a powerful [color=#FFA500]explosion[/color] upon impact at the target coordinates.
+    - Knocks back and stuns anything in its blast radius.
+    - The damage applied by the explosion, is marginal at best.
+    - HE shells best use is to stun hostiles and clear out enemy positions
+    - Primary use: [italic]Direct damage to hostiles and structures.[/italic]
 
     <Box HorizontalAlignment="Left"> <GuideEntityEmbed Entity="RMCMortarShellIncendiary"/> </Box>
 
-    - При влучанні створює [color=#00FF00]велику зону інтенсивного зеленого полум'я[/color].
-    - Ця міна не завдає шкоди спорудам.
-    - Вплив на ксеноїдів:
-    - Поступово знижує їхню броню.
-    - Завдає безперервного урону опіками. (вони горять)
-    - Значно уповільнює їхній рух.
-    - Основне застосування: [italic]контроль території, блокування шляхів відступу та ослаблення важких цілей.[/italic]
+    - On impact creates a [color=#00FF00]large area of intense green fire[/color].
+    - This shell does not inflict any structure damage
+    - Effects on Xenonids:
+    - Reduces their armor.
+    - Inflicts continuous damage.
+    - Significantly slows their movement.
+    - Primary use: [italic]Area denial, blocking retreats, weakening tough targets.[/italic]
 
 
     <Box HorizontalAlignment="Left"> <GuideEntityEmbed Entity="RMCMortarShellFlare"/> </Box>
 
-    - [color=#ADD8E6]Не завдає шкоди[/color]. Розгортає камеру при влучанні.
-    - Забезпечує [bold]огляд області розміром 19x19 клітинок[/bold].
-    - [bold]Зона влучання розміром 2x2 клітинки освітлюється[/bold].
-    - Трансляція з камери триває приблизно [italic]3 хвилини[/italic].
-    - Основне застосування: [italic]розвідка, виявлення цілей та безпечне спостереження за пересуванням противника.[/italic]
+    - [color=#ADD8E6]Non-damaging[/color]. Deploys a camera upon impact.
+    - Provides a [bold]19x19 tile view[/bold] of the target area.
+    - The immediate [bold]2x2 area of impact is illuminated[/bold].
+    - Camera feed lasts for approximately [italic]3 minutes[/italic].
+    - Primary use: [italic]Reconnaissance, target spotting, observing enemy movements safely.[/italic]
 
-    ## Основні фактори та позиціонування
-    Розуміння цих аспектів є [bold]критично важливим[/bold] для ефективного використання міномета:
-    - [bold]Дистанція ураження[/bold]: Міномет може вражати цілі лише на дистанції від [color=#FFFF00]15 клітинок (мінімум)[/color] до [color=#FFFF00]65 клітинок (максимум)[/color] від місця розгортання.
-    Ведення вогню за межами цієї дистанції неможливе.
-    - [bold]Тактичне позиціонування та вразливість[/bold]: Через свою дальність міномет зазвичай розгортається [italic]позаду основної лінії фронту[/italic].
-    Таке розташування робить оператора міномета [color=#ff0000]дуже вразливим до обходу противником з флангів[/color].
-    Завжди стежте за навколишньою обстановкою, прислухайтеся до пересування ворога та за потреби просіть побратимів про прикриття.
+    ## Operational Factors & Positioning
+    Understanding these points are [bold]critical[/bold] to operating the mortar:
+    - [bold]Engagement Range[/bold]: The mortar can only engage targets between [color=#FFFF00]15 tiles (minimum)[/color] and [color=#FFFF00]65 tiles (maximum)[/color] from its deployed position.
+    Firing outside this window is impossible.
+    - [bold]Tactical Positioning and Vulnerability [/bold]: Due to its range, the mortar is typically deployed [italic]behind the main frontline[/italic].
+    This backline positioning makes the mortar operator [color=#ff0000]highly susceptible to enemy flanks[/color].
+    Always be aware of your surroundings, listen for enemy movements, and request security from squad mates if needed.
 
-    # Режими ведення вогню з міномета
-    Існує два режими ведення вогню з міномета: [bold]режим наведення за координатами[/bold] та [bold]режим лазерного наведення[/bold].
-    
-    Для роботи в режимі наведення за координатами, окрім міномета, мін та гайкового ключа, вам знадобиться [bold]далекомір або лазерний цілевказівник[/bold].
-    
-    Для роботи в режимі лазерного наведення необхідно використовувати [bold]лазерний цілевказівник[/bold], замість далекоміра.
+    ## Coordinate System Example
+    Mortar targeting uses an XY coordinate system. Imagine a grid laid over the battlefield. Your spotter will give you coordinates like "(X) Longitude: 50, (Y) Latitude: -30, HE Shell"
 
-    Щоб змінити режим ведення вогню, спершу необхідно розгорнути міномет. За замовчуванням міномет використовує [bold]режим наведення за координатами[/bold].
-
-    Після розгортання ви можете змінити режим двома способами:
-
-    - Натисніть ПКМ по міномету та виберіть в списку пункт [bold]"Перемкнути режим націлювання"[/bold].
-    - Або наведіть курсор на міномет і натисніть [bold]Alt + ЛКМ[/bold].
-
-    # Режим наведення за координатами
-    ## Приклад системи координат
-    Наведення міномета використовує систему координат XY. Уявіть сітку, накладену на поле бою. Ваш побратим передаватиме координати на кшталт: "(X): 50, (Y): -30, ОФ міна".
-
-    Нижче наведено спрощене візуальне представлення площини XY в межах 1 метра (або 1 клітинки в ігрових термінах) від точки відліку 0:
+    Here's a simplified visual representation of an XY plane with a 1-meter (or 1-tile, in game terms) range from the origin 0:
 
     <Box>+Y</Box>
-    <Box>(+1м)</Box>
+    <Box>(+1m)</Box>
     <Box>▲</Box>
     <Box>|</Box>
     <Box>|</Box>
-    <Box>(-1м) -X ◀-  -  -  -  -  -  0  -  -  -  -  -  -▶ +X (+1м)</Box>
+    <Box>(-1m) -X ◀-  -  -  -  -  -  0  -  -  -  -  -  -▶ +X (+1m)</Box>
     <Box>|</Box>
     <Box>|</Box>
     <Box>▼</Box>
-    <Box>(-1м)</Box>
+    <Box>(-1m)</Box>
     <Box>-Y</Box>
 
-    - 0 – це початок координатної системи (0,0).
-    - +Y – Північ/Вгору, -Y – Південь/Вниз.
-    - +X – Схід/Праворуч, -X – Захід/Ліворуч.
-    - Значення X та Y цілі вводяться в інтерфейс міномета. Точність координат критично важлива.
+    - The 0 is the origin (0,0).
+    - +Y is North/Up, -Y is South/Down.
+    - +X is East/Right, -X is West/Left.
+    - You'll input the target's X and Y values into the mortar UI. Accurate coordinates are key.
 
-    ## Використання та інтерфейс міномета
+    #Mortar Usage & Interface
 
-    <Box>
-      <GuideEntityEmbed Entity="MRMortarInterfaceGuideBook"/>
-    </Box>
+    Mortar works via coordinates, but you can also change where the mortar fires with the offset as well.
+    When you want to use the mortar, first thing you need to do is get the coordinates of where you want to send the shells with a laser designator or a range finder.
+    Afterward, simply input them in the interface and [color=#00FF00]set the coordinates[/color], and you are ready to fire.
 
-    Міномет працює за системою координат, однак ви також можете змінювати точку влучання за допомогою зміщення.
-    Перед використанням міномета вам необхідно отримати координати цілі за допомогою лазерного цілевказівника або далекоміра.
-    Після цього введіть координати в інтерфейс і [color=#00FF00]встановіть їх[/color], після чого міномет буде готовий до ведення вогню.
+    After setting your coordinates simply just interact with the mortar with a shell in hand.
 
-    Після встановлення координат просто взаємодійте з мінометом, тримаючи міну в руці.
+    <Box>[color=#ff0000]Beware that the UI doesn't update in real time, so if you cancel the "Set Coordinates" action, it will show the new coordinates, but will fire on the previous one.[/color]</Box>
+    [bold]Offset[/bold] is for small adjustments to where the shells will land, and by small, up to 10 tiles in any direction you want. Use the example given above to correctly adjust your coordinates if need be.
 
-    <Box>[color=#ff0000]Увага: інтерфейс не оновлюється в реальному часі. Якщо після введення нових координат ви не натиснете кнопку "Навестися" – інтерфейс візуально покаже нові координати, однак постріл буде здійснено за попередніми.[/color]</Box>
-    [bold]Зміщення[/bold] використовується для невеликого коригування точки падіння мін – до 10 клітинок у будь-якому напрямку. За потреби використовуйте наведений вище приклад системи координат для правильного налаштування зміщення.
+    - There are reasons to use offset instead of changing the coordinates, if you have good coordinates and a camera shell in the air, you will be able to use the offset to quickly adjust to the situation.
+    - Below we will cover the actual reason to use offsets and the reasoning behind it
 
-    - Існують ситуації, коли зміщення краще використовувати замість повної зміни координат. Наприклад, якщо у вас уже є точні координати та в повітрі перебуває камера-міна, ви зможете швидко коригувати вогонь за допомогою зміщення.
-    - Нижче ми розглянемо основні причини використання зміщення та принципи його застосування.
+    #Mortar Offsets & Inaccuracies
 
-    ## Зміщення та неточності міномета
+    The mortar has 2 inaccuracy parameters applied to it, one of which we can control.
 
-    Міномет має 2 типи неточності, один із яких можна контролювати.
+    -The first inaccuracy is about the distance. Further the target is, more inaccurate the mortar will be. Increasing by 1 every 20 tiles.
 
-    -Перша неточність залежить від дистанції. Чим далі розташована ціль, тим менш точним стає міномет. Неточність збільшується на 1 за кожні 20 клітинок дистанції.
+    -The second one is actually simple. Whenever you fire a mortar shell, there is a %25 chance for your coordinates to land 1 tile above or below the intended target coordinates. There is no way to lessen this in any way.
 
-    -Друга неточність простіша. Щоразу під час пострілу існує 25% ймовірність того, що міна влучить на 1 клітинку вище або нижче від заданих координат. Зменшити цю неточність неможливо.
+    <Box>Here is the important part about inaccuracies</Box>
+    The offsets applied are [bold]FIXED each time you set coordinates[/bold], If you set your coordinates to 100 100 the game will pick from +5 to -5 and give you a random offset from there.
+    Such as +3 and -2. You can treat it like your coordinates being 103 98 instead of 100 100 from now on.
 
-    <Box>Ось найважливіша частина механіки неточності</Box>
-    Застосовані зміщення [bold]ФІКСУЮТЬСЯ після встановлення координат[/bold]. Якщо ви встановите координати (X): 100 (Y): 100, гра випадково вибере зміщення в межах від -5 до +5.
-    Наприклад: +3 та -2. У такому випадку міномет фактично працюватиме так, ніби ваші координати тепер (X): 103 (Y): 98 замість (X): 100 (Y): 100.
+    <Box>[color=#ff0000]Until you actually press the [/color][color=#00FF00]"Set Coordinates"[/color][color=#ff0000] button again, you will always have that +3 and -2, and your mortar shots can be offset to be accurate based on that.[/color]</Box>
+    This is especially useful when using the camera shells. Once you set your coordinates and then fire a camera shell, it will land on exactly where the mortar is firing, meaning that you can use the offset interface to properly aim your shots while looking through the camera.
 
-    <Box>[color=#ff0000]Доки ви знову не натиснете кнопку [/color][color=#00FF00]"Навестися"[/color][color=#ff0000], ці значення (+3 та -2) залишатимуться незмінними. Завдяки цьому ви можете коригувати вогонь через систему зміщення для досягнення більшої точності.[/color]</Box>
-    Це особливо корисно під час використання камер-мін. Після встановлення координат і запуску камери-міни вона влучить саме в ту точку, куди стріляє міномет. Це дозволяє коригувати вогонь через систему зміщення, спостерігаючи за ціллю через камеру.
-
-    # Режим лазерного наведення
-
-    Режим лазерного наведення дозволяє оператору міномета вести вогонь без ручного введення координат.
-
-    Для використання цього режиму необхідно прив'язати [bold]лазерний цілевказівник[/bold] до міномета. Для цього натисніть по розгорнутому міномету, тримаючи цілевказівник у руках.
-
-    Після прив'язки переконайтеся, що лазерний цілевказівник працює в режимі [bold]"Встановлення міток БАП"[/bold]. У цьому режимі індикатор на пристрої загориться червоним кольором.
-
-    Після цього наведіть цілевказівник на бажану точку та натисніть по клітинці, куди потрібно здійснити вогонь.
-
-    Після успішного наведення міномет подасть звуковий сигнал. Це означає, що він готовий до ведення вогню.
-
-    [color=#ff0000]Під час наведення та ведення вогню, особа що здійснює наведення за допомогою лазерного цілевказівника повинна залишатися нерухомою. Якщо вона зробить крок, міномет повторно подасть сигнал, а наведення доведеться виконати заново.[/color]
-
-    [color=#ff0000]Якщо під час наведення або ведення вогню лазерний цілевказівник буде покладений або викинутий, міномет повторно подасть сигнал, а процедуру наведення доведеться повторити.[/color]
-
-    [color=#FFFF00]Прив'язка лазерного цілевказівника до міномета зберігається постійно та не зникає після зміни режиму наведення або згортання міномета. Вона буде замінена лише після прив'язки нового цілевказівника.[/color]
-
-    [color=#00FF00]Дальність зв'язку між лазерним цілевказівником та мінометом необмежена.[/color]
 </Document>
 

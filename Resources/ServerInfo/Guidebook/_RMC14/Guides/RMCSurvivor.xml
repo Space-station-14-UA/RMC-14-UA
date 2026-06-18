@@ -1,223 +1,223 @@
 <Document>
 
-  Посібник написаний frog6645 на Discord
+  Guide by frog6645 on Discord
 
-  [bold]Якщо ви читаєте це на початку раунду й не маєте уявлення, що робите – знайдіть когось, хто знає, візьміть дробовик і йдіть за ним. Ви, ймовірно, помрете. Щасти![/bold]
+  [bold]If you are reading this roundstart with no idea what you are doing, go find somebody who does, get a shotgun, and follow them. You're probably going to die. Goodluck![/bold]
 
-  #Вцілілий
+  #Survivor
 
-  Роль Вцілілого не призначена для новачків. Ви помрете десятки разів через обставини, які від вас не залежать. Перш ніж грати за Вцілілого, переконайтеся, що володієте базовими знаннями медицини, інженерії та бойових дій, щоб отримати максимум від цієї ролі.
+  Survivor is not a role meant for newer players. You will die dozens of times to things out of your control. Be sure to know medical, engineering, and combat before you attempt to play survivor for an optimal experience.
 
-  ##Важливі примітки
+  ##Important Notes
 
-  Вцілілі – це колоністи, які опинилися в пастці на колонії разом із ксеноморфами. Кожен Вцілілий має власну роль. Перш ніж обирати її, переконайтеся, що розумієте свої обов'язки. Якщо ви новачок у грі за Вцілілого, оберіть роль Охоронця колоніста.
+  Survivors are colonists who are trapped on the colony with xenonids. All survivors have a role. Be sure to know what you are doing before you pick a role. If you are new to survivor, pick security survivor!
 
-  Як Вцілілий, пам'ятайте: час працює проти вас. Кожна секунда, витрачена на пошук спорядження, – це секунда, за яку ксеноморфи можуть підготувати атаку. Уже через 50 секунд після початку раунду на вас можуть рушити десятки дронів.
+  As a survivor, time is working against you. Every second you spend looting is a second that the xenonids can organize an attack on you. By 50 seconds into the game, it is likely that you are already about to be rushed by dozens of drones.
 
-  Вашим першим пріоритетом має бути вихід на зв'язок по радіо. Привітайтеся, назвіть свою професію та повідомте, де перебуваєте. В ідеалі варто якомога швидше знайти іншого Вцілілого, щоб не залишатися на самоті. Єдина перевага людей над ксеноморфами – командна робота, тому використовуйте її.
+  Your first priority should be to check in over the radio. Say hi, say your job, let people know where you are. Ideally, you will try to approach another survivor so that you are not alone. The only thing you have on any xenonid is teamwork, be sure to use it.
 
-  Ще одне надзвичайно важливе завдання – знайти дробовик. Дробовики дозволяють ефективно боротися з ксеноморфами завдяки можливості оглушувати їх. Майже будь-який ксеноморф, з яким ви матимете шанс вступити в бій, буде вразливим до оглушення дробовиком. Для мобільного бою це одна з найкорисніших видів зброї.
+  Another highly important thing is to get a shotgun. Shotguns allow you to kill xenonids through stuns. Almost any xenonid that you stand a chance of fighting will be stunnable with a shotgun. For fighting on the go, shotguns will be extremely useful.
 
-  [bold]Дійте швидко[/bold]. У міру розвитку раунду дістатися до деяких місць стане значно важче.
+  [bold]Act Fast[/bold]. You will not be able to reach certain places as easily as you can early in the round as the round progresses. Trijent Medical, for example, is very close to the hive. Loot close to the hive first, then close in on where your hold will be.
 
-  ##Початок раунду
+  ##Starting Out
 
-  Перше, що вам слід зробити, – перевірити свій підсумок!
+  The first thing you should do is check your survival pouch!
 
   <GuideEntityEmbed Entity="RMCPouchSurvival"/>
 
-  Усередині підсумка міститься кілька предметів, необхідних для того, щоб залишитися живим. Залежно від вашої професії, ви можете почати гру з різним спорядженням, але підсумок є тим, що залишається незмінним для всіх.
+  The inside of your survival pouch contains multiple items that you need to survive. Depending on your job, you can spawn with an assortion of different things, but the survival pouch is the main thing that stays consistent.
 
-  [bold]Найважливіший предмет – це ваш ліхтарик![/bold]
+  [bold]The most important item is your flashlight![/bold]
 
   <GuideEntityEmbed Entity="RMCFlashlight"/>
 
-  Не має значення, яке спорядження ви маєте, якщо не бачите, що робите. Обов'язково тримайте ліхтарик у руках, або помістіть його до слота кишені, щоб мати змогу нормально пересуватися картою. [bold]Інженер колоніст[/bold] починає гру із захисною каскою, яка трохи поступається ліхтарику, зате залишає ваші руки та кишені вільними!
+  Nothing you have matters if you can't see what you are doing. Be sure to either hold your flashlight, put it in your suit storage slot, or put it in one of your pockets so that you can navigate the map. The [bold]Engineer Survivor[/bold] spawns with a hardhat, which is slightly worse but keeps your hands and pockets free!
 
-  [bold]Якщо ви застрягли в кімнаті – використайте лом![/bold]
+  [bold]If you are stuck in a room, use your crowbar![/bold]
 
   <GuideEntityEmbed Entity="CMCrowbarRed"/>
 
-  Лом дозволяє миттєво відчиняти будь-які двері або броньовані жалюзі без живлення.
+  A crowbar can instantly pry any unpowered door or shutter open.
 
-  [bold]Ви починаєте гру з базовими ліками![/bold]
+  [bold] You spawn with basic medicine![/bold]
 
   <GuideEntityEmbed Entity="CMPacketPillsTricordrazine"/>
 
-  Трикодразин лікує дуже погано, але в умовах виживання доводиться використовувати все, що є під рукою. Трикодразин відновлює невелику кількість механічних пошкоджень та опіків, а кожна пігулка містить 15 унцій препарату. Ви можете безпечно прийняти дві пігулки до настання передозування, але не забувайте, що трикодразин можна поєднувати з іншими ліками для значно швидшого лікування. Використовуйте ці пігулки як допоміжний засіб, а не як основний метод лікування.
+  Tricordazine is horrible at healing, but you take anything that you can get. Tricordazine heals a tiny amount of brute and burn, each pill has 15u. You can safely take two pills before overdosing, but don't forget that you can also use other medicines with tricordazine to heal far faster. Use the pills as supplements.
 
-  ##Навігація
+  ##Navigation
 
-  [bold]Навігація картою значною мірою залежить від знання самої карти. Обов'язково користуйтеся веб-картами, щоб розуміти, куди прямуєте![/bold]
+  [bold]Navigating the map relies heavily on map knowledge. Be sure to check the webmaps to know where you are going![/bold]
 
-  Як Вцілілий, ви, найімовірніше, опинитеся в колонії без електропостачання, якщо самі не подбаєте про його відновлення. Це означає, що для пересування вам доведеться активно користуватися своїм [bold]ломом[/bold]. У крайньому разі дробовик із картеччю здатний вибити двері двома пострілами. Двері під напругою неможливо відкрити ломом, тому завжди майте на увазі запасний маршрут. Іноді можна розбити вікно та розібрати його раму.
+  As a survivor, the colony will likely be unpowered unless you take actions to power it. This means that you will need to use your [bold]crowbar[/bold] to navigate the map! A shotgun with buckshot can blast down a door with two shots in a pinch. Powered doors cannot be forced open with a crowbar, so be sure to know an alternate route. Sometimes you can break a window and deconstruct the frame.
 
-  Корисно пам'ятати, що [bold]Посадкові Зони[/bold] зазвичай розташовуються біля одного з країв карти. На протилежному боці карти майже завжди знаходиться [bold]Вулик[/bold]. Вулик – це місце, якого варто уникати, якщо тільки ви навмисно не шукаєте бійки або цінної здобичі. Неможливо пояснити, коли варто заходити на територію під контролем ксеноморфів – це приходить лише з досвідом. Обирайте свій маршрут розумно.
+  A useful tip is to note that [bold]Landing Zones[/bold] have a trend to hug a certain side of the map. The opposite side of the map is almost always the location of the [bold]Hive[/bold]. The hive is somewhere that you should avoid unless you are itching for a fight or loot located within it. Judgement on interacting with locations under xenonid control cannot be explained, only learned. Choose your path wisely.
 
-  Під час пересування засмоленими ділянками будьте особливо обережні. Як Вцілілий, ви покладаєтеся на швидкість, а часу чекати, поки смола зникне після знищення вузлів, у вас зазвичай немає. Якщо вже вирушаєте в дорогу, рухайтеся швидко та не намагайтеся прикривати власні фланги. Самотужки ви цього не зможете зробити.
+  When navigating through weeded areas, tread very carefully. As a survivor, you are banking on acting quickly and you do not have the time to wait for weeds to dissipate after breaking the nodes. If you are going to travel, do it as quickly as possible and do not bother attempting to secure your flank. You are not able to.
 
-  Нарешті, більшість колоній мають певну логічну структуру. Навіть якщо ви не знаєте конкретної карти, житлові приміщення зазвичай розташовані неподалік медичних відділень, а відділи охорони нерідко знаходяться поруч із ними. Це правило працює не завжди, але здоровий глузд часто дозволяє орієнтуватися навіть без попереднього знання карти.
-  
-  ##Посади вцілілих
+  Finally, most colonies have some sort of organization. Even if you do not know the map, you will find that living quarters are usually nearby medical areas and that security zones are usually close to those as well. This is not always true, but mind that common sense can get you far without any prior knowledge.
 
-  Усі Вцілілі мають власну роль, і навіть найслабші з них доволі сильні порівняно з морськими піхотинцями! Усі Вцілілі можуть [bold]переносити інших на спині[/bold], а також мають [bold]2 рівень Витривалості[/bold]. Щоб підняти когось на спину, схопіть його, ще раз схопіть (поваливши його на землю), а потім перетягніть його спрайт на свій. Після короткої затримки персонаж опиниться у вас на спині. Найкраще те, що для цього потрібна лише одна вільна рука.
+  ##Survivor Jobs
 
-  Нижче наведено короткий огляд можливостей кожної ролі Вцілілого.
-  
-  [bold]Охоронець колоніст[/bold]
+  All survivors have some sort of role, and even the worse ones are fairly powerful in comparison to marines! All survivors can [bold]Fireman Carry[/bold], and they all have [bold] Endurance 2 [/bold]. Fireman carrying can be done by grabbing somebody, grabbing them again, then clicking their sprite and dragging it onto yours. After a short doafter, you will haul them onto your back! The best part is, this only takes one hand.
+
+  Here is a quick breakdown of what every survivor role can do.
+
+  [bold]Security Survivor[/bold]
   <GuideEntityEmbed Entity="RMCWeaponRevolverSpearhead"/>
 
-  [bold]Охоронець колоніст[/bold] – боєць групи. Він не володіє критично важливими навичками, втрата яких поставить команду під загрозу, зате має низку природних бойових переваг. Він завдає більше шкоди в ближньому бою, володіє CQC та може миттєво використовувати автоінжектори. Крім того, починає гру з кращим спорядженням. Загалом саме ви повинні захищати інших Вцілілих і допомагати їм обшукувати небезпечні місця. [bold]Це найкраща роль для вашої першої гри![/bold]
+  The [bold]Security Survivor[/bold] is the fighter of the group. They don't have any skills that make them too important to die and have innate bonuses to combat. They have a bonus to melee damage, are skilled in CQC, and can instantly use autoinjectors. In addition, they spawn with better supplies. In general, you should be protecting the other survivors and helping them loot dangerous places. [bold] This is the best role for your first game![/bold]
 
-  [bold]Інженер колоніст[/bold]
+  [bold]Engineering Survivor[/bold]
   <GuideEntityEmbed Entity="RMCHardhatWhite"/>
 
-  [bold]Інженер колоніст[/bold] здатний ремонтувати ЗКЖ, генератори та засоби зв'язку. Як і Охоронець колоніст, він не настільки важливий, щоб його смерть прирекла всю групу, але все ж повинен спочатку виконати свої інженерні обов'язки, а вже потім шукати бійки. Будуйте та ремонтуйте барикади, відновлюйте генератори, якщо вони потрібні вашій групі. [bold]Не забувайте, що на сильно урбанізованих картах ремонт генераторів іноді може більше нашкодити вашій команді, ніж допомогти![/bold]
+  The [bold] Engineering Survivor[/bold] is capable of reparing APCs, generators, and communications. Like the security survivor, they are not so important that their death dooms their team, but they should be careful and do their engineering duties before fighting! Build and repair barricades and fix generators if your team needs it. [bold]Don't forget, fixing generators on highly urban maps may hinder your team more than it helps them![/bold]
 
-  [bold]Лікар колоніст[/bold]
+  [bold]Medical Survivor[/bold]
   <GuideEntityEmbed Entity="CMSurgicalCase"/>
 
-  [bold]Лікар колоніст[/bold] – життєво важлива частина групи. Якщо ви граєте за лікаря, дійте максимально обережно. Якщо всі лікарі загинуть, лікувати та повертати людей до строю буде нікому. Ваше завдання – лікувати інших Вцілілих і підтримувати їх у боєздатному стані. Коли всі здорові, можете іноді долучатися до бою, наприклад використовуючи коктейлі Молотова. [bold]Понад усе зосереджуйтеся на стабілізації критичних поранених і поверненні до життя загиблих союзників.[/bold]
+  The [bold]Medical Survivor[/bold] is the lifeblood of the group. If you play a medical survivor, you should be incredibly careful. If all of the medical survivors die, nobody can bring them back. Your job is to heal the other survivors and make sure they are in proper shape to do their jobs. When everybody is on good health, you can weave in a few molotovs. [bold]Focus on stabilizing critical survivors and reviving dead ones over anything else.[/bold]
 
-  [bold]Корпорат колоніст[/bold]
+  [bold]Corporate Survivor[/bold]
   <GuideEntityEmbed Entity="CMPen"/>
 
-  [bold]Корпорат колоніст[/bold] – це роль, орієнтована на рольову гру. Ви майже нічим не відрізняєтеся від Цивільного колоніста, окрім своєї посади. Втім, рольову гру важко вести, якщо ви мертві. Знайдіть оборонну позицію разом з іншими Вцілілими або, якщо ситуація стане безнадійною, місце для укриття. Бийтеся пліч-о-пліч із Охоронцем колоністом і чесно заробляйте свою зарплату, або ж киньте всіх напризволяще, сховайтеся у шафці та дозвольте дрону захопити вас. [bold]Після порятунку знайдіть Представника Корпорації на Саванні та представтеся![/bold]
+  The [bold]Corporate Survivor[/bold] is a roleplay role. You are extremely similar to the civilian survivor, the only difference is your position. You can't roleplay if you're dead, however. Find a place to hold with the other survivors or if things go south, a place to hide. Fight side by side with the security survivor and earn your paycheck or get captured by a lesser drone after you abandon everybody to hide in a locker. [bold]Once you are rescued, find the Almayer's Corporate Liaison and introduce yourself![/bold]
 
-  [bold]Цивільний колоніст[/bold]
+  [bold]Civilian Survivor[/bold]
   <GuideEntityEmbed Entity="CMJumpsuitColonist"/>
 
-  [bold]Цивільний колоніст[/bold] не має жодних особливих переваг. Ви звичайний стрілець, який може переносити інших на спині та якого трохи важче збити з ніг. Робіть усе можливе, щоб вижити.
+  The [bold]Civilian Survivor[/bold] is without any unique benefits. You are a rifleman with the ability to fireman carry and are ever so slightly harder to tackle. Do whatever you can to survive.
 
 
-  ##Пошук спорядження
+  ##Looting
 
-  Пошук спорядження – найважливіша частина гри за Вцілілого. Навіть якщо ви оберете ідеальну оборонну позицію та бездоганно проведете кожен бій, без належного спорядження ви приречені на поразку. Нижче наведено кілька загальних порад щодо того, де варто шукати корисні ресурси.
+  Looting as a survivor is the most important step. Even if you choose the best hold and fight perfectly, if you do not have equipment, you will fail. The following statements are generally true and will help you decide where to loot.
 
-  У медичних відділеннях зазвичай є медичні стійки з майже всім необхідним для лікування. В ідеалі варто відкрутити та забрати його з собою. Навіть якщо його немає, у медичному відділенні часто можна знайти різне медичне обладнання, яке стане у пригоді в критичній ситуації.
+  Medical has medical vendors with just about everything you need in them. Ideally you will take the entire medical vendor by unwrenching it and dragging it with you. If there is no vendor, medical still likely has ramshackle equipment that can be of use in a pinch.
 
-  У Відділі Охорони можна знайти зброю та броню. Крім того, на тілах загиблих іноді залишаються корисні медикаменти та захисне спорядження.
+  Security has weaponry and armor. In addition, corpses may have armor and medical supplies.
 
-  У відділах Постачання та складських приміщеннях часто зберігаються різноманітні припаси.
+  Cargo/Storage often have a variety of supplies.
 
-  В адміністративних будівлях зазвичай можна знайти папір, необхідний для створення коктейлів Молотова. Контейнери для паперу можна підібрати, натиснувши на них правою кнопкою миші. Крім того, вони поміщаються в рюкзаки та ящики.
-  У барі можна знайти алкоголь, який також використовується для виготовлення коктейлів Молотова. В ідеалі варто забрати із собою весь автомат з алкоголем.
+  Administrative Buildings often have paper which is used for molotovs. Paper bins can be picked up by right clicking them! In addition, they can fit into backpacks and crates.
+  The Bar has alcohol which is used for molotovs. Ideally, you will bring the entire booze vendor with you.
 
 
-  Багато з цих речей можуть здатися не надто важливими, але без них ваші шанси на виживання стрімко зменшуються. Намагайтеся мати достатній запас медикаментів, боєприпасів та матеріалів для будівництва міцних барикад.
+  Many of these things may seem pointless, but without any of these things, your chances of survival plummet. You want to have a well rounded setup with a surplus of medicine, ammo, and strong barricades.
 
-  [bold]Пошук спорядження – найважливіша частина виживання! Неважливо, наскільки ви вправний гравець, якщо у вас немає спорядження, щоб реалізувати свої навички![/bold]
+  [bold]Looting is the most important part of survival! Your skill doesn't matter if you have nothing to express it with![/bold]
 
-  ##Зброя
+  ##Weapons
 
-  Вцілілі мають доступ до зброї, якої немає на озброєнні морської піхоти. Імовірно, з багатьма зразками ви раніше не стикалися. Більшість такої зброї має власні особливості або унікальні механіки, що відрізняють її від аналогів, які використовують морські піхотинці. Деякі зразки зброї на колонії збігаються зі спорядженням морської піхоти, проте вони все одно будуть розглянуті в цьому посібнику, оскільки в руках Вцілілого їхнє застосування часто відрізняється.
+  Survivors have access to weapons that marines do not. You likely will not be familiar with many of them. These weapons often have a certain gimmick or trait to make them stand out from the marine variants. Some weapons on the colony are the same as marine weapons, but will still be mentioned due to their application being different in the hands of a survivor.
 
-  [bold]Під час пересування картою дробовик, найімовірніше, стане вашою основною зброєю завдяки своїй здатності оглушувати та швидко розправлятися з ксеноморфами, які відокремилися від основної групи.[/bold]
+  [bold]Shotguns will likely be your main weapon as you are traversing the map due to their ability to stun and destroy out of place xenonids.[/bold]
 
   <GuideEntityEmbed Entity="WeaponShotgunM42A2"/>
 
-  Помповий дробовик M42A2 – найнадійніша зброя для Вцілілого. Оснащена ножем, вона чудово підходить для ближнього бою, знищення ксеносмоли та стримування більшості супротивників. Цю зброю слід використовувати однією рукою та заряджати картеччю. Під час стрільби будьте надзвичайно обережні, щоб не поранити союзників. Невдалий постріл картеччю може миттєво вбити будь-кого без броні або надовго оглушити того, хто пережив влучання. На щастя, картеч також здатна ненадовго оглушувати ксеноморфів і значно сповільнювати їх після влучання. Маневруйте навколо ворогів, швидко усувайте слабші цілі та створюйте можливості для атаки своїм союзникам.
+  The M42A2 pump shotgun is the most reliable weapon for a survivor. With a mounted bayonet, the pump shotgun is capable of brawling, breaking weeds, and beating back most foes. This weapon should be used one handed and loaded with buckshot. When using the pump shotgun, be extremely careful to not shoot your allies. A poorly placed buckshot can instantly kill anybody not wearing armor and deliver a lengthy stun to anybody who survives the hit. Fortunately, buckshot can also briefingly stun xenonids and slow them for an extended time after you land a stike. Weave around enemies and pick off weaker targets and provide openings for your allies.
 
   <GuideEntityEmbed Entity="RMCWeaponShotgunHG3712"/>
 
-  Помповий дробовик ХГ 37-12 – менш надійна, але більш спеціалізована версія помпової рушниці M42A2. Наразі ХГ 37 серйозно обмежена через відсутність своєї ключової особливості – подвійного трубчастого магазина, який дозволяє швидко перемикатися між різними типами набоїв під час бою. ХГ 37 слід використовувати у двох руках та заряджати тим типом набоїв, який найкраще відповідає ситуації. При використанні кульових набоїв дробовик демонструє дуже високу точність. Якщо ж ви використовуєте картеч, поводьтеся з ХГ 37 приблизно так само, як із M42A2. Однак перед пострілом обов'язково візьміть зброю в обидві руки, інакше ціль може встигнути уникнути влучання.
+  The HG 37-12 pump shotgun is a less reliable more specialized version of the M42A2 pump shotgun. The HG 37 is currently crippled by not having it's dual tube feature, allowing the user to swap on the go. The HG 37 should be wielded and loaded with the user's choice of ammo. If using slugs, the HG 37 is highly accurate. If you use buckshot, use the HG 37 similarly to the pump shotgun, but be sure to wield the weapon before firing it to prevent your target from dodging.
 
   <GuideEntityEmbed Entity="WeaponShotgunCustomBuilt"/>
 
-  Це, без перебільшення, одна з найсмертоносніших одиниць зброї, яку можна отримати без втручання адміністраторів. Саморобний дробовик, має магазин місткістю 6 набоїв. Він оснащений режимом стрільби чергами, що дозволяє швидко випустити два набої з картеччю поспіль. Такої потужності достатньо, щоб миттєво вбити майже будь-якого ксеноморфа Т1 або завдати критичних поранень більшості ксеноморфів Т2. Будьте надзвичайно обережні під час використання цієї зброї поблизу союзників.
+  This is arguably the most deadly weapon obtainable without admin intervention. The custom built shotgun, often called the "custom" in character, is a shotgun with a 6 shell capacity. It sports a burst fire mode, capable of quickly firing two buckshot consecutively. This can kill almost any T1 instantly or greviously wound any T2 horribly. Be extremely careful when using this weapon around allies.
 
   <GuideEntityEmbed Entity="WeaponShotgunM890"/>
 
-  M890 – надзвичайно ефективний дробовик, здатний вміщувати вісім набоїв у трубчастому магазині та не потребує ручного досилання набою після кожного пострілу. Морські піхотинці можуть бути знайомі з цією зброєю як із дробовиками, що зберігаються у збройовій та видаються під час Червоного коду на Саванні. M890 має значно вищу скорострільність, ніж помповий дробовик M42A2, що робить її надзвичайно ефективною в ближньому бою. Фактично вона є прямим покращенням більшості помпових рушниць і здатна конкурувати навіть із саморобним дробовиком.
+  The M890 is a highly robust shotgun capable of holding eight shells in the tube, not requiring pumping. A marine may be familiar with this shotgun as the code red armory shotguns on the Almayer. The M890 sports a superior fire rate to the M42A2 pump shotgun, making it extremely effective in a brawl. This is effectively a linear upgrade to the pump shotguns and a competitor to the custom shotgun.
 
 
-  [bold]Гвинтівки є дуже ефективним вибором, проте багато гвинтівок, доступних лише Вцілілим, не надто корисні, якщо використовувати їх без урахування їхніх особливостей.[/bold]
+  [bold]Rifles are highly effective options, however many of the survivor exclusive rifles are not very useful unless used in a specific manner.[/bold]
 
   <GuideEntityEmbed Entity="WeaponRifleAR10"/>
 
-  Штурмова гвинтівка АР10 має серед Вцілілих репутацію відверто невдалої зброї, проте певні переваги в неї все ж є. Попри низький DPS, кожна куля завдає значної шкоди, що робить АР10 доволі економною щодо витрати набоїв. Вона також непогано підходить для стримування ксеноморфів, не дозволяючи їм наближатися до ваших барикад протягом тривалого часу. Крім того, будь-яка АР10, знайдена на карті, [bold]гарантовано[/bold] матиме встановлені насадки, які можна зняти та встановити на більш корисну зброю. Використовуйте те, що маєте під рукою, навіть якщо це АР10.
+  The AR10 Assault Rifle is a weapon known for being laughably terrible by the survivor community, however it does have a few merits. In spite of it's low DPS, each bullet does a large amount of damage, making it very ammo efficient and good at keeping xenonids off of your barricades for an extended period. In addition, any AR10 on the map is [bold]guranteed[/bold] to start with attachments to strip and put onto a less terrible gun. Make use of what you have, even if it is an AR10.
 
   <GuideEntityEmbed Entity="WeaponRifleM16"/>
 
-  M16 є прямим покращенням АР10. Вона має вищу скорострільність, кращу точність і приблизно таку саму шкоду за одне влучання, що робить її дуже надійною зброєю. M16 також зберігає ефективність на великих дистанціях і чудово поєднується з різними насадками. Це одна з найнадійніших гвинтівок, яку може знайти Вцілілий, а коли вона присутня на карті, набоїв до неї зазвичай більш ніж достатньо. Використовуйте M16 як основну зброю підтримки з другого ряду вашої групи або для відстрілу ксеноморфів, які атакують ваші барикади. Вона чудово підходить для завдання серйозної шкоди ворогу.
+  The M16 is a direct upgrade to the AR10. It sports a higher fire rate, accuracy, and a similar damage per bullet to the AR10, making it a reliable weapon. The M16 has very far falloff as well and responds well to attachments. This is one of the most reliable guns that you can come across as a survivor and typically when it is present, ammo for it is plentiful. Use the M16 as a brawling gun in the backline of your group or to shoot xenonids attacking your cades with the intention to put serious hurt out.
 
   <GuideEntityEmbed Entity="RMCWeaponRifleM54C"/> <GuideEntityEmbed Entity="RMCWeaponRifleM54CMK1"/> <GuideEntityEmbed Entity="WeaponRifleM4SPRCustom"/>
 
-  Це стандартна зброя морської піхоти. Боєприпаси до неї варто берегти для великих боїв і фази оборони позиції, проте за правильного використання вона надзвичайно ефективна й у звичайних сутичках. М4СПГ дозволяє зберігати повну швидкість пересування навіть при використанні в двох руках. МК2 вирізняється високим DPS, а MK1 працює приблизно так само, але загалом є дещо кращою зброєю. Використовуйте ці гвинтівки так само, як це робив би морський піхотинець, але значно ощадливіше. На відміну від морпіхів, ви не можете просто викликати Постачання та замовити собі нові набої... Принаймні зазвичай.
+  Highly standardized marine weapons. Ammo for these weapons is best conserved for bigger fights and the holding phase, however they are incredibly useful for brawling if used properly. The M4SPR allows full movement speed while wielded, the MK2 has high DPS, and the MK1 is like the MK2 but slighly better overall. Use these as you would as a marine but more conservatively. You cannot call requisitions for a supply drop... usually.
 
   <GuideEntityEmbed Entity="WeaponRifleMAR40"/>
 
-  Дуже ненадійна зброя, всупереч її внутрішньоігровому опису. МАР40 має сміховинно низьку точність і практично непридатна для стрільби на середніх та великих дистанціях, залишаючись ефективною лише на дуже близькій відстані – майже як дробовик. Якщо ви все ж вирішите використовувати цю зброю, то головним чином через великий запас набоїв і здатність підтримувати безперервний вогонь. Крім того, сошка та коліматорний приціл дозволяють значно покращити її точність і повніше розкрити потенціал потужних набоїв. Використовуйте МАР40 як зброю останнього шансу, подібно до АР10, або в ситуаціях, коли ви берете участь у ближньому бою та вам потрібно завдати серйозної шкоди противнику, якого неможливо ефективно оглушити дробовиком.
+  A highly unreliable weapon, contrary to the in game description. The MAR40 is laughably inaccurate and cannot be used outside of extremely close range, similar to that of a shotgun. If you are to use this weapon, use it because it has a surplus of ammo and can consistently put lead down range. In addition, a bipod and reflex sight allow this weapon to shoot fairly straight and take advantage of its powerful bullets. Use this weapon as a last resort, similar to the AR10, or whenever you are in a brawl and need to hurt something that cannot be stunned by a shotgun.
 
 
-  [bold]Вцілілі мають доступ як до надзвичайно потужних, так і до відверто слабких пістолетів.[/bold]
+  [bold] Survivors get access to some very powerful and very terrible pistols. [/bold]
 
 
   <GuideEntityEmbed Entity="RMCWeaponPistolMK45"/>
 
-  MK45 – повільний, але надійний пістолет, відомий своєю бронебійністю. Він не надто ефективний проти неброньованих цілей, тому найкраще використовувати його як допоміжну або резервну зброю. MK45 також надзвичайно корисний під час оборони позиції, якщо у вас немає іншого способу боротися з броньованими противниками.
+  The MK45 is a slow, reliable pistol known for it's armor piercing. Poor against soft targets, the MK45 is best used as a supplement or a backup weapon. It is also incredibly useful during a hold if you have no other way to deal with armor.
 
   <GuideEntityEmbed Entity="RMCWeaponRevolverSpearhead"/>
 
-  Вістря списа – револьвер, відомий надзвичайно низьким розкидом, що дозволяє ефективно використовувати його навіть однією рукою. Він помітно поступається проти ворогів із високим [bold]ухиленням[/bold] через відносно низьку характеристику точності, проте залишається надзвичайно потужним проти помірно броньованих цілей. Вістря списа використовує експансивні набої, які за своєю ефективністю майже не поступаються найкращим зразкам озброєння. Крім того, револьвер практично не втрачає ефективності на великих дистанціях. Використовуйте його для ураження цілей, які намагаються втекти від вас.
+  The Spearhead is a revolver known for having incredibly low scatter, usable one handed to great effect. Notably poor against enemies with [bold]evasion[/bold] due to it's low accuracy stat, but extremely powerful against moderately armored targets. Sports hollow point munitions that nearly compete with the best of the best. In addition, the spearhead has little to no falloff. Use it to nail any target running away from you.
 
 
-  [bold]МАР50, Цвяхостріл і Басіра-Армстронг важко порівнювати з рештою зброї, оскільки кожна з них виконує доволі вузьку роль.[/bold]
+  [bold]The MAR50, Nailgun, and Basira Armstrong are not comparable to the other weapons, holding more niche roles.[/bold]
 
 
   <GuideEntityEmbed Entity="RMCWeaponMar50LMG"/>
 
-  МАР50 – одна з найнебезпечніших одиниць зброї, яка може потрапити до рук Вцілілі або навіть морського піхотинця. Подібно до МАР40, вона використовує набої калібру 7,62×39 мм, а отже сумісна з магазинами від МАР40. Крім того, МАР50 вирізняється винятковою точністю, пристойною скорострільністю та величезною вогневою міццю. Для МАР50 також існують спеціальні барабанні магазини місткістю до 100 набоїв. Встановлена на сошки, ця зброя здатна знищувати практично все, що опиниться перед нею. Навіть без сошок це одна з найкращих одиниць зброї, яку ви можете отримати. Не втратьте її.
+  The MAR50, one of the most dangerous weapons a survivor or any marine could get their hands on. Similar to the MAR40, the MAR50 fires 7.62x39 bullets, meaning it can take the mags of the MAR40. In addition, the MAR50 is pinpoint accurate, sports an acceptable fire rate, and packs an immense punch. The MAR50 also has specialized drum mags capable of holding up to 100 rounds. When put on a bipod, the MAR50 can decimate anything that comes its way. Even without a bipod, this is the strongest option you have. Don't lose it.
 
   <GuideEntityEmbed Entity="RMCWeaponBoltActionRifle"/>
 
-  Мисливська гвинтівка Басіра – доволі вузькоспеціалізована зброя. Вона використовує бронебійні набої, майже не втрачає ефективності на великих дистанціях і здатна вести досить швидкий вогонь. Після кожного пострілу необхідно вручну відводити затвор, подібно до того, як у помпової рушниці потрібно пересмикувати цівку. Зазвичай це здійснюється нажаттям клавіші [bold]Пробіл[/bold]. Відвести та звести затвор, подавши набій до ствола. Де факто, двічі натискаючи на Пробіл. Використовуйте цю гвинтівку під час оборони позиції для обстрілу більш витривалих ксеноморфів і примушуйте їх відступати від ваших барикад. Будьте дуже обережні, щоб не поцілити союзників – вони навряд чи оцінять бронебійний набій у спину.
+  The Basira hunting rifle is a rifle that is moderately situational. It sports armor piercing bullets that have little to no noticable falloff and can fire fairly quickly. The weapon must be bolted after each shot, similar to how the shotgun is pumped. [INSERT HOW TO DO SO WITH THE SPECIAL KEY HERE WHEN I FIGURE IT OUT]. Use it during the hold to pepper tankier enemies and force them off of your barricades. Be very careful to not strike your allies with it, they will not appreciate the AP shot to the back.
 
   <GuideEntityEmbed Entity="WeaponNailgun"/>
 
-  Цвяхостріл, на відміну від аналога морської піхоти, дійсно стріляє цвяхами! Кожен цвях завдає помірної шкоди та має непогане бронепробиття. Крім того, цвяхостріл можна перевести в режим стрільби чергами, що дозволяє вести досить інтенсивний вогонь. Втім, його ефективність помітно знижується на великих дистанціях. Попри це, він чудово підходить для стримування більш витривалих каст ксеноморфів біля барикад або для їх добивання. Що ще важливіше – цвяхостріл здатний ремонтувати барикади! Візьміть у руку матеріал, з якого побудована барикада, а потім натисніть на неї, тримаючи цвяхостріл. Ви витратите кілька цвяхів і трохи матеріалу, але швидко відремонтуєте барикаду.
+  The nailgun, unlike its marine counterpart, can fire nails! Each nail does moderate AP and the nailgun itself can be set to burst fire, firing fairly quickly. The nailgun suffers from falloff, however it is good at keeping tankier castes off of barricades or even running them down. More notably, the nailgun can also fix barricades! Hold the material the barricade is made of in your hand, then click the barricade with the nailgun selected. You will consume a few nails and a little bit of material but it will quickly repair the barricade.
 
 
-  ##Бій малими групами
+  ##Cell Combat
 
-  Суть бою за Вцілілого полягає не в тому, щоб повністю знищити ксеноморфів. Ваше завдання – завдати їм втрат, змусити відступити та зменшити кількість ворогів, які зможуть повернутися за вами пізніше. У звичайному раунді ви не переможете Вулик. Ксеноморфів надто багато, вони надто сильні, а проти їхніх найнебезпечніших форм у вас практично немає ефективних засобів боротьби. Проте це не означає, що ви безпорадні.
+  The idea when fighting as a survivor is that you aren't fighting to wipe the xenonids out, you are fighting to break their morale and make sure less can come back to kill you later. In a normal round, you won't beat the xenonids. They are too plentiful, too strong, and you don't have any way to fight the most powerful enemies when it comes down to it. That being said, you aren't helpless.
 
-  Протягом перших 20 хвилин раунду ви можете успішно протистояти ксеноморфам за допомогою правильної [bold]тактики малих груп[/bold]. Морська піхота зазвичай воює великими силами та покладається на перевагу у вогневій потужності. У вас такої переваги немає, тому доведеться компенсувати це кращою тактикою. Кожен член групи повинен використовувати зброю, яка найкраще відповідає його ролі. Охоронців колоністів споряджайте найкращими дробовиками та найміцнішою бронею. Медиків тримайте позаду зі гвинтівками, щоб вони не наражалися на зайву небезпеку. Усі інші повинні бути гнучкими та допомагати там, де це необхідно.
+  During the first 15 minutes of the round, you can fight the xenonids with proper [bold]Cell Combat.[/bold] As a marine, one typically moves with a large collective of marines and rushes xenonids down with superior firepower. Since you don't have that, you need to use superior tactics. Have everybody equip a weapon that fits their role best. Outfit security survivors with your best shotguns and most protective armor and have your medics in the back with rifles so that they stay out of harms way. Have everybody else be flexible and assist in combat where needed.
 
-  Ви не ведете війну на виснаження. Ваше завдання – здобувати швидкі локальні перемоги, які скорочують чисельність ворога або змушують його відступати. Якщо бій затягується, краще відійти до того, як ксеноморфи повернуться з підкріпленням.
+  You are not fighting a battle of attrition with xenonids, you are working to score quick victories that crush their morale or numbers. This means that if a fight is going on for any extended duration at all, you should disengage before the xenonids return with backup.
 
-  Вогонь є надзвичайно важливим інструментом у тактиці малих груп, оскільки він дозволяє контролювати поле бою. Вогонь завдає шкоди з часом і блокує будь-яке лікування ксеноморфів. Якщо ксеноморф вирішує пройти крізь полум'я та атакувати вас, він фактично заявляє, що впевнений у своїй здатності пережити отриману шкоду. Доведіть йому протилежне.
+  Fire is an incredibly important tool in Cell Combat because it is battlefield control, something that you otherwise lack. Fire does damage over time and stops xenonids from healing by any means. This means that if a xenonid chooses to engage through fire, it is stating to you that it is confident that it can get in, attack you, then back up without the ability to heal while taking constant damage over time. Prove to it otherwise.
 
-  Полум'я насамперед використовується для стримування атаки, а не для переслідування ворога, який уже відступає. Якщо самотній ксеноморф загорівся, він фактично приречений: йому доведеться котитися по землі, інакше він згорить. Якщо ж поруч є інші ксеноморфи, вони можуть допомогти один одному загасити полум'я. Саме тому вогонь найефективніший під час активного бою. Підпалений ксеноморф змушений обирати між двома варіантами: відступити або битися з постійним негативним ефектом. Навіть якщо він залишиться живим, його союзники витратять час на допомогу йому замість атаки на вас.
+  Fire is a tool used to stop xenonids from engaging, usually not to be used on retreating xenonids. If you ignite a xenonid and it is alone, it is effectively marked for death because it has to roll or it will burn. Multiple xenonids can flee and pat fire out on eachother. This means that unless you are threatening damage over time during an active fight, fire does very little. In addition, igniting a xenonid during combat gives it the same ultimatum of "flee or face me with a debuff". At the very least, it will force their allies to spend time that could have been spent attacking you on patting them out.
 
-  Через обмежену вогневу міць правильний вибір цілей є надзвичайно важливим. [bold]Якщо хтось атакує певного ксеноморфа, намагайтеся зосередити вогонь на тій самій цілі![/bold] Водночас стежте, щоб завдавати якомога менше дружнього вогню. Чим більше ксеноморфів ви зможете вбити, тим вигіднішою стане ситуація для вашої групи.
+  Target prioritization is heavily important due to your lower damage. [bold]When somebody is attacking a certain xenonid, you should try to attack it too![/bold] Take care to deal as little friendly fire as possible in doing so. You should try to get as many kills as possible to tip numbers in your favor during a fight.
 
-  І насамкінець – можливо, найважливіше правило для будь-якого Вцілілого: [bold]СПОЧАТКУ ПІДНІМИ, ПОТІМ СТРІЛЯЙ!![/bold] Обійнявши союзника, який лежить на землі, ви допомагаєте йому швидше повернутися в бій. Після цього він зможе допомогти вам, підняти іншого союзника або відкрити вогонь по ворогу. Оглушений союзник майже так само марний, як і мертвий, тому допомагайте одне одному підніматися на ноги. Тактика малих груп тримається на згуртованості та командній роботі. Піклуйтеся про своїх товаришів, щоб вони могли піклуватися про вас.
+  Finally, this may be the most important saying for a survivor! [bold]SHAKE OVER SHOOT!!![/bold] Shaking your allies brings them back to their feet. This allows them to shake you and shoot their gun, bringing the numbers back in your favor. A stunned ally is as good as a dead one, so shake them so you can both support eachother! Cell Combat is all about cohesion and teamwork. You need to look out for your allies so that they can look out for you.
 
 
-  ##Вибір оборонної позиції
+  ##Choosing a Hold
 
-  Визначитися з місцем для оборони дуже важливо ще на початку раунду, оскільки це дозволяє уникнути розпорошення ресурсів. Якщо хтось пропонує придатну для оборони позицію, не витрачайте час на суперечки. Ваше завдання – доставити туди спорядження та вижити в процесі.
+  Deciding on a hold location is highly important to do early into the round as it prevents splitting of resources. If somebody suggests a hold and it is viable, you should not argue with them to save time. Your objective should be to get loot to the hold and survive doing it.
 
-  Очевидно, що будь-яка оборонна позиція повинна бути придатною для виживання. Намагайтеся облаштовуватися неподалік від Посадкової Зони в місці з вузькими проходами, але водночас із достатнім простором для ухилення від атак по площі, таких як плювок Бойлера. Для успішної оборони важливо мати відкриту місцевість, яка надає нападникам мінімум укриттів і дозволяє вам зосереджувати вогонь на цілях.
+  Obviously any location that you would make a hold needs to be survivable. Try to hold close to an LZ in a location that has choke points but leaves you enough room to avoid area of effect attacks such as boiler spit. An open location that provides little cover for attackers with enough places to focus fire is essential for surviving.
 
-  Також варто враховувати складність транспортування ресурсів до обраної позиції. Якщо для цього потрібно тягнути автомат з алкоголем через усю карту, така позиція вже стає менш привабливою.
+  Another consideration is how difficult it is to transport loot to a location. If you need to move a booze vendor across an entire map to a location, it is already immediately less favorable.
 
-  Коктейлі Молотова є надзвичайно важливою частиною оборони. На картах, де їх можна виготовити у великій кількості, ви можете дозволити собі утримувати більш відкриті позиції, оскільки для їх захисту знадобиться більше коктейлів. На картах, де ресурсів для Молотових мало, інколи варто обрати більш тісну позицію та змиритися з більшою вразливістю до атак по площі, щоб економити запаси.
+  Molotovs are incredibly important to hold. On maps with more molotovs, you can afford to hold more open spaces because they require more molotovs. On maps with very few molotovs, it is worth being more vulnerable to area of effect attacks so that you can conserve molotovs.
 
-  Останній важливий фактор – ресурси. Чи вистачить вам металу та пласталі, щоб належним чином укріпити цю позицію? Якщо ні, не варто навіть намагатися її утримувати. Ксеноморфи чудово знаходять найслабші місця в обороні. Не забувайте, що вони здатні розплавляти стіни. Вони завжди знайдуть спосіб прорватися всередину.
-  
-  ##Оборона позиції
+  The final main consideration is resources. Do you have enough metal and plasteel to properly foritfy this location? If you cannot, you should not attempt to hold it. Xenonids are very good at finding your weakest link. Do not forget that they can melt walls. They will always find a way in.
+
+  ##Holding
 
   <GuideEntityEmbed Entity="RMCGrenadeMolotov"/>
 
-  [bold]Перш за все, найважливішою частиною оборони позиції є правильне поводження з коктейлями Молотова. Коктейль Молотова має випадкову затримку спрацювання від 1 до 4 секунд. Це означає, що він може спрацювати прямо у вас в руках майже одразу після підпалу. Перш ніж підпалювати коктейль, ви повинні точно знати, куди його кинете, і зробити це без жодних вагань. Що б не сталося, ви повинні негайно його жбурнути. Якщо ви завагаєтеся, то ризикуєте залишитися з ним у руках. Це буквально бомба сповільненої дії.[/bold]
+  [bold]Before anything else, molotov handling conduct is the most important part of holding. Molotovs have a randomized 1-4 second fuse. This means that a molotov can go off in your hand within the second you light it. Before lighting a molotov, know exactly where you are going to throw it and do so without any other thought. No matter what happens, you need to throw it there or else you may freeze up and carry the molotov. It is literally a ticking time bomb.[/bold]
 
-  Однією з найважливіших складових оборони є використання коктейлів Молотова. Це запалювальна зброя, яку можна створити, тримаючи аркуш паперу та натиснувши ним на відповідну пляшку алкоголю. Якщо оглянути пляшку, у її описі буде зазначено, чи можна перетворити її на коктейль Молотова. Коктейлі Молотова створюють зону вогню, яка завдає ксеноморфам помірної шкоди від займання. Будь-яке полум'я, включно зі створеним коктейлями Молотова, можна збити, але інакше воно горітиме досить довго.
+  One of the most important parts of the hold is the usage of molotovs. Molotovs are firebombs that can be created by holding a piece of paper and clicking an applicable bottle of alcohol. If you inspect a bottle, it will say that it can be turned into a molotov if it is able to. Molotovs create a zone of fire that does somewhat weak fire damage to any xenonid that touches it. All fire, including fire from molotovs, can be patted out, but will otherwise last for quite some time.
 
-  Коктейлі Молотова надзвичайно корисні для виграшу часу. Водночас варто пам'ятати, що працюють вони не зовсім інтуїтивно. Перед появою полум'я відбувається початковий вибух. Це полум'я пошкоджує барикади та завдає миттєвої шкоди від опіків, окрім подальшої шкоди від самого горіння. Не кидайте коктейлі Молотова безпосередньо на власні барикади, якщо тільки ситуація не стала критичною.
-  Для Вцілілого також надзвичайно важливо вміти контролювати поширення вогню. Завжди майте під рукою вогнегасники та робіть їх запас, щоб швидко виправляти наслідки невдалого використання коктейлів Молотова.
-  
-  В іншому ж будівництво барикад доволі просте. Будуйте їх для затримки ворога, а не в надії, що вони стоятимуть вічно. Якщо можливо, використовуйте біозахисні барикади. Кидайте коктейлі Молотова, стріляйте в ксеноморфів і лікуйтеся, коли випадає така нагода. Також не забувайте економити ресурси. Після переходу до оборони ви навряд чи будете часто вбивати ксеноморфів, якщо тільки самі не вирішите перейти в контратаку, що іноді є правильним рішенням. Намагайтеся витрачати якомога менше ресурсів для досягнення максимально можливого результату.
+  Molotovs are incredibly useful at buying time. Do note that molotovs do not function very intuitively. Molotovs have an initial explosion before they create fire. This fire damages barricades and deals outright burn damage in addition to any damage sustained by the fire. Avoid throwing molotovs directly on your barricades unless you are desperate.
+  A way to control fire is also highly important as survivor. Be sure to use fire extinguishers and to stockpile them properly to remedy any mistakes caused by molotovs.
+
+  Otherwise, barricade construction is incredibly simple. Build your barricades to stall, not to last. Make every barricade a biohazard barricade if possible. Throw molotovs, shoot xenonids, and heal when you can. In addition, do mind rationing your resources. Once you are holding, you likely will not get any kills unless you choose to counterattack, which is sometimes a correct choice. Do everything with the idea of doing a little with a lot.
 
 </Document>

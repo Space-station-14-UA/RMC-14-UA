@@ -1,163 +1,140 @@
 <Document>
-  # Керування загоном 101
-  [italic]Посібник написаний UnicornOnLSD на GitHub [/italic]
+  # Squad leading 101
+  [italic]Guide written by UnicornOnLSD on GitHub [/italic]
 
   <Box>
-    [italic]"Добре, Альфа! Ми вирушаємо на півні-... СТОП! ДЕ ВСІ?! ЧОМУ У МЕНЕ ЛИШЕ 5 БІЙЦІВ?! ЇХ ПОЦУПИЛИ?! ЯКОГО ХУ-..."[/italic]
+    [italic]"Alright, alpha, we’re pushing nort- wait, where is everyone? Is my squad only made of 5 people? Did they all get kidnapped? Where did everything go wrong?"[/italic]
   </Box>
 
-  Знайома ситуація? Хотіли бути харизматичним й крутим лідером, а в результаті ваш загін поліг одним із перших – або ж ви самі блукали без поняття, що відбувається.
+  You might have found yourself in that scenario, wanting to be a charismatic leader and either ending up as one of the first squad casualties or just as lost as every other member of your squad.
 
-  Цей посібник навчить вас бути Лідером Загону (ЛЗ), за яким морпіхи підуть у бій.
+  This guide is here to teach YOU how to become the squad leader you've always dreamt to be.
 
-  ## Спорядження та особливості
+  ## Gear and Features
 
-  Як Лідер Загону, ви маєте доступ до великої кількості обмеженого та покращеного спорядження, а також додаткових навичок – на відміну від звичайного стрільця. Ось найважливіше:
+  As a squad leader, you have access to a lot of limited, better gear and skills for free, contrary to the humble rifleman. Some of note are:
 
-  - Безкоштовна броня Б12. Максимальний рівень захисту. Беріть його!
+  - A free B12 armor. Upmost robustness.
   <GuideEntityEmbed Entity="CMArmorB12"/>
-  - Халявний радіотелефонний рюкзак. Беріть його!
+  - Cheap access to an RTO pack, grab it.
   <GuideEntityEmbed Entity="RMCBackpackRTO"/>
-  - Свисток за красиві оченята. Беріть його!
+  - Cheap access to a whistle, grab it.
   <GuideEntityEmbed Entity="RMCWhistle"/>
-  - Прилад нічного бачення за 25 балів, із зарядом батареї на 10 хвилин. Заряджається на будь-якому зарядному пристрої, після відкручування від шолома за допомогою викрутки. Ви думали тут буде щось інше? БЕРІТЬ ЙОГО!
+  - A 25P cost pair of NVG optics, with a battery of 10 minutes. Rechargeable at any powered recharger, once screwed out of the helmet
   <GuideEntityEmbed Entity="RMCVisorNightVision"/>
-  - 1 рівень Медицини, який дозволяє миттєво використовувати автоінжектори.
-  - Великі підсумки. Багато великих підсумків.
+  - A Medical skill of 1, letting you use auto-injectors instantly.
+  - Large pouches for days.
 
-  Окрім цього, ви маєте базову навичку командування. Вона також автоматично надається тимчасовому Лідеру Загону. Ці команди надають невеликі посилення під час використання:
+  Along with that, you have the most basic leading skill of one. Which is granted to whoever is assigned as the aSL. These grant minor buffs on use:
 
-  - [bold]Наказ - Рухатися[/bold]: надає невеликий бонус до швидкості пересування
+  - [bold]Issue order - Move[/bold]: grants a small movement speed bonus
 
-  - [bold]Наказ - Триматися[/bold]: надає невеликий бонус до опору пошкодженням
+  - [bold]Issue order - Hold[/bold]: grants a small damage resistance bonus
 
-  - [bold]Наказ - Цілитися[/bold]: надає невеликий бонус до точності
-
-  <Box>
-    <GuideEntityEmbed Entity="RMCGuidebookActionMove" Caption="Наказ - Рухатися"/>
-    <GuideEntityEmbed Entity="RMCGuidebookActionHold" Caption="Наказ - Триматися"/>
-	  <GuideEntityEmbed Entity="RMCGuidebookActionFocus" Caption="Наказ - Цілитися"/>
-  </Box>
-
-  # Як керувати
-
-  Гаразд, ви споряджені та готові. Але як щодо самої роботи? Що саме має робити Лідер Загону?
-
-  Ви командуєте загоном диверсантів з нотками зухвалості, які робитимуть усе можливе, аби ігнорувати вас. Саме тому найважливіша частина ролі Лідера Загону – бути почутим. Якщо люди слухають вас і виконують ваші накази, усе зазвичай йде як треба.
-
-  Хороша новина в тому, що ви – Лідер. А це означає, що ви говорите ГУЧНО. І коли я кажу ГУЧНО – Я МАЮ ЦЕ КУРВА НА УВАЗІ. Ви можете говорити [bold]ВЕЛИКИМИ ЛІТЕРАМИ З !![/bold], щоб ваші повідомлення було легше помітити. До того ж ваш текст від природи відображається більшим під час розмови. Вже є плюси!
-
-  ## Як буди почутим
-  Тоді як скористатися нашим ГУЧНИМ, ЧАРІВНИМ, МУЖНІМ ЧИ ЖІНОЧИМ голосом? Ось як:
-
-  - Використовуйте ЛОКАЛЬНИЙ чат. Так ваші накази буде значно легше помітити.
-  - Віддавайте КОРОТКІ накази – такі, які можна [bold]миттєво прочитати[/bold] та зрозуміти. Свята трійця ЛЗ: "[bold]СТІЙ[/bold]", "[bold]НАЗАД[/bold]" та "[bold]РУШ[/bold]".
-  - Використовуйте свисток як [bold]звуковий сигнал, який змушує людей ЗВЕРНУТИ УВАГУ НА ВАС[/bold].
-  - Повторюйте накази, якщо це потрібно. Краще двічі. Або тричі. Все-ж краще так, ніж взагалі мовчати.
-
-
-  Тепер ви знаєте, як змусити цих довб-... Орлів почути вас. Але як змусити їх [bold]СПРАВДІ СЛУХАТИ[/bold]?
-
-  ## Харизма та ви
-  Ви знаєте, що говорити, але цього недостатньо. Вам потрібно підтримувати невидимий ресурс під назвою "згуртованість загону". Уявіть це як шкалу моралі, яка постійно виснажується. Вам потрібно тримати цю планку якомога ВИЩОЮ в будь-який момент.
-
-  Щоб підтримувати її, вам потрібно:
-
-  - Розмовляйте зі своїм загоном. Ніколи не залишайте людей без уваги.
-  - Піднімайте бойовий дух перед висадкою. Вмотивований загін – смертоносний загін. [bold]Брифінг загону чудово для цього підходить. Проведіть його перед загальним брифінгом, у десантному шатлі або вже на землі – але коротко.[/bold]
-  - Хваліть своїх бійців. Якщо вони знають, що добре виконують свою роботу – вони продовжать це робити.
-  - Тримайте поруч постійних бійців. Це приходить із часом, якщо ви залишаєтесь вірними одному загону. Чим більше людей тримаються біля вас – тим більше інших також залишаться.
-
-  Гаразд, але як стати тим самим харизматичним ЛЗ, за яким усі підуть? Не хвилюйтесь, для цього теж є поради:
-
-  - Залишайтеся в образі та дотримуйтеся характеру. Будьте суворим мужиком з короткою стришкою та циґарою в зубах – або турботливим батьком для своїх ні в чому не винних діточок як на небі зірочок. Ідею ви гадаю, зрозуміли.
-  - Майстерність викликає довіру. Якщо морпіхи бачать, що ви добре виконуєте свою роботу – влучно командуєте, підтримуєте зв'язок або грамотно проводите ротації – люди природно підуть за вами.
-
-  ## Божий палець (Спам вказівником або-ж в народі "тикання")
+  - [bold]Issue order - Focus[/bold]: grants a small accuracy bonus
 
   <Box>
-    [italic]"Я ТИКАЮ, ти ВБИВАЄШ, ПРОРИВАЄШСЯ і РУХАЄШСЯ. ЧИСТО, ЧАРЛІ?!"[/italic]
+    <GuideEntityEmbed Entity="RMCGuidebookActionMove"/>
+    <GuideEntityEmbed Entity="RMCGuidebookActionHold"/>
+	<GuideEntityEmbed Entity="RMCGuidebookActionFocus"/>
+  </Box>
+
+  # How to lead
+
+  Right, all is well, we are geared, what about the actual job, what do we do?
+
+  You're leading a squad of 20 crayon eating maggots that will do their best to ignore you. And thus, the crucial part of being a squad leader is to be heard. Once people listen to you and your orders, everything should go well, normally.
+
+  Good thing is, because you're a leader, you talk BIG. and when I mean BIG. I MEAN IT. You can speak in [bold]ALL CAPS WITH !![/bold] to have better visibility when talking, along with having innately larger text when speaking.
+
+  ## How to be heard
+  Then, how do we take advantage of our GRAVE voice? Here's how:
+
+  - Use LOCAL chat. It ensures people see orders easily.
+  - Give SHORT orders, ones that can be [bold]read in a pinch[/bold] and understand, such as the holy SL trinity: "[bold]HOLD[/bold]","[bold]BACK[/bold]" and "[bold]PUSH[/bold]"
+  - Use your whistle as an [bold]audio cue for people to LISTEN[/bold]
+  - Repeat the order if needed. Better twice than never.
+
+
+  Now you know how to make the goons hear what you want. But how do you make them [bold]truly LISTEN[/bold] ?
+
+  ## Charisma and You
+  You know what to say, but that's not all. You need to gather an invisible resource called "squad cohesion". Imagine it as a permanently depleting morale bar that you want as HIGH as possible at ALL times.
+
+  To keep it up you'll can:
+
+  - Talk with your squaddies, don't leave them hanging, ever.
+  - Hype them up pre-drop. A hyped squad is a deadly squad. [bold]A squad brief is perfect for that. Do it before brief, in dropship, or on ground, -but then keep it short.[/bold]
+  - Compliment your squaddies, if they know they're doing a good job, they'll keep doing it.
+  - Have regulars stick to you, that will come with time by sticking to a squad. The more with you, the more will stay, through sheep mentality.
+
+  Alright, that's cool and all but how to be the bold charismatic guy? Don't worry, I also got you:
+
+  - Stay in character, stick to a personality (as one should). Be that one cold spec ops dude, or a caring father to his unsuspecting, crayon eating children. You get the idea.
+  - Skill brings trust. If you show marines you are good at your job, be it getting kills, communicating well or doing good rotations, people will naturally follow you.
+
+  ## God's finger (Point spamming)
+
+  <Box>
+    [italic]"I POINT, you KILL, BREACH and MOVE. CLEAR CHARLIE?!"[/italic]
   </Box>
 
 
-  Якщо ви не помічали, більшість "лідерських" ролей мають спеціальний вказівник у вигляді стрілки. За замовчуванням він зелений. У Лідера Загону він буде ВЕЛИКИМ і пофарбованим у колір вашого загону.
+  If you never noticed, most "leadership" roles have a special pointing arrow. By base, it's green. As a Squad Leader, yours will be BIG and of the color of your squad.
 
-  "Чому це так важливо?", – спитаєш ти. [italic]Ні? Ну, я однаково дам відповідь. Заради цього ти й читаєш посібник, чи не так?[/italic]
+  Why is this important, you may ask?
 
-  Тому що це один із найефективніших способів змусити людей робити те, що вам потрібно, і рухатися туди, куди ви хочете. Ця техніка таємно називається "спамом вказівником", в народі просто "тикати".
+  Because this is the biggest tool to make people do what you want, go where you want to go. The tech humbly called "Point spam".
 
-  Суть проста: привертаєте увагу людей, а потім просто вказуєте, куди потрібно йти, стріляти або що потрібно знищити. Це працює постійно й дуже наочно (НАБАГАТО краще, ніж намагатися перекричати всіх).
+  It consists of getting people's attention, then just pointing where you want to: go, shoot, or destroy. It works all the time, is very visual (WAY better than trying to get people to listen).
 
-  Бачите траву? Тикайте! Навіть не обов'язково говорити.
+  You see resin? Point at it and go CHOP IT!
 
-  Хочете, щоб загін рушив у певному напрямку? Просто безперервно тикайте й таким самим прокладайте маршрут.
+  You want your squad to go there? Point the path nonstop to them.
 
-  Бачите велику й страшну ціль, яку потрібно продавити? Біжіть вперед і вказуйте на неї. Або біжіть вперед і стріляйте.
+  You see big evil bad you want to push? Charge and point, or charge and shoot.
 
-  # Стратегічне планування
-  У цьому розділі буде розглянуто більш "стратегічний" аспект гри за Лідера Загону. На відміну від базових порад, наведених раніше, саме це допоможе вам зробити свій внесок у перетворення приреченої операції на [bold]ПОТУЖНУ ПЕРЕМОГУ МОРСЬКОЇ ПІХОТИ! ОРАХХ![/bold]
+  # Strategy planning
+  This part will cover the more "strategic" part of playing squad leader. Whilst than the previously given basics, it is the key to ensuring you're doing your part to turn that crashing operation into a GLORIOUS MARINE MAJOR, OORAH!
 
-  ## Оцінка готовності загону
+  ## Orders and you
 
-  Перш ніж висаджуватися, переконайтеся, що ваші орли готові до бою!
+  A single squad going AWOL and pushing a spot away from others without being ordered to can and has on many occasions ruined operations.
 
-  Перевірте та зверніть увагу на склад загону. Ключові ролі: Бойові Медики, Бойові Техніки, Оператори СмартГана, Лідери Вогневих Груп та Збройні Спеціалісти. Розуміння сильних і слабких сторін свого загону допоможе вам приймати правильні рішення ще до першого пострілу.
+  As a squad leader you are one of the five major pillars that may shift game's outcome in the marine's favor. The four others are composed of the other SLs AND the [bold]commander[/bold].
+  Said [bold]commander[/bold] will give your squad orders that are made for the operation's sake. No matter your rank, you SHOULD follow it. Unless it is unlawful, such as a suicide charge, if so per Marine Law you may refuse the unlawful order by stating why.
 
-  Якщо важливі ролі відсутні, скоригуйте свої плани відповідно: 
-  - Загін без Бойового Техніка може зіткнутися з труднощами під час ремонту обладнання, будівництва укріплень та облаштування ПОБ.
-  - Загін без Бойового Медика повинен діяти обережніше.
-  - Загін без Оператора СмартГана втрачає важливе джерело придушувального вогню. Через це наступальні, оборонні та відступальні дії можуть стати значно складнішими.
-  - Загін без Збройного Спеціаліста позбавляється доступу до унікальних тактичних можливостей. Наприклад, Ракетник здатний швидко усувати особливо небезпечні цілі за допомогою ракетниці, а Розвідник – проводити розвідку та діяти далеко від основних сил загону чи проводити диверсії в тилу ворога.
-  - Загін без Лідера Вогневої Групи може зіткнутися з труднощами під час підтримання зв'язку із Саванною. Через це ускладнюється запит постачання, виклик Орбітального Бомбардування та використання інших засобів підтримки. Також загін рідше зможе ефективно використовувати підтримку БАП.
+  ## Comms - communication? The talk.
+  Just as it is important you talk to your squad, it is important you talk to the eyes in the squad, the CIC. They have the big picture (most of the time), and if they know what you're doing, they will (hopefully) adjust things to ensure that you can kill those dirty bugs, together. Together? As in every marine. Because you're not alone. There are three other squads with three others leaders (not as good as you, because you've read this and they haven't, obviously.) but still.
 
-  Будуйте план у своїй голові ще з початку підготовки й аж до самого брифінгу чи навіть першої висадки. Знаєте, деякі морпіхи люблять ще трохи повалятися в кріокапсулах, потягнутися та взагалі не дуже поспішають прокидатися. Хтось прокинеться через 5 хвилин, хтось через 10, а дехто взагалі вилізе з кріо за хвилину до того, як Аламо вирушить у зону операції. Тому не поспішайте робити остаточні висновки про свій загін одразу після пробудження. Загалом у вас є приблизно 15–20 хвилин, щоб оцінити свої сили та продумати план дій. Саме через такий проміжок часу зазвичай проводиться брифінг.
+  Use a phonepack if comms are down, else give regular status reports in the command channel or in your squad channel. Hell, Queen's dead thanks to your men?
 
-  Не соромтеся запитувати своїх бійців, чи знають вони особливості своїх ролей. Кілька хвилин, витрачених на пояснення новачку, можуть врятувати життя всьому загону пізніше.
+  ":v Charlie got the queen kill. Pushing further."
 
-  Іноді вам також доведеться виконувати обов'язки відсутніх спеціалістів. Наприклад, якщо Бойового Техніка немає, то ним доведеться побути вам. Захопіть із собою хоча б мінімальний набір інструментів: лом, викрутку, гайковий ключ, кусачки, мультитул, зварювальні окуляри та зварювальний апарат. Повірте, коли посеред операції зламається сонарна вежа або генератор, ви будете раді, що взяли їх із собою. А якщо у загоні немає Бойового Медика, не забувайте про свій медичний навик 1 рівня. Звісно, повноцінного медика ви не заміните, але інколи навіть один вчасно використаний автоінжектор може врятувати життя вашому морпіху.
+  Along with this, as the squad leader, you're generally expected to know better how to call Orbital Bombardments. You spawn with a laser designator which when switched mode, can turn into rangefinder mode. Use it where you want the entire area to be flattened and share the coordinates.
 
-  Лідер Загону повинен бути готовим адаптуватися до ситуації та брати на себе додаткові завдання, якщо цього вимагає успіх операції.
+  [bold]BE VERY CAUTIOUS WHEN ADJUSTING COORDINATES YOURSELF. [/bold]
 
-  ## Накази та ви
+  ## Pushing? Backing? What, how and why.
 
-  Один загін, який самовільно відривається від основних сил і починає діяти окремо без наказу, вже неодноразово зривав всю операцію.
+  Those dirty 'nids are smart, but you're smarter. You want to know when it's the right time to go in and fuck shit up. Obviously you have your squad orders given by the CIC. Execute them at priority, but make sure it doesn't wipe your squad.
 
-  Як Лідер Загону, ви є одним із п'яти ключових елементів, які можуть схилити результат бою на користь морської піхоти. Інші чотири – це решта Лідерів Загонів та ваше [bold]Командування[/bold].
-  Саме [bold]Командування[/bold] віддаватиме вашому загону накази, необхідні для успішного виконання операції. Незалежно від вашого звання чи особистої думки, ви ПОВИННІ їх виконувати. Винятком є незаконні накази, наприклад наказ здійснити самогубну атаку. У такому випадку, відповідно до Морського Права, ви маєте право відмовитися від виконання наказу, пояснивши причину своєї відмови.
+  Using your MOVE order is most appropriate when having to do direct maneuvers.
 
-  ## Зв'язок – комунікація? СПІЛКУВАННЯ?
-  Так само, як важливо спілкуватися зі своїм загоном, важливо підтримувати зв'язок із БІЦ. Вони бачать загальну картину бою (принаймні більшу її частину), і якщо знають, що ви робите, то зможуть відповідно скоригувати дії інших сил, щоб допомогти вам знищувати цих брудних жуків разом! Разом?! І пам'ятайте: ви не самі. Окрім вас, є ще три загони та три інші Лідери Загонів. ([italic]звісно, не такі файні хлопи чи дівчата, адже ВИ читаєте цей посібник, а вони швидше за все – ні. Можете легенько натякнути їм аби прочитали[/italic]) Проте вони все ще є частиною операції.
+  Ultimately, the placement of your squad depends on you. The gut feeling of knowing where to do, when to and not to push will come with time. But a few things can help:
 
-  Що якщо основний зв'язок недоступний? Використовуйте радіотелефонний рюкзак. В іншому випадку регулярно передавайте інформацію про обстановку через канал командування (:[color=#0000FF]к[/color]) або канал свого загону (:[color=#E61919]а[/color], :[color=#FFC32D]б[/color], :[color=#4148C8]д[/color], :[color=#C864C8]ч[/color]). Йоп-... Дідько, ваші морпіхи щойно ліквідували Королеву?
+  - Using your binoculars when rotating to know where the enemy is and isn't
+  - Using your NVGs at appropriate timings (so you don't run into darkness where john lurker is waiting)
+  - Listening to comms, focus on important messages within the lines of "OH GOD QUEEN ON DELTA PLEASE [insert your squad here] GO SAVE THEM EAST"
+  - MAP KNOWLEDGE. Know the place, don't be lost, use tacmap.
 
-  ":к МИ ВБИЛИ КОРОЛЕВУ! ЙДЕМО ДАЛІ!"
+  # Conclusion
+  Squad leader is both the heart, brain and voice of the squad, along with one of the most game decisive role. It's up to you to be the ruthless operation finisher through your tactics and formations. Do not forget to communicate, keep your squad together and adjust to threats best you can to keep your lovely gunners in one piece.
 
-  Окрім цього, від Лідера Загону зазвичай очікується, що він вміє викликати Орбітальне Бомбардування (ОБ). Ви з'являєтеся зі лазерним цілевказівником, який можна перемкнути в режим далекоміра. Використовуйте його для визначення координат точки, яку необхідно зрівняти із землею, після чого передайте ці координати БІЦ.
+  Truth is, anyone can lead. But this role is for those who want to shine brighter at it.
 
-  [bold]БУДЬТЕ ВКРАЙ ОБЕРЕЖНІ, КОЛИ САМОСТІЙНО КОРИГУЄТЕ КООРДИНАТИ.[/bold]
+  And always remember.
 
-  ## Наступати? Відступати? Що, як і чому
-
-  Ці брудні ксеноси розумні, але ти розумніший, я то знаю. Ваше завдання – зрозуміти, коли настав час тиснути вперед і добивати ворога. Звісно, ви маєте накази від БІЦ. Виконуйте їх у першу чергу, але не ціною повного знищення свого загону.
-
-  Наказ [bold]Рухатися[/bold] найкраще використовувати під час наступу, штурму або інших активних маневрів.
-
-  Зрештою, ситуація вашого загону залежить саме від вас. Відчуття того, де потрібно наступати, а де варто відступити, приходить лише з досвідом. Але дещо може допомогти:
-
-  - Використовуйте бінокль під час ротацій, щоб розуміти, де є ворог, а де його немає.
-  - Використовуйте ПНБ у потрібний момент. (не варто забігати в темряву, де на вас уже чекає бабайка)
-  - Слухайте рацію. Особливу увагу звертайте на повідомлення на кшталт: "[italic]БОЖЕ, КОРОЛЕВА НА ДЕЛЬТІ! [italic]вставте назву свого загону[/italic] БІГОМ НА СХІД![/italic]"
-  - [bold]ЗНАЙТЕ МАПУ![/bold] Не блукайте безцільно. Використовуйте тактичну мапу та завжди розумійте, де перебуваєте.
-
-  # Висновок
-  Лідер Загону – це серце, мозок і голос свого загону. Це також одна з найважливіших ролей у грі, здатна визначити результат усієї операції. Саме від вас залежить, чи завершиться вона успіхом завдяки грамотній тактиці, вчасним рішенням та правильним побудовам. Не забувайте підтримувати зв'язок, тримайте свій загін разом і пристосовуйтеся до загроз настільки добре, наскільки це можливо. Ваше завдання – привести своїх морпіхів додому живими.
-
-  Ось напевне на цьому й все... Хоча, вставлю ще свої останні 5 копійок.
-
-  Правда в тому, що кожен може бути лідером. Але ця роль для тих, хто хоче сяяти в ній ще яскравіше.
-
-  І запам'ятайте!
-
-  [bold]Ви тут для того, щоб вести своїх морпіхів до перемоги або разом із ними зустріти небезпеку. Залишайтеся скромними та ніколи не припиняйте вдосконалюватися.[/bold]
+  [bold]You're here to lead your marines to victory, or peril together. Be humble and always seek to improve.[/bold]
 
 </Document>
