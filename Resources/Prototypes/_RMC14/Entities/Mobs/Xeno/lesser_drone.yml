@@ -84,7 +84,7 @@
     - RMCGibEffectXenoLesserDrone
   - type: Butcherable # Mriya
     spawned:
-    - id: FoodMeatXeno
+    - id: MRFoodMeatXeno
       amount: 2
   - type: WhitelistPickup
     whitelist:

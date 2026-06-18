@@ -1,6 +1,6 @@
 - type: microwaveMealRecipe
   id: RecipeParasiteLegCooked
-  name: смажені ніжки паразита
+  name: смажена ніжка паразита
   result: MRFoodParasiteLegCooked
   time: 30
   group: Savory
@@ -43,3 +43,12 @@
     FoodCheeseSlice: 1
     MRFoodParasiteLeg: 5
 
+- type: microwaveMealRecipe
+  id: RecipeXenoburger
+  name: ксенобургер
+  result: FoodBurgerXeno
+  time: 10
+  group: Savory
+  solids:
+    FoodBreadBun: 1
+    MRFoodMeatXeno: 2

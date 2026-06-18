@@ -1483,3 +1483,9 @@ RMCSpawnerShuttleZSPA: RMCSpawnerShuttleTSEPA
 # 2026-02-05
 RMCWeaponSMGP90: RMCWeaponSMGPDW90
 RMCMagazineSMGP90: RMCMagazineSMGPDW90
+
+# Mriya. 2026-06-18
+FoodMeatXeno: MRFoodMeatXeno
+FoodBurgerXeno: MRFoodBurgerXeno
+FoodMeatXenoCutlet: MRFoodMeatXenoCutlet
+FoodMeatXenoCutletCooked: MRFoodMeatXenoCutletCooked

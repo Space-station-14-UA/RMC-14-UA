@@ -182,9 +182,9 @@
     entities:
     - RMCDecalSpawnerGibsLesserDrone
     - RMCGibEffectXenoLesserDrone
-  - type: Butcherable # Mriya
+  - type: Butcherable
     spawned:
-    - id: FoodMeatXeno
+    - id: MRFoodMeatXeno
       amount: 2
   - type: XenoStrain
     name: sich-xeno-lesser-carrier-name

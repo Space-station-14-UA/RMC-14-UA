@@ -30,7 +30,7 @@
     - RMCSynthGrabbable
   - type: Butcherable # Mriya
     spawned:
-    - id: FoodMeatXeno
+    - id: MRFoodMeatXeno
       amount: 6
     - id: MRXenoClaw
       amount: 2
