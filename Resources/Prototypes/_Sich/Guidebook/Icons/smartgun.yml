@@ -1,0 +1,48 @@
+# Іконки
+- type: entity
+  parent: RMCGuidebookActionSmartGunBase
+  id: MRGuidebookActionIFF
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: iff_toggle_on
+
+- type: entity
+  parent: RMCGuidebookActionSmartGunBase
+  id: MRGuidebookActionMotionDetector
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: motion_detector
+
+- type: entity
+  parent: RMCGuidebookActionSmartGunBase
+  id: MRGuidebookActionToggleAmmoOff
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: ammo_swap_normal
+
+- type: entity
+  parent: RMCGuidebookActionSmartGunBase
+  id: MRGuidebookActionToggleAmmoOn
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: ammo_swap_ap
+
+- type: entity
+  parent: RMCGuidebookActionSmartGunBase
+  id: MRGuidebookActionToggleRecoil
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: recoil_compensation
+
+- type: entity
+  parent: RMCGuidebookActionSmartGunBase
+  id: MRGuidebookActionToggleAutoFire
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      state: autofire

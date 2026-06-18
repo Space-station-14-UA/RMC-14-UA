@@ -1,11 +1,10 @@
+# Світлини
 - type: entity
   parent: BaseItem
   id: MRMortarInterfaceGuideBook
   name: Інтерфейс міномета
-  description: Інтерфейс міномета
-  suffix: (GuideBookEntity)
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Sich/Objects/RMCGuideMortar/MortarInterface.rsi
+    sprite: _Sich/Guidebooks/RMCGuideMortar/MortarInterface.rsi
     state: mortar_interface

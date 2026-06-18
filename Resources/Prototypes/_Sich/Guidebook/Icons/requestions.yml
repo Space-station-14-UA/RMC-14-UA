@@ -1,35 +1,30 @@
+# Світлини
 - type: entity
   parent: BaseItem
   id: MRATSSInterfaceGuideBook
   name: Інтерфейс АТСС
-  description: Інтерфейс АТСС
-  suffix: (GuideBookEntity)
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Sich/Objects/RMCGuideRequisitions/ATSSInterface.rsi
+    sprite: _Sich/Guidebooks/RMCGuideRequisitions/ATSSInterface.rsi
     state: ATSSinterface
 
 - type: entity
   parent: BaseItem
   id: MRLineGuideBook
   name: Інтерфейс Стійки Постачань
-  description: Інтерфейс Стійки Постачань
-  suffix: (GuideBookEntity)
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Sich/Objects/RMCGuideRequisitions/TheLine.rsi
+    sprite: _Sich/Guidebooks/RMCGuideRequisitions/TheLine.rsi
     state: line
 
 - type: entity
   parent: BaseItem
   id: MRPodsGuideBook
   name: Інтерфейс Подів
-  description: Інтерфейс Подів
-  suffix: (GuideBookEntity)
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Sich/Objects/RMCGuideRequisitions/Pods.rsi
+    sprite: _Sich/Guidebooks/RMCGuideRequisitions/Pods.rsi
     state: pods

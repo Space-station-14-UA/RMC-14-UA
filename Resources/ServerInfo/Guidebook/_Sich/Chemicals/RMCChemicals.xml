@@ -1,0 +1,57 @@
+﻿<Document>
+  # Хімікати
+
+  Хімічні речовини – це потужний інструмент, який може спричинити різноманітні ефекти при вживанні. Деякі з них можна отримати у вендорах, деякі синтезувати, деякі купити через логістику, а деякі зовсім унікальні.
+
+  Знання різних типів хімічних речовин та їхнього впливу важливе для того, щоб мати змогу знати чим палити ворога, а чим лікувати побратима.
+
+  ## Елементи
+  <GuideReagentGroupEmbed Group="Elements"/>
+
+  \n
+
+  ## Медицина
+  <GuideReagentGroupEmbed Group="Medicine"/>
+
+  \n
+
+  ## Наркотики
+  <GuideReagentGroupEmbed Group="Narcotics"/>
+
+  \n
+
+
+  ## Піротехніка
+  <GuideReagentGroupEmbed Group="Pyrotechnic"/>
+
+  \n
+
+
+  ## Токсини
+  <GuideReagentGroupEmbed Group="Toxins"/>
+
+  \n
+
+
+  ## Їжа
+  <GuideReagentGroupEmbed Group="Foods"/>
+
+  \n
+
+
+  ## Ботанічне
+  <GuideReagentGroupEmbed Group="Botanical"/>
+
+  \n
+
+
+  ## Біологічне
+  <GuideReagentGroupEmbed Group="Biological"/>
+
+  \n
+
+
+  ## Інше
+  <GuideReagentGroupEmbed Group="Unknown"/>
+
+</Document>

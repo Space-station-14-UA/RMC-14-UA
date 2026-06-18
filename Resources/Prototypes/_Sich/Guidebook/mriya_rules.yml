@@ -1,9 +1,10 @@
 # Перероблені під нас правила. Заміняють звичайні РМСні
 ## Все відразу
+
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichOverview
-  name: sich-guide-entry-rules
+  name: mriya-guide-entry-rules
   priority: 0
   text: "/ServerInfo/Guidebook/_Sich/Rules/Overview.xml"
   children:
@@ -17,45 +18,45 @@
   - SichRoleplayStandardsRules
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichRuleChanges
-  name: sich-guide-entry-rules-changes
+  name: mriya-guide-entry-rules-changes
   priority: 1
   text: "/ServerInfo/Guidebook/_Sich/Rules/Changes.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichRMCRuleChanges
-  name: sich-guide-entry-rules-changes
+  name: mriya-guide-entry-rules-rmc-changes
   priority: 2
   text: "/ServerInfo/Guidebook/_Sich/Rules/RMCChanges.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichBanTypes
-  name: sich-guide-entry-rules-ban-types
+  name: mriya-guide-entry-rules-ban-types
   priority: 3
   text: "/ServerInfo/Guidebook/_Sich/Rules/BanTypes.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichAdmin
-  name: sich-guide-entry-rules-admin
+  name: mriya-guide-entry-rules-admin
   priority: 4
   text: "/ServerInfo/Guidebook/_Sich/Rules/Admin.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichRespawn
-  name: sich-guide-entry-rules-respawn
+  name: mriya-guide-entry-rules-respawn
   priority: 5
   text: "/ServerInfo/Guidebook/_Sich/Rules/Respawn.xml"
 
 ## Правила нульової толерантності
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichZeroToleranceRules
-  name: sich-guide-entry-rules-zero-tolerance
+  name: mriya-guide-entry-rules-zero-tolerance
   priority: 6
   text: "/ServerInfo/Guidebook/_Sich/Rules/RulesZeroTolerance.xml"
   children:
@@ -66,45 +67,45 @@
   - SichMisinformation
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichAge
-  name: sich-guide-entry-rules-age
+  name: mriya-guide-entry-rules-age
   priority: 1
   text: "/ServerInfo/Guidebook/_Sich/Rules/ZeroTolerance/Age.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichSlurs
-  name: sich-guide-entry-rules-slurs
+  name: mriya-guide-entry-rules-slurs
   priority: 2
   text: "/ServerInfo/Guidebook/_Sich/Rules/ZeroTolerance/Slurs.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichERP
-  name: sich-guide-entry-rules-erp
+  name: mriya-guide-entry-rules-erp
   priority: 3
   text: "/ServerInfo/Guidebook/_Sich/Rules/ZeroTolerance/ERP.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichBanEvasion
-  name: sich-guide-entry-rules-ban-evasion
+  name: mriya-guide-entry-rules-ban-evasion
   priority: 4
   text: "/ServerInfo/Guidebook/_Sich/Rules/ZeroTolerance/BanEvasion.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichMisinformation
-  name: sich-guide-entry-rules-misinformation
+  name: mriya-guide-entry-rules-misinformation
   priority: 5
   text: "/ServerInfo/Guidebook/_Sich/Rules/ZeroTolerance/Misinformation.xml"
 
 ## Загальні правила
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichCoreRules
-  name: sich-guide-entry-rules-core
+  name: mriya-guide-entry-rules-core
   priority: 7
   text: "/ServerInfo/Guidebook/_Sich/Rules/RulesCore.xml"
   children:
@@ -118,66 +119,66 @@
   - SichExploits
 
 - type: guideEntry
-  parent: RMC
-  id: RMCLanguage # RMC замість Sich, бо воно прив'язано як гайд до гарнітур
-  name: sich-guide-entry-rules-language
+  parent: Mriya
+  id: RMCLanguage # # На це посилаються інші
+  name: mriya-guide-entry-rules-language
   priority: 1
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Language.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichKindness
-  name: sich-guide-entry-rules-kindness
+  name: mriya-guide-entry-rules-kindness
   priority: 2
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Kindness.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichEscalation
-  name: sich-guide-entry-rules-escalation
+  name: mriya-guide-entry-rules-escalation
   priority: 3
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Escalation.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichCommand
-  name: sich-guide-entry-rules-command
+  name: mriya-guide-entry-rules-command
   priority: 4
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Command.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichMetaknowledge
-  name: sich-guide-entry-rules-metaknowledge
+  name: mriya-guide-entry-rules-metaknowledge
   priority: 5
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Metaknowledge.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichMultikey
-  name: sich-guide-entry-rules-multikey
+  name: mriya-guide-entry-rules-multikey
   priority: 6
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Multikey.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichMutinies
-  name: sich-guide-entry-rules-mutinies
+  name: mriya-guide-entry-rules-mutinies
   priority: 7
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Mutinies.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichExploits
-  name: sich-guide-entry-rules-exploits
+  name: mriya-guide-entry-rules-exploits
   priority: 8
   text: "/ServerInfo/Guidebook/_Sich/Rules/Core/Exploits.xml"
 
 ## Правила відіграшу
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichRoleplayStandardsRules
-  name: sich-guide-entry-rules-roleplay-standards
+  name: mriya-guide-entry-rules-roleplay-standards
   priority: 8
   text: "/ServerInfo/Guidebook/_Sich/Rules/RulesRoleplay.xml"
   children:
@@ -191,57 +192,57 @@
   - SichHostileFactionRoleplay
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichGeneralRoleplayStandards
-  name: sich-guide-entry-rules-general-roleplay-standards
+  name: mriya-guide-entry-rules-general-roleplay-standards
   priority: 1
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/GeneralRoleplayStandards.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichCharacterNames
-  name: sich-guide-entry-rules-marine-character-names
+  name: mriya-guide-entry-rules-marine-character-names
   priority: 2
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/CharacterNames.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichMarineRoleplay
-  name: sich-guide-entry-rules-marine-roleplay
+  name: mriya-guide-entry-rules-marine-roleplay
   priority: 3
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/MarineRoleplay.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichCommandRoleplay
-  name: sich-guide-entry-rules-command-roleplay
+  name: mriya-guide-entry-rules-command-roleplay
   priority: 4
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/CommandRoleplay.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichSynthRoleplay
-  name: sich-guide-entry-rules-synth-roleplay
+  name: mriya-guide-entry-rules-synth-roleplay
   priority: 5
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/SynthRoleplay.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichXenoRoleplay
-  name: sich-guide-entry-rules-xeno-roleplay
+  name: mriya-guide-entry-rules-xeno-roleplay
   priority: 6
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/XenoRoleplay.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichSurvivorRoleplay
-  name: sich-guide-entry-rules-survivor-roleplay
+  name: mriya-guide-entry-rules-survivor-roleplay
   priority: 7
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/SurvivorRoleplay.xml"
 
 - type: guideEntry
-  parent: RMC
+  parent: Mriya
   id: SichHostileFactionRoleplay
-  name: sich-guide-entry-rules-hostile-faction-roleplay
+  name: mriya-guide-entry-rules-hostile-faction-roleplay
   priority: 8
   text: "/ServerInfo/Guidebook/_Sich/Rules/Roleplay/HostileFactionRoleplay.xml"

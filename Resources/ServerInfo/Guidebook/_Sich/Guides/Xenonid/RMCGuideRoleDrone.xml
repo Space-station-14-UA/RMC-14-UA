@@ -1,0 +1,59 @@
+﻿<Document>
+
+  #Отож, вітаю, ти щойно народилася у нашому славному Вулику!
+  #І шо ж тепер?
+
+  - Радій! Ти стала частиною нашої родини. Зараз ти личинка, і не можеш зробити нічого корисного, АЛЕ ТВІЙ ПОТЕНЦІАЛ БЕЗМЕЖНИЙ!
+  <Box>
+    <GuideEntityEmbed Entity="CMXenoLarva"/>
+  </Box>\n
+  - Що ж, пора починати! Пройде якийсь час, і ти зможеш еволюціонувати. А поки, намагайся не померти, сестро.
+  - Для початківців, рекомендовано перетворюватися на трутня. Трутні - це будівельники Вулика, вони будують, будують і будують... інколи носять яйця.
+
+  <Box>
+    <GuideEntityEmbed Entity="RMCGuidebookActionXenoEvolve"/>
+    <GuideEntityEmbed Entity="CMXenoDrone"/>
+  </Box>\n
+
+  - Ось кілька структур, які вони здатні побудувати!
+
+  <Box>
+    <GuideEntityEmbed Entity="WallXenoResin"/>
+    <GuideEntityEmbed Entity="WallXenoMembrane"/>
+    <GuideEntityEmbed Entity="DoorXenoResin"/>
+  </Box>\n
+
+  - О, і ще одна їх дуже важлива робота - це саджати траву.
+  - Трава дає нам змогу відпочити на ній відновивши плазму й здоров'я!
+  - А також, лише на ній можна будувати, тому ця робота справді важлива.
+  <GuideEntityEmbed Entity="RMCGuidebookActionXenoRest"/>
+  <Box>
+    <GuideEntityEmbed Entity="XenoWeeds"/>
+    <GuideEntityEmbed Entity="XenoWeedsSource"/>
+    <GuideEntityEmbed Entity="XenoWeeds"/>
+  </Box>\n
+
+  - Але, як ти вже знаєш, головна задача кожної з нас це захистити Королеву, щоб вона мала можливість відкладати яйця!
+  - До слова, трутні, як я вже й казала, вміють їх носити, а отже й ставити, проте ЛИШЕ НА ТРАВІ, нічого нового.
+  - А потім з цих яєчок можна витягнути паразитів, головне не відпускати їх гуляти не по траві надовго!
+
+  <Box>
+    <GuideEntityEmbed Entity="CMXenoQueen"/>
+    <GuideEntityEmbed Entity="XenoEgg"/>
+    <GuideEntityEmbed Entity="XenoHiveWeeds"/>
+    <GuideEntityEmbed Entity="CMXenoParasite"/>
+  </Box>\n
+
+  - We can also devour captures and transport them to the hive for nesting!
+  - Find a tall and tackle them by right clicking on them with harm mode enabled.
+  - Once they are restrained, click and drag their sprite into yours to start devouring them, remember to keep tackling after!
+  - After devouring, walk to the closest hive to infect them on a egg, then to nest them do the same motion onto a wall.
+
+  - When a parasite is placed on a living host, a new larva will be born! Rejoice!
+  - Hosts that hold the growing larva are very precious, and should be secured to a resin wall supported by hive weeds as soon as possible
+  <Box>
+    <GuideEntityEmbed Entity="RMCGuidebookCorpseColonistBurst"/>
+    <GuideEntityEmbed Entity="CMXenoLarva"/>
+  </Box>\n
+
+</Document>

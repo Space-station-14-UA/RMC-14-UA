@@ -1,0 +1,33 @@
+﻿<Document>
+
+  # Основні Препарати
+
+  Це стандартні ліки, вони корисні в усіх сценаріях.
+
+  <GuideReagentEmbed Reagent="CMTricordrazine"/>
+  <GuideReagentEmbed Reagent="CMBicaridine"/>
+  <GuideReagentEmbed Reagent="CMKelotane"/>
+  <GuideReagentEmbed Reagent="CMDylovene"/>
+  <GuideReagentEmbed Reagent="CMDexalin"/>
+  <GuideReagentEmbed Reagent="CMDexalinPlus"/>
+  <GuideReagentEmbed Reagent="CMMeralyne"/>
+  <GuideReagentEmbed Reagent="CMDermaline"/>
+
+  # Спеціалізовані Препарати
+
+  А ці ліки, як правило, застосовуються в особливих випадках.
+
+  <GuideReagentEmbed Reagent="CMInaprovaline"/>
+  <GuideReagentEmbed Reagent="CMEpinephrine"/>
+  <GuideReagentEmbed Reagent="CMEthylredoxrazine"/>
+  <GuideReagentEmbed Reagent="CMArithrazine"/>
+  <GuideReagentEmbed Reagent="CMLeporazine"/>
+  <GuideReagentEmbed Reagent="CMCryoxadone"/>
+
+  # Всі Препарати
+
+  Це список -усіх- медичних препаратів, включно з вищеперечисленими.
+
+  <GuideReagentGroupEmbed Group="Medicine"/>
+
+</Document>
