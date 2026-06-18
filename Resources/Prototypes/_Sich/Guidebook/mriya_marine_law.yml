@@ -15,7 +15,7 @@
   - MRMarineLawSpecialProvisions
   - MRMarineLawSynthetics
   - MRMarineLawCOProvisions
-  - MRMarineSOP
+  - RMCMarineSOP
 
 - type: guideEntry
   parent: Mriya

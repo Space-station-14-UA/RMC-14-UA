@@ -287,7 +287,7 @@
   id: RMCGuideXenonid
   name: "Ролі та Посібники Вулика"
   priority: 4
-  text: "/ServerInfo/Guidebook/_Sich/Guides/RMC14.xml"
+  text: "/ServerInfo/Guidebook/_Sich/RMC14.xml"
   children:
   - RMCGuideXenonidRoles
   - RMCGuideHiveStructures

@@ -1,8 +1,8 @@
 - type: entity
   parent: CMBarricadeBase
   id: CMBarricadeFolding
-  name: portable composite barricade
-  description: A deployed MB-6 folding barricade. It is light enough to be packed back down, but strong enough to hold a defensive line.
+  name: переносна композитна барикада
+  description: Розгорнута розкладна барикада MБ-6. Вона достатньо легка, щоб її можна було знову скласти, але достатньо міцна, щоб утримувати лінію оборони.
   components:
   - type: Transform
     anchored: true

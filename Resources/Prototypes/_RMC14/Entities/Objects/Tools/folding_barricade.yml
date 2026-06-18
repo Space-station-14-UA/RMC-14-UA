@@ -1,6 +1,6 @@
 - type: stack
   id: CMFoldingBarricade
-  name: MB-6 folding barricade
+  name: розкладна барикада МБ-6
   icon: { sprite: _RMC14/Objects/Tools/folding_barricade.rsi, state: folding-1 }
   spawn: CMFoldingBarricade
   maxCount: 3
@@ -8,8 +8,8 @@
 - type: entity
   parent: BaseItem
   id: CMFoldingBarricade
-  name: MB-6 folding barricade
-  description: A portable composite barricade that can be rapidly deployed into a defensive position.
+  name: розкладна барикада МБ-6
+  description: Портативна композитна барикада, яку можна швидко розгорнути для облаштування оборони.
   suffix: Single
   components:
   - type: Sprite
