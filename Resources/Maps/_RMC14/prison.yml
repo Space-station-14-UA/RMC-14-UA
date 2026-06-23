@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.2
   forkId: ""
   forkVersion: ""
-  time: 06/07/2026 21:16:53
-  entityCount: 22448
+  time: 06/16/2026 05:59:51
+  entityCount: 22453
 maps:
 - 1
 grids:
@@ -80454,7 +80454,7 @@ entities:
       pos: -89.5,-19.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -13651.686
+      secondsUntilStateChange: -13723.2705
       state: Opening
   - uid: 4529
     components:
@@ -80537,7 +80537,7 @@ entities:
       pos: -114.5,-10.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -6930.302
+      secondsUntilStateChange: -7001.8867
       state: Opening
   - uid: 4545
     components:
@@ -82310,6 +82310,18 @@ entities:
     components:
     - type: Transform
       pos: 15.5,41.5
+      parent: 1
+- proto: RMCArcadeSpaceVillain
+  entities:
+  - uid: 21423
+    components:
+    - type: Transform
+      pos: -13.5,12.5
+      parent: 1
+  - uid: 21424
+    components:
+    - type: Transform
+      pos: -14.5,12.5
       parent: 1
 - proto: RMCArmorDetective
   entities:
@@ -94085,6 +94097,29 @@ entities:
     - type: Transform
       pos: -24.5,31.5
       parent: 1
+- proto: RMCIntelDataTerminal
+  entities:
+  - uid: 4571
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 27.5,71.5
+      parent: 1
+  - uid: 6453
+    components:
+    - type: Transform
+      pos: 14.5,-92.5
+      parent: 1
+  - uid: 6455
+    components:
+    - type: Transform
+      pos: -54.5,-58.5
+      parent: 1
+  - uid: 6456
+    components:
+    - type: Transform
+      pos: -64.5,66.5
+      parent: 1
 - proto: RMCItemPoolBuckshot
   entities:
   - uid: 6912
@@ -99323,10 +99358,15 @@ entities:
       parent: 1
 - proto: RMCLockerSecureSafe
   entities:
-  - uid: 7850
+  - uid: 4572
     components:
     - type: Transform
       pos: 15.5,-56.5
+      parent: 1
+  - uid: 6454
+    components:
+    - type: Transform
+      pos: -7.5,27.5
       parent: 1
 - proto: RMCLZFloodlight
   entities:
@@ -170802,18 +170842,6 @@ entities:
     components:
     - type: Transform
       pos: 67.534004,-22.510256
-      parent: 1
-- proto: SpaceVillainArcade
-  entities:
-  - uid: 21423
-    components:
-    - type: Transform
-      pos: -13.5,12.5
-      parent: 1
-  - uid: 21424
-    components:
-    - type: Transform
-      pos: -14.5,12.5
       parent: 1
 - proto: SpawnMobCarp
   entities:

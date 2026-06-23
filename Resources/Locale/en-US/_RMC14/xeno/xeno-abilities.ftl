@@ -205,6 +205,7 @@ rmc-xeno-invisibility-expire-bump = Ми натрапили на когось і
 # Ovipositor
 cm-xeno-ovipositor-attach = Ви почали прикріплюватися до яйцеклада.
 cm-xeno-ovipositor-detach = Ви почали відкріплюватися від яйцеклада.
+cm-xeno-ovipositor-vehicle = Ви не можете сісти в яйцеклад у транспорті!
 
 # Retrieve Egg
 cm-xeno-retrieve-egg-no-eggs = В нас немає жодного яйця!

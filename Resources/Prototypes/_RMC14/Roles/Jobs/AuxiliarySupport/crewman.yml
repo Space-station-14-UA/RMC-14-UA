@@ -50,7 +50,7 @@
       background:
         sprite: /Textures/_RMC14/Interface/map_blips.rsi
         state: background_intel
-  hidden: true #TODO RMC14 - Remove when vehicles are fully added.
+#  hidden: false #TODO RMC14 - Remove when vehicles are fully added. – Mriya. Бо нам треба
 
 - type: startingGear
   id: CMGearVehicleCrewman

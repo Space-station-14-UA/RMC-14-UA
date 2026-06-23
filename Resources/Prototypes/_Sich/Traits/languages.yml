@@ -1,0 +1,8 @@
+- type: trait
+  id: MREnglishLanguage
+  name: Англійська мова
+  description: Ви можете спілкуватися та розуміти англійську. Хай!
+  category: SpeechTraits
+  cost: 1
+  components: []
+  language: MREnglish

@@ -4,6 +4,7 @@
   name: барикада з дерева
   description: Купа дошок прибитих одне до одної цвяхами. Не дуже міцна, але краще ніж нічого.
   components:
+  - type: VehicleSmashable
   - type: Sprite
     drawdepth: WallTops
     sprite: _RMC14/Structures/Walls/Barricades/barricade.rsi

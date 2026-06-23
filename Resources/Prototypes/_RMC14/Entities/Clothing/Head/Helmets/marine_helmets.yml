@@ -349,7 +349,7 @@
 - type: entity
   parent: ArmorHelmetM10
   id: RMCArmorHelmetM3Scout
-  name: шолом М3-Р 
+  name: шолом М3-Р
   description: Полегшений шолом серії M3 сконструйований спеціально для використання розвідниками.
   components:
   - type: Sprite
@@ -364,7 +364,7 @@
       Classic: _RMC14/Objects/Clothing/Head/Helmets/m3/scout/classic.rsi
       Urban: _RMC14/Objects/Clothing/Head/Helmets/m3/scout/urban.rsi
   - type: RotaryPhone
-    category: Marine
+    category: Морпіхи # Mriya. Переклад. Marine в оригіналі
     canDnd: true
     phoneId: RMCTelephoneScout
     phoneCanBeTransferred: false
@@ -387,7 +387,7 @@
 - type: entity
   parent: ArmorHelmetM10
   id: RMCArmorHelmetM3G4
-  name: шолом М3-Г4 
+  name: шолом М3-Г4
   description: Поєднується з важкою бронею гранатометника М3-Г4. Далекий родич захисного шолому В18. # As such, it also resists some parasite latching attempts.
   components:
   - type: Sprite

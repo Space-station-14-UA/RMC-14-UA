@@ -401,61 +401,110 @@
   id: CMPamphletLanguage
   name: довідник лінгвіста
   description: Довідник спеціально створений для лінивих військових перекладачів, дає змогу за кілька секунд вивчити нову мову.
-  suffix: НЕ РЕАЛІЗОВАНО
+  abstract: true
+  components:
+  - type: SkillPamphlet
+    bypassLimit: true
 
 # gives japanese language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageJapanese
-  name: Пристойно непристойна Японія
-  description: Це кілька вирваних сторінок відомої манги 'Пристойно непристойна Японія' про світ де розпуста під забороною. Звідки я взагалі це знаю?
+  name: сторінки з «Пристойно непристойна Японія»
+  description: Це кілька вирваних сторінок відомої ісекайної манги 'Пристойно непристойна Японія' про світ де розпуста під забороною. Звідки я взагалі це знаю? Тут є досить гарні ілюстрації, тож вона дасть вам кріпку основу розуміння японської мови!
+  components:
+  - type: SkillPamphlet
+    language: Japanese
 
 # gives chinese language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageChinese
-  name: Маленька Червона Книга
-  description: Сторінки з книги, яка навчить вас заморити голодом 100 мільйонів ваших людей. Звісно, що це допоможе вам вивчити китайську.
+  name: сторінки з «Маленька Червона Книга»
+  description: Сторінки з книги, яка навчить вас заморити голодом 100 мільйонів людей. Все як обожнюють в СПН! Звісно, що це допоможе вам вивчити китайську.
+  components:
+  - type: SkillPamphlet
+    language: Chinese
   # desc starts with "没有共产党就没有新中国!" but RMC14 doesnt support chinese letters :(
 
 # gives german language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageGerman
-  name: Переклад пісні 99 Luftballons
-  description: Це збірка нашвидкоруч зроблених перекладів пісні 99 Luftballons, іконічного німецького хіта вісімдесятих. Думаю, пора вчити німецьку.
+  name: Переклад пісні «99 Luftballons»
+  description: Це збірка нашвидкоруч зроблених перекладів пісні 99 Luftballons, іконічного німецького хіта вісімдесятих. Не мрія, але це допоможе вам вивчити німецьку до того рівня, що з вас посміються, але зрозуміють!
+  components:
+  - type: SkillPamphlet
+    language: German
 
 # gives spanish language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageSpanish
-  name: Латинська Америка – Перекладач
-  description: Цей довідник призначений для розвідників, що працюють з місцевими. Але лише тим, хто спав на курсах.
+  name: Латинська Америка – Малий Довідник Перекладача
+  description: Цей довідник призначений для розвідників ОН, що працюють з місцевими. Але лише тим, хто спав на курсах та тепер хоче піти в найближчий колумбійський бар.
+  components:
+  - type: SkillPamphlet
+    language: Spanish
+
+# gives french language
+- type: entity
+  parent: CMPamphletLanguage
+  id: CMPamphletLanguageFrench
+  name: Пошарпані сторінки «Маленький Принц»
+  description: Кілька пошарпаних сторінок із модного журналу початку 2100-х років. Вони навчають вас якраз достатньої кількості лексики вищого суспільства, щоб звучати вишукано, або принаймні як зарозумілий турист. Справжній француз, йо!
+  components:
+  - type: SkillPamphlet
+    language: French
+
+# gives russian language
+- type: entity # Mriya. Це русняве лайно, зустрічатися окрім як через адмін спавн не повинно
+  parent: CMPamphletLanguage
+  id: CMPamphletLanguageRussian
+  name: брудний туалетний папір
+  description: НАЩО ТИ НА ЦЕ ДИВИШСЯ?? ВИКИНЬ!!!
+  suffix: руснява мова # Mriya
+  components:
+  - type: SkillPamphlet
+    language: Russian
+
+# gives sign language
+- type: entity
+  parent: CMPamphletLanguage
+  id: CMPamphletLanguageSign
+  name: Ілюстрований посібник з Мови Жестів
+  description: Ламінований посібник КМПОН «Тактичні жести руками». Він охоплює основні жести руками, що використовуються для координації, коли будь-який шум є смертним вироком, а також кілька неофіційних жестів для жартів над КО без його відома.
+  components:
+  - type: SkillPamphlet
+    language: SignLanguage
 
 
 # RESTRICTED LANGUAGES
 
 
-# gives sainja language
-- type: entity
-  parent: CMPamphletLanguage
-  id: CMPamphletLanguageYautja
-  name: пофарбований пергамент
-  description: Пожовклий шматок пергаменту, на якому виведені дивні руни. Здається, вони рухаються й прямо у вас на очах складаються в якісь слова.
+#№ gives sainja language. Mriya, щоб не загубити переклад
+#- type: entity
+#  parent: CMPamphletLanguage
+#  id: CMPamphletLanguageYautja
+#  name: пофарбований пергамент
+#  description: Пожовклий шматок пергаменту, на якому виведені дивні руни. Здається, вони рухаються й прямо у вас на очах складаються в якісь слова.
 
 # gives xenonid language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageXenonid
   name: записи ксенобіолога
-  description: Документ ксенобіолога, де записані усі деталі спілкування ксеноморфів у неволі, а також намагання людей їх відтворити.
+  description: Сильно відредаговані дослідження Вестон-Ямада. Документ ксенобіолога, де записані деталі спілкування ксеноморфів у неволі, а також намагання людей їх відтворити. При спробі імітувати ці звуки у вас болить горло, а по шкірі йдуть мурашки.
+  components:
+  - type: SkillPamphlet
+    language: Xeno
 
 # gives primitive language
 - type: entity
   parent: CMPamphletLanguage
-  id: CMPamphletLanguageMonkey
+  id: CMPamphletLanguagePrimitive
   name: мальовані каракулі
   description: Шматок паперу розмальований бананами і приматами різних видів. Напевно його намалювала трирічна дитина... або ж не обділений розумом морпіх.
-
-- type: Tag
-  id: RMCSkillPamphlet
+  components:
+  - type: SkillPamphlet
+    language: Primitive

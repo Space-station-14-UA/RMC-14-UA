@@ -13,7 +13,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'ДКП-Саванна "Січ"' # LSC-Savannah. Landing Ship Carrier – Десантний Корабель-Перевізник. Назва корабля "Січ", тип Саванна.
         - type: StationJobs
-          availableJobs: # 59-64 (67 загалом), плюс нескінченні стрільці
+          availableJobs: # 59-65 (68 загалом), плюс нескінченні стрільці
             # Командування. 4 загалом
             CMCommandingOfficer: [1, 1]
             CMExecutiveOfficer: [1, 1]
@@ -25,12 +25,13 @@
             CMMilitaryPolice: [3, 3]
 #            CMProvostInspector: [1, 1] – сенс нам від нього, плюс поки нікому вайтліст не видавали
 
-            # Підтримка. 7-8 загалом
+            # Підтримка. 7-9 загалом
             CMAuxiliarySupportOfficer: [1, 1]
             CMIntelOfficer: [1, 1] # 2 від ~20 готових
             CMPilotDropship: [1, 1]
             CMPilotGunship: [1, 1]
             CMDropshipCrewChief: [2, 2]
+            CMVehicleCrewman: [1, 1]
             CMSeniorEnlistedAdvisor: [1, 1]
 
             # Інженерія. 3 (4) загалом

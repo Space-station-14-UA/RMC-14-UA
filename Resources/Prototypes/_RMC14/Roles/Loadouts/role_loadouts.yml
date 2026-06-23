@@ -1,7 +1,7 @@
 # Auxiliary Support
 - type: roleLoadout
   id: JobCMAuxiliarySupportOfficer
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -26,7 +26,7 @@
 
 - type: roleLoadout
   id: JobCMDropshipCrewChief
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -51,7 +51,7 @@
 
 - type: roleLoadout
   id: JobCMPilotDropship
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -76,7 +76,7 @@
 
 - type: roleLoadout
   id: JobCMPilotGunship
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -101,7 +101,7 @@
 
 - type: roleLoadout
   id: JobCMIntelOfficer
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -126,7 +126,7 @@
 
 - type: roleLoadout
   id: JobCMVehicleCrewman
-  points: 7
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -149,7 +149,7 @@
 # Command
 - type: roleLoadout
   id: JobCMCommandingOfficer
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - CommandingOfficerIDRMC
@@ -177,7 +177,7 @@
 
 - type: roleLoadout
   id: JobCMExecutiveOfficer
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -202,7 +202,7 @@
 
 - type: roleLoadout
   id: JobCMStaffOfficer
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -228,7 +228,7 @@
 # Engineering
 - type: roleLoadout
   id: JobCMChiefEngineer
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineTechnicianBackpack
   - HeadwearRMC
@@ -253,7 +253,7 @@
 
 - type: roleLoadout
   id: JobCMMaintTech
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineTechnicianBackpack
   - HeadwearRMC
@@ -278,7 +278,7 @@
 
 - type: roleLoadout
   id: JobCMOrdnanceTech
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineTechnicianBackpack
   - HeadwearRMC
@@ -304,7 +304,7 @@
 # Squad Roles
 - type: roleLoadout
   id: JobCMCombatTech
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineTechnicianBackpack
   - HeadwearRMC
@@ -329,7 +329,7 @@
 
 - type: roleLoadout
   id: JobCMFireteamLeader
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -354,7 +354,7 @@
 
 - type: roleLoadout
   id: JobCMHospitalCorpsman
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineMedicBackpack
   - HeadwearRMC
@@ -379,7 +379,7 @@
 
 - type: roleLoadout
   id: JobCMRifleman
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -404,7 +404,7 @@
 
 - type: roleLoadout
   id: JobCMSmartGunOperator
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -429,7 +429,7 @@
 
 - type: roleLoadout
   id: JobCMSquadLeader
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -454,7 +454,7 @@
 
 - type: roleLoadout
   id: JobCMWeaponsSpecialist
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -480,7 +480,7 @@
 # Medical
 - type: roleLoadout
   id: JobCMCMO
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -505,7 +505,7 @@
 
 - type: roleLoadout
   id: JobCMDoctor
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -529,8 +529,8 @@
   - MeleeWeaponsRMC
 
 - type: roleLoadout
-  id: JobRMCFieldDoctor # Sich. JobCMFieldDoctor в оригіналі, ти на це ПР офіційкам закинеш, не дивуйся
-  points: 10 # Sich. 7 в оригіналі
+  id: JobRMCFieldDoctor # Mriya. JobCMFieldDoctor в оригіналі, ти на це ПР офіційкам закинеш, не дивуйся
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -553,7 +553,7 @@
 
 - type: roleLoadout
   id: JobCMNurse
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -578,7 +578,7 @@
 
 - type: roleLoadout
   id: JobCMResearcher
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -604,7 +604,7 @@
 # Military Police
 - type: roleLoadout
   id: JobCMProvostInspector
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - ProvostSecurityBackpack
   - ProvostRoleSpecificOuterwearRMC
@@ -629,7 +629,7 @@
 
 - type: roleLoadout
   id: JobCMChiefMP
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineSecurityBackpack
   - HeadwearRMC
@@ -655,7 +655,7 @@
 
 - type: roleLoadout
   id: JobCMMilitaryPolice
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineSecurityBackpack
   - HeadwearRMC
@@ -680,7 +680,7 @@
 
 - type: roleLoadout
   id: JobCMMilitaryWarden
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineSecurityBackpack
   - HeadwearRMC
@@ -706,7 +706,7 @@
 # Other
 - type: roleLoadout
   id: JobCMCorrespondent
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineLeatherBackpack
   - HeadwearRMC
@@ -731,7 +731,7 @@
 
 - type: roleLoadout
   id: JobCMCombatCorrespondent
-  points: 7
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -756,7 +756,7 @@
 
 - type: roleLoadout
   id: JobCMLiaison
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - LiaisonBackpackRMC
   - LiaisonRoleSpecificRMC
@@ -782,7 +782,7 @@
 
 - type: roleLoadout
   id: JobRMCWeYaExecutiveBodyguard
-  points: 7
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - ExecutiveSecurityGuardBackpack
   - HeadwearRMC
@@ -807,7 +807,7 @@
 
 - type: roleLoadout
   id: JobCMMessTech
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -832,7 +832,7 @@
 
 - type: roleLoadout
   id: JobCMSeniorEnlistedAdvisor
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -857,7 +857,7 @@
 
 - type: roleLoadout
   id: JobRMCJobSynthetic
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - SynthBackpackRMC
   - SynthHeadwearRMC
@@ -880,7 +880,7 @@
 # Requsitions
 - type: roleLoadout
   id: JobCMCargoTech
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - MarineTechnicianBackpack
   - HeadwearRMC
@@ -905,7 +905,7 @@
 
 - type: roleLoadout
   id: JobCMQuartermaster
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineTechnicianBackpack
   - HeadwearRMC
@@ -932,12 +932,13 @@
 # They don't have access to some loadout categories
 - type: roleLoadout
   id: JobCMSurvivor
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC
@@ -950,12 +951,13 @@
 
 - type: roleLoadout
   id: JobRMCSyntheticColony
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC
@@ -968,12 +970,13 @@
 
 - type: roleLoadout
   id: JobCMSurvivorCorporate
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC
@@ -986,12 +989,13 @@
 
 - type: roleLoadout
   id: JobCMSurvivorDoctor
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC
@@ -1004,12 +1008,13 @@
 
 - type: roleLoadout
   id: JobCMSurvivorEngineer
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC
@@ -1022,12 +1027,13 @@
 
 - type: roleLoadout
   id: JobCMSurvivorScientist
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC
@@ -1040,12 +1046,13 @@
 
 - type: roleLoadout
   id: JobCMSurvivorSecurity
-  points: 10 # Sich. 7 в оригіналі
+  points: 10 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC
@@ -1058,12 +1065,13 @@
 
 - type: roleLoadout
   id: JobRMCSurvivorCommandingOfficer
-  points: 15 # Sich. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - EyewearRMC
   - MasksRMC
   - PaperworkRMC
   - RecreationalRMC
+  - PlushiesRMC
   - CannedDrinksRMC
   - FoodSweetsRMC
   - FoodPackagedRMC

@@ -20,3 +20,5 @@ rmc-construction-build-here = Будувати Тут
 rmc-construction-name = конструкція
 
 rmc-construction-non-anchorable = Це неможливо прикрутити або відкрутити.
+
+rmc-construction-vehicle = Ви не можете будувати всередині транспорту!
