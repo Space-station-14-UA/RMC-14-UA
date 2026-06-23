@@ -7,7 +7,7 @@ namespace Content.Shared._RMC14.Vents;
 public sealed partial class VentCrawlerComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public TimeSpan VentCrawlDelay = TimeSpan.FromMilliseconds(1);
+    public TimeSpan VentCrawlDelay = TimeSpan.FromMilliseconds(10); // Mriya. 1 в оригіналі – це занадто швидко
 
     [DataField, AutoNetworkedField]
     public TimeSpan VentEnterDelay = TimeSpan.FromSeconds(4.5);
