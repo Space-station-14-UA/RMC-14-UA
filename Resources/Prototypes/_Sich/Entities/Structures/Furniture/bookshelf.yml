@@ -5,7 +5,7 @@
   name: книжкова шафа з мовними посібниками
   components:
   - type: StorageFill
-  contents:
+    contents:
       - id: CMPamphletLanguageJapanese
       - id: CMPamphletLanguageChinese
       - id: CMPamphletLanguageGerman
