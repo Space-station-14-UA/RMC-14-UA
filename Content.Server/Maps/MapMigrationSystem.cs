@@ -23,6 +23,7 @@ public sealed class MapMigrationSystem : EntitySystem
     [Dependency] private readonly IResourceManager _resMan = default!;
 
     private const string MigrationFile = "/migration.yml";
+    private const string MriyaMigrationFile = "/mriyamigration.yml"; // Mriya. Наш власний файлик міграції
 
     public override void Initialize()
     {
@@ -47,7 +48,8 @@ public sealed class MapMigrationSystem : EntitySystem
     {
         mappings = null;
         var path = new ResPath(MigrationFile);
-        if (!_resMan.TryContentFileRead(path, out var stream))
+        var MRpath = new ResPath(MriyaMigrationFile); // Mriya
+        if (!_resMan.TryContentFileRead(path, out var stream) || !_resMan.TryContentFileRead(MRpath, out stream)) // Mriya. Додано другу частину
             return false;
 
         using var reader = new StreamReader(stream, EncodingHelpers.UTF8);
