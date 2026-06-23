@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.2-fix-physics
   forkId: ""
   forkVersion: ""
-  time: 06/19/2026 01:20:59
-  entityCount: 14928
+  time: 06/22/2026 21:23:23
+  entityCount: 14929
 maps:
 - 1
 grids:
@@ -57429,11 +57429,6 @@ entities:
     - type: Transform
       pos: -23.5,-7.5
       parent: 1
-  - uid: 2849
-    components:
-    - type: Transform
-      pos: -23.5,2.5
-      parent: 1
   - uid: 2850
     components:
     - type: Transform
@@ -59768,13 +59763,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: CMSpawnMobJones
-  entities:
-  - uid: 3276
-    components:
-    - type: Transform
-      pos: -29.5,-1.5
-      parent: 1
 - proto: CMSpawnPointASO
   entities:
   - uid: 3277
@@ -88774,6 +88762,7 @@ entities:
   - uid: 8565
     components:
     - type: MetaData
+      desc: Звичайне кошаче ліжко. Присутня бірка з написом "Нокс"
       name: кошаче ліжко
     - type: Transform
       pos: -23.5,-0.5
@@ -88787,6 +88776,14 @@ entities:
     components:
     - type: Transform
       pos: 54.5,116.5
+      parent: 1
+  - uid: 14929
+    components:
+    - type: MetaData
+      desc: Звичайне кошаче ліжко. Присутня бірка з написом "Люкс"
+      name: кошаче ліжко
+    - type: Transform
+      pos: -23.5,2.5
       parent: 1
 - proto: DonkpocketBoxSpawner
   entities:
@@ -89999,6 +89996,22 @@ entities:
     components:
     - type: Transform
       pos: 31.5,11.5
+      parent: 1
+- proto: MMCSpawnMobCatLux
+  entities:
+  - uid: 2849
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -30.5,-1.5
+      parent: 1
+- proto: MMCSpawnMobCatNox
+  entities:
+  - uid: 3276
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -28.5,-1.5
       parent: 1
 - proto: MMI
   entities:
