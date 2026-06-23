@@ -2,7 +2,7 @@
   parent: CMFoodBase
   id: MRFoodParasiteLeg
   name: лапка паразита
-  description: Колись вона бігала, а тепер час з'їсти її та побігти далі.
+  description: Колись вона бігала, а тепер час бігти смажити її!
   components:
   - type: FlavorProfile
     flavors:
@@ -41,8 +41,8 @@
 - type: entity
   parent: CMFoodBase
   id: MRFoodParasiteLegCooked
-  name: смажені лапка паразита
-  description: Смажена лапа паразита ксеноморфів... Пахне цікаво.
+  name: смажена лапка паразита
+  description: Смажена лапа паразита ксеноморфів... Пахне цікаво. Колись вона бігала, а тепер час з'їсти її та побігти далі.
   components:
   - type: FlavorProfile
     flavors:
@@ -82,7 +82,7 @@
   parent: FoodBowlBase
   id: MRFoodQueenSalad
   name: салат Королева
-  description: Салат "Королева" – пряме переосмислення салату "Цезар", в умовах коли з м'яса бігає лише ворог.
+  description: Салат "Королева" – пряме переосмислення салату "Цезар", в умовах, коли з м'яса присутній лише ворог, а побратима жаль.
   components:
   - type: FlavorProfile
     flavors:
@@ -162,7 +162,7 @@
   parent: FoodBurgerBase
   id: MRFoodBurgerXeno
   name: ксенобургер
-  description: На смак, як кислота. Відчувається, ніби ти військовий злочинець.
+  description: На смак, як кислота. Відчувається, ніби ти військовий злочинець з ДУЖЕ дивними смаками в їжі.
   components:
   - type: FlavorProfile
     flavors:
