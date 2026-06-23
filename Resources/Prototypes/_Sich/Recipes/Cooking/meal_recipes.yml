@@ -46,7 +46,7 @@
 - type: microwaveMealRecipe
   id: RecipeXenoburger
   name: ксенобургер
-  result: FoodBurgerXeno
+  result: MRFoodBurgerXeno
   time: 10
   group: Savory
   solids:
