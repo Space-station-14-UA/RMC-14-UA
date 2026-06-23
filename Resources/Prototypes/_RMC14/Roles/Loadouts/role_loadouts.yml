@@ -151,6 +151,7 @@
   id: JobCMCommandingOfficer
   points: 15 # Mriya. 7 в оригіналі
   groups:
+  - MRCOVisor # Mriya
   - MarineLeatherBackpack
   - CommandingOfficerIDRMC
   - CommandingOfficerWeaponRMC
@@ -429,7 +430,7 @@
 
 - type: roleLoadout
   id: JobCMSquadLeader
-  points: 10 # Mriya. 7 в оригіналі
+  points: 15 # Mriya. 7 в оригіналі
   groups:
   - MarineBackpack
   - HeadwearRMC
@@ -834,6 +835,7 @@
   id: JobCMSeniorEnlistedAdvisor
   points: 15 # Mriya. 7 в оригіналі
   groups:
+  - MRSEAVisor # Mriya
   - MarineBackpack
   - HeadwearRMC
   - EyewearRMC

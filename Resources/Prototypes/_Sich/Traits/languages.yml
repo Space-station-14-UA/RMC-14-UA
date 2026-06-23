@@ -1,8 +1,17 @@
 - type: trait
   id: MREnglishLanguage
-  name: Англійська мова
-  description: Ви можете спілкуватися та розуміти англійську. Хай!
+  name: mriya-trait-english-language-name
+  description: mriya-trait-english-language-desc
   category: SpeechTraits
   cost: 1
   components: []
   language: MREnglish
+
+- type: trait
+  id: MRSignLanguage
+  name: mriya-trait-sign-language-name
+  description: mriya-trait-sign-language-desc
+  category: SpeechTraits
+  cost: 1
+  components: []
+  language: SignLanguage

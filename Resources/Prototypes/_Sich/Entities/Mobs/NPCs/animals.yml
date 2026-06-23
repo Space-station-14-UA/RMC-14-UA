@@ -76,6 +76,29 @@
   - type: VentCrawler
     ventCrawlIcon: lesser
   - type: RMCTrayCrawler
+  - type: Language
+    spokenLanguages:
+    - English
+    - French
+    - Japanese
+    - German
+    - Chinese
+    - Spanish
+    - MREnglish
+    - SignLanguage
+    - Xeno
+    understoodLanguages:
+    - English
+    - French
+    - Japanese
+    - German
+    - Chinese
+    - Spanish
+    - MREnglish
+    - SignLanguage
+    - Xeno
+    currentLanguage: English
+    defaultLanguage: English
   # Вбудована гарнітура старт
   - type: CMGhost
   - type: ViewIntelObjectives
@@ -158,6 +181,9 @@
     - Corp
     - Colony
     - Synth
+  - type: WarpPoint
+    follow: true
+    location: Люнет
   - type: RemoveComponents
     components:
     - type: Destructible # Щоб не розривало на шмаття

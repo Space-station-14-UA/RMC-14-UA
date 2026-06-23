@@ -1,0 +1,15 @@
+# Для Саванни в кабінет КО
+- type: entity
+  parent: RMCBookcase
+  id: MRBookcasePhilology
+  name: книжкова шафа з мовними посібниками
+  components:
+  - type: StorageFill
+  contents:
+      - id: CMPamphletLanguageJapanese
+      - id: CMPamphletLanguageChinese
+      - id: CMPamphletLanguageGerman
+      - id: CMPamphletLanguageSpanish
+      - id: CMPamphletLanguageFrench
+      - id: CMPamphletLanguageSign
+      - id: MRPamphletLanguageEnglish
