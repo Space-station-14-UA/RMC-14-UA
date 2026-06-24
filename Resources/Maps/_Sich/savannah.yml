@@ -42861,60 +42861,8 @@ entities:
     paused: true
     components:
     - type: Transform
-      pos: 16.296875,64.33176
+      pos: 16.3,64.35
       parent: 1
-    - type: CycleableVisor
-      action: 4
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        rmc_visor_one: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 5
-        rmc_visor_two: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 6
-        rmc_visor_three: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        solution@food: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 3
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 4
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
-    - type: EmitSoundOnCollide
-      nextSound: -2122.5312108
-    - type: HideLayerClothing
-      slots: null
-    - type: UseDelay
-      delays:
-        default: {}
-        quickInsert:
-          length: 0.5
-        storage: {}
-    - type: RMCRecentlyVended
-      preventCollide:
-      - invalid
-    - type: Forensics
-      residues: []
-      dnas: []
-      fibers: []
-      fingerprints: []
-    - type: ActionsContainer
 - proto: CMArmorM3VLBallistics
   entities:
   - uid: 14
@@ -42922,58 +42870,16 @@ entities:
     - type: Transform
       pos: 48.296223,7.659076
       parent: 1
-    - type: HandheldLight
-      toggleActionEntity: 15
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 15
-    - type: ActionsContainer
   - uid: 16
     components:
     - type: Transform
       pos: 48.523075,7.659076
       parent: 1
-    - type: HandheldLight
-      toggleActionEntity: 17
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 17
-    - type: ActionsContainer
   - uid: 18
     components:
     - type: Transform
       pos: 48.749928,7.659076
       parent: 1
-    - type: HandheldLight
-      toggleActionEntity: 19
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 19
-    - type: ActionsContainer
   - uid: 338
     components:
     - type: Transform
