@@ -517,7 +517,7 @@ namespace Content.IntegrationTests.Tests
 
             var gameMaps = protoManager.EnumeratePrototypes<GameMapPrototype>().Select(o => o.MapPath).ToHashSet();
 
-            var mapFolder = new ResPath("/Maps/_Sich") // Mriya
+            var mapFolder = new ResPath("/Maps/_Sich"); // Mriya
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
                 .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
