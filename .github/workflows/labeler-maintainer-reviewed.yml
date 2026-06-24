@@ -28,15 +28,15 @@ jobs:
           # Enable bash strict mode.
           set -euo pipefail
 
-          LABEL_CHANGES_REQUESTED="S: Awaiting Changes"
-          LABEL_NEEDS_APPROVAL="S: Needs Review"
-          LABEL_PARTIAL_APPROVAL="S: Partially Approved"
-          LABEL_APPROVED="S: Approved"
+          LABEL_CHANGES_REQUESTED="С: Очікує Змін"
+          LABEL_NEEDS_APPROVAL="С: Потребує Огляду"
+          #LABEL_PARTIAL_APPROVAL="S: Partially Approved" – Mriya
+          LABEL_APPROVED="С: Одобрено"
 
           ALL_LABELS=(
             "$LABEL_CHANGES_REQUESTED"
             "$LABEL_NEEDS_APPROVAL"
-            "$LABEL_PARTIAL_APPROVAL"
+            #"$LABEL_PARTIAL_APPROVAL" – Mriya
             "$LABEL_APPROVED"
           )
 
