@@ -19833,7 +19833,7 @@ entities:
     - type: Transform
       pos: 62.354137,60.89164
       parent: 1
-- proto: CMWebbingSurgicalBlue
+- proto: RMCWebbingSurgicalBlue
   entities:
   - uid: 7087
     components:
