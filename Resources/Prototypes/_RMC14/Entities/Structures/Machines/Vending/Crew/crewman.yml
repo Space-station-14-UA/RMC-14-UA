@@ -91,8 +91,8 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechVehicleCrewmanEquipment
-  name: ColMarTech Vehicle Crewman Equipment Rack
-  description: An automated rack hooked up to a colossal storage of Vehicle Crewmen standard-issue equipment.
+  name: КолМарТех автоматизована стійка морпіхотного спорядження Оператора Транспорту
+  description: Автоматизована стійка, під'єднана до величезного сховища зі стандартним спорядженням Оператора Транспорту морської піхоти.
   components:
   - type: AccessReader
     access:
@@ -103,7 +103,7 @@
     jobs:
     - CMVehicleCrewman
     sections:
-    - name: Standard Equipment
+    - name: Стандартне спорядження
       takeAll: CMEquipment
       entries:
       - id: CMHandsInsulated
@@ -112,12 +112,12 @@
       - id: RMCVisorMedical
       - id: RMCWeldingKit
       - id: CMMRE
-    - name: Personal Sidearm
+    - name: Додаткова зброя 
       choices: { CMSidearm: 1 }
       entries:
       - id: RMCWeaponPistolM77
       - id: RMCMK80
-    - name: Belts
+    - name: Ремені
       choices: { CMBelt: 1 }
       entries:
       - id: RMCBeltUtilityGeneral
@@ -130,17 +130,17 @@
       - id: RMCM82FHolster
       - id: RMCM276ShotgunShellLoadingRig
       - id: CMBeltUtilityFilled
-    - name: Pouches
+    - name: Підсумки
       choices: { CMPouches: 2 }
       entries:
       - id: RMCPouchFirstAidInjectors
-        name: first-aid pouch (refillable injectors)
+        name: підсумок першої допомоги (багаторазові автоінжектори)
         recommended: true
       - id: RMCPouchFirstAidSplintsGauzeOintment
-        name: first-aid pouch (gauze, ointment)
+        name: підсумок першої допомоги (марля, мазь)
         recommended: true
       - id: RMCPouchFirstAidPills
-        name: first-aid pouch (pills)
+        name: підсумок першої допомоги (пігулки)
         recommended: true
       - id: RMCPouchFlareFilled
         name: flare pouch (Full)
@@ -151,7 +151,7 @@
       - id: RMCPouchPistol
       - id: RMCPouchSling
       - id: RMCPouchToolsFill
-    - name: Accessories
+    - name: Ремінно-плечові системи
       choices: { CMAccessories: 1 }
       entries:
       - id: CMWebbingBrown
@@ -163,13 +163,13 @@
       - id: CMWebbing
       - id: RMCWebbingBlackSmall
       - id: CMWebbingHolster
-    - name: Masks
+    - name: Маски
       choices: { CMMasks: 1 }
       entries:
       - id: CMMaskGas
       - id: CMMaskCoif
       - id: RMCMaskRebreather
-    - name: Attachments
+    - name: Оснащення для зброї
       entries:
       - id: RMCAttachmentAngledGrip
         points: 10
@@ -197,7 +197,7 @@
         points: 10
       - id: RMCAttachmentVerticalGrip
         points: 10
-    - name: Ammunition
+    - name: Особливі набої
       entries:
       - id: CMMagazineRifleM4SPRAP
         points: 10
@@ -215,7 +215,7 @@
         points: 10
       - id: RMCSpeedLoaderM44
         points: 10
-    - name: Utilities
+    - name: Додаткове обладнання
       entries:
       - id: RMCBinoculars
         points: 10

@@ -39,8 +39,8 @@
 - type: entity
   parent: Clothing
   id: RMCWeldingKit
-  name: welding kit
-  description: A heavy-duty, portable welding fluid carrier.
+  name: зварювальний ранець
+  description: Посилений портативний резервуар для зварювальної рідини.
   components:
   - type: Item
     size: Huge

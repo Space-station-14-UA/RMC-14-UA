@@ -317,8 +317,8 @@
 - type: entity
   parent: CMArmorM3Medium
   id: RMCArmorM3MediumTanker
-  name: M3 pattern tanker armor
-  description: A modified and refashioned suit of M3 Pattern armor designed to be worn by the loader of a UNMC vehicle crew. While the suit is a bit more encumbering to wear with the crewman uniform, it offers the loader a degree of protection that would otherwise not be enjoyed.
+  name: броня танкіста зразка M3
+  description: Модифікована та перероблена броня зразка M3, розроблена для використання екіпажами бронетехніки КМПОН. Хоча при носінні разом з уніформою вона дещо обмежує рухливість, ця броня забезпечує додатковий рівень захисту, який інакше був би недоступний.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/OuterClothing/Armor/m3/tanker/jungle.rsi

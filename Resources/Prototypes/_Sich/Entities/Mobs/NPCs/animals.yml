@@ -190,6 +190,67 @@
     - type: ReplacementAccent # Вона може повноцінно балакати
       accent: mothroach
 
+- type: entity
+  parent: RMCMobCatCalico
+  id: MriyaMobCatNox
+  name: Нокс
+  description: "Молода кішка темно-чорного забарвлення.\nВаш погляд губиться в цих зелених очах..."
+  components:
+  - type: Sprite
+    sprite: _Sich/Mobs/Pets/co_cat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cat1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cat1
+      Critical:
+        Base: cat1_dead
+      Dead:
+        Base: cat1_dead
+  - type: Item
+    sprite: _Sich/Mobs/Pets/co_cat.rsi
+    heldPrefix: item-cat1
+  - type: Clothing
+    sprite: _Sich/Mobs/Pets/co_cat.rsi
+    equippedPrefix: item-cat1
+  - type: MobThresholds # Кішка має мати більше здоров'я, у каліко малувато.
+    thresholds:
+      0: Alive
+      45: Critical
+      50: Dead
+  - type: WarpPoint
+    location: Нокс
+  - type: UserIFF # Кішка мусить жити
+    factions:
+    - FactionMarine
+
+- type: entity
+  parent: MriyaMobCatNox
+  id: MriyaMobCatLux
+  name: Люкс
+  description: "Молода кішка світло-білого забарвлення.\nВам доволі боляче дивитися на неї, занадто яскраво..."
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cat2
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cat2
+      Critical:
+        Base: cat2_dead
+      Dead:
+        Base: cat2_dead
+  - type: Item
+    heldPrefix: item-cat2
+  - type: Clothing
+    equippedPrefix: item-cat2
+  - type: WarpPoint
+    location: Люкс
+
 # Спавнера
 - type: entity
   parent: MarkerBase
@@ -220,3 +281,33 @@
   - type: ConditionalSpawner
     prototypes:
     - SichMobMothroachSynth
+
+- type: entity
+  parent: MarkerBase
+  id: MMCSpawnMobCatNox
+  name: спавнер кішки Нокс
+  suffix: Мрія
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: cat1
+      sprite: _Sich/Mobs/Pets/co_cat.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MriyaMobCatNox
+
+- type: entity
+  parent: MarkerBase
+  id: MMCSpawnMobCatLux
+  name: спавнер кішки Люкс
+  suffix: Мрія
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: cat2
+      sprite: _Sich/Mobs/Pets/co_cat.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MriyaMobCatLux
