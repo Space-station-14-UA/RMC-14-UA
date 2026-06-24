@@ -192,7 +192,7 @@
 
 - type: entity
   parent: RMCMobCatCalico
-  id: MriyaMobCatNox
+  id: MRMobCatNox
   name: Нокс
   description: "Молода кішка темно-чорного забарвлення.\nВаш погляд губиться в цих зелених очах..."
   components:
@@ -227,8 +227,8 @@
     - FactionMarine
 
 - type: entity
-  parent: MriyaMobCatNox
-  id: MriyaMobCatLux
+  parent: MRMobCatNox
+  id: MRMobCatLux
   name: Люкс
   description: "Молода кішка світло-білого забарвлення.\nВам доволі боляче дивитися на неї, занадто яскраво..."
   components:
@@ -295,7 +295,7 @@
       sprite: _Sich/Mobs/Pets/co_cat.rsi
   - type: ConditionalSpawner
     prototypes:
-    - MriyaMobCatNox
+    - MRMobCatNox
 
 - type: entity
   parent: MarkerBase
@@ -310,4 +310,4 @@
       sprite: _Sich/Mobs/Pets/co_cat.rsi
   - type: ConditionalSpawner
     prototypes:
-    - MriyaMobCatLux
+    - MRMobCatLux
