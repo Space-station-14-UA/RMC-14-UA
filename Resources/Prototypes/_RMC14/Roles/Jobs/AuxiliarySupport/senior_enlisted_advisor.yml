@@ -73,7 +73,7 @@
         RMCSkillPowerLoader: 2
         RMCSkillResearch: 1
         RMCSkillSurgery: 2
-        RMCSkillVehicles: 2
+        RMCSkillVehicles: 3 # Mriya. 2 в оригіналі
     - type: MarineOrders
     - type: CMVendorUser
       id: CMSeniorEnlistedAdvisor
