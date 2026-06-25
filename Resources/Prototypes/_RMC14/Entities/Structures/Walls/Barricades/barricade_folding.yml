@@ -1,0 +1,51 @@
+- type: entity
+  parent: CMBarricadeBase
+  id: CMBarricadeFolding
+  name: переносна композитна барикада
+  description: Розгорнута розкладна барикада MБ-6. Вона достатньо легка, щоб її можна було знову скласти, але достатньо міцна, щоб утримувати лінію оборони.
+  components:
+  - type: Transform
+    anchored: true
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/_RMC14/Structures/metalhit.ogg"
+  - type: Sprite
+    sprite: _RMC14/Structures/Walls/Barricades/barricade.rsi
+    layers:
+    - state: folding
+    - map: [ "acided" ]
+    drawdepth: WallTops
+  - type: DirectionalAttackBlocker
+    maxHealth: 350
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CMFoldingBarricade
+  - type: RMCRepairable
+    heal: 200
+    skill: RMCSkillConstruction
+    delay: 10
+    fuelUsed: 2
+  - type: NailgunRepairable
+    repairValues:
+      CMSteel: 105
+      CMPlasteel: 157.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageVisuals
+    thresholds: [4, 8, 12]
+    damageDivisor: 25
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _RMC14/Structures/Walls/Barricades/folding_cracks.rsi
+  - type: RMCFoldingBarricade

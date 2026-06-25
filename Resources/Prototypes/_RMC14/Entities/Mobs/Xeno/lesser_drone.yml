@@ -82,6 +82,10 @@
     entities:
     - RMCDecalSpawnerGibsLesserDrone
     - RMCGibEffectXenoLesserDrone
+  - type: Butcherable # Mriya
+    spawned:
+    - id: MRFoodMeatXeno
+      amount: 2
   - type: WhitelistPickup
     whitelist:
       components:
@@ -122,7 +126,12 @@
     ventCrawlIcon: lesser
   - type: RMCActionOrder
     id: CMXenoLesserDrone
-#  - type: ExcludedFromKingVote – Sich
-  - type: XenoEvolution # Sich
+#  - type: ExcludedFromKingVote – Mriya
+  - type: MindTakeoverBehavior
+    ejectFromLarvaQueues: false
+  - type: RemoveComponents
+    components:
+    - type: CanBeLarvaQueued
+  - type: XenoEvolution # Mriya
     strains:
     - RMCXenoLesserCarrier

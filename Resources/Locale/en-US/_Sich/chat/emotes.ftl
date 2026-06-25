@@ -5,7 +5,6 @@ sich-chat-emote-name-scree = Чірікнути
 sich-chat-emote-name-squawk = Каркнути
 sich-chat-emote-name-wurble = Вурчати
 
-
 # Повідомлення
 sich-chat-emote-msg-flap = тріпотить крилами.
 sich-chat-emote-msg-call = співає!

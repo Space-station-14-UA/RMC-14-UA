@@ -60,20 +60,23 @@ emote_cooldown_seconds = 0
 force_hijack_end_time_minutes = 15
 late_joins_burrowed_larva_death_time = 0
 disconnected_xeno_ghost_role_time_seconds = 120
-late_joins_per_burrowed_larva_early = 6.5
-late_joins_per_burrowed_larva = 6
+marines_per_xeno = 5 # 4 в оригіналі
+late_joins_per_burrowed_larva_early = 6.5 # 7.5
+late_joins_per_burrowed_larva = 6 # 7
+auto_balance = false # true в оригіналі, працює через дупу
 xeno_evolve_same_caste_cooldown_seconds = 0
 parasite_spawn_initial_delay_minutes = 0
 xeno_spawn_initial_mute_duration_seconds = 0
 dropship_initial_delay_minutes = 20
 evolution_points_accumulate_before_minutes = 30
 evolution_early_evo_point_boost_minutes = 30
-auto_balance_min = 4
-auto_balance_max = 6
 bioscan_initial_delay_seconds = 600
 bioscan_base_cooldown_seconds = 900
 hide_player_identities = false
 burrowed_larva_evolution_points_per = 500 # 250 в оригіналі
+larva_queue_roundstart_delay_seconds = 0 # 900 в оригіналі
+larva_queue_wait_seconds = 0 # 300 в оригіналі
+ghosts_can_boo = true # false в оригіналі, бо чому ні
 
 ## Зміни щодо пілонів та бонусів від них
 king_vote_candidate_time_requirement = 10 # 50 в оригіналі
@@ -92,7 +95,7 @@ show_editor_species_button = false
 
 [chat]
 #Інформаційне повідомлення дня
-motd = "Вітаємо на сервері Морпіхоти Мрії! Якщо ви бачите відсутність гравців – ймовірно зараз більшість зайнята. Завітайте до нас ввечері чи на вихідних, а також у Дискорд сервер (посилання є у лобі), щоб бути в курсі ситуації."
+motd = "Вітаємо на сервері Морпіхоти Мрії! Якщо ви новенький, то не бійтеся користуватися МХелпом (Ф1), читати гайди чи просто просити допомоги в інших гравців з навчання. А також завітайте у наш ДС Сервер (посилання в лобі)!"
 
 [tips]
 #Поради (вже тут, але не перекладені)

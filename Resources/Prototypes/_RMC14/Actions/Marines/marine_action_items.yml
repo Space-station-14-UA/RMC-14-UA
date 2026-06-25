@@ -76,7 +76,7 @@
   parent: ActionMarineBase
   id: CMActionToggleAttachable
   name: Перемкнути Обвіс
-  description: Перемикає стан обвісу. 
+  description: Перемикає стан обвісу.
   components:
   - type: Action
     icon:
@@ -114,6 +114,18 @@
     useDelay: 0.5
   - type: InstantAction
     event: !type:RMCTelephoneActionEvent
+
+- type: entity
+  parent: RMCActionTelephone
+  id: RMCActionTelephoneScout
+  name: Use Helmet Microphone
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Objects/phone.rsi
+      state: scout_microphone
+    useDelay: 0.5
 
 - type: Tag
   id: RMCActionCycleZoomLevel
@@ -233,51 +245,16 @@
   - type: InstantAction
     event: !type:DismountActionEvent
 
-# Посібники
-
+# CBRN
 - type: entity
-  id: RMCGuidebookActionSniperBase
-  abstract: true
+  parent: BaseAction
+  id: ActionToggleCBRNHelmet
+  name: Toggle CBRN Mask
+  description: Raise or lower the integrated MOPP mask to toggle full fire protection.
   components:
-  - type: Sprite
-    sprite: _RMC14/Actions/marine_sniper_actions.rsi
-
-- type: entity
-  parent: RMCGuidebookActionSniperBase
-  id: RMCGuidebookActionAimedShot
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: sniper_aim
-
-- type: entity
-  parent: RMCGuidebookActionSniperBase
-  id: RMCGuidebookActionToggleLaserOn
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: sniper_toggle_laser_on
-
-- type: entity
-  parent: RMCGuidebookActionSniperBase
-  id: RMCGuidebookActionToggleLaserOff
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: sniper_toggle_laser_off
-
-- type: entity
-  parent: RMCGuidebookActionSniperBase
-  id: RMCGuidebookActionSpotTarget
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: spotter_target
-
-- type: entity
-  parent: RMCGuidebookActionSniperBase
-  id: RMCGuidebookActionGhilliePreparePosition
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      state: prepare_position
+  - type: Action
+    icon:
+      sprite: _RMC14/Actions/marine_firewalk_actions.rsi
+      state: firewalk
+  - type: InstantAction
+    event: !type:ToggleClothingEvent { }

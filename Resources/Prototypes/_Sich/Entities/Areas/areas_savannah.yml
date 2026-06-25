@@ -249,6 +249,16 @@
 
 ## Sich start
 - type: entity
+  parent: SMCAreaSavannahCommand
+  id: SMCAreaSavannahVehicleStorage
+  name: Сховище Транспорта
+
+- type: entity
+  parent: SMCAreaSavannahCommand
+  id: SMCAreaSavannahVehiceCrew
+  name: Койки Операторів Транспорту
+
+- type: entity
   parent: SMCAreaSavannahBrig
   id: SMCAreaSavannahSynthetic
   name: Сховище Синтетиків

@@ -163,7 +163,7 @@ public sealed class HiveBoonSystem : EntitySystem
 
     private void OnActivateLarvaSurge(HiveBoonActivateLarvaSurgeEvent ev)
     {
-        _hive.IncreaseBurrowedLarva(ev.Hive, 1); // Sich. 5 в оригіналі
+        _hive.ChangeBurrowedLarva(ev.Hive, 1); // Sich. 5 в оригіналі
         _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "Королева розбудила додаткову заховану лярву, яка приєдналася до вулика!"); // Sich. Переклад та 5 в оригіналі
     }
 

@@ -11,8 +11,6 @@
   name: Захисниця
   description: Кремезна чужопланетна істота з величезним броньованим панцирем, потужним хвостом та двома лапами.
   components:
-  - type: GhostRole
-    name: cm-job-name-xeno-defender
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Defender/defender.rsi
   - type: MobState

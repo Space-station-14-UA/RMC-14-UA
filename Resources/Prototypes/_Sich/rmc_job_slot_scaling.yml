@@ -21,6 +21,11 @@
         c: 1
         min: 2
         max: 3
+      CMVehicleCrewman:
+        factor: 7 # 7-12 готових для 1 оператора транспорта
+        c: 1
+        min: 0
+        max: 1
       RMCJobSynthetic:
         factor: 7 # 7-12 готових для 1 синта
         c: 1

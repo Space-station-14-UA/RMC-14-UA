@@ -32,11 +32,11 @@
     - type: Skills
       skills:
         RMCSkillEndurance: 1
-        RMCSkillEngineer: 2 # Sich. 0 в оригіналі
+        RMCSkillEngineer: 2 # Mriya. 0 в оригіналі
         RMCSkillFirearms: 1
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillIntel: 1
-        RMCSkillJtac: 3 # Sich. 2 в оригіналі
+        RMCSkillJtac: 3 # Mriya. 2 в оригіналі
         RMCSkillLeadership: 1
         RMCSkillMedical: 2
         RMCSkillOverwatch: 1

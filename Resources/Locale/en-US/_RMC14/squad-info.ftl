@@ -63,6 +63,8 @@ rmc-squad-info-SeniorConstableTSEPA = ІТСПА Старший Констебл
 
 rmc-squad-info-PrimaryLandingZone = Основна Посадкова Зона
 
+rmc-squad-info-SPPAirborneSL = Airborne Squad Leader
+
 rmc-squad-info-RCMPVESectionLead = Section Leader
 rmc-squad-info-RCMPVETeamLead = Team Leader
 rmc-squad-info-RCMPVETroopSergeant = Troop Sergeant

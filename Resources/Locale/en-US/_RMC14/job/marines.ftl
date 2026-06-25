@@ -10,7 +10,7 @@ cm-job-prefix-squad-leader = ЛЗ
 CMJobSquadLeader = Лідер Загону
 
 cm-job-name-fireteam-leader = Лідер Вогневої Групи
-cm-job-description-fireteam-leader = Командуйте своєю групою намагаючись виконати накази Лідера Загону. Скоординуйте свої сили з БПП та іншими типами підтримки. Будьте готові очолити загін.
+cm-job-description-fireteam-leader = Командуйте своєю групою намагаючись виконати накази Лідера Загону. Скоординуйте свої сили з БАП та іншими типами підтримки. Будьте готові очолити загін.
 cm-job-prefix-fireteam-leader = ЛВГ
 CMJobFireteamLeader = Лідер Вогневої Групи
 

@@ -50,6 +50,25 @@
   - type: SkillPamphlet
     addSkills:
       RMCSkillMedical: 1
+    skillCap:
+      RMCSkillMedical: 1
+    bypassLimit: true
+
+# gives science skill
+- type: entity
+  parent: CMPamphlet
+  id: RMCPamphletScience
+  name: scientific instructional pamphlet
+  description: A pamphlet used to quickly impart vital knowledge of science, and how to operate its various egg-headed machineries and other research-qualitative practices.
+  components:
+  - type: Sprite
+    state: pamphlet_science
+  - type: SkillPamphlet
+    addSkills:
+      RMCSkillResearch: 1
+    skillCap:
+      RMCSkillResearch: 1
+    bypassLimit: true
 
 # gives miniengie skill
 - type: entity
@@ -64,6 +83,10 @@
     addSkills:
       RMCSkillEngineer: 1
       RMCSkillConstruction: 1
+    skillCap:
+      RMCSkillEngineer: 2 # RMC14: In case they read another one first.
+      RMCSkillConstruction: 1
+    bypassLimit: true
 
 # gives jtac skill
 - type: entity
@@ -76,7 +99,10 @@
     state: pamphlet_jtac
   - type: SkillPamphlet
     addSkills:
-      RMCSkillJtac: 2 # Sich. 1 в оригіналі
+      RMCSkillJtac: 2 # Mriya. 1 в оригіналі
+    skillCap:
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі
+    bypassLimit: true
 
 # gives spotter skill / bypasses limit
 - type: entity
@@ -88,10 +114,13 @@
   - type: Sprite
     state: pamphlet_spotter
   - type: SkillPamphlet
+    bypassSkill: true
     addComps:
     - type: SpotterWhitelist
     addSkills:
       RMCSkillJtac: 2 # Sich. 1 в оригіналі
+    skillCap:
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі. RMC14: In case they read another one first.
     giveJobTitle: rmc-job-name-spotter
     givePrefix: rmc-job-prefix-spotter
     isAppendPrefix: false
@@ -120,6 +149,8 @@
     - type: SkillPamphlet
       addSkills:
         RMCSkillPowerLoader: 1
+      skillCap:
+        RMCSkillPowerLoader: 2
       bypassLimit: true
 
 # gives police skill / bypasses limit
@@ -133,6 +164,8 @@
     state: pamphlet_jtac
   - type: SkillPamphlet
     addSkills:
+      RMCSkillPolice: 1
+    skillCap:
       RMCSkillPolice: 1
     bypassLimit: true
 
@@ -148,6 +181,8 @@
   - type: SkillPamphlet
     addSkills:
       RMCSkillSurgery: 1
+    skillCap:
+      RMCSkillSurgery: 2
     bypassLimit: true
 
 # gives intel skill / bypasses limit
@@ -162,6 +197,8 @@
   - type: SkillPamphlet
     addSkills:
       RMCSkillIntel: 1
+    skillCap:
+      RMCSkillIntel: 2
     addComps:
       - type: ViewIntelObjectives
     bypassLimit: true
@@ -175,10 +212,11 @@
   - type: Sprite
     state: pamphlet_loader
   - type: SkillPamphlet
+    bypassSkill: true
     addSkills:
       RMCSkillEngineer: 1
     skillCap:
-      RMCSkillEngineer: 1
+      RMCSkillEngineer: 2 # RMC14: In case they read another one first.
     giveJobTitle: rmc-job-name-loader
     givePrefix: rmc-job-prefix-loader
     isAppendPrefix: false
@@ -204,12 +242,13 @@
   - type: Sprite
     state: pamphlet_mortar
   - type: SkillPamphlet
+    bypassSkill: true
     addSkills:
       RMCSkillEngineer: 1
-      RMCSkillJtac: 3 # Sich. 2 в оригіналі
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі
     skillCap:
-      RMCSkillEngineer: 1
-      RMCSkillJtac: 3 # Sich. 2 в оригіналі
+      RMCSkillEngineer: 2 # RMC14: In case they read another one first.
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі
     giveJobTitle: rmc-job-name-mortar-operator
     givePrefix: rmc-job-prefix-mortar-operator
     isAppendPrefix: false
@@ -225,6 +264,9 @@
       jobProto: CMRifleman
     - popup: rmc-pamphlets-rifleman-warning
       jobProto: CMPVERifleman
+  - type: GuideHelp
+    guides:
+    - RMCGuideRoleMortar
 
 - type: entity
   parent: CMPamphlet
@@ -237,7 +279,93 @@
   - type: SkillPamphlet
     addSkills:
       RMCSkillEngineer: 1
+    skillCap:
+      RMCSkillEngineer: 2
     bypassLimit: true
+
+- type: entity
+  parent: CMPamphlet
+  id: RMCPamphletVehicles
+  name: vehicle training manual
+  description: A manual used to quickly impart vital knowledge on driving vehicles.
+  components:
+  - type: Sprite
+    state: pamphlet_vehicle
+  - type: SkillPamphlet
+    addSkills:
+      RMCSkillVehicles: 1
+    skillCap:
+      RMCSkillVehicles: 1
+    bypassLimit: true
+
+- type: entity
+  parent: CMPamphlet
+  id: RMCPamphletOverwatch
+  name: overwatch console manual
+  description: A manual used to quickly impart vital knowledge on operating overwatch consoles.
+  components:
+  - type: SkillPamphlet
+    addSkills:
+      RMCSkillOverwatch: 1
+    skillCap:
+      RMCSkillOverwatch: 1
+    bypassLimit: true
+
+- type: entity
+  parent: CMPamphlet
+  id: RMCPamphletCanine
+  name: K9 handler instructional pamphlet
+  description: A pamphlet used to quickly impart vital knowledge of taking care of K9 units, even if they aren't exactly real dogs.
+  components:
+  - type: Sprite
+    state: pamphlet_k9_handler
+  - type: SkillPamphlet
+    bypassSkill: true
+    addSkills:
+      RMCSkillJtac: 1
+      RMCSkillEngineer: 1
+    skillCap:
+      RMCSkillJtac: 2     # RMC14: In case they read another one first.
+      RMCSkillEngineer: 2 # RMC14: In case they read another one first.
+    # TODO: custom icon and title dependent on if they are a medic or MP
+    jobWhitelists:
+    - popup: rmc-pamphlets-k9-warning
+      jobProto: CMHospitalCorpsman
+    - popup: rmc-pamphlets-k9-warning
+      jobProto: CMMilitaryPolice
+
+- type: entity
+  parent: CMPamphlet
+  id: RMCPamphletVehicleCrewman
+  name: Vehicle Crewman instructional pamphlet
+  description: A manual used to quickly impart vital knowledge of driving heavy-duty vehicles and its maintenance. It also imparts some deep knowledge on related engineering applications.
+  components:
+  - type: Sprite
+    state: pamphlet_vehicle
+  - type: SkillPamphlet
+    # TODO: should probably give and icon and title
+    addSkills:
+      RMCSkillVehicles: 3
+      RMCSkillEngineer: 2
+    skillCap:
+      RMCSkillVehicles: 3
+      RMCSkillEngineer: 2
+    bypassLimit: true
+
+- type: entity
+  parent: CMPamphlet
+  id: RMCPamphletVulture
+  name: vulture instructional pamphlet
+  description: A pamphlet used to quickly impart vital knowledge of how to shoot big guns and spot for them.
+  components:
+  - type: Sprite
+    state: pamphlet_vulture
+  - type: SkillPamphlet
+    # TODO: should probably give and icon and title
+    addSkills:
+      RMCSkillVulture: 1
+    skillCap:
+      RMCSkillVulture: 1
 
 # OTHER
 
@@ -261,7 +389,6 @@
     giveMapBlip:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: honorguard
-    bypassLimit: true
     jobWhitelists:
     - popup: rmc-pamphlets-mp-warning
       jobProto: CMMilitaryPolice
@@ -274,61 +401,110 @@
   id: CMPamphletLanguage
   name: довідник лінгвіста
   description: Довідник спеціально створений для лінивих військових перекладачів, дає змогу за кілька секунд вивчити нову мову.
-  suffix: НЕ РЕАЛІЗОВАНО
+  abstract: true
+  components:
+  - type: SkillPamphlet
+    bypassLimit: true
 
 # gives japanese language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageJapanese
-  name: Пристойно непристойна Японія
-  description: Це кілька вирваних сторінок відомої манги 'Пристойно непристойна Японія' про світ де розпуста під забороною. Звідки я взагалі це знаю?
+  name: сторінки з «Пристойно непристойна Японія»
+  description: Це кілька вирваних сторінок відомої ісекайної манги 'Пристойно непристойна Японія' про світ де розпуста під забороною. Звідки я взагалі це знаю? Тут є досить гарні ілюстрації, тож вона дасть вам кріпку основу розуміння японської мови!
+  components:
+  - type: SkillPamphlet
+    language: Japanese
 
 # gives chinese language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageChinese
-  name: Маленька Червона Книга
-  description: Сторінки з книги, яка навчить вас заморити голодом 100 мільйонів ваших людей. Звісно, що це допоможе вам вивчити китайську.
+  name: сторінки з «Маленька Червона Книга»
+  description: Сторінки з книги, яка навчить вас заморити голодом 100 мільйонів людей. Все як обожнюють в СПН! Звісно, що це допоможе вам вивчити китайську.
+  components:
+  - type: SkillPamphlet
+    language: Chinese
   # desc starts with "没有共产党就没有新中国!" but RMC14 doesnt support chinese letters :(
 
 # gives german language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageGerman
-  name: Переклад пісні 99 Luftballons
-  description: Це збірка нашвидкоруч зроблених перекладів пісні 99 Luftballons, іконічного німецького хіта вісімдесятих. Думаю, пора вчити німецьку.
+  name: Переклад пісні «99 Luftballons»
+  description: Це збірка нашвидкоруч зроблених перекладів пісні 99 Luftballons, іконічного німецького хіта вісімдесятих. Не мрія, але це допоможе вам вивчити німецьку до того рівня, що з вас посміються, але зрозуміють!
+  components:
+  - type: SkillPamphlet
+    language: German
 
 # gives spanish language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageSpanish
-  name: Латинська Америка – Перекладач
-  description: Цей довідник призначений для розвідників, що працюють з місцевими. Але лише тим, хто спав на курсах.
+  name: Латинська Америка – Малий Довідник Перекладача
+  description: Цей довідник призначений для розвідників ОН, що працюють з місцевими. Але лише тим, хто спав на курсах та тепер хоче піти в найближчий колумбійський бар.
+  components:
+  - type: SkillPamphlet
+    language: Spanish
+
+# gives french language
+- type: entity
+  parent: CMPamphletLanguage
+  id: CMPamphletLanguageFrench
+  name: Пошарпані сторінки «Маленький Принц»
+  description: Кілька пошарпаних сторінок із модного журналу початку 2100-х років. Вони навчають вас якраз достатньої кількості лексики вищого суспільства, щоб звучати вишукано, або принаймні як зарозумілий турист. Справжній француз, йо!
+  components:
+  - type: SkillPamphlet
+    language: French
+
+# gives russian language
+- type: entity # Mriya. Це русняве лайно, зустрічатися окрім як через адмін спавн не повинно
+  parent: CMPamphletLanguage
+  id: CMPamphletLanguageRussian
+  name: брудний туалетний папір
+  description: НАЩО ТИ НА ЦЕ ДИВИШСЯ?? ВИКИНЬ!!!
+  suffix: руснява мова # Mriya
+  components:
+  - type: SkillPamphlet
+    language: Russian
+
+# gives sign language
+- type: entity
+  parent: CMPamphletLanguage
+  id: CMPamphletLanguageSign
+  name: Ілюстрований посібник з Мови Жестів
+  description: Ламінований посібник КМПОН «Тактичні жести руками». Він охоплює основні жести руками, що використовуються для координації, коли будь-який шум є смертним вироком, а також кілька неофіційних жестів для жартів над КО без його відома.
+  components:
+  - type: SkillPamphlet
+    language: SignLanguage
 
 
 # RESTRICTED LANGUAGES
 
 
-# gives sainja language
-- type: entity
-  parent: CMPamphletLanguage
-  id: CMPamphletLanguageYautja
-  name: пофарбований пергамент
-  description: Пожовклий шматок пергаменту, на якому виведені дивні руни. Здається, вони рухаються й прямо у вас на очах складаються в якісь слова.
+#№ gives sainja language. Mriya, щоб не загубити переклад
+#- type: entity
+#  parent: CMPamphletLanguage
+#  id: CMPamphletLanguageYautja
+#  name: пофарбований пергамент
+#  description: Пожовклий шматок пергаменту, на якому виведені дивні руни. Здається, вони рухаються й прямо у вас на очах складаються в якісь слова.
 
 # gives xenonid language
 - type: entity
   parent: CMPamphletLanguage
   id: CMPamphletLanguageXenonid
   name: записи ксенобіолога
-  description: Документ ксенобіолога, де записані усі деталі спілкування ксеноморфів у неволі, а також намагання людей їх відтворити.
+  description: Сильно відредаговані дослідження Вестон-Ямада. Документ ксенобіолога, де записані деталі спілкування ксеноморфів у неволі, а також намагання людей їх відтворити. При спробі імітувати ці звуки у вас болить горло, а по шкірі йдуть мурашки.
+  components:
+  - type: SkillPamphlet
+    language: Xeno
 
 # gives primitive language
 - type: entity
   parent: CMPamphletLanguage
-  id: CMPamphletLanguageMonkey
+  id: CMPamphletLanguagePrimitive
   name: мальовані каракулі
   description: Шматок паперу розмальований бананами і приматами різних видів. Напевно його намалювала трирічна дитина... або ж не обділений розумом морпіх.
-
-- type: Tag
-  id: RMCSkillPamphlet
+  components:
+  - type: SkillPamphlet
+    language: Primitive

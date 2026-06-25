@@ -1,15 +1,20 @@
-<Document>
-  # Стандарти рольової гри для виживших
-  - Виживші мають більше гнучкості в поведінці, ніж морпіхи, через можливу психологічну травму, отриману під час атаки ксеноморфів. Вони можуть відігравати ПТСР, параною або подібні психічні хвороби.\nОднак виживші не повинні ставати ворожими або створювати серйозні проблеми для морпіхів, наприклад, красти спорядження.
-  - Звичайні виживші не є ворожими до морпіхів.
-  - Якщо є виняток через приналежність до фракції - це буде чітко вказано (наприклад, через роль).
-  - Виживші з ворожих фракцій не можуть атакувати інших виживших.
-  - [bold]Заборонено полювати, переміщати або ховати мавпочок, щоби завадити ксеноморфам захоплювати їх. Ці мавпочки зменшують кількість ксеноморфів на початку раунду, і тим самим роблять ваше виживання простішим.[/bold]
-  - Виживші не повинні вступати в бій із ксеноморфами або шукати їх, доки ті не еволюціонують (приблизно 5 хвилин після старту). Якщо ж ксеноморф сам з'явився у вашому полі зору, а ви його не шукали навмисно, - ви маєте повне право відкрити по ньому вогонь, оскільки вони втратили свій ранній захист.
+﻿<Document>
+  # Survivor Roleplay Standards
 
-  ## Рольова взаємодія з розвідданими
+  ## General
+  - Survivors must accept requests/invitations to board the Almayer for the first time, but are not required to stay after they arrive. Make sure to follow the direction and requests of the Military Police.
 
-  - Виживші не можуть самостійно збирати розвіддані, якщо їм не допомагають морпіхи або їх не було офіційно приєднано до підрозділу.
-  - Виживші можуть перетягувати або збирати тіла загиблих гуманоїдів чи ксеноморфів, якщо вони поводяться в межах своєї ролі (тобто не грають так, ніби прийшли по розвіддані).
+  ## Hostility to Marines is Not Permitted
+  - Survivors have more leeway than marines with mental stability due to trauma experienced during the xenonid attack.\nThey may be suffering PTSD, paranoia or similar conditions for roleplaying purposes.\n\nDespite this, all survivors may not become hostile or cause drastic issues for the marines in any way, such as stealing their secure equipment, starting verbal or physical fights, or preventing them from accessing any part of the operation.
+
+  [bold]Exceptions[/bold]
+  - If there is an exception in hostility due to faction it will be clear and written to the player. Do not assume that a survivor role is hostile for any other reason.
+  - Hostile Faction Survivors cannot attempt to harm other survivors.
+
+  ## Metagaming/Powergaming/Etc
+
+  - Do not hunt, move, or secure or otherwise interact with mapped animals that can be captured.\nThese creatures reduce the amount of xenonids at the start of the round.
+
+  - Survivors may not complete marine objectives, such as collecting intel related objects, until they are rescued or have been enlisted into the marines.\nThis does not include repairing colony assets, such as power or communications, or recovering corpses using roleplay reasoning while doing so.
 
 </Document>

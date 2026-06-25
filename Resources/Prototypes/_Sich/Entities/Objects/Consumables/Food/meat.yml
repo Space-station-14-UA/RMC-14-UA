@@ -1,0 +1,113 @@
+- type: entity
+  parent: FoodMeatBase
+  id: MRFoodMeatXeno
+  name: сире м'ясо ксено
+  description: Шматок м'яса (?) ксено, з якого все ще капає кислота... З'їсти це – буквально самогубство!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - acid
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+  - type: Sprite
+    state: xeno
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 15
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 6
+  - type: SliceableFood
+    count: 3
+    slice: MRFoodMeatXenoCutlet
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+        color: "#6EFF41"
+      right:
+      - state: plain-inhand-right
+        color: "#6EFF41"
+
+- type: entity
+  parent: FoodMeatBase
+  id: MRFoodMeatXenoCutlet
+  name: сира ксено котлета
+  description: Малий шматок м'яса ксено з якого все ще капає кислота... З'їсти це – буквально самогубство!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - acid
+  - type: Tag
+    tags:
+    - Raw
+    - Cutlet
+    - Meat
+  - type: Sprite
+    state: xenocutlet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 2
+  - type: Construction
+    graph: XenoCutlet
+    node: start
+    defaultTarget: xeno cutlet
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: generic-pink-inhand-left
+        color: green
+      right:
+      - state: generic-pink-inhand-right
+        color: green
+
+- type: entity
+  parent: FoodMeatBase
+  id: MRFoodMeatXenoCutletCooked
+  name: ксено котлета
+  description: Смажена котлета з м'яса ксено... Від неї все ще відчувається запах кислоти. Це точно безпечно їсти?
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Cutlet
+    - Meat
+  - type: Sprite
+    state: xenocutlet-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 3
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Construction
+    graph: XenoCutlet
+    node: xeno cutlet
+  - type: FoodSequenceElement
+    entries:
+      Burger: XenoCutlet
+      Taco: XenoCutlet
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: generic-pink-inhand-left
+        color: "#153F06"
+      right:
+      - state: generic-pink-inhand-right
+        color: "#153F06"

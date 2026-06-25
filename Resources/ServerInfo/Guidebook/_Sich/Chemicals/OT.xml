@@ -1,0 +1,30 @@
+﻿<Document>
+
+  # Паливо для вогнеметів
+
+  <GuideReagentEmbed Reagent="RMCNapalmSticky"/>
+  <GuideReagentEmbed Reagent="RMCNapalmHighCombustion"/>
+
+  ## Обмежене
+
+  ### Можливе до придбання/вироблення/знаходження
+
+  <GuideReagentEmbed Reagent="WeldingFuel"/>
+  <GuideReagentEmbed Reagent="RMCNapalmUT"/>
+  <GuideReagentEmbed Reagent="RMCBGel"/>
+  <GuideReagentEmbed Reagent="RMCNapalmB"/>
+  <GuideReagentEmbed Reagent="RMCNapalmX"/>
+
+  ### Неможливе до придбання/вироблення/знаходження
+
+  <GuideReagentEmbed Reagent="RMCNapalmE"/>
+  <GuideReagentEmbed Reagent="RMCNapalmEX"/>
+  <GuideReagentEmbed Reagent="RMCR189"/>
+
+  # Необхідне для створення палива
+
+  <GuideReagentEmbed Reagent="RMCCLF3"/>
+  <GuideReagentEmbed Reagent="RMCSulphuricAcid"/>
+  <GuideReagentEmbed Reagent="RMCNapalm"/>
+
+</Document>

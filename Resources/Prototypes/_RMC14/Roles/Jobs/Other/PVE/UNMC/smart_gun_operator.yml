@@ -6,7 +6,7 @@
   playTimeTracker: CMJobPVESmartGunOperator
   ranks:
     RMCRankCorporal: []
-  spawnMenuRoleName: Оператор СмартГану Сонячних Вершників (PVE)
+  spawnMenuRoleName: Оператор СмартГана Сонячних Вершників (PVE)
   supervisors: cm-job-supervisors-secserg
   startingGear: RMCGearPVESmartGunOperator
   dummyStartingGear: CMGearSmartGunOperatorEquipped

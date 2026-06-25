@@ -22,29 +22,29 @@ public abstract class SharedCommendationSystem : EntitySystem
     /// List of entity prototype IDs for medals that can be awarded.
     /// This is the single source of truth for standard awardable medals.
     /// </summary>
-    protected static readonly IReadOnlyList<ProtoId<EntityPrototype>> AwardableMedalIds = new[]
+    protected static readonly IReadOnlyList<EntProtoId> AwardableMedalIds = new[]
     {
-        new ProtoId<EntityPrototype>("RMCMedalGoldExceptionalHeroism"),
-        new ProtoId<EntityPrototype>("RMCMedalSilverValor"),
-        new ProtoId<EntityPrototype>("RMCMedalBronzeDistinguishedConduct"),
-        new ProtoId<EntityPrototype>("RMCMedalBronzeHeart")
+        new EntProtoId("RMCMedalGoldExceptionalHeroism"),
+        new EntProtoId("RMCMedalSilverValor"),
+        new EntProtoId("RMCMedalBronzeDistinguishedConduct"),
+        new EntProtoId("RMCMedalBronzeHeart")
     };
 
     /// <summary>
     /// List of entity prototype IDs for special medals that can be awarded.
     /// </summary>
-    protected static readonly IReadOnlyList<ProtoId<EntityPrototype>> SpecialMedalIds = new[]
+    protected static readonly IReadOnlyList<EntProtoId> SpecialMedalIds = new[]
     {
-        new ProtoId<EntityPrototype>("RMCMedalHighCommandHonor"),
+        new EntProtoId("RMCMedalHighCommandHonor"),
         // Sich starts. Костиль, подробиці в Prototypes\_Sich\Entities\Objects\medals.yml
-        new ProtoId<EntityPrototype>("SichMedalGoldExceptionalHeroismEngilsh"),
-        new ProtoId<EntityPrototype>("SichMedalSilverValorEngilsh"),
-        new ProtoId<EntityPrototype>("SichMedalBronzeDistinguishedConductEngilsh"),
-        new ProtoId<EntityPrototype>("SichMedalBronzeHeartEngilsh"),
-        new ProtoId<EntityPrototype>("SichMedalGoldExceptionalHeroismUkrainian"),
-        new ProtoId<EntityPrototype>("SichMedalSilverValorUkrainian"),
-        new ProtoId<EntityPrototype>("SichMedalBronzeDistinguishedConductUkrainian"),
-        new ProtoId<EntityPrototype>("SichMedalBronzeHeartUkrainian")
+        new EntProtoId("SichMedalGoldExceptionalHeroismEngilsh"),
+        new EntProtoId("SichMedalSilverValorEngilsh"),
+        new EntProtoId("SichMedalBronzeDistinguishedConductEngilsh"),
+        new EntProtoId("SichMedalBronzeHeartEngilsh"),
+        new EntProtoId("SichMedalGoldExceptionalHeroismUkrainian"),
+        new EntProtoId("SichMedalSilverValorUkrainian"),
+        new EntProtoId("SichMedalBronzeDistinguishedConductUkrainian"),
+        new EntProtoId("SichMedalBronzeHeartUkrainian")
         // Sich ends.
     };
 
@@ -68,7 +68,7 @@ public abstract class SharedCommendationSystem : EntitySystem
     /// <summary>
     /// Gets the list of entity prototype IDs for standard medals that can be awarded.
     /// </summary>
-    public IReadOnlyList<ProtoId<EntityPrototype>> GetAwardableMedalIds()
+    public IReadOnlyList<EntProtoId> GetAwardableMedalIds()
     {
         return AwardableMedalIds;
     }
@@ -76,7 +76,7 @@ public abstract class SharedCommendationSystem : EntitySystem
     /// <summary>
     /// Gets the list of entity prototype IDs for special medals.
     /// </summary>
-    public IReadOnlyList<ProtoId<EntityPrototype>> GetSpecialMedalIds()
+    public IReadOnlyList<EntProtoId> GetSpecialMedalIds()
     {
         return SpecialMedalIds;
     }
@@ -116,7 +116,7 @@ public abstract class SharedCommendationSystem : EntitySystem
         string name,
         string text,
         CommendationType type,
-        ProtoId<EntityPrototype>? commendationPrototypeId = null)
+        EntProtoId? commendationPrototypeId = null)
     {
     }
 
@@ -127,7 +127,7 @@ public abstract class SharedCommendationSystem : EntitySystem
         string name,
         string text,
         CommendationType type,
-        ProtoId<EntityPrototype>? commendationPrototypeId = null)
+        EntProtoId? commendationPrototypeId = null)
     {
     }
 

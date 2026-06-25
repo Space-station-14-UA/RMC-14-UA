@@ -42,3 +42,12 @@
       jobWhitelists:
         - popup: rmc-pamphlets-rifleman-warning
           jobProto: CMRifleman
+
+- type: entity
+  parent: CMPamphletLanguage
+  id: MRPamphletLanguageEnglish
+  name: шматок підручника з англійської мови за 7 клас
+  description: Ну хоча б у 22 столітті ця штука буде мати ж сенс, так? Правильно! Тобі вистачить цього, щоб почати розуміти англійську на базовому рівні.
+  components:
+  - type: SkillPamphlet
+    language: MREnglish

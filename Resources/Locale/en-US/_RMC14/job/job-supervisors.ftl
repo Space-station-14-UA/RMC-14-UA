@@ -1,5 +1,5 @@
-# supervisors
-cm-job-supervisors-we-ya = Корпорації Вестон-Ямада
+﻿# supervisors
+cm-job-supervisors-we-ya = Офісу Корпорації Вестон-Ямада
 cm-job-supervisors-aso = Офіцеру Підтримки
 cm-job-supervisors-co = Командуючому Офіцеру
 rmc-job-supervisors-commander = поточному Командиру

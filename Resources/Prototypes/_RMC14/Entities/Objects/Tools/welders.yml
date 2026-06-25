@@ -122,6 +122,10 @@
     materialComposition:
       CMSteel: 70
       CMGlass: 30
+  - type: InteractedBlacklist
+    blacklist:
+      components:
+      - Xeno
 
 - type: entity
   parent: RMCWelderBase
@@ -166,8 +170,8 @@
 - type: entity
   parent: RMCWelderBase
   id: CMWelderSmall
-  name: МЕ3 полегшений зварювальник
-  description: Компактний, ручний зварювальник, який використовується морськими піхотинцями для зварювання прямо під шквалом вогню. Через невеликий розмір і маленький запас пального його функції обмежені порівняно з повнорозмірним зварювальним апаратом. Намагайтеся не дивитися на полум'я занадто довго.
+  name: МЗР-3 ручний зварювальник
+  description: МЗР (механічний зварювальний різак) – це компактний ручний різак, який використовують морпіхи, їх техніки та Звичайні Джо для різання та зварювання в польових умовах. Через невеликий розмір та низьку потужність його функції обмежені порівняно з повнорозмірним зварником техніка. Виготовлено компанією Новаріс Індастріз.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Tools/welder_hand.rsi
@@ -209,6 +213,23 @@
     materialComposition:
       CMSteel: 70
       CMGlass: 60
+
+- type: entity
+  parent: RMCWelderIndustrial
+  id: RMCWelderIndustrialHighCapacity
+  name: high-capacity industrial blowtorch
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 200
+        maxVol: 200 # TODO RMC14 80 when welders are fixed
+  - type: PhysicalComposition
+    materialComposition:
+      CMSteel: 70
+      CMGlass: 120
 
 - type: entity
   parent: RMCWelderBase

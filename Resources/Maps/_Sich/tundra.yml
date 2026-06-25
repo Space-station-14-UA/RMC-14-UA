@@ -19833,7 +19833,7 @@ entities:
     - type: Transform
       pos: 62.354137,60.89164
       parent: 1
-- proto: CMWebbingSurgicalBlue
+- proto: RMCWebbingSurgicalBlue
   entities:
   - uid: 7087
     components:
@@ -32374,7 +32374,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -15.5,3.5
       parent: 1
-- proto: RMCIDCCardReserve
+- proto: MRIDCCardReserve
   entities:
   - uid: 9021
     components:

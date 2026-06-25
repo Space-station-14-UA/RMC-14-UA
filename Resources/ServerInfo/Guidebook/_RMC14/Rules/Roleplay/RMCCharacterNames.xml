@@ -1,42 +1,49 @@
-<Document>
+﻿<Document>
 
-  # Імена персонажів
+  # Character Names
 
-  [italic]Рішення адміністратора щодо назв IC є остаточними, і суперечки повинні вирішуватися на форумах, а не шляхом відмови підкоритися адміністратору.[/italic]
+  [italic]Admin rulings on IC names are final and disputes should be done through appeals, not by refusing to comply.[/italic]
 
-  ## Використовуйте реалістичні імена персонажів і не використовуйте імена відомих людей та відомих вигаданих персонажів
-  [italic]Нелюдські раси мають більше свободи у форматі імен, згідно з правилами, наведеними нижче.[/italic]
-  - Ім’я має бути реалістичним, таким, яке могло би з’явитися у свідоцтві про народження - з іменем та прізвищем.
-  - Заборонено використовувати імена/посилання на відомих людей, історичних постатей або персонажів з фільмів, ігор тощо.
-  - Ім’я персонажа не повинно містити жодних звань, професійних титулів чи звертань. Приклад: Лікар, Лейтенант, Вбивця, тощо.
-  - Повинні відповідати всім іншим правилам (жодних образливих/сексуальних назв тощо)
-  - Не можна використовувати імена користувачів, об'єктів, випадкових символів, дуже "легкі" імена, метаімена або інші неправдоподібні імена.
-  - Допускається використання до двох римських цифр у складі імені.
+  ## General Restrictions
+  [italic]Non-human characters have leeway with their own naming formats, listed in character naming formats.\n\nGenerally speaking, you can use up to one choice of uniqueness to your name, such as a choice between either a nickname, or a species-specific format.[/italic]
+  - The goal of your character name should not be to be "funny".
+  - Pick a realistic name that could appear on a birth certificate with a first and last name, or based on your chosen character species.
+  - No names or references of people or characters from the real world.
+  - No titles/honorifics.\nTitles and honorifics include but are not limited to; Dr/Doctor, Jr/Junior, Major.
+  - Names must follow all other rules (no slurs/sexual names/etc)
+  - Usernames, objects, random characters, "low effort", "meta/ooc", or otherwise implausible names cannot be used as names. (Fights-the-Xenonids is not valid)
+  - Up to two characters of Roman numerals may be used.
 
-  ## Прізвиська
-  [italic]Кожен персонаж може використовувати формат імені людини.[/italic]
-  - Прізвиська можна використовувати лише у форматі людських імен.
-  - Їх можна використовувати у форматі, взятому в одинарні лапки [bold]Ім’я 'Прізвисько' Прізвище[/bold].
-  - Прізвисько може містити не більше двох слів.
+  ## Nicknames
 
-  ## Формати імен за расами
-  [italic]Усі персонажі можуть використовувати людський формат. Якщо персонаж має ім’я іншої раси - має бути пояснення в лорі. Якщо в імені лише одне слово - воно повинне бути екзотичним.[/italic]
-  - Люди, фелініди, вульпканіни: стандартний формат [bold]Ім'я Прізвище[/bold]. (наприклад: Том Фішер)
-  - Дворфи: як у людей, але з вікінговим ухилом [bold]Ім'я Прізвище[/bold]. (наприклад: Ерік Блискавичний)
-  - Унатхи: відображає його рідне походження [bold]Ім'я-НазваКлану[/bold]. (наприклад: Ріт-Скеі)
-  - Діони: зазвичай мають спокійні, природні імена в стилі [bold]іменника від іменника[/bold]. (наприклад: Пелюстка спокою)
-  - Ніани: зазвичай використовують латинські імена або легкі тематичні назви [bold]Ім'я Прізвище[/bold]. (наприклад: Сократ Темнора)
-  - Арахніди: зазвичай використовують латинські назви павукоподібних [bold]Ім'я Прізвище[/bold]. (наприклад: Аргюронета Ретікулатус)
-  - Авалі: зазвичай використовують імена, що мають м’яке звучання, з акцентом на гармонійне поєднання складів та екзотичність. Імена не містять додаткових слів, таких як прізвища чи описові частини. [bold]Ім'я[/bold]. (наприклад: Номі)
-  - Роденти: прості імена, можливий [bold]Прикметник Ім'я[/bold]. (наприклад: Вухастий Макс)
-  - Слаймолюди: зазвичай використовують таку саму структуру як і в людей [bold]Ім'я Прізвище[/bold]. (наприклад: Фольп Сууб)
+  ### What is a Nickname?
+  - Nicknames are something your character is called by others, not an adjective or extension of your name.
+  - Try making a callsign, or an ironic nickname such as 'Quickdraw' for someone who fumbles their weapons often.
 
-  ## Штучно створені (ШС) солдати
-  [italic]Такі солдати не мають біологічних батьків і отримують спеціальні імена.[/italic]
-  - Можуть використовувати лише людський формат імені.
-  - Ініціали ШС як середнє ім’я.
-  - Назву зброї, яка використовувалася або була створена до 1975 року. (Меч, Автомат, тощо.)
-  - Приклад: Джейк ШС Вогнемет
+  ### Restrictions
+  - Nicknames may only be applied to human name format. Read Character Naming Formats.
+  - They may be used in 'single' quotes,\n[bold]Firstname 'Nickname' Lastname[/bold]. (not "double" quotes)
+  - Nicknames can be at most two words.
+
+  ## Character Naming Formats
+  [italic]Any character may use the human (standard) name format. Characters sharing naming formats with another species otherwise should have an in-character lore reasoning, such as being adopted. For species not requiring a last name, the first name should be exotic to warrant such. Information about each species can be found on the wiki.[/italic]
+  - Humans, Felinids, Vulpkanin: The standard naming format.\n[bold]Firstname Lastname[/bold] "John Smith"
+  - Dwarves: Similar to the human name format, with a viking theme. Try using the randomizer.\n[bold]Firstname Lastname[/bold] "Erik Lightningclaw"
+  - Reptilians, Lizards: Exotic names, try using the randomizer. A last name is optional.\n[bold]Name1-Name2[/bold] "Beewos-Azala"
+  - Reptilians, Lizards: (Second format) usually a nickname related to the character's interests.\n[bold]Verb-article-noun[/bold] "Fights-The-Wars"
+  - Diona: Nature themed.\n[bold]Noun of Noun[/bold]"The Flower of Union"
+  - Moth: Latin or light themed names. A last name is optional.\n[bold]Firstname Lastname[/bold]"Lucy Emperor"
+  - Arachnids: Latin themed names. A last name is optional.\n[bold]Firstname Lastname[/bold]"Spiroctenus Triangularis"
+  - Avali: Exotic single names and can include a last name with a dash. Try the randomizer. \n[bold]Firstname-Lastname[/bold] "Ralomi" "Ralomi-Jasyo"
+  - Rodentia: Simple names that consist of an adjective, and a single name. The adjective is optional.\n[bold]Adjective Firstname[/bold] "Shifty Fin"
+  - Slime-People: Standard naming format. A last name is optional.\n[bold]Firstname Lastname[/bold] "John Smith"
+  - Skrell: Exotic names, a last name is optional. Try the randomizer.\n[bold]Firstname Lastname[/bold] "Teqtaq Xuexum"
+  - Feroxi: Standard naming format, with some exotic flavor.\n[bold]Firstname Lastname[/bold] "Ralvox Alunethis"
+
+  ## Artificial Womb Soldiers
+  [italic]These soldiers do not have any biological parents who have passed along their last name to them. Instead, these soldiers have been assigned a regular first name, the AW initials as a middle name and a weapon as their surname. More information about these soldiers can be found on the RMC Wiki.[/italic]
+  - May only be applied to human name format. Any character may use the human name format.
+  - As an AW Soldier you have a weapon as your last name. This weapon needs to have been used/developed before or during 1975 or earlier. (Vulcan, Sword, etc.)\n\nFor example; James AW Sword
 
 
 </Document>

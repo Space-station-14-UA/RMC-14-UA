@@ -1,0 +1,18 @@
+# Заміна RMCLockerFieldDoctor для Саванни. Фактично увібрала в себе шматки RMCCrateFieldDoctor, а частину речей відправили в вендор
+- type: entity
+  parent: CMLockerMedical
+  id: MMCLockerFieldDoctor
+  name: шафа польового лікаря
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCArmorHelmetM10FieldDoctor
+    - id: RMCPatchMedic
+    - id: RMCPortableDialysis
+    - id: CMPortableSurgicalBedSpawnFolded
+    - id: RMCBoxSterileMask
+    - id: RMCBoxLatexGloves
+    - id: RMCSprayBottleSpaceCleaner
+    - id: CMMaskGasMedical
+    - id: CMEntrenchingTool
+    - id: RMCToolboxMechanicalFilled

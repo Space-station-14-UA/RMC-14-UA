@@ -1,0 +1,42 @@
+- type: inventoryTemplate
+  id: Sichmothroach
+  slots:
+  - name: mask
+    slotTexture: mask
+    slotFlags: MASK
+    uiWindowPos: 1,1
+    strippingWindowPos: 1,1
+    displayName: Голова
+    offset: 0, -0.2
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 0,1
+    strippingWindowPos: 0,1
+    displayName: Шия
+    offset: -0.1, -0.1
+  - name: eyes
+    slotTexture: glasses
+    slotFlags: EYES
+    stripTime: 3
+    uiWindowPos: 0,2
+    strippingWindowPos: 0,0
+    displayName: Очі
+    offset: 0, -0.2
+  - name: suitstorage
+    slotTexture: suit_storage
+    slotFlags: SUITSTORAGE
+    stripTime: 3
+    uiWindowPos: 1,0
+    strippingWindowPos: 2,5
+    displayName: Спина
+    whitelist:
+      components:
+        - GasTank
+  - name: head
+    slotTexture: head
+    slotFlags: HEAD
+    uiWindowPos: 1,2
+    strippingWindowPos: 1,0
+    displayName: Голова
+    offset: 0, -0.2

@@ -1,7 +1,7 @@
 - type: entity
   id: RMCCrateClothingLargePouches
   parent: RMCCrateBase
-  name: Ящик великих підсумків (по 2 шт пістолетних, магазинних, загальних)
+  name: Ящик великих підсумків (по 2 шт магазинних, загальних, для дробі)
   components:
   - type: StorageFill
     contents:
@@ -9,7 +9,7 @@
         amount: 2
       - id: RMCPouchMagazineLarge
         amount: 2
-      - id: RMCPouchMagazinePistolLarge
+      - id: RMCPouchShotgunLarge # Mriya. RMCPouchMagazinePistolLarge в оригіналі
         amount: 2
 
 - type: entity

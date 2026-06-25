@@ -1,21 +1,22 @@
-- type: guideEntry
-  parent: RMC
-  id: RMCMarineLaw
-  name: rmc-guide-entry-rules-marine-law
-  text: "/ServerInfo/Guidebook/_RMC14/Law/RMCMarineLaw.xml"
-  priority: 3
-  children:
-  - RMCCommandChain
-  - RMCMarineLawRanks
-  - RMCMarineLawDefinitions
-  - RMCMarineLawProcedures
-  - RMCMarineLawCrimes
-  - RMCMarineLawPrisonerRights
-  - RMCMarineLawAppeals
-  - RMCMarineLawSpecialProvisions
-  - RMCMarineLawSynthetics
-  - RMCMarineLawCOProvisions
-  - RMCMarineSOP
+# Mriya. У нас не використовуються, дивіться _Sich\Guidebook\mriya_marine_law.yml
+#- type: guideEntry
+#  parent: RMC
+#  id: RMCMarineLaw
+#  name: rmc-guide-entry-rules-marine-law
+#  text: "/ServerInfo/Guidebook/_RMC14/Law/RMCMarineLaw.xml"
+#  priority: 3
+#  children:
+#  - RMCCommandChain
+#  - RMCMarineLawRanks
+#  - RMCMarineLawDefinitions
+#  - RMCMarineLawProcedures
+#  - RMCMarineLawCrimes
+#  - RMCMarineLawPrisonerRights
+#  - RMCMarineLawAppeals
+#  - RMCMarineLawSpecialProvisions
+#  - RMCMarineLawSynthetics
+#  - RMCMarineLawCOProvisions
+#  - RMCMarineSOP
 
 - type: guideEntry
   parent: RMC
@@ -195,20 +196,20 @@
   # SOP
 
 # SOP
-- type: guideEntry
-  parent: RMC
-  id: RMCMarineSOP
-  name: rmc-guide-entry-marine-sop
-  text: "/ServerInfo/Guidebook/_RMC14/SOP/RMCMarineSOP.xml"
-  priority: 9
-  children:
-  - RMCMarineSOPGeneral
-  - RMCMarineSOPEquipment
-  - RMCMarineSOPDepartment
-  - RMCMarineSOPNONModDepartment
-  - RMCMarineSOPNONModCommand
-  - RMCMarineSOPNONModDeployment
-  - RMCMarineSOPNONModThirdparty
+#- type: guideEntry – Mriya. У нас власне
+#  parent: RMC
+#  id: RMCMarineSOP
+#  name: rmc-guide-entry-marine-sop
+#  text: "/ServerInfo/Guidebook/_RMC14/SOP/RMCMarineSOP.xml"
+#  priority: 9
+#  children:
+#  - RMCMarineSOPGeneral
+#  - RMCMarineSOPEquipment
+#  - RMCMarineSOPDepartment
+#  - RMCMarineSOPNONModDepartment
+#  - RMCMarineSOPNONModCommand
+#  - RMCMarineSOPNONModDeployment
+#  - RMCMarineSOPNONModThirdparty
 
 # General Regulations
 - type: guideEntry

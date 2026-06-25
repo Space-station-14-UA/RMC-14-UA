@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
     paths:
     # Run if maps are changed.
-    - "Resources/Maps/_RMC14/**/*.yml"
+    - "Resources/Maps/_Sich/**/*.yml"
     # Also run if the mapchecker itself or its config is changed.
     - ".github/map_checker/**"
   workflow_dispatch:
@@ -45,4 +45,4 @@ jobs:
       run: cd .github/map_checker && cargo b --release
 
     - name: Run
-      run: ./.github/map_checker/target/release/map_checker -c .github/map_checker/matchers.yml -m Resources/Maps/_RMC14
+      run: ./.github/map_checker/target/release/map_checker -c .github/map_checker/matchers.yml -m Resources/Maps/_Sich

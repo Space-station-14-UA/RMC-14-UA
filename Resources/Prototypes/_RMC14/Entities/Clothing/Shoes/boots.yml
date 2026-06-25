@@ -38,6 +38,7 @@
   name: бойові чоботи морпіхів
   description: Стандартні бойові чоботи, гарно показують себе в усіх сценаріях. Завжди бойові, ЗАВЖДИ.
   components:
+  - type: RMCCryoUnavailableOnStore
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Shoes/Boots/black.rsi
     layers:
@@ -86,14 +87,18 @@
 - type: entity
   parent: CMBootsBlackFilled
   id: RMCScoutShoes
-  name: розвідницькі чоботи # Could probably use it's own sprite
+  name: розвідницькі чоботи
   description: Модифікована пара бойових чоботів, розроблені спеціально щоб притишити звуки пересування.
   components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Shoes/Boots/swat.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Shoes/Boots/swat.rsi
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: FootstepCatwalk #I dunno what a better sound effect would be, catwalk stands out so it's there to alert xenos if scout moves while they are close
+      collection: FootstepCatwalk
       params:
-        volume: -8
+        volume: -100
         maxDistance: 0
 
 - type: entity
@@ -258,7 +263,7 @@
 - type: entity
   parent: RMCBootsPMC
   id: RMCBootsPMCCommando
-  name: чоботи спецназу ПВК 
+  name: чоботи спецназу ПВК
   description: Пара важкоброньованих, кислотно-непроникних чоботів.
 
 - type: entity
@@ -277,7 +282,7 @@
 - type: entity
   parent: [RMCItemSlotM5Bayonet, RMCBootsPMCCommando]
   id: RMCBootsCBRN
-  name: чоботи M3 РХБЗ 
+  name: чоботи M3 РХБЗ
   description: Чоботи M3 РХБЗ були розроблені для захисту від контакту з будь-якими можливими носіями інфекцій або небезпечними речовинами, які можуть бути в зоні проведення операцій. Це включає в себе додаткові покращення, які в поєднанні зі стандартною міцністю черевиків M3, зменшують ймовірність проколів або порізів, а також вплив радіації.
   components:
   - type: Sprite
@@ -301,7 +306,7 @@
 - type: entity
   parent: CMBootsBlack
   id: RMCBootsRoyal
-  name: бойові чоботи зразка Л10 
+  name: бойові чоботи зразка Л10
   description: Звичайні бойові чоботи. Використовуються підрозділами королівської морської піхоти.
   suffix: TSE, RCM
   components:

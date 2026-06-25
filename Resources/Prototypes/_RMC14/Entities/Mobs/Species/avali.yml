@@ -13,20 +13,20 @@
     - HeadSide
   - type: Sprite
     drawdepth: Mobs
-    scale: 0.9, 0.9 # Sich. Чому? Бо вони малі пташки.
+    scale: 0.9, 0.9 # Mriya. Чому? Бо вони малі пташки.
   - type: TypingIndicator
     proto: avali
-  - type: Vocal # Sich
+  - type: Vocal # Mriya
     sounds:
       Male: SichMaleAvali
       Unsexed: SichMaleAvali
       Female: SichFemaleAvali
-  - type: Wagging 
+  - type: Wagging
     action: ActionToggleAvaliWagging
   - type: Speech
     speechVerb: Parrot # Didn't come with one
     speechSounds: MaleAvali
-    allowedEmotes: ['Call', 'Chirp', 'Hiss', 'Scree', 'Squawk', 'RMCSkrellTrill', 'RMCSkrellWarble', 'Wurble'] # Sich
+    allowedEmotes: ['Call', 'RMCAvaliChirp', 'Hiss', 'Scree', 'Squawk', 'RMCSkrellTrill', 'RMCSkrellWarble', 'Wurble'] # Mriya, все крім RMCAvaliChirp наше
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:

@@ -63,6 +63,12 @@
   description: Кілька порожніх мішків. Якщо хочете звести з них барикаду, то спершу наповніть їх землею чи піском.
   components:
   - type: Item
+    sprite: _RMC14/Objects/Misc/sandbags.rsi
+    inhandVisuals:
+      left:
+      - state: stack-inhand-left
+      right:
+      - state: stack-inhand-right
     size: Small
   - type: Sprite
     sprite: _RMC14/Objects/Misc/sandbags.rsi
@@ -108,6 +114,12 @@
   description: Кілька мішків, наповнених чимось на зразок піску. Поки що просто гарна декорація, але колись вони стануть гарним доповненням до вашої лінії оборони.
   components:
   - type: Item
+    sprite: _RMC14/Objects/Misc/sandbags.rsi
+    inhandVisuals:
+      left:
+      - state: pile-inhand-left
+      right:
+      - state: pile-inhand-right
     size: Large
   - type: Sprite
     sprite: _RMC14/Objects/Misc/sandbags.rsi

@@ -17,7 +17,8 @@ rmc-wield-use-delay = Спочатку зачекайте {$seconds} секун�
 rmc-shoot-use-delay = Спочатку зачекайте {$seconds} секунд перед тим як стріляти з {THE($wieldable)}!
 
 rmc-shoot-harness-required = Необхідне спорядження
-rmc-wear-smart-gun-required = Вам треба мати Смартган, щоб носити їх.
+rmc-wear-smart-gun-required = Вам треба мати СмартГан, щоб носити їх.
+rmc-gun-arc-blocked = Ви не можете стріляти поза межами дуги вогню зброї.
 
 rmc-shoot-id-lock-unauthorized = Гачок заблоковано. НЕАВТОРИЗОВАНИЙ КОРИСТУВАЧ.
 rmc-id-lock-unauthorized = ВІДХИЛЕНО. НЕАВТОРИЗОВАНИЙ КОРИСТУВАЧ.

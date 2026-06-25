@@ -1,6 +1,6 @@
 - type: entity
   id: CMVendorBundleRiflemanApparel
-  name: стандартне морпіхотне обмундирування
+  name: стандартне морпіхотне обмундирування стрільця
   description: Містить морпіхотну уніформу, шолом M10, гарнітуру, бойові рукавиці та бойові чоботи.
   categories: [ HideSpawnMenu ]
   components:
@@ -18,7 +18,7 @@
 - type: entity
   parent: CMVendorBundleRiflemanApparel
   id: CMVendorBundleFireteamLeaderApparel
-  name: стандартне морпіхотне обмундирування
+  name: стандартне морпіхотне обмундирування ЛВГ
   description: Містить морпіхотну уніформу, шолом M12, гарнітуру та бойові чоботи.
   components:
   - type: CMVendorBundle
@@ -31,8 +31,8 @@
 - type: entity
   parent: CMVendorBundleRiflemanApparel
   id: CMVendorBundleSquadMedicalApparel
-  name: стандартне морпіхотне обмундирування
-  description: Містить морпіхотну уніформу медика, шолом M12, гарнітуру та бойові чоботи.
+  name: стандартне морпіхотне обмундирування медика
+  description: Містить морпіхотну уніформу медика, гарнітуру та бойові чоботи.
   components:
   - type: CMVendorBundle
     bundle:
@@ -68,8 +68,8 @@
 - type: entity
   parent: CMVendorBundleRiflemanApparel
   id: CMVendorBundleCombatTechnicianApparel
-  name: стандартне морпіхотне обмундирування
-  description: Містить морпіхотну уніформу, шолом M10 та бойові чоботи.
+  name: стандартне морпіхотне обмундирування техніка
+  description: Містить морпіхотну уніформу техніка, гарнітуру та бойові чоботи.
   components:
   - type: CMVendorBundle
     bundle:
@@ -101,7 +101,7 @@
 - type: entity
   parent: CMVendorBundleRiflemanApparel
   id: CMVendorBundleSquadLeaderApparel
-  name: стандартне морпіхотне обмундирування
+  name: стандартне морпіхотне обмундирування ЛЗ
   description: Містить морпіхотну уніформу, шолом M11, гарнітуру, бойові рукавиці та бойові чоботи.
   components:
   - type: CMVendorBundle
@@ -125,6 +125,7 @@
     - CMHandsBlackMarine
     - CMBootsBlackFilled
 
+#Non-squad
 - type: entity
   parent: CMVendorBundleRiflemanApparel
   id: RMCVendorBundleMilitaryPoliceApparel
@@ -200,18 +201,36 @@
 
 - type: entity
   parent: CMVendorBundleRiflemanApparel
+  id: RMCVendorBundleCrewCombatCorrespondent
+  name: Essential Reporter's Set
+  description: Contains a flashlight, binoculars, a clipboard, and a pen. #TODO a tape recorder, a notepad, and a pen
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Tools/Light/flashlight.rsi
+    state: flashlight
+  - type: CMVendorBundle
+    bundle:
+    - RMCFlashlight
+    - CMPen
+    - RMCBinoculars
+    - CMClipboard # notepad
+    - RMCUniversalRecorder
+
+# PVE
+- type: entity
+  parent: CMVendorBundleRiflemanApparel
   id: RMCVendorBundleRCMPVEAssaultEngi
   name: Essential Engineering Set
   description: Contains an engineer kit, tool pouch, and webbing with a variety of items to engineer and/or assault with.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Tools/crowbar.rsi
+    sprite: _RMC14/Objects/Tools/tac_prybar.rsi
     state: icon
   - type: CMVendorBundle
     bundle:
     - RMCEngineerKitRCMPVEFilled
     - RMCPouchToolsSocRCMPVEAssaultEngi
-    - RMCToolWebbingSmallFilledRCMPVEAssaultEngi
+    - RMCToolWebbingSmallRoyalFilled
     - RMCTeslaTSE
 
 - type: entity
@@ -234,7 +253,6 @@
     - RMCBruteAidKitFilledPVE
     - RMCStandardAidKitFilledPVE
 
-# PVE
 - type: entity
   parent: CMVendorBundleRiflemanApparel
   id: RMCVendorBundleRCMPVEMGL
@@ -267,3 +285,51 @@
     - RMCMortarKit # RMC14 TODO: RCM Custom Light Mortar
     - RMCBeltRoyalMortarFilledMortarShells # RMC14 TODO: Check Parity Fill
     - RMCLaserDesignatorPVE
+
+- type: entity
+  parent: CMVendorBundleRiflemanApparel
+  id: RMCVendorBundleM54CWhiteNoLock
+  name: M54C assault rifle MK2
+  description: Contains the M54C assault rifle MK2 and 3 M54C magazines.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Rifles/m54c/snow.rsi
+    state: icon
+  - type: CMVendorBundle
+    bundle:
+    - RMCWeaponRifleM54CWhiteNoLock
+    - CMMagazineRifleM54C
+    - CMMagazineRifleM54C
+    - CMMagazineRifleM54C
+
+- type: entity
+  parent: CMVendorBundleRiflemanApparel
+  id: RMCVendorBundleSMGM63WhiteNoLock
+  name: M63 submachine gun
+  description: Contains the M63 submachine gun and 3 M63 magazines.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/SMGs/m63/snow.rsi
+    state: icon
+  - type: CMVendorBundle
+    bundle:
+    - RMCWeaponSMGM63WhiteNoLock
+    - CMMagazineSMGM63
+    - CMMagazineSMGM63
+    - CMMagazineSMGM63
+
+- type: entity
+  parent: CMVendorBundleRiflemanApparel
+  id: RMCVendorBundleSMGSSG45NoLockStripped
+  name: SSG-45 Assault Rifle
+  description: Contains the SSG-45 Assault Rifle and 3 SSG-45 magazines.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Rifles/ssg45/ssg45_icon.rsi
+    state: base
+  - type: CMVendorBundle
+    bundle:
+    - RMCWeaponRifleSSG45NoLockStripped
+    - RMCMagazineRifleSSG45
+    - RMCMagazineRifleSSG45
+    - RMCMagazineRifleSSG45

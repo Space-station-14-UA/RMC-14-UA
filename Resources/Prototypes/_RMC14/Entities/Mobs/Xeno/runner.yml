@@ -12,8 +12,6 @@
   name: Бігунка
   description: Невеличка червона та дуже аеродинамічна чужопланетна істота, схоже її лапи створені для бігу.
   components:
-  - type: GhostRole
-    name: cm-job-name-xeno-runner
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Runner/runner.rsi
   - type: Eye
@@ -27,6 +25,12 @@
     tags:
     - DoorBumpOpener
     - RMCSynthGrabbable
+  - type: Butcherable # Mriya
+    spawned:
+    - id: MRFoodMeatXeno
+      amount: 4
+    - id: MRXenoClaw
+      amount: 3
   - type: Xeno
     role: CMXenoRunner
     tier: 1

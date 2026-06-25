@@ -1,0 +1,302 @@
+- type: entity
+  parent: CMFoodBase
+  id: MRFoodParasiteLeg
+  name: лапка паразита
+  description: Колись вона бігала, а тепер час бігти смажити її!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - acid
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+  - type: Food
+    transferAmount: 2
+  - type: Sprite
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+    state: parasiteleg
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 3
+  - type: Item
+    size: Tiny
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: InjectableSolution
+    solution: food
+  - type: DrawableSolution
+    solution: food
+
+- type: entity
+  parent: CMFoodBase
+  id: MRFoodParasiteLegCooked
+  name: смажена лапка паразита
+  description: Смажена лапа паразита ксеноморфів... Пахне цікаво. Колись вона бігала, а тепер час з'їсти її та побігти далі.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - acid
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Food
+    transferAmount: 2
+  - type: Sprite
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+    state: parasiteleg-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Protein
+          Quantity: 3
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 2
+  - type: Item
+    size: Tiny
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: InjectableSolution
+    solution: food
+  - type: DrawableSolution
+    solution: food
+
+- type: entity
+  parent: FoodBowlBase
+  id: MRFoodQueenSalad
+  name: салат Королева
+  description: Салат "Королева" – пряме переосмислення салату "Цезар", в умовах, коли з м'яса присутній лише ворог, а побратима жаль.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - onion
+    - cabbage
+    - bread
+    - acid
+  - type: Sprite
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+      state: queen
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 65
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+        - ReagentId: Vitamin
+          Quantity: 15
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 5
+  - type: Item
+    size: Small
+    sprite: Objects/Consumable/Food/bowl.rsi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: InjectableSolution
+    solution: food
+  - type: DrawableSolution
+    solution: food
+
+- type: entity
+  parent: CMFoodBase
+  id: MRFoodLarvaCooked
+  name: смажена лярва
+  description: Це смажена лярва під лимонним соком. Певно не настільки гумова на смак, якщо думати, що це була майбутня королева.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - sour
+    - acid
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Food
+    transferAmount: 4
+  - type: Sprite
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+    state: embryo_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 5
+  - type: Item
+    size: Small
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: InjectableSolution
+    solution: food
+  - type: DrawableSolution
+    solution: food
+
+- type: entity # Копія ванільного бургера, але більш отруйне
+  parent: FoodBurgerBase
+  id: MRFoodBurgerXeno
+  name: ксенобургер
+  description: На смак, як кислота. Відчувається, ніби ти військовий злочинець з ДУЖЕ дивними смаками в їжі.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bun
+      - meaty
+      - acid
+  - type: Sprite
+    state: x
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: CMFoodBase
+  id: MRFoodParasitelegs
+  name: паразитоніжка
+  description: Паразитична багатоніжка! Варто за нею пильно слідкувати, хто зна, чи має вона план втечі.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bread
+    - cheesy
+    - meaty
+    - acid
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Food
+    transferAmount: 5
+  - type: SliceableFood
+    slice: MRFoodParasitelegsHalf
+    count: 2
+  - type: Sprite
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+    state: parasitelegs
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 80
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Protein
+          Quantity: 20
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 6
+  - type: Item
+    size: Small
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: InjectableSolution
+    solution: food
+  - type: DrawableSolution
+    solution: food
+
+- type: entity
+  parent: CMFoodBase
+  id: MRFoodParasitelegsHalf
+  name: половина паразитоніжок
+  description: Половина ніжок, все ще можуть втікти, але на 3 ніжки повільніше.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bread
+    - cheesy
+    - meaty
+    - acid
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Food
+    transferAmount: 3
+  - type: Sprite
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+    state: parasitelegs-half
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: RMCSulphuricAcid
+          Quantity: 3
+  - type: Item
+    size: Small
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: InjectableSolution
+    solution: food
+  - type: DrawableSolution
+    solution: food
+
+- type: entity
+  parent: BaseItem
+  id: MRXenoClaw
+  name: кіготь ксеноморфа
+  description: Гострий кіготь чужопланетного хижака.
+  components:
+  - type: Tag
+    tags:
+    - Ingredient
+  - type: Sprite
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+    state: claw
+  - type: Item
+    size: Small
+    sprite: _Sich/Objects/Consumable/Food/xeno.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Slash: 10
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 7.5
+  - type: ThrowingAngle
+    angle: 225

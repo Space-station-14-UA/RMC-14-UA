@@ -1,0 +1,269 @@
+- type: guideEntry
+  parent: Mriya
+  id: RMCMarineLaw # На це посилаються інші
+  name: rmc-guide-entry-rules-marine-law
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLaw.xml"
+  priority: 3
+  children:
+  - MRCommandChain
+  - MRMarineLawRanks
+  - MRMarineLawDefinitions
+  - MRMarineLawProcedures
+  - MRMarineLawCrimes
+  - MRMarineLawPrisonerRights
+  - MRMarineLawAppeals
+  - MRMarineLawSpecialProvisions
+  - MRMarineLawSynthetics
+  - MRMarineLawCOProvisions
+  - RMCMarineSOP
+
+- type: guideEntry
+  parent: Mriya
+  id: MRCommandChain
+  name: rmc-guide-entry-rules-command-chain
+  priority: 0
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCCommandChain.xml"
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawRanks
+  name: rmc-guide-entry-marine-law-ranks
+  priority: 0
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawRanks.xml"
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawDefinitions
+  name: rmc-guide-entry-marine-law-definitions
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawDefinitions.xml"
+  priority: 1
+
+# Procedures
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawProcedures
+  name: rmc-guide-entry-marine-law-procedures
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawProcedures.xml"
+  priority: 2
+  children:
+  - MRMarineLawArresting
+  - MRMarineLawCharging
+  - MRMarineLawNJP
+  - MRMarineLawLethal
+  - MRMarineLawSearches
+  - MRMarineLawDemotions
+  - MRMarineLawExecutions
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawArresting
+  name: rmc-guide-entry-marine-law-arresting
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawArresting.xml"
+  priority: 1
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCharging
+  name: rmc-guide-entry-marine-law-charging
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCharging.xml"
+  priority: 2
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawNJP
+  name: rmc-guide-entry-marine-law-njp
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawNJP.xml"
+  priority: 3
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawLethal
+  name: rmc-guide-entry-marine-law-lethal
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawLethal.xml"
+  priority: 4
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawSearches
+  name: rmc-guide-entry-marine-law-searches
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawSearches.xml"
+  priority: 5
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawDemotions
+  name: rmc-guide-entry-marine-law-demotions
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawDemotions.xml"
+  priority: 6
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawExecutions
+  name: rmc-guide-entry-marine-law-executions
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawExecutions.xml"
+  priority: 7
+
+# Crimes
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCrimes
+  name: rmc-guide-entry-marine-law-crimes
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCrimes.xml"
+  priority: 3
+  children:
+  - MRMarineLawCrimesVariable
+  - MRMarineLawCrimesMinor
+  - MRMarineLawCrimesMajor
+  - MRMarineLawCrimesCapital
+  - MRMarineLawCrimesPrecautionary
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCrimesVariable
+  name: rmc-guide-entry-marine-law-crimes-variable
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCrimesVariable.xml"
+  priority: 0
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCrimesMinor
+  name: rmc-guide-entry-marine-law-crimes-minor
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCrimesMinor.xml"
+  priority: 1
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCrimesMajor
+  name: rmc-guide-entry-marine-law-crimes-major
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCrimesMajor.xml"
+  priority: 2
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCrimesCapital
+  name: rmc-guide-entry-marine-law-crimes-capital
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCrimesCapital.xml"
+  priority: 3
+
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCrimesPrecautionary
+  name: rmc-guide-entry-marine-law-crimes-precautionary
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCrimesPrecautionary.xml"
+  priority: 4
+
+# Prisoner Rights
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawPrisonerRights
+  name: rmc-guide-entry-marine-law-prisoner-rights
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawPrisonerRights.xml"
+  priority: 4
+
+# Appeals
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawAppeals
+  name: rmc-guide-entry-marine-law-appeals
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawAppeals.xml"
+  priority: 5
+
+# Special Circumstances
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawSpecialProvisions
+  name: rmc-guide-entry-marine-law-special-provisions
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawSpecialProvisions.xml"
+  priority: 6
+
+# Synthetics
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawSynthetics
+  name: rmc-guide-entry-marine-law-synthetics
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawSynthetics.xml"
+  priority: 7
+
+# Commanding Officer provisions and regulations
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineLawCOProvisions
+  name: rmc-guide-entry-marine-law-co-provisions
+  text: "/ServerInfo/Guidebook/_Sich/Law/RMCMarineLawCOProvisions.xml"
+  priority: 8
+
+  # SOP
+
+# SOP
+- type: guideEntry
+  parent: Mriya
+  id: RMCMarineSOP # На це посилаються інші
+  name: rmc-guide-entry-marine-sop
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOP.xml"
+  priority: 9
+  children:
+  - MRMarineSOPGeneral
+  - MRMarineSOPEquipment
+  - MRMarineSOPDepartment
+  - MRMarineSOPNONModDepartment
+  - MRMarineSOPNONModCommand
+  - MRMarineSOPNONModDeployment
+  - MRMarineSOPNONModThirdparty
+
+# General Regulations
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineSOPGeneral
+  name: rmc-guide-entry-marine-sop-general
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOPGeneral.xml"
+  priority: 1
+
+# Equipment Regulations
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineSOPEquipment
+  name: rmc-guide-entry-marine-sop-equipment
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOPEquipment.xml"
+  priority: 2
+
+# Department Regulations
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineSOPDepartment
+  name: rmc-guide-entry-marine-sop-department
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOPDepartment.xml"
+  priority: 3
+
+  # NON-Modifiable
+
+# NON-Modifiable Department
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineSOPNONModDepartment
+  name: rmc-guide-entry-marine-sop-nonmod-department
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOPNONModDepartment.xml"
+  priority: 4
+
+# NON-Modifiable Command
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineSOPNONModCommand
+  name: rmc-guide-entry-marine-sop-nonmod-command
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOPNONModCommand.xml"
+  priority: 5
+
+# NON-Modifiable Deployment Restrictions
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineSOPNONModDeployment
+  name: rmc-guide-entry-marine-sop-nonmod-deployment
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOPNONModDeployment.xml"
+  priority: 6
+
+# NON-Modifiable Third Parties
+- type: guideEntry
+  parent: Mriya
+  id: MRMarineSOPNONModThirdparty
+  name: rmc-guide-entry-marine-sop-nonmod-thirdparty
+  text: "/ServerInfo/Guidebook/_Sich/SOP/RMCMarineSOPNONModThirdParty.xml"
+  priority: 7

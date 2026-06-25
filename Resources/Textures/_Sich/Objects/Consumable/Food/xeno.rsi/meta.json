@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Roct",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "claw"
+    },
+    {
+      "name": "embryo_cooked"
+    },
+    {
+      "name": "parasiteleg"
+    },
+    {
+      "name": "parasiteleg-cooked"
+    },
+    {
+      "name": "parasitelegs"
+    },
+    {
+      "name": "parasitelegs-half"
+    },
+    {
+      "name": "queen"
+    }
+  ]
+}

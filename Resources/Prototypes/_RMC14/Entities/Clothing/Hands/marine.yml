@@ -1,9 +1,10 @@
 - type: entity
-  parent: ClothingHandsBase
+  parent: [ClothingHandsBase, RMCBaseUniformAccessoryItemGloves]
   id: CMHandsBlackMarine # TODO RMC14 armor
   name: тактичні рукавиці
   description: Стандартні рукавиці, які використовує морська піхота. На ярлику написано 'Зв'язано Асоціацією Вдів Морських Піхотинців'.
   components:
+  - type: RMCCryoUnavailableOnStore
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Hands/Gloves/black.rsi
   - type: Clothing

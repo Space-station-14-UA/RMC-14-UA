@@ -312,20 +312,20 @@
   - node: spider cutlet
     entity: FoodMeatSpiderCutletCooked
 
-- type: constructionGraph
-  id: XenoCutlet
-  start: start
-  graph:
-  - node: start
-    edges:
-    - to: xeno cutlet
-      completed:
-      - !type:PlaySound
-        sound: /Audio/Effects/sizzle.ogg
-      steps:
-      - minTemperature: 345
-  - node: xeno cutlet
-    entity: FoodMeatXenoCutletCooked
+#- type: constructionGraph – Mriya. У нас своє
+#  id: XenoCutlet
+#  start: start
+#  graph:
+#  - node: start
+#    edges:
+#    - to: xeno cutlet
+#      completed:
+#      - !type:PlaySound
+#        sound: /Audio/Effects/sizzle.ogg
+#      steps:
+#      - minTemperature: 345
+#  - node: xeno cutlet
+#    entity: FoodMeatXenoCutletCooked
 
 - type: constructionGraph
   id: DragonCutlet

@@ -17,9 +17,9 @@
 - type: entity
   parent: SheetOtherBase
   id: CMSheetPhoron
-  name: форон
-  description: Форон – деякі диваки називають цей матеріал "плазмою". Дорогий промисловий реактив та хімікат, який здатен знаходитися у трьох агрегатних станах без зміни температури. Може використовуватися як паливо, елемент виготовлення хімічних речовин, теплоносій та ще купа різних застосувань. # Sich
-  suffix: Повний
+  name: твердий форон
+  description: Форон – деякі диваки називають цей матеріал "плазмою". Дорогий промисловий реактив та хімікат, який здатен знаходитися у трьох агрегатних станах без зміни температури. Може використовуватися як паливо, елемент виготовлення хімічних речовин, теплоносій та ще купа різних застосувань.
+  suffix: Full
   components:
   - type: Material
   - type: PhysicalComposition
@@ -35,6 +35,11 @@
     heldPrefix: phoron
     size: Normal
     sprite: _RMC14/Objects/Materials/Sheets/phoron.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Appearance
   - type: Extractable
     grindableSolutionName: phoron
@@ -124,6 +129,11 @@
       map: ["base"]
   - type: Item
     sprite: _RMC14/Objects/Materials/Sheets/wood.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
     heldPrefix: wood
     size: Normal
   - type: Appearance
@@ -138,6 +148,7 @@
     # wooden chair
     - RMCWoodenBarricadeBuild
     - RMCWoodenCrateBuild
+    - RMCFishingPoleBuild
     # wooden door
     # coffin
     # baseball bat
@@ -196,14 +207,14 @@
   id: RMCAluminum
   stackEntity: RMCSheetAluminum
   name: materials-aluminum
-  icon: { sprite: _RMC14/Objects/Materials/Sheets/aluminum.rsi, state: aluminum }
+  icon: { sprite: _RMC14/Objects/Materials/Sheets/aluminum.rsi, state: icon }
   color: "#A8A8A8"
   price: 0.0053
 
 - type: stack
   id: RMCAluminum
   name: aluminum
-  icon: { sprite: _RMC14/Objects/Materials/Sheets/aluminum.rsi, state: aluminum }
+  icon: { sprite: _RMC14/Objects/Materials/Sheets/aluminum.rsi, state: icon }
   spawn: RMCSheetAluminum
   maxCount: 50
 
@@ -211,6 +222,7 @@
   parent: SheetOtherBase
   id: RMCSheetAluminum
   name: aluminum
+  description: A silvery-white soft metal of the boron group. Because of its low density it is often used as a structural material in aircraft.
   suffix: Full
   components:
   - type: Material
@@ -221,12 +233,17 @@
     stackType: RMCAluminum
     count: 50
   - type: Sprite
-    state: aluminum
     sprite: _RMC14/Objects/Materials/Sheets/aluminum.rsi
+    state: icon
   - type: Item
     heldPrefix: aluminum
     size: Normal
     sprite: _RMC14/Objects/Materials/Sheets/aluminum.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Appearance
   - type: Extractable
     grindableSolutionName: aluminum

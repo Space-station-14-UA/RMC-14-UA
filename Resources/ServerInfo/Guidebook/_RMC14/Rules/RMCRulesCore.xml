@@ -1,16 +1,11 @@
 ﻿<Document>
-  ## Основні Правила
-  Це загальні правила RMC14. Клацніть на них для отримання додаткової інформації.
-  - [textlink="1. Це український сервер, будь ласка, використовуйте лише українську мову." link="RMCLanguage"]
-  - [textlink="2. Не використовуйте кілька акаунтів або альт-акаунтів, а також не діліться акаунтами." link="RMCMultikey"]
-  - [textlink="3. Дотримуйтесь правил ескалації проти неворожої сторони." link="RMCRulesEscalation"]
-  - [textlink="4. Не використовуйте інформацію, отриману поза межами знань вашого персонажа." link="RMCMetaknowledge"]
-  - [textlink="5. Не провокуйте свою команду, не переслідуйте гравців." link="RMCKindness"]
-  - [textlink="6. Не звільняйтеся з керівної посади без попередження." link="RMCCommandRoles"]
-  - [textlink="7. Заколоти, заворушення та подібні дії вимагають дозволу адміністратора." link="RMCMutinies"]
-  - 8. Не відключайтесь, якщо не отримали бажану роль/набір, будьте ввічливими.
-  - 9. Дотримуйтесь правил і стандартів рольової гри на сервері. (Описано внизу цієї сторінки)
-
-  8. (Additional notes) By opting for certain roles, you are opting into the possibility of supporting any given squad, regardless of personal preference. You are directly affecting the gameplay of others by quitting. Please do not opt into roles you do not feel comfortable playing, so they remain open and obtainable by other players at the start of the round.
+  ## Core Game Rules
+  These are the general rules of RMC14. Click them for more information.
+  - [textlink="1. This is an English server, please only use English in all channels." link="RMCLanguage"]
+  - [textlink="2. Follow the rules of escalation against non-hostiles." link="RMCRulesEscalation"]
+  - [textlink="3. Don't antagonize or harass players." link="RMCKindness"]
+  - [textlink="4. Mutinies, riots and similar activity require admin permission." link="RMCMutinies"]
+  - 5. Don't quit if you do not get the role/kit/squad you want, be considerate. By selecting certain roles, you are opting into the possibility of supporting any given squad, regardless of personal preference.\nPlease do not opt into roles you do not feel comfortable playing, so they remain open and obtainable by all players at the start of the round.
+  - [textlink="6. Follow the roleplay rules and standards of the server." link="RMCMutinies"]
 
 </Document>

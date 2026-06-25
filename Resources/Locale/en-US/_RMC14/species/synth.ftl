@@ -8,6 +8,8 @@ rmc-species-synth-generation-third = Третього Покоління
 
 rmc-species-synth-defib-attempt = Ви не можете дефібрилювати {$target}. Вам потрібен ключ перезавантаження синтетика!
 rmc-species-synth-reset-key-invalid = Ви не можете використовувати ключ перезавантаження на цьому, це не синтетик!
+rmc-synth-item-restricted = Ваша програма не дає вам використовувати {$item}!
+rmc-synth-item-too-heavy = {CAPITALIZE($item)} занадто важке для не синтетів.
 
 rmc-synth-repair-brute-start-others = {$user} починає відновлювати пошкоджений корпус {$target} в районі {$limb}.
 rmc-synth-repair-brute-start-self = Ви починаєте обережно відновлювати пошкоджений корпус в районі {$limb}, щоб не анулювати вашу гарантію.

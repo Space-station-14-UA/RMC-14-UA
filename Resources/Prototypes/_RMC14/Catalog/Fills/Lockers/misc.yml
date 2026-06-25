@@ -131,22 +131,30 @@
     - id: RMCWeaponPistolPK7
     - id: RMCMagazinePistolPK7
     - id: RMCMagazinePistolPK7
+    - id: RMCBackpackRTOBagPhone
 
-- type: entity # Sich. Ця шафа фактично поглинула в себе частину речей з RMCCrateFieldDoctor, а частину віддала вендору. Вміст змінений.
-  parent: CMLockerMedical
-  id: RMCLockerFieldDoctor
-  name: шафа польового лікаря # Sich
+- type: entity
+  parent: RMCLockerFieldDoctor
+  id: RMCLockerFieldDoctorFilled
   suffix: Filled, Field Doctor
   components:
   - type: StorageFill
     contents:
     - id: RMCArmorHelmetM10FieldDoctor
     - id: RMCPatchMedic
-    - id: RMCPortableDialysis
-    - id: CMPortableSurgicalBedSpawnFolded
-    - id: RMCBoxSterileMask
-    - id: RMCBoxLatexGloves
-    - id: RMCSprayBottleSpaceCleaner
-    - id: CMMaskGasMedical
-    - id: CMEntrenchingTool
-    - id: RMCToolboxMechanicalFilled
+    - id: CMBootsBlack
+    - id: CMMRE
+
+- type: entity
+  parent: RMCLockerMiner
+  id: RMCLockerMinerFilled
+  suffix: Filled, Secure
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCHandsBlack
+    - id: RMCShoesJackboots
+    - id: RMCFlashlightLantern
+    - id: RMCShovel
+    - id: RMCPickaxe
+    # TODO: Add Meson Goggles, Analyzer, Orebag

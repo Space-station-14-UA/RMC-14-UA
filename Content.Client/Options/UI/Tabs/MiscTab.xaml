@@ -25,6 +25,7 @@
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="ShowOocPatronColor" Text="{Loc 'ui-options-show-ooc-patron-color'}" />
                 <CheckBox Name="ShowLoocAboveHeadCheckBox" Text="{Loc 'ui-options-show-looc-on-head'}" />
+                <CheckBox Name="ShowDeadAboveGhostCheckBox" Text="{Loc 'ui-options-show-dead-on-ghost'}" /> <!-- Mriya: toggle ghost bubbles -->
                 <CheckBox Name="FancySpeechBubblesCheckBox" Text="{Loc 'ui-options-fancy-speech'}" />
                 <CheckBox Name="FancyNameBackgroundsCheckBox" Text="{Loc 'ui-options-fancy-name-background'}" />
                 <Label Text="{Loc 'ui-options-general-cursor'}"
