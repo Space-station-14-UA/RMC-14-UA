@@ -1523,12 +1523,3 @@ DrinkMilkCarton: RMCDrinkMilkCarton
 
 #2026-06-06
 RMCBeakerHighCapacity: RMCReagentJug
-
-# Mriya. 2026-06-18
-FoodMeatXeno: MRFoodMeatXeno
-FoodBurgerXeno: MRFoodBurgerXeno
-FoodMeatXenoCutlet: MRFoodMeatXenoCutlet
-FoodMeatXenoCutletCooked: MRFoodMeatXenoCutletCooked
-
-# Mriya. 2026-06-19
-CMPamphletLanguageRussian: null
