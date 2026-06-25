@@ -34,7 +34,7 @@ public sealed partial class HunterCasterProviderComponent : Component
     public EntityUid? ActionEntity;
 
     [DataField]
-public SoundSpecifier? SoundOn = new SoundPathSpecifier("/Audio/_Sich/Hunter/pred_plasmacaster_fire.ogg");
+public SoundSpecifier? SoundOn = new SoundPathSpecifier("/Audio/_Mriya/Hunter/pred_plasmacaster_fire.ogg");
 
     [DataField]
     public SoundSpecifier? SoundOff;

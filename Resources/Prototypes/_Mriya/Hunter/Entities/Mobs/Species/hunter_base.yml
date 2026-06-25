@@ -240,6 +240,7 @@
       - Xeno
   - type: RMCArmorModifier
     meleeArmorModifier: 5
+    rangedArmorModifier: 45
   - type: RMCObstacleSlamCauserImmune
   - type: MobCollision
   - type: RMCMobCollision

@@ -9,6 +9,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Content.Shared.Interaction;
 
 namespace Content.Server._Sich.Hunter.Weapon;
 
@@ -19,8 +20,8 @@ public sealed class HunterRecallWeaponSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly HunterEnergySystem _hunterEnergy = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
 
     public override void Initialize()
     {
@@ -102,12 +103,19 @@ public sealed class HunterRecallWeaponSystem : EntitySystem
                 }
             }
 
-            // Validate distance
-            var userPos = _transform.GetWorldPosition(performer);
-            var weaponPos = _transform.GetWorldPosition(uid);
-            if ((userPos - weaponPos).Length() > component.MaxRecallRange)
+            // Validate distance with obstruction penalty
+            var performerMap = _transform.GetMapCoordinates(performer);
+            var weaponMap = _transform.GetMapCoordinates(uid);
+            var directDistance = (performerMap.Position - weaponMap.Position).Length();
+            var unobstructedDistance = _interaction.UnobstructedDistance(performerMap, weaponMap);
+            var obstructedDistance = directDistance - unobstructedDistance;
+
+            // Obstruction acts as double tension distance
+            var finalDistance = unobstructedDistance + (obstructedDistance * 2f);
+
+            if (finalDistance > component.MaxRecallRange)
             {
-                BreakLink(uid, component, "chain-broken-range");
+                BreakLink(uid, component, "Зв'язок розірвано через натяг ланцюга!");
                 continue;
             }
 
@@ -139,7 +147,7 @@ public sealed class HunterRecallWeaponSystem : EntitySystem
             else
             {
                 // Drop at feet if hands full
-                _transform.SetWorldPosition(uid, userPos);
+                _transform.SetWorldPosition(uid, performerMap.Position);
                 BreakLink(uid, component);
                 args.Handled = true;
             }
@@ -182,12 +190,18 @@ public sealed class HunterRecallWeaponSystem : EntitySystem
 
             var owner = component.BoundOwner.Value;
 
-            // Distance check
-            var userPos = _transform.GetWorldPosition(owner);
-            var weaponPos = _transform.GetWorldPosition(uid);
-            if ((userPos - weaponPos).Length() > component.MaxRecallRange)
+            // Distance & obstacle check with penalty
+            var userMap = _transform.GetMapCoordinates(owner);
+            var weaponMap = _transform.GetMapCoordinates(uid);
+            var directDistance = (userMap.Position - weaponMap.Position).Length();
+            var unobstructedDistance = _interaction.UnobstructedDistance(userMap, weaponMap);
+            var obstructedDistance = directDistance - unobstructedDistance;
+
+            var finalDistance = unobstructedDistance + (obstructedDistance * 2f);
+
+            if (finalDistance > component.MaxRecallRange)
             {
-                BreakLink(uid, component, "chain-broken-range");
+                BreakLink(uid, component, "Зв'язок розірвано через натяг ланцюга!");
                 continue;
             }
 

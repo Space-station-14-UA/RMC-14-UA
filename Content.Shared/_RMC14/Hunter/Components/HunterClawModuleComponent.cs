@@ -21,10 +21,10 @@ public sealed partial class HunterClawModuleComponent : Component
     public List<EntityUid> ActiveClaws = new();
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier DeploySound = new SoundPathSpecifier("/Audio/_Sich/Hunter/wristblades_on.ogg");
+    public SoundSpecifier DeploySound = new SoundPathSpecifier("/Audio/_Mriya/Hunter/wristblades_on.ogg");
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier RetractSound = new SoundPathSpecifier("/Audio/_Sich/Hunter/wristblades_off.ogg");
+    public SoundSpecifier RetractSound = new SoundPathSpecifier("/Audio/_Mriya/Hunter/wristblades_off.ogg");
 }
 
 

@@ -39,10 +39,10 @@ public sealed partial class HunterCloakComponent : Component
     public EntityUid? Action;
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier CloakSound = new SoundPathSpecifier("/Audio/_Sich/Hunter/pred_cloakon.ogg");
+    public SoundSpecifier CloakSound = new SoundPathSpecifier("/Audio/_Mriya/Hunter/pred_cloakon.ogg");
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier UncloakSound = new SoundPathSpecifier("/Audio/_Sich/Hunter/pred_cloakoff.ogg");
+    public SoundSpecifier UncloakSound = new SoundPathSpecifier("/Audio/_Mriya/Hunter/pred_cloakoff.ogg");
 
     [DataField, AutoNetworkedField]
     public EntProtoId CloakEffect = "RMCEffectCloak";

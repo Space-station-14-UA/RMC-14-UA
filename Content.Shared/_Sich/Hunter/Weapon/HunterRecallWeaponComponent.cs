@@ -13,7 +13,7 @@ public sealed partial class HunterRecallWeaponComponent : Component
     public EntityUid? ChainEntity;
 
     [DataField, AutoNetworkedField]
-    public float MaxRecallRange = 10f;
+    public float MaxRecallRange = 5f;
 
     [DataField, AutoNetworkedField]
     public float RecallCost = 50f;

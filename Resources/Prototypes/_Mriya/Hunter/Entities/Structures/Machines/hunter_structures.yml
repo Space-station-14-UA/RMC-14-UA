@@ -24,6 +24,10 @@
           Cooking: { state: "mwactiv", visible: true }
           Broken: { visible: false }
   - type: Appearance
+  - type: Construction
+    graph: null
+  - type: Machine
+    enabled: false
 
 - type: entity
   id: SichVendingMachineHuntSoda
