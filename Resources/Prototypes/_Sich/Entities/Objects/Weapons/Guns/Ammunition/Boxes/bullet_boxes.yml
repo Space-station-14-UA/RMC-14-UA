@@ -38,7 +38,7 @@
   components:
   - type: Construction
     graph: RMCBoxMagazine
-    node: SichBoxBulletsSmartGun
+    node: SichBoxBulletsSmartGunEmpty
   - type: BulletBox
     bulletType: RMCBoxBulletsSmartGun
     amount: 0

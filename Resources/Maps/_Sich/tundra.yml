@@ -16067,11 +16067,6 @@ entities:
     - type: Transform
       pos: 1.7289639,89.490135
       parent: 1
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
-    - type: ActiveUserInterface
 - proto: CMFolderBlack
   entities:
   - uid: 695
