@@ -183440,21 +183440,21 @@ entities:
     - type: Transform
       pos: 35.5,122.5
       parent: 1
-- proto: RMCSichCassetteTape
+- proto: SichCassetteTapeFire
   entities:
   - uid: 26203
     components:
     - type: Transform
       pos: 123.76322,65.04068
       parent: 1
-- proto: RMCSichCassetteTapeManSoldWorld
+- proto: SichCassetteTapeManSoldWorld
   entities:
   - uid: 26204
     components:
     - type: Transform
       pos: 123.48544,65.20057
       parent: 1
-- proto: RMCSichCassetteTapeUa
+- proto: SichCassetteTapeUa
   entities:
   - uid: 26205
     components:
