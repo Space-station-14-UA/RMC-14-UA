@@ -89,29 +89,30 @@
     pocket1: RMCFlashlight
     pocket2: RMCPouchMedkit
   storage:
-      jumpsuit:
-      - CMCrowbar
-      - CMWrench
-      - CMMultitool
-      - RMCExplosivePlastic
-      - RMCExplosivePlastic
-      back:
-      - RMCGrenadeMolotov
-      - CMPacketGrenadeFragOldFilled
-      - RMCRangefinder
-      - RMCWeaponPistolHandcannon
-      - RMCMagazinePistolHandcannon
-      - RMCMagazinePistolHandcannon
-      - RMCBoxClaymoreMineFilled
-      - RMCBoxClaymoreMineFilled
-      outerClothing:
-      - RMCMagazineRifleMAR40Ext
-      - RMCMagazineRifleMAR40Ext
-      pocket2:
-      - CMSurgicalLine
-      - CMSynthGraft
-      - CMBloodPackFull
-      - CMHealthAnalyzer
-      - CMPillCanisterKelotane
-      - CMPillCanisterBicaridine
-      - CMRollerBedSpawnFolded
+    jumpsuit:
+    - CMCrowbar
+    - CMWrench
+    - CMMultitool
+    - RMCExplosivePlastic
+    - RMCExplosivePlastic
+    back:
+    - RMCGrenadeMolotov
+    - CMPacketGrenadeFragOldFilled
+    - RMCRangefinder
+    - RMCWeaponPistolHandcannon
+    - RMCMagazinePistolHandcannon
+    - RMCMagazinePistolHandcannon
+    - RMCBoxClaymoreMineFilled
+    - RMCBoxClaymoreMineFilled
+    outerClothing:
+    - RMCMagazineRifleMAR40Ext
+    - RMCMagazineRifleMAR40Ext
+    - RMCMagazineRifleMAR40Ext
+    pocket2:
+    - CMSurgicalLine
+    - CMSynthGraft
+    - CMBloodPackFull
+    - CMHealthAnalyzer
+    - CMPillCanisterKelotane
+    - CMPillCanisterBicaridine
+    - CMRollerBedSpawnFolded

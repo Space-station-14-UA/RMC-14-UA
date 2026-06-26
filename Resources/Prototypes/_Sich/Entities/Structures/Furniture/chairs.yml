@@ -5,7 +5,7 @@
   id: SichChairSupplyDropeOfficeDark
   name: Модуль ОСДМСТ
   description: "Особиста Система Десантування Морпіха Стільцевого Типу.\nОстання розробка КМПОН, найкраще, що ви бачили у своєму житті та підберіть ще штук 10 епітетів та ви все одно не зможете описати крутість цієї штуковини.\n\nМи додали підлокітники, парашут та шматок теплового щита знятого з зламаної евакуаційної капсули до звичайного офісного стільця та це 100% витримає скидання системою, якою кидають ящики з припасами. Сер, так точно, сер!\n\nЯкщо придивитися до днища, то там можна помітити написані маркером символи 'SolStar', 'J.Karter' та якісь дивні порізи від кігтів."
-  suffix: Січ
+  suffix: Мрія
   components:
   - type: Sprite
     sprite: _Sich/Structures/Furniture/chairs.rsi
@@ -42,3 +42,23 @@
             max: 1
       - !type:DoActsBehavior
         acts: ["Destruction"]
+
+- type: entity
+  parent: BaseItem
+  id: SichChairSupplyDropeOfficeDarkFolded
+  name: Модуль ОСДМСТ
+  description: Дивний стілець з біркою "Розгорніть перед використанням". Я вірю біркам на дивних стільцях, а ти?
+  suffix: Мрія, Згорнутий
+  components:
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: _Sich/Structures/Furniture/chairs.rsi
+    state: officechair_parachute
+  - type: HeldSpeedModifier # Стілець в руках нести не дуже зручно
+    walkModifier: 0.500
+    sprintModifier: 0.500
+  - type: SpawnItemsOnUse
+    items:
+    - id: SichChairSupplyDropeOfficeDark
+      amount: 1

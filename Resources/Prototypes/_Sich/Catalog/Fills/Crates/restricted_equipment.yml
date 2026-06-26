@@ -5,7 +5,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: SichChairSupplyDropeOfficeDark
+    - id: SichChairSupplyDropeOfficeDarkFolded
 #    - id: RMCSuitEVAUNMC – занадто дорого
     - id: RMCMaskBreath
     - id: RMCDoubleEmergencyOxygenTankFilled
