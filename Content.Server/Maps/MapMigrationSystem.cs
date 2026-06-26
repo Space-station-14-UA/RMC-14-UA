@@ -51,7 +51,7 @@ public sealed class MapMigrationSystem : EntitySystem
 
         if (!_resMan.TryContentFileRead(path, out var stream))
             return false;
-
+        // Mriya start
         var mrpath = new ResPath(MriyaMigrationFile);
 
         if (_resMan.TryContentFileRead(mrpath, out var mrstream))
@@ -64,7 +64,7 @@ public sealed class MapMigrationSystem : EntitySystem
             combinedStream.Position = 0;
             stream = combinedStream;
         }
-
+        //Mriya end
         using var reader = new StreamReader(stream, EncodingHelpers.UTF8);
         var documents = DataNodeParser.ParseYamlStream(reader).FirstOrDefault();
 
