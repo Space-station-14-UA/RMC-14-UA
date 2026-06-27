@@ -48,3 +48,7 @@ mriya-figurines-nesomi-3 = Чому саме я. . .
 mriya-figurines-nesomi-4 = Ви так гарно виглядаєте
 mriya-figurines-nesomi-5 = Це не лестощі, це просто гарні манери
 
+mriya-figurines-lynette-1 = Мгм. . .
+mriya-figurines-lynette-2 = Ви не бачили пані Розіенне?
+mriya-figurines-lynette-3 = Прибережіть свої накази для морпіхотських Синтетиків.
+mriya-figurines-lynette-4 = Хороша дівчинка, Люнет.

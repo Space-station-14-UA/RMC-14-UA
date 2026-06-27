@@ -70,3 +70,8 @@
     prefix: mriya-figurines-nesomi-
     count: 5
 
+- type: localizedDataset
+  id: MRFigurinesLynette
+  values:
+    prefix: mriya-figurines-lynette-
+    count: 4

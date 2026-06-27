@@ -33,6 +33,7 @@
     - MRFigurineAltra
     - MRFigurineSonechko
     - MRFigurineNesomi
+    - MRFigurineLynette
 
 - type: entity
   parent: MRFigurineBase
@@ -256,3 +257,21 @@
     sound:
      path: /Audio/_RMC14/Effects/Cloak/cloak_scout_on.ogg
     handle: false
+
+- type: entity
+  parent: MRFigurineBase
+  id: MRFigurineLynette
+  name: Ліннет
+  description: Ця фігурка нагадує вам ту неясну фігуру, яку ви інколи помічаєте краєм ока на Саванні, поки вона не зникне на другому поверсі, супроводжуючи іншу ніану. Чи ту, що самотньо блукає колоніями, наче шукаючи когось.
+  components:
+  - type: Sprite
+    state: lynette
+  - type: Speech
+    speechSounds: Moth
+  - type: SpeakOnTrigger
+    pack: MRFigurinesLynette
+  - type: EmitSoundOnActivate
+    sound:
+     path: /Audio/Effects/pill_insert.ogg
+    handle: false
+    
