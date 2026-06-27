@@ -7,4 +7,4 @@
       role: CMJobSeniorEnlistedAdvisor
       time: 252000 # Золото, 70 годин
   equipment:
-    id: MRGlassesSEASight
+    eyes: MRGlassesSEASight
