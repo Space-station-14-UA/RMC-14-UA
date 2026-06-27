@@ -1,0 +1,39 @@
+- type: entity
+  parent: AbstractHunterMeleeBase
+  id: RMCHunterScimitar
+  name: ятаган
+  description: Довгий, важкий ятаган.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/hunter_scimitar.rsi
+    state: icon
+  - type: Item
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/hunter_scimitar.rsi
+    size: Large
+    inhandVisuals:
+      Left:
+      - state: inhand-left
+      Right:
+      - state: inhand-right
+  - type: MeleeWeapon
+    attackRate: 1.92
+    damage:
+      types:
+        Slash: 18
+    soundHit:
+      path: /Audio/_Mriya/Hunter/wristblades_hit.ogg
+  - type: HunterClaws
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: BaseItem
+  id: RMCHunterScimitarModule
+  name: модуль ятаганів
+  description: Модуль для браслетів мисливця, що вбудовує висувні ятагани — важчу альтернативу кігтям.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/hunter_scimitar.rsi
+    state: alt
+  - type: HunterClawModule
+    clawPrototype: RMCHunterScimitar

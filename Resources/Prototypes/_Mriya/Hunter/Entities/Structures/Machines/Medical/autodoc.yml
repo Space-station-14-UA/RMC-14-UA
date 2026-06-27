@@ -1,48 +1,52 @@
+# Autodoc Medical Pod (Hunter)
 - type: entity
+  parent: RMCAutodoc
   id: AutodocHunter
-  parent: BaseMachine
-  name: авто-лікар
+  name: авто-лікар мисливців
   description: Просунута технологія що здатна проводити хірургічні операцію на паціенті.
+  suffix: Мисливці, Просунутий
   components:
-  - type: AutodocHunter
-  - type: DoAfter
   - type: Sprite
     sprite: _Mriya/Hunter/Structures/Machines/Medical/autodoc.rsi
-    state: closed # Or whichever state the RSI uses
-    snapCardinals: true
-  - type: Physics
-    bodyType: Static
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StrongMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalGlassBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-  - type: EntityStorage
-    capacity: 1
-    isCollidableWhenOpen: true
-    showContents: false
-    occludesLight: false
-  - type: DragInsertContainer
-    containerId: entity_storage
-  - type: ExitContainerOnMove
-    containerId: entity_storage
-  - type: ContainerContainer
-    containers:
-      entity_storage: !type:Container
-  - type: ActivatableUI
-    key: enum.AutodocHunterUiKey.Key
-    requireLock: false
-    requireHands: false
+    drawdepth: Mobs
+    noRot: true
+    layers:
+    - state: open
+      map: ["enum.AutodocVisualLayers.Base"]
+  - type: Autodoc
+    spawnConsolePrototype: AutodocHunterConsole
+    skillRequired: {}
+    consoleSpawnOffset: 1, 0
+    forceConsoleEast: true
+  - type: GenericVisualizer
+    visuals:
+      enum.AutodocVisuals.State:
+        enum.AutodocVisualLayers.Base:
+          Empty: { state: open }
+          Occupied: { state: closed }
+          Operating: { state: operate }
+
+# Autodoc Console (Hunter)
+- type: entity
+  parent: RMCAutodocConsole
+  id: AutodocHunterConsole
+  name: консоль авто-лікаря мисливців
+  description: Інтерфейс керування, який використовується для керування суміжним авто-лікарем. Налаштовано на автоматичний режим.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/Medical/autodock console.rsi
+    noRot: true
+    layers:
+    - state: sleeperconsole-p
+    - state: sleeperconsole
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: AutodocConsole
+    installedUpgrades:
+    - InternalBleeding
+    - BrokenBone
+    - OrganDamage
+    - LarvaExtraction
   - type: UserInterface
     interfaces:
-      enum.AutodocHunterUiKey.Key:
-        type: AutodocHunterBoundUserInterface
+      enum.AutodocUIKey.Key:
+        type: AutodocHunterConsoleBui

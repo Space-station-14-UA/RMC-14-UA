@@ -60,6 +60,9 @@
       - id: RMCHunterClawModule
         name: Наручні кігті
         amount: 3
+      - id: RMCHunterScimitarModule
+        name: Ятагани
+        amount: 3
     - name: Аксесуари
       entries:
       - id: RMCHunterCape

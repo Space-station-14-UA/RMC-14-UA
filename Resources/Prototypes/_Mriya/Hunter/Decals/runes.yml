@@ -94,7 +94,6 @@
     sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
     state: rune_ne
 
-
 - type: decal
   id: HunterRuneAngle_ne
   name: руна мисливця 
@@ -142,3 +141,66 @@
   sprite:
     sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
     state: rune_angle_nw
+
+
+
+- type: decal
+  id: HunterBigRed
+  name: велике червоне щось
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_red_decals.rsi
+    state: big_red
+
+- type: decal
+  id: HunterMedRedBottom
+  name: червоне щось
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_red_decals.rsi
+    state: med_red_bottom
+
+- type: decal
+  id: HunterMedRedBottomTop
+  name: червоне щось (верх)
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_red_decals.rsi
+    state: med_red_bottom_top
+
+- type: decal
+  id: HunterSmallRed
+  name: мале червоне щось
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_red_decals.rsi
+    state: smal_red
+
+- type: decal
+  id: HunterSmallRedFlipped
+  name: мале червоне щось (віддзеркалене)
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_red_decals.rsi
+    state: smal_red_flipped
+    

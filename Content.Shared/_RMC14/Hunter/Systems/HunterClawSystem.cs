@@ -10,6 +10,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Hands;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared._RMC14.Hunter.Events;
+using Content.Shared.Standing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
@@ -40,6 +41,7 @@ public sealed class HunterClawSystem : EntitySystem
 
         SubscribeLocalEvent<HunterClawsComponent, RMCItemDropAttemptEvent>(OnClawDropAttempt);
         SubscribeLocalEvent<HunterClawsComponent, BeingUnequippedAttemptEvent>(OnClawUnequipAttempt);
+        SubscribeLocalEvent<HunterClawsComponent, FellDownThrowAttemptEvent>(OnClawFellDownThrow);
     }
 
     private void OnBraceletsContainerChanged(EntityUid uid, HunterBraceletsComponent component, ContainerModifiedMessage args)
@@ -225,5 +227,10 @@ public sealed class HunterClawSystem : EntitySystem
     private void OnClawUnequipAttempt(EntityUid uid, HunterClawsComponent component, BeingUnequippedAttemptEvent args)
     {
         args.Cancel();
+    }
+
+    private void OnClawFellDownThrow(EntityUid uid, HunterClawsComponent component, ref FellDownThrowAttemptEvent args)
+    {
+        args.Cancelled = true;
     }
 }

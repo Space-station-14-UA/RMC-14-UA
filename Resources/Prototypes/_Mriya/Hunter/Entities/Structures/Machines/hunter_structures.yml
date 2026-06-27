@@ -1,7 +1,8 @@
 - type: entity
   id: SichMicrowave
   parent: KitchenMicrowave
-  name: мікрохвильовка
+  name: мікрохвильова піч
+  description: Пристрій для швидкого приготування їжі за допомогою мікрохвильових хвиль.
   components:
   - type: Sprite
     sprite: _Mriya/Hunter/Structures/Machines/microwave.rsi
@@ -25,7 +26,7 @@
           Broken: { visible: false }
   - type: Appearance
   - type: Construction
-    graph: null
+    _deleted: true
   - type: Machine
     enabled: false
 
@@ -33,6 +34,7 @@
   id: SichVendingMachineHuntSoda
   parent: VendingMachineCola
   name: хант-сода
+  description: Автомат для видачі безалкогольних напоїв людей.
   components:
   - type: VendingMachine
     offState: soda
@@ -42,6 +44,7 @@
     denyState: soda
   - type: Sprite
     sprite: _Mriya/Hunter/Structures/Machines/hunt_soda.rsi
+    snapCardinals: false
     layers:
     - state: soda
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -62,6 +65,10 @@
     sprite: _Mriya/Hunter/Structures/fridge.rsi
     state: closed
   - type: AntiRottingContainer
+  - type: AccessReader
+    _deleted: true
+  - type: Lock
+    _deleted: true
 
 - type: entity
   parent: HunterLockerFridgeEmpty
@@ -149,3 +156,78 @@
   - type: Icon
     sprite: _Mriya/Hunter/Structures/catwalk.rsi
     state: catwalk
+
+- type: entity
+  parent: SpaceHeaterEnabled
+  id: SichFreezer
+  name: охолоджувач
+  description: Пасивний охолоджувач, що генерує холод у зоні навколо.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/freezer.rsi
+    layers:
+    - state: freezer
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Machines/freezer.rsi
+    state: freezer
+  - type: GenericVisualizer
+    _deleted: true
+  - type: WiresVisuals
+    _deleted: true
+  - type: SpaceHeater
+    minTemperature: 233.15
+    maxTemperature: 293.15
+    heatingCoefficientOfPerformance: -0.9
+    coolingCoefficientOfPerformance: -0.9
+    mode: Cool
+  - type: GasThermoMachine
+    minTemperature: 233.15
+    maxTemperature: 293.15
+    targetTemperature: 263.15
+
+- type: entity
+  parent: CMVendorDinnerware
+  id: SichVendorDinnerware
+  name: роздавач посуду
+  description: Автомат для видачі столових приборів та кухонного приладдя.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/dinnerware.rsi
+    layers:
+    - state: dinnerware
+      map: ["enum.VendingMachineVisualLayers.Base"]
+  - type: CMAutomatedVendor
+    baseSprite:
+      sprite: _Mriya/Hunter/Structures/Machines/dinnerware.rsi
+      state: dinnerware
+    animationSprite:
+      sprite: _Mriya/Hunter/Structures/Machines/dinnerware.rsi
+      state: dinnerware-vend
+
+- type: entity
+  parent: RMCChemMasterIndustrial
+  id: SichChemMasterIndustrial
+  name: міксер
+  description: Хімічний маніпулятор промислового класу.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/mixer.rsi
+    layers:
+    - state: mixer0_nopower
+    - state: mixer0
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Machines/mixer.rsi
+    state: mixer0
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: AccessReader
+    _deleted: true
+  - type: RequiresSkill
+    _deleted: true
+

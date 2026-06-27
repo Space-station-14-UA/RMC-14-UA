@@ -7,6 +7,16 @@
 
 - type: tile
   parent: FloorHunter
+  id: HunterFloorAlt
+  sprite: /Textures/_Mriya/Hunter/Tiles/Yautja_ship/hunter_flor_alt.png
+
+- type: tile
+  parent: FloorHunter
+  id: HunterFloorAlt1
+  sprite: /Textures/_Mriya/Hunter/Tiles/Yautja_ship/hunter_flor_alt1.png
+
+- type: tile
+  parent: FloorHunter
   id: FloorHunter1
   sprite: /Textures/_Mriya/Hunter/Tiles/Yautja_ship/hunter_flor1.png
 
@@ -127,7 +137,7 @@
     tags:
     - HideContextMenu
   - type: PointLight
-    radius: 2.0
-    energy: 1.5
+    radius: 8.0
+    energy: 3.0
     color: "#FF2200"
     softness: 1
