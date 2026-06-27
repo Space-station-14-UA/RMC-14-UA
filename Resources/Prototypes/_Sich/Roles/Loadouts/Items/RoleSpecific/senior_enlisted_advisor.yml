@@ -7,4 +7,4 @@
       role: CMJobSeniorEnlistedAdvisor
       time: 252000 # Золото, 70 годин
   equipment:
-    belt: MRGlassesSEASight
+    belt: MRGlassesSEASight # візор з'являється на поясі щоб можна було обрати окуляри й вони не падали на землю коли стаєш уявним другом

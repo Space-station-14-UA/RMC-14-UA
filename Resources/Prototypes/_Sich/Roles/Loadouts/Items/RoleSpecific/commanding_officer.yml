@@ -7,4 +7,4 @@
       role: CMJobCommandingOfficer
       time: 630000 # Платина, 175 годин
   equipment:
-    belt: MRGlassesCOSight
+    belt: MRGlassesCOSight # візор з'являється на поясі щоб можна було обрати окуляри 
