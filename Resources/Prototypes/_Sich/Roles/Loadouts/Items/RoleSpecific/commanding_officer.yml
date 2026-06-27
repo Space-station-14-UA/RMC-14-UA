@@ -7,4 +7,4 @@
       role: CMJobCommandingOfficer
       time: 630000 # Платина, 175 годин
   equipment:
-    eyes: MRGlassesCOSight
+    belt: MRGlassesCOSight
