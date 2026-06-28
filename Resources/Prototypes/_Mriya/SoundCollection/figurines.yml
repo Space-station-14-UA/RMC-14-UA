@@ -1,5 +1,5 @@
 - type: soundCollection
-  id: mriyaMortarTravelExplosion
+  id: MRMortarTravelExplosion
   files:
   - /Audio/_Mriya/Figurines/gun_mortar_travel_explosion1.ogg
   - /Audio/_Mriya/Figurines/gun_mortar_travel_explosion2.ogg

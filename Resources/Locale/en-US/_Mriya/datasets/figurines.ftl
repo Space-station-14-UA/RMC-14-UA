@@ -1,6 +1,6 @@
-mriya-figurines-niavka-1 = ВПЕРЕД, СОБАКИ! ЧИ ВИ ХОЧЕТЕ ЖИТИ ВІЧНО?
-mriya-figurines-niavka-2 = Завжди вірний!
-mriya-figurines-niavka-3 = А хто буде наводити?
+mriya-figurines-nyavka-1 = ВПЕРЕД, СОБАКИ! ЧИ ВИ ХОЧЕТЕ ЖИТИ ВІЧНО?
+mriya-figurines-nyavka-2 = Завжди вірний!
+mriya-figurines-nyavka-3 = А хто буде наводити?
 
 mriya-figurines-anta-1 = Давай вип'ємо?
 

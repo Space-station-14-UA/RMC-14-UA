@@ -1,7 +1,7 @@
 - type: localizedDataset
-  id: MRFigurinesNiavka
+  id: MRFigurinesNyavka
   values:
-    prefix: mriya-figurines-niavka-
+    prefix: mriya-figurines-nyavka-
     count: 3
 
 - type: localizedDataset

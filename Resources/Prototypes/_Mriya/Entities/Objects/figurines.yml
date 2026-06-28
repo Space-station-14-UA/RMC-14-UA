@@ -21,7 +21,7 @@
   - type: RandomSpawner
     prototypes:
     - MRFigurineKholod
-    - MRFigurineNiavka
+    - MRFigurineNyavka
     - MRFigurineAnta
     - MRFigurineNich
     - MRFigurineShepit
@@ -54,28 +54,28 @@
 
 - type: entity
   parent: MRFigurineBase
-  id: MRFigurineNiavka
+  id: MRFigurineNyavka
   name: Куроме 'Нявка' Нявковська
   description: Соколята, пам'ятайте три золотих правила. Перше – міномету не існує. Друге – гранат не існує. Третє – не будь сліпим кошеням, за мною!
   components:
   - type: Sprite
-    state: niavka
+    state: nyavka
   - type: UseDelay
     delay: 60
   - type: Speech
     speechSounds: Cat
   - type: SpeakOnTrigger
-    pack: MRFigurinesNiavka
+    pack: MRFigurinesNyavka
   - type: EmitSoundOnActivate
     sound:
-     collection: mriyaMortarTravelExplosion
+     collection: MRMortarTravelExplosion
     handle: false 
 
 - type: entity
   parent: MRFigurineBase
   id: MRFigurineAnta
   name: Олексій 'Анта' Воробець
-  description: Мама тоже думала що Олексій виросте хорошим хлопчиком. Але Олексій виріс з пляшкою в руці.
+  description: Мама теж думала, що Олексій виросте хорошим хлопчиком. Але Олексій виріс із пляшкою в руці.
   components:
   - type: Sprite
     state: anta
@@ -92,7 +92,7 @@
   parent: MRFigurineBase
   id: MRFigurineNich
   name: Еікіі 'Ніч'
-  description: Не існує вправних морпіхів. Не існує природжених воїнів. Існують лиш справді фартові довбні.
+  description: Не існує вправних морпіхів. Не існує природжених воїнів. Існують лише справді фартові довбні.
   components:
   - type: Sprite
     state: nich
@@ -109,7 +109,7 @@
   parent: MRFigurineBase
   id: MRFigurineShepit
   name: Ланс 'Шепіт' Морган
-  description: Не підпускайте цю фігурку до вендорів з додатковими набоями, ходять слухи що вони вмить зникають.
+  description: Не підпускайте цю фігурку до вендорів з додатковими набоями - ходять чутки, що вони вмить зникають.
   components:
   - type: Sprite
     state: shepit
@@ -139,7 +139,7 @@
   parent: MRFigurineBase
   id: MRFigurineAssi
   name: Грейсон 'Ассі' Карлайн
-  description: Якщо у вашому загоні нема ЛЗ, несіть цю фігурку на БІЦ у вас появиться новий ЛЗ.
+  description: Якщо у вашому загоні нема ЛЗ - несіть цю фігурку на БІЦ та у вас з'явиться новий ЛЗ.
   components:
   - type: Sprite
     state: assi
@@ -172,8 +172,8 @@
 - type: entity
   parent: MRFigurineBase
   id: MRFigurineOmikron
-  name: Датар-Ушар 
-  description: Унатх зростом приблизно 200~210см, середньої тілобудови, пазурі тупі, відсутній безіменний палець лівої руки, роги сильно пошкоджені. На його шиї помітно невеликий кулон, бронзовий хвіст ящірки що перетинається списом.
+  name: "'Омікрон'"
+  description: Унатх зростом приблизно 20~21см, середньої тілобудови, пазурі тупі, відсутній безіменний палець лівої руки, роги сильно пошкоджені. На його шиї помітно невеликий кулон на якому зображено бронзовий хвіст ящірки, що перетинається списом.
   components:
   - type: Sprite
     state: omikron
@@ -185,7 +185,7 @@
   parent: MRFigurineBase
   id: MRFigurineArchangel
   name: Каар 'Архангел'
-  description: Авалі з чорно-червоним пір'ям тримаючи гвинтівку в руках дивится в бік, його ноги та пояс вкриті зеленою-. . кислотою?
+  description: Авалі з чорно-червоним пір'ям тримаючи гвинтівку в руках, дивиться вбік. Його ноги та пояс вкриті зеленою-. . кислотою?
   components:
   - type: Sprite
     state: archangel
@@ -245,7 +245,7 @@
   parent: MRFigurineBase
   id: MRFigurineNesomi
   name: Несомі
-  description: Велика (як для авалі) та фіолетова істота. Чомусь ви почуваєтеся дуже комфортно поряд з ним... Якщо гарно придивитися, то можна помітити різнокольорові пір'їни у гребені.
+  description: Велика (як для авалі) та фіолетова істота. Чомусь ви почуваєтеся дуже комфортно поруч з ним... Якщо гарно придивитися, то можна помітити різнокольорові пір'їни у гребені.
   components:
   - type: Sprite
     state: nesomi
