@@ -227,7 +227,7 @@
 - type: entity
   parent: MRFigurineBase
   id: MRFigurineSonechko
-  name:  Річард 'Сонечко' Мартіноз
+  name: Річард 'Сонечко' Мартіноз
   description: Чемпіон, кращий медик епохи, той, хто переміг королеву самотужки, а також просто Сонечко.
   components:
   - type: Sprite
