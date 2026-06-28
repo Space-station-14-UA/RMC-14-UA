@@ -1,19 +1,19 @@
-rmc-armor-melee = strike resistance
-rmc-armor-bullet = ballistic resistance
-rmc-armor-bio = biohazard protection
-rmc-armor-explosion-armor = blast absorption
-rmc-examine-armor =  - A [color=yellow]{$text}[/color] rating of [color=lightblue]{$value}[/color].
-rmc-examine-armor-xeno-header = [color=white]{CAPITALIZE(SUBJECT($xeno))} has:[/color]
-rmc-examine-armor-xeno = - [color=lightblue]{$armor}[/color] [color=yellow]armor[/color]
-rmc-examine-armor-xeno-frontal = - [color=lightblue]{$armor}[/color] [color=yellow]frontal armor[/color]
-rmc-examine-armor-xeno-side = - [color=lightblue]{$armor}[/color] [color=yellow]side armor[/color]
-rmc-examine-armor-xeno-explosion = - [color=lightblue]{$armor}[/color] [color=yellow]explosion armor[/color]
-rmc-examine-armor-piercing-immune = [color=cyan]This has immunity to armor piercing rounds![/color]
+rmc-armor-melee = захист від ударів
+rmc-armor-bullet = захист від куль
+rmc-armor-bio = біозахист
+rmc-armor-explosion-armor = поглинання вибухів
+rmc-examine-armor =  - [color=yellow]{$text}[/color] - [color=lightblue]{$value}[/color].
+rmc-examine-armor-xeno-header = [color=white]{CAPITALIZE($xeno)} має:[/color]
+rmc-examine-armor-xeno = - [color=lightblue]{$armor}[/color] [color=yellow]броні[/color]
+rmc-examine-armor-xeno-frontal = - [color=lightblue]{$armor}[/color] [color=yellow]передньої броні[/color]
+rmc-examine-armor-xeno-side = - [color=lightblue]{$armor}[/color] [color=yellow]бічної броні[/color]
+rmc-examine-armor-xeno-explosion = - [color=lightblue]{$armor}[/color] [color=yellow]захисту від вибухів[/color]
+rmc-examine-armor-piercing-immune = [color=cyan]Має імунітет до бронебійних куль![/color]
 
-rmc-adjustable-armor-set = Adjust armor values
-rmc-adjustable-armor-examine = It has:
-rmc-adjustable-armor-examine-bullet = - [color=lightblue]{$armor}[/color] [color=yellow]bullet armor[/color]
-rmc-adjustable-armor-examine-melee = - [color=lightblue]{$armor}[/color] [color=yellow]melee armor[/color]
-rmc-adjustable-armor-examine-explosion = - [color=lightblue]{$armor}[/color] [color=yellow]explosion armor[/color]
-rmc-adjustable-armor-examine-bio = - [color=lightblue]{$armor}[/color] [color=yellow]bio armor[/color]
-rmc-adjustable-armor-examine-xeno = - [color=lightblue]{$armor}[/color] [color=yellow]armor[/color]
+rmc-adjustable-armor-set = Налаштувати показники броні
+rmc-adjustable-armor-examine = Має:
+rmc-adjustable-armor-examine-bullet = - [color=lightblue]{$armor}[/color] [color=yellow]захисту від куль[/color]
+rmc-adjustable-armor-examine-melee = - [color=lightblue]{$armor}[/color] [color=yellow]захисту від ударів[/color]
+rmc-adjustable-armor-examine-explosion = - [color=lightblue]{$armor}[/color] [color=yellow]захисту від вибухів[/color]
+rmc-adjustable-armor-examine-bio = - [color=lightblue]{$armor}[/color] [color=yellow]біозахисту[/color]
+rmc-adjustable-armor-examine-xeno = - [color=lightblue]{$armor}[/color] [color=yellow]броні[/color]

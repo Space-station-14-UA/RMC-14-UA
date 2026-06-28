@@ -1,6 +1,6 @@
-rmc-action-popup-aiming-user-must-wield = You must wield the {$gun} with both hands to start aiming with it.
-rmc-action-popup-spotting-user-must-hold = You must hold {$designator} in your active hand to start spotting.
-rmc-action-popup-spotting-user-no-skill = You don't seem to know how to use the spotting function.
-rmc-action-popup-aiming-gun-no-ammo = The {$gun} is unloaded!.
-rmc-action-popup-aiming-target-too-close = The {$target} is too close to get a proper shot!
-rmc-action-popup-aiming-target-blocked = Something is in the way, or you're out of range!
+rmc-action-popup-aiming-user-must-wield = Ви маєте тримати {$gun} двома руками щоб прицілитись.
+rmc-action-popup-spotting-user-must-hold = Ви маєтете тримати {$designator} в активній руці щоб навестись на ціль.
+rmc-action-popup-spotting-user-no-skill = Схоже, ви не знаєте, як користуватись функцією наведення.
+rmc-action-popup-aiming-gun-no-ammo = {$gun} розряджено!.
+rmc-action-popup-aiming-target-too-close = {$target} занадто близько, щоб вдало поцілити!
+rmc-action-popup-aiming-target-blocked = Щось стоїть на заваді, або ви задалеко!

@@ -1,12 +1,12 @@
-﻿cm-access-colony-public = Colony Public
-cm-access-colony-logistics = Colony Logistics
-cm-access-colony-engineering = Colony Engineering
-cm-access-colony-research = Colony Research
-cm-access-colony-brig = Colony Brig
-cm-access-colony-medbay = Colony Medbay
-cm-access-colony-command = Colony Command
-rmc-access-colony-armory = Colony Armory
+cm-access-colony-public = Колонія Загальний
+cm-access-colony-logistics = Колонія Логістичний
+cm-access-colony-engineering = Колонія Інженерний
+cm-access-colony-research = Колонія Дослідницький
+cm-access-colony-brig = Колонія Бріг
+cm-access-colony-medbay = Колонія Медичний
+cm-access-colony-command = Колонія Командний
+rmc-access-colony-armory = Колонія Зброярня
 
-rmc-access-tsepa = TSEPA
-rmc-access-tsepa-brig = TSEPA Brig
-rmc-access-tsepa-inspector = TSEPA Inspector
+rmc-access-tsepa = ІТСПА
+rmc-access-tsepa-brig = ІТСПА Бріг
+rmc-access-tsepa-inspector = ІТСПА Інспектор
