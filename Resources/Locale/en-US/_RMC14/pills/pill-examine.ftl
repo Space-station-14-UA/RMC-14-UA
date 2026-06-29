@@ -1,4 +1,4 @@
-﻿cm-pill-contains = Пігулка містить: {$reagents}
+cm-pill-contains = Пігулка містить: {$reagents}
 cm-pill-contains-none = Пігулка містить нічого.
 
 cm-pill-contents-unknown = Ви не знаєте, що вона містить.
@@ -10,10 +10,10 @@ cm-pill-contents-inaprovaline = Пігулка Іноправаліну. Ста�
 cm-pill-contents-kelotane = Пігулка Келотану. Заліковує опіки.
 cm-pill-contents-tricordrazine = Пігулка Трикордразину. Слабко лікує всі види покоджень.
 rmc-pill-contents-ultrazine = Невідома пігулка.
-rmc-pill-contents-meralyne-bicaridine = A Meralyne-Bicaridine pill. Rapidly heals brute damage.
-rmc-pill-contents-kelotane-dermaline = A Kelotane-Dermaline pill. Rapidly heals burn damage.
-rmc-pill-contents-russianred = A Russian Red pill. A very dangerous radiation-countering substance.
-rmc-pill-contents-antized = A pill of some unique medicine. You believe it can treat necrotic infections.
-rmc-pill-contents-imidazoline = An Imidazoline pill. Used to restore vision from non-congenital eye damage.
-rmc-pill-contents-dexalin-plus = A Dexalin Plus pill. Used to instantly treat oxygen deprivation.
+rmc-pill-contents-meralyne-bicaridine = Пігулка Мералін-Бікардину. Швидко загоює фізичні ушкодження.
+rmc-pill-contents-kelotane-dermaline = Пігулка Келотан-Дермаліну. Швидко загоює опіки.
+rmc-pill-contents-russianred = A Russian Red pill. A very dangerous radiation-countering substance. # НЕ ПЕРЕКЛАДАТИ
+rmc-pill-contents-antized = Пігулка якогось унікального препарату. Ви вірите, що це може вилікувати некротичні інфекції.
+rmc-pill-contents-imidazoline = Пігулка Імідазоліну. Застосовується для відновлення зору після не вроджених ушкоджень ока.
+rmc-pill-contents-dexalin-plus = Пігулка Дексаліну Плюс. Застосовується для негайного лікування асфіксії.
 rmc-pill-contents-iron = Пігулка Заліза. Використовується для швидкого відновлення рівню крові.

@@ -1,4 +1,4 @@
-﻿# military police
+# military police
 cm-job-name-chief-mp = Голова ВСП
 cm-job-description-chief-mp = Адмініструйте бріг. Координуйте всю військову службу правопорядку. Стежте за дотриманням законів на кораблі. Не дайте кораблю зануритися в хаос. Будьте готові у випадку чого взяти командування операцією на себе.
 cm-job-prefix-mp = ГВСП
@@ -17,10 +17,10 @@ CMJobMilitaryPolice = Військовий Поліціянт
 rmc-job-name-honor-guard = Почесна Варта
 rmc-job-prefix-honor-guard = ПВ
 
-rmc-ghost-role-information-riot-control-rules = You are a [color=red][bold]Riot Control Member[/bold][/color]. You are not hostile to any faction.
-                                             You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-                                             You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-                                             You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+rmc-ghost-role-information-riot-control-rules = Ви [color=red][bold]Боєць Придушення Заворушень[/bold][/color]. Ви не ворожі до жодної фракції.
+                                             Ви не пам'ятаєте нічого зі свого попереднього життя, й не пам'ятаєте нічого, що бачили будучи привидом.
+                                             Вам дозволено використовувати знання про гру загалом, такі як стріляти, будувати, використовувати предмети, тощо.
+                                             Вам абсолютно [color=red]ЗАБОРОНЕНО[/color] пам'ятати та називати ім'я, заняття, тощо зі свого минулого персонажа.
 
 rmc-job-name-riot-control = Придушувач Заворушень Морпіхоти
 rmc-ghost-name-riot-control = Придушувач Заворушень Морпіхоти

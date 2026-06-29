@@ -1,5 +1,5 @@
-rmc-machines-button-cannot-be-lifted-weya = The WeYa-Research-Facility lockdown cannot be lifted yet. Please wait another {$minutes} minutes before trying again.
-rmc-machines-button-already-lifted-weya = The WeYa-Research-Facility lockdown has already been lifted.
-rmc-machines-button-marine-announcement-weya = The WeYa-Research-Facility lockdown protocols have been lifted.
+rmc-machines-button-cannot-be-lifted-weya = Карантин Дослідницького Об'єкту Ве-Я ще не можна зняти. Будь ласка, зачекайте ще {$minutes} хвилин, та спробуйте ще.
+rmc-machines-button-already-lifted-weya = Карантин Дослідницького Об'єкту Ве-Я вже знято.
+rmc-machines-button-marine-announcement-weya = Карантин Дослідницького Об'єкту Ве-Я було зняти.
 
-rmc-machines-unpowered = It does not appear to be working.
+rmc-machines-unpowered = Здається, це не працює.

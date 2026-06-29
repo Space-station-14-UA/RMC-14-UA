@@ -1,4 +1,4 @@
-﻿# requisitions
+# requisitions
 cm-job-name-quartermaster = Офіцер Логістики
 cm-job-description-quartermaster = Контролюйте працю відділу постачань. Організуйте вантажників та забезпечте стабільне надсилання всього необхідного на фронт. Сперечайтеся з стрільцем, бо не видали йому 20 гранат.
 cm-job-prefix-quartermaster = ОЛ

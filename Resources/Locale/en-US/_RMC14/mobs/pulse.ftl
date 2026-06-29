@@ -1,3 +1,3 @@
-rmc-pulse-bpm = {$value} bpm
+rmc-pulse-bpm = {$value} уд/хв
 rmc-pulse-thready-machine = >250
-rmc-pulse-thready-hand = extremely weak and fast, patient's artery feels like a thread
+rmc-pulse-thready-hand = надзвичайно слабка і швидка, артерія пацієнта на дотик нагадує нитку

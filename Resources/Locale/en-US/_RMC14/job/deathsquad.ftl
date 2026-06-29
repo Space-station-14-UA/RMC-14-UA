@@ -1,1 +1,1 @@
-﻿rmc-ghost-role-information-deathsquad-description = Listen to your superiors. Follow orders.
+rmc-ghost-role-information-deathsquad-description = Слухайтесь свого керівництва. Слідуйте наказам.

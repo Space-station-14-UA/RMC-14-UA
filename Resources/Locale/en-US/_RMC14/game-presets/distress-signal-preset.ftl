@@ -33,23 +33,23 @@ rmc-distress-signal-got-medal = {$receiver} нагороджено {$award} за
 
 rmc-distress-signal-got-jelly = {$receiver} нагороджено {$award} за: '{$awardDescription}' від {$giver}
 
-rmc-distress-signal-ares-online = ARES. Online. Good morning, marines.
-rmc-distress-signal-bioscan-complete = Bioscan complete. No unknown lifeform signature detected.
-rmc-distress-signal-saving-report = Saving operational report to archive.
-rmc-distress-signal-final-scan = Commencing final systems scan in 3 minutes.
-rmc-distress-signal-admin-start-fail = Can't start distress signal. Requires at least {$minimum} xeno player but we have {$candidates}.
-rmc-distress-signal-operation-name = Operation {$name}
-rmc-distress-signal-preflight-complete = The pre-flight fueling of the dropships is complete.
+rmc-distress-signal-ares-online = ARES. Онлайн. Доброго ранку, морпіхи.
+rmc-distress-signal-bioscan-complete = Біосканування завершено. Ознак невідомих форм життя не виявлено.
+rmc-distress-signal-saving-report = Збереження звіту операції до архіву.
+rmc-distress-signal-final-scan = Початок остаточного сканування систем через 3 хвилини.
+rmc-distress-signal-admin-start-fail = Не вдається подати сигнал лиха. Потрібно щонайменше {$minimum} гравців на ксено, та ми маємо {$candidates}.
+rmc-distress-signal-operation-name = Операція {$name}
+rmc-distress-signal-preflight-complete = Заправка десантних кораблів перед польотом завершена.
 
-rmc-distress-signal-scuttle-unlocked = ARES emergency scuttle authorization is now active. Engineering fusion reactor overload safeties have been released. Qualified engineering personnel may configure working fueled reactors with a multitool.
-rmc-distress-signal-scuttle-first-overload = Emergency reactor overload detected. ARES has begun tracking Almayer engine-core instability.
-rmc-distress-signal-scuttle-stage-one = Warning. Engine-core thermal output is rising beyond safe operating limits. Reactor overload remains active.
-rmc-distress-signal-scuttle-halfway = Warning. Emergency scuttle sequence has reached projected halfway progression. Immediate reactor shutdown is advised if scuttle is no longer desired.
-rmc-distress-signal-scuttle-stage-two = Critical warning. Engine core superheat detected. Structural damage and localized fires are expected near overloaded reactors.
-rmc-distress-signal-scuttle-final = Final warning. Engine-core containment failure is imminent. UNS Almayer emergency scuttle sequence is irreversible.
-rmc-distress-signal-scuttle-deck-creak = The ship's deck worryingly creaks underneath you.
-rmc-distress-signal-scuttle-runaway-meltdown = ALERT: Fusion reactors dangerously overloaded. Runaway meltdown in reactor core imminent.
-rmc-distress-signal-scuttle-heat-aura = The air around the engine core burns against your skin.
-rmc-distress-signal-scuttle-superheat-aura = The engine-core heat becomes searing!
+rmc-distress-signal-scuttle-unlocked = ARES санкціонував аварійне самознищення. Захист від перевантаження термоядерних реакторів вимкнено. Кваліфікований інженерний персонал може переналаштувати справні заправлені реактори за допомогою мультитула.
+rmc-distress-signal-scuttle-first-overload = Помічено початок аварійного самознищення. ARES почав відслідковувати нестабільність ядра Саванни.
+rmc-distress-signal-scuttle-stage-one = Попередження. Виділення тепла ядром вийшло за межі безпечних показників. Перевантаження реакторів залишається активним.
+rmc-distress-signal-scuttle-halfway = Попередження. Аварійне самознищення досягло запланованої половини до завершення. Якщо самознищення більше не необхідне, рекомендується негайно зупинити реактор.
+rmc-distress-signal-scuttle-stage-two = Критичне попередження. Виявлено перегрів ядра. Поблизу перевантажених реакторів очікуються пошкодження конструкцій та локальні пожежі.
+rmc-distress-signal-scuttle-final = Останнє попередження. Руйнування захисного шару ядра неминуче. Самознищення судна ДКП Саванна незворотнє.
+rmc-distress-signal-scuttle-deck-creak = Палуба корабля тривожно скрипить під ногами.
+rmc-distress-signal-scuttle-runaway-meltdown = УВАГА: Термоядерні реактори небезечно перевантажені. Плавлення ядра неминуче.
+rmc-distress-signal-scuttle-heat-aura = Повітря навколо реактору обпалює вашу шкіру!
+rmc-distress-signal-scuttle-superheat-aura = Тепло від ядра стає неймовірно пекучим!
 
-rmc-xeno-announcement-scuttle-first-overload = The talls are overloading the metal hive's burning hearts. Stop them before the sky-hive tears itself apart.
+rmc-xeno-announcement-scuttle-first-overload = Інкубатори перевантажують палаюче серце Металевого Вулика. Зупиніть їх до того, як повітряний вулик розпадеться на друзки.

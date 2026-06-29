@@ -1,13 +1,13 @@
 ﻿# PMCs
-rmc-ghost-role-information-pmc-rules = You are a [color=orange][bold]PMC member[/bold][/color]. You may or may not be hostile to the marines, depending on admin instructions.
-                                             You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-                                             You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-                                             You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+rmc-ghost-role-information-pmc-rules = Ви [color=orange][bold]боєць ПВК[/bold][/color]. Ви можете бути ворожими та не ворожими до морпіхів, залежно від інструкцій адміністрації.
+                                             Ви не пам'ятаєте нічого зі свого попереднього життя, й не пам'ятаєте нічого, що бачили будучи привидом.
+                                             Вам дозволено використовувати знання про гру загалом, такі як стріляти, будувати, використовувати предмети, тощо.
+                                             Вам абсолютно [color=red]ЗАБОРОНЕНО[/color] пам'ятати та називати ім'я, заняття, тощо зі свого минулого персонажа.
 
-rmc-ghost-role-information-pmc-whiteout-rules = You are a [color=orange][bold]PMC Whiteout Operative[/bold][/color]. Follow admin instructions.
-                                             You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-                                             You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-                                             You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+rmc-ghost-role-information-pmc-whiteout-rules = Ви [color=orange][bold]Оперативник ПВК "Вайтаут"[/bold][/color]. Слідкуйте інструкціям адміністрації.
+                                             Ви не пам'ятаєте нічого зі свого попереднього життя, й не пам'ятаєте нічого, що бачили будучи привидом.
+                                             Вам дозволено використовувати знання про гру загалом, такі як стріляти, будувати, використовувати предмети, тощо.
+                                             Вам абсолютно [color=red]ЗАБОРОНЕНО[/color] пам'ятати та називати ім'я, заняття, тощо зі свого минулого персонажа.
 
 rmc-ghost-role-information-pmc-description = Забезпечте безпеку активів Вестон-Ямада. Переконайтеся, що Представник Корпорації у безпеці. Заперечуйте причетність Вестон-Ямади та не довіряйте морпіхам. Стріляйте лише у відповідь або за наказом.
 
@@ -81,13 +81,13 @@ rmc-job-name-pmc-bodyguard-lead = Лідер Охорони
 rmc-ghost-name-pmc-bodyguard-lead = Лідер Найманців Ве-Я (Охоронець Виконавчого Корпората)
 
 rmc-job-name-pmc-corporate-goon = Корпоративнивний Безпековець Ве-Я
-rmc-job-name-pmc-corporate-goon-engi = We-Ya Corporate Security Technician
-rmc-job-name-pmc-corporate-goon-medic = We-Ya Corporate Security Medic
-rmc-job-name-pmc-corporate-goon-leader = We-Ya Corporate Security Lead
-rmc-job-name-pmc-corporate-goon-secguard = We-Ya Security Guard
+rmc-job-name-pmc-corporate-goon-engi = Корпоративний Технік-Безпековець Ве-Я
+rmc-job-name-pmc-corporate-goon-medic = Корпоративний Медик-Безпековець Ве-Я
+rmc-job-name-pmc-corporate-goon-leader = Корпоративний Лідер-Безпековець Ве-Я
+rmc-job-name-pmc-corporate-goon-secguard = Корпоративний Охоронець-Безпековець Ве-Я
 
 rmc-job-name-pmc-pve-team-leader = Лідер Команди
-rmc-job-prefix-pmc-pve-team-leader = TL
+rmc-job-prefix-pmc-pve-team-leader = ЛК
 rmc-job-description-pmc-pve-team-leader = Зменшіть навантаження на Лідера Сил. Впевніться, що ваша команда виконує накази.
 
 rmc-job-name-pmc-pve-force-leader = Лідер Сил
@@ -97,35 +97,35 @@ rmc-job-name-pmc-pve-force-command = Командир Сил
 rmc-job-prefix-pmc-pve-force-command = КС
 rmc-job-description-pmc-pve-force-command = Координуйте свої дії з Лідером Сил та Лідерами Команд, щоб забезпечити виконання ваших інструкцій та отримання вашою всіма заробітної плати.
 
-rmc-ghost-name-pmc-whiteout = We-Ya PMC Whiteout Combat Unit (!DEATHSQUAD!)
-rmc-job-name-pmc-whiteout = Whiteout Team Combat Unit
+rmc-ghost-name-pmc-whiteout = Бойова Одиниця Ве-Я ПВК "Вайтаут" (!DEATHSQUAD!)
+rmc-job-name-pmc-whiteout = Бойова Одиниця "Вайтаут"
 
-rmc-ghost-name-pmc-whiteout-gunner = We-Ya PMC Whiteout Combat Gunner Unit (!DEATHSQUAD!)
-rmc-job-name-pmc-whiteout-gunner = Whiteout Team Combat Gunner Unit
+rmc-ghost-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця Ве-Я ПВК "Вайтаут" (!DEATHSQUAD!)
+rmc-job-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця "Вайтаут"
 
-rmc-job-prefix-pmc-whiteout = WO
+rmc-job-prefix-pmc-whiteout = ВА
 
 # Executives
 
-rmc-ghost-role-information-corp-exec-description = You are an employee of the Weston-Yamada Corporation. You are to support and maintain Weston-Yamada's interests.
+rmc-ghost-role-information-corp-exec-description = Ви працівник Компанії "Вестон-Ямада". Ви повинні підтримувати та захищати інтереси компанії "Вестон-Ямада".
 
-rmc-ghost-name-corp-exec-supervisor = Corporate Executive Supervisor (Neutral)
-rmc-job-name-corp-exec-supervisor = Corporate Executive Supervisor
+rmc-ghost-name-corp-exec-supervisor = Корпоративний Виконавчик Керівник (Нейтральний)
+rmc-job-name-corp-exec-supervisor = Корпоративний Виконавчик Керівник
 
-rmc-ghost-name-corp-exec-ass-man = Corporate Assistant Manager (Neutral)
-rmc-job-name-corp-exec-ass-man = Corporate Assistant Manager
+rmc-ghost-name-corp-exec-ass-man = Асистент Корпоративного Менеджера (Нейтральний)
+rmc-job-name-corp-exec-ass-man = Асистент Корпоративного Менеджера
 
-rmc-ghost-name-corp-exec-div-man = Corporate Division Manager (Neutral)
-rmc-job-name-corp-exec-div-man = Corporate Division Manager
+rmc-ghost-name-corp-exec-div-man = Керівник Корпоративного Підрозділу (Нейтральний)
+rmc-job-name-corp-exec-div-man = Керівник Корпоративного Підрозділу
 
-rmc-ghost-name-corp-exec-chief = Corporate Chief Executive (Neutral)
-rmc-job-name-corp-exec-chief = Corporate Chief Executive
+rmc-ghost-name-corp-exec-chief = Виконавчий Директора ВЕ-Я (Нейтральний)
+rmc-job-name-corp-exec-chief = Виконавчий Директор
 
-rmc-ghost-name-corp-dep-director = WE-YA Deputy Director (Neutral)
-rmc-job-name-corp-dep-director = WE-YA Deputy Director
+rmc-ghost-name-corp-dep-director = Заступник Директора ВЕ-Я (Нейтральний)
+rmc-job-name-corp-dep-director = Заступник Директора ВЕ-Я
 
-rmc-ghost-name-corp-director = WE-YA Director (Neutral)
-rmc-job-name-corp-director = WE-YA Director
+rmc-ghost-name-corp-director = Директор ВЕ-Я (Нейтральний)
+rmc-job-name-corp-director = Директор ВЕ-Я
 
 # CL Bodyguard
 rmc-job-name-executive-bodyguard = Корпоративний Охоронець

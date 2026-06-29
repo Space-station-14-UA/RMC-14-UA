@@ -77,21 +77,21 @@ cm-job-description-platoon-commander = Керуйте операцією ваш�
 cm-job-prefix-platoon-commander = Ком.Вз.
 CMPVEPlatoonCommander = Командувач Взводу
 
-rmc-job-name-pve-forecon-rifleman = Rifleman
-rmc-job-prefix-pve-forecon-rifleman = RFN
+rmc-job-name-pve-forecon-rifleman = Стрілець
+rmc-job-prefix-pve-forecon-rifleman = СТЛ
 
-rmc-job-name-pve-forecon-smartgunner = Smartgun Operator
-rmc-job-prefix-pve-forecon-smartgunner = SGO
+rmc-job-name-pve-forecon-smartgunner = Оператор СмартГана
+rmc-job-prefix-pve-forecon-smartgunner = ОСГ
 
-rmc-job-name-pve-forecon-corpsman = Corpsman
-rmc-job-prefix-pve-forecon-corpsman = HM
+rmc-job-name-pve-forecon-corpsman = Бойовий медик
+rmc-job-prefix-pve-forecon-corpsman = БМ
 
-rmc-job-name-pve-forecon-rto = Radio Telephone Operator
-rmc-job-description-pve-forecon-rto = You are the Radio Telephone Operator. Ensure communications between your squad and Company Command are well kept.
-rmc-job-prefix-pve-forecon-rto = RTO
+rmc-job-name-pve-forecon-rto = Оператор РадіоТелефону
+rmc-job-description-pve-forecon-rto = Ви оператор радіотелефону. Забезпечте комунікацію між вашим загоном та Командуванням.
+rmc-job-prefix-pve-forecon-rto = ОРТ
 
-rmc-job-name-pve-forecon-assistant-lead = Assistant Squad Lead
-rmc-job-prefix-pve-forecon-assistant-lead = ASL
+rmc-job-name-pve-forecon-assistant-lead = Асистент Лідера Загону
+rmc-job-prefix-pve-forecon-assistant-lead = АЛЗ
 
-rmc-job-name-pve-forecon-squad-lead = Squad Lead
-rmc-job-prefix-pve-forecon-squad-lead = SL
+rmc-job-name-pve-forecon-squad-lead = Лідер Загону
+rmc-job-prefix-pve-forecon-squad-lead = ЛЗ

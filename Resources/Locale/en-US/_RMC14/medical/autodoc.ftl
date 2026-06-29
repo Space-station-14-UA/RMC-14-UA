@@ -1,59 +1,59 @@
-rmc-autodoc-window-title = Autodoc Medical System
-rmc-autodoc-no-occupant = No occupant detected.
-rmc-autodoc-no-autodoc-connected = No autodoc connected.
-rmc-autodoc-no-skill = You don't have the training required to operate this equipment.
+rmc-autodoc-window-title = Медична Система "Автодок"
+rmc-autodoc-no-occupant = Пацієнта не виявлено.
+rmc-autodoc-no-autodoc-connected = Автодок не приєднано.
+rmc-autodoc-no-skill = Вас не навчили користуватись цим обладнанням.
 
-rmc-autodoc-occupant-header = Occupant
-rmc-autodoc-name-label = Name:
-rmc-autodoc-health-label = Health:
-rmc-autodoc-status-label = Status:
-rmc-autodoc-blood-level = Blood Level:
-rmc-autodoc-pulse = Pulse:
-rmc-autodoc-reagents = Reagents:
+rmc-autodoc-occupant-header = Пацієнт
+rmc-autodoc-name-label = Ім'я:
+rmc-autodoc-health-label = Здоров'я:
+rmc-autodoc-status-label = Статус:
+rmc-autodoc-blood-level = Рівень Крові:
+rmc-autodoc-pulse = Пульс:
+rmc-autodoc-reagents = Реагенти:
 
-rmc-autodoc-status-alive = Alive
-rmc-autodoc-status-critical = Critical
-rmc-autodoc-status-dead = DEAD
+rmc-autodoc-status-alive = Живий
+rmc-autodoc-status-critical = Критичний
+rmc-autodoc-status-dead = МЕРТВИЙ
 
-rmc-autodoc-damage-header = Occupant Damage
-rmc-autodoc-brute = Brute:
-rmc-autodoc-burn = Burn:
-rmc-autodoc-toxin = Toxin:
-rmc-autodoc-oxygen = Oxygen:
+rmc-autodoc-damage-header = Ушкодження Пацієнта
+rmc-autodoc-brute = Фізичні:
+rmc-autodoc-burn = Опіки:
+rmc-autodoc-toxin = Отруєння:
+rmc-autodoc-oxygen = Асфіксія:
 
-rmc-autodoc-start-surgery = Begin Surgery
-rmc-autodoc-clear-selected = Clear selected
-rmc-autodoc-eject-patient = Eject patient
-rmc-autodoc-import-scan = Import from latest bodyscan
+rmc-autodoc-start-surgery = Почати Операцію
+rmc-autodoc-clear-selected = Очистити обране
+rmc-autodoc-eject-patient = Витягнути пацієнта
+rmc-autodoc-import-scan = Імпортувати з останнього сканування
 
-rmc-autodoc-trauma-surgeries-header = Trauma Surgeries
-rmc-autodoc-brute-treatment = Brute Damage Treatment
-rmc-autodoc-burn-treatment = Burn Damage Treatment
-rmc-autodoc-close-incisions = Close Open Incisions
-rmc-autodoc-shrapnel-removal = Shrapnel Removal Surgery
+rmc-autodoc-trauma-surgeries-header = Операції Ушкоджень
+rmc-autodoc-brute-treatment = Лікування Фізичних Ушкоджень
+rmc-autodoc-burn-treatment = Лікування Опіків
+rmc-autodoc-close-incisions = Закрити Розріз
+rmc-autodoc-shrapnel-removal = Видалити Шрапнель
 
-rmc-autodoc-hematology-header = Hematology Treatments
-rmc-autodoc-blood-transfusion = Blood Transfusion
-rmc-autodoc-dialysis = Dialysis
-rmc-autodoc-toxin-treatment = Toxin Damage Treatment
+rmc-autodoc-hematology-header = Гематологічне Лікування
+rmc-autodoc-blood-transfusion = Переливання Крові
+rmc-autodoc-dialysis = Діаліз
+rmc-autodoc-toxin-treatment = Лікування Отруєння
 
-rmc-autodoc-orthopedic-header = Orthopedic Surgeries
-rmc-autodoc-internal-bleeding = Internal Bleeding Surgery
-rmc-autodoc-broken-bone = Broken Bone Surgery
-rmc-autodoc-organ-damage = Organ Damage Treatment
-rmc-autodoc-larva-extraction = Parasite Extraction
+rmc-autodoc-orthopedic-header = Ортопедичні Операції
+rmc-autodoc-internal-bleeding = Лікування Внутрішньої Кровотечі
+rmc-autodoc-broken-bone = Лікування Переломів
+rmc-autodoc-organ-damage = Лікування Ушкоджених Органів
+rmc-autodoc-larva-extraction = Видалення Паразитів
 
-rmc-autodoc-upgrade-installed = You insert the data disk into the console and the drive whirs to life, reading the data.
-rmc-autodoc-upgrade-already-installed = This upgrade data is already present in the console!
-rmc-autodoc-upgrade-required = The console requires a research upgrade to unlock this procedure.
+rmc-autodoc-upgrade-installed = Ви вставляєте диск з даними в консоль, привід починає гудіти, зчитуючи дані.
+rmc-autodoc-upgrade-already-installed = Це покращення вже присутнє в базі даних консолі!
+rmc-autodoc-upgrade-required = Консоль потребує дослідницького покращення щоб розблокувати цю процедуру.
 
-rmc-autodoc-surgery-starting = The autodoc begins to operate, loud audible clicks lock the pod.
-rmc-autodoc-incisions-starting = The autodoc begins closing surgical incisions.
-rmc-autodoc-larva-starting = The autodoc begins parasite extraction surgery.
+rmc-autodoc-surgery-starting = Автодок починає оперувати, гучні клацання фіксують капсулу.
+rmc-autodoc-incisions-starting = Автодок робить хірургічні розрізи.
+rmc-autodoc-larva-starting = Автодок починає видалення паразита.
 
-rmc-autodoc-no-scan-data = No scan data available to import.
-rmc-autodoc-unneeded = Procedure has been deemed unnecessary.
-rmc-autodoc-complete = The autodoc clicks and opens up having finished the requested operations.
-rmc-autodoc-patient-dead = Patient has expired.
-rmc-autodoc-surgery-aborted = The autodoc malfunctions as surgery is aborted!
-rmc-autodoc-cannot-exit-during-surgery = There's no way you're getting out while this thing is operating on you!
+rmc-autodoc-no-scan-data = Відсутнє сканування для імпорту.
+rmc-autodoc-unneeded = Процедуру було визнано непотрібною.
+rmc-autodoc-complete = Автодок клацає та відчиняється закінчивши зазначені операції.
+rmc-autodoc-patient-dead = Пацієнт помер.
+rmc-autodoc-surgery-aborted = Автодок дає збій, оскільки операцію перервано!
+rmc-autodoc-cannot-exit-during-surgery = Ти нізащо не виберешся звідси, поки ця штука оперує тебе!

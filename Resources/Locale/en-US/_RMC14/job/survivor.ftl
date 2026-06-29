@@ -1,4 +1,4 @@
-﻿# generic survs
+# generic survs
 cm-job-name-survivor = Цивільний Колоніст
 cm-job-description-survivor = Ви пережили напад на об'єкт корпорації. Ви працювали або жили в колонії/станції та вам вдавалося уникати атак чужих... До цього моменту.
 
@@ -222,43 +222,44 @@ rmc-job-name-survivor-xenobiologist = Ксенобіолог
 
 rmc-job-name-survivor-pizza-galaxy = Цивільний - Кур'єр Галактики Піци
 
-rmc-job-name-survivor-commercial-pilot = Weston-Yamada - Commercial Pilot
+rmc-job-name-survivor-commercial-pilot = Вестон-Ямада - Цивільний Пілот
 
-rmc-job-name-survivor-hybrisa-engineer = Electrical Engineer
-rmc-job-name-survivor-construction-worker = Construction Worker
-rmc-job-name-survivor-heavy-vehicle-operator = Heavy Vehicle Operator
+rmc-job-name-survivor-hybrisa-engineer = Електрик
+rmc-job-name-survivor-construction-worker = Будівельник
+rmc-job-name-survivor-heavy-vehicle-operator = Водій Великогабаритної Техніки
 
 # Paramarine survs
 
-rmc-job-greeting-para = You are a member of the RCM's 24th Paramarine Regiment!
+rmc-job-greeting-para = Ви - член 24-го парамаринського полку Королівської Морської Піхоти!
 
-  Outpost Souter was your final posting before withdrawal. With Weston-Yamada buying out Hybrisa, the TSE began pulling its forces off-world. Your regiment was standing down, preparing to hand over control during the transition. Then the outbreak hit. You've spent the last weeks barely holding the outpost together, repelling wave after wave while sheltering what few survivors you could. Now, only your squad remains. The outpost is falling apart, the armoury's dry, and the dropship in the hangar still has no fuel. A distress signal was sent over a week ago. All you can do now is hold your ground — and pray someone answers.
+  Форпост Саутер був вашим останнім місцем служби перед відведенням військ. Після того як Weston-Yamada викупила Гібризу, Імперія Трьох Сонць почала виведення своїх сил із планети. Ваш полк уже готувався передати контроль над форпостом під час зміни влади. Але тоді стався спалах. Останні тижні ви ледве втримували форпост, відбиваючи хвилю за хвилею та захищаючи небагатьох уцілілих. Тепер від усього гарнізону залишився лише ваш загін. Форпост розвалюється, арсенал спорожнів, а десантний шатл в ангарі досі без пального. Сигнал лиха було надіслано понад тиждень тому. Тепер вам залишається лише тримати оборону - і молитися, щоб хтось відгукнувся.
 
-  You are fully aware of the xenonid threat and are able to use this knowledge as you see fit.
+  Ви повністю усвідомлюєте загрозу з боку ксенонідів і можете використовувати ці знання на власний розсуд.
 
-  You are NOT aware of the marines or their intentions.
+  Ви НЕ знаєте про морських піхотинців та їхні наміри.
 
-  You are [bold][color=#51A16C][font size=16]NON-HOSTILE to the UNMC![/font][/color][/bold]
+  Ви [bold][color=#51A16C][font size=16]НЕ ВОРОЖІ до КМПОН![/font][/color][/bold]
 
-rmc-job-name-para = Paramarine Survivor
-rmc-job-description-para = You are a stranded TSE RCM Paramarine. Your dropship is out of fuel and you are stranded on the planet. Do what it takes to survive!
+rmc-job-name-para = Вцілілий-Парамарин
+rmc-job-description-para = Ти - парамарин КМП Імперії Трьох Сонць, що опинився в ізоляції. Твій десантний шатл без пального, і ти застряг на планеті. Зроби все необхідне, щоб вижити!
 
-rmc-job-name-paramarine = Rifleman
-rmc-job-name-para-pilot = Fleet Air Arm Pilot
-rmc-job-name-para-engineer = Assault Engineer
-rmc-job-name-para-medic =  Medical Technician
-rmc-job-prefix-paramarine = 24/PARA
+rmc-job-name-paramarine = Стрілець
+rmc-job-name-para-pilot = Пілот Морпіхотної Авіації
+rmc-job-name-para-engineer = Бойовий Інженер
+rmc-job-name-para-medic = Медичний Технік
+rmc-job-prefix-paramarine = 24/ПАРА
 
-rmc-job-name-para-team-leader = Team Leader
-rmc-job-prefix-para-team-leader = 24/PARA TL
+rmc-job-name-para-team-leader = Лідер Групи
+rmc-job-prefix-para-team-leader = 24/ПАРА ЛГ
 
-rmc-job-name-para-synth = Support Synthetic
-rmc-job-prefix-para-synth = 24/PARA Syn
+rmc-job-name-para-synth = Синтетик Підтримки
+rmc-job-prefix-para-synth = 24/ПАРА Синт
 
-rmc-job-name-para-commander = Commander
-rmc-job-prefix-para-commander = 24/PARA CDR
+rmc-job-name-para-commander = Командер
+rmc-job-prefix-para-commander = 24/ПАРА Ком
 
 # Sorokyne Strata Survs
+# РУСНЯВІ КОМУНЯКИ. НЕ ПЛАНУЄТЬСЯ ДО ВИКОРИСТАННЯ ТА НЕ БУДЕ ПЕРЕКЛАДЕНО
 
 rmc-job-name-survivor-infrastructure-engineer = Inzhener Infrastruktury
 
@@ -311,6 +312,7 @@ rmc-job-prefix-soro-sof-spec = 121/RECON SPEC
 rmc-job-name-soro-sof-soldier = SOF Soldier
 rmc-job-prefix-soro-sof-soldier = 121/RECON SOL
 
+# КОМУНЯКИ ЗАКІНЧИЛИСЬ, ОТ БИ Й В РЕАЛЬНОСТІ ТАК
 # Trijent survs
 
 rmc-job-name-survivor-trijent-chaplain = Священик Дамби Тріджент
@@ -330,6 +332,7 @@ cm-job-name-survivor-trijent-dam-tech = Технік з Обслуговуван
 cm-job-name-survivor-trijent-corporate = Представник Корпорації на Трідженті
 CMSurvivorTrijentCorporate = Представник Корпорації на Трідженті
 
+# ЗНОВУ БІСОВІ КОМУНЯКИ, НЕ ЗАСТОСОВУЮТЬСЯ ТА НЕ ПЕРЕКЛАДАЮТЬСЯ
 # Trijent crashland insert survs
 
 rmc-job-greeting-crashland = You are a member of an SPP recon force! Your primary objective is to survive. You believe a second dropship crashed somewhere to the south east, which was carrying additional weapons. Your orders were simple, recon the site, ascertain if there is a biological weapons program in the area, and if so to secure the colony and retrieve a sample. However your team failed to account for an active anti-air battery near the area. Both your craft and your sister ship crashed. Barely having a chance to catch your breath, you found yourself being assailed by vile xenonids! You and your team have barely held your ground, at the cost of four of your own, but more are coming and ammo is low. You believe a United Nations rescue force is en route.
@@ -359,7 +362,7 @@ rmc-job-prefix-crashland-spec = 173/RECON SPEC
 rmc-job-name-crashland-soldier = Airborne Soldier
 rmc-job-prefix-crashland-soldier = 173/RECON SOL
 
-
+# І ЗНОВУ ЗАКІНЧИЛИСЬ
 # Fiorina Science Annex Survs
 
 cm-job-name-survivor-fiorina-corporate-liaison = Представник Корпорації на Фіоріні
@@ -377,33 +380,33 @@ CMSurvivorFiorinaResearcher = Дослідник Фіоріни
 # у нас в мові немає аналога riot одним словом - мається на увазі підрозділ до заворушень. Поліцейський спецназ дуже розмите поняття, але підходить
 cm-job-name-survivor-riot-officer = Офіцер Поліцейського Спецназу БКМ
 CMSurvivorFiorinaRiotOfficer = Офіцер Поліцейського Спецназу БКМ
-cm-job-prefix-survivor-riot-officer = ОПС ЬКМ
+cm-job-prefix-survivor-riot-officer = ОПС БКМ
 
 CMSurvivorFiorinaPrisonGuard = Корпоративний Охоронець Ве-Я
 
-rmc-job-greeting-riot-in-progress-CMB-RCTL = You are a CMB Riot Control Team Leader!
+rmc-job-greeting-riot-in-progress-CMB-RCTL = Ви - Лідер Групи Придушення Заворушень БКМ!
 
-  You are aware of the xenonid threat.
+  Ви знаєте про загрозу з боку ксенонідів.
 
-  Your primary objective is to survive the outbreak.
+  Ваша головна ціль - пережити це все.
 
-  You are a CMB Riot Control Team Leader, you run a team as part of the Riot Control Unit of the Colony Marshal Bureau. Your dispatcher received a distress signal from the infamous Fiorina Orbital Penitentiary. You figured it was just another typical case of the prison dealing with a riot their understaffed security force couldn't handle, with more and more of its personnel getting dispatched elsewhere in the galaxy. This wasn't the first time CMB officers were called in to assist, but unfortunately for you, this time it also wasn't the 'minor riot' you expected it to be. Loaded up with only beanbags and finding nobody to greet you on the LZ after being dropped off, you and the rest of your team had gone towards the armory to speak to the Quartermaster, but only found corpses of both prisoners and security littered around on the way. Worried about armed prisoners, your team was in the process of switching to lethals in the armory when some sort of huge alien jumped out from the shadows and snatched Jerry away while he was off praying. The thing dragged him off too fast to catch and his screams faded away down the halls, poor bastard. Now, you'll need to decide whether to look for more clues about what the hell happened here, hunt whatever's out there, or hold a position and hope someone else will respond to the distress signal before it's too late...
+  Ви - Лідер Групи Придушення Заворушень БКМ, ви керували групою Придушення Заворушень на колоніях БКМ. Ваш диспетчер отримав сигнал лиха з сумнозвісної орбітальної в'язниці "Фіоріна". Ти вирішив, що це черговий випадок придушення бунту, з яким перевантажена тюремна служба безпеки не впоралась, тим більше що все більше її персоналу перекидають на інші точки в галактиці. Це не перший раз, коли офіцерів БКМ залучають як підкріплення, але, на жаль, цього разу це виявилось зовсім не "незначним бунтом", на який ти розраховував. Озброєні лише травматичними боєприпасами, ви висадились на Зону Посадки і не зустріли жодного опору - і взагалі нікого. Разом із командою ви рушили до збройової, щоб знайти інтенданта, але дорогою натрапили лише на тіла ув'язнених і охоронців, розкидані по коридорах. Побоюючись озброєних в'язнів, ваша група саме переозброювалась у збройовій на бойові набої, коли з темряви раптово вискочила якась величезна істота й схопила Джеррі просто тоді, коли він відійшов помолитись. Вона потягла його з такою швидкістю, що наздогнати було неможливо, і його крики швидко стихли десь у глибині коридорів - бідолаха. Тепер вам доведеться вирішити: шукати більше слідів того, що тут сталося, вистежити цю істоту або зайняти оборону й сподіватися, що хтось відповість на сигнал лиха, перш ніж стане надто пізно...
 
-  You are [bold][color=#51A16C][font size=16]NON-HOSTILE to the UNMC![/font][/color][/bold]
+  Ви [bold][color=#51A16C][font size=16]НЕ ВОРОЖІ до КМПОН![/font][/color][/bold]
 
-rmc-job-greeting-riot-in-progress-CMB-RCO = You are a CMB Riot Control Officer!
+rmc-job-greeting-riot-in-progress-CMB-RCO = Ви - Офіцер Придушення Заворушень БКМ!
 
-  You are aware of the xenonid threat.
+  Ви знаєте про загрозу з боку ксенонідів.
 
-  Your primary objective is to survive the outbreak.
+  Ваша головна ціль - пережити це все.
 
-  You are a CMB Riot Control Officer, a team member of the Riot Control Unit of the Colony Marshal Bureau. Your team leader briefed you on a distress signal coming from the infamous Fiorina Orbital Penitentiary, probably another minor riot going sour fast. The prison was an understaffed mess so you weren't too surprised they had sent out a distress signal, calling you in to do their jobs yet again. Unfortunately for you, this time it also wasn't the 'minor riot' you expected it to be. Loaded up with only beanbags and finding nobody to greet you on the LZ after being dropped off, you and the rest of your team had gone towards the armory to speak to the Quartermaster, but only found corpses of both prisoners and security littered around on the way. Worried about armed prisoners, your team was in the process of switching to lethals in the armory when some sort of huge alien jumped out from the shadows and snatched Jerry away while he was off praying. The thing dragged him off too fast to catch and his screams faded away down the halls, poor bastard. Now, you'll need to decide whether to look for more clues about what the hell happened here, hunt whatever's out there, or hold a position and hope someone else will respond to the distress signal before it's too late...
+  Ви - Офіцер Придушення Заворушень БКМ, боєць групи по Придушенню Заворушень на колоніях БКМ. Твій командир повідомив про сигнал лиха з сумнозвісної орбітальної в'язниці "Фіоріна" - скоріш за все, черговий бунт, що швидко вийшов з-під контролю. Тюрма була недоукомплектованим хаосом, тож тебе не здивувало, що вони викликали підмогу, знову змушуючи вас виконувати їхню роботу. На жаль, цього разу це виявилось зовсім не "незначним бунтом", на який ти розраховував. Озброєні лише гумовими набоями, ви висадились у зоні посадки й не зустріли жодного персоналу. Разом із командою ви рушили до збройової, щоб знайти інтенданта, але дорогою натрапили лише на тіла охоронців і ув'язнених, розкидані по коридорах. Побоюючись озброєних в'язнів, ви саме переозброювались на бойові набої в збройовій, коли з темряви раптово вискочила величезна істота й схопила Джеррі просто в момент, коли він відійшов помолитись. Вона потягла його так швидко, що наздогнати було неможливо, і його крики швидко стихли в коридорах - бідолаха. Тепер вам доведеться вирішити: шукати докази того, що тут сталося, вистежити цю істоту або зайняти оборонну позицію й сподіватися, що хтось відповість на сигнал лиха, перш ніж стане запізно...
 
-  You are [bold][color=#51A16C][font size=16]NON-HOSTILE to the UNMC![/font][/color][/bold]
+  Ви [bold][color=#51A16C][font size=16]НЕ ВОРОЖІ до КМПОН![/font][/color][/bold]
 
 # Kutjevo Refinery Survs
 
-rmc-job-name-survivor-kutjevo-chaplain = Священик Кутєво
+rmc-job-name-survivor-kutjevo-chaplain = Священник Кутєво
 
 rmc-job-name-survivor-kutjevo-corporate = Представник Корпорації на Кутєво
 

@@ -1,19 +1,19 @@
-﻿reagent-name-rmcgenerictoxin = Generic Toxin
-reagent-desc-rmcgenerictoxin = General identification for many similar toxins, sometimes created as a byproduct through chemical reactions.
+reagent-name-rmcgenerictoxin = Загальний Токсин
+reagent-desc-rmcgenerictoxin = Загальна ідентифікація для деяких схожих токсинів, іноді створених я побічний продукт в результаті хімічних реакцій.
 
 reagent-name-rmcmolecularacid = Розведена Молекулярна Кислота
 reagent-desc-rmcmolecularacid = Кислота утворена з невідомої досі сполуки, але, схоже цей зразок не настільки небезпечний як у крові ксеносів.
 
 rmc-body-stings = Ваше тіло злегка пече.
 
-reagent-name-rmclexorin = Lexorin
-reagent-desc-rmclexorin = Lexorin is an extremely dangerous compound that damages tissue and paralyzes the lungs, effectively stopping respiration. Can be deadly in even small doses. Lexorin is effectively countered by variants of dexalin.
+reagent-name-rmclexorin = Лексорин
+reagent-desc-rmclexorin = Лексорин - це неймовірно небезпечна сполука, що шкодить тканинам та паралізує легені, фактично зупиняючи дихання. Смертельний навіть за малого дозування. Різновиди дексаліну ефективно протидіють ефектам лексорину.
 
-reagent-name-rmcmindbreakertoxin = Mindbreaker Toxin
-reagent-desc-rmcmindbreakertoxin = A powerful hallucinogenic compound that is illegal under Marine Law. Causes extreme hallucinations and is very addictive. Formerly known as LSD.
+reagent-name-rmcmindbreakertoxin = Токсин "Майндбрейкер"
+reagent-desc-rmcmindbreakertoxin = Потужна, галюциногенна сполука заборонена Морським Правом. Викликає сильні галюцинації та залежність. Загально відомий як "ЛСД".
 
-reagent-name-rmcblackgoo = Black Goo
-reagent-desc-rmcblackgoo = A strange substance of unknown origin. . .
+reagent-name-rmcblackgoo = Чорний Слиз
+reagent-desc-rmcblackgoo = Дивна субстанція невідомого походження. . .
 
-reagent-name-rmc-chloral-hydrate = Chloral Hydrate
-reagent-desc-rmc-chloral-hydrate = Chloral hydrate was the first synthetically produced sedative-hypnotic drug. It is a powerful sedative which causes near instant sleepiness, but can be deadly in large quantities. Often used together with other anesthetics for surgical procedures.
+reagent-name-rmc-chloral-hydrate = Хлоралгідрат
+reagent-desc-rmc-chloral-hydrate = Хлоралгідрат - це перший синтетично отриманий седативно-снодійний препарат. Це сильнодіючий седативний засіб, що викликає майже миттєву сонливість, але у великих дозах може бути смертельно небезпечним. Часто застосовувався разом з іншими анестетиками під час хірургічних процедур.

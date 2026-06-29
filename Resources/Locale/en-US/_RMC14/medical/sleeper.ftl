@@ -1,39 +1,39 @@
-rmc-sleeper-window-title = Sleeper Console
-rmc-sleeper-no-sleeper-connected = No sleeper connected to this console.
-rmc-sleeper-ejected = {$entity} pops out of the sleeper!
-rmc-sleeper-no-occupant = No occupant detected.
+rmc-sleeper-window-title = Консоль "Сліперу"
+rmc-sleeper-no-sleeper-connected = "Сліпер" не під'єднано до консолі.
+rmc-sleeper-ejected = {$entity} вискакує зі "сліперу"!
+rmc-sleeper-no-occupant = Пацієнта не виявлено.
 
-rmc-sleeper-dialysis-header = Dialysis
-rmc-sleeper-dialysis-active = Active
-rmc-sleeper-dialysis-inactive = Inactive
-rmc-sleeper-dialysis-no-chemicals = Occupant has no chemicals to remove!
-rmc-sleeper-dialysis-ready = Dialysis inactive!
+rmc-sleeper-dialysis-header = Діаліз
+rmc-sleeper-dialysis-active = Активний
+rmc-sleeper-dialysis-inactive = Неактивний
+rmc-sleeper-dialysis-no-chemicals = Пацієнт не має хімікатів для діалізу!
+rmc-sleeper-dialysis-ready = Діаліз неактивний!
 
-rmc-sleeper-occupant-header = Occupant
-rmc-sleeper-auto-eject-dead = Auto-eject if dead:
-rmc-sleeper-auto-eject-dead-on = On
-rmc-sleeper-auto-eject-dead-off = Off
-rmc-sleeper-eject = Eject
+rmc-sleeper-occupant-header = Пацієнт
+rmc-sleeper-auto-eject-dead = Авто-викид якщо мертвий:
+rmc-sleeper-auto-eject-dead-on = Увімк.
+rmc-sleeper-auto-eject-dead-off = Вимк.
+rmc-sleeper-eject = Витягнути
 
-rmc-sleeper-name-label = Name:
-rmc-sleeper-health-label = Health:
-rmc-sleeper-status-label = Status:
-rmc-sleeper-status-alive = Alive
-rmc-sleeper-status-critical = Critical
-rmc-sleeper-status-dead = DEAD
-rmc-sleeper-temperature = Temperature:
+rmc-sleeper-name-label = Ім'я:
+rmc-sleeper-health-label = Здоров'я:
+rmc-sleeper-status-label = Статус:
+rmc-sleeper-status-alive = Живий
+rmc-sleeper-status-critical = Критичний
+rmc-sleeper-status-dead = МЕРТВИЙ
+rmc-sleeper-temperature = Температура:
 
-rmc-sleeper-damage-header = Occupant Damage
-rmc-sleeper-brute = Brute:
-rmc-sleeper-burn = Burn:
-rmc-sleeper-toxin = Toxin:
-rmc-sleeper-oxygen = Oxygen:
+rmc-sleeper-damage-header = Ушкодження Пацієнта
+rmc-sleeper-brute = Фізичні:
+rmc-sleeper-burn = Опіки:
+rmc-sleeper-toxin = Отруєння:
+rmc-sleeper-oxygen = Асфіксія:
 
-rmc-sleeper-blood-level = Blood Level:
-rmc-sleeper-pulse = Pulse:
+rmc-sleeper-blood-level = Рівень Крові:
+rmc-sleeper-pulse = Пульс:
 
-rmc-sleeper-chemicals-header = Occupant Chemicals
-rmc-sleeper-inject = Inject {$amount}u
+rmc-sleeper-chemicals-header = Хімікати Пацієнта
+rmc-sleeper-inject = Ввести {$amount}u
 
-rmc-sleeper-upgrade-installed = As you insert the disk into the console, you hear it whir to life as it reads the data.
-rmc-sleeper-upgrade-already-installed = This console has already been upgraded!
+rmc-sleeper-upgrade-installed = Ви вставляєте диск з даними в консоль, привід оживає гудінням, зчитуючи дані.
+rmc-sleeper-upgrade-already-installed = Ця консоль вже покращена!
