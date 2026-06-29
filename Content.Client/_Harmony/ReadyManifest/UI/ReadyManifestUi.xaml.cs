@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Harmony.ReadyManifest;
 using Content.Shared.Roles;
@@ -63,6 +63,9 @@ public sealed partial class ReadyManifestUi : FancyWindow
 
             foreach (var job in jobs)
             {
+                if(job.Hidden)
+                    continue;
+
                 var readyCount = jobCounts.GetValueOrDefault(job);
 
                 var jobControl = new ReadyManifestJobListing(job, readyCount);
