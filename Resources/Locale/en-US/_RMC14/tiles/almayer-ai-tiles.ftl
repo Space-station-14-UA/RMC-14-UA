@@ -1,2 +1,2 @@
-﻿tiles-cm-ai = ai-room tile
-tiles-cm-ai-glowing = glowing ai-room tile
+﻿tiles-cm-ai = плитка кімнати ші
+tiles-cm-ai-glowing = сяюча плитка кімнати ші

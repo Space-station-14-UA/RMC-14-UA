@@ -1,14 +1,14 @@
 # Fruit choosing
-rmc-xeno-fruit-choose = We will now plant {$fruit} when secreting resin.
+rmc-xeno-fruit-choose = Тепер ми садитимемо {$fruit} при виділенні смоли.
 
 # Plant failures
-rmc-xeno-fruit-plant-failed = We can't plant there!
-rmc-xeno-fruit-plant-failed-weeds = We cannot plant a fruit without a weed garden!
-rmc-xeno-fruit-plant-failed-select = You need to select a fruit to plant first! Use the "Choose Resin Fruit" action.
-rmc-xeno-fruit-plant-failed-hive = These weeds do not belong to our hive; they reject our fruit.
-rmc-xeno-fruit-plant-failed-resin-hole = This location is too close to a resin hole!
-rmc-xeno-fruit-plant-failed-fruit = This location is too close to another fruit!
-rmc-xeno-fruit-plant-failed-node = There is already a resin node here!
+rmc-xeno-fruit-plant-failed = Ми не можемо посадити тут!
+rmc-xeno-fruit-plant-failed-weeds = Ми не можемо посадити фрукт без смоляного садку!
+rmc-xeno-fruit-plant-failed-select = Спочатку виберіть фрукт для висадження! Використайте дію "Choose Resin Fruit".
+rmc-xeno-fruit-plant-failed-hive = Ця трава не належить нашому вулику; вона відмовляється від нашого фрукту.
+rmc-xeno-fruit-plant-failed-resin-hole = Це місце заблизько до смоляної дірки!
+rmc-xeno-fruit-plant-failed-fruit = Це місце заблизько до іншого фрукту!
+rmc-xeno-fruit-plant-failed-node = Тут вже є смоляний вузол!
 
 # Plant success
 rmc-xeno-fruit-plant-limit-exceeded = We cannot sustain another fruit, one will wither away to allow this one to live!

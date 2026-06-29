@@ -1,2 +1,2 @@
-reagent-name-rmcvirusfood = Virus Food
-reagent-desc-rmcvirusfood = A mixture of water, milk, and oxygen. Virus cells can use this mixture to reproduce.
+reagent-name-rmcvirusfood = Вірусна Їжа
+reagent-desc-rmcvirusfood = Суміш води, молока та кисню. Клітини вірусу використовують його для розмноження.

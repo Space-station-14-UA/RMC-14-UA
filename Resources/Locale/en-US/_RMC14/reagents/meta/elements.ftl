@@ -1,8 +1,8 @@
-reagent-name-rmc-sulphuric-acid = sulphuric acid
-reagent-desc-rmc-sulphuric-acid = A corrosive chemical. Keep away from your face.
+reagent-name-rmc-sulphuric-acid = сірчана кислота
+reagent-desc-rmc-sulphuric-acid = Їдкий хімікат. Тримайте подалі від обличчя.
 
-reagent-name-rmc-aluminum = aluminum
-reagent-desc-rmc-aluminum = A silver, soft, non-magnetic, and ductile metal.
+reagent-name-rmc-aluminum = алюміній
+reagent-desc-rmc-aluminum = Срібний, м'ягкий, немагнітний та пластичний метал.
 
-reagent-name-rmc-platinum = platinum
-reagent-desc-rmc-platinum = A precious metal with a silvery-white appearance, known for its resistance to corrosion and high melting point.
+reagent-name-rmc-platinum = платина
+reagent-desc-rmc-platinum = Дорогоцінний метал срібно-білого кольору, відомий своєю стійкістю до корозії та високою температурою плавлення.

@@ -1,11 +1,11 @@
-rmc-records-examine-verb-text = View Scan Report
-rmc-records-examine-no-scan = No scan report on record
-rmc-records-examine-scan-time = Scan from {$time}
+rmc-records-examine-verb-text = Переглянути Звіт Сканування
+rmc-records-examine-no-scan = Відсутній звіт сканування
+rmc-records-examine-scan-time = Сканування від {$time}
 
-rmc-records-autodoc-brute = Brute damage detected
-rmc-records-autodoc-burn = Burn damage detected
-rmc-records-autodoc-toxin = Toxin damage detected
-rmc-records-autodoc-blood = Low blood level
-rmc-records-autodoc-dialysis = Reagent overdose detected
-rmc-records-autodoc-incision = Open surgical incision
-rmc-records-autodoc-larva = Parasitic organism detected
+rmc-records-autodoc-brute = Виявлено фізичну шкоду
+rmc-records-autodoc-burn = Виявлено опіки
+rmc-records-autodoc-toxin = Виявлено отруєння
+rmc-records-autodoc-blood = Низький рівень крові
+rmc-records-autodoc-dialysis = Виявлено передозування реагентами
+rmc-records-autodoc-incision = Відкритий хірургічний надріз
+rmc-records-autodoc-larva = Виявлено паразитичний організм

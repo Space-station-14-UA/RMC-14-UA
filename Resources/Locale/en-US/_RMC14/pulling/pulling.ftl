@@ -1,17 +1,17 @@
-cm-pull-whitelist-denied = We have no use for {THE($name)}, why would we want to touch it?
-cm-pull-whitelist-denied-dead = {THE($name)} is dead, why would we want to touch it?
+cm-pull-whitelist-denied = Нам не потрібно {$name}, навіщо нам це чіпати?
+cm-pull-whitelist-denied-dead = {$name} мертвий, навіщо нам це чіпати?
 
-rmc-pull-paralyze-self = You try to pull {THE($pulled)}, but get a swipe to the head!
-rmc-pull-paralyze-others = {$puller} tries to pull {THE($pulled)}, but gets a swipe to the head instead!
+rmc-pull-paralyze-self = Ви намагаєтесь вхопитись за {$pulled}, але натомість отримуєте удар по голові!
+rmc-pull-paralyze-others = {$puller} намагається вхопитись за {$pulled}, але натомість отримує удар по голові!
 
-rmc-pull-infect-self = You try to pull {$pulled}, but get jumped on and infected in the process!
-rmc-pull-infect-others = {$puller} tries to pull {$pulled}, but gets jumped on and infected in the process!
+rmc-pull-infect-self = Ви намагаєтесь вхопитись за {$pulled}, але на вас наплигують та інфікують в процесі!
+rmc-pull-infect-others = {$puller} намагається вхопитись за {$pulled}, але на нього наплигують та інфікують в процесі!
 
-rmc-prevent-pull-alive = You can't pull {THE($target)} while {SUBJECT($target)} {CONJUGATE-BE($target)} alive!
+rmc-prevent-pull-alive = Ви не можете тягнути {$target} доки {SUBJECT($target)} {CONJUGATE-BE($target)} живий!
 
-rmc-pull-aggressive-self = You have grabbed {$pulled} aggressively!
-rmc-pull-aggressive-others = {$puller} has grabbed {$pulled} aggressively!
-rmc-pull-break-start-self = You struggle to break free of {$puller}'s grip!
-rmc-pull-break-start-others = {$pulled} struggles to break free of {$puller}'s grip!
-rmc-pull-break-finish-self = You break free of {$puller}'s grip!
-rmc-pull-break-finish-others = {$pulled} has broken free of {$puller}'s grip!
+rmc-pull-aggressive-self = Ви схопили {$pulled} агресивніше!
+rmc-pull-aggressive-others = {$puller} схопив {$pulled} агресивніше!
+rmc-pull-break-start-self = Ви пручаєтесь щоб звільнитись з хвату {$puller}!
+rmc-pull-break-start-others = {$pulled} пручається щоб звільнитись з хвату {$puller}!
+rmc-pull-break-finish-self = Ви звільнились з хвату {$puller}!
+rmc-pull-break-finish-others = {$pulled} звільнився з хвату {$puller}!

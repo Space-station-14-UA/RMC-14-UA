@@ -1,2 +1,2 @@
-rmc-reagent-name-special-whiskey = special blend whiskey
-rmc-reagent-desc-special-whiskey = Just when you thought regular station whiskey was good... This silky, amber goodness has to come along and ruin everything.
+rmc-reagent-name-special-whiskey = віскі зі спеціальною сумішшю
+rmc-reagent-desc-special-whiskey = Саме коли ти вже подумав, що звичайний віскі зі станції - це добре... Ось ця шовковиста бурштинова краса й приходить, щоб усе зіпсувати.

@@ -1,4 +1,4 @@
-cm-gun-unskilled = Ви не знаєте як використовувати {THE($gun)}
+cm-gun-unskilled = Ви не знаєте як використовувати {$gun}
 cm-gun-no-ammo-message = Скінчилися набої!
 cm-gun-use-delay = Зачекайте {$seconds} секунд перед тим як знову вистрілити!
 cm-gun-pump-examine = [bold]Натисніть вашу [color=cyan]унікальну[/color] клавішу (Spacebar за замовчуванням) щоб прокачати перед пострілом.[/bold]
@@ -8,13 +8,13 @@ cm-gun-pump-first = Спочатку потрібно прокачати збр�
 rmc-breech-loaded-open-shoot-attempt = Спершу потрібно закрити затвор!
 rmc-breech-loaded-not-ready-to-shoot = Спершу треба передьорнуть затвор!
 rmc-breech-loaded-closed-load-attempt = Спершу треба відкрити затвор!
-rmc-breech-loaded-closed-extract-attempt = You need to open the breech first!
-rmc-breech-loaded-toggle-attempt-cooldown = You must wait before {$action} the chamber again!
-rmc-breech-loaded-open = opening
-rmc-breech-loaded-close = closing
+rmc-breech-loaded-closed-extract-attempt = Спершу відкрийте затвор!
+rmc-breech-loaded-toggle-attempt-cooldown = Ви маєте почекати щоб знову {$action} затвор!
+rmc-breech-loaded-open = відкриванням
+rmc-breech-loaded-close = закриванням
 
-rmc-wield-use-delay = Спочатку зачекайте {$seconds} секунд перш ніж використовувати {THE($wieldable)}!
-rmc-shoot-use-delay = Спочатку зачекайте {$seconds} секунд перед тим як стріляти з {THE($wieldable)}!
+rmc-wield-use-delay = Спочатку зачекайте {$seconds} секунд перш ніж використовувати {$wieldable}!
+rmc-shoot-use-delay = Спочатку зачекайте {$seconds} секунд перед тим як стріляти з {$wieldable}!
 
 rmc-shoot-harness-required = Необхідне спорядження
 rmc-wear-smart-gun-required = Вам треба мати СмартГан, щоб носити їх.
@@ -37,40 +37,40 @@ rmc-iff-toggle-on = увімкнули
 
 rmc-revolver-spin = Ви крутите барабан.
 
-rmc-examine-text-weapon-accuracy = The current accuracy multiplier is [color={$colour}]{TOSTRING($accuracy, "F2")}[/color].
+rmc-examine-text-weapon-accuracy = Поточний множник точності [color={$colour}]{TOSTRING($accuracy, "F2")}[/color].
 
 rmc-examine-text-scatter-max = Поточний максимальний розкид [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусів.
 rmc-examine-text-scatter-min = Поточний мінімальний розкид [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусів.
 rmc-examine-text-shots-to-max-scatter = Треба ще [color={$colour}]{$shots}[/color] пострілів до максимального розкиду.
 rmc-examine-text-iff = [color=cyan]Ця зброя стріляє повз союзників, ігноруючи їх![/color]
-rmc-examine-text-id-lock-no-user = [color=chartreuse]It's unregistered. Pick it up to register yourself as its owner.[/color]
-rmc-examine-text-id-lock = [color=chartreuse]It is registered to [/color][color={$color}]{$name}[/color][color=chartreuse].[/color]
-rmc-examine-text-id-lock-unlocked = [color=chartreuse]It is registered to [/color][color={$color}]{$name}[/color][color=chartreuse], but has its fire restrictions unlocked.[/color]
-rmc-examine-text-execute = [color=red]This gun can be used to execute people with the right skill![/color]
+rmc-examine-text-id-lock-no-user = [color=chartreuse]Незареєстровано. Візьміть в руки щоб зареєструватись як власник.[/color]
+rmc-examine-text-id-lock = [color=chartreuse]Зареєстровано на [/color][color={$color}]{$name}[/color][color=chartreuse].[/color]
+rmc-examine-text-id-lock-unlocked = [color=chartreuse]Зареєстровано на [/color][color={$color}]{$name}[/color][color=chartreuse], але має розблоковану функцію стрільби.[/color]
+rmc-examine-text-execute = [color=red]Ця зброя може використовуватись для страти за наявності необхідної навички![/color]
 
 rmc-gun-rack-examine = [bold]Натисніть свою [color=cyan]унікальну[/color] клавішу (Пробіл за замовченням) щоб поставити перед стрільбою.[/bold]
 rmc-gun-rack-first-with = Вам спочатку потрібно поставити зброю за допомогою {$key}!
 rmc-gun-rack-first = Спочатку треба поставити зброю!
 
-rmc-assisted-reload-fail-angle = You must be standing behind {$target} in order to reload {POSS-ADJ($target)} weapon!
-rmc-assisted-reload-fail-full = {CAPITALIZE(POSS-ADJ($target))} {$weapon} is already loaded.
-rmc-assisted-reload-fail-mismatch = The {$ammo} can't be loaded into a {$weapon}!
-rmc-assisted-reload-start-user = You begin reloading {$target}'s {$weapon}! Hold still...
-rmc-assisted-reload-start-target = {$reloader} begins reloading your {$weapon} with the {$ammo}! Hold still...
+rmc-assisted-reload-fail-angle = Ви маєте стояти позаду {$target} що перезарядити зброю {$target}!
+rmc-assisted-reload-fail-full = {$weapon} {CAPITALIZE($target)} вже заряджено.
+rmc-assisted-reload-fail-mismatch = {$ammo} не можна зарядити в {$weapon}!
+rmc-assisted-reload-start-user = Ви починаєте перезаряджати {$weapon} {$target}! Не ворушіться...
+rmc-assisted-reload-start-target = {$reloader} починає перезаряджати вашу {$weapon} з {$ammo}! Не ворушіться...
 
 rmc-gun-stacks-hit-single = Вцілив!
 rmc-gun-stacks-hit-multiple = Вцілив! {$hits} влучань поспіль!
 rmc-gun-stacks-reset = {$weapon} втрачає дані про ціль, і перемикається на стандарний режим стрільби.
 
-rmc-gun-shoot-air-self = YOU FIRE YOUR { CAPITALIZE($weapon) } INTO THE AIR!
-rmc-gun-shoot-air-other = { CAPITALIZE(THE($user)) } FIRES { CAPITALIZE(THE($weapon)) } INTO THE AIR!
-rmc-gun-shoot-air-blocked = The roof above you is too dense.
-rmc-gun-shoot-air-examine = [bold]Press your [color=cyan]unique action[/color] keybind (Spacebar by default){$harm ->
-    [true] {" while in harm mode"}
+rmc-gun-shoot-air-self = ВИ СТРІЛЯЄТЕ З { CAPITALIZE($weapon) } У ПОВІТРЯ!
+rmc-gun-shoot-air-other = { CAPITALIZE($user) } СТРІЛЯЄ { CAPITALIZE($weapon) } В ПОВІТРЯ!
+rmc-gun-shoot-air-blocked = Дах над вами занадто щільний.
+rmc-gun-shoot-air-examine = [bold]Натисність вашу [color=cyan]унікальну[/color] клавішу (Spacebar за замовчуванням){$harm ->
+    [true] {" доки в бойовому режимі"}
     *[false] {""}
-    } to fire into the air.[/bold]
+    } щоб вистрілити в повітря.[/bold]
 
-rmc-flare-gun-examine = The last signal flare fired has the designation: [color=#ad3b98][bold]{$id}[/bold][/color]
+rmc-flare-gun-examine = Останній вистрілений сигнальний фаєр має розташування: [color=#ad3b98][bold]{$id}[/bold][/color]
 
-expendable-light-starshell-ash-empty-name = extinguished star shell ash
-expendable-light-starshell-ash-empty-desc = Burnt out remains of a star shell
+expendable-light-starshell-ash-empty-name = перегорівший попіл зіркового снаряду
+expendable-light-starshell-ash-empty-desc = Вигорівші залишки зіркового снаряду

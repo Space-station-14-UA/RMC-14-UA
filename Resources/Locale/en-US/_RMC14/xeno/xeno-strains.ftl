@@ -1,4 +1,4 @@
-rmc-xeno-strain-specialized-into = It has specialized into {INDEFINITE($strain)} {$strain}.
+rmc-xeno-strain-specialized-into = Мутували в {INDEFINITE($strain)} {$strain}.
 
 rmc-xeno-trapper-name = Сапер
 rmc-xeno-trapper-description = Ви жертвуєте бомбардуванням, нейротоксином, кислотну завісу, розбризкуванням кислоти, трохи швидкості та трохи здоров'я, зменшення броні щоб отримати здатність створювати кислотні міни та пастки.
