@@ -7,7 +7,7 @@ rmc-xeno-failed-parasite-dead = Ми не можемо інфікувати ме
 rmc-xeno-cant-throw = Ми не можемо жбурнути {$target}!
 
 rmc-xeno-parasite-dead = {CAPITALIZE(SUBJECT($parasite))} {CONJUGATE-BE($parasite)} не рухається.
-rmc-xeno-parasite-announce-infect = Ми відчуваємо, що {$xeno} інфікував інкубатор в {$location}!
+rmc-xeno-parasite-announce-infect = Ми відчуваємо, що {$xeno} інфікував інкубатора в {$location}!
 
 rmc-xeno-parasite-player-pickup = {CAPITALIZE($parasite)} може тримати {REFLEXIVE($parasite)}!
 rmc-xeno-parasite-nonplayer-pull = Тягання {$parasite} може нашкодити {OBJECT($parasite)}!
