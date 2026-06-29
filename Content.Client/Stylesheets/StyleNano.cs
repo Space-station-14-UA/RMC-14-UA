@@ -1842,6 +1842,21 @@ namespace Content.Client.Stylesheets
                         BackgroundColor = FancyTreeSelectedRowColor,
                     }),
 
+                // Harmony start - ready manifest
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorNoReady)
+                    .Prop(Label.StylePropertyFontColor, Color.Red),
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorLowReady)
+                    .Prop(Label.StylePropertyFontColor, Color.Red),
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorMediumReady)
+                    .Prop(Label.StylePropertyFontColor, Color.Orange),
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorHighReady)
+                    .Prop(Label.StylePropertyFontColor, Color.LightGreen),
+                // Harmony end - ready manifest
+
                 // Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)
                     .Prop(Label.StylePropertyFontColor, NanoGold),
