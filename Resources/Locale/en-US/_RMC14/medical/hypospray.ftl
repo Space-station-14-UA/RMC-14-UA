@@ -6,7 +6,7 @@ rmc-hypospray-label-novial = Без Флакону
 
 rmc-hypospray-fail-tacreload = Вас не навчили вставляти це швидше.
 rmc-hypospray-swap-tacreload = Ви починаєте замінювати флакони.
-rmc-hypospray-load-tacreload = Ви починаєте вставляти флакон в {($hypo)}.
+rmc-hypospray-load-tacreload = Ви починаєте вставляти флакон в {$hypo}.
 
 rmc-hypospray-loaded = Має в собі {INDEFINITE($vial)} {$vial}.
 rmc-hypospray-no-vial = Флакон Відсутній.
