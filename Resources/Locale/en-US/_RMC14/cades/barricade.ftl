@@ -18,4 +18,4 @@ rmc-folding-barricade-deploy-finish = Ви розгорнули {$barricade}.
 rmc-folding-barricade-collapse-start = Ви починаєте згортати {$barricade}.
 rmc-folding-barricade-collapse-start-others = {$user} починає згортати {$barricade}.
 rmc-folding-barricade-collapse-finish = Ви згортаєте {$barricade}.
-rmc-folding-barricade-collapse-crowbar-untrained = Ви не знаєте як згорнути {THE($barricade)} за допомогою лому.
+rmc-folding-barricade-collapse-crowbar-untrained = Ви не знаєте як згорнути {$barricade} за допомогою лому.
