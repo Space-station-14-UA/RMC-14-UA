@@ -61,7 +61,7 @@
   - type: Sprite
     state: nyavka
   - type: UseDelay
-    delay: 60
+    delay: 30
   - type: Speech
     speechSounds: Cat
   - type: SpeakOnTrigger
@@ -69,6 +69,9 @@
   - type: EmitSoundOnActivate
     sound:
      collection: MRMortarTravelExplosion
+     params:
+       volume: -6
+       maxDistance: 6.0
     handle: false 
 
 - type: entity
@@ -96,6 +99,8 @@
   components:
   - type: Sprite
     state: nich
+  - type: UseDelay
+    delay: 10
   - type: Speech
     speechSounds: MaleAvali
   - type: SpeakOnTrigger
@@ -120,6 +125,9 @@
   - type: EmitSoundOnActivate
     sound:
      path: /Audio/_RMC14/Weapons/Guns/Reload/gun_sg_reload.ogg
+     params:
+       volume: -6
+       maxDistance: 6.0
     handle: false
 
 - type: entity
@@ -143,11 +151,16 @@
   components:
   - type: Sprite
     state: assi
+  - type: UseDelay
+    delay: 60
   - type: SpeakOnTrigger
     pack: MRFigurinesAssi
   - type: EmitSoundOnActivate
     sound:
      path: /Audio/_RMC14/Effects/tech_notification.ogg
+     params:
+       volume: -6
+       maxDistance: 6.0
     handle: false
 
 - type: entity
@@ -159,7 +172,7 @@
   - type: Sprite
     state: syrena
   - type: UseDelay
-    delay: 300
+    delay: 180
   - type: Speech
     speechSounds: Alto
   - type: SpeakOnTrigger
@@ -167,6 +180,9 @@
   - type: EmitSoundOnActivate
     sound:
      path: /Audio/_RMC14/Weapons/gun_orbital_travel.ogg 
+     params:
+       volume: -6
+       maxDistance: 6.0
     handle: false
 
 - type: entity
@@ -232,6 +248,8 @@
   components:
   - type: Sprite
     state: sonechko
+  - type: UseDelay
+    delay: 10
   - type: Speech
     speechSounds: Alto
   - type: SpeakOnTrigger
@@ -239,6 +257,9 @@
   - type: EmitSoundOnActivate
     sound:
      path: /Audio/_RMC14/Effects/laser_cannon.ogg
+     params:
+       volume: -6
+       maxDistance: 6.0
     handle: false
 
 - type: entity
