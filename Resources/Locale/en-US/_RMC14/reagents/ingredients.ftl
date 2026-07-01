@@ -1,11 +1,11 @@
 reagent-name-rmc-cherry-jelly = вишневе желе
 reagent-desc-rmc-cherry-jelly = Солодке желе зроблене з вишні.
 
-reagent-name-rmc-peanut-butter = арахісове масло
-reagent-desc-rmc-peanut-butter = Кремове масло зроблене з арахісу.
+reagent-name-rmc-peanut-butter = арахісова паста
+reagent-desc-rmc-peanut-butter = Кремова паста зроблена з арахісу.
 
 reagent-name-rmc-batter = Тісто
-reagent-desc-rmc-batter = Суміш муки та інших елементів, таких як сіль, яйце та молоко.
+reagent-desc-rmc-batter = Суміш борошна та інших елементів, таких як сіль, яйце та молоко.
 
 reagent-name-rmc-sprinkles = Посипка
 reagent-desc-rmc-sprinkles = Різнокольорові маленькі шматочки цукру, зазвичай ними посипають пончики. А хто робить дірки в пончиках?
