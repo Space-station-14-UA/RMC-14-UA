@@ -2,8 +2,8 @@
 cmd-rmclistcommendations-desc = Показує список нагород за раундом, гравцем, id або нещодавніми записами.
 cmd-rmclistcommendations-help = Використання:
   rmclistcommendations last <count> [type]
-    - Показує список найнещодавніших нагород
-    - count: кількість найнещодавніших нагород для показу
+    - Показує список нещодавніх нагород
+    - count: кількість нещодавних нагород для показу
     - type: фільтр типу нагород (всі за замовчуванням)
 
   rmclistcommendations round <roundId> [type]
@@ -15,12 +15,12 @@ cmd-rmclistcommendations-help = Використання:
 
   rmclistcommendations player giver <usernameOrId> <count> [type]
     - Показує список нагород виданих гравцем
-    - count: кількість найнещодавніших нагород для показу
+    - count: кількість нещодавніх нагород для показу
     - type: фільтр типу нагород (всі за замовчуванням)
 
   rmclistcommendations player receiver <usernameOrId> <count> [type]
     - Показує список нагород отриманих гравцем
-    - count: кількість найнещодавніших нагород для показу
+    - count: кількість нещодавніх нагород для показу
     - type: фільтр типу нагород (всі за замовчуванням)
 
   Приклади:
@@ -43,18 +43,18 @@ cmd-rmclistcommendations-player-not-found = Гравця '{ $player }' не зн
 cmd-rmclistcommendations-no-results = Не знайдено нагород.
 
 # Headers
-cmd-rmclistcommendations-last-header = Показ { $count } найнещодавніших нагород (requested: { $total }):
+cmd-rmclistcommendations-last-header = Показ { $count } нещодавніх нагород (requested: { $total }):
 cmd-rmclistcommendations-round-header = Нагороди для Раунду { $round } ({ $count } total):
 cmd-rmclistcommendations-id-header = Нагорода { $id }:
-cmd-rmclistcommendations-giver-header = Показ { $count } найнещодавніших виданих нагород (requested: { $total }):
-cmd-rmclistcommendations-receiver-header = Показ { $count } найнещодавніших отриманих нагород (requested: { $total }):
+cmd-rmclistcommendations-giver-header = Показ { $count } нещодавно виданих нагород (requested: { $total }):
+cmd-rmclistcommendations-receiver-header = Показ { $count } нещодавно отриманих нагород (requested: { $total }):
 
 # Format
 cmd-rmclistcommendations-format = id [{ $id }] { $type }: { $name } - { $giverUserName } ({ $giver }) → { $receiverUserName } ({ $receiver }) Round { $round }: { $text }
 
 # Completion hints
 cmd-rmclistcommendations-hint-mode = Режим (last, round, id, або player)
-cmd-rmclistcommendations-hint-mode-last = Показує список найнещодавніших нагород
+cmd-rmclistcommendations-hint-mode-last = Показує список нещодавних нагород
 cmd-rmclistcommendations-hint-mode-round = Показує список нагород за раундом
 cmd-rmclistcommendations-hint-mode-id = Показує список нагород за Id
 cmd-rmclistcommendations-hint-mode-player = Показує список нагород за гравцем
