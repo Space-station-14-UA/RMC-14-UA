@@ -10,8 +10,8 @@ rmc-breech-loaded-not-ready-to-shoot = Спершу треба передьор�
 rmc-breech-loaded-closed-load-attempt = Спершу треба відкрити затвор!
 rmc-breech-loaded-closed-extract-attempt = Спершу відкрийте затвор!
 rmc-breech-loaded-toggle-attempt-cooldown = Ви маєте почекати щоб знову {$action} затвор!
-rmc-breech-loaded-open = відкриванням
-rmc-breech-loaded-close = закриванням
+rmc-breech-loaded-open = відкрити
+rmc-breech-loaded-close = закрити
 
 rmc-wield-use-delay = Спочатку зачекайте {$seconds} секунд перш ніж використовувати {$wieldable}!
 rmc-shoot-use-delay = Спочатку зачекайте {$seconds} секунд перед тим як стріляти з {$wieldable}!
