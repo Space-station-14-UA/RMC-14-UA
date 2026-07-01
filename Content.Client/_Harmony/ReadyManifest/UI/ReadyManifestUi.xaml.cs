@@ -31,6 +31,9 @@ public sealed partial class ReadyManifestUi : FancyWindow
             if (department.EditorHidden)
                 continue;
 
+            if(!department.IsCM) // Особливий компонент, який є в усіх РМСних відділів та відділяє їх від звичайних
+                continue;
+
             departments.Add(department);
         }
 
@@ -64,6 +67,9 @@ public sealed partial class ReadyManifestUi : FancyWindow
             foreach (var job in jobs)
             {
                 if(job.Hidden)
+                    continue;
+
+                if(!job.IsCM) // Особливий компонент, який є в усіх РМСних ролей та відділяє їх від звичайних
                     continue;
 
                 var readyCount = jobCounts.GetValueOrDefault(job);
