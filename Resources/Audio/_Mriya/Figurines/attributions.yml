@@ -13,18 +13,15 @@
   copyright: "Taken from cmss13. Combines source and Explosion3.ogg (https://github.com/cmss13-devs/cmss13/blob/20829c1ee1c4718f6a3413555921b4f6c760d4bf/sound/effects/Explosion3.ogg)"
   source: "https://github.com/cmss13-devs/cmss13/blob/ffb422a67f9bf44cec61e72ef275e48fe769e952/sound/weapons/gun_mortar_travel.ogg"
 
-
 - files: ["gun_mortar_travel_explosion4.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from cmss13. Combines source and Explosion4.ogg (https://github.com/cmss13-devs/cmss13/blob/20829c1ee1c4718f6a3413555921b4f6c760d4bf/sound/effects/Explosion4.ogg)"
   source: "https://github.com/cmss13-devs/cmss13/blob/ffb422a67f9bf44cec61e72ef275e48fe769e952/sound/weapons/gun_mortar_travel.ogg"
 
-
 - files: ["gun_mortar_travel_explosion5.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from cmss13. Combines source and Explosion5.ogg (https://github.com/cmss13-devs/cmss13/blob/20829c1ee1c4718f6a3413555921b4f6c760d4bf/sound/effects/Explosion5.ogg)"
   source: "https://github.com/cmss13-devs/cmss13/blob/ffb422a67f9bf44cec61e72ef275e48fe769e952/sound/weapons/gun_mortar_travel.ogg"
-
 
 - files: ["m5_shoot_explosion3.ogg"]
   license: "CC-BY-SA-3.0"
