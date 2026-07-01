@@ -1,1 +1,1 @@
-rmc-access-denied = Доступ Заборонено
+rmc-access-denied = В доступі відмовлено
