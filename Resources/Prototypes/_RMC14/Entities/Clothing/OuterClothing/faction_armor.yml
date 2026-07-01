@@ -290,7 +290,7 @@
   - type: RMCArmorSpeedTier
     speedTier: light      #Mriya
   - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_LIGHT
-    walkModifier: 0.725   #Mriya Змінено тир броні на легкий, щоб морпіхи постійно в неї не перевдягалися й порушували тим самим СОП
+    walkModifier: 0.725   #Mriya Змінено рівень сповільнення броні на легкий, щоб морпіхи постійно в неї не перевдягалися й порушували тим самим СОП
     sprintModifier: 0.725 #Mriya
   - type: ClothingRequireEquipped
     autoUnequip: true
