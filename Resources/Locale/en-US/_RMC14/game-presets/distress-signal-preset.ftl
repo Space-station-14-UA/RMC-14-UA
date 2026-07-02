@@ -33,7 +33,7 @@ rmc-distress-signal-got-medal = {$receiver} нагороджено {$award} за
 
 rmc-distress-signal-got-jelly = {$receiver} нагороджено {$award} за: '{$awardDescription}' від {$giver}
 
-rmc-distress-signal-ares-online = ARES. Онлайн. Доброго ранку, морпіхи.
+rmc-distress-signal-ares-online = АРЕС. Онлайн. Доброго ранку, морпіхи.
 rmc-distress-signal-bioscan-complete = Біосканування завершено. Ознак невідомих форм життя не виявлено.
 rmc-distress-signal-saving-report = Збереження звіту операції до архіву.
 rmc-distress-signal-final-scan = Початок остаточного сканування систем через 3 хвилини.
