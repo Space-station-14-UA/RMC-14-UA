@@ -100,7 +100,7 @@ rmc-job-description-pmc-pve-force-command = Координуйте свої ді
 rmc-ghost-name-pmc-whiteout = Бойова Одиниця Ве-Я ПВК "Коректор" (!DEATHSQUAD!)
 rmc-job-name-pmc-whiteout = Бойова Одиниця "Коректор"
 
-rmc-ghost-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця Ве-Я ПВК "Вайтаут" (!DEATHSQUAD!)
+rmc-ghost-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця Ве-Я ПВК "Коректор" (!DEATHSQUAD!)
 rmc-job-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця "Вайтаут"
 
 rmc-job-prefix-pmc-whiteout = ВА
