@@ -1,6 +1,6 @@
 rmc-medical-examine-unrevivable = [color=purple][italic]{CAPITALIZE(POSS-ADJ($victim))} очі пусті, жодних ознак життя.[/italic][/color]
 
-rmc-medical-examine-headless = [color=purple][italic]{CAPITALIZE(SUBJECT($victim))} {CONJUGATE-BE($victim)} безумовно мертвий.[/italic][/color]
+rmc-medical-examine-headless = [color=purple][italic]{CAPITALIZE(SUBJECT($victim))} безумовно мертвий.[/italic][/color]
 
 rmc-medical-examine-unconscious = [color=lightblue]{ CAPITALIZE(SUBJECT($victim)) } { GENDER($victim) ->
     [epicene] здається
