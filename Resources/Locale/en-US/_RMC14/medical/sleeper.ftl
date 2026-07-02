@@ -33,7 +33,7 @@ rmc-sleeper-blood-level = Рівень Крові:
 rmc-sleeper-pulse = Пульс:
 
 rmc-sleeper-chemicals-header = Хімікати Пацієнта
-rmc-sleeper-inject = Ввести {$amount}u
+rmc-sleeper-inject = Ввести {$amount}од
 
 rmc-sleeper-upgrade-installed = Ви вставляєте диск з даними в консоль, привід оживає гудінням, зчитуючи дані.
 rmc-sleeper-upgrade-already-installed = Ця консоль вже покращена!
