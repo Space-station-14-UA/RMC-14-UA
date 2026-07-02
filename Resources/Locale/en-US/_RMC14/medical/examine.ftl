@@ -9,7 +9,7 @@ rmc-medical-examine-unconscious = [color=lightblue]{ CAPITALIZE(SUBJECT($victim)
 
 rmc-medical-examine-dead = [color=red]{CAPITALIZE(SUBJECT($victim))} не дихає.[/color]
 
-rmc-medical-examine-dead-simple-mob = [color=red]{CAPITALIZE(SUBJECT($victim))} {CONJUGATE-BE($victim)} МРЕЦЬ. Відкинув копита.[/color]
+rmc-medical-examine-dead-simple-mob = [color=red]{CAPITALIZE(SUBJECT($victim))} МРЕЦЬ. Відкинув копита.[/color]
 
 rmc-medical-examine-dead-xeno = [color=red]{CAPITALIZE(SUBJECT($victim))} {CONJUGATE-BE($victim)} МРЕЦЬ. Відкинула хвоста. Аж до самісінього вулику в небі.[/color]
 
