@@ -97,7 +97,7 @@ rmc-job-name-pmc-pve-force-command = Командир Сил
 rmc-job-prefix-pmc-pve-force-command = КС
 rmc-job-description-pmc-pve-force-command = Координуйте свої дії з Лідером Сил та Лідерами Команд, щоб забезпечити виконання ваших інструкцій та отримання вашою всіма заробітної плати.
 
-rmc-ghost-name-pmc-whiteout = Бойова Одиниця Ве-Я ПВК "Вайтаут" (!DEATHSQUAD!)
+rmc-ghost-name-pmc-whiteout = Бойова Одиниця Ве-Я ПВК "Коректор" (!DEATHSQUAD!)
 rmc-job-name-pmc-whiteout = Бойова Одиниця "Вайтаут"
 
 rmc-ghost-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця Ве-Я ПВК "Вайтаут" (!DEATHSQUAD!)
