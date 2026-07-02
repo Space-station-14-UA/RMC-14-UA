@@ -18,5 +18,5 @@ ui-options-function-rmc-resist = Супротив
 
 ui-options-header-rmc-xeno = Ксеноїд
 
-ui-options-function-cm-xeno-wide-swing = Дальня атака ксено
+ui-options-function-cm-xeno-wide-swing = Направлена атака ксено
 ui-options-function-rmc-xeno-rest = Відпочинок Ксеноїда
