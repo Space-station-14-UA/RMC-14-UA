@@ -38,6 +38,6 @@ rmc-hands-emotes-tailswipe-perform = Дати хвостика
 
 rmc-hands-emotes-get-closer = Підійдіть ближче.
 
-rmc-patting-success-generic = Ви пестите {$target} по спині.
+rmc-patting-success-generic = Ви хлопаєте {$target} по спині.
 rmc-patting-success-generic-others = {$user} пестить {$target} по спині.
 rmc-patting-success-generic-target = {$user} пестить вас по спині.
