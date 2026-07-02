@@ -1,5 +1,5 @@
 rmc-vent-crawling-welded = Намертво заварене!
-rmc-vent-crawling-devoured = Ми занадто повні несучи інкубатора в собі щоб залізти у вентиляцію!
+rmc-vent-crawling-devoured = Ми занадто великі з інкубатором всередині, щоб залізти у вентиляцію!
 rmc-vent-crawling-primed = МИ ВИБУХНЕМО!!!
 
 rmc-vent-crawling-full = Повне!
