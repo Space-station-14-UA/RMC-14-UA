@@ -27,4 +27,4 @@ rmc-fusion-reactor-overload-examine-active = Аварійне переванта
 rmc-fusion-reactor-overload-examine-available = Самознищення авторизоване ARES активне. Прогрес самознищення: {$progress}% з {$reactors}/{$totalReactors} перевантаженим(и) реактором(ами). Час до завершення: {$eta}.
 rmc-fusion-reactor-overload-eta-never = Ніколи
 rmc-fusion-reactor-overload-eta-imminent = неминуче
-rmc-fusion-reactor-overload-eta-time = {$minutes}м {$seconds}с
+rmc-fusion-reactor-overload-eta-time = {$minutes}хв {$seconds}с
