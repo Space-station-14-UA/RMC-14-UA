@@ -20,7 +20,7 @@ rmc-hands-emotes-handshake-self = Ви та {$target} потискаєте ру�
 rmc-hands-emotes-handshake = {$ent} та {$target} потискають руки!
 
 rmc-hands-emotes-handshake-attempt-self = Ви простягаєте руку для рукостискання з {$target}.
-rmc-hands-emotes-handshake-attempt = {$ent} простягає руку {POSS-ADJ($ent)} для рукостискання з {$target}.
+rmc-hands-emotes-handshake-attempt = {$ent} простягає свою руку для рукостискання з {$target}.
 
 rmc-hands-emotes-tailswipe-self = Ми перехрещуємо хвости з {$target}!
 rmc-hands-emotes-tailswipe = {$ent} перехрещує хвіст із {$target}!
