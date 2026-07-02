@@ -7,7 +7,7 @@ rmc-pull-paralyze-others = {$puller} намагається вхопитись �
 rmc-pull-infect-self = Ви намагаєтесь вхопитись за {$pulled}, але на вас наплигують та інфікують в процесі!
 rmc-pull-infect-others = {$puller} намагається вхопитись за {$pulled}, але на нього наплигують та інфікують в процесі!
 
-rmc-prevent-pull-alive = Ви не можете тягнути {$target} доки {SUBJECT($target)} {CONJUGATE-BE($target)} живий!
+rmc-prevent-pull-alive = Ви не можете тягнути {$target} доки {SUBJECT($target)} живий!
 
 rmc-pull-aggressive-self = Ви схопили {$pulled} агресивніше!
 rmc-pull-aggressive-others = {$puller} схопив {$pulled} агресивніше!
