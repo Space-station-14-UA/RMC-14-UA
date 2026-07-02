@@ -103,7 +103,7 @@ rmc-job-name-pmc-whiteout = Бойова Одиниця "Коректор"
 rmc-ghost-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця Ве-Я ПВК "Коректор" (!DEATHSQUAD!)
 rmc-job-name-pmc-whiteout-gunner = Бойова Кулеметна Одиниця "Коректор"
 
-rmc-job-prefix-pmc-whiteout = ВА
+rmc-job-prefix-pmc-whiteout = КТ
 
 # Executives
 
