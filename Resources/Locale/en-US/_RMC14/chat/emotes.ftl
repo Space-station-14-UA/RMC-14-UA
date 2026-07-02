@@ -25,7 +25,7 @@ rmc-hands-emotes-handshake-attempt = {$ent} простягає свою руку
 rmc-hands-emotes-tailswipe-self = Ми перехрещуємо хвости з {$target}!
 rmc-hands-emotes-tailswipe = {$ent} перехрещує хвіст із {$target}!
 
-rmc-hands-emotes-tailswipe-attempt-self = Ми підіймаємо наш хвіст щоб дати хвостик {$target}.
+rmc-hands-emotes-tailswipe-attempt-self = Ми підіймаємо наш хвіст, щоб дати хвостик {$target}.
 rmc-hands-emotes-tailswipe-attempt = {$ent} підіймає свій хвіст, щоб дати хвостик {$target}.
 
 rmc-hands-emotes-left-hanging = Вас залишили на самоті!
