@@ -8,7 +8,7 @@ rmc-hands-emotes-hug-self = Ви обіймаєте {$target}!
 rmc-hands-emotes-hug = {$ent} обіймає {$target}!
 
 rmc-hands-emotes-hug-attempt-self = Ви підіймаєте руки щоб отримати порцію обіймів від {$target}.
-rmc-hands-emotes-hug-attempt = {$ent} підіймає руки {POSS-ADJ($ent)} щоб обійнятись з {$target}.
+rmc-hands-emotes-hug-attempt = {$ent} підіймає свої руки, щоб обійнятись з {$target}.
 
 rmc-hands-emotes-fistbump-self = Ви даєте кулачок {$target}!
 rmc-hands-emotes-fistbump = {$ent} дає кулачок {$target}!
