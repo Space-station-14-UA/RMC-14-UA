@@ -1,7 +1,7 @@
 rmc-stethoscope-heart-healthy = Ви чуєте [color=green]нормальний ритм серцебиття[/color], {POSS-ADJ($target)} серце точно [color=green]здорове[/color].
 rmc-stethoscope-heart-littlebruised = Ви чуєте [color=yellow]тихі шурхоти з кожним ударом серця[/color], можливо {POSS-ADJ($target)} серце [color=yellow]незначно ушкоджене[/color].
 rmc-stethoscope-heart-bruised = Ви чуєте [color=orange]відхилення у ритмі серцебиття[/color], спричинений [color=orange]ушкодженням серця[/color].
-rmc-stethoscope-heart-broken = Ви чуєте [color=red]нерегулярні та додаткові серцеві ритми[/color], ймовірно, спричинені порушенням кровообігу, {POSS-ADJ($target)} безперечно, серце [color=red]не справляється[/color].
+rmc-stethoscope-heart-broken = Ви чуєте [color=red]нерегулярні та додаткові серцеві ритми[/color], ймовірно, спричинені порушенням кровообігу, безперечно, {POSS-ADJ($target)} серце [color=red]не справляється[/color].
 
 rmc-stethoscope-lungs-healthy = Ви також чуєте [color=green]нормальні дихальні шуми[/color], {POSS-ADJ($target)} легені [color=green]здорові[/color], мабуть.
 rmc-stethoscope-lungs-littlebruised = Ви також чуєте [color=yellow]деякий хрип, коли {SUBJECT($target)} дихає[/color], {SUBJECT($target)} можливо страждає від [color=yellow]невеликого ушкодження легень[/color].
