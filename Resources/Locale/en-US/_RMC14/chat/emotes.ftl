@@ -40,4 +40,4 @@ rmc-hands-emotes-get-closer = Підійдіть ближче.
 
 rmc-patting-success-generic = Ви хлопаєте {$target} по спині.
 rmc-patting-success-generic-others = {$user} хлопає {$target} по спині.
-rmc-patting-success-generic-target = {$user} пестить вас по спині.
+rmc-patting-success-generic-target = {$user} хлопає вас по спині.
