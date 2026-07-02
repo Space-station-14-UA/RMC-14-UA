@@ -8,7 +8,7 @@ rmc-power-loader-nothing-attached = Тут нічого не закріплен�
 rmc-power-loader-discard-empty = Ви скидаєте порожні {$ammo}.
 rmc-power-loader-transfer-ammo = Ви переносите {$rounds} {$rounds ->
   [one] набій
-  *[other] набої
+  *[other] набоїв
 } в {$ammo}.
 rmc-power-loader-wrong-weapon = Несумісний тип боєприпасів!
 rmc-power-loader-wrong-ammo = Це різні типи боєприпасів!
