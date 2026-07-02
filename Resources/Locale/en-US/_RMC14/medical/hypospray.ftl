@@ -2,7 +2,7 @@ rmc-hypospray-label = Об'єм: [color=white]{$currentVolume}/{$totalVolume}[/c
     Введення ([color=white]{$transferVolume}u[/color])
 
 rmc-hypospray-label-novial = Без Флакону
-    Введення ([color=white]{$transferVolume}u[/color])
+    Введення ([color=white]{$transferVolume}од[/color])
 
 rmc-hypospray-fail-tacreload = Вас не навчили вставляти це швидше.
 rmc-hypospray-swap-tacreload = Ви починаєте замінювати флакони.
