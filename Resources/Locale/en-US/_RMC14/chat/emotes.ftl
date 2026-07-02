@@ -14,7 +14,7 @@ rmc-hands-emotes-fistbump-self = Ви даєте кулачок {$target}!
 rmc-hands-emotes-fistbump = {$ent} дає кулачок {$target}!
 
 rmc-hands-emotes-fistbump-attempt-self = Ви підносите руку щоб отримати кулачок від {$target}.
-rmc-hands-emotes-fistbump-attempt = {$ent} підносить руку {POSS-ADJ($ent)} щоб отримати кулачок від {$target}.
+rmc-hands-emotes-fistbump-attempt = {$ent} підіймає свій кулачок, щоб отримати кулачок від {$target}.
 
 rmc-hands-emotes-handshake-self = Ви та {$target} потискаєте руки!
 rmc-hands-emotes-handshake = {$ent} та {$target} потискають руки!
