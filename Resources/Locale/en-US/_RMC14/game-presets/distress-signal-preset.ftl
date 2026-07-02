@@ -37,7 +37,7 @@ rmc-distress-signal-ares-online = АРЕС. Онлайн. Доброго ран�
 rmc-distress-signal-bioscan-complete = Біосканування завершено. Ознак невідомих форм життя не виявлено.
 rmc-distress-signal-saving-report = Збереження звіту операції до архіву.
 rmc-distress-signal-final-scan = Початок остаточного сканування систем через 3 хвилини.
-rmc-distress-signal-admin-start-fail = Не вдається подати сигнал лиха. Потрібно щонайменше {$minimum} гравців на ксено, та ми маємо {$candidates}.
+rmc-distress-signal-admin-start-fail = Не вдається почати раунд. Потрібно щонайменше {$minimum} гравців на ксено, але ми маємо лише {$candidates}.
 rmc-distress-signal-operation-name = Операція {$name}
 rmc-distress-signal-preflight-complete = Заправка десантних кораблів перед польотом завершена.
 
