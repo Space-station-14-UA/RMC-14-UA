@@ -1,5 +1,5 @@
 rmc-hands-emotes-highfive-attempt-self = Ви підносите руку щоб дати п'ять {$target}.
-rmc-hands-emotes-highfive-attempt = {$ent} підносить {POSS-ADJ($ent)} руку щоб дати п'ять {$target}.
+rmc-hands-emotes-highfive-attempt = {$ent} підносить свою руку, щоб дати п'ять {$target}.
 
 rmc-hands-emotes-highfive-self = Ви даєте п'ять {$target}!
 rmc-hands-emotes-highfive = {$ent} дає п'ять {$target}!
