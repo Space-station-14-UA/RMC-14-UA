@@ -11,7 +11,7 @@ rmc-medical-examine-dead = [color=red]{CAPITALIZE(SUBJECT($victim))} не дих
 
 rmc-medical-examine-dead-simple-mob = [color=red]{CAPITALIZE(SUBJECT($victim))} МРЕЦЬ. Відкинув копита.[/color]
 
-rmc-medical-examine-dead-xeno = [color=red]{CAPITALIZE(SUBJECT($victim))} {CONJUGATE-BE($victim)} МРЕЦЬ. Відкинула хвоста. Аж до самісінього вулику в небі.[/color]
+rmc-medical-examine-dead-xeno = [color=red]{CAPITALIZE(SUBJECT($victim))} МРЕЦЬ. Відкинула хвоста. Аж до самісінього вулику в небі.[/color]
 
 rmc-medical-examine-alive = [color=green]{CAPITALIZE(SUBJECT($victim))} {CONJUGATE-BE($victim)} живий та дихає.[/color]
 
