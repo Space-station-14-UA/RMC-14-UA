@@ -19,7 +19,7 @@ rmc-xeno-parasite-ai-dying = [color=red]{CAPITALIZE(SUBJECT($parasite))} має 
 rmc-xeno-parasite-ai-eaten = {CAPITALIZE($parasite)} люто роздирають діти поруч!
 
 rmc-xeno-parasite-ghost-carrier-none = {$xeno} не має дітей в сховку!
-rmc-xeno-parasite-ghost-carrier-reserved = {$xeno} заразервував залишок дітей для {REFLEXIVE($xeno)}.
+rmc-xeno-parasite-ghost-carrier-reserved = {$xeno} заразервувала залишок дітей для {REFLEXIVE($xeno)}.
 rmc-xeno-parasite-ghost-carrier-dead = {$xeno} мертвий та всі {POSS-ADJ($xeno)} діти померли разом з {OBJECT($xeno)}.
 
 rmc-xeno-parasite-carrier-death = Рояча купа дрібних ксеносів намагаються втекти з {$xeno}!
