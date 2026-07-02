@@ -29,7 +29,7 @@ cmd-rmcgivecommendation-admin-announcement = { $admin } нагородив { $ty
 # Completion hints
 cmd-rmcgivecommendation-hint-giver = IC ім'я того, хто видає нагороду (будьте обережні вводячи IC ім'я)
 cmd-rmcgivecommendation-hint-giver-highcommand = Стандартний видавець медалей для морпіхів
-cmd-rmcgivecommendation-hint-giver-queen-mother = Стандартний видавець желе для ксенонідів
+cmd-rmcgivecommendation-hint-giver-queen-mother = Стандартний видавець желе для ксеноїдів
 cmd-rmcgivecommendation-hint-receiver = Ім'я користувача або UserId
 cmd-rmcgivecommendation-hint-receiver-name = Ім'я персонажа отримувача (будьте обережні вводячи IC ім'я)
 cmd-rmcgivecommendation-hint-type = Типу (medal або jelly)

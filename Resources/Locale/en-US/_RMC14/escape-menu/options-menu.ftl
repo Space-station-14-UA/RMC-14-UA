@@ -16,7 +16,7 @@ ui-options-function-rmc-interact-with-other-hand = Взаємодіяти з і�
 ui-options-function-rmc-rest = Відпочинок
 ui-options-function-rmc-resist = Супротив
 
-ui-options-header-rmc-xeno = Ксенонід
+ui-options-header-rmc-xeno = Ксеноїд
 
 ui-options-function-cm-xeno-wide-swing = Дальня атака ксено
-ui-options-function-rmc-xeno-rest = Відпочинок Ксеноніда
+ui-options-function-rmc-xeno-rest = Відпочинок Ксеноїда

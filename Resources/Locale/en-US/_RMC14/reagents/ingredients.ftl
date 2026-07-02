@@ -13,8 +13,8 @@ reagent-desc-rmc-sprinkles = Різнокольорові маленькі шм�
 reagent-name-rmc-milkshake = молочний коктейль
 reagent-desc-rmc-milkshake = Звичайне молоко та морозиво. Невже так просто?
 
-reagent-name-mango-agua-fresca = гуаяба
-reagent-desc-mango-agua-fresca = Ідеально підходить для літнього вечора. Та шаурми.
+reagent-name-mango-agua-fresca = мангова агуа-фреска
+reagent-desc-mango-agua-fresca = Ідеально підходить для літнього вечора.
 
 reagent-name-mango-cooler = манговий коктейль
 reagent-desc-mango-cooler = Напій для ночі посеред літа.

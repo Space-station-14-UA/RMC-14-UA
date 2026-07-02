@@ -1,8 +1,8 @@
 rmc-xeno-failed-cant-infect = Ми не можемо інфікувати {$target}!
 rmc-xeno-failed-cant-reach = Ми не можемо дістатись до {$target}, вони мають лежати!
 rmc-xeno-failed-target-dead = Ми не можемо інфікувати мерця!
-rmc-xeno-infect-success = Маленький ксенонід врізається в {$clothing} {$target} та скидує його!
-rmc-xeno-infect-fail = Маленький ксенонід врізається в {$clothing} {$target}!
+rmc-xeno-infect-success = Маленький ксеноїд врізається в {$clothing} {$target} та скидує його!
+rmc-xeno-infect-fail = Маленький ксеноїд врізається в {$clothing} {$target}!
 rmc-xeno-failed-parasite-dead = Ми не можемо інфікувати мертвою дитиною!
 rmc-xeno-cant-throw = Ми не можемо жбурнути {$target}!
 
