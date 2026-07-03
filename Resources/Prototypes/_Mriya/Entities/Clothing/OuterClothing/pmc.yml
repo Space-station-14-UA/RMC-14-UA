@@ -1,0 +1,8 @@
+- type: entity
+  parent: CMArmorM4PMCLight
+  id: MRRMCArmorM4PMCNoLight
+  suffix: ГШР, дуже легка
+  components:
+  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
+    walkModifier: 0.897
+    sprintModifier: 0.897
