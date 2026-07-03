@@ -1,6 +1,6 @@
 - type: entity
   parent: CMArmorM4PMCLight
-  id: MRRMCArmorM4PMCNoLight
+  id: MRCMArmorM4PMCLight
   suffix: ГШР, дуже легка
   components:
   - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
