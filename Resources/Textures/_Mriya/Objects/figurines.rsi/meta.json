@@ -1,0 +1,56 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from RMC14 at commit https://github.com/Violentfire/RMC-14/commit/d0aa958. Characters created by their respective owners. Each item worn has its respective license and copyright.Final sprites by HorvatBG-gif (github) ",
+    "size": {
+        "x": 32,
+        "y": 34
+    },
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "kholod"
+        },
+        {
+            "name": "nyavka"
+        },
+        {
+            "name": "anta"
+        },
+        {
+            "name": "nich"
+        },
+        {
+            "name": "shepit"
+        },
+        {
+            "name": "shield"
+        },
+        {
+            "name": "assi"
+        },
+        {
+            "name": "syrena"
+        },
+        {
+            "name": "omikron"
+        },
+        {
+            "name": "archangel"
+        },
+        {
+            "name": "altra"
+        },
+        {
+            "name": "sonechko"
+        },
+        {
+            "name": "nesomi"
+        },
+        {
+            "name": "lynette"
+        }
+    ]
+}

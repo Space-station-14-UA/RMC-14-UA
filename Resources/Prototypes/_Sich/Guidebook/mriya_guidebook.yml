@@ -14,6 +14,7 @@
   text: "/ServerInfo/Guidebook/_Sich/RMC14.xml"
   children:
   - RMCGuideNewPlayer
+  - MRGuidesMarineNavigation # Додав Dmytr0-Translate
   - RMCGuideMarine
   - RMCGuideXenonid
   - RMCSurvivor
@@ -43,14 +44,23 @@
   name: "Дрон"
   text: "/ServerInfo/Guidebook/_Sich/Guides/Xenonid/RMCGuideRoleDrone.xml"
 
+# Посібник морпіхів з посиланням на інші
+- type: guideEntry # Створив Dmytr0-Translate
+  parent: Mriya
+  id: MRGuidesMarineNavigation
+  priority: 2
+  name: "Навігація по посібникам КМПОН"
+  text: "/ServerInfo/Guidebook/_Sich/Guides/Marines/MRGuidesMarineNavigation.xml"
+
 # Ролі морпіхів
 - type: guideEntry
   parent: Mriya
   id: RMCGuideMarine
   name: "Ролі та Посібники Морпіхоти"
-  priority: 2
+  priority: 3
   text: "/ServerInfo/Guidebook/_Sich/RMC14.xml"
   children:
+  - MRMarineStructure
   - RMCGuideCommandRoles
   - RMCMedical
   - RMCGuideMarineCommunications
@@ -66,6 +76,13 @@
   - RMCGuideFood
   - RMCGuideDrinks
   - RMCGuideNewIcons
+
+- type: guideEntry # Створив Dmytr0-Translate
+  parent: Mriya
+  id: MRMarineStructure
+  priority: 1
+  name: "Структура морської піхоти"
+  text: "/ServerInfo/Guidebook/_Sich/Guides/Marines/MRMarineStructure.xml"
 
 - type: guideEntry # Перекладав Dmytr0-Translate
   parent: Mriya
