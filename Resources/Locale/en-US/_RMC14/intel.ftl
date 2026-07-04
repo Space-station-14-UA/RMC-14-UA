@@ -126,7 +126,7 @@ rmc-intel-tech-unlock-tier-3-name = Розблокувати Рівень 3
 rmc-intel-tech-unlock-tier-4-name = Розблокувати Рівень 4
 rmc-intel-tech-unlock-tier-description = Підвищує рівень авторизації активів.
 rmc-intel-tech-requisition-arc-name = БТР-Р Хамві
-rmc-intel-tech-requisition-arc-description = Розблоковує Хамві в розвідницькій модифікації, як транспорт.
+rmc-intel-tech-requisition-arc-description = Розблоковує БТР Хамві в розвідницькій модифікації, як транспорт.
 rmc-intel-tech-requisition-budget-name = Додатковий бюджет для Логістики
 rmc-intel-tech-requisition-budget-description = Збільшує бюджет логістики для закупівлі оснащення. Додаткові 10000 доларів.
 rmc-intel-tech-dropship-budget-name = Додатковий бюджет для Шатлів
@@ -147,7 +147,7 @@ rmc-intel-tech-nuclear-device-description = Purchase a nuclear device. Only purc
 ## Tech Tree Announcements
 rmc-intel-tech-announcement-special-assets-author = СПЕЦІАЛЬНІ АКТИВИ САВАННИ АВТОРИЗОВАНО
 rmc-intel-tech-announcement-defcon-author = ПІДВИЩЕННЯ РІВНЯ ГОТОВНОСТІ ЗАХИСТУ САВАННИ
-rmc-intel-tech-announcement-arc = Висадка БТР-Р була авторизована для цієї операції.
+rmc-intel-tech-announcement-arc = Розгортання БТР-Р Хамві в розвідницькій модифікації було авторизована для цієї операції.
 rmc-intel-tech-announcement-requisition-budget = На цю операцію було виділено додатковий бюджет для логістики.
 rmc-intel-tech-announcement-dropship-budget = Для цієї операції надано додаткові ресурси фабрикатора деталей шатлів.
 rmc-intel-tech-announcement-tier-2 = РІВЕНЬ ОЦІНКИ ЗАГРОЗИ ПІДВИЩЕНО ДО ДРУГОГО РІВНЯ. Активи ДРУГОГО РІВНЯ були авторизовані для врегулювання ситуації.

@@ -289,7 +289,7 @@
       -
         - name: rmc-intel-tech-requisition-arc-name
           description: rmc-intel-tech-requisition-arc-description
-          cost: 5
+          cost: 8 # Mriya. 5 в оригіналі, більше, бо інтелу корисний та інтел хай збирає на нього
           events:
           - !type:TechUnlockVehicleEvent
             unlock: VehicleHumveeARC
@@ -299,6 +299,20 @@
           icon:
             sprite: _RMC14/Interface/tech_tree.rsi
             state: humvee
+      # Mriya start
+        - name: mriya-intel-tech-requisition-humvee-name
+          description: mriya-intel-tech-requisition-humvee-description
+          cost: 6 # Не 5, а 6, бо збільшення вартості транспорту
+          events:
+          - !type:TechUnlockVehicleEvent
+            unlock: VehicleHumvee
+          - !type:TechAnnounceEvent
+            author: rmc-intel-tech-announcement-special-assets-author
+            message: mriya-intel-tech-announcement-humvee
+          icon:
+            sprite: _RMC14/Interface/tech_tree.rsi
+            state: humvee
+      # Mriya end
         - name: rmc-intel-tech-requisition-budget-name
           description: rmc-intel-tech-requisition-budget-description
           cost: 6 # Mriya. 7 в оригіналі

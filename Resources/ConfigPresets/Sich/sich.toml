@@ -77,6 +77,7 @@ burrowed_larva_evolution_points_per = 500 # 250 в оригіналі
 larva_queue_roundstart_delay_seconds = 0 # 900 в оригіналі
 larva_queue_wait_seconds = 0 # 300 в оригіналі
 ghosts_can_boo = true # false в оригіналі, бо чому ні
+vehicle_roundstart_threshold_players = 30 # 200 в оригіналі, ми теж хочемо
 
 ## Зміни щодо пілонів та бонусів від них
 king_vote_candidate_time_requirement = 10 # 50 в оригіналі
