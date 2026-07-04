@@ -31,7 +31,7 @@
             CMPilotDropship: [1, 1]
             CMPilotGunship: [1, 1]
             CMDropshipCrewChief: [2, 2]
-            CMVehicleCrewman: [1, 1]
+            CMVehicleCrewman: [0, 0]
             CMSeniorEnlistedAdvisor: [1, 1]
 
             # Інженерія. 3 (4) загалом
