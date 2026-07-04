@@ -161,6 +161,9 @@ ui-options-function-move-stored-item = Перемістити предмет у 
 ui-options-function-rotate-stored-item = Повернути предмет у сховище
 ui-options-function-save-item-location = Зберегти позицію предмета
 ui-options-static-storage-ui = Закріпити сховище на хотбарі
+ui-options-function-smart-equip-suit-storage = Розумне спорядження на броню
+ui-options-function-smart-equip-pocket1 = Розумне спорядження в кишеню 1
+ui-options-function-smart-equip-pocket2 = Розумне спорядження в кишеню 2
 
 ui-options-function-smart-equip-backpack =  Швидко покласти в рюкзак
 ui-options-function-smart-equip-belt = Швидко покласти в пояс

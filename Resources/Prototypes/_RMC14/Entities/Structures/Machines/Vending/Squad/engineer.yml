@@ -131,8 +131,8 @@
         points: 12
       - id: RMCCaseFlamer
         points: 12
-#      - id: RMCM85A1Case – Mriya. Тимчасове видалення гранатометів
-#        points: 24
+      - id: RMCM85A1Case
+        points: 24
       - id: RMCML66DCase
         points: 24
     - name: Предмети Одягу

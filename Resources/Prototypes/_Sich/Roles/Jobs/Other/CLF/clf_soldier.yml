@@ -69,7 +69,7 @@
     shoes: RMCShoesBrown
     id: SichIDCardCLFSoldier
     belt: RMCM276ShotgunShellLoadingRigFill # TODO RMC14
-    back: RMCWeaponShotgunHG3712
+    back: RMCWeaponShotgunM12
     pocket1: RMCFlashlight
     pocket2: RMCPouchFirstAidERTFill
   inhand:

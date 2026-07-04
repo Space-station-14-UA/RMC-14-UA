@@ -286,8 +286,8 @@
 - type: entity
   parent: CMPamphlet
   id: RMCPamphletVehicles
-  name: vehicle training manual
-  description: A manual used to quickly impart vital knowledge on driving vehicles.
+  name: довідник водія транспорту
+  description: Тут описується, як керувати цивільним транспортом.
   components:
   - type: Sprite
     state: pamphlet_vehicle
@@ -301,8 +301,8 @@
 - type: entity
   parent: CMPamphlet
   id: RMCPamphletOverwatch
-  name: overwatch console manual
-  description: A manual used to quickly impart vital knowledge on operating overwatch consoles.
+  name: довідник по консолі спостереження
+  description: Тут описується, як використовувати консоль спостереження.
   components:
   - type: SkillPamphlet
     addSkills:
@@ -314,8 +314,8 @@
 - type: entity
   parent: CMPamphlet
   id: RMCPamphletCanine
-  name: K9 handler instructional pamphlet
-  description: A pamphlet used to quickly impart vital knowledge of taking care of K9 units, even if they aren't exactly real dogs.
+  name: довідник по консолі спостереження
+  description: Тут описується, як поводитися та доглядати за юнітами К9, навіть, якщо вони не дуже собаки.
   components:
   - type: Sprite
     state: pamphlet_k9_handler
@@ -337,8 +337,8 @@
 - type: entity
   parent: CMPamphlet
   id: RMCPamphletVehicleCrewman
-  name: Vehicle Crewman instructional pamphlet
-  description: A manual used to quickly impart vital knowledge of driving heavy-duty vehicles and its maintenance. It also imparts some deep knowledge on related engineering applications.
+  name: довідник оператора транспорту
+  description: Тут описується, як керувати та обслуговувати військові транспортні засоби по типу БТРів. Звісно тут є не мало й інженерних даних.
   components:
   - type: Sprite
     state: pamphlet_vehicle
@@ -478,6 +478,15 @@
   - type: SkillPamphlet
     language: SignLanguage
 
+# gives scandinavian language
+- type: entity
+  parent: CMPamphletLanguage
+  id: CMPamphletLanguageScandinavian
+  name: Трактат про Cкандинавські Фронтири
+  description: Схоже, це літопис скандинавських фронтирів, тіньового регіону, який є предметом багатьох суперечок через конфлікт між СПН та національно-визвольними рухами на їх територіях.
+  components:
+  - type: SkillPamphlet
+    language: Scandinavian
 
 # RESTRICTED LANGUAGES
 

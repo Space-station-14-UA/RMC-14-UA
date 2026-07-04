@@ -547,7 +547,7 @@
       tags:
       - RMCGrenadeM40
       - RMCAirburstGrenade
-    capacity: 0 # Mriya. Тимчасове видалення гранатометів
+    capacity: 3
     soundInsert:
       path: /Audio/_RMC14/Weapons/Guns/Reload/grenade_insert.ogg
       params:
@@ -613,7 +613,7 @@
   - type: Item
     size: Normal
   - type: BallisticAmmoProvider
-    capacity: 0 # Mriya. Тимчасове видалення гранатометів
+    capacity: 5
   - type: ShootAtFixedPoint
     maxFixedRange: 10
   - type: RMCSelectiveFire
@@ -656,7 +656,7 @@
   - type: GunIFF
     enabled: false
   - type: BallisticAmmoProvider
-    capacity: 0 # Mriya. Тимчасове видалення гранатометів
+    capacity: 1
   - type: ShootAtFixedPoint
     maxFixedRange: 10
   - type: RMCSelectiveFire
