@@ -46,7 +46,7 @@
   joinNotifyCrew: true
   latejoinArrivalSound:
     path: /Audio/_RMC14/Announcements/ARES/attention_jingle.ogg
-  marineAuthorityLevel: 5
+  marineAuthorityLevel: 0 # Mriya. 5 в оригіналі, ніяких інструкторів-командирів
   supervisors: rmc-job-supervisors-commander
   whitelisted: true
   accessGroups:
