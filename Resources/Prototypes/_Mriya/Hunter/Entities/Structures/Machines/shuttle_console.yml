@@ -1,0 +1,37 @@
+- type: entity
+  parent: CMComputerDropshipNavigation
+  id: RMCHunterDropshipNavigationComputer
+  name: консоль шатлу
+  description: Система управління польотом шатлу.
+  suffix: Mriya, Hunter
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+    state: console_shuttle
+
+- type: entity
+  parent: CMDropshipDestination
+  id: RMCDropshipDestinationHunterBase
+  name: посадкова зона шатлу
+  suffix: Mriya, Hunter, Base
+  components:
+  - type: DropshipDestination
+    spawn: "/Maps/_Mriya/Hunter/hunter_shuttle.yml"
+
+- type: entity
+  parent: CMDropshipDestination
+  id: RMCDropshipDestinationHunterPlanet1
+  name: точка висадки 1
+  suffix: Mriya, Hunter, Planet 1
+
+- type: entity
+  parent: CMDropshipDestination
+  id: RMCDropshipDestinationHunterPlanet2
+  name: точка висадки 2
+  suffix: Mriya, Hunter, Planet 2
+
+- type: entity
+  parent: CMDropshipDestination
+  id: RMCDropshipDestinationHunterPlanet3
+  name: точка висадки 3
+  suffix: Mriya, Hunter, Planet 3

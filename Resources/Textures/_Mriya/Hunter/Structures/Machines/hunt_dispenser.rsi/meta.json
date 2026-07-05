@@ -8,6 +8,10 @@
     {
       "name": "soda",
       "directions": 4
+    },
+    {
+      "name": "booze",
+      "directions": 4
     }
   ]
 }

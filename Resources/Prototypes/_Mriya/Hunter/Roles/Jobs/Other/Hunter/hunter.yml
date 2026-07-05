@@ -38,6 +38,7 @@
   - type: RMCJobSpawner
     job: CMHunter
   - type: RandomHumanoidAppearance
+    randomizeName: false
   - type: RandomMetadata
     nameSegments:
     - RMCNamesHunterFirst

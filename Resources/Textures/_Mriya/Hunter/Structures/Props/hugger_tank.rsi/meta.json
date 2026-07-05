@@ -6,7 +6,17 @@
   },
   "states": [
     {
-      "name": "tank"
+      "name": "tank",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
     },
     {
       "name": "broken"

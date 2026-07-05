@@ -136,8 +136,3 @@
   - type: Tag
     tags:
     - HideContextMenu
-  - type: PointLight
-    radius: 8.0
-    energy: 3.0
-    color: "#FF2200"
-    softness: 1

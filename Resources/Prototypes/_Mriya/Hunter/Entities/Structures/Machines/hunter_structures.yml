@@ -29,6 +29,8 @@
     _deleted: true
   - type: Machine
     enabled: false
+  - type: ApcPowerReceiver
+    needsPower: false
 
 - type: entity
   id: SichVendingMachineHuntSoda
@@ -42,13 +44,39 @@
     normalState: soda
     ejectState: soda
     denyState: soda
+  - type: ApcPowerReceiver
+    needsPower: false
   - type: Sprite
-    sprite: _Mriya/Hunter/Structures/Machines/hunt_soda.rsi
+    sprite: _Mriya/Hunter/Structures/Machines/hunt_dispenser.rsi
     snapCardinals: false
     layers:
     - state: soda
       map: ["enum.VendingMachineVisualLayers.Base"]
     - state: soda
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+
+- type: entity
+  id: SichVendingMachineHuntBooze
+  parent: VendingMachineBooze
+  name: алко-хант
+  description: Автомат для видачі алкогольних напоїв людей.
+  components:
+  - type: VendingMachine
+    offState: booze
+    brokenState: booze
+    normalState: booze
+    ejectState: booze
+    denyState: booze
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/hunt_dispenser.rsi
+    snapCardinals: false
+    layers:
+    - state: booze
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: booze
       map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
       shader: unshaded
 
@@ -65,16 +93,12 @@
     sprite: _Mriya/Hunter/Structures/fridge.rsi
     state: closed
   - type: AntiRottingContainer
-  - type: AccessReader
-    _deleted: true
-  - type: Lock
-    _deleted: true
 
 - type: entity
   parent: HunterLockerFridgeEmpty
   id: HunterLockerFridgeMeat
   name: холодильник
-  suffix: Заповнений (М'ясо)
+  suffix: (М'ясо)
   components:
   - type: StorageFill
     contents:
@@ -85,7 +109,7 @@
   parent: HunterLockerFridgeEmpty
   id: HunterLockerFridgeXeno
   name: холодильник
-  suffix: Заповнений (Ксено м'ясо)
+  suffix: (Ксено)
   components:
   - type: StorageFill
     contents:
@@ -96,7 +120,7 @@
   parent: HunterLockerFridgeEmpty
   id: HunterLockerFridgeFilled
   name: холодильник
-  suffix: Заповнений
+  suffix: (Ксено + М'ясо)
   components:
   - type: StorageFill
     contents:
@@ -203,6 +227,8 @@
     animationSprite:
       sprite: _Mriya/Hunter/Structures/Machines/dinnerware.rsi
       state: dinnerware-vend
+  - type: ApcPowerReceiver
+    needsPower: false
 
 - type: entity
   parent: RMCChemMasterIndustrial
@@ -230,4 +256,57 @@
     _deleted: true
   - type: RequiresSkill
     _deleted: true
+  - type: ApcPowerReceiver
+    needsPower: false
 
+- type: entity
+  id: HunterAmbientLight
+  name: джерело світла
+  description: Невидиме джерело червоного освітлення.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Marker
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Markers/cross.rsi
+    layers:
+    - state: red
+  - type: PointLight
+    enabled: true
+    radius: 10.0
+    energy: 1.0
+    color: "#B8371C"
+    softness: 1.0
+    offset: "0, 0"
+
+- type: entity
+  id: HunterAmbientLight_Alt
+  name: джерело світла
+  description: Невидиме джерело освітлення.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Marker
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Markers/cross.rsi
+    layers:
+    - state: pink
+  - type: PointLight
+    enabled: true
+    radius: 14.0
+    energy: 1.5
+    color: "#8A5030"
+    softness: 1.0
+    offset: "0, 0"

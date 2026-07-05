@@ -41,3 +41,22 @@
     tags:
     - RMCTankFuel
     - RMCTankReagent
+
+- type: entity
+  parent: RMCTankReagentEmpty
+  id: RMCHunterTankReagentWater
+  name: водяний бак
+  description: Бак для зберігання води.
+  suffix: Water
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Storage/hunter_tank.rsi
+    layers:
+    - state: water_tank
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 1000
+  - type: ReagentTank

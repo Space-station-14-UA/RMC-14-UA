@@ -78,6 +78,8 @@
   - type: Tag
     tags:
     - CannotSuicide
+    - DoorBumpOpener
+    - FootstepSound
   - type: HunterLanguage
   - type: HunterPainSound
   - type: SlowOnDamage

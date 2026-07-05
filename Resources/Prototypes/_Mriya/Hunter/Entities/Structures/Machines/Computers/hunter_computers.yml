@@ -1,7 +1,7 @@
 - type: entity
   id: HunterCrew
   name: Термінал екіпажу
-  description: Термінал з всіма поточними мисливцями цього корабля.
+  description: Термінал з всіма мисливцями цього корабля.
   components:
   - type: Clickable
   - type: InteractionOutline
@@ -9,13 +9,8 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    sprite: _RMC14/Structures/Machines/computer.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer_generic
-    - map: ["computerLayerScreen"]
-      sprite: _Mriya/Hunter/Objects/Computers/hunter_consoles.rsi
-      state: crew
+    sprite: _Mriya/Hunter/Objects/Computers/hunter_consoles.rsi
+    state: crew
   - type: ActivatableUI
     key: enum.HunterCrewUiKey.Key
   - type: UserInterface
@@ -24,4 +19,4 @@
         type: HunterCrewBui
   - type: HunterCrewConsole
   - type: ApcPowerReceiver
-    powerLoad: 100
+    needsPower: false

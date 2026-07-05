@@ -141,6 +141,7 @@
   maxPlayers: 5
   rules:
     - Sandbox
+    - SichCalmed
 
 - type: gamePreset
   id: Traitor

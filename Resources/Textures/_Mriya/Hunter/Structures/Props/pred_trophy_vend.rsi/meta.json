@@ -1,0 +1,81 @@
+{
+    "version":  1,
+    "size":  {
+                 "x":  32,
+                 "y":  32
+             },
+    "states":  [
+                   {
+                       "name":  "pred_trophy_vendor_bottom_left",
+                       "delays":  [
+                                      [
+                                          0.1,
+                                          0.1,
+                                          0.2,
+                                          0.2,
+                                          0.5
+                                      ]
+                                  ]
+                   },
+                   {
+                       "name":  "pred_trophy_vendor_top_left",
+                       "delays":  [
+                                      [
+                                          0.1,
+                                          0.1,
+                                          0.2,
+                                          0.2,
+                                          0.5
+                                      ]
+                                  ]
+                   },
+                   {
+                       "name":  "pred_trophy_vendor_center",
+                       "delays":  [
+                                      [
+                                          0.1,
+                                          0.1,
+                                          0.2,
+                                          0.2,
+                                          0.5
+                                      ]
+                                  ]
+                   },
+                   {
+                       "name":  "pred_trophy_vendor_top_center",
+                       "delays":  [
+                                      [
+                                          0.1,
+                                          0.1,
+                                          0.2,
+                                          0.2,
+                                          0.5
+                                      ]
+                                  ]
+                   },
+                   {
+                       "name":  "pred_trophy_vendor_bottom_right",
+                       "delays":  [
+                                      [
+                                          0.1,
+                                          0.1,
+                                          0.2,
+                                          0.2,
+                                          0.5
+                                      ]
+                                  ]
+                   },
+                   {
+                       "name":  "pred_trophy_vendor_top_right",
+                       "delays":  [
+                                      [
+                                          0.1,
+                                          0.1,
+                                          0.2,
+                                          0.2,
+                                          0.5
+                                      ]
+                                  ]
+                   }
+                ]
+}

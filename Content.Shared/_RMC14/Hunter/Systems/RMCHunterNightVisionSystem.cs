@@ -6,6 +6,7 @@ using Content.Shared._RMC14.Visor;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
+using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
@@ -30,6 +31,7 @@ public sealed class RMCHunterNightVisionSystem : EntitySystem
         SubscribeLocalEvent<RMCHunterNightVisionVisorComponent, DeactivateVisorEvent>(OnDeactivate);
         SubscribeLocalEvent<RMCHunterNightVisionVisorComponent, VisorRelayedEvent<ScopedEvent>>(OnScoped);
         SubscribeLocalEvent<CycleableVisorComponent, GotUnequippedEvent>(OnCycleableUnequipped);
+        SubscribeLocalEvent<CycleableVisorComponent, GetVerbsEvent<AlternativeVerb>>(OnCycleableGetAltVerbs);
     }
 
     private void OnAttempt(Entity<RMCHunterNightVisionVisorComponent> ent, ref ActivateVisorAttemptEvent args)
@@ -134,5 +136,68 @@ public sealed class RMCHunterNightVisionSystem : EntitySystem
             return;
 
         _visor.DeactivateVisor(args.CycleableVisor, ent.Owner, args.Event.User);
+    }
+
+    private void OnCycleableGetAltVerbs(Entity<CycleableVisorComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
+        if (ent.Comp.CurrentVisor == null)
+            return;
+
+        foreach (var containerId in ent.Comp.Containers)
+        {
+            if (!_container.TryGetContainer(ent, containerId, out var container))
+                continue;
+
+            foreach (var contained in container.ContainedEntities)
+            {
+                if (TryComp<RMCHunterNightVisionVisorComponent>(contained, out var visor))
+                {
+                    var nextState = GetNextNightVisionState(visor.State);
+                    var nextStateText = Loc.GetString(nextState == NightVisionState.Full
+                        ? "rmc-ui-xeno-night-vision-default-full"
+                        : "rmc-ui-xeno-night-vision-default-half");
+
+                    var user = args.User;
+                    var containedEnt = contained;
+                    var verb = new AlternativeVerb
+                    {
+                        Text = Loc.GetString("rmc-night-vision-mode-verb", ("mode", nextStateText)),
+                        Act = () => ToggleHunterNightVisionMode((ent, ent.Comp), (containedEnt, visor), user),
+                    };
+                    args.Verbs.Add(verb);
+                    return;
+                }
+            }
+        }
+    }
+
+    private static NightVisionState GetNextNightVisionState(NightVisionState current)
+    {
+        return current switch
+        {
+            NightVisionState.Full => NightVisionState.Half,
+            _ => NightVisionState.Full,
+        };
+    }
+
+    private void ToggleHunterNightVisionMode(
+        Entity<CycleableVisorComponent> cycleable,
+        Entity<RMCHunterNightVisionVisorComponent> visor,
+        EntityUid user)
+    {
+        var nextState = GetNextNightVisionState(visor.Comp.State);
+        visor.Comp.State = nextState;
+        Dirty(visor);
+
+        if (TryComp<NightVisionComponent>(user, out var nightVision))
+        {
+            nightVision.State = nextState;
+            Dirty(user, nightVision);
+        }
+
+        _audio.PlayLocal(visor.Comp.SoundOn, visor, user);
     }
 }

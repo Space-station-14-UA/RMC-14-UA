@@ -25,6 +25,8 @@
           Empty: { state: open }
           Occupied: { state: closed }
           Operating: { state: operate }
+  - type: ApcPowerReceiver
+    needsPower: false
 
 # Autodoc Console (Hunter)
 - type: entity
@@ -50,3 +52,5 @@
     interfaces:
       enum.AutodocUIKey.Key:
         type: AutodocHunterConsoleBui
+  - type: ApcPowerReceiver
+    needsPower: false

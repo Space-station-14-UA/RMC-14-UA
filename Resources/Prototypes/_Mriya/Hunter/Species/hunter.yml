@@ -38,8 +38,9 @@
   id: MobHunterMarkingLimits
   points:
     Hair:
-      points: 0
+      points: 1
       required: false
+      onlyWhitelisted: true
     FacialHair:
       points: 0
       required: false

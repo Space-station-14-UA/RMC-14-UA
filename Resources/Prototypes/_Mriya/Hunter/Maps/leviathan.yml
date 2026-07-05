@@ -1,0 +1,13 @@
+- type: gameMap
+  id: MriyaHunterLeviathan
+  mapName: Левіафан Тіней
+  mapPath: /Maps/_Mriya/Hunter/Leviathan_of_the_Shadows.yml
+  minPlayers: 0
+  maxRandomOffset: 0
+  randomRotation: false
+  stations:
+    Leviathan:
+      stationProto: StandardPlanetStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Левіафан Тіней'
