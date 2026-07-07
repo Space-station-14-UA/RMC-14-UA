@@ -683,7 +683,7 @@ entities:
     - type: Transform
       pos: 2.7404542,0.88829577
       parent: 1
-- proto: MriyaTerminalOutput
+- proto: MRTerminalOutput
   entities:
   - uid: 87
     components:
