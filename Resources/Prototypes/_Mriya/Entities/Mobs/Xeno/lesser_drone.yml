@@ -21,7 +21,7 @@
       components:
       - Synth
   - type: Sprite
-    sprite: _Sich/Mobs/Xenonids/LesserDrone/lesser_runner.rsi
+    sprite: _Mriya/Mobs/Xenonids/LesserDrone/lesser_runner.rsi
   - type: RMCXenoDamageVisuals
     prefix: lesser_runner
   - type: MobState
@@ -125,7 +125,7 @@
     size: VerySmallXeno
   - type: TacticalMapIcon
     icon:
-      sprite: /Textures/_Sich/Interface/map_blips.rsi
+      sprite: /Textures/_Mriya/Interface/map_blips.rsi
       state: lesser_runner
   - type: Evasion # Як в лессера
     evasion: 10
