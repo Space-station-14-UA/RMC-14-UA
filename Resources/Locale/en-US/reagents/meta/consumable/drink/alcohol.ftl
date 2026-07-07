@@ -16,8 +16,8 @@ reagent-desc-cognac = A sweet and strongly alcoholic drink, twice distilled and 
 reagent-name-dead-rum = deadrum
 reagent-desc-dead-rum = Distilled alcoholic drink made from saltwater.
 
-reagent-name-ethanol = ethanol
-reagent-desc-ethanol = A simple alcohol, makes you drunk if consumed, flammable.
+reagent-name-ethanol = етанол
+reagent-desc-ethanol = Простий спирт, при вживанні викликає сп'яніння, легкозаймистий.
 
 reagent-name-gin = gin
 reagent-desc-gin = A distilled alcoholic drink that derives its predominant flavour from juniper berries.

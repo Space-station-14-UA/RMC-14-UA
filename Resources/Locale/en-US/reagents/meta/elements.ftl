@@ -1,65 +1,65 @@
-reagent-name-aluminium = aluminium
-reagent-desc-aluminium = A silver, soft, non-magnetic, and ductile metal.
+reagent-name-aluminium = алюміній
+reagent-desc-aluminium = Сріблястий, м'який, немагнітний та пластичний метал.
 
-reagent-name-ash = ash
-reagent-desc-ash = A light grey powdery residue
+reagent-name-ash = попіл
+reagent-desc-ash = Світло-сірий порошкоподібний осад.
 
-reagent-name-carbon = carbon
-reagent-desc-carbon = A black, crystalline solid.
+reagent-name-carbon = вуглець
+reagent-desc-carbon = Чорна кристалічна речовина.
 
-reagent-name-charcoal = charcoal
-reagent-desc-charcoal = A black, porous solid
+reagent-name-charcoal = вугілля
+reagent-desc-charcoal = Чорна пориста речовина.
 
-reagent-name-chlorine = chlorine
-reagent-desc-chlorine = A yellow-green gas which is toxic to humans.
+reagent-name-chlorine = хлор
+reagent-desc-chlorine = Жовто-зелений газ, токсичний для людей.
 
-reagent-name-copper = copper
-reagent-desc-copper = A soft, malleable, and ductile metal with very high thermal and electrical conductivity.
+reagent-name-copper = мідь
+reagent-desc-copper = М'який, пластичний і ковкий метал із дуже високою тепло та електропровідністю.
 
-reagent-name-fluorine = fluorine
-reagent-desc-fluorine = A highly toxic pale yellow gas. Extremely reactive.
+reagent-name-fluorine = фтор
+reagent-desc-fluorine = Дуже токсичний блідо-жовтий газ. Надзвичайно реактивний.
 
-reagent-name-gold = gold
-reagent-desc-gold = Gold is a dense, soft, shiny metal and the most malleable and ductile metal known.
+reagent-name-gold = золото
+reagent-desc-gold = Золото - це щільний, м'який, блискучий метал, який є найпластичнішим і найтяжчим з усіх відомих металів.
 
-reagent-name-hydrogen = hydrogen
-reagent-desc-hydrogen = A light, flammable gas.
+reagent-name-hydrogen = водень
+reagent-desc-hydrogen = Легкий та легкозаймистий газ.
 
-reagent-name-iodine = iodine
-reagent-desc-iodine = Commonly added to table salt as a nutrient. On its own it tastes far less pleasing.
+reagent-name-iodine = йод
+reagent-desc-iodine = Додається до кухонної солі в якості поживної речовини. Сам по собі смакує набагато гірше.
 
-reagent-name-iron = iron
-reagent-desc-iron = A silvery-grey metal which forms iron oxides (rust) with contact with air. Commonly alloyed with other elements to create alloys such as steel.
+reagent-name-iron = залізо
+reagent-desc-iron = Сріблясто-сірий метал, який при контакті з повітрям утворює оксиди заліза (іржу). Зазвичай його легують іншими елементами для отримання сплавів, таких як сталь.
 
-reagent-name-lithium = lithium
-reagent-desc-lithium = A soft, silvery-white alkali metal. It's highly reactive, and ignites if it makes contact with water.
+reagent-name-lithium = літій
+reagent-desc-lithium = М'який, сріблясто-білий лужний метал. Дуже реактивний і спалахує при контакті з водою.
 
-reagent-name-mercury = mercury
-reagent-desc-mercury = A silver metal which is liquid at room temperature. It's highly toxic to humans.
+reagent-name-mercury = ртуть
+reagent-desc-mercury = Сріблястий метал, рідкий за кімнатної температури. Дуже токсичний для людей.
 
-reagent-name-potassium = potassium
-reagent-desc-potassium = A soft, shiny grey metal. Even more reactive than lithium.
+reagent-name-potassium = калій
+reagent-desc-potassium = М'який, блискучий сірий метал. Реактивніший за літій.
 
-reagent-name-phosphorus = phosphorus
-reagent-desc-phosphorus = A reactive metal used in pyrotechnics and weapons.
+reagent-name-phosphorus = фосфор
+reagent-desc-phosphorus = Реактивний метал, що використовується в піротехніці та зброї.
 
-reagent-name-radium = radium
-reagent-desc-radium = A radioactive metal, silvery-white in its pure form. It glows due to its radioactivity and is highly toxic.
+reagent-name-radium = радій
+reagent-desc-radium = Радіоактивний метал, сріблясто-білий у чистому вигляді. Світиться за рахунок власної радіоактивності.
 
-reagent-name-silicon = silicon
-reagent-desc-silicon = A hard and brittle crystalline solid with a blue-grey color.
+reagent-name-silicon = кремній
+reagent-desc-silicon = Тверда й крихка кристалічна речовина синьо-сірого кольору.
 
-reagent-name-silver = silver
-reagent-desc-silver = A soft, white, lustrous transition metal, it has the highest electrical conductivity of any element and the highest thermal conductivity of any metal.
+reagent-name-silver = срібло
+reagent-desc-silver = М'який, білий, блискучий перехідний метал, який має найвищу електро та теплопровідність серед усіх металів.
 
-reagent-name-sulfur = sulfur
-reagent-desc-sulfur = A yellow, crystalline solid.
+reagent-name-sulfur = сірка
+reagent-desc-sulfur = Жовта кристалічна речовина.
 
-reagent-name-sodium = sodium
-reagent-desc-sodium = A silvery-white alkali metal. Highly reactive in its pure form.
+reagent-name-sodium = натрій
+reagent-desc-sodium = Сріблясто-білий лужний метал. Дуже реактивний у чистому вигляді.
 
-reagent-name-uranium = uranium
-reagent-desc-uranium = A grey metallic chemical element in the actinide series, weakly radioactive.
+reagent-name-uranium = уран
+reagent-desc-uranium = Сірий металічний хімічний елемент ряду актинідів, слабкорадіоактивний.
 
-reagent-name-zinc = zinc
-reagent-desc-zinc = A silvery, brittle metal, often used in batteries to carry charge.
+reagent-name-zinc = цинк
+reagent-desc-zinc = Сріблястий, крихкий метал, який часто використовується в батареях для накопичення заряду.
