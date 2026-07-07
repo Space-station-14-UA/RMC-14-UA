@@ -62987,7 +62987,7 @@ entities:
     - type: Transform
       pos: 5.6343346,105.60922
       parent: 1
-- proto: MriyaStatueSpawner
+- proto: MRStatueSpawner
   entities:
   - uid: 9032
     components:

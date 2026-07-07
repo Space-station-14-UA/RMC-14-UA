@@ -183440,21 +183440,21 @@ entities:
     - type: Transform
       pos: 35.5,122.5
       parent: 1
-- proto: MriyaCassetteTapeFire
+- proto: MRCassetteTapeFire
   entities:
   - uid: 26203
     components:
     - type: Transform
       pos: 123.76322,65.04068
       parent: 1
-- proto: MriyaCassetteTapeManSoldWorld
+- proto: MRCassetteTapeManSoldWorld
   entities:
   - uid: 26204
     components:
     - type: Transform
       pos: 123.48544,65.20057
       parent: 1
-- proto: MriyaCassetteTapeUa
+- proto: MRCassetteTapeUa
   entities:
   - uid: 26205
     components:
@@ -191559,21 +191559,21 @@ entities:
     - type: Transform
       pos: 15.5,85.5
       parent: 1
-- proto: MriyaCoatMilitiaBrace
+- proto: MRCoatMilitiaBrace
   entities:
   - uid: 27730
     components:
     - type: Transform
       pos: 120.36481,65.59065
       parent: 1
-- proto: MriyaCoatMilitiaHauberk
+- proto: MRCoatMilitiaHauberk
   entities:
   - uid: 26039
     components:
     - type: Transform
       pos: 120.670364,65.29868
       parent: 1
-- proto: MriyaHeadMilitiaBucket
+- proto: MRHeadMilitiaBucket
   entities:
   - uid: 27731
     components:
@@ -191585,7 +191585,7 @@ entities:
     - type: Transform
       pos: 118.32777,65.27477
       parent: 1
-- proto: MriyaHeadMilitiaHood
+- proto: MRHeadMilitiaHood
   entities:
   - uid: 27733
     components:
