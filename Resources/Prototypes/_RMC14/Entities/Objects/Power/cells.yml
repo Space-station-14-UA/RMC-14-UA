@@ -12,7 +12,7 @@
     - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
       state: o2
       shader: unshaded
-  - type: Battery # Mriya. 10000 в оригіналі
+  - type: Battery # MR. 10000 в оригіналі
     maxCharge: 5000
     startingCharge: 5000
   - type: PowerCell

@@ -1,7 +1,7 @@
 - type: entity
   parent: RMCBaseWeaponLauncher
   id: RMCWeaponLauncherDisposable
-  name: М5А1 СЛАВ # Mriya. SLAW – Shoulder Launched Assault Weapon. . . Трансліт в студію!
+  name: М5А1 СЛАВ # MR. SLAW – Shoulder Launched Assault Weapon. . . Трансліт в студію!
   suffix: AP
   description: М5А1 СЛАВ – це легка однозарядна плечова пускова протитанкова установка, здатна вражати ворожу техніку на відстані до 1000 м. Вона повністю одноразова, її викидають після пострілу. Система СЛАВ складається з водонепроникної вуглецево-композитної детонаційної труби, всередині якої знаходиться алюмінієва пускова труба з ракетою. Прицілювання та постріл здійснюються з плеча. Схоже, це якась "цивільна" версія з сильно обмеженою дальністю та відірваним прицілом... Майте це на увазі!
   components:
@@ -90,7 +90,7 @@
 - type: entity
   parent: RMCWeaponLauncherDisposable
   id: RMCWeaponLauncherDisposableHE
-  name: М5А2 ШЕЛ # Mriya. SHEL – Shoulder High-Explosive Launcher?. . Окей, у SLAW був трансліт, тут теж буде.
+  name: М5А2 ШЕЛ # MR. SHEL – Shoulder High-Explosive Launcher?. . Окей, у SLAW був трансліт, тут теж буде.
   suffix: HE
   description: М5А2 ШЕЛ – це легка однозарядна плечова пускова установка, оснащена фугасним зарядом. Як і М5А1 після пострілу стає безкорисною. Знову цивільна версія з сильно зменшеною дальністю...
   components:

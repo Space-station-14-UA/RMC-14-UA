@@ -1,7 +1,7 @@
 # Для офісу корпората Саванни, спрайти від Міюгі
 - type: entity
   parent: BaseStructure
-  id: MriyaBathGold
+  id: MRBathGold
   name: шикарна ванна
   description: Вишукана та досконала, про таку звичайний люд й мріяти не може! Прекрасне місце для відпочинку чи навіть сну.
   components:

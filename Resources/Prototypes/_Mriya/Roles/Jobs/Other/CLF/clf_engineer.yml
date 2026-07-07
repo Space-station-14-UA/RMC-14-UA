@@ -1,7 +1,7 @@
 ﻿- type: job
   parent: RMCCLFEngineer
-  id: MriyaCLFEngineer
-  startingGear: MriyaGearCLFEngineer
+  id: MRCLFEngineer
+  startingGear: MRGearCLFEngineer
   spawnMenuRoleName: ФВК Інженер
   accessGroups:
   - Colony
@@ -30,7 +30,7 @@
   hidden: true
 
 - type: entity
-  id: MriyaRandomHumanoidCLFEngineer
+  id: MRRandomHumanoidCLFEngineer
   name: ФВК спавнер ролі привидів Інженера
   suffix: Spawner, Player
   components:
@@ -38,18 +38,18 @@
     sprite: _RMC14/Objects/Clothing/Accessory/Armbands/clf_armband.rsi
     state: icon
   - type: RandomHumanoidSpawner
-    settings: MriyaCLFEngineer
+    settings: MRCLFEngineer
 
 - type: randomHumanoidSettings
   parent: RMCEventHumanoid
-  id: MriyaCLFEngineer
+  id: MRCLFEngineer
   components:
   - type: GhostRole
     name: rmc-ghost-role-clf-engineer
     description: rmc-ghost-role-information-clf-description
     rules: rmc-ghost-role-information-clf-rules
     reregister: false
-    job: MriyaCLFEngineer
+    job: MRCLFEngineer
     raffle:
       settings: short
     requirements:
@@ -60,17 +60,17 @@
     squad: SquadCLF
 
 - type: startingGear
-  id: MriyaGearCLFEngineer
+  id: MRGearCLFEngineer
   equipment:
     head: RMCHelmetWelding
     mask: RMCCombatUtilityKnifeA
     ears: RMCHeadsetDistressCLF
     eyes: ClothingEyesGlassesMeson # ТОДО. Замінити на РМСні
     jumpsuit: RMCJumpsuitCLFWebbingMAR50
-    outerClothing: MriyaCoatMilitiaHauberk
+    outerClothing: MRCoatMilitiaHauberk
     gloves: CMHandsInsulated
     shoes: RMCShoesOrange
-    id: MriyaIDCardCLFEngineer
+    id: MRIDCardCLFEngineer
     belt: CMBeltUtilityFilled
     back: RMCSatchelLightpackWelder
     pocket1: RMCPouchConstructionFillLowGrade

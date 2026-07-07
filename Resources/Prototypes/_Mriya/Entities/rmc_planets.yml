@@ -1,7 +1,7 @@
 # Поки тут лише мапа під "режим" з ФВК. Автоматичні анонси вимкнені, повідомлення тут для зручності адміністрації.
 - type: entity
   parent: RMCPlanetVaradero
-  id: MriyaPlanetVaraderoCLF
+  id: MRPlanetVaraderoCLF
   components:
   - type: RMCPlanetMapPrototype
     inRotation: false

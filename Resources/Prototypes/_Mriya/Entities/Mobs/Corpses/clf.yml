@@ -21,12 +21,12 @@
 - type: startingGear
   id: SMCGearCorpseCLFSoldier
   equipment:
-    head: MriyaHeadMilitiaHood
+    head: MRHeadMilitiaHood
     ears: RMCHeadsetDistressCLF
     jumpsuit: RMCJumpsuitCLFWebbing
     gloves: RMCHandsBlack
     shoes: RMCShoesBrown
-    id: MriyaIDCardCLFSoldier
+    id: MRIDCardCLFSoldier
     belt: RMCM276ShotgunShellLoadingRig
     pocket1: RMCFlashlight
   storage:
@@ -45,7 +45,7 @@
     jumpsuit: RMCJumpsuitCLFWebbing
     gloves: RMCHandsBlack
     shoes: RMCShoesGreen
-    id: MriyaIDCardCLFSoldier
+    id: MRIDCardCLFSoldier
     back: CMSatchel
     belt: CMBeltMarine
     pocket1: RMCFlashlight
@@ -77,7 +77,7 @@
     jumpsuit: RMCJumpsuitCLFWebbingSurgical
     gloves: CMHandsLatex
     shoes: RMCShoesWhite
-    id: MriyaIDCardCLFMedic
+    id: MRIDCardCLFMedic
     back: CMBackpackMedical
     belt: CMBeltMedicBagFilled
     pocket1: RMCFlashlight
@@ -97,12 +97,12 @@
 - type: startingGear
   id: SMCGearCorpseCLFMedicAlt
   equipment:
-    head: MriyaHeadMilitiaHood
+    head: MRHeadMilitiaHood
     ears: RMCHeadsetDistressCLF
     jumpsuit: RMCJumpsuitCLFWebbingMAR50
     gloves: CMHandsLatex
     shoes: RMCShoesPrisoner
-    id: MriyaIDCardCLFMedic
+    id: MRIDCardCLFMedic
     back: CMSatchelMedical
     belt: CMBeltMedicalFilled
     pocket1: RMCFlashlight
@@ -139,7 +139,7 @@
     jumpsuit: RMCJumpsuitCLFWebbingMAR50
     gloves: CMHandsInsulated
     shoes: RMCShoesOrange
-    id: MriyaIDCardCLFEngineer
+    id: MRIDCardCLFEngineer
     back: CMBackpackEngineer
     belt: RMCBeltConstruction
     pocket1: RMCPouchShotgun
@@ -172,10 +172,10 @@
     ears: RMCHeadsetDistressCLF
     eyes: ClothingEyesGlassesMeson # ТОДО. Замінити на РМСні
     jumpsuit: RMCJumpsuitCLFWebbingMAR50
-    outerClothing: MriyaCoatMilitiaHauberk
+    outerClothing: MRCoatMilitiaHauberk
     gloves: CMHandsInsulated
     shoes: RMCShoesYellow
-    id: MriyaIDCardCLFEngineer
+    id: MRIDCardCLFEngineer
     belt: CMBeltUtilityFilled
     back: RMCSatchelLightpackWelder
     pocket1: RMCPouchConstructionFillLowGrade
@@ -204,13 +204,13 @@
 - type: startingGear
   id: SMCGearCorpseCLFSpecialist
   equipment:
-    head: MriyaHeadMilitiaHood
+    head: MRHeadMilitiaHood
     ears: RMCHeadsetDistressCLF
     jumpsuit: RMCJumpsuitCLFSoldier
-    outerClothing: MriyaCoatMilitia
+    outerClothing: MRCoatMilitia
     gloves: CMHandsBlackMarine
     shoes: RMCShoesCombat
-    id: MriyaIDCardCLFSpecialist
+    id: MRIDCardCLFSpecialist
     back: RMCSatchelLightpack
     belt: RMCMK80BeltFilled
     pocket1: RMCFlashlight

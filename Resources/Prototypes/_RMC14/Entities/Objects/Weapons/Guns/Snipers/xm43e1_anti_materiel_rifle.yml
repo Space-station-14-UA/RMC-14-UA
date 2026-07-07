@@ -129,7 +129,7 @@
 - type: entity
   parent: CMBulletSniper10x28mm
   id: RMCBulletSniper10x99mmAntiMateriel
-#  name: куля (10х99 мм) – Mriya
+#  name: куля (10х99 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

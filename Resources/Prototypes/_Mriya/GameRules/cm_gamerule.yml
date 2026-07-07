@@ -1,5 +1,5 @@
 - type: entity
-  id: MriyaCalmed
+  id: MRCalmed
   parent: CMDistressSignal
   categories: [ HideSpawnMenu ]
   components:
@@ -14,8 +14,8 @@
     startARESAnnouncements: false # АРЕС не вітає морпіхів. ТОДО: зробити кастомні оголошення
 
 - type: entity
-  id: MriyaEventSunRiders
-  parent: MriyaCalmed
+  id: MREventSunRiders
+  parent: MRCalmed
   categories: [ HideSpawnMenu ]
   components:
   - type: CMDistressSignalRule
@@ -23,8 +23,8 @@
     extraSquadIds: []            # без інтелу й форкону (сурви не спавняться)
 
 - type: entity
-  id: MriyaDistressSignalCLF
-  parent: MriyaCalmed
+  id: MRDistressSignalCLF
+  parent: MRCalmed
   categories: [ HideSpawnMenu ]
   components:
   - type: CMDistressSignalRule

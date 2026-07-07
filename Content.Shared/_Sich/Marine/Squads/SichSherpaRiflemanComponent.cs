@@ -3,7 +3,7 @@ using Robust.Shared.GameObjects;
 namespace Content.Shared._Mriya.Marine.Squads
 {
     [RegisterComponent]
-    public sealed partial class MriyaSherpaRiflemanComponent : Component
+    public sealed partial class MRSherpaRiflemanComponent : Component
     {
     }
 }

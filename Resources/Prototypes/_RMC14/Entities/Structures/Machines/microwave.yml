@@ -1,8 +1,8 @@
 - type: entity
   parent: KitchenMicrowave
   id: CMMicrowave
-  name: мікрохвильовка # Mriya
-  description: Це магія. # Mriya
+  name: мікрохвильовка # MR
+  description: Це магія. # MR
   components:
   - type: Microwave
     maxItemSize: Huge

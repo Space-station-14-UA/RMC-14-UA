@@ -1,6 +1,6 @@
 ## Для всіх прототипів з старими спрайтами ксено
 - type: entity
-  id: MriyaXenoBaseOld
+  id: MRXenoBaseOld
   suffix: Січ, Стара
   abstract: true
   components:

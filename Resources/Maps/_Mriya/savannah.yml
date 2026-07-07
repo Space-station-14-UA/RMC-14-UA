@@ -130735,7 +130735,7 @@ entities:
         storageOriginalEntity: False
         neverRedeployableSetup: False
         mode: Reactive
-        prototype: MriyaRotaryPhoneWallmountMessTent
+        prototype: MRRotaryPhoneWallmountMessTent
       - anchor: True
         angle: 0
         offset: 1.5,-0.5
@@ -130849,7 +130849,7 @@ entities:
         storageOriginalEntity: False
         neverRedeployableSetup: False
         mode: Reactive
-        prototype: MriyaRotaryPhoneWallmountMPTent
+        prototype: MRRotaryPhoneWallmountMPTent
       - anchor: True
         angle: 0
         offset: 1.5,-1.5
@@ -130907,7 +130907,7 @@ entities:
         storageOriginalEntity: False
         neverRedeployableSetup: False
         mode: Reactive
-        prototype: MriyaColMarTechFOBSupplies
+        prototype: MRColMarTechFOBSupplies
       - anchor: True
         angle: 0
         offset: 0.5,-1.5
@@ -132359,42 +132359,42 @@ entities:
     - type: Transform
       pos: 42.5,92.5
       parent: 1
-- proto: MriyaBathGold
+- proto: MRBathGold
   entities:
   - uid: 14970
     components:
     - type: Transform
       pos: -18.5,136.5
       parent: 1
-- proto: MriyaPlanetVaraderoCLF
+- proto: MRPlanetVaraderoCLF
   entities:
   - uid: 14971
     components:
     - type: Transform
       pos: -5.5,18.5
       parent: 1
-- proto: MriyaSheetSnowball1
+- proto: MRSheetSnowball1
   entities:
   - uid: 14972
     components:
     - type: Transform
       pos: 104.5,-35.5
       parent: 1
-- proto: MriyaSnowwoman
+- proto: MRSnowwoman
   entities:
   - uid: 14973
     components:
     - type: Transform
       pos: -74.5,7.5
       parent: 1
-- proto: MriyaStatueSpawner
+- proto: MRStatueSpawner
   entities:
   - uid: 14974
     components:
     - type: Transform
       pos: 102.5,-35.5
       parent: 1
-- proto: MriyaTerminalInput
+- proto: MRTerminalInput
   entities:
   - uid: 14975
     components:

@@ -1,6 +1,6 @@
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoRavager ]
-  id: MriyaXenoRavagerOld
+  parent: [ MRXenoBaseOld, CMXenoRavager ]
+  id: MRXenoRavagerOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Ravager/ravager.rsi
@@ -8,15 +8,15 @@
     hudOffset: 0,0.3
   - type: XenoEvolution
     strains:
-    - MriyaXenoRavagerBerserkerOld
-    - MriyaXenoRavagerHedgehogOld
+    - MRXenoRavagerBerserkerOld
+    - MRXenoRavagerHedgehogOld
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoLurkerOld
+    - MRXenoLurkerOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoRavagerBerserker ]
-  id: MriyaXenoRavagerBerserkerOld
+  parent: [ MRXenoBaseOld, RMCXenoRavagerBerserker ]
+  id: MRXenoRavagerBerserkerOld
   suffix: Берсерк, Січ, Стара
   components:
   - type: Sprite
@@ -25,11 +25,11 @@
     hudOffset: 0,0.3
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoLurkerOld
+    - MRXenoLurkerOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoRavagerHedgehog ]
-  id: MriyaXenoRavagerHedgehogOld
+  parent: [ MRXenoBaseOld, RMCXenoRavagerHedgehog ]
+  id: MRXenoRavagerHedgehogOld
   suffix: Їжак, Січ, Стара
   components:
   - type: Sprite
@@ -38,4 +38,4 @@
     hudOffset: 0,0.3
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoLurkerOld
+    - MRXenoLurkerOld

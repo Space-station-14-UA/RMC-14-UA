@@ -4,49 +4,49 @@
 ## Англомовні варіанти
 - type: entity
   parent: RMCMedalBronzeDistinguishedConduct
-  id: MriyaMedalBronzeDistinguishedConductEngilsh
+  id: MRMedalBronzeDistinguishedConductEngilsh
   name: distinguished conduct medal
   categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RMCMedalBronzeHeart
-  id: MriyaMedalBronzeHeartEngilsh
+  id: MRMedalBronzeHeartEngilsh
   name: bronze heart medal
   categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RMCMedalSilverValor
-  id: MriyaMedalSilverValorEngilsh
+  id: MRMedalSilverValorEngilsh
   name: medal of valor
   categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RMCMedalGoldExceptionalHeroism
-  id: MriyaMedalGoldExceptionalHeroismEngilsh
+  id: MRMedalGoldExceptionalHeroismEngilsh
   name: medal of exceptional heroism
   categories: [ HideSpawnMenu ]
 
 ## Старі українські варіанти
 - type: entity
   parent: RMCMedalBronzeDistinguishedConduct
-  id: MriyaMedalBronzeDistinguishedConductUkrainian
+  id: MRMedalBronzeDistinguishedConductUkrainian
   name: Медаль «За визначні заслуги»
   categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RMCMedalBronzeHeart
-  id: MriyaMedalBronzeHeartUkrainian
+  id: MRMedalBronzeHeartUkrainian
   name: Медаль «Бронзове серце»
   categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RMCMedalSilverValor
-  id: MriyaMedalSilverValorUkrainian
+  id: MRMedalSilverValorUkrainian
   name: Медаль за Доблесть
   categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RMCMedalGoldExceptionalHeroism
-  id: MriyaMedalGoldExceptionalHeroismUkrainian
+  id: MRMedalGoldExceptionalHeroismUkrainian
   name: Медаль за Винятковий Героїзм
   categories: [ HideSpawnMenu ]

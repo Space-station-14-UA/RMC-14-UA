@@ -158,7 +158,7 @@
       groups:
         Brute: 20
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 2 # Mriya. 1.4 в оригіналі
+    value: 2 # MR. 1.4 в оригіналі
   - type: XenoRankNames
     rankNames:
       2: rmc-xeno-mature-king

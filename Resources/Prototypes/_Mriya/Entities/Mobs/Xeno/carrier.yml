@@ -1,6 +1,6 @@
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoCarrier ]
-  id: MriyaXenoCarrierOld
+  parent: [ MRXenoBaseOld, CMXenoCarrier ]
+  id: MRXenoCarrierOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Carrier/carrier.rsi
@@ -8,14 +8,14 @@
     hudOffset: 0,0.35
   - type: XenoEvolution
     strains:
-    - MriyaXenoCarrierEggsacOld
+    - MRXenoCarrierEggsacOld
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoDroneOld
+    - MRXenoDroneOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoCarrierEggsac ]
-  id: MriyaXenoCarrierEggsacOld
+  parent: [ MRXenoBaseOld, RMCXenoCarrierEggsac ]
+  id: MRXenoCarrierEggsacOld
   suffix: Яйцетворча, Січ, Стара
   components:
   - type: Sprite
@@ -24,4 +24,4 @@
     hudOffset: 0,0.35
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoDroneOld
+    - MRXenoDroneOld

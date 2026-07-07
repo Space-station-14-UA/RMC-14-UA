@@ -150,7 +150,7 @@
 - type: entity # todo rmc14 this is missing a lot of effects, shrapnel, debilitate etc
   parent: CMBulletBase
   id: RCMBulletPistol9mmSquashHead
-#  name: куля (9 мм м'якоголовна куля) – Mriya
+#  name: куля (9 мм м'якоголовна куля) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

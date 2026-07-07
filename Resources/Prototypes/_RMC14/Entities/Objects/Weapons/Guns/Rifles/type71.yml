@@ -118,7 +118,7 @@
 
 - type: entity
   parent: RMCWeaponRifleType71
-  name: Тип 71-В штурмова гвинтівка # Mriya. F – Flamer, вогнемет – В
+  name: Тип 71-В штурмова гвинтівка # MR. F – Flamer, вогнемет – В
   id: RMCWeaponRifleType71Flamer
   description: Схоже, це менш поширений варіант Тип 71 із вбудованим вогнеметом, що видається особливо крутим.
   components:

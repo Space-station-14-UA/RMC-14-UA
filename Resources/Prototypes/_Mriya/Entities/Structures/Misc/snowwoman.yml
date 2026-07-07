@@ -1,11 +1,11 @@
 - type: soundCollection
-  id: MriyaSnowBreak
+  id: MRSnowBreak
   files:
   - /Audio/Effects/Footsteps/snowstep1.ogg
 
 - type: entity
   parent: BaseStructureDynamic
-  id: MriyaSnowwoman
+  id: MRSnowwoman
   name: снігова баба
   description: Генерал завітав до Соколів! Бажаю здоров'я, щасливого Різдва та Нового року!
   components:
@@ -50,7 +50,7 @@
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          collection: MriyaSnowBreak
+          collection: MRSnowBreak
   - type: XenoCrusherChargable
     setDamage:
       types:
@@ -62,13 +62,13 @@
         name: берет снігової баби
         whitelist:
           tags:
-            - MriyaBeret
+            - MRBeret
         priority: 1
       scarf_slot:
         name: шалик снігової баби
         whitelist:
           tags:
-            - MriyaScarf
+            - MRScarf
         priority: 2
       nose_slot:
         name: ніс снігової баби
@@ -82,11 +82,11 @@
       snowwoman_beret:
         whitelist:
           tags:
-            - MriyaBeret
+            - MRBeret
       snowwoman_scarf:
         whitelist:
           tags:
-            - MriyaScarf
+            - MRScarf
       snowwoman_nose:
         whitelist:
           tags:

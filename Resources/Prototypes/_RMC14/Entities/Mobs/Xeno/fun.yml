@@ -39,7 +39,7 @@
   - CMXenoTail
   - CMXenoFlammable
   - RMCXenoSpeechSounds
-  - RMCXenoVentCrawler # Mriya
+  - RMCXenoVentCrawler # MR
   id: RMCXenoLesserCarrier
   name: Мала Носійка
   description: Дивна на вигляд інопланетна істота. Схоже по ній повзають дивні крапобоподібні істоти. Виглядає... малою.
@@ -152,7 +152,7 @@
         - XenoEgg
   - type: XenoInhands
     prefix: lesser
-#  - type: XenoEggSustainer – Mriya. Нерф, бо не адмеме
+#  - type: XenoEggSustainer – MR. Нерф, бо не адмеме
 #    maxSustainedEggs: 1
 #    sustainedEggsRange: 7
   - type: MovementSpeedModifier
@@ -175,7 +175,7 @@
   - type: XenoHidden
   - type: FixedIdentity
     name: rmc-lesser-carrier
-  # Mriya start. Більше не адмеме, наші фікси
+  # MR start. Більше не адмеме, наші фікси
   - type: RMCGibOnDeath
     gibChance: 0.5
   - type: RMCSpawnEntitiesOnGib
@@ -204,4 +204,4 @@
     carrierWhitelist:
       components:
       - Synth
-  # Mriya end
+  # MR end

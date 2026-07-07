@@ -1,7 +1,7 @@
 ## Версія королеви для випадків, коли у морпіхів сильна раундстарт перевага над вуликом. Застосовується адміністрацією вручну
 - type: entity
   parent: CMXenoQueen
-  id: MriyaXenoQueenBloody
+  id: MRXenoQueenBloody
   name: Кривава Королева
   description: Велетенська чужопланетна істота від кроків якої тремтить земля. Найбільша та найжорстокіша. Вона вкрита якоюсь жахливою червоною смолою, виглядає ще більш загрозливо...
   suffix: Січ
@@ -59,8 +59,8 @@
 
 ## Версія з старими спрайтами
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoQueen ]
-  id: MriyaXenoQueenOld
+  parent: [ MRXenoBaseOld, CMXenoQueen ]
+  id: MRXenoQueenOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi
@@ -83,8 +83,8 @@
 
 ## Версія кривавої з старими спрайтами
 - type: entity
-  parent: [ MriyaXenoBaseOld, MriyaXenoQueenBloody ]
-  id: MriyaXenoQueenBloodyOld
+  parent: [ MRXenoBaseOld, MRXenoQueenBloody ]
+  id: MRXenoQueenBloodyOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi

@@ -164,8 +164,8 @@
 
 # Прототип з старою версією спрайтів
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoLesserDrone ]
-  id: MriyaXenoLesserDroneOld
+  parent: [ MRXenoBaseOld, CMXenoLesserDrone ]
+  id: MRXenoLesserDroneOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/LesserDrone/lesser_drone.rsi

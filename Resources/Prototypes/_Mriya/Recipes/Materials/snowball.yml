@@ -1,7 +1,7 @@
 - type: rmcConstruction
-  id: MriyaSnowwomanBuild
+  id: MRSnowwomanBuild
   name: сніжна баба
-  prototype: MriyaSnowwoman
+  prototype: MRSnowwoman
   doAfterTime: 10
   doAfterTimeMin: 1
   materialCost: 3

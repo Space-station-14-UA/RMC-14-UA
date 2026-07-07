@@ -3,8 +3,8 @@
   parent: BaseToolSurgery
   id: CMBaseToolSurgery
   abstract: true
-#  name: retractor – Mriya
-#  description: Retracts stuff. – Mriya
+#  name: retractor – MR
+#  description: Retracts stuff. – MR
   components:
   - type: Item
     size: Small

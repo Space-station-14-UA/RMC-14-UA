@@ -1,12 +1,12 @@
 # Наша варіація RMCBackpackAmmo під комплект Шерпи
 - type: entity
   parent: RMCBackpackAmmo
-  id: MriyaBackpackAmmo
+  id: MRBackpackAmmo
   name: ВРС загального призначення
   description: Поєднання ременів та пласталевого каркасу що дозволяє переносити громіздкі коробки. Незважаючи на скромність конструкції, далеко не кожен зможе нести цей тягар.
   suffix: Мрія, Розгорнута
   components:
-  - type: MriyaSherpaItem
+  - type: MRSherpaItem
   - type: Storage
     maxItemSize: Huge
     grid:
@@ -14,18 +14,18 @@
     whitelist:
       tags:
       - RMCAmmoBox
-      - MriyaFlareBox
-      - MriyaBulletBoxSmartGun
+      - MRFlareBox
+      - MRBulletBoxSmartGun
   - type: LimitedStorage
     limits:
     - popup: rmc-storage-limit-one-bulletbox-smartgun
       whitelist:
         tags:
-        - MriyaBulletBoxSmartGun
+        - MRBulletBoxSmartGun
     - popup: rmc-storage-limit-not-flarebox
       blacklist:
         tags:
-        - MriyaFlareBox
+        - MRFlareBox
       whitelist: null
       count: 3
   - type: RemoveComponents
@@ -36,7 +36,7 @@
 
 - type: entity
   parent: BaseItem
-  id: MriyaBackpackAmmoFolded
+  id: MRBackpackAmmoFolded
   name: ВРС загального призначення
   description: Згорнута вантажна рама для спорядження. Розгорніть перед використанням.
   suffix: Мрія, Згорнута
@@ -48,5 +48,5 @@
     state: ammo_pack-0
   - type: SpawnItemsOnUse
     items:
-    - id: MriyaBackpackAmmo
+    - id: MRBackpackAmmo
       amount: 1

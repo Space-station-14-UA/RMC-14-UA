@@ -1,6 +1,6 @@
 - type: entity
   parent: CMPaper
-  id: MriyaPaperChairSupplyDropeInstruction
+  id: MRPaperChairSupplyDropeInstruction
   name: Інструкція з використання ОСДМСТ
   description: Міні-буклетик, який схоже був зроблений на швидку руку.
   components:

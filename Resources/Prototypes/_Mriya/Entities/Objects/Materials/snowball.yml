@@ -1,34 +1,34 @@
 - type: material
-  id: MriyaSnowball
-  stackEntity: MriyaSheetSnowball
+  id: MRSnowball
+  stackEntity: MRSheetSnowball
   name: сніжка
   icon: { sprite: _Mriya/Objects/Materials/snowball.rsi, state: snowball }
   price: 0
 
 - type: stack
-  id: MriyaSnowball
+  id: MRSnowball
   name: сніжка
   icon: { sprite: /Textures/_Mriya/Objects/Materials/snowball.rsi, state: snowball }
-  spawn: MriyaSheetSnowball
+  spawn: MRSheetSnowball
   maxCount: 3
 
 - type: entity
   parent: SheetOtherBase
-  id: MriyaSheetSnowball
+  id: MRSheetSnowball
   name: сніжки
   description: Сніжки. Зі снігу. Круто!
   suffix: Заповнені
   components:
     - type: RMCConstructionItem
       buildable:
-      - MriyaSnowwomanBuild
+      - MRSnowwomanBuild
     - type: Material
     - type: PhysicalComposition
       materialComposition:
-        MriyaSnowball: 100
+        MRSnowball: 100
     - type: Stack
       count: 3
-      stackType: MriyaSnowball
+      stackType: MRSnowball
       baseLayer: base
       layerStates:
         - snowball
@@ -55,8 +55,8 @@
           type: RMCConstructionBui
 
 - type: entity
-  parent: MriyaSheetSnowball
-  id: MriyaSheetSnowball2
+  parent: MRSheetSnowball
+  id: MRSheetSnowball2
   name: сніжки
   description: Сніжки. Зі снігу. Круто!
   suffix: "2"
@@ -64,12 +64,12 @@
     - type: Sprite
       state: snowball_3
     - type: Stack
-      stackType: MriyaSnowball
+      stackType: MRSnowball
       count: 2
 
 - type: entity
-  parent: MriyaSheetSnowball
-  id: MriyaSheetSnowball3
+  parent: MRSheetSnowball
+  id: MRSheetSnowball3
   name: сніжки
   description: Сніжки. Зі снігу. Круто!
   suffix: "3"
@@ -77,12 +77,12 @@
     - type: Sprite
       state: snowball_4
     - type: Stack
-      stackType: MriyaSnowball
+      stackType: MRSnowball
       count: 3
 
 - type: entity
-  parent: MriyaSheetSnowball
-  id: MriyaSheetSnowball1
+  parent: MRSheetSnowball
+  id: MRSheetSnowball1
   name: сніжка
   description: Сніжка. Одна, самісінька.
   suffix: Один
@@ -90,5 +90,5 @@
     - type: Sprite
       state: snowball_2
     - type: Stack
-      stackType: MriyaSnowball
+      stackType: MRSnowball
       count: 1

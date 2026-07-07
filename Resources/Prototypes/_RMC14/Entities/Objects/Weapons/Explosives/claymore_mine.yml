@@ -88,7 +88,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCShrapnel
-#  name: шрапнель – Mriya
+#  name: шрапнель – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

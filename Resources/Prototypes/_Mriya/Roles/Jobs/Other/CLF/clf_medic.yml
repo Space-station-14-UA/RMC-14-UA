@@ -1,7 +1,7 @@
 ﻿- type: job
   parent: RMCCLFMedic
-  id: MriyaCLFMedic
-  startingGear: MriyaGearCLFMedic
+  id: MRCLFMedic
+  startingGear: MRGearCLFMedic
   spawnMenuRoleName: ФВК Медик
   accessGroups:
   - Colony
@@ -30,7 +30,7 @@
   hidden: true
 
 - type: entity
-  id: MriyaRandomHumanoidCLFMedic
+  id: MRRandomHumanoidCLFMedic
   name: ФВК спавнер ролі привидів Медика
   suffix: Spawner, Player
   components:
@@ -38,18 +38,18 @@
     sprite: _RMC14/Objects/Clothing/Accessory/Armbands/clf_armband.rsi
     state: icon
   - type: RandomHumanoidSpawner
-    settings: MriyaCLFMedic
+    settings: MRCLFMedic
 
 - type: randomHumanoidSettings
   parent: RMCEventHumanoid
-  id: MriyaCLFMedic
+  id: MRCLFMedic
   components:
   - type: GhostRole
     name: rmc-ghost-role-clf-medic
     description: rmc-ghost-role-information-clf-description
     rules: rmc-ghost-role-information-clf-rules
     reregister: false
-    job: MriyaCLFMedic
+    job: MRCLFMedic
     raffle:
       settings: short
     requirements:
@@ -60,7 +60,7 @@
     squad: SquadCLF
 
 - type: startingGear
-  id: MriyaGearCLFMedic
+  id: MRGearCLFMedic
   equipment:
     mask: RMCCombatUtilityKnifeA
     ears: RMCHeadsetDistressCLF
@@ -68,10 +68,10 @@
     eyes: RMCGlassesMedicalHUDGlasses
     head: CMHeadBandRebel
     jumpsuit: RMCJumpsuitCLFWebbingSurgical
-    outerClothing: MriyaCoatMilitiaVest
+    outerClothing: MRCoatMilitiaVest
     gloves: CMHandsLatex
     shoes: RMCShoesWhite
-    id: MriyaIDCardCLFMedic
+    id: MRIDCardCLFMedic
     belt: CMBeltMedicalFilled
     back: RMCSatchelLightpack
     pocket1: RMCFlashlight

@@ -81,7 +81,7 @@
     mask: /Textures/Effects/LightMasks/double_cone.png
   - type: RotatingLight
     speed: 90
-#  - type: Gun – Mriya. Нам не треба випадкове вбивство квіни за пів секунди
+#  - type: Gun – MR. Нам не треба випадкове вбивство квіни за пів секунди
 #    fireRate: 15
 #    selectedMode: FullAuto
 #    availableModes:

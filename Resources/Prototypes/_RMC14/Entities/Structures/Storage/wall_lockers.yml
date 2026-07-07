@@ -12,7 +12,7 @@
     drawdepth: WallMountedItems
     sprite: _RMC14/Structures/Wallmounts/cmdcabinet.rsi
   - type: EntityStorage
-    capacity: 4 # Mriya. 3 в оригіналі. Планшет, гарнітура, картка та ще щось за бажанням
+    capacity: 4 # MR. 3 в оригіналі. Планшет, гарнітура, картка та ще щось за бажанням
     isCollidableWhenOpen: true
     enteringOffset: 0, -0.6
     enteringRange: 0.03
@@ -47,7 +47,7 @@
     children:
     - id: RMCTabletCO
     - id: CMHeadsetSeniorCommand
-    - id: MRIDCCardReserve # Mriya. Резервна картка для офіцерів
+    - id: MRIDCCardReserve # MR. Резервна картка для офіцерів
 
 - type: entity
   parent: CMLockerBase

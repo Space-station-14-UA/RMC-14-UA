@@ -1,6 +1,6 @@
 # Фактично копії РМСних тих самих предметів, але з зміними характеристиками, бо оригінальні. . . Відчуття, що недороблені.
 - type: entity
-  id: MriyaMilitiaLightBase
+  id: MRMilitiaLightBase
   suffix: Січ
   abstract: true
   components:
@@ -27,7 +27,7 @@
       - RMCMagazineSMGMAC15Ext
 
 - type: entity
-  id: MriyaMilitiaVeryLightBase
+  id: MRMilitiaVeryLightBase
   suffix: Січ
   abstract: true
   components:
@@ -53,24 +53,24 @@
       - RMCMagazineSMGMAC15Ext
 
 - type: entity
-  parent: [MriyaMilitiaLightBase, RMCCoatMilitia]
-  id: MriyaCoatMilitia
+  parent: [MRMilitiaLightBase, RMCCoatMilitia]
+  id: MRCoatMilitia
 
 - type: entity # Це для СГ, не плутай
-  parent: [MriyaMilitiaLightBase, RMCCoatMilitiaHarness]
-  id: MriyaCoatMilitiaHarness
+  parent: [MRMilitiaLightBase, RMCCoatMilitiaHarness]
+  id: MRCoatMilitiaHarness
 
 - type: entity
-  parent: [MriyaMilitiaVeryLightBase, RMCCoatMilitiaVest]
-  id: MriyaCoatMilitiaVest
+  parent: [MRMilitiaVeryLightBase, RMCCoatMilitiaVest]
+  id: MRCoatMilitiaVest
 
 - type: entity
-  parent: [MriyaMilitiaVeryLightBase, RMCCoatMilitiaBrace]
-  id: MriyaCoatMilitiaBrace
+  parent: [MRMilitiaVeryLightBase, RMCCoatMilitiaBrace]
+  id: MRCoatMilitiaBrace
 
 - type: entity
-  parent: [MriyaMilitiaVeryLightBase, RMCCoatMilitiaHauberk]
-  id: MriyaCoatMilitiaHauberk
+  parent: [MRMilitiaVeryLightBase, RMCCoatMilitiaHauberk]
+  id: MRCoatMilitiaHauberk
 
 - type: entity
   parent: RMCArmorPMCRiot

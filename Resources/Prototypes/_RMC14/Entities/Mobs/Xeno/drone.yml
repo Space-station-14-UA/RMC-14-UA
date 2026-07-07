@@ -26,7 +26,7 @@
     tags:
     - DoorBumpOpener
     - RMCSynthGrabbable
-  - type: Butcherable # Mriya
+  - type: Butcherable # MR
     spawned:
     - id: MRFoodMeatXeno
       amount: 6
@@ -118,7 +118,7 @@
 - type: entity
   parent: CMXenoDroneBase
   id: CMXenoDrone
-  description: Чужопланетна істота з повноцінними лапами та малим хоботом, яка видається досить універсальною. # Mriya
+  description: Чужопланетна істота з повноцінними лапами та малим хоботом, яка видається досить універсальною. # MR
   components:
   - type: GuideHelp
     guides:
@@ -164,7 +164,7 @@
 - type: entity
   parent: CMXenoDroneBase
   id: CMXenoDroneGardener
-  description: Чужопланетна зелена істота з повноцінними лапами та малим хоботом, виглядає особливо притягливо. # Mriya
+  description: Чужопланетна зелена істота з повноцінними лапами та малим хоботом, виглядає особливо притягливо. # MR
   suffix: Gardener
   components:
   - type: Sprite
@@ -229,7 +229,7 @@
 - type: entity
   parent: CMXenoDroneBase
   id: CMXenoDroneHealer
-  description: Чужопланетна більш фіолетова істота з повноцінними лапами та малим хоботом. # Mriya
+  description: Чужопланетна більш фіолетова істота з повноцінними лапами та малим хоботом. # MR
   suffix: Healer
   components:
   - type: Sprite

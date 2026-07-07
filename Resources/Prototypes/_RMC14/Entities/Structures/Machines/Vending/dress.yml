@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/dress.rsi
-  - type: WallMount # Mriya. Для Саванни
+  - type: WallMount # MR. Для Саванни
     arc: 0
   - type: CMAutomatedVendor
     sections:

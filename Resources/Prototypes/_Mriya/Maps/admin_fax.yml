@@ -1,5 +1,5 @@
 - type: gameMap
-  id: MriyaAdminFax
+  id: MRAdminFax
   mapName: Міжнародний Пункт Ретрансляції Повідомлень
   mapPath: /Maps/_Mriya/admin_fax_old.yml
   minPlayers: 0

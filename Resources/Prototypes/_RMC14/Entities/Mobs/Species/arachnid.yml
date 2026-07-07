@@ -14,7 +14,7 @@
         color: "#162581"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
-  - type: ArachnidAccent # Mriya
+  - type: ArachnidAccent # MR
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid

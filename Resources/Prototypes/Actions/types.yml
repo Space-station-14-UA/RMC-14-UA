@@ -51,7 +51,7 @@
   components:
   - type: Action
     useDelay: 20
-    priority: -50 # Mriya. Кричати - важливо
+    priority: -50 # MR. Кричати - важливо
     icon: Interface/Actions/scream.png
     checkCanInteract: false
   - type: InstantAction

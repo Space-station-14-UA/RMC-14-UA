@@ -13,20 +13,20 @@
     - HeadSide
   - type: Sprite
     drawdepth: Mobs
-    scale: 0.9, 0.9 # Mriya. Чому? Бо вони малі пташки.
+    scale: 0.9, 0.9 # MR. Чому? Бо вони малі пташки.
   - type: TypingIndicator
     proto: avali
-  - type: Vocal # Mriya
+  - type: Vocal # MR
     sounds:
-      Male: MriyaMaleAvali
-      Unsexed: MriyaMaleAvali
-      Female: MriyaFemaleAvali
+      Male: MRMaleAvali
+      Unsexed: MRMaleAvali
+      Female: MRFemaleAvali
   - type: Wagging
     action: ActionToggleAvaliWagging
   - type: Speech
     speechVerb: Parrot # Didn't come with one
     speechSounds: MaleAvali
-    allowedEmotes: ['Call', 'RMCAvaliChirp', 'Hiss', 'Scree', 'Squawk', 'RMCSkrellTrill', 'RMCSkrellWarble', 'Wurble'] # Mriya, все крім RMCAvaliChirp наше
+    allowedEmotes: ['Call', 'RMCAvaliChirp', 'Hiss', 'Scree', 'Squawk', 'RMCSkrellTrill', 'RMCSkrellWarble', 'Wurble'] # MR, все крім RMCAvaliChirp наше
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:

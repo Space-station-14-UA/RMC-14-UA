@@ -85,7 +85,7 @@
   name: Док
   description: Старший мишачий дослідник з Альмаєра, який також працює на Саванні. Йому подобається сир, експерименти та вибухи!
   components:
-  - type: UserIFF # Mriya. Захист від власних турелей
+  - type: UserIFF # MR. Захист від власних турелей
     factions:
     - FactionMarine
 
@@ -247,7 +247,7 @@
     - HEAD
   - type: WarpPoint
     follow: true
-    location: Містер Віґґлз # Mriya, бо це назва
+    location: Містер Віґґлз # MR, бо це назва
 
 
 - type: entity
@@ -348,7 +348,7 @@
 - type: entity
   parent: RMCMobCatCalico
   id: CMMobJones
-  name: Василь # Mriya. Джонс в оригіналі, але у нас це став кіт Сирени (PERKARTER в ДС, про лор питайте bogdimond)
+  name: Василь # MR. Джонс в оригіналі, але у нас це став кіт Сирени (PERKARTER в ДС, про лор питайте bogdimond)
   description: Старий, колись безпритульний кіт, походження якого ніхто й не згадає.
   components:
   - type: MobThresholds
@@ -362,8 +362,8 @@
       gender: male
   - type: WarpPoint
     follow: true
-    location: Василь # Mriya, бо це назва
-  - type: UserIFF # Mriya. Захист від власних турелей
+    location: Василь # MR, бо це назва
+  - type: UserIFF # MR. Захист від власних турелей
     factions:
     - FactionMarine
 
@@ -375,7 +375,7 @@
   components:
   - type: WarpPoint
     follow: true
-    location: Оріон # Mriya, бо це назва
+    location: Оріон # MR, бо це назва
 
 - type: entity
   parent: RMCMobCat
@@ -389,7 +389,7 @@
       gender: female
   - type: WarpPoint
     follow: true
-    location: Ґаррі # Mriya, бо це назва
+    location: Ґаррі # MR, бо це назва
 
 - type: entity
   parent: [RMCSimpleMob, MobCat]

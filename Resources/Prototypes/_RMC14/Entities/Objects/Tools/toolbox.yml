@@ -30,7 +30,7 @@
 
 - type: entity
   name: аварійний ящик з інструментами
-  description: Червоний ящик, укомплектований приладдям для надзвичайних ситуацій. # Mriya
+  description: Червоний ящик, укомплектований приладдям для надзвичайних ситуацій. # MR
   parent: [RMCToolboxBase, ToolboxEmergency]
   id: RMCToolboxEmergency
   components:
@@ -59,7 +59,7 @@
 
 - type: entity
   name: ящик з інструментами електрика
-  description: Жовтий ящик, що зазвичай наповнений інструментами, які використовують електрики. # Mriya
+  description: Жовтий ящик, що зазвичай наповнений інструментами, які використовують електрики. # MR
   parent: [RMCToolboxBase, ToolboxElectrical]
   id: RMCToolboxElectrical
   components:
@@ -90,7 +90,7 @@
 
 - type: entity
   name: ящик з інструментами механіка
-  description: Синій ящик, що зазвичай наповнений інструментами, які використовують механіки. # Mriya
+  description: Синій ящик, що зазвичай наповнений інструментами, які використовують механіки. # MR
   parent: [RMCToolboxBase, ToolboxMechanical]
   id: RMCToolboxMechanical
   components:

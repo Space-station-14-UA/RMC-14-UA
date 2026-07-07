@@ -65,7 +65,7 @@
     sprite: _RMC14/Objects/Misc/paint.rsi
   - type: Crayon
     capacity: 30
-#  - type: SolutionContainerManager – Mriya. Жерти крейду!
+#  - type: SolutionContainerManager – MR. Жерти крейду!
 #    solutions: {} #removes upstream reagents
 
 #red

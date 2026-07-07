@@ -246,7 +246,7 @@
   - type: RequisitionsElevator
   - type: CargoSellBlacklist
   - type: WarpPoint
-    location: Велична Яма # Mriya, бо це назва
+    location: Велична Яма # MR, бо це назва
 
 - type: entity
   parent: CMBaseStructureCorrodible

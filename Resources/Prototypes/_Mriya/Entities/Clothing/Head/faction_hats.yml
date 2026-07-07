@@ -1,6 +1,6 @@
 # Фактично копії РМСних тих самих предметів, але з зміними характеристиками, бо оригінальні. . . Відчуття, що недороблені.
 - type: entity
-  id: MriyaHeadMilitiaBase
+  id: MRHeadMilitiaBase
   abstract: true
   prefix: Січ
   components:
@@ -10,11 +10,11 @@
     explosionArmor: 10
 
 - type: entity
-  parent: [MriyaHeadMilitiaBase, RMCHeadMilitiaHood]
-  id: MriyaHeadMilitiaHood
+  parent: [MRHeadMilitiaBase, RMCHeadMilitiaHood]
+  id: MRHeadMilitiaHood
   description: Бойові монашки-партизанки вже тут! Стильно, модно, краще, ніж нічого, але гірше, ніж справжній шолом.
 
 - type: entity
-  parent: [MriyaHeadMilitiaBase, RMCHeadMilitiaBucket]
-  id: MriyaHeadMilitiaBucket
+  parent: [MRHeadMilitiaBase, RMCHeadMilitiaBucket]
+  id: MRHeadMilitiaBucket
   description: Це буквально відро, в якому прорізали отвори для очей. Щось в стилі середньовічних шоломів, краще, ніж нічого, але гірше, ніж справжній шолом.

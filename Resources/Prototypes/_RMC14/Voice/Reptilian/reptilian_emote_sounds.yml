@@ -19,11 +19,11 @@
         variation: 0.125
 
 - type: emoteSounds
-  parent: [RMCUnisexReptilian, RMCBaseMaleSounds] # Mriya. Змінено порядок
+  parent: [RMCUnisexReptilian, RMCBaseMaleSounds] # MR. Змінено порядок
   id: RMCMaleReptilian
 
 - type: emoteSounds
-  parent: [RMCUnisexReptilian, RMCBaseFemaleSounds] # Mriya. Змінено порядок
+  parent: [RMCUnisexReptilian, RMCBaseFemaleSounds] # MR. Змінено порядок
   id: RMCFemaleReptilian
 
 - type: emoteSounds

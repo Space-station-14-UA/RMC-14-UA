@@ -6,7 +6,7 @@
   - RMCXenoVentCrawler
   id: CMXenoParasiteBase
   name: Паразит
-  description: Мала чужопланетна крабоподібна істота з... "ротом" на пузі? Цікаво, нащо ж він. # Mriya
+  description: Мала чужопланетна крабоподібна істота з... "ротом" на пузі? Цікаво, нащо ж він. # MR
   suffix: Parasite
   components:
   - type: GuideHelp
@@ -80,7 +80,7 @@
     entities:
     # - RMCDecalSpawnerGibsParasite # TODO
     - RMCGibEffectXenoSmall
-  - type: Butcherable # Mriya
+  - type: Butcherable # MR
     spawned:
     - id: FoodMeatXeno
       amount: 1
@@ -148,16 +148,16 @@
       3: rmc-xeno-elder-parasite
       4: rmc-xeno-ancient-parasite
       5: rmc-xeno-prime-parasite
-      6: rmc-xeno-prime-parasite # Mriya
-      7: rmc-xeno-prime-parasite # Mriya
-      8: rmc-xeno-prime-parasite # Mriya
-      9: rmc-xeno-prime-parasite # Mriya
+      6: rmc-xeno-prime-parasite # MR
+      7: rmc-xeno-prime-parasite # MR
+      8: rmc-xeno-prime-parasite # MR
+      9: rmc-xeno-prime-parasite # MR
   - type: FixedIdentity
     name: cm-job-name-xeno-parasite
   - type: VentCrawler
     ventCrawlIcon: parasite
   - type: Unshieldable
-#  - type: ExcludedFromKingVote – Mriya
+#  - type: ExcludedFromKingVote – MR
   - type: MindTakeoverBehavior
     ejectFromLarvaQueues: false
   - type: RemoveComponents

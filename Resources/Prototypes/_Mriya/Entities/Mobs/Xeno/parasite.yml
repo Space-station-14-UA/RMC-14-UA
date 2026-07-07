@@ -1,6 +1,6 @@
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoParasite ]
-  id: MriyaXenoParasiteOld
+  parent: [ MRXenoBaseOld, CMXenoParasite ]
+  id: MRXenoParasiteOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Parasite/parasite.rsi
@@ -8,11 +8,11 @@
     hudOffset: 0,0.4
   - type: XenoEvolution
     strains:
-    - MriyaXenoParasiteWatcherOld
+    - MRXenoParasiteWatcherOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoParasiteWatcher ]
-  id: MriyaXenoParasiteWatcherOld
+  parent: [ MRXenoBaseOld, RMCXenoParasiteWatcher ]
+  id: MRXenoParasiteWatcherOld
   suffix: Спостерігач, Січ, Стара
   components:
   - type: Sprite

@@ -1,5 +1,5 @@
 - type: gameMap
-  id: MriyaSavannah
+  id: MRSavannah
   mapName: Саванна
   mapPath: /Maps/_Mriya/savannah.yml
   minPlayers: 0

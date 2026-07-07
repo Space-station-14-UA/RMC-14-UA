@@ -1,6 +1,6 @@
 - type: entity
   parent: CMPamphlet
-  id: MriyaPamphletSherpa
+  id: MRPamphletSherpa
   name: довідник шерпи
   description: Тут описується, як правильно переносити важкі речі.
   components:
@@ -9,7 +9,7 @@
       state: pamphlet_sherpa
     - type: SkillPamphlet
       addComps:
-        - type: MriyaSherpaRifleman
+        - type: MRSherpaRifleman
       addSkills:
         RMCSkillFireman: 1
       giveJobTitle: mriya-rmc-job-name-sherpa
@@ -21,7 +21,7 @@
       giveMapBlip:
         sprite: /Textures/_Mriya/Interface/map_blips.rsi
         state: sherpa
-      bypassLimit: false # Mriya. Особливі ролі лише один раз
+      bypassLimit: false # MR. Особливі ролі лише один раз
       jobWhitelists:
         - popup: rmc-pamphlets-rifleman-warning
           jobProto: CMRifleman
@@ -29,7 +29,7 @@
 # Я тільки зараз зрозумів, як воно схоже на шерпу, тому це фактично буде те саме, але на мінімалках. . .
 - type: entity
   parent: CMPamphlet
-  id: MriyaPamphletFireman
+  id: MRPamphletFireman
   name: довідник перенесення на плечах
   description: Тут описується, як правильно переносити людей на собі.
   components:

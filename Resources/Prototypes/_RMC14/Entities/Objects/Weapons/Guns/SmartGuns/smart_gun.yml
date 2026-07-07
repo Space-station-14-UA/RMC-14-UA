@@ -387,7 +387,7 @@
   parent: RMCMagazineSmartGun
   id: RMCMagazineSmartGunHT
   name: МЛ66A барабанний магазин з ГН (10х30 мм)
-  description: ГН – голографічне наведення. Має всередині відповідні кулі, завдяки ним чим більше куль влучить в одну ціль, тим більше пошкоджень будуть наносити наступні кулі. # Mriya
+  description: ГН – голографічне наведення. Має всередині відповідні кулі, завдяки ним чим більше куль влучить в одну ціль, тим більше пошкоджень будуть наносити наступні кулі. # MR
   components:
   - type: BallisticAmmoProvider
     whitelist:
@@ -436,7 +436,7 @@
 - type: entity
   parent: CMBulletBase
   id: CMBulletSmartGun10x30mm
-#  name: куля (10x30мм) – Mriya
+#  name: куля (10x30мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -467,7 +467,7 @@
 - type: entity
   parent: CMBulletSmartGun10x30mm
   id: RMCBulletSmartGun10x30mmirradiated
-#  name: куля ЗУ (10х30 мм) – Mriya
+#  name: куля ЗУ (10х30 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -478,7 +478,7 @@
 - type: entity
   parent: CMBulletSmartGun10x30mm
   id: RMCBulletSmartGun10x30mmHT
-#  name: куля ГН (10х30 мм) – Mriya
+#  name: куля ГН (10х30 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

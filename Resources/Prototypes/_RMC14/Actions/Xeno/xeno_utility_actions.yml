@@ -280,7 +280,7 @@
   - type: EntityTargetAction
     event: !type:XenoApplySalveActionEvent
   - type: RMCDazeableAction
-#  - type: ActionBlockIfResting – Mriya. Можна під час відпочинку
+#  - type: ActionBlockIfResting – MR. Можна під час відпочинку
 
 - type: entity
   parent: ActionXenoBase

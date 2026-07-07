@@ -1,7 +1,7 @@
 ﻿- type: job
   parent: RMCCLFSoldier
-  id: MriyaCLFSoldier
-  startingGear: MriyaGearCLFSoldier
+  id: MRCLFSoldier
+  startingGear: MRGearCLFSoldier
   spawnMenuRoleName: ФВК Солдат
   accessGroups:
   - Colony
@@ -28,7 +28,7 @@
   hidden: true
 
 - type: entity
-  id: MriyaRandomHumanoidCLFSoldier
+  id: MRRandomHumanoidCLFSoldier
   name: ФВК спавнер ролі привидів Солдата
   suffix: Spawner, Player
   components:
@@ -36,18 +36,18 @@
     sprite: _RMC14/Objects/Clothing/Accessory/Armbands/clf_armband.rsi
     state: icon
   - type: RandomHumanoidSpawner
-    settings: MriyaCLFSoldier
+    settings: MRCLFSoldier
 
 - type: randomHumanoidSettings
   parent: RMCEventHumanoid
-  id: MriyaCLFSoldier
+  id: MRCLFSoldier
   components:
   - type: GhostRole
     name: rmc-ghost-role-clf-soldier
     description: rmc-ghost-role-information-clf-description
     rules: rmc-ghost-role-information-clf-rules
     reregister: false
-    job: MriyaCLFSoldier
+    job: MRCLFSoldier
     raffle:
       settings: short
     requirements:
@@ -58,16 +58,16 @@
     squad: SquadCLF
 
 - type: startingGear
-  id: MriyaGearCLFSoldier
+  id: MRGearCLFSoldier
   equipment:
-    head: MriyaHeadMilitiaHood
+    head: MRHeadMilitiaHood
     mask: RMCCombatUtilityKnifeA
     ears: RMCHeadsetDistressCLF
     jumpsuit: RMCJumpsuitCLFWebbing
-    outerClothing: MriyaCoatMilitia
+    outerClothing: MRCoatMilitia
     gloves: RMCHandsBlack
     shoes: RMCShoesBrown
-    id: MriyaIDCardCLFSoldier
+    id: MRIDCardCLFSoldier
     belt: RMCM276ShotgunShellLoadingRigFill # TODO RMC14
     back: RMCWeaponShotgunM12
     pocket1: RMCFlashlight

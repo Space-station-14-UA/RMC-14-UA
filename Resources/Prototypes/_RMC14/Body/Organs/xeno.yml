@@ -20,7 +20,7 @@
     size: Tiny
   - type: Sprite
     state: heart_t1
-  - type: IntelRetrieveItemObjective # Mriya
+  - type: IntelRetrieveItemObjective # MR
     state: Active
     value: 0.1
 
@@ -32,7 +32,7 @@
     size: Small
   - type: Sprite
     state: heart_t2
-  - type: IntelRetrieveItemObjective # Mriya
+  - type: IntelRetrieveItemObjective # MR
     state: Active
     value: 0.2
 
@@ -44,7 +44,7 @@
     size: Normal
   - type: Sprite
     state: heart_t3
-  - type: IntelRetrieveItemObjective # Mriya
+  - type: IntelRetrieveItemObjective # MR
     state: Active
     value: 0.4
 
@@ -57,6 +57,6 @@
   - type: Sprite
     state: heart_t3
     scale: 1.25, 1.25
-  - type: IntelRetrieveItemObjective # Mriya
+  - type: IntelRetrieveItemObjective # MR
     state: Active
     value: 0.8

@@ -1,10 +1,10 @@
 # Спеціально для нашої снігової баби
 - type: Tag
-  id: MriyaBeret
+  id: MRBeret
 
 - type: Tag
-  id: MriyaScarf
+  id: MRScarf
 
 # Для шерпи
 - type: Tag
-  id: MriyaFlareBox
+  id: MRFlareBox

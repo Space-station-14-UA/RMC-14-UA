@@ -6,7 +6,7 @@ namespace Content.Shared._Mriya.Terminal;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(SharedMriyaTerminalSystem))]
-public sealed partial class MriyaTerminalComponent : Component
+public sealed partial class MRTerminalComponent : Component
 {
     [DataField, AutoNetworkedField]
     public bool IsInput = false;

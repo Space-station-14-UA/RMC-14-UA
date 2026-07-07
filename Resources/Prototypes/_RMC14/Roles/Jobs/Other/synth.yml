@@ -33,7 +33,7 @@
       - German
       - Chinese
       - Spanish
-      - MREnglish # Mriya. Так.
+      - MREnglish # MR. Так.
       understoodLanguages:
       - English
       - French
@@ -43,7 +43,7 @@
       - German
       - Chinese
       - Spanish
-      - MREnglish # Mriya. Так
+      - MREnglish # MR. Так
       currentLanguage: English
       defaultLanguage: English
     - type: LanguageLearning
@@ -83,8 +83,8 @@
         types:
           Blunt: 35
     - type: Synth
-    - type: RMCTrackable # Mriya
-#  hidden: true – Mriya
+    - type: RMCTrackable # MR
+#  hidden: true – MR
 
 - type: startingGear
   id: RMCGearSyntheticEquipped

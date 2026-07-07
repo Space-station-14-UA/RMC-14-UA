@@ -289,7 +289,7 @@
       -
         - name: rmc-intel-tech-requisition-arc-name
           description: rmc-intel-tech-requisition-arc-description
-          cost: 8 # Mriya. 5 в оригіналі, більше, бо інтелу корисний та інтел хай збирає на нього
+          cost: 8 # MR. 5 в оригіналі, більше, бо інтелу корисний та інтел хай збирає на нього
           events:
           - !type:TechUnlockVehicleEvent
             unlock: VehicleHumveeARC
@@ -299,7 +299,7 @@
           icon:
             sprite: _RMC14/Interface/tech_tree.rsi
             state: humvee
-      # Mriya start
+      # MR start
         - name: mriya-intel-tech-requisition-humvee-name
           description: mriya-intel-tech-requisition-humvee-description
           cost: 6 # Не 5, а 6, бо збільшення вартості транспорту
@@ -312,15 +312,15 @@
           icon:
             sprite: _RMC14/Interface/tech_tree.rsi
             state: humvee
-      # Mriya end
+      # MR end
         - name: rmc-intel-tech-requisition-budget-name
           description: rmc-intel-tech-requisition-budget-description
-          cost: 6 # Mriya. 7 в оригіналі
+          cost: 6 # MR. 7 в оригіналі
           increase: 1
           repurchasable: true
           events:
           - !type:TechRequisitionsBudgetEvent
-            amount: 10000 # Mriya. 5000 в оригіналі
+            amount: 10000 # MR. 5000 в оригіналі
           - !type:TechAnnounceEvent
             author: rmc-intel-tech-announcement-special-assets-author
             message: rmc-intel-tech-announcement-requisition-budget
@@ -329,7 +329,7 @@
             state: budget_req
         - name: rmc-intel-tech-dropship-budget-name
           description: rmc-intel-tech-dropship-budget-description
-          cost: 5 # Mriya. 6 в оригіналі
+          cost: 5 # MR. 6 в оригіналі
           increase: 1
           repurchasable: true
           events:
@@ -449,10 +449,10 @@
             sprite: _RMC14/Interface/tech_tree.rsi
             state: upgrade
       -
-        - name: mriya-intel-tech-ob-aegis-name # Mriya. Заміна ядерки на ЕГІДА ОБ, тимчасово
+        - name: mriya-intel-tech-ob-aegis-name # MR. Заміна ядерки на ЕГІДА ОБ, тимчасово
           description: mriya-intel-tech-ob-aegis-description
           cost: 5
-          timeLock: 90m # Mriya. 115m в оригіналі
+          timeLock: 90m # MR. 115m в оригіналі
           events:
           - !type:TechLogisticsDeliveryEvent
             object: MRAegisBoxCommand
@@ -460,7 +460,7 @@
             author: rmc-intel-tech-announcement-special-assets-author
             message: mriya-intel-tech-announcement-ob-aegis
           icon:
-            sprite: _RMC14/Interface/map_blips.rsi # Mriya. Іконка мапи, бо прикольна
+            sprite: _RMC14/Interface/map_blips.rsi # MR. Іконка мапи, бо прикольна
             state: aegisob
 - type: Tag
   id: RMCIntelItem

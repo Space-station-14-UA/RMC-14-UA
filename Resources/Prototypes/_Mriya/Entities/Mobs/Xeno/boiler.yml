@@ -1,6 +1,6 @@
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoBoiler ]
-  id: MriyaXenoBoilerOld
+  parent: [ MRXenoBaseOld, CMXenoBoiler ]
+  id: MRXenoBoilerOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Boiler/boiler.rsi
@@ -8,4 +8,4 @@
     hudOffset: 0,0.35
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoSpitterOld
+    - MRXenoSpitterOld

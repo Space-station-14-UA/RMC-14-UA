@@ -5,19 +5,19 @@ using Robust.Shared.Localization;
 
 namespace Content.Shared._Mriya.Marine.Squads;
 
-public sealed class MriyaSherpaRiflemanSystem : EntitySystem
+public sealed class MRSherpaRiflemanSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MriyaSherpaItemComponent, BeingEquippedAttemptEvent>(OnBeingEquippedAttempt);
+        SubscribeLocalEvent<MRSherpaItemComponent, BeingEquippedAttemptEvent>(OnBeingEquippedAttempt);
     }
 
-    private void OnBeingEquippedAttempt(Entity<MriyaSherpaItemComponent> item, ref BeingEquippedAttemptEvent args)
+    private void OnBeingEquippedAttempt(Entity<MRSherpaItemComponent> item, ref BeingEquippedAttemptEvent args)
     {
-        if (HasComp<MriyaSherpaRiflemanComponent>(args.EquipTarget))
+        if (HasComp<MRSherpaRiflemanComponent>(args.EquipTarget))
             return;
 
         if (args.EquipTarget == args.Equipee)

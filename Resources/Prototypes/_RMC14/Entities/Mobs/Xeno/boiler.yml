@@ -62,7 +62,7 @@
     - ActionXenoDevolve
     tier: 3
     hudOffset: -0.15,0.05
-    unlockAt: 1200 # Mriya. 20 хвилин. 15 (900) в оригіналі
+    unlockAt: 1200 # MR. 20 хвилин. 15 (900) в оригіналі
   - type: XenoHeavy
   - type: XenoDevolve
     devolvesTo:

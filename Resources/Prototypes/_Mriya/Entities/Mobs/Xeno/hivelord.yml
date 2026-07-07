@@ -1,6 +1,6 @@
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoHivelord ]
-  id: MriyaXenoHivelordOld
+  parent: [ MRXenoBaseOld, CMXenoHivelord ]
+  id: MRXenoHivelordOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Hivelord/hivelord.rsi
@@ -8,15 +8,15 @@
     hudOffset: 0,0.35
   - type: XenoEvolution
     strains:
-    - MriyaXenoHivelordResinWhispererOld
-    - MriyaXenoHivelordDesignerOld
+    - MRXenoHivelordResinWhispererOld
+    - MRXenoHivelordDesignerOld
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoDroneOld
+    - MRXenoDroneOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoHivelordResinWhisperer ]
-  id: MriyaXenoHivelordResinWhispererOld
+  parent: [ MRXenoBaseOld, CMXenoHivelordResinWhisperer ]
+  id: MRXenoHivelordResinWhispererOld
   suffix: Трав'яна, Січ, Стара
   components:
   - type: Sprite
@@ -25,11 +25,11 @@
     hudOffset: 0,0.35
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoDroneOld
+    - MRXenoDroneOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoHivelordDesigner ]
-  id: MriyaXenoHivelordDesignerOld
+  parent: [ MRXenoBaseOld, CMXenoHivelordDesigner ]
+  id: MRXenoHivelordDesignerOld
   suffix: Дизайнерка, Січ, Стара
   components:
   - type: Sprite
@@ -38,4 +38,4 @@
     hudOffset: 0,0.35
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoDroneOld
+    - MRXenoDroneOld

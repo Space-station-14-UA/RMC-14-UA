@@ -4,7 +4,7 @@
   name: cm-job-name-senior-enlisted-advisor
   description: cm-job-description-senior-enlisted-advisor
   playTimeTracker: CMJobSeniorEnlistedAdvisor
-#  requirements: – Mriya. Якщо ми даємо людині вайтліст, то вона вже достатньо награла
+#  requirements: – MR. Якщо ми даємо людині вайтліст, то вона вже достатньо награла
 #  - !type:DepartmentTimeRequirement
 #    department: CMSquad
 #    time: 54000 # 15 hours
@@ -46,7 +46,7 @@
   joinNotifyCrew: true
   latejoinArrivalSound:
     path: /Audio/_RMC14/Announcements/ARES/attention_jingle.ogg
-  marineAuthorityLevel: 0 # Mriya. 5 в оригіналі, ніяких інструкторів-командирів
+  marineAuthorityLevel: 0 # MR. 5 в оригіналі, ніяких інструкторів-командирів
   supervisors: rmc-job-supervisors-commander
   whitelisted: true
   accessGroups:
@@ -73,7 +73,7 @@
         RMCSkillPowerLoader: 2
         RMCSkillResearch: 1
         RMCSkillSurgery: 2
-        RMCSkillVehicles: 3 # Mriya. 2 в оригіналі
+        RMCSkillVehicles: 3 # MR. 2 в оригіналі
     - type: MarineOrders
     - type: CMVendorUser
       id: CMSeniorEnlistedAdvisor

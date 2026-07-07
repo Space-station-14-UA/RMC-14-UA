@@ -1,7 +1,7 @@
 ﻿- type: job
   parent: RMCCLFCellLeader
-  id: MriyaCLFCellLeader
-  startingGear: MriyaGearCLFCellLeader
+  id: MRCLFCellLeader
+  startingGear: MRGearCLFCellLeader
   spawnMenuRoleName: ФВК Лідер
   accessGroups:
   - Colony
@@ -41,7 +41,7 @@
   hidden: true
 
 - type: entity
-  id: MriyaRandomHumanoidCLFCellLeader
+  id: MRRandomHumanoidCLFCellLeader
   name: ФВК спавнер ролі привидів Лідера
   suffix: Spawner, Player
   components:
@@ -49,18 +49,18 @@
     sprite: _RMC14/Objects/Clothing/Accessory/Armbands/clf_armband.rsi
     state: icon
   - type: RandomHumanoidSpawner
-    settings: MriyaCLFCellLeader
+    settings: MRCLFCellLeader
 
 - type: randomHumanoidSettings
   parent: RMCEventHumanoid
-  id: MriyaCLFCellLeader
+  id: MRCLFCellLeader
   components:
   - type: GhostRole
     name: rmc-ghost-role-clf-cell-leader
     description: rmc-ghost-role-information-clf-description
     rules: rmc-ghost-role-information-clf-rules
     reregister: false
-    job: MriyaCLFCellLeader
+    job: MRCLFCellLeader
     raffle:
       settings: short
     requirements:
@@ -71,7 +71,7 @@
     squad: SquadCLF
 
 - type: startingGear
-  id: MriyaGearCLFCellLeader
+  id: MRGearCLFCellLeader
   equipment:
     head: RMCHeadBeretOfficerHos
     mask: RMCCombatUtilityKnifeB # TODO RMC14 Type 80 bayonet
@@ -79,11 +79,11 @@
     ears2: CMScrewdriver
     eyes: RMCSunglassesBig
     jumpsuit: RMCJumpsuitCLFWebbingMAR50
-    outerClothing: MriyaCoatMilitia
+    outerClothing: MRCoatMilitia
     gloves: RMCHandsVeteranPMC
     shoes: RMCBootsPMC
     suitstorage: RMCWeaponRifleMAR30
-    id: MriyaIDCardCLFCellLeader # TODO RMC14
+    id: MRIDCardCLFCellLeader # TODO RMC14
     belt: RMCMAR40BeltFilled
     back: RMCSatchelLightpack
     pocket1: RMCFlashlight

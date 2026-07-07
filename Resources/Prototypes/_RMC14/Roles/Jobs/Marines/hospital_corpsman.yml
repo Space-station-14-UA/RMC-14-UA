@@ -30,7 +30,7 @@
   accessGroups:
   - HospitalCorpsman
   overwatchSortPriority: -2
-  overwatchRoleName: Бойові Медики # Mriya, бо це назва
+  overwatchRoleName: Бойові Медики # MR, бо це назва
   roleWeight: 1
   displayWeight: 2
   special:
@@ -40,7 +40,7 @@
       skills:
         RMCSkillEndurance: 1
         RMCSkillFirearms: 1
-        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
+        RMCSkillFireman: 2 # MR. 1 в оригіналі
         RMCSkillJtac: 1
         RMCSkillMedical: 2
         RMCSkillSurgery: 1

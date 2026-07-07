@@ -1,6 +1,6 @@
 #- type: entity – Нема спрайту
-#  parent: [ MriyaXenoBaseOld, RMCXenoKing ]
-#  id: MriyaXenoKingOld
+#  parent: [ MRXenoBaseOld, RMCXenoKing ]
+#  id: MRXenoKingOld
 #  components:
 #  - type: Sprite
 #    sprite: _RMC14/Mobs/Xenonids/King/king.rsi

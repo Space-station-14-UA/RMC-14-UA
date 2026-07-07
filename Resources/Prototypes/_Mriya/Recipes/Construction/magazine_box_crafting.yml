@@ -1,10 +1,10 @@
 - type: construction
   parent: RMC
   name: коробка для набоїв СмартГану (10х30мм)
-  id: MriyaBoxBulletsSmartGunEmpty
+  id: MRBoxBulletsSmartGunEmpty
   graph: RMCBoxMagazine
   startNode: start
-  targetNode: MriyaBoxBulletsSmartGunEmpty
+  targetNode: MRBoxBulletsSmartGunEmpty
   category: construction-category-cm-box-magazine
   description: Коробка з набоями 10х30мм. Використовується для поповнення магазинів СмартГану. Має шкіряну лямку, що дозволяє носити її на спині.
   iconColor: "#7b8246"

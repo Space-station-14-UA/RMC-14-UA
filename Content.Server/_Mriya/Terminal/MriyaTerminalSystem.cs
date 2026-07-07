@@ -26,18 +26,18 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MriyaTerminalComponent, MriyaTerminalSendMessage>(OnSendMessage);
-        SubscribeLocalEvent<MriyaTerminalComponent, BoundUIOpenedEvent>(OnUIOpened);
-        SubscribeLocalEvent<MriyaTerminalComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
-        SubscribeLocalEvent<MriyaTerminalComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
+        SubscribeLocalEvent<MRTerminalComponent, MriyaTerminalSendMessage>(OnSendMessage);
+        SubscribeLocalEvent<MRTerminalComponent, BoundUIOpenedEvent>(OnUIOpened);
+        SubscribeLocalEvent<MRTerminalComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
+        SubscribeLocalEvent<MRTerminalComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
     }
 
-    private void OnUIOpened(EntityUid uid, MriyaTerminalComponent component, BoundUIOpenedEvent args)
+    private void OnUIOpened(EntityUid uid, MRTerminalComponent component, BoundUIOpenedEvent args)
     {
         UpdateUI(uid, component);
     }
 
-    private void OnItemInserted(EntityUid uid, MriyaTerminalComponent component, EntInsertedIntoContainerMessage args)
+    private void OnItemInserted(EntityUid uid, MRTerminalComponent component, EntInsertedIntoContainerMessage args)
     {
         if (args.Container.ID != component.IdCardSlotId)
             return;
@@ -45,7 +45,7 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
         UpdateAuthorization(uid, component);
     }
 
-    private void OnItemRemoved(EntityUid uid, MriyaTerminalComponent component, EntRemovedFromContainerMessage args)
+    private void OnItemRemoved(EntityUid uid, MRTerminalComponent component, EntRemovedFromContainerMessage args)
     {
         if (args.Container.ID != component.IdCardSlotId)
             return;
@@ -55,7 +55,7 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
         UpdateUI(uid, component);
     }
 
-    private void UpdateAuthorization(EntityUid uid, MriyaTerminalComponent component)
+    private void UpdateAuthorization(EntityUid uid, MRTerminalComponent component)
     {
         component.AuthorizedName = null;
 
@@ -81,7 +81,7 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
 
     public void BroadcastMessage(string message)
     {
-        var query = EntityQueryEnumerator<MriyaTerminalComponent>();
+        var query = EntityQueryEnumerator<MRTerminalComponent>();
         while (query.MoveNext(out var uid, out var component))
         {
             component.Messages.Add(message);
@@ -93,7 +93,7 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
         }
     }
 
-    private void OnSendMessage(EntityUid uid, MriyaTerminalComponent component, MriyaTerminalSendMessage args)
+    private void OnSendMessage(EntityUid uid, MRTerminalComponent component, MriyaTerminalSendMessage args)
     {
         if (!component.IsInput)
             return;
@@ -119,7 +119,7 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
         BroadcastMessage($"[{sender}]: {message}");
     }
 
-    private void UpdateUI(EntityUid uid, MriyaTerminalComponent component)
+    private void UpdateUI(EntityUid uid, MRTerminalComponent component)
     {
         _ui.SetUiState(uid, MriyaTerminalUiKey.Key, new MriyaTerminalState(component.IsInput, component.Messages, component.AuthorizedName));
     }

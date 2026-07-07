@@ -58,7 +58,7 @@
 - type: entity
   parent: BaseBullet
   id: RMCBaseBullet
-  name: куля # Mriya
+  name: куля # MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

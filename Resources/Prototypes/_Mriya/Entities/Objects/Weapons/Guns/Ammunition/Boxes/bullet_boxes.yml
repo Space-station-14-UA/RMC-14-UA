@@ -1,12 +1,12 @@
 - type: entity
   parent: RMCBoxBulletsBase
-  id: MriyaBoxBulletsSmartGun
+  id: MRBoxBulletsSmartGun
   name: коробка з набоями СмартГана (10х30 мм)
   description: Коробка з набоями калібру 10х30 мм. Використовується для поповнення барабанних магазинів СмартГана. Має шкіряну лямку, що дозволяє носити її на спині.
   components:
   - type: Tag
     tags:
-    - MriyaBulletBoxSmartGun
+    - MRBulletBoxSmartGun
   - type: Sprite
     layers:
     - state: rifle_box
@@ -32,16 +32,16 @@
     sprintModifier: 0.700
 
 - type: entity
-  parent: MriyaBoxBulletsSmartGun
-  id: MriyaBoxBulletsSmartGunEmpty
+  parent: MRBoxBulletsSmartGun
+  id: MRBoxBulletsSmartGunEmpty
   suffix: Січ, Порожня
   components:
   - type: Construction
     graph: RMCBoxMagazine
-    node: MriyaBoxBulletsSmartGunEmpty
+    node: MRBoxBulletsSmartGunEmpty
   - type: BulletBox
     bulletType: RMCBoxBulletsSmartGun
     amount: 0
 
 - type: Tag
-  id: MriyaBulletBoxSmartGun
+  id: MRBulletBoxSmartGun

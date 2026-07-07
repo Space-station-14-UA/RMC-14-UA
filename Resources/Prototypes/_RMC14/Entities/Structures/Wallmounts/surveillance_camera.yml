@@ -102,7 +102,7 @@
   - type: RMCCameraComputer
     protoIds:
     - RMCSurveillanceCameraAlmayer
-#    - RMCMonitorCameraAlamo - Mriya, бо нєфіг
+#    - RMCMonitorCameraAlamo - MR, бо нєфіг
 #    - RMCMonitorCameraNormandy
   - type: WallMount
     arc: 360

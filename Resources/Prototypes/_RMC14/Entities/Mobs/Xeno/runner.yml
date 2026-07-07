@@ -30,7 +30,7 @@
     tags:
     - DoorBumpOpener
     - RMCSynthGrabbable
-  - type: Butcherable # Mriya
+  - type: Butcherable # MR
     spawned:
     - id: MRFoodMeatXeno
       amount: 4
@@ -178,7 +178,7 @@
 - type: entity
   parent: CMXenoRunnerBase
   id: RMCXenoRunnerAcider
-  description: Невеличка жовта та аеродинамічна чужопланетна істота, схоже її лапи створені для бігу. Весь її хребет вкритий кислотними почками. # Mriya
+  description: Невеличка жовта та аеродинамічна чужопланетна істота, схоже її лапи створені для бігу. Весь її хребет вкритий кислотними почками. # MR
   suffix: Acider
   components:
   - type: Sprite

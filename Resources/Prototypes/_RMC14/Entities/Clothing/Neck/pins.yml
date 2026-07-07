@@ -15,8 +15,8 @@
 - type: entity
   parent: [ ClothingNeckLGBTPin, RMCPridePinBase ]
   id: RMCClothingNeckLGBTPin
-  name: значок ЛГБТК+ # Mriya
-  description: Бі гей – ду е крайм. # Mriya
+  name: значок ЛГБТК+ # MR
+  description: Бі гей – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -30,8 +30,8 @@
 - type: entity
   parent: [ClothingNeckAromanticPin, RMCPridePinBase ]
   id: RMCClothingNeckAromanticPin
-  name: значок аромантиків # Mriya
-  description: Бі аро – ду е крайм. # Mriya
+  name: значок аромантиків # MR
+  description: Бі аро – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -45,8 +45,8 @@
 - type: entity
   parent: [ClothingNeckAsexualPin, RMCPridePinBase ]
   id: RMCClothingNeckAsexualPin
-  name: значок асексуалів # Mriya
-  description: Бі асо – ду е крайм. # Mriya
+  name: значок асексуалів # MR
+  description: Бі асо – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -60,8 +60,8 @@
 - type: entity
   parent: [ClothingNeckBisexualPin, RMCPridePinBase ]
   id: RMCClothingNeckBisexualPin
-  name: значок бісексуалів # Mriya
-  description: Бі бі – ду е крайм. # Mriya
+  name: значок бісексуалів # MR
+  description: Бі бі – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -75,8 +75,8 @@
 - type: entity
   parent: [ClothingNeckGayPin, RMCPridePinBase ]
   id: RMCClothingNeckGayPin
-  name: значок геїв # Mriya
-  description: Бі гей-гей – ду е крайм. # Mriya
+  name: значок геїв # MR
+  description: Бі гей-гей – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -90,8 +90,8 @@
 - type: entity
   parent: [ClothingNeckIntersexPin, RMCPridePinBase ]
   id: RMCClothingNeckIntersexPin
-  name: значок інтерсексуалів # Mriya
-  description: Бі інтер – ду е крайм.  # Mriya
+  name: значок інтерсексуалів # MR
+  description: Бі інтер – ду е крайм.  # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -105,8 +105,8 @@
 - type: entity
   parent: [ClothingNeckLesbianPin, RMCPridePinBase ]
   id: RMCClothingNeckLesbianPin
-  name: значок лесбійок # Mriya
-  description: Бі лесбі – ду е крайм. # Mriya
+  name: значок лесбійок # MR
+  description: Бі лесбі – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -120,8 +120,8 @@
 - type: entity
   parent: [ClothingNeckNonBinaryPin, RMCPridePinBase ]
   id: RMCClothingNeckNonBinaryPin
-  name: значок небінарних # Mriya
-  description: 11010000 10010001 11010001 10010110 00100000 11010000 10111101 11010000 10111110 11010000 10111101 00100000 11010000 10110001 11010000 10110000 11010000 10111001 11010000 10111101 11010000 10110000 11010001 10000000 11010001 10010110 00100000 11100010 10000000 10010011 00100000 11010000 10110100 11010001 10000011 00100000 11010000 10110101 00100000 11010000 10111010 11010001 10000000 11010000 10110000 11010000 10111001 11010000 10111100 # Mriya
+  name: значок небінарних # MR
+  description: 11010000 10010001 11010001 10010110 00100000 11010000 10111101 11010000 10111110 11010000 10111101 00100000 11010000 10110001 11010000 10110000 11010000 10111001 11010000 10111101 11010000 10110000 11010001 10000000 11010001 10010110 00100000 11100010 10000000 10010011 00100000 11010000 10110100 11010001 10000011 00100000 11010000 10110101 00100000 11010000 10111010 11010001 10000000 11010000 10110000 11010000 10111001 11010000 10111100 # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -135,8 +135,8 @@
 - type: entity
   parent: [ClothingNeckPansexualPin, RMCPridePinBase ]
   id: RMCClothingNeckPansexualPin
-  name: значок пансексуалів # Mriya
-  description: Бі пан – ду е крайм. # Mriya
+  name: значок пансексуалів # MR
+  description: Бі пан – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -150,8 +150,8 @@
 - type: entity
   parent: [ClothingNeckOmnisexualPin, RMCPridePinBase ]
   id: RMCClothingNeckOmnisexualPin
-  name: значок омнісексуалів # Mriya
-  description: Бі омні – ду е крайм. # Mriya
+  name: значок омнісексуалів # MR
+  description: Бі омні – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -165,8 +165,8 @@
 - type: entity
   parent: [ClothingNeckTransPin, RMCPridePinBase ]
   id: RMCClothingNeckTransPin
-  name: значок трансгендерів # Mriya
-  description: Бі транс – ду е крайм. # Mriya
+  name: значок трансгендерів # MR
+  description: Бі транс – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -180,8 +180,8 @@
 - type: entity
   parent: [ClothingNeckAutismPin, RMCPridePinBase ]
   id: RMCClothingNeckAutismPin
-  name: значок нейродивергентних # Mriya
-  description: Бі нейродивергент – ду е крайм. # Mriya
+  name: значок нейродивергентних # MR
+  description: Бі нейродивергент – ду е крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:
@@ -195,8 +195,8 @@
 - type: entity
   parent: [ClothingNeckGoldAutismPin, RMCPridePinBase ]
   id: RMCClothingNeckGoldAutismPin
-  name: золотий значок нейродивергентних # Mriya
-  description: Бі нейродивергент – ду е біг крайм. # Mriya
+  name: золотий значок нейродивергентних # MR
+  description: Бі нейродивергент – ду е біг крайм. # MR
   components:
   - type: HelmetAccessory
     rsi:

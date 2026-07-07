@@ -306,6 +306,6 @@
 #    rootTask:
 #      task: SimpleHostileCompound
 # objectively speaking getting killed by an ape is funny but it is not parity. commented out incase this non-parity feature is deemed vital for some reason
-  - type: WarpPoint # Mriya
+  - type: WarpPoint # MR
     follow: true
     location: Малий Інкубатор

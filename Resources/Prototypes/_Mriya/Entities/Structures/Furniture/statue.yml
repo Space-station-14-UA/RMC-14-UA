@@ -1,19 +1,19 @@
 - type: entity
   parent: MarkerBase
-  id: MriyaStatueSpawner
+  id: MRStatueSpawner
   name: спавнер статуй Січі
   components:
   - type: Sprite
     state: red
   - type: RandomSpawner
     prototypes:
-    - MriyaStatueNich
-    - MriyaStatueNyavka
-    - MriyaStatueSyrena
+    - MRStatueNich
+    - MRStatueNyavka
+    - MRStatueSyrena
 
 - type: entity
   parent: BaseStructure
-  id: MriyaStatueBase
+  id: MRStatueBase
   abstract: true
   components:
   - type: Sprite
@@ -23,8 +23,8 @@
     offset: "0.0,0.5"
 
 - type: entity
-  parent: MriyaStatueBase
-  id: MriyaStatueNich
+  parent: MRStatueBase
+  id: MRStatueNich
   name: статуя героя
   suffix: Ніч
   description: "Кам'яна статуя на честь героя КМПОН, який служив у рядах 3-ої роти 'Січові стрільці', 2-го батальйону 'Пікуючі Соколи', 3-го Полку, 4-ої Бойової Дивізії, приєднаної до сил КМПОН-3 'Геркулес'.\nЗолотими літерами викарбувано ім'я:\"Еікіі 'Ніч'\" та перераховано всіх паразитів вбитих трубою."
@@ -33,8 +33,8 @@
     state: nich
 
 - type: entity
-  parent: MriyaStatueBase
-  id: MriyaStatueNyavka
+  parent: MRStatueBase
+  id: MRStatueNyavka
   name: статуя героя
   suffix: Нявка
   description: "Кам'яна статуя на честь героя КМПОН, яка служила у рядах 3-ої роти 'Січові стрільці', 2-го батальйону 'Пікуючі Соколи', 3-го Полку, 4-ої Бойової Дивізії, приєднаної до сил КМПОН-3 'Геркулес'.\nЗолотими літерами викарбувано ім'я: \"Куроме 'Нявка' Нявковська\" та зазначено її виразну любов до міномету."
@@ -43,8 +43,8 @@
     state: nyavka
 
 - type: entity
-  parent: MriyaStatueBase
-  id: MriyaStatueSyrena
+  parent: MRStatueBase
+  id: MRStatueSyrena
   name: статуя героя
   suffix: Сирена
   description: "Кам'яна статуя на честь героя КМПОН, який служив у рядах 3-ої роти 'Січові стрільці', 2-го батальйону 'Пікуючі Соколи', 3-го Полку, 4-ої Бойової Дивізії, приєднаної до сил КМПОН-3 'Геркулес'.\nЗолотими літерами викарбувано ім'я: \"Джек 'Сирена' Картер\" та слова: «ОБ... Куд-... ПОБ?!»"

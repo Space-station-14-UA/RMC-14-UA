@@ -47,7 +47,7 @@
   parent: RMCCassetteTapeBase
   id: RMCCassetteTapeCustom
   name: саморобна касета
-  description: Касета, на яку ви самі записали музику! Підтримує максимум одну композицію. На жаль, інші не зможуть оцінити ваш смак у музиці завдяки ній. # Mriya
+  description: Касета, на яку ви самі записали музику! Підтримує максимум одну композицію. На жаль, інші не зможуть оцінити ваш смак у музиці завдяки ній. # MR
   components:
   - type: Sprite
     state: cassette_rising_sun

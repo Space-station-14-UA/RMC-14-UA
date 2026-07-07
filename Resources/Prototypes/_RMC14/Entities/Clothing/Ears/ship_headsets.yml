@@ -54,7 +54,7 @@
       - CMEncryptionKeyCommon
   - type: GrantAreaInfo
   - type: GrantTacMapAlert
-  - type: GrantSquadLeaderTracker # Mriya
+  - type: GrantSquadLeaderTracker # MR
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -88,9 +88,9 @@
   - type: RMCHeadset
     radioTextIncrease: 3
   - type: GrantSquadLeaderTracker
-    defaultMode: CommandingOfficer # Mriya
+    defaultMode: CommandingOfficer # MR
     trackerModes:
-    # Mriya start
+    # MR start
     - CommandingOfficer
     - ExecutiveOfficer
     - AuxiliarySupportOfficer
@@ -101,7 +101,7 @@
     - Quartermaster
     - SeniorEnlistedAdvisor
     - Synthetic
-    # Mriya end
+    # MR end
     - SquadLeader
     - PrimaryLandingZone
 
@@ -130,7 +130,7 @@
     cooldown: 60
   - type: RMCHeadset
     radioTextIncrease: 3
-  - type: GrantSquadLeaderTracker # Mriya
+  - type: GrantSquadLeaderTracker # MR
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -161,13 +161,13 @@
     defaultMode: ChiefEngineer
     trackerModes:
     - ChiefEngineer
-    # Mriya start
+    # MR start
     - CommandingOfficer
     - ExecutiveOfficer
     - SeniorEnlistedAdvisor
     - SquadLeader
     - PrimaryLandingZone
-    # Mriya end
+    # MR end
 
 - type: entity
   parent: RMCHeadsetShip
@@ -190,12 +190,12 @@
     defaultMode: Quartermaster
     trackerModes:
     - Quartermaster
-    # Mriya start
+    # MR start
     - AuxiliarySupportOfficer
     - CommandingOfficer
     - ExecutiveOfficer
     - SeniorEnlistedAdvisor
-    # Mriya end
+    # MR end
 
 - type: entity
   parent: CMHeadsetRequisition
@@ -226,13 +226,13 @@
     defaultMode: ChiefMedicalOfficer
     trackerModes:
     - ChiefMedicalOfficer
-    # Mriya start
+    # MR start
     - CommandingOfficer
     - ExecutiveOfficer
     - SeniorEnlistedAdvisor
     - SquadLeader
     - PrimaryLandingZone
-    # Mriya end
+    # MR end
 
 - type: entity
   parent: RMCHeadsetShip
@@ -251,12 +251,12 @@
     defaultMode: ChiefMedicalOfficer
     trackerModes:
     - ChiefMedicalOfficer
-    # Mriya start
+    # MR start
     - CommandingOfficer
     - ExecutiveOfficer
     - SeniorEnlistedAdvisor
     - PrimaryLandingZone
-    # Mriya end
+    # MR end
 
 - type: entity
   parent: RMCHeadsetShip
@@ -284,7 +284,7 @@
     cooldown: 60
   - type: RMCHeadset
     radioTextIncrease: 3
-  - type: GrantSquadLeaderTracker # Mriya
+  - type: GrantSquadLeaderTracker # MR
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -312,10 +312,10 @@
     trackerModes:
     - ChiefMilitaryPolice
     - MilitaryWarden
-    # Mriya start
+    # MR start
     #- ProvostInspector – не використовується у нас
     - SeniorEnlistedAdvisor
-    # Mriya end
+    # MR end
 
 - type: entity
   parent: CMHeadsetMPO
@@ -330,7 +330,7 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    # Mriya start
+    # MR start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefEngineer
@@ -340,7 +340,7 @@
     - Synthetic
     - SquadLeader
     - PrimaryLandingZone
-    # Mriya end
+    # MR end
     - ChiefMilitaryPolice
     - MilitaryWarden
 
@@ -373,16 +373,16 @@
     - CommandingOfficer
     - ExecutiveOfficer
     - AuxiliarySupportOfficer
-    # Mriya start
+    # MR start
     - StaffOfficer
     - ChiefEngineer
     - ChiefMedicalOfficer
     - Quartermaster
     - SeniorEnlistedAdvisor
     - Synthetic
-    # Mriya end
+    # MR end
     - MilitaryWarden
-    #- ProvostInspector – Mriya
+    #- ProvostInspector – MR
 
 - type: entity
   parent: CMHeadsetCMP
@@ -397,11 +397,11 @@
     - ExecutiveOfficer
     - AuxiliarySupportOfficer
     - ChiefMilitaryPolice
-    # Mriya start
+    # MR start
     - SeniorEnlistedAdvisor
     - Synthetic
-    # Mriya end
-    #- ProvostInspector – Mriya
+    # MR end
+    #- ProvostInspector – MR
 
 - type: entity
   parent: RMCHeadsetShip
@@ -420,7 +420,7 @@
     cooldown: 60
   - type: RMCHeadset
     radioTextIncrease: 3
-  - type: GrantSquadLeaderTracker # Mriya
+  - type: GrantSquadLeaderTracker # MR
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -458,7 +458,7 @@
       key_slots:
       - CMEncryptionKeyCommon
       - CMEncryptionKeyPilot
-  - type: RMCRadioFilter # Mriya
+  - type: RMCRadioFilter # MR
     disabledChannels:
     - MarineAlpha
     - MarineBravo
@@ -474,7 +474,7 @@
     defaultMode: AuxiliarySupportOfficer
     trackerModes:
     - AuxiliarySupportOfficer
-    # Mriya start
+    # MR start
     - CommandingOfficer
     - ExecutiveOfficer
     - PilotGunship
@@ -482,7 +482,7 @@
     - DropshipCrewChief
     - SeniorEnlistedAdvisor
     - PrimaryLandingZone
-    # Mriya end
+    # MR end
 
 - type: entity
   parent: RMCHeadsetMarine
@@ -510,15 +510,15 @@
   - type: GrantSquadLeaderTracker
     defaultMode: AuxiliarySupportOfficer
     trackerModes:
-    # Mriya start
+    # MR start
     - CommandingOfficer
     - ExecutiveOfficer
-    # Mriya end
+    # MR end
     - AuxiliarySupportOfficer
-    # Mriya start
+    # MR start
     - SeniorEnlistedAdvisor
     - Synthetic
-    # Mriya end
+    # MR end
     - SquadLeader
     - FireteamLeader
     - PrimaryLandingZone
@@ -605,7 +605,7 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    # Mriya start
+    # MR start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -616,7 +616,7 @@
     - Synthetic
     - SquadLeader
     - PrimaryLandingZone
-    # Mriya end
+    # MR end
 
 - type: entity
   parent: RMCHeadsetShip
@@ -668,7 +668,7 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    # Mriya start
+    # MR start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -677,7 +677,7 @@
     - Quartermaster
     - SeniorEnlistedAdvisor
     - Synthetic
-    # Mriya end
+    # MR end
     - Rifleman
 
 - type: entity
@@ -700,7 +700,7 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    # Mriya end
+    # MR end
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -709,7 +709,7 @@
     - Quartermaster
     - SeniorEnlistedAdvisor
     - Synthetic
-    # Mriya end
+    # MR end
     - SquadLeader
     - PrimaryLandingZone
 
@@ -734,7 +734,7 @@
       key_slots:
       - CMEncryptionKeyCommon
       - CMEncryptionKeyCrewman
-  - type: RMCRadioFilter # Mriya
+  - type: RMCRadioFilter # MR
     disabledChannels:
     - MarineAlpha
     - MarineBravo
@@ -751,10 +751,10 @@
     trackerModes:
     - CommandingOfficer
     - ExecutiveOfficer
-    # Mriya start
+    # MR start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - SeniorEnlistedAdvisor
     - SquadLeader
     - PrimaryLandingZone
-    # Mriya end
+    # MR end

@@ -1,7 +1,7 @@
 # Заміняє подібне з Prototypes\_RMC14\rmc_job_slot_scaling.yml. Додає по одному ОРу, Спецу та ОСГ при онлайні 30+
 ## Воно працює через якусь навіть по тестам мало зрозумілу дупу, тож значення приблизні
 - type: entity
-  id: MriyaJobSlotScaling
+  id: MRJobSlotScaling
   categories: [ HideSpawnMenu ]
   components:
   - type: JobSlotScaling

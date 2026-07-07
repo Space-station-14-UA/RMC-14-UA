@@ -1,6 +1,6 @@
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoDrone ]
-  id: MriyaXenoDroneOld
+  parent: [ MRXenoBaseOld, CMXenoDrone ]
+  id: MRXenoDroneOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Drone/drone.rsi
@@ -8,21 +8,21 @@
     hudOffset: -0.1,0.15
   - type: XenoEvolution
     evolvesTo:
-    - MriyaXenoCarrierOld
-    - MriyaXenoBurrowerOld
-    - MriyaXenoHivelordOld
+    - MRXenoCarrierOld
+    - MRXenoBurrowerOld
+    - MRXenoHivelordOld
     evolvesToWithoutPoints:
-    - MriyaXenoQueenOld
+    - MRXenoQueenOld
     strains:
-    - MriyaXenoDroneGardenerOld
-    - MriyaXenoDroneHealerOld
+    - MRXenoDroneGardenerOld
+    - MRXenoDroneHealerOld
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoLarvaOld
+    - MRXenoLarvaOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoDroneGardener ]
-  id: MriyaXenoDroneGardenerOld
+  parent: [ MRXenoBaseOld, CMXenoDroneGardener ]
+  id: MRXenoDroneGardenerOld
   suffix: Садівниця, Січ, Стара
   components:
   - type: Sprite
@@ -34,18 +34,18 @@
     hudOffset: 0,0.15
   - type: XenoEvolution
     evolvesTo:
-    - MriyaXenoCarrierOld
-    - MriyaXenoBurrowerOld
-    - MriyaXenoHivelordOld
+    - MRXenoCarrierOld
+    - MRXenoBurrowerOld
+    - MRXenoHivelordOld
     evolvesToWithoutPoints:
-    - MriyaXenoQueenOld
+    - MRXenoQueenOld
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoLarvaOld
+    - MRXenoLarvaOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoDroneHealer ]
-  id: MriyaXenoDroneHealerOld
+  parent: [ MRXenoBaseOld, CMXenoDroneHealer ]
+  id: MRXenoDroneHealerOld
   suffix: Цілителька, Січ, Стара
   components:
   - type: Sprite
@@ -56,11 +56,11 @@
     hudOffset: 0,0.15
   - type: XenoEvolution
     evolvesTo:
-    - MriyaXenoCarrierOld
-    - MriyaXenoBurrowerOld
-    - MriyaXenoHivelordOld
+    - MRXenoCarrierOld
+    - MRXenoBurrowerOld
+    - MRXenoHivelordOld
     evolvesToWithoutPoints:
-    - MriyaXenoQueenOld
+    - MRXenoQueenOld
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoLarvaOld
+    - MRXenoLarvaOld

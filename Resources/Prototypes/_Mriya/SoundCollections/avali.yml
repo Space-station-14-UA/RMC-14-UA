@@ -1,37 +1,37 @@
 - type: soundCollection
-  id: MriyaAvaliLaugh
+  id: MRAvaliLaugh
   files:
     - /Audio/_RMC14/Voice/Avali/avali_laugh.ogg # РМСний звук
     - /Audio/_Mriya/Voice/Avali/avali_laugh_2.ogg # Сенсея звук
     - /Audio/_Mriya/Voice/Avali/avali_laugh_3.ogg # Сенсея звук
 
 - type: soundCollection
-  id: MriyaAvaliCry
+  id: MRAvaliCry
   files:
     - /Audio/_Mriya/Voice/Avali/avali_cry_1.ogg # Сенсея звук
     - /Audio/_Mriya/Voice/Avali/avali_cry_2.ogg # Сенсея звук
     - /Audio/_Mriya/Voice/Avali/avali_cry_3.ogg # Старлайта звук
 
 - type: soundCollection
-  id: MriyaAvaliCough
+  id: MRAvaliCough
   files:
     - /Audio/_Mriya/Voice/Avali/avali_cough_1.ogg # Сенсея звук
     - /Audio/_Mriya/Voice/Avali/avali_cough_2.ogg # Старлайта звук
 
 - type: soundCollection
-  id: MriyaAvaliWhistle
+  id: MRAvaliWhistle
   files:
     - /Audio/_Mriya/Voice/Avali/avali_whistle_1.ogg # Сенсея звук
     - /Audio/_Mriya/Voice/Avali/avali_whistle_2.ogg # Старлайта звук
 
 - type: soundCollection # Чисто звуки Старлайта
-  id: MriyaAvaliCall
+  id: MRAvaliCall
   files:
     - /Audio/_Mriya/Voice/Avali/avali_call_1.ogg
     - /Audio/_Mriya/Voice/Avali/avali_call_2.ogg
 
 - type: soundCollection # Чисто звуки Старлайта
-  id: MriyaAvaliChirp
+  id: MRAvaliChirp
   files:
     - /Audio/_Mriya/Voice/Avali/avali_chirp_1.ogg
     - /Audio/_Mriya/Voice/Avali/avali_chirp_2.ogg
@@ -40,7 +40,7 @@
     - /Audio/_Mriya/Voice/Avali/avali_chirp_5.ogg
 
 - type: soundCollection # Чисто звуки Старлайта
-  id: MriyaAvaliScree
+  id: MRAvaliScree
   files:
     - /Audio/_Mriya/Voice/Avali/avali_scree_1.ogg
     - /Audio/_Mriya/Voice/Avali/avali_scree_2.ogg

@@ -1,6 +1,6 @@
 - type: entity
   parent: RMCScabbardShotgun
-  id: MriyaScabbardShotgunSG
+  id: MRScabbardShotgunSG
   name: піхви МЛ66А для дробовика М42A2
   description: Піхви для дробовика М42A2, що під'єднується до бойового кріплення МЛ66A.
   components:

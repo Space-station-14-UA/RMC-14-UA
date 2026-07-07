@@ -1,7 +1,7 @@
 ﻿- type: job
   parent: RMCCLFSpecialist
-  id: MriyaCLFSpecialist
-  startingGear: MriyaGearCLFSpecialist
+  id: MRCLFSpecialist
+  startingGear: MRGearCLFSpecialist
   spawnMenuRoleName: ФВК Спеціаліст
   accessGroups:
   - Colony
@@ -36,7 +36,7 @@
   hidden: true
 
 - type: entity
-  id: MriyaRandomHumanoidCLFSpecialist
+  id: MRRandomHumanoidCLFSpecialist
   name: ФВК спавнер ролі привидів Спеціаліста
   suffix: Spawner, Player
   components:
@@ -44,18 +44,18 @@
     sprite: _RMC14/Objects/Clothing/Accessory/Armbands/clf_armband.rsi
     state: icon
   - type: RandomHumanoidSpawner
-    settings: MriyaCLFSpecialist
+    settings: MRCLFSpecialist
 
 - type: randomHumanoidSettings
   parent: RMCEventHumanoid
-  id: MriyaCLFSpecialist
+  id: MRCLFSpecialist
   components:
   - type: GhostRole
     name: rmc-ghost-role-clf-specialist
     description: rmc-ghost-role-information-clf-description
     rules: rmc-ghost-role-information-clf-rules
     reregister: false
-    job: MriyaCLFSpecialist
+    job: MRCLFSpecialist
     raffle:
       settings: short
     requirements:
@@ -66,17 +66,17 @@
     squad: SquadCLF
 
 - type: startingGear
-  id: MriyaGearCLFSpecialist
+  id: MRGearCLFSpecialist
   equipment:
-    head: MriyaHeadMilitiaBucket
+    head: MRHeadMilitiaBucket
     mask: RMCCombatUtilityKnifeA
     ears: RMCHeadsetDistressCLF
     eyes: RMCGlassesM4SPRBattleSight
     jumpsuit: RMCJumpsuitCLFWebbingMAR50
-    outerClothing: MriyaCoatMilitia
+    outerClothing: MRCoatMilitia
     gloves: CMHandsBlackMarine
     shoes: RMCShoesCombat
-    id: MriyaIDCardCLFSpecialist
+    id: MRIDCardCLFSpecialist
     belt: RMCMK80BeltFilled
     back: RMCSatchelLightpack
     suitstorage: RMCWeaponMar50LMG

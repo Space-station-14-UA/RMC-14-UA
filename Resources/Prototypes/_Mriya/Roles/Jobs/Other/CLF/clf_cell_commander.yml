@@ -1,8 +1,8 @@
 ﻿# Всеодно поки використовуватися не буде. Не завершено.
 - type: job
   parent: RMCCLFCellCommander
-  id: MriyaCLFCellCommander
-  startingGear: MriyaGearCLFCellCommander
+  id: MRCLFCellCommander
+  startingGear: MRGearCLFCellCommander
   spawnMenuRoleName: ФВК Командир Ячейки
   accessGroups:
   - Colony # Доступ до всієї колонії. Вони там достатньо довго, щоб накрасти доступи
@@ -45,7 +45,7 @@
   hidden: true
 
 - type: entity
-  id: MriyaRandomHumanoidCLFCellCommander
+  id: MRRandomHumanoidCLFCellCommander
   name: ФВК спавнер ролі привидів Командира Ячейки
   suffix: Spawner, Player
   components:
@@ -53,18 +53,18 @@
     sprite: _RMC14/Objects/Clothing/Accessory/Armbands/clf_armband.rsi
     state: icon
   - type: RandomHumanoidSpawner
-    settings: MriyaCLFCellCommander
+    settings: MRCLFCellCommander
 
 - type: randomHumanoidSettings
   parent: RMCEventHumanoid
-  id: MriyaCLFCellCommander
+  id: MRCLFCellCommander
   components:
   - type: GhostRole
     name: rmc-ghost-role-clf-cell-commander
     description: rmc-ghost-role-information-clf-description
     rules: rmc-ghost-role-information-clf-rules
     reregister: false
-    job: MriyaCLFCellCommander
+    job: MRCLFCellCommander
     raffle:
       settings: short
     requirements:
@@ -75,17 +75,17 @@
     squad: SquadCLF
 
 - type: startingGear
-  id: MriyaGearCLFCellCommander
+  id: MRGearCLFCellCommander
   equipment:
     head: RMCArmorHelmetMercenaryMiner
     mask: RMCCombatUtilityKnifeB
     ears: RMCHeadsetDistressCLF
     jumpsuit: RMCJumpsuitCLFSoldier
-    outerClothing: MriyaCoatMilitiaHarness
+    outerClothing: MRCoatMilitiaHarness
     gloves: CMHandsBlackMarine
     shoes: RMCShoesCombat
     suitstorage: RMCSmartGunCLF
-    id: MriyaIDCardCLFCellCommander # TODO RMC14
+    id: MRIDCardCLFCellCommander # TODO RMC14
     belt: RMCBeltSmartGunOperatorPistolCLF
     pocket1: RMCPouchSurvivalFill
     pocket2: RMCPouchFirstAidInjectors

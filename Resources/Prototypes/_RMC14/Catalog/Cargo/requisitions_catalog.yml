@@ -19,7 +19,7 @@
       - cost: 4000
         crate: RMCCrateBoxAmmo458
       - cost: 6000
-        crate: MriyaCrateBoxBulletsSmartGun # Mriya
+        crate: MRCrateBoxBulletsSmartGun # MR
       - cost: 2000
         crate: RMCCrateBoxMagazineRifleM54C
       - cost: 4000
@@ -136,7 +136,7 @@
         crate: RMCCrateAttachmentShotgunStock
       - cost: 3000
         crate: RMCCrateAttachmentSmgStock
-      - cost: 3000 # Mriya
+      - cost: 3000 # MR
         crate: MRCrateAttachmentBarrelCharger
     - name: Одяг
       entries:
@@ -313,8 +313,8 @@
         crate: RMCCrateRestrictedEquipmentArmorB12
       - cost: 2000
         crate: RMCCrateRestrictedEquipmentIntelSupportKit
-      - cost: 10000 # Mriya
-        crate: MriyaCrateRestrictedEquipmentChairSupplyDrop
+      - cost: 10000 # MR
+        crate: MRCrateRestrictedEquipmentChairSupplyDrop
     - name: Витратники
       entries:
       - cost: 2000
@@ -375,11 +375,11 @@
         crate: RMCCrateXM51
       - cost: 4000
         crate: RMCCrateM85A1
-      - cost: 8000 # Mriya. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
+      - cost: 8000 # MR. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
         crate: RMCCrateML66D
-      - cost: 8000 # Mriya. Теж саме, що й трохи вище
+      - cost: 8000 # MR. Теж саме, що й трохи вище
         crate: RMCCrateM2C
-      - cost: 10000 # Mriya. Повернуто, бо чому ні
+      - cost: 10000 # MR. Повернуто, бо чому ні
         crate: RMCCrateSmartGunSet
     - name: Спеціальна Амуніція
       entries:

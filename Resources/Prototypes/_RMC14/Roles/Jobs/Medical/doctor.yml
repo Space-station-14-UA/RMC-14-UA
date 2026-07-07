@@ -17,7 +17,7 @@
   supervisors: cm-job-supervisors-cmo
   accessGroups:
   - CMMedbay
-  - Researcher # Mriya
+  - Researcher # MR
   roleWeight: 0.25
   special:
   - !type:AddComponentSpecial

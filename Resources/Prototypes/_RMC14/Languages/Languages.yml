@@ -1,4 +1,4 @@
-- type: language # Mriya. Заміняється на українську, бо ми спілкуємося українською
+- type: language # MR. Заміняється на українську, бо ми спілкуємося українською
   id: English
   name: "Українська"
   description: "Солов'їна Українська! Думаю, її повинні знати всі."
@@ -149,11 +149,11 @@
     speechVerbOverrides: null
     messageWrapOverrides: {}
 
-- type: language # Mriya. іді нахуй
+- type: language # MR. іді нахуй
   id: Russian
   name: "лайняна"
   description: "Мертва мова."
-  isVisibleLanguage: false # Mriya. true в оригіналі
+  isVisibleLanguage: false # MR. true в оригіналі
   typefaceId: DefaultBold
   textSize: null
   showLanguageName: true

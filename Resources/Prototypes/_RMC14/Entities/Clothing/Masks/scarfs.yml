@@ -20,9 +20,9 @@
     slots:
       - mask
       - neck
-  - type: Tag # Mriya
+  - type: Tag # MR
     tags:
-    - MriyaScarf
+    - MRScarf
 
 - type: entity
   parent: RMCBaseScarfMask
@@ -246,9 +246,9 @@
     slots:
     - mask
     - neck
-  - type: Tag # Mriya
+  - type: Tag # MR
     tags:
-    - MriyaScarf
+    - MRScarf
 
 - type: entity
   parent: RMCMaskTornScarfBase

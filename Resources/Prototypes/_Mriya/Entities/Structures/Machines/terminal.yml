@@ -1,6 +1,6 @@
 - type: entity
   parent: [ BaseMachinePowered, RMCConstructibleMachine ]
-  id: MriyaTerminalInput
+  id: MRTerminalInput
   name: термінал комунікації
   suffix: Січ, Ввід
   description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
@@ -11,14 +11,14 @@
   - type: Sprite
     sprite: _Mriya/Structures/Machines/console.rsi
     state: console
-  - type: MriyaTerminal
+  - type: MRTerminal
     isInput: true
   - type: ActivatableUI
     key: enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key
   - type: UserInterface
     interfaces:
       enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key:
-        type: MriyaTerminalBoundUserInterface
+        type: MRTerminalBoundUserInterface
   - type: ItemSlots
     slots:
       id_card:
@@ -47,7 +47,7 @@
           collection: GlassBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          MriyaTerminalBroken:
+          MRTerminalBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
@@ -58,12 +58,12 @@
     - type: Anchorable
 
 - type: entity
-  parent: MriyaTerminalInput
-  id: MriyaTerminalOutput
+  parent: MRTerminalInput
+  id: MRTerminalOutput
   suffix: Січ, Перегляд
   description: Корпоративний термінал для перегляду каналу зв'язку Ве-Я та їх представника.
   components:
-  - type: MriyaTerminal
+  - type: MRTerminal
     isInput: false
   - type: RemoveComponents
     components:
@@ -71,7 +71,7 @@
 
 - type: entity
   parent: ComputerBroken
-  id: MriyaTerminalBroken
+  id: MRTerminalBroken
   name: зламаний термінал комунікації
   description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
   components:

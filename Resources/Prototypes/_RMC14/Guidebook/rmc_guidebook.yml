@@ -1,8 +1,8 @@
-# Mriya. У нас не використовуються, дивіться _Mriya\Guidebook\mriya_guidebook.yml
+# MR. У нас не використовуються, дивіться _Mriya\Guidebook\mriya_guidebook.yml
 - type: guideEntry
   abstract: true
   id: RMC
-  isCM: false # Mriya. True в оригіналі, заміняємо все на свої гайди.
+  isCM: false # MR. True в оригіналі, заміняємо все на свої гайди.
 
 #- type: guideEntry
 #  parent: RMC

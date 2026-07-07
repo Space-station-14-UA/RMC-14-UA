@@ -9,7 +9,7 @@
         amount: 2
       - id: RMCPouchMagazineLarge
         amount: 2
-      - id: RMCPouchShotgunLarge # Mriya. RMCPouchMagazinePistolLarge в оригіналі
+      - id: RMCPouchShotgunLarge # MR. RMCPouchMagazinePistolLarge в оригіналі
         amount: 2
 
 - type: entity

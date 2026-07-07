@@ -90,7 +90,7 @@
 - type: entity
   parent: RMC40MMGrenadeM74AGMF
   id: RMCBatonSlugHIRR
-  name: ВІГС сповільнюючий # Mriya. HIRR – High-Intensity Rubber Round, Високо-Інтенсивний Гумовний Снаряд – ВІГС
+  name: ВІГС сповільнюючий # MR. HIRR – High-Intensity Rubber Round, Високо-Інтенсивний Гумовний Снаряд – ВІГС
   description: Високо-Інтенсивний Гумовний Снаряд, родич гумової М15. Для його використання потрібний гранатомет. Був знятий з озброєння поліції через завелику смертність тих, в кого нею стріляли. Зараз використовується як менш смертоносний варіант боротьби з ворожими силами. ВІГС був неймовірно популярним під час конфлікту на Арктурі, бо зміг дуже ефективно виводити сили спротиву майже на той світ.
   components:
   - type: Sprite
@@ -304,7 +304,7 @@
 - type: entity
   parent: RMCBaseBullet
   id: RMCStarShellBullet
-#  name: сяюча зірочка – Mriya
+#  name: сяюча зірочка – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -352,7 +352,7 @@
 - type: entity
   parent: RMCBaseBullet
   id: RMCBaseAirburstRound
-  name: снаряд # Mriya
+  name: снаряд # MR
   categories: [ HideSpawnMenu ]
   abstract: true
   components:
@@ -361,7 +361,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCHornetRound
-#  name: .22 шрапнель шершня – Mriya
+#  name: .22 шрапнель шершня – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -383,7 +383,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCShrapnelJagged
-#  name: зазубрена шрапнель – Mriya
+#  name: зазубрена шрапнель – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -416,7 +416,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCShrapnelIncendiary
-#  name: розпечена шрапнель – Mriya
+#  name: розпечена шрапнель – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

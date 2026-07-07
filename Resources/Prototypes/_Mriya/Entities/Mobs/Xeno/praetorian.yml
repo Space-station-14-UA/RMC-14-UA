@@ -1,7 +1,7 @@
 ## Повернення старого стрейну проеторіанця, Наглядача (Валькірія 0.5)!
 - type: entity
   parent: CMXenoPraetorianBase
-  id: MriyaXenoPraetorianWarden
+  id: MRXenoPraetorianWarden
   description: Велика й небезпечна чужопланетна істота, у якої на шиї велика кислотна почка та при цьому характерний синій гребінь й потужний хвіст.
   suffix: Наглядач, Січ
   components:
@@ -74,12 +74,12 @@
   - type: XenoHidden
   - type: AcidTrap
   - type: RMCActionOrder
-    id: MriyaXenoPraetorianWarden
+    id: MRXenoPraetorianWarden
 
 ## Версії з старими спрайтами
 - type: entity
-  parent: [ MriyaXenoBaseOld, CMXenoPraetorian ]
-  id: MriyaXenoPraetorianOld
+  parent: [ MRXenoBaseOld, CMXenoPraetorian ]
+  id: MRXenoPraetorianOld
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Praetorian/praetorian.rsi
@@ -87,19 +87,19 @@
     hudOffset: -0.1,0.25
   - type: XenoEvolution
     strains:
-    - MriyaXenoPraetorianValkyrieOld
-    - MriyaXenoPraetorianOppressorOld
-    - MriyaXenoPraetorianVanguardOld
-    - MriyaXenoPraetorianValkyrieOld
-    - MriyaXenoPraetorianWardenOld
+    - MRXenoPraetorianValkyrieOld
+    - MRXenoPraetorianOppressorOld
+    - MRXenoPraetorianVanguardOld
+    - MRXenoPraetorianValkyrieOld
+    - MRXenoPraetorianWardenOld
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoWarriorOld
-    - MriyaXenoSpitterOld
+    - MRXenoWarriorOld
+    - MRXenoSpitterOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoPraetorianValkyrie ]
-  id: MriyaXenoPraetorianValkyrieOld
+  parent: [ MRXenoBaseOld, RMCXenoPraetorianValkyrie ]
+  id: MRXenoPraetorianValkyrieOld
   suffix: Валькірія, Січ, Стара
   components:
   - type: Sprite
@@ -108,12 +108,12 @@
     hudOffset: -0.1,0.25
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoWarriorOld
-    - MriyaXenoSpitterOld
+    - MRXenoWarriorOld
+    - MRXenoSpitterOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, MriyaXenoPraetorianWarden ]
-  id: MriyaXenoPraetorianWardenOld
+  parent: [ MRXenoBaseOld, MRXenoPraetorianWarden ]
+  id: MRXenoPraetorianWardenOld
   suffix: Наглядач, Січ, Стара
   components:
   - type: Sprite
@@ -122,12 +122,12 @@
     hudOffset: -0.1,0.25
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoWarriorOld
-    - MriyaXenoSpitterOld
+    - MRXenoWarriorOld
+    - MRXenoSpitterOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoPraetorianDancer ]
-  id: MriyaXenoPraetorianDancerOld
+  parent: [ MRXenoBaseOld, RMCXenoPraetorianDancer ]
+  id: MRXenoPraetorianDancerOld
   suffix: Танцівниця, Січ, Стара
   components:
   - type: Sprite
@@ -136,12 +136,12 @@
     hudOffset: -0.1,0.25
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoWarriorOld
-    - MriyaXenoSpitterOld
+    - MRXenoWarriorOld
+    - MRXenoSpitterOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoPraetorianVanguard ]
-  id: MriyaXenoPraetorianVanguardOld
+  parent: [ MRXenoBaseOld, RMCXenoPraetorianVanguard ]
+  id: MRXenoPraetorianVanguardOld
   suffix: Вангард, Січ, Стара
   components:
   - type: Sprite
@@ -150,12 +150,12 @@
     hudOffset: -0.1,0.25
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoWarriorOld
-    - MriyaXenoSpitterOld
+    - MRXenoWarriorOld
+    - MRXenoSpitterOld
 
 - type: entity
-  parent: [ MriyaXenoBaseOld, RMCXenoPraetorianOppressor ]
-  id: MriyaXenoPraetorianOppressorOld
+  parent: [ MRXenoBaseOld, RMCXenoPraetorianOppressor ]
+  id: MRXenoPraetorianOppressorOld
   suffix: Гнобителька, Січ, Стара
   components:
   - type: Sprite
@@ -164,5 +164,5 @@
     hudOffset: -0.1,0.25
   - type: XenoDevolve
     devolvesTo:
-    - MriyaXenoWarriorOld
-    - MriyaXenoSpitterOld
+    - MRXenoWarriorOld
+    - MRXenoSpitterOld

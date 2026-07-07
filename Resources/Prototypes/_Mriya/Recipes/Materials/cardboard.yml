@@ -1,5 +1,5 @@
 - type: rmcConstruction
   parent: RMCCardboardBuildBase
-  id: MriyaBoxBulletsSmartGunEmptyBuild
+  id: MRBoxBulletsSmartGunEmptyBuild
   name: коробка для набоїв СмартГану (10х30мм)
-  prototype: MriyaBoxBulletsSmartGunEmpty
+  prototype: MRBoxBulletsSmartGunEmpty
