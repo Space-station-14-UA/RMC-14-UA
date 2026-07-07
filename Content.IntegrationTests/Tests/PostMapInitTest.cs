@@ -198,7 +198,7 @@ namespace Content.IntegrationTests.Tests
             var protoManager = server.ResolveDependency<IPrototypeManager>();
             var loader = server.System<MapLoaderSystem>();
 
-            var mapFolder = new ResPath("/Maps/_MR"); // MR
+            var mapFolder = new ResPath("/Maps/_Mriya"); // MR
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
                 .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
@@ -492,7 +492,7 @@ namespace Content.IntegrationTests.Tests
             var gameMaps = protoMan.EnumeratePrototypes<GameMapPrototype>()
                 .Where(x => !pair.IsTestPrototype(x))
                 .Where(x => x.ID == PoolManager.TestMap // RMC14
-                    || x.MapPath.ToString().StartsWith("/Maps/_MR")) // MR
+                    || x.MapPath.ToString().StartsWith("/Maps/_Mriya")) // MR
                 .Select(x => x.ID)
                 .ToHashSet();
 
@@ -517,7 +517,7 @@ namespace Content.IntegrationTests.Tests
 
             var gameMaps = protoManager.EnumeratePrototypes<GameMapPrototype>().Select(o => o.MapPath).ToHashSet();
 
-            var mapFolder = new ResPath("/Maps/_MR"); // MR
+            var mapFolder = new ResPath("/Maps/_Mriya"); // MR
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
                 .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
