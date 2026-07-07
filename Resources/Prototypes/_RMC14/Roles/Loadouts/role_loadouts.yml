@@ -861,6 +861,7 @@
   id: JobRMCJobSynthetic
   points: 15 # Mriya. 7 в оригіналі
   groups:
+  - SynthGenRMC
   - SynthBackpackRMC
   - SynthHeadwearRMC
   - SynthGlassesRMC

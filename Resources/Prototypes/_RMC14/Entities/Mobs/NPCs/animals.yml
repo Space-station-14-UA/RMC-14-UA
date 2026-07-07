@@ -84,6 +84,10 @@
   id: RMCMobMouseDoc
   name: Док
   description: Старший мишачий дослідник з Альмаєра, який також працює на Саванні. Йому подобається сир, експерименти та вибухи!
+  components:
+  - type: UserIFF # Mriya. Захист від власних турелей
+    factions:
+    - FactionMarine
 
 - type: entity
   name: rat
@@ -359,6 +363,9 @@
   - type: WarpPoint
     follow: true
     location: Василь # Mriya, бо це назва
+  - type: UserIFF # Mriya. Захист від власних турелей
+    factions:
+    - FactionMarine
 
 - type: entity
   parent: RMCMobCatCalico
@@ -383,6 +390,23 @@
   - type: WarpPoint
     follow: true
     location: Ґаррі # Mriya, бо це назва
+
+- type: entity
+  parent: [RMCSimpleMob, MobCat]
+  id: RMCMobBernard
+  name: Bernard
+  description: Also known as Bernie. Fond of potted plants and Space Carp flavored treats.
+  components:
+  - type: WarpPoint
+    follow: true
+    location: Bernard
+  - type: CrashLandable
+  - type: PressureImmunity
+  - type: Respirator
+    minSaturation: 5.0
+  - type: Temperature
+    heatDamageThreshold: 423
+    coldDamageThreshold: 0
 
 # Spawners
 - type: entity
@@ -512,6 +536,21 @@
   - type: ConditionalSpawner
     prototypes:
     - RMCMobGarry
+
+- type: entity
+  parent: MarkerBase
+  id: RMCSpawnMobBernard
+  name: Bernard Spawner
+  suffix: RMC
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: cat
+      sprite: Mobs/Pets/cat.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - RMCMobBernard
 
 - type: entity
   parent: SpawnMobMouse

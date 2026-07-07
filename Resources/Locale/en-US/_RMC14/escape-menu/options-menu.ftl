@@ -20,3 +20,7 @@ ui-options-header-rmc-xeno = Ксеноїд
 
 ui-options-function-cm-xeno-wide-swing = Направлена атака ксено
 ui-options-function-rmc-xeno-rest = Відпочинок Ксеноїда
+
+ui-options-function-smart-equip-uniform = Розумне одягання на уніформу
+ui-options-function-smart-equip-armor = Розумне одягання на броню
+ui-options-function-smart-equip-helmet = Розумне одягання на шолом

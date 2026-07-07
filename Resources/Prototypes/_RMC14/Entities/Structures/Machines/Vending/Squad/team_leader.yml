@@ -75,8 +75,8 @@
         points: 10
       - id: RMCGunCasePistolSmart
         points: 15
-#      - id: RMCM85A1Case – Mriya. Тимчасове видалення гранатометів
-#        points: 30
+      - id: RMCM85A1Case
+        points: 30
     - name: Особлива Броня
       entries:
       - id: CMArmorB12

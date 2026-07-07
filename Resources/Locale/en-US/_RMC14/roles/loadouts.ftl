@@ -18,6 +18,7 @@ rmc-loadout-group-foods-packaged = Їжа (упакована)
 rmc-loadout-group-foods-healthy = Їжа (здорова)
 rmc-loadout-group-role-specific = Для ролей
 rmc-loadout-group-pins = Шпильки
+rmc-loadout-group-synth = Покоління Синта
 rmc-loadout-group-watches = Годинники
 rmc-loadout-group-civilian = Цивільне (Обмежений доступ)
 

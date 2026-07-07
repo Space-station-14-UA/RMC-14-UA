@@ -131,8 +131,8 @@
 - type: entity
   parent: RMCPillCanisterNoSkill
   id: RMCPillCanisterMeralyneBicaridineNoSkill
-  name: meralyne-bicaridine pill bottle
-  description: It's an airtight container for storing medication. It's labeled "Meralyne-Bicaridine (7.5u/7.5u, 2 pill OD) Rapidly treats brute damage."
+  name: пляшечка пігулок мера-бікаридину
+  description: Це герметичний контейнер для зберігання ліків. На ньому є напис «Мераліно-Бікаридин (7.5+7.5 одиниць, не більше 2 пігулок). Використовується для швидкого лікування фізичних пошкоджень».
   suffix: Meralyne-Bicaridine, 16, No Skill
   components:
   - type: Item
@@ -296,8 +296,8 @@
 - type: entity
   parent: RMCPillCanisterNoSkill
   id: RMCPillCanisterKelotaneDermalineNoSkill
-  name: kelotane-dermaline pill bottle
-  description: It's an airtight container for storing medication. It's labeled "Kelotane-Dermaline (7.5u/7.5u, 2 pill OD) Rapidly treats burn damage."
+  name: пляшечка пігулок кело-дермаліну
+  description: Це герметичний контейнер для зберігання ліків. На ньому є напис «Келотано-Дермалін (7.5+7.5 одиниць, не більше 2 пігулок). Використовується швидкого для лікування опіків».
   suffix: Kelotane-Dermaline, 16, No Skill
   components:
   - type: Item

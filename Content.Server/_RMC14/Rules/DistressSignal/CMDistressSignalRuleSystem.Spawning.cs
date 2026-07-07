@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 using Content.Server.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
@@ -133,8 +134,8 @@ public sealed partial class CMDistressSignalRuleSystem
         // TODO RMC14 dont count survivors
         var totalSurvivors = (int) Math.Clamp((int) Math.Round(totalPlayers / _marinesPerSurvivor), _minimumSurvivors, _maximumSurvivors);
         var marines = totalPlayers - totalXenos - totalSurvivors;
-        var roundstartTank = totalPlayers >= vehicleThreshold;
-//        var crewmanSlots = roundstartTank ? 2 : 0; – Mriya. У нас просто скейл по кількості гравців
+        var roundstartTank = _player.Sessions.Count() >= vehicleThreshold;
+        var crewmanSlots = roundstartTank ? 2 : 0;
 
         // TODO RMC14: Move to component
         var doJobSlotScaling = comp.DoJobSlotScaling &&
@@ -184,16 +185,16 @@ public sealed partial class CMDistressSignalRuleSystem
             }
 
             var setupJobs = stationJobs.SetupAvailableJobs;
-//            if (setupJobs.TryGetValue(VehicleCrewmanJob, out var availableCrewman)) – Mriya
-//            {
-//                for (var i = 0; i < availableCrewman.Length; i++)
-//                {
-//                    availableCrewman[i] = crewmanSlots;
-//                }
-//            }
+            if (setupJobs.TryGetValue(VehicleCrewmanJob, out var availableCrewman))
+            {
+                for (var i = 0; i < availableCrewman.Length; i++)
+                {
+                    availableCrewman[i] = crewmanSlots;
+                }
+            }
 
-//            Log.Info($"Setting {VehicleCrewmanJob} to {crewmanSlots} slots.");
-//            _stationJobs.TrySetJobSlot(stationId, VehicleCrewmanJob, crewmanSlots, stationJobs: stationJobs);
+            Log.Info($"Setting {VehicleCrewmanJob} to {crewmanSlots} slots.");
+            _stationJobs.TrySetJobSlot(stationId, VehicleCrewmanJob, crewmanSlots, stationJobs: stationJobs);
         }
 
         _tech.SetVehicleUnlockOptionDisabled(VehicleHumveeArcUnlock, roundstartTank);

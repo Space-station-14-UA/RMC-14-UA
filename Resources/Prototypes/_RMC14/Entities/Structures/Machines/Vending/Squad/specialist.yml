@@ -23,17 +23,17 @@
         giveMapBlip:
           sprite: /Textures/_RMC14/Interface/map_blips.rsi
           state: spec_demo
-#      - id: RMCGrenadeSpecEquipmentCase – Mriya. Тимчасове видалення гранатометів
-#        giveSquadRoleName: rmc-job-name-weapons-specialist-grenadier
-#        isAppendSquadRoleName: false
-#        givePrefix: rmc-job-prefix-weapons-specialist-grenadier
-#        isAppendPrefix: true
-#        giveIcon:
-#          sprite: _RMC14/Interface/cm_job_icons.rsi
-#          state: hudsquad_spec_grenadier
-#        giveMapBlip:
-#          sprite: /Textures/_RMC14/Interface/map_blips.rsi
-#          state: spec_grenadier
+      - id: RMCGrenadeSpecEquipmentCase
+        giveSquadRoleName: rmc-job-name-weapons-specialist-grenadier
+        isAppendSquadRoleName: false
+        givePrefix: rmc-job-prefix-weapons-specialist-grenadier
+        isAppendPrefix: true
+        giveIcon:
+          sprite: _RMC14/Interface/cm_job_icons.rsi
+          state: hudsquad_spec_grenadier
+        giveMapBlip:
+          sprite: /Textures/_RMC14/Interface/map_blips.rsi
+          state: spec_grenadier
       - id: RMCPyroSpecEquipmentCase
         giveSquadRoleName: rmc-job-name-weapons-specialist-pyro
         isAppendSquadRoleName: false

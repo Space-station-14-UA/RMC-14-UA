@@ -28,7 +28,10 @@ public sealed partial class XenoAidComponent : Component
     public TimeSpan AilmentsJitterDuration = TimeSpan.FromSeconds(1);
 
     [DataField, AutoNetworkedField]
-    public ProtoId<StatusEffectPrototype>[] AilmentsRemove = ["KnockedDown", "Stun", "Dazed", "Unconscious"]; // Sich. ["KnockedDown", "Stun"] в оригіналі, фікс абілки відповідно до Валькірії
+    public ProtoId<StatusEffectPrototype>[] AilmentsRemove = ["KnockedDown", "Stun", "Unconscious"]; // Mriya. ["KnockedDown", "Stun"] в оригіналі, фікс абілки відповідно до Валькірії
+
+    [DataField]
+    public EntProtoId[] AilmentsRemoveNew = ["Dazed"]; // Mriya. Як у Вальки
 
     [DataField]
     public ComponentRegistry ComponentsRemove;

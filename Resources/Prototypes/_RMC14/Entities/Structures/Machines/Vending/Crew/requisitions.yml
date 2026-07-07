@@ -80,8 +80,8 @@
         amount: 1 # Sich. 2 в оригіналі
       - id: RMCCaseFlamer
         amount: 2
-#      - id: RMCM85A1Case – Mriya. Тимчасове видалення гранатометів
-#        amount: 3
+      - id: RMCM85A1Case
+        amount: 3
       - id: RMCGunCasePistolM13
         amount: 3
       - id: RMCXM51Case
@@ -96,7 +96,7 @@
         amount: 25
       - id: RMCGrenadeIncendiary
         amount: 4
-      - id: RMCPacketGrenadeWhitePhosphorusCompoundFilled
+      - id: RMCGrenadeWhitePhosphorusCompound
         amount: 4
       - id: CMGrenadeSmoke
         amount: 5
@@ -323,6 +323,11 @@
       - id: RMCPacketGrenadeIncendiaryFilled
         name: упаковка гранат М40 ВІРЗ
         box: RMCGrenadeIncendiary
+        boxAmount: 3
+        boxSlots: 3
+      - id: RMCPacketGrenadeWhitePhosphorusCompoundFilled
+        name: 30mm CCDP grenade packet
+        box: RMCGrenadeWhitePhosphorusCompound
         boxAmount: 3
         boxSlots: 3
       - id: RMCPacketGrenadeSmokeFilled

@@ -15,3 +15,14 @@ rmc-pull-break-start-self = Ви пручаєтесь щоб звільнити�
 rmc-pull-break-start-others = {$pulled} пручається щоб звільнитись з хвату {$puller}!
 rmc-pull-break-finish-self = Ви звільнились з хвату {$puller}!
 rmc-pull-break-finish-others = {$pulled} звільнився з хвату {$puller}!
+
+rmc-fireman-carry-need-carry-first = Вам треба спочатку підняти це!
+rmc-fireman-carry-cant-throw = Ви не можете кинути це!
+
+rmc-fireman-carry-need-aggressive-grab = Вам треба спочатку агресивніше схопити!
+rmc-fireman-carry-cant-grab-aggressively = Ви не можете схопити це агресивніше!
+rmc-fireman-carry-not-trained-grab = Ви не навчені агресивно хапати!
+
+rmc-fireman-carry-start-loading = Ви закидуєте {$targetName} собі на спину.
+
+rmc-fireman-carry-not-trained = Ви не навчені носити людей!
