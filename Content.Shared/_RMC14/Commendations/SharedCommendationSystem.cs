@@ -37,14 +37,14 @@ public abstract class SharedCommendationSystem : EntitySystem
     {
         new EntProtoId("RMCMedalHighCommandHonor"),
         // Mriya starts. Костиль, подробиці в Prototypes\_Mriya\Entities\Objects\medals.yml
-        new EntProtoId("MriyaMedalGoldExceptionalHeroismEngilsh"),
-        new EntProtoId("MriyaMedalSilverValorEngilsh"),
-        new EntProtoId("MriyaMedalBronzeDistinguishedConductEngilsh"),
-        new EntProtoId("MriyaMedalBronzeHeartEngilsh"),
-        new EntProtoId("MriyaMedalGoldExceptionalHeroismUkrainian"),
-        new EntProtoId("MriyaMedalSilverValorUkrainian"),
-        new EntProtoId("MriyaMedalBronzeDistinguishedConductUkrainian"),
-        new EntProtoId("MriyaMedalBronzeHeartUkrainian")
+        new EntProtoId("MRMedalGoldExceptionalHeroismEngilsh"),
+        new EntProtoId("MRMedalSilverValorEngilsh"),
+        new EntProtoId("MRMedalBronzeDistinguishedConductEngilsh"),
+        new EntProtoId("MRMedalBronzeHeartEngilsh"),
+        new EntProtoId("MRMedalGoldExceptionalHeroismUkrainian"),
+        new EntProtoId("MRMedalSilverValorUkrainian"),
+        new EntProtoId("MRMedalBronzeDistinguishedConductUkrainian"),
+        new EntProtoId("MRMedalBronzeHeartUkrainian")
         // Mriya ends.
     };
 
