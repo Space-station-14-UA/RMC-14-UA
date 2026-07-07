@@ -44,7 +44,7 @@
     residueColor: residue-green
 
 - type: entity
-#  name: soap – Sich
+#  name: soap – Mriya
   id: CMSoapDeluxe
   parent: CMSoap
   description: Розкішний шматок мила від Ваффл Ко. Пахне полуницею та романтизованим тероризмом.
@@ -60,7 +60,7 @@
     residueColor: residue-brown
 
 - type: entity
-#  name: soap – Sich
+#  name: soap – Mriya
   id: CMSoapSyndie
   parent: CMSoap
   description: Ненадійний шматок мила. Пахне страхом та реальним тероризмом.
@@ -80,7 +80,7 @@
       - punishment
 
 - type: entity
-#  name: soap – Sich
+#  name: soap – Mriya
   id: CMSoapNT
   parent: CMSoap
   description: Брендовий шматок мила від Ве-Я. Пахне фороном та корпоративною політикою.

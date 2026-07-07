@@ -50,7 +50,7 @@
     - FullAuto
     recoilUnwielded: 0
     scatterUnwielded: 0
-    baseFireRate: 7 # Sich. 10 в оригіналі. Імба зброя нам не треба
+    baseFireRate: 7 # Mriya. 10 в оригіналі. Імба зброя нам не треба
     modifiers:
       FullAuto:
         maxScatterModifier: 0
@@ -157,7 +157,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletHMG10x28mmTungsten
-#  name: куля (10x28mm Вольфрам) – Sich
+#  name: куля (10x28mm Вольфрам) – Mriya
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

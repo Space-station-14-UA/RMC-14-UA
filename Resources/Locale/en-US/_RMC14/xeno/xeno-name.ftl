@@ -7,12 +7,12 @@ rmc-xeno-mature = Зріла {$baseName}
 rmc-xeno-elder = Старша {$baseName}
 rmc-xeno-ancient = Давня {$baseName}
 rmc-xeno-prime = Первісна {$baseName}
-#Sich start
+#Mriya start
 rmc-xeno-apex = Верховна {$baseName}
 rmc-xeno-royal = Монарша {$baseName}
 rmc-xeno-legendary = Легендарна {$baseName}
 rmc-xeno-forever = Піднесена {$baseName}
-#Sich end
+#Mriya end
 
 rmc-xeno-mature-parasite = Юний {$baseName}
 rmc-xeno-elder-parasite = Ветеран {$baseName}
@@ -27,5 +27,5 @@ rmc-xeno-young-larva = Мала {$baseName}
 rmc-xeno-mature-larva = Зріла {$baseName}
 rmc-xeno-elder-larva = Велика {$baseName}
 
-sich-xeno-forever-queen = Імператриця
-sich-xeno-forever-bloody-queen = Кривава Імператриця
+mriya-xeno-forever-queen = Імператриця
+mriya-xeno-forever-bloody-queen = Кривава Імператриця

@@ -69,7 +69,7 @@
 - type: entity
   parent: CMBaseMagazinePistol
   id: RMCMagazinePistolSU6
-  name: СП-6 магазин (.45 АПК) # Sich. ACP – Automatic Colt Pistol, Автоматичний Пістолет Кольт – АПК
+  name: СП-6 магазин (.45 АПК) # Mriya. ACP – Automatic Colt Pistol, Автоматичний Пістолет Кольт – АПК
   components:
   - type: Tag
     tags:
@@ -105,7 +105,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletPistol45ACP
-#  name: куля (.45 ACP) – Sich
+#  name: куля (.45 ACP) – Mriya
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

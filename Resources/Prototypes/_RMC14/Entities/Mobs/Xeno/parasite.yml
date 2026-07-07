@@ -143,10 +143,10 @@
       3: rmc-xeno-elder-parasite
       4: rmc-xeno-ancient-parasite
       5: rmc-xeno-prime-parasite
-      6: rmc-xeno-prime-parasite # Sich
-      7: rmc-xeno-prime-parasite # Sich
-      8: rmc-xeno-prime-parasite # Sich
-      9: rmc-xeno-prime-parasite # Sich
+      6: rmc-xeno-prime-parasite # Mriya
+      7: rmc-xeno-prime-parasite # Mriya
+      8: rmc-xeno-prime-parasite # Mriya
+      9: rmc-xeno-prime-parasite # Mriya
   - type: FixedIdentity
     name: cm-job-name-xeno-parasite
   - type: VentCrawler

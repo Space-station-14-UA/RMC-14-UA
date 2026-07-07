@@ -18,9 +18,9 @@
     proto: avali
   - type: Vocal # Mriya
     sounds:
-      Male: SichMaleAvali
-      Unsexed: SichMaleAvali
-      Female: SichFemaleAvali
+      Male: MriyaMaleAvali
+      Unsexed: MriyaMaleAvali
+      Female: MriyaFemaleAvali
   - type: Wagging
     action: ActionToggleAvaliWagging
   - type: Speech

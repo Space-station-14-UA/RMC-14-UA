@@ -1,0 +1,94 @@
+- type: material
+  id: MriyaSnowball
+  stackEntity: MriyaSheetSnowball
+  name: сніжка
+  icon: { sprite: _Mriya/Objects/Materials/snowball.rsi, state: snowball }
+  price: 0
+
+- type: stack
+  id: MriyaSnowball
+  name: сніжка
+  icon: { sprite: /Textures/_Mriya/Objects/Materials/snowball.rsi, state: snowball }
+  spawn: MriyaSheetSnowball
+  maxCount: 3
+
+- type: entity
+  parent: SheetOtherBase
+  id: MriyaSheetSnowball
+  name: сніжки
+  description: Сніжки. Зі снігу. Круто!
+  suffix: Заповнені
+  components:
+    - type: RMCConstructionItem
+      buildable:
+      - MriyaSnowwomanBuild
+    - type: Material
+    - type: PhysicalComposition
+      materialComposition:
+        MriyaSnowball: 100
+    - type: Stack
+      count: 3
+      stackType: MriyaSnowball
+      baseLayer: base
+      layerStates:
+        - snowball
+        - snowball_2
+        - snowball_3
+        - snowball_4
+    - type: Sprite
+      sprite: _Mriya/Objects/Materials/snowball.rsi
+      state: snowball_4
+      layers:
+        - state: snowball_4
+          map: ["base"]
+    - type: Item
+      sprite: _Mriya/Objects/Materials/snowball.rsi
+      heldPrefix: сніжка
+      size: Normal
+    - type: Appearance
+    - type: Tag
+      tags:
+      - Sheet
+    - type: UserInterface
+      interfaces:
+        enum.RMCConstructionUiKey.Key:
+          type: RMCConstructionBui
+
+- type: entity
+  parent: MriyaSheetSnowball
+  id: MriyaSheetSnowball2
+  name: сніжки
+  description: Сніжки. Зі снігу. Круто!
+  suffix: "2"
+  components:
+    - type: Sprite
+      state: snowball_3
+    - type: Stack
+      stackType: MriyaSnowball
+      count: 2
+
+- type: entity
+  parent: MriyaSheetSnowball
+  id: MriyaSheetSnowball3
+  name: сніжки
+  description: Сніжки. Зі снігу. Круто!
+  suffix: "3"
+  components:
+    - type: Sprite
+      state: snowball_4
+    - type: Stack
+      stackType: MriyaSnowball
+      count: 3
+
+- type: entity
+  parent: MriyaSheetSnowball
+  id: MriyaSheetSnowball1
+  name: сніжка
+  description: Сніжка. Одна, самісінька.
+  suffix: Один
+  components:
+    - type: Sprite
+      state: snowball_2
+    - type: Stack
+      stackType: MriyaSnowball
+      count: 1

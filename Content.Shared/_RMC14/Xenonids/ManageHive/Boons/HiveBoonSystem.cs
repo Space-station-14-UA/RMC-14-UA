@@ -158,13 +158,13 @@ public sealed class HiveBoonSystem : EntitySystem
     private void OnActivateFireResistance(HiveBoonActivateFireResistanceEvent ev)
     {
         EnsureComp<HiveBoonFireImmunityComponent>(ev.Boon);
-        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "Королева на 5 хвилин дала нам вогнестійкий хітин!"); // Sich. Переклад
+        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "Королева на 5 хвилин дала нам вогнестійкий хітин!"); // Mriya. Переклад
     }
 
     private void OnActivateLarvaSurge(HiveBoonActivateLarvaSurgeEvent ev)
     {
-        _hive.ChangeBurrowedLarva(ev.Hive, 1); // Sich. 5 в оригіналі
-        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "Королева розбудила додаткову заховану лярву, яка приєдналася до вулика!"); // Sich. Переклад та 5 в оригіналі
+        _hive.ChangeBurrowedLarva(ev.Hive, 1); // Mriya. 5 в оригіналі
+        _xenoAnnounce.AnnounceSameHiveDefaultSound(ev.Boon, "Королева розбудила додаткову заховану лярву, яка приєдналася до вулика!"); // Mriya. Переклад та 5 в оригіналі
     }
 
     private void OnActivateKing(HiveBoonActivateKingEvent ev)
@@ -239,7 +239,7 @@ public sealed class HiveBoonSystem : EntitySystem
     {
         using (args.PushGroup(nameof(HivePylonComponent)))
         {
-            var msg = $"[color=cyan]Це буде давати вулику 1 королівську желе кожні {(int)_royalResinEvery.TotalMinutes} хвилин, які дозволять Королеві посилювати вулик![/color]"; // Sich. Переклад
+            var msg = $"[color=cyan]Це буде давати вулику 1 королівську желе кожні {(int)_royalResinEvery.TotalMinutes} хвилин, які дозволять Королеві посилювати вулик![/color]"; // Mriya. Переклад
             args.PushMarkup(msg);
         }
     }
@@ -255,7 +255,7 @@ public sealed class HiveBoonSystem : EntitySystem
 
         var area = _area.GetAreaName(ent);
         _marineAnnounce.AnnounceToMarines(Loc.GetString("rmc-boon-pylon-destroyed-announcement-marine", ("area", area)));
-        _xenoAnnounce.AnnounceSameHiveDefaultSound(ent.Owner, $"Ми втратили контроль над Вухо Вежею інкубаторів у {area}!"); // Sich. Переклад
+        _xenoAnnounce.AnnounceSameHiveDefaultSound(ent.Owner, $"Ми втратили контроль над Вухо Вежею інкубаторів у {area}!"); // Mriya. Переклад
 
         if (ent.Comp.Tower is { } tower)
         {
@@ -272,7 +272,7 @@ public sealed class HiveBoonSystem : EntitySystem
     {
         using (args.PushGroup(nameof(HivePylonComponent)))
         {
-            var msg = $"[color=cyan]Якщо розміщено після {(int) CommunicationTowerXenoTakeoverTime.TotalMinutes} хвилин раунда, то воно перетвориться на пілон вулика при контакті трави з комунікаційної вежою![/color]"; // Sich. Переклад
+            var msg = $"[color=cyan]Якщо розміщено після {(int) CommunicationTowerXenoTakeoverTime.TotalMinutes} хвилин раунда, то воно перетвориться на пілон вулика при контакті трави з комунікаційної вежою![/color]"; // Mriya. Переклад
             args.PushMarkup(msg);
         }
     }
@@ -310,7 +310,7 @@ public sealed class HiveBoonSystem : EntitySystem
             return;
 
         args.Cancelled = true;
-        args.Popup = $"{Name(ent)} вкрита смолою, спочатку приберіть її, щоб щось робити!"; // Sich. Переклад
+        args.Popup = $"{Name(ent)} вкрита смолою, спочатку приберіть її, щоб щось робити!"; // Mriya. Переклад
     }
 
     private void OnCocoonTerminating(Entity<HiveKingCocoonComponent> ent, ref EntityTerminatingEvent args)
@@ -376,7 +376,7 @@ public sealed class HiveBoonSystem : EntitySystem
 
         foreach (var uid in canVoteList)
         {
-            _dialog.OpenOptions(uid, "Оберіть ксестру", options, "Проголосуйте за сестру, яка повина стати Королем."); // Sich. Переклад
+            _dialog.OpenOptions(uid, "Оберіть ксестру", options, "Проголосуйте за сестру, яка повина стати Королем."); // Mriya. Переклад
         }
 
         EnsureVote(cocoon);
@@ -469,7 +469,7 @@ public sealed class HiveBoonSystem : EntitySystem
 
             var areaName = _area.GetAreaName(tower);
             _marineAnnounce.AnnounceToMarines(Loc.GetString("rmc-boon-pylon-announcement-marine", ("area", areaName)));
-            _xenoAnnounce.AnnounceSameHiveDefaultSound(newWeedSource, $"Ми взяли під контроль Вухо Вежу інкубаторів у {areaName}.\n\nТепер ми отримуємо королівське желе з Пілона Вулику кожні 5 хвилин. Захищайте його!"); // Sich. Переклад
+            _xenoAnnounce.AnnounceSameHiveDefaultSound(newWeedSource, $"Ми взяли під контроль Вухо Вежу інкубаторів у {areaName}.\n\nТепер ми отримуємо королівське желе з Пілона Вулику кожні 5 хвилин. Захищайте його!"); // Mriya. Переклад
         }
 
         if (!TryComp(newWeedSource, out XenoWeedsComponent? newWeedSourceComp) ||
@@ -855,7 +855,7 @@ public sealed class HiveBoonSystem : EntitySystem
                 Dirty(boons);
 
                 var sound = new BioscanComponent().XenoSound;
-                _xenoAnnounce.AnnounceToHive(default, uid, "Вулик тепер готовий розпочати створення Його Величності, для цього треба отримати контроль над обома Вухо Вежами інкубаторів.", sound); // Sich. Переклад
+                _xenoAnnounce.AnnounceToHive(default, uid, "Вулик тепер готовий розпочати створення Його Величності, для цього треба отримати контроль над обома Вухо Вежами інкубаторів.", sound); // Mriya. Переклад
             }
         }
         catch (Exception e)

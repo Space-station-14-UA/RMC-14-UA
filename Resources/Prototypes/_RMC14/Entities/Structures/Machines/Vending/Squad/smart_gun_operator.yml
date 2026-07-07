@@ -70,7 +70,7 @@
         points: 15
     - name: Предмети Одягу
       entries:
-      - id: SichScabbardShotgunSG # Sich
+      - id: MriyaScabbardShotgunSG # Mriya
         points: 15
       - id: RMCScabbardMacheteSGFilled
         points: 15

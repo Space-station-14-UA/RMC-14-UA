@@ -371,7 +371,7 @@
 - type: entity
   parent: RMCIDCardAegis
   id: RMCIDCardAegisIntel
-#  name: AEGIS Access Badge – Sich
+#  name: AEGIS Access Badge – Mriya
   suffix: Intel-giving
   description: Ключ-картка високого рівня доступу корпорації ЕГІДА, що надає доступ до всіх їх найважливіших розробок. Саме нею можна відкрити безпечні контейнери ЕГІДА! Вона чомусь вкрита кров'ю...
   components:

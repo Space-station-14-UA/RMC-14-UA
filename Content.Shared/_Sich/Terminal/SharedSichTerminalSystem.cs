@@ -1,5 +1,5 @@
-namespace Content.Shared._Sich.Terminal;
+namespace Content.Shared._Mriya.Terminal;
 
-public abstract class SharedSichTerminalSystem : EntitySystem
+public abstract class SharedMriyaTerminalSystem : EntitySystem
 {
 }

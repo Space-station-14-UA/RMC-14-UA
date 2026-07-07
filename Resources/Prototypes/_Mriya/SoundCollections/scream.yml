@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: MriyaAvaliScreams
+  files:
+    - /Audio/_RMC14/Voice/Avali/avali_scream.ogg # РМСний звук
+    - /Audio/_Mriya/Voice/Avali/avali_scream_2.ogg # Сенсея звук

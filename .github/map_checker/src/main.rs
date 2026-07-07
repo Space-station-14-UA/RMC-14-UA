@@ -20,7 +20,7 @@ struct Args {
     config_file: String,
 
     /// Map file directory location
-    #[arg(short, long, default_value_t = String::from("../../Resources/Maps/_Sich"))] // Sich
+    #[arg(short, long, default_value_t = String::from("../../Resources/Maps/_Mriya"))] // Mriya
     maps_directory: String,
 }
 

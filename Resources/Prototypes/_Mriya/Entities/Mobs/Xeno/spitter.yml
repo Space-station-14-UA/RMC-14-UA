@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ MriyaXenoBaseOld, CMXenoSpitter ]
+  id: MriyaXenoSpitterOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Spitter/spitter.rsi
+  - type: Xeno
+    hudOffset: -0.15,0.2
+  - type: XenoEvolution
+    evolvesTo:
+    - MriyaXenoBoilerOld
+    - MriyaXenoPraetorianOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MriyaXenoSentinelOld

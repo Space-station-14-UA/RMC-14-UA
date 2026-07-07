@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using Robust.Shared.GameStates;
 using Robust.Shared.Audio;
 
-namespace Content.Shared._Sich.Terminal;
+namespace Content.Shared._Mriya.Terminal;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedSichTerminalSystem))]
-public sealed partial class SichTerminalComponent : Component
+[Access(typeof(SharedMriyaTerminalSystem))]
+public sealed partial class MriyaTerminalComponent : Component
 {
     [DataField, AutoNetworkedField]
     public bool IsInput = false;

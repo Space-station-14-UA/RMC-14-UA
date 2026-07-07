@@ -19,7 +19,7 @@
       - cost: 4000
         crate: RMCCrateBoxAmmo458
       - cost: 6000
-        crate: SichCrateBoxBulletsSmartGun # Sich
+        crate: MriyaCrateBoxBulletsSmartGun # Mriya
       - cost: 2000
         crate: RMCCrateBoxMagazineRifleM54C
       - cost: 4000
@@ -313,8 +313,8 @@
         crate: RMCCrateRestrictedEquipmentArmorB12
       - cost: 2000
         crate: RMCCrateRestrictedEquipmentIntelSupportKit
-      - cost: 10000 # Sich
-        crate: SichCrateRestrictedEquipmentChairSupplyDrop
+      - cost: 10000 # Mriya
+        crate: MriyaCrateRestrictedEquipmentChairSupplyDrop
     - name: Витратники
       entries:
       - cost: 2000
@@ -375,11 +375,11 @@
         crate: RMCCrateXM51
 #      - cost: 4000 – Mriya. Тимчасове видалення гранатометів
 #        crate: RMCCrateM85A1
-      - cost: 8000 # Sich. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
+      - cost: 8000 # Mriya. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
         crate: RMCCrateML66D
-      - cost: 8000 # Sich. Теж саме, що й трохи вище
+      - cost: 8000 # Mriya. Теж саме, що й трохи вище
         crate: RMCCrateM2C
-      - cost: 10000 # Sich. Повернуто, бо чому ні
+      - cost: 10000 # Mriya. Повернуто, бо чому ні
         crate: RMCCrateSmartGunSet
     - name: Спеціальна Амуніція
       entries:

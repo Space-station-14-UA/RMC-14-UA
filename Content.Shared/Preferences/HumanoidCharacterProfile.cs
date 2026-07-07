@@ -799,7 +799,7 @@ namespace Content.Shared.Preferences
                     if (i > 0 && numberEndingAllowed && c >= '0' && c <= '9')
                         continue;
 
-//                    if (c < 'A' || c > 'Z') – Sich commented. Cyrillic xeno names
+//                    if (c < 'A' || c > 'Z') – Mriya commented. Cyrillic xeno names
 //                        return string.Empty;
                 }
 

@@ -3,21 +3,21 @@ using Content.Shared.Popups;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
 
-namespace Content.Shared._Sich.Marine.Squads;
+namespace Content.Shared._Mriya.Marine.Squads;
 
-public sealed class SichSherpaRiflemanSystem : EntitySystem
+public sealed class MriyaSherpaRiflemanSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SichSherpaItemComponent, BeingEquippedAttemptEvent>(OnBeingEquippedAttempt);
+        SubscribeLocalEvent<MriyaSherpaItemComponent, BeingEquippedAttemptEvent>(OnBeingEquippedAttempt);
     }
 
-    private void OnBeingEquippedAttempt(Entity<SichSherpaItemComponent> item, ref BeingEquippedAttemptEvent args)
+    private void OnBeingEquippedAttempt(Entity<MriyaSherpaItemComponent> item, ref BeingEquippedAttemptEvent args)
     {
-        if (HasComp<SichSherpaRiflemanComponent>(args.EquipTarget))
+        if (HasComp<MriyaSherpaRiflemanComponent>(args.EquipTarget))
             return;
 
         if (args.EquipTarget == args.Equipee)

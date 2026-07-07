@@ -1,0 +1,36 @@
+- type: entity
+  parent: [ MriyaXenoBaseOld, CMXenoRunner ]
+  id: MriyaXenoRunnerOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Runner/runner.rsi
+  - type: Xeno
+    hudOffset: 0,0.63
+  - type: XenoEvolution
+    evolvesTo:
+    - MriyaXenoLurkerOld
+    evolvesToWithoutPoints:
+    - MriyaXenoQueenOld
+    strains:
+    - MriyaXenoRunnerAciderOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MriyaXenoLarvaOld
+
+- type: entity
+  parent: [ MriyaXenoBaseOld, RMCXenoRunnerAcider ]
+  id: MriyaXenoRunnerAciderOld
+  suffix: Кислотна, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Runner/acider_runner.rsi
+  - type: Xeno
+    hudOffset: -0.1,0.63
+  - type: XenoEvolution
+    evolvesTo:
+    - MriyaXenoLurkerOld
+    evolvesToWithoutPoints:
+    - MriyaXenoQueenOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MriyaXenoLarvaOld

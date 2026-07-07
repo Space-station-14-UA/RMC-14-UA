@@ -1,0 +1,52 @@
+# Наша варіація RMCBackpackAmmo під комплект Шерпи
+- type: entity
+  parent: RMCBackpackAmmo
+  id: MriyaBackpackAmmo
+  name: ВРС загального призначення
+  description: Поєднання ременів та пласталевого каркасу що дозволяє переносити громіздкі коробки. Незважаючи на скромність конструкції, далеко не кожен зможе нести цей тягар.
+  suffix: Мрія, Розгорнута
+  components:
+  - type: MriyaSherpaItem
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,7,1 #4 slots
+    whitelist:
+      tags:
+      - RMCAmmoBox
+      - MriyaFlareBox
+      - MriyaBulletBoxSmartGun
+  - type: LimitedStorage
+    limits:
+    - popup: rmc-storage-limit-one-bulletbox-smartgun
+      whitelist:
+        tags:
+        - MriyaBulletBoxSmartGun
+    - popup: rmc-storage-limit-not-flarebox
+      blacklist:
+        tags:
+        - MriyaFlareBox
+      whitelist: null
+      count: 3
+  - type: RemoveComponents
+    components:
+      - type: ClothingSpeedModifier
+        walkModifier: 0.910
+        sprintModifier: 0.850
+
+- type: entity
+  parent: BaseItem
+  id: MriyaBackpackAmmoFolded
+  name: ВРС загального призначення
+  description: Згорнута вантажна рама для спорядження. Розгорніть перед використанням.
+  suffix: Мрія, Згорнута
+  components:
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: _Mriya/Objects/Clothing/Back/Backpacks/Marines/ammo_rack.rsi
+    state: ammo_pack-0
+  - type: SpawnItemsOnUse
+    items:
+    - id: MriyaBackpackAmmo
+      amount: 1

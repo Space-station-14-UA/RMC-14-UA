@@ -1,0 +1,53 @@
+- type: entity
+  parent: CMPamphlet
+  id: MriyaPamphletSherpa
+  name: довідник шерпи
+  description: Тут описується, як правильно переносити важкі речі.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Objects/Misc/pamphlets.rsi
+      state: pamphlet_sherpa
+    - type: SkillPamphlet
+      addComps:
+        - type: MriyaSherpaRifleman
+      addSkills:
+        RMCSkillFireman: 1
+      giveJobTitle: mriya-rmc-job-name-sherpa
+      givePrefix: mriya-rmc-job-prefix-sherpa
+      isAppendPrefix: false
+      giveIcon:
+        sprite: _Mriya/Interface/cm_job_icons.rsi
+        state: hudsquad_sherpa
+      giveMapBlip:
+        sprite: /Textures/_Mriya/Interface/map_blips.rsi
+        state: sherpa
+      bypassLimit: false # Mriya. Особливі ролі лише один раз
+      jobWhitelists:
+        - popup: rmc-pamphlets-rifleman-warning
+          jobProto: CMRifleman
+
+# Я тільки зараз зрозумів, як воно схоже на шерпу, тому це фактично буде те саме, але на мінімалках. . .
+- type: entity
+  parent: CMPamphlet
+  id: MriyaPamphletFireman
+  name: довідник перенесення на плечах
+  description: Тут описується, як правильно переносити людей на собі.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Objects/Misc/pamphlets.rsi
+      state: pamphlet_sherpa
+    - type: SkillPamphlet
+      addSkills:
+        RMCSkillFireman: 1
+      jobWhitelists:
+        - popup: rmc-pamphlets-rifleman-warning
+          jobProto: CMRifleman
+
+- type: entity
+  parent: CMPamphletLanguage
+  id: MRPamphletLanguageEnglish
+  name: шматок підручника з англійської мови за 7 клас
+  description: Ну хоча б у 22 столітті ця штука буде мати ж сенс, так? Правильно! Тобі вистачить цього, щоб почати розуміти англійську на базовому рівні.
+  components:
+  - type: SkillPamphlet
+    language: MREnglish

@@ -2,7 +2,7 @@
   parent: [RMCBaseSlideMagazineVisualsBallistic, RMCWeaponRevolverBase]
   id: RMCWeaponRevolverSpearhead
   name: БКМ 'Вістря Списа' револьвер
-  description: Масивний автоматичний револьвер, який найчастіше зустрічається в представників БКМ та в колоніях, якими вони займаються. Стріляє кулями .357. # Sich. Оригінальний опис був копією від М44, тож трошки логіки додано
+  description: Масивний автоматичний револьвер, який найчастіше зустрічається в представників БКМ та в колоніях, якими вони займаються. Стріляє кулями .357. # Mriya. Оригінальний опис був копією від М44, тож трошки логіки додано
   components:
   - type: Tag
     tags:
@@ -241,7 +241,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletRevolver357Hollowpoint
-#  name: експансивна куля (.357) – Sich
+#  name: експансивна куля (.357) – Mriya
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

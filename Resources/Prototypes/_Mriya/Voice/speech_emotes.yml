@@ -1,0 +1,135 @@
+# Тут емоції перенесені з інших білдів, бо... Бо чому ні?
+# Англомовні трігери зроблені для тих, хто звик їми користуватися
+
+## Емоція перенесена з Губу, також була додана в білд Візардів, але біс зна, коли це буде перенесено в РМС. Тож, коли нарешті зроблять – видалити ось це
+- type: emote
+  id: Flap
+  name: mriya-chat-emote-name-flap
+  category: Hands # Не дуже "руки", але до голосових їй ще далі
+  available: false
+  icon: _Mriya/Interface/Emotes/flap.png
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["mriya-chat-emote-msg-flap"]
+  chatTriggers:
+    - flap
+    - flaps
+    - flapped
+    - flapping
+    - flutter
+    - flutters
+    - fluttering
+    - fluttered
+    - flap wings
+    - flaps wings
+    - flutter wings
+    - flutters wings
+    - flaps his wings
+    - flaps her wings
+    - flaps their wings
+    - flaps its wings
+    - flutters his wings
+    - flutters her wings
+    - flutters their wings
+    - flutters its wings
+    - маше крилами
+    - машуть крилами
+    - трепушить крилами
+    - трепушать крилами
+    - тріпотить крилами
+    - тріпотять крилами
+
+## Емоції далі взяті з Старлайту/Губа для авалі. Іконка РМСна, бо оригінальні русняві
+- type: emote
+  id: Call
+  name: mriya-chat-emote-name-call
+  category: Vocal
+  available: false
+  icon: _RMC14/Actions/species_emotes.rsi/peep.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["mriya-chat-emote-msg-call"]
+  chatTriggers:
+    - call
+    - calls
+    - calling
+    - called
+    - співає
+    - співають
+    - наспівує
+    - наспівають
+
+- type: emote
+  id: Scree
+  name: mriya-chat-emote-name-scree
+  category: Vocal
+  available: false
+  icon: _RMC14/Actions/species_emotes.rsi/peep.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["mriya-chat-emote-msg-scree"]
+  chatTriggers:
+    - scree
+    - screes
+    - screeing
+    - screed
+    - чірікає
+    - чірікають
+
+- type: emote
+  id: Squawk
+  name: mriya-chat-emote-name-squawk
+  category: Vocal
+  available: false
+  icon: _RMC14/Actions/species_emotes.rsi/peep.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["mriya-chat-emote-msg-squawk"]
+  chatTriggers:
+    - squawk
+    - squawks
+    - squawking
+    - squawked
+    - каркає
+    - каркають
+    - кряче
+    - крячуть
+
+- type: emote
+  id: Wurble
+  name: mriya-chat-emote-name-wurble
+  category: Vocal
+  available: false
+  icon: _RMC14/Actions/species_emotes.rsi/purr.png # Це фактично мурчання
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["mriya-chat-emote-msg-wurble"]
+  chatTriggers:
+    - wurble
+    - wurbles
+    - wurbling
+    - wurblbed
+    - вурчить
+    - вурчать
+    - воркоче
+    - воркочуть

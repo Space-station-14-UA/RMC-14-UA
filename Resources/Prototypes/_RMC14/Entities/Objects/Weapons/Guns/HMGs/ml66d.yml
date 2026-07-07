@@ -245,7 +245,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletHMG10x28mm
-#  name: куля (10х28 мм) – Sich
+#  name: куля (10х28 мм) – Mriya
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

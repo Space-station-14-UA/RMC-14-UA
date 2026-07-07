@@ -70,7 +70,7 @@
 - type: entity
   parent: CMFax
   id: CMFaxProvost
-  name: факс-апарат Провосту # Sich
+  name: факс-апарат Провосту # Mriya
   suffix: Provost
   components:
   - type: FaxMachine
@@ -80,7 +80,7 @@
 - type: entity
   parent: CMFax
   id: CMFaxPress
-  name: факс-апарат Преси # Sich
+  name: факс-апарат Преси # Mriya
   suffix: Press
   components:
   - type: FaxMachine
@@ -90,7 +90,7 @@
 - type: entity
   parent: CMFax
   id: CMFaxCLF
-  name: факс-апарат ФВК # Sich
+  name: факс-апарат ФВК # Mriya
   suffix: CLF
   components:
   - type: FaxMachine
@@ -100,8 +100,8 @@
 - type: entity
   parent: CMFax
   id: CMFaxSPP
-  name: факс-апарат СПН # Sich
-  description: Нащо тобі це лайно... # Sich
+  name: факс-апарат СПН # Mriya
+  description: Нащо тобі це лайно... # Mriya
   suffix: SPP
   components:
   - type: FaxMachine
@@ -111,7 +111,7 @@
 - type: entity
   parent: CMFax
   id: CMFaxTSE
-  name: факс-апарат ІТС # Sich
+  name: факс-апарат ІТС # Mriya
   suffix: TSE
   components:
   - type: FaxMachine
@@ -121,8 +121,8 @@
 - type: entity
   parent: CMFax
   id: RMCFaxLiaison
-  name: факс-апарат Представника Корпорації # Sich
-  description: Єдиний та найкращий друг Корпората. Має малий шильдик "Ве-Я", а також сертифікований за останніми стандартами Корпорації (дивіться норму №WY-TT-FM-14551-B-13A)! # Sich
+  name: факс-апарат Представника Корпорації # Mriya
+  description: Єдиний та найкращий друг Корпората. Має малий шильдик "Ве-Я", а також сертифікований за останніми стандартами Корпорації (дивіться норму №WY-TT-FM-14551-B-13A)! # Mriya
   suffix: Corporate Liaison
   components:
   - type: FaxMachine

@@ -11,7 +11,7 @@
   - type: Tag
     tags:
     - ClothMade
-    - SichBeret # Sich
+    - MriyaBeret # Mriya
 
 - type: entity
   parent: CMHeadBeret

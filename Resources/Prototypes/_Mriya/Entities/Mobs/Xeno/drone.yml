@@ -1,0 +1,66 @@
+- type: entity
+  parent: [ MriyaXenoBaseOld, CMXenoDrone ]
+  id: MriyaXenoDroneOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Drone/drone.rsi
+  - type: Xeno
+    hudOffset: -0.1,0.15
+  - type: XenoEvolution
+    evolvesTo:
+    - MriyaXenoCarrierOld
+    - MriyaXenoBurrowerOld
+    - MriyaXenoHivelordOld
+    evolvesToWithoutPoints:
+    - MriyaXenoQueenOld
+    strains:
+    - MriyaXenoDroneGardenerOld
+    - MriyaXenoDroneHealerOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MriyaXenoLarvaOld
+
+- type: entity
+  parent: [ MriyaXenoBaseOld, CMXenoDroneGardener ]
+  id: MriyaXenoDroneGardenerOld
+  suffix: Садівниця, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Drone/gardener_drone.rsi
+  - type: XenoFruitPlanterVisuals
+    rsi: _RMC14/Mobs/OldXenonids/Drone/gardener_drone.rsi
+    prefix: gardener
+  - type: Xeno
+    hudOffset: 0,0.15
+  - type: XenoEvolution
+    evolvesTo:
+    - MriyaXenoCarrierOld
+    - MriyaXenoBurrowerOld
+    - MriyaXenoHivelordOld
+    evolvesToWithoutPoints:
+    - MriyaXenoQueenOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MriyaXenoLarvaOld
+
+- type: entity
+  parent: [ MriyaXenoBaseOld, CMXenoDroneHealer ]
+  id: MriyaXenoDroneHealerOld
+  suffix: Цілителька, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Drone/healer_drone.rsi
+  - type: RMCXenoDamageVisuals
+    prefix: drone
+  - type: Xeno
+    hudOffset: 0,0.15
+  - type: XenoEvolution
+    evolvesTo:
+    - MriyaXenoCarrierOld
+    - MriyaXenoBurrowerOld
+    - MriyaXenoHivelordOld
+    evolvesToWithoutPoints:
+    - MriyaXenoQueenOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MriyaXenoLarvaOld

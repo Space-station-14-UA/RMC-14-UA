@@ -1,0 +1,107 @@
+﻿- type: job
+  parent: RMCCLFMedic
+  id: MriyaCLFMedic
+  startingGear: MriyaGearCLFMedic
+  spawnMenuRoleName: ФВК Медик
+  accessGroups:
+  - Colony
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        RMCSkillFirearms: 1
+        RMCSkillFireman: 1
+        RMCSkillMeleeWeapons: 1
+        RMCSkillPolice: 1
+        RMCSkillEndurance: 1
+        RMCSkillJtac: 0
+        RMCSkillVehicles: 1
+        RMCSkillConstruction: 1
+        RMCSkillEngineer: 1
+
+        RMCSkillMedical: 3
+        RMCSkillSurgery: 2
+    - type: NpcFactionMember
+      factions:
+      - CLF
+    - type: JobPrefix
+      prefix: rmc-job-prefix-clf-medic
+  hidden: true
+
+- type: entity
+  id: MriyaRandomHumanoidCLFMedic
+  name: ФВК спавнер ролі привидів Медика
+  suffix: Spawner, Player
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Accessory/Armbands/clf_armband.rsi
+    state: icon
+  - type: RandomHumanoidSpawner
+    settings: MriyaCLFMedic
+
+- type: randomHumanoidSettings
+  parent: RMCEventHumanoid
+  id: MriyaCLFMedic
+  components:
+  - type: GhostRole
+    name: rmc-ghost-role-clf-medic
+    description: rmc-ghost-role-information-clf-description
+    rules: rmc-ghost-role-information-clf-rules
+    reregister: false
+    job: MriyaCLFMedic
+    raffle:
+      settings: short
+    requirements:
+    - !type:RoleTimeRequirement
+      role: CMJobHospitalCorpsman
+      time: 18000 # 5 Hours
+  - type: GhostRoleApplySpecial
+    squad: SquadCLF
+
+- type: startingGear
+  id: MriyaGearCLFMedic
+  equipment:
+    mask: RMCCombatUtilityKnifeA
+    ears: RMCHeadsetDistressCLF
+    ears2: RMCFlashlightPen
+    eyes: RMCGlassesMedicalHUDGlasses
+    head: CMHeadBandRebel
+    jumpsuit: RMCJumpsuitCLFWebbingSurgical
+    outerClothing: MriyaCoatMilitiaVest
+    gloves: CMHandsLatex
+    shoes: RMCShoesWhite
+    id: MriyaIDCardCLFMedic
+    belt: CMBeltMedicalFilled
+    back: RMCSatchelLightpack
+    pocket1: RMCFlashlight
+    pocket2: RMCPouchMagazineLarge
+  inhand:
+  - WeaponSMGMAC15  # TODO RMC14 - Make randomized
+  storage:
+    back:
+    - RMCGrenadeIED
+    - RMCGrenadeMolotov
+    - RMCGrenadeMolotov
+    - CMAdvFirstAidKitFilled
+    - RMCPacketGrenadeSmokeFilled
+    - RMCMRECLF
+    - CMCrowbar
+    - RMCBinocularsCiv
+    - CMFireExtinguisherPortable
+    pocket2:
+    - RMCMagazineSMGMAC15Ext
+    - RMCMagazineSMGMAC15Ext
+    - RMCMagazineSMGMAC15Ext
+    - RMCMagazineSMGMAC15Ext
+    belt:
+    - CMDefibrillator
+    - CMHealthAnalyzer
+    - CMRollerBedSpawnFolded
+    - CMEpinephrineAutoInjector
+    - CMEpinephrineAutoInjector
+    - CMBloodPackFull
+    - CMBloodPackFull
+    outerClothing:
+    - RMCMagazineSMGMAC15
+    - RMCMagazineSMGMAC15

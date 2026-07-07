@@ -1,22 +1,22 @@
 using Content.Server.Speech.Components;
 using System.Text.RegularExpressions;
-using Robust.Shared.Random; // Sich
+using Robust.Shared.Random; // Mriya
 
 namespace Content.Server.Speech.EntitySystems;
 
 /// <summary>
 /// System that gives the speaker a faux-French accent.
-/// Sich. Локалізовано Pgriha за ідеєю France
+/// Mriya. Локалізовано Pgriha за ідеєю France
 /// </summary>
 public sealed class FrenchAccentSystem : EntitySystem
 {
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
-    [Dependency] private readonly IRobustRandom _random = default!; // Sich
+    [Dependency] private readonly IRobustRandom _random = default!; // Mriya
 
     private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
     private static readonly Regex RegexStartH = new(@"(?<!\w)h", RegexOptions.IgnoreCase);
     private static readonly Regex RegexSpacePunctuation = new(@"(?<=\w\w)[!?;:](?!\w)", RegexOptions.IgnoreCase);
-    // Sich start. Локалізація. Частина лише малі, бо великі однакові з латинськими
+    // Mriya start. Локалізація. Частина лише малі, бо великі однакові з латинськими
     private static readonly Regex RegexUpperCyrillicR = new(@"[Р]");
     private static readonly Regex RegexLowerCyrillicR = new(@"[р]");
     private static readonly Regex RegexUpperCyrillicS = new(@"[С]");
@@ -27,7 +27,7 @@ public sealed class FrenchAccentSystem : EntitySystem
     private static readonly Regex RegexLowerCyrillicL = new(@"[л]");
     private static readonly Regex RegexUpperCyrillicF = new(@"[Ф]");
     private static readonly Regex RegexLowerCyrillicF = new(@"[ф]");
-    // Sich end
+    // Mriya end
 
     public override void Initialize()
     {
@@ -40,7 +40,7 @@ public sealed class FrenchAccentSystem : EntitySystem
     {
         var msg = message;
 
-        msg = _replacement.ApplyReplacements(msg, "sichfrench"); // Sich. french в оригіналі, локалізація (french так то не існує у файлах)
+        msg = _replacement.ApplyReplacements(msg, "mriyafrench"); // Mriya. french в оригіналі, локалізація (french так то не існує у файлах)
 
         // replaces h with ' at the start of words.
         msg = RegexStartH.Replace(msg, "'");
@@ -64,7 +64,7 @@ public sealed class FrenchAccentSystem : EntitySystem
                 msg = msg.Substring(0, match.Index) + "'" + c + msg.Substring(idxLetter);
             }
         }
-        // Sich start. Локалізація
+        // Mriya start. Локалізація
         if (_random.Prob(0.5f))
         {
             msg = RegexUpperCyrillicR.Replace(msg, "R");
@@ -78,7 +78,7 @@ public sealed class FrenchAccentSystem : EntitySystem
             msg = RegexUpperCyrillicF.Replace(msg, "F");
             msg = RegexLowerCyrillicF.Replace(msg, "f");
         }
-        // Sich end.
+        // Mriya end.
 
         return msg;
     }

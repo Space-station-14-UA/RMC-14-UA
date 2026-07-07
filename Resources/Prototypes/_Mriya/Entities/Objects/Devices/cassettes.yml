@@ -1,0 +1,53 @@
+- type: entity
+  abstract: true
+  parent: RMCCassetteTapeBase
+  id: MriyaCassetteTapeBase
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Devices/cassette_player.rsi
+
+# Січ
+- type: entity
+  parent: MriyaCassetteTapeBase
+  id: MriyaCassetteTapeFire
+  name: запальна касета
+  description: Касета з композиціями, під які ваша смерть буде виглядати красиво. Спеціально для роти "Січові Стрільці" КМПОН!
+  components:
+  - type: Sprite
+    state: cassette_hellfire
+  - type: CassetteTape
+    songs:
+    - /Audio/_Mriya/Jukebox/california_dreamin'.ogg
+    - /Audio/_Mriya/Jukebox/fortunate_son.ogg
+    - /Audio/_Mriya/Jukebox/welcome_to_the_jungle.ogg
+    - /Audio/_Mriya/Jukebox/this_fire.ogg
+    - /Audio/_Mriya/Jukebox/seven_nation_army.ogg
+    - /Audio/_Mriya/Jukebox/paranoid.ogg
+    - /Audio/_Mriya/Jukebox/paint_it_black.ogg
+
+- type: entity
+  parent: MriyaCassetteTapeBase
+  id: MriyaCassetteTapeManSoldWorld
+  name: касета продавшого світ
+  description: Касета від того, хто продав світ. Спеціально для роти "Січові Стрільці" КМПОН!
+  components:
+  - type: Sprite
+    state: cassette_who_sold_world
+  - type: CassetteTape
+    songs:
+    - /Audio/_Mriya/Jukebox/the_man_who_sold_the_world.ogg
+    - /Audio/_Mriya/Jukebox/invinsible.ogg
+    - /Audio/_Mriya/Jukebox/snake_eater.ogg
+
+- type: entity
+  parent: MriyaCassetteTapeBase
+  id: MriyaCassetteTapeUa
+  name: українська касета
+  description: Касета з збірником українських композицій. Спеціально для роти "Січові Стрільці" КМПОН!
+  components:
+  - type: Sprite
+    state: cassette_ua
+  - type: CassetteTape
+    songs:
+    - /Audio/_Mriya/Jukebox/vulytsia_skhid.ogg
+    - /Audio/_Mriya/Jukebox/shybenyk.ogg

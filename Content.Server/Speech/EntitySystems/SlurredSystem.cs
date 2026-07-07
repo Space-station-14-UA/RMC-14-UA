@@ -69,7 +69,7 @@ public sealed class SlurredSystem : SharedSlurredSystem
                     'a' => "ah",
                     'u' => "oo",
                     'c' => "k",
-                    // Sich start. Локалізація. Зроблено Pgriha за ідеєю France
+                    // Mriya start. Локалізація. Зроблено Pgriha за ідеєю France
                     'а' => "аь",
                     'з' => "зж",
                     'ї' => "іі",
@@ -78,7 +78,7 @@ public sealed class SlurredSystem : SharedSlurredSystem
                     'с' => "сь",
                     'у' => "ее",
                     'я' => "йя",
-                    // Sich end
+                    // Mriya end
                     _ => $"{character}",
                 };
 
@@ -89,7 +89,7 @@ public sealed class SlurredSystem : SharedSlurredSystem
             {
                 if (character == ' ')
                 {
-                    sb.Append(Loc.GetString(_random.Pick(new List<string> { "slur-accent-confused-1", "slur-accent-confused-2", "slur-accent-confused-3"}))); // Sich. Локалізація, додано більше варіацій
+                    sb.Append(Loc.GetString(_random.Pick(new List<string> { "slur-accent-confused-1", "slur-accent-confused-2", "slur-accent-confused-3"}))); // Mriya. Локалізація, додано більше варіацій
                 }
                 else if (character == '.')
                 {

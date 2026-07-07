@@ -92,7 +92,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400 # Sich. 200 в оригіналі. 20 замість 10 ударів лессера/бігуна
+        damage: 400 # Mriya. 200 в оригіналі. 20 замість 10 ударів лессера/бігуна
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -180,7 +180,7 @@
       map: [ "enum.ItemCamouflageLayers.Layer2", "standard_roof" ]
     - state: cmd_standard_canvas
 
-- type: entity # Sich. Він став великим
+- type: entity # Mriya. Він став великим
   parent: RMCTentUNMCExtended
   id: RMCTentUNMCStandardMedical
   name: медичний намет КМПОН

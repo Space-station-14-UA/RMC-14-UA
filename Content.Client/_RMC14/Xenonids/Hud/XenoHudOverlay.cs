@@ -73,7 +73,7 @@ public sealed class XenoHudOverlay : Overlay
     private readonly ResPath _rsiPath = new("/Textures/_RMC14/Interface/xeno_hud.rsi");
     private readonly ResPath _rsiPathSlow = new("/Textures/_RMC14/Effects/xeno_stomp.rsi");
     private readonly ResPath _rsiPathFreeze = new("/Textures/_RMC14/Effects/xeno_freeze.rsi");
-    private readonly ResPath _rsiPathSich = new("/Textures/_Sich/Interface/xeno_hud.rsi"); // Sich
+    private readonly ResPath _rsiPathMriya = new("/Textures/Mriya/Interface/xeno_hud.rsi"); // Mriya
 
     public XenoHudOverlay()
     {
@@ -313,7 +313,7 @@ public sealed class XenoHudOverlay : Overlay
         var ranks = _entity.EntityQueryEnumerator<XenoRankComponent, SpriteComponent, TransformComponent>();
         while (ranks.MoveNext(out var uid, out var comp, out var sprite, out var xform))
         {
-            if (comp.Rank < 2 || comp.Rank > 9 || _xenoMaturingQuery.HasComp(uid)) // Sich. Шеврони Міюгі. comp.Rank > 6 в оригіналі
+            if (comp.Rank < 2 || comp.Rank > 9 || _xenoMaturingQuery.HasComp(uid)) // Mriya. Шеврони Міюгі. comp.Rank > 6 в оригіналі
                 continue;
 
             if (xform.MapID != args.MapId)
@@ -336,7 +336,7 @@ public sealed class XenoHudOverlay : Overlay
             var matrix = Matrix3x2.Multiply(rotationMatrix, scaledWorld);
             handle.SetTransform(matrix);
 
-            var icon = new Rsi(_rsiPathSich, $"hudxenoupgrade{comp.Rank}"); // Sich. _rsiPath в оригіналі
+            var icon = new Rsi(_rsiPathMriya, $"hudxenoupgrade{comp.Rank}"); // Mriya. _rsiPath в оригіналі
             var texture = _sprite.GetFrame(icon, _timing.CurTime);
 
             var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) texture.Height / EyeManager.PixelsPerMeter * bounds.Height;

@@ -485,7 +485,7 @@ public sealed class CMGunSystem : EntitySystem
         var session = CompOrNull<ActorComponent>(user)?.PlayerSession;
         if (gunComp.Target.Value == user.Owner)
         {
-            return; // Sich. Просто прибирає можливість це робити. Ніяких моментальних самогубств
+            return; // Mriya. Просто прибирає можливість це робити. Ніяких моментальних самогубств
 
             if (gunComp.SelectedMode == SelectiveFire.FullAuto)
                 return;

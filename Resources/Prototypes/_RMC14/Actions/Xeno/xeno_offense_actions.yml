@@ -372,7 +372,7 @@
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
       state: xeno_spit
-    useDelay: 1.5 # Sich. 2 в оригіналі
+    useDelay: 1.5 # Mriya. 2 в оригіналі
   - type: TargetAction
     repeat: true
     range: 15
@@ -422,7 +422,7 @@
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
       state: xeno_spit
-    useDelay: 2 # Sich. 2.5 в оригіналі. Повинно бути 1.5, але тимчасове видалення гранатометів
+    useDelay: 2 # Mriya. 2.5 в оригіналі. Повинно бути 1.5, але тимчасове видалення гранатометів
   - type: TargetAction
     repeat: true
     range: 15

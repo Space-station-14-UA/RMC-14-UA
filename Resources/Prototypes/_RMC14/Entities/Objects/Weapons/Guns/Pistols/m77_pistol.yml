@@ -128,7 +128,7 @@
 - type: entity
   parent: CMBulletBase
   id: CMBulletPistolM77AP
-#  name: бронебійна куля (9мм) – Sich
+#  name: бронебійна куля (9мм) – Mriya
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

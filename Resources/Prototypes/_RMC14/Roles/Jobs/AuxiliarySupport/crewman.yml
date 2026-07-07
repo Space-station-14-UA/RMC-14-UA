@@ -25,7 +25,7 @@
     components:
     - type: Skills
       skills:
-        RMCSkillConstruction: 1 # Sich. 0 в оригіналі
+        RMCSkillConstruction: 1 # Mriya. 0 в оригіналі
         RMCSkillEndurance: 1
         RMCSkillEngineer: 2
         RMCSkillFirearms: 1

@@ -32,7 +32,7 @@ public sealed class CharacterInfoSystem : EntitySystem
 
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
         var jobTitle = Loc.GetString("character-info-no-profession");
-        string? jobId = null; // Sich
+        string? jobId = null; // Mriya
         string? briefing = null;
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
@@ -50,7 +50,7 @@ public sealed class CharacterInfoSystem : EntitySystem
                 objectives[issuer].Add(info.Value);
             }
 
-            if (_jobs.MindTryGetJob(mindId, out var job)) // Sich
+            if (_jobs.MindTryGetJob(mindId, out var job)) // Mriya
             {
                 jobTitle = job.LocalizedName;
                 jobId = job.ID;
@@ -60,6 +60,6 @@ public sealed class CharacterInfoSystem : EntitySystem
             briefing = _roles.MindGetBriefing(mindId);
         }
 
-        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, jobId), args.SenderSession); // Sich
+        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, jobId), args.SenderSession); // Mriya
     }
 }

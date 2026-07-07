@@ -173,7 +173,7 @@
 - type: entity
   parent: CMXenoRunnerBase
   id: RMCXenoRunnerAcider
-  description: Невеличка жовта та аеродинамічна чужопланетна істота, схоже її лапи створені для бігу. Весь її хребет вкритий кислотними почками. # Sich
+  description: Невеличка жовта та аеродинамічна чужопланетна істота, схоже її лапи створені для бігу. Весь її хребет вкритий кислотними почками. # Mriya
   suffix: Acider
   components:
   - type: Sprite

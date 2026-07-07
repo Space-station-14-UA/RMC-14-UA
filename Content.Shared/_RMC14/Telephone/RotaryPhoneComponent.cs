@@ -11,7 +11,7 @@ namespace Content.Shared._RMC14.Telephone;
 public sealed partial class RotaryPhoneComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public string Category = "Саванна"; // Sich. Almayer в оригіналі
+    public string Category = "Саванна"; // Mriya. Almayer в оригіналі
 
     [DataField, AutoNetworkedField]
     public bool CanDnd;
@@ -29,7 +29,7 @@ public sealed partial class RotaryPhoneComponent : Component
     public SoundSpecifier? GrabSound = new SoundCollectionSpecifier("RMCRadioTelephoneGrab");
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier? VoicemailSound = new SoundPathSpecifier("/Audio/_Sich/Phone/voicemail-ua.ogg", AudioParams.Default.WithVolume(-3)); // Mriya. "/Audio/_RMC14/Machines/Phone/voicemail.ogg" в оригіналі
+    public SoundSpecifier? VoicemailSound = new SoundPathSpecifier("/Audio/_Mriya/Phone/voicemail-ua.ogg", AudioParams.Default.WithVolume(-3)); // Mriya. "/Audio/_RMC14/Machines/Phone/voicemail.ogg" в оригіналі
 
     [DataField, AutoNetworkedField]
     public EntProtoId<RMCTelephoneComponent> PhoneId = "RMCTelephone";

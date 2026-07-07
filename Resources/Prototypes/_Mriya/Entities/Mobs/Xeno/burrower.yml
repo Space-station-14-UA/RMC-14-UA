@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ MriyaXenoBaseOld, CMXenoBurrower ]
+  id: MriyaXenoBurrowerOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Burrower/burrower.rsi
+  - type: Xeno
+    hudOffset: 0,0.45
+  - type: XenoDevolve
+    devolvesTo:
+    - MriyaXenoDroneOld

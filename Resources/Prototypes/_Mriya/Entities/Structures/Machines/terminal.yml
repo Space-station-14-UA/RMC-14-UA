@@ -1,0 +1,80 @@
+- type: entity
+  parent: [ BaseMachinePowered, RMCConstructibleMachine ]
+  id: MriyaTerminalInput
+  name: термінал комунікації
+  suffix: Січ, Ввід
+  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  components:
+  - type: Transform
+    anchored: false
+    noRot: false
+  - type: Sprite
+    sprite: _Mriya/Structures/Machines/console.rsi
+    state: console
+  - type: MriyaTerminal
+    isInput: true
+  - type: ActivatableUI
+    key: enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key:
+        type: MriyaTerminalBoundUserInterface
+  - type: ItemSlots
+    slots:
+      id_card:
+        name: ID-картка
+        whitelist:
+          components:
+          - IdCard
+          - Pda
+  - type: WallMount
+    arc: 360
+  - type: EmitSoundOnUIOpen
+    sound:
+      collection: RMCKeyboardTyping
+      params:
+        volume: -1
+  - type: Corrodible
+    isCorrodible: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MriyaTerminalBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: RemoveComponents
+    components:
+    - type: ApcPowerReceiver
+    - type: Anchorable
+
+- type: entity
+  parent: MriyaTerminalInput
+  id: MriyaTerminalOutput
+  suffix: Січ, Перегляд
+  description: Корпоративний термінал для перегляду каналу зв'язку Ве-Я та їх представника.
+  components:
+  - type: MriyaTerminal
+    isInput: false
+  - type: RemoveComponents
+    components:
+    - type: ItemSlots
+
+- type: entity
+  parent: ComputerBroken
+  id: MriyaTerminalBroken
+  name: зламаний термінал комунікації
+  description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Structures/Machines/console.rsi
+    state: broken

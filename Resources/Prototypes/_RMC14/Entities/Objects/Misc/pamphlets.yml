@@ -10,7 +10,7 @@
   - type: Item
     size: Tiny
   - type: SkillPamphlet
-    bypassLimit: true # Sich. Дайте читати довідники скільки лізе
+    bypassLimit: true # Mriya. Дайте читати довідники скільки лізе
     whitelists:
     - popup: rmc-pamphlets-cant-use
       restrictions:
@@ -118,7 +118,7 @@
     addComps:
     - type: SpotterWhitelist
     addSkills:
-      RMCSkillJtac: 2 # Sich. 1 в оригіналі
+      RMCSkillJtac: 2 # Mriya. 1 в оригіналі
     skillCap:
       RMCSkillJtac: 3 # Mriya. 2 в оригіналі. RMC14: In case they read another one first.
     giveJobTitle: rmc-job-name-spotter
@@ -130,7 +130,7 @@
     giveMapBlip:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: spotter
-    bypassLimit: false # Sich. Особливі ролі лише один раз
+    bypassLimit: false # Mriya. Особливі ролі лише один раз
     jobWhitelists:
     - popup: rmc-pamphlets-rifleman-warning
       jobProto: CMRifleman
@@ -226,7 +226,7 @@
     giveMapBlip:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: loader
-    bypassLimit: false # Sich. Особливі ролі лише один раз
+    bypassLimit: false # Mriya. Особливі ролі лише один раз
     jobWhitelists:
     - popup: rmc-pamphlets-rifleman-warning
       jobProto: CMRifleman
@@ -258,7 +258,7 @@
     giveMapBlip:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: mortar
-    bypassLimit: false # Sich. Особливі ролі лише один раз
+    bypassLimit: false # Mriya. Особливі ролі лише один раз
     jobWhitelists:
     - popup: rmc-pamphlets-rifleman-warning
       jobProto: CMRifleman
