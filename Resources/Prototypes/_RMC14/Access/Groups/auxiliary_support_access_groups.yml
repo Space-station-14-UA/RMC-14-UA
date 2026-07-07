@@ -72,4 +72,7 @@
   - CMAccessDelta
   - CMAccessMarinePrep
   - RMCAccessVehicleCrew
-  - CMAccessEngineering # Mriya. Для Саванни
+  # Mriya start. Для Саванни
+  - CMAccessEngineering
+  - RMCAccessCommand
+  # Mriya end

@@ -33,5 +33,8 @@ rmc-trait-russian-language-desc = Та блять. Іді нахуй х2.
 rmc-trait-german-language-name = Німецька мова
 rmc-trait-german-language-desc = Ви можете спілкуватися та розуміти німецьку. Хало!
 
+rmc-trait-scandinavian-language-name = Скандинавська мова
+rmc-trait-scandinavian-language-desc = Ви можете спілкуватися та розуміти скандинавську. Хальснігар!
+
 rmc-trait-group-languages = Знання мов
 rmc-trait-group-other-speech = Особливості вимови

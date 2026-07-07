@@ -157,6 +157,9 @@ public sealed partial class RMCPlaytimeStatsWindow : FancyWindow
             if (!_prototypeManager.TryIndex<JobPrototype>(jobId, out var job))
                 continue;
 
+            if (!job.IsCM) // Mriya. Приховування ванільних трекерів
+                continue;
+
             var depts = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>()
                 .Where(d => d.Roles.Contains(job.ID))
                 .ToList();
@@ -352,6 +355,9 @@ public sealed partial class RMCPlaytimeStatsWindow : FancyWindow
         foreach (var kvp in rolePlaytimes.OrderBy(r => Loc.GetString(r.Key)))
         {
             if (!_prototypeManager.TryIndex<JobPrototype>(kvp.Key, out var job))
+                continue;
+
+            if (!job.IsCM) // Mriya. Приховування ванільних трекерів
                 continue;
 
             var dept = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>()

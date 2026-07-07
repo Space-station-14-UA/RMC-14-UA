@@ -42,6 +42,7 @@
         RMCSkillLeadership: 1
         RMCSkillMeleeWeapons: 1
         RMCSkillOverwatch: 1
+        RMCSkillVehicles: 2 # Mriya. 0 в оригіналі
         RMCSkillResearch: 1
     - type: CMVendorUser
       id: CMIntelOfficer

@@ -288,10 +288,10 @@
     bio: 20
     explosionArmor: 20 # CLOTHING_ARMOR_MEDIUM
   - type: RMCArmorSpeedTier
-    speedTier: very light
-  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
-    walkModifier: 0.897
-    sprintModifier: 0.897
+    speedTier: light      #Mriya
+  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_LIGHT
+    walkModifier: 0.725   #Mriya Змінено рівень сповільнення броні на легкий, щоб морпіхи постійно в неї не перевдягалися й порушували тим самим СОП
+    sprintModifier: 0.725 #Mriya
   - type: ClothingRequireEquipped
     autoUnequip: true
     denyReason: rmc-armor-not-un-security-jumpsuit

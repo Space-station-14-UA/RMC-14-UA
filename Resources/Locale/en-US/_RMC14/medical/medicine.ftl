@@ -1,4 +1,4 @@
-﻿reagent-name-cmdylovene = Диловен
+reagent-name-cmdylovene = Диловен
 reagent-desc-cmdylovene = Антитоксин загальної дії, який нейтралізує більшість токсинів у крові. Може використовуватися, як легкий антигалюциногенний засіб і для зменшення втоми. Має обов'язково бути в наявності у медиків. Передозування викликає сильну інтоксикацію.
 
 reagent-name-cmethylredoxrazine = Етилредоксазін
@@ -73,28 +73,28 @@ rmc-iron-container-label-text = За
 rmc-custom-container-label-text = {$customLabel}
 
 # Set Icon Label Verb
-rmc-set-icon-label-verb = Set icon label
-rmc-set-icon-label-dialog-title = Set On-Sprite Label
-rmc-set-icon-label-dialog-prompt = Label text? ({$max} characters maximum)
-rmc-set-icon-label-cleared = You clear the label off {THE($item)}.
-rmc-set-icon-label-set = You label {THE($item)} with '{$label}' in big, blocky letters.
+rmc-set-icon-label-verb = Встановити надпис піктограми
+rmc-set-icon-label-dialog-title = Встановити надпис на піктограмі
+rmc-set-icon-label-dialog-prompt = Текст етикетки? (максимум {$max} літер)
+rmc-set-icon-label-cleared = Ви здираєте етикетку з {$item}.
+rmc-set-icon-label-set = Ви наносите етикетку '{$label}' на {$item} великими, друкованими літерами.
 
 # Antidepressants
-reagent-name-rmcmethylphenidate = Methylphenidate
-reagent-desc-rmcmethylphenidate = A commonly prescribed psychostimulant that increases activity of the central nervous system. Often used to treat attention deficit hyperactivity disorder (ADHD) and narcolepsy. This drug improves performance primarily in the executive function in the prefrontal cortex (reasoning, inhibiting behaviors, organizing, problem solving, planning ect.)
+reagent-name-rmcmethylphenidate = Метилфенідат
+reagent-desc-rmcmethylphenidate = Поширений психостимулятор, який підвищує активність центральної нервової системи. Часто застосовується для лікування синдрому дефіциту уваги з гіперактивністю (СДУГ) та нарколепсії. Препарат покращує переважно виконавчі функції префронтальної кори (мислення, гальмування імпульсивної поведінки, організацію, розв'язання проблем, планування тощо).
 
-reagent-name-rmccitalopram = Citalopram
-reagent-desc-rmccitalopram = Citalopram is a drug used to treat depression, obsessive-compulsive disorder and panic disorder. It is considered safe for consumption and has been commonly available since 1998.
+reagent-name-rmccitalopram = Циталопрам
+reagent-desc-rmccitalopram = Циталопрам - це лікарський препарат, що застосовується для лікування депресії, обсесивно-компульсивного розладу та панічного розладу. Вважається безпечним для застосування та широко доступний з 1998 року.
 
-reagent-name-rmcparoxetine = Paroxetine
-reagent-desc-rmcparoxetine = Very powerful antidepressant used to treat: major depressive disorder (MDD), obsessive-compulsive disorder (OCD), social anxiety disorder (SAD), panic disorder, posttraumatic stress disorder (PTSD), generalized anxiety disorder (GAD) and prenmenstrual dysphoric disorder (PMDD). Prolonged use may have side effects.
+reagent-name-rmcparoxetine = Пароксетин
+reagent-desc-rmcparoxetine = Дуже потужний антидепресант, що застосовується для лікування: великого депресивного розладу (ВДР), обсесивно-компульсивного розладу (ОКР), соціального тривожного розладу (СТР), панічного розладу, посттравматичного стресового розладу (ПТСР), генералізованого тривожного розладу (ГТР) та передменструального дисфоричного розладу (ПМДР). Тривале застосування може спричиняти побічні ефекти.
 
-antidepressant-effect-rmcmethylphenidate = Your mind feels focused and undivided.
-antidepressant-effect-rmccitalopram = Your mind feels stable... a little stable.
-antidepressant-effect-rmcparoxetine = Your mind feels much more stable.
+antidepressant-effect-rmcmethylphenidate = Ваш розум відчувається зосередженим і цілісним.
+antidepressant-effect-rmccitalopram = Ваш розум відчувається стабільним... відносно стабільним.
+antidepressant-effect-rmcparoxetine = Ваш розум відчувається набагато стабільнішим.
 
-reagent-name-rmcantized = AntiZed
-reagent-desc-rmcantized = A chemical designed for use against Agent A0-3959X.91–15, colloquially known as the "Black Goo".
+reagent-name-rmcantized = АнтиЗед
+reagent-desc-rmcantized = Хімікат, що застосовується для нейтралізації "Агенту A0-3959X.91–15", загальновідомий як "Чорний Слиз".
 
-reagent-name-rmclipozine = Lipozine
-reagent-desc-rmclipozine = Lowers satiation and reduces body weight by increasing ketosis and the rate of which fat is metabolized. Use to treat obesity. Large doses can cause extreme weight loss.
+reagent-name-rmclipozine = Ліпозин
+reagent-desc-rmclipozine = Зменшує відчуття насичення та масу тіла, підвищуючи кетоз і швидкість метаболізму жирів. Використовується для лікування ожиріння. Великі дози можуть спричиняти екстремальну втрату ваги.

@@ -175,7 +175,7 @@
     group: Brute
     consumable: false
     scalingDoAfter: 0.25
-    damage: -10
+    damage: -12.5 # Mriya. 10 в оригіналі
     canUseUnskilled: false
     skills:
       RMCSkillMedical: 2
@@ -219,7 +219,7 @@
     group: Burn
     consumable: false
     scalingDoAfter: 0.25
-    damage: -10
+    damage: -12.5 # Mriya. 10 в оригіналі
     canUseUnskilled: false
     skills:
       RMCSkillMedical: 2

@@ -1114,18 +1114,18 @@
 
 - type: entity
   parent: RMCStockAttachmentBase
-  id: RMCAttachmentHG3712Stock
+  id: RMCAttachmentModel12Stock
   name: ХГ3712 приклад
   description: Незнімний приклад помпової рушниці ХГ37-12.
   components:
   - type: Sprite
-    state: hg3712_stock
+    state: model12_stock
   - type: AttachableVisuals
     suffix: ""
   - type: Tag
     tags:
     - RMCAttachmentStock
-    - RMCAttachmentHG3712Stock
+    - RMCAttachmentModel12Stock
 
 - type: entity
   parent: RMCStockAttachmentBase
@@ -1140,7 +1140,7 @@
   - type: Tag
     tags:
     - RMCAttachmentStock
-    - RMCAttachmentHG3712Stock
+    - RMCAttachmentHuntingStock
 
 - type: entity
   parent: RMCAttachableBase
@@ -1303,7 +1303,7 @@
     - RMCAttachmentL49Stock
 
 - type: Tag
-  id: RMCAttachmentHG3712Stock
+  id: RMCAttachmentModel12Stock
 
 - type: Tag
   id: RMCAttachmentStock

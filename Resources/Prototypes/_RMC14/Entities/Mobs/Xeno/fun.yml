@@ -199,4 +199,9 @@
   - type: RemoveComponents
     components:
     - type: CanBeLarvaQueued
+  - type: FiremanCarriable
+    canThrow: true
+    carrierWhitelist:
+      components:
+      - Synth
   # Mriya end

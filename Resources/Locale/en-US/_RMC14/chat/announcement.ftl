@@ -60,4 +60,4 @@ rmc-announcement-unidentified-lifesigns = [color=#CECECE][font size=16][bold]Н�
 
     Виявлено невідомі життєві сигнали ({$count}) на борту шатла {$name}. Рекомендація: заблокувати всі зовнішні входи, включно з вентиляційними та технічними каналами.[/bold][/font][/color]
 
-rmc-announcement-shipside-header = Please write a message to announce to the crew
+rmc-announcement-shipside-header = Будь ласка, напишіть повідомлення щоб зробити оголошення екіпажу

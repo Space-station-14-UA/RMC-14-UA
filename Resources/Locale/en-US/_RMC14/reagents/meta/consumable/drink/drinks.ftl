@@ -1,11 +1,11 @@
-﻿rmc-reagent-name-juice-bug = bug juice
-rmc-reagent-desc-juice-bug = Soda drink made from all kinds of insects, very nutritious.
+rmc-reagent-name-juice-bug = сік з комах
+rmc-reagent-desc-juice-bug = Содовий напій виготовлений зі всіх видів комах, дуже поживний.
 
-rmc-reagent-name-coco-milk= coconut milk
-rmc-reagent-desc-coco-milk = A very light, half opaque milk from coconuts, barely has any taste on its own.
+rmc-reagent-name-coco-milk= кокосове молоко
+rmc-reagent-desc-coco-milk = Дуже легке, напівпрозоре молоко з кокосів, має ледь помітний власний смак.
 
-rmc-reagent-name-soy-milk= soy milk
-rmc-reagent-desc-soy-milk = An opaque white liquid made from soybeans.
+rmc-reagent-name-soy-milk= соєве молоко
+rmc-reagent-desc-soy-milk = Непрозора біла рідина, виготовлена з соєвих бобів.
 
-rmc-reagent-name-chocolate-drink = chocolate drink
-rmc-reagent-desc-chocolate-drink = A smooth and creamy chocolate drink.
+rmc-reagent-name-chocolate-drink = шоколадне молоко
+rmc-reagent-desc-chocolate-drink = Ніжний і кремовий шоколадний напій. Хто подоїв шоколадку?

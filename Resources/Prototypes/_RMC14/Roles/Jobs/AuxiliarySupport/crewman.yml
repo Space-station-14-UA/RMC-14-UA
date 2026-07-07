@@ -1,5 +1,5 @@
 ﻿- type: job
-  parent: CMJobSquadBase
+  parent: CMJobBase
   id: CMVehicleCrewman
   name: cm-job-name-vc
   description: cm-job-description-vc
@@ -32,6 +32,7 @@
         RMCSkillFireman: 1
         RMCSkillJtac: 3
         RMCSkillLeadership: 1
+        RMCSkillMedical: 1 # Mriya. 0 в оригіналі
         RMCSkillVehicles: 3
         RMCSkillPowerLoader: 2
         RMCSkillOverwatch: 1
@@ -50,8 +51,7 @@
         state: vc
       background:
         sprite: /Textures/_RMC14/Interface/map_blips.rsi
-        state: background_intel
-#  hidden: false #TODO RMC14 - Remove when vehicles are fully added. – Mriya. Бо нам треба
+        state: background_shipside
 
 - type: startingGear
   id: CMGearVehicleCrewman
@@ -61,7 +61,6 @@
     id: CMDogtagCrewman
     ears: RMCHeadsetCrewman
     outerClothing: RMCCoatTanker
-    back: CMSatchelMarine
 
 - type: entity
   parent: CMSpawnPointJobBase

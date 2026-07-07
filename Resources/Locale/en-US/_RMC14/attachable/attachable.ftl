@@ -13,6 +13,7 @@ rmc-aslot-harness = Harness
 rmc-attachable-activation-fail-not-wielded = {CAPITALIZE($holder)} треба тримати в двох руках, щоб активувати {$attachable}!
 rmc-attachable-activation-fail-not-held = {CAPITALIZE($holder)} потрібно тримати, щоб активувати {$attachable}!
 rmc-attachable-activation-fail-not-owned = {CAPITALIZE($holder)} треба тримати або екіпірувати щоб активувати {$attachable}!
+rmc-attachable-activation-fail-on-vehicle = Ви не можете розгорнути {$attachable}, коли знаходитеся в транспорті!
 
 rmc-attachable-shoot-fail-not-wielded = {CAPITALIZE($holder)} потрібно тримати в руках, щоб стріляти {$attachable}!
 

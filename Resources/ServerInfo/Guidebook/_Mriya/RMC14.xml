@@ -15,9 +15,9 @@
   - [textlink="Правила серверу" link="MriyaOverview"]
 
   Ви вперше в РМС-14 або загалом в СС14? Чи зовсім прийшли з СМ13? Будьте уважні! Багато механік тут відрізняються як від СС14, так й від СМ13. Тож прочитайте гайди, першопочатково:
-  - [textlink="Довідник для нових гравців!" link="RMCGuideNewPlayer"]
-  - [textlink="Твій перший день у ролі стрільця!" link="RMCGuideRoleRifleman"]
-  - [textlink="Отже, ви щойно народилися у вулику! Що далі?" link="RMCGuideRoleDrone"]
+  - [textlink="Посібник для нових гравців!" link="RMCGuideNewPlayer"]
+  - [textlink="Довідник Стрільця КМПОН." link="RMCGuideRoleRifleman"]
+  - [textlink="Отож, вітаю, ти щойно народилася у нашому славному Вулику! І шо ж тепер? Що далі?" link="RMCGuideRoleDrone"]
 
   ## Маєте досвід? Тоді перегляньте ці сторінки з довідника!
 
@@ -27,36 +27,6 @@
 
   Багато з цих гайдів ви можете знайти у самій грі при огляді пов'язаних з ними речами (ЛКМ+Шифт)!
 
-  ## Морпіхи
-
-  [bold]Загальне[/bold]
-  - [textlink="Комунікація" link="RMCGuideMarineCommunications"]
-
-  [bold]Ролі[/bold]
-  - [textlink="Медицина" link="RMCMedical"]
-  - [textlink="Постачання" link="RMCRequisitions"]
-  - [textlink="Інженерія" link="RMCGuideRoleMaintenanceTechnician"]
-  - [textlink="Оператор СмартГану" link="RMCGuideRoleSGO"]
-  - [textlink="Спеціалісти" link="RMCGuideRoleSpec"]
-  - [textlink="Лідер Загона" link="RMCGuideSquadLeader"]
-  - [textlink="Ближня Авіаційна Підтримка" link="RMCGuideRoleCAS"]
-  - [textlink="Розвідка" link="RMCIntel"]
-  - [textlink="ВСП" link="RMCGuideRoleMilitaryPolice"]
-  - [textlink="Представник Корпорації" link="RMCGuideCorporateLiaison"]
-
-  ## Ксеноморфи
-
-  [bold]Ролі[/bold]
-  - [textlink="Список Каст" link="RMCGuideXenonidRoles"]
-
-  [bold]Будівництво[/bold]
-  - [textlink="Структури Вулика" link="RMCGuideHiveStructures"]
-  - [textlink="Пастки" link="RMCGuideResinHoles"]
-
-  [bold]Загальне[/bold]
-  - [textlink="Іконки ксеноїдів на Мапі" link="RMCGuideXenonidMap"]
-
-  ## Інше
-  - [textlink="Вцілілі" link="RMCSurvivor"]
+  Для швидкої навігації між посібниками, можете перейти [textlink="сюди. (клацни на мене)" link="MRGuidesMarineNavigation"]
 
 </Document>

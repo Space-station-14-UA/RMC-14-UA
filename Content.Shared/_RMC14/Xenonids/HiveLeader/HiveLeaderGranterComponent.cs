@@ -11,7 +11,7 @@ public sealed partial class HiveLeaderGranterComponent : Component
     public List<EntityUid> Leaders = new();
 
     [DataField, AutoNetworkedField]
-    public int MaxLeaders = 2; // Mriya. 4 в оригіналі
+    public int MaxLeaders = 3; // Mriya. 4 в оригіналі
 
     [DataField, AutoNetworkedField]
     public EntProtoId PheromoneRelayId = "XenoLeaderPheromoneRelay";

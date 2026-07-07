@@ -49,5 +49,6 @@
     state: cassette_ua
   - type: CassetteTape
     songs:
-    - /Audio/_Mriya/Jukebox/vulytsia_skhid.ogg
-    - /Audio/_Mriya/Jukebox/shybenyk.ogg
+    - /Audio/_Sich/Jukebox/vulytsia_skhid.ogg
+    - /Audio/_Sich/Jukebox/shybenyk.ogg
+    - /Audio/_Sich/Jukebox/pyriatyn_arta.ogg

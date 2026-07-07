@@ -373,8 +373,8 @@
         crate: RMCCrateMOU53
       - cost: 3000
         crate: RMCCrateXM51
-#      - cost: 4000 – Mriya. Тимчасове видалення гранатометів
-#        crate: RMCCrateM85A1
+      - cost: 4000
+        crate: RMCCrateM85A1
       - cost: 8000 # Mriya. 6000 в оригіналі, це буде бісове крило літака, хай Інтел працює
         crate: RMCCrateML66D
       - cost: 8000 # Mriya. Теж саме, що й трохи вище

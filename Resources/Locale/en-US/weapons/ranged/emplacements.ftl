@@ -5,6 +5,7 @@ emplacement-mount-weapon-secured-examine = Використайте [color={$col
 emplacement-mount-too-close = Ви занадто близько до найближчого {$mount}.
 emplacement-mount-deploy-broken = Ви не можете встановити {$mount}, він розтрощений вщент!
 emplacement-mount-deploy-invisible = Ви не можете встановити {$mount} будучи під плащем!
+emplacement-mount-deploy-vehicle = Ви не можете встановити {$mount} будучи у транспорті!
 emplacement-mounted-weapon-overheated = {$weapon} пошкоджено перегрівом!
 emplacement-mount-broken-examine = [color=red]Кулемет не можна використовувати в поточному несправному стані, скористайтеся[/color] [color=cyan]зварювальним апаратом[/color][color=red], щоб поремонтувати його.[/color]
 emplacement-mount-need-hands-free = Щоб використовувати цю зброю вам потрібні обидві руки вільними!

@@ -1,4 +1,4 @@
-﻿# engineering
+# engineering
 cm-job-name-chief-engineer = Головний Інженер
 cm-job-description-chief-engineer = Координуйте роботу інженерів військового корабля. Вислуховуйте скарги про те, що світло зникло на одну соту секунди. Будьте готові у випадку чого взяти командування операцією на себе.
 cm-job-prefix-chief-engineer = ГІ

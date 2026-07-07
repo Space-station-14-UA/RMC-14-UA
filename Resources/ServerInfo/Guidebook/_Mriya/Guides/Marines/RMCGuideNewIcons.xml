@@ -1,37 +1,39 @@
 <Document>
-## New Player Icons
-In some marine roles, like [textlink="Squad Leader" link="RMCGuideSquadLeader"] or Department Heads, you may find [bold]"NEW"[/bold] icons floating above player heads.
-These icons indicate someone's experience both in the game overall and the specific role they are in.
+## Іконки нових гравців
+У деяких ролях морпіхів, як-от [textlink="Лідер Загону" link="RMCGuideSquadLeader"] або голови відділів, ви можете побачити іконку [bold]"НОВИЙ"[/bold], що відображаються над головами гравців.
+Ці іконки показують досвід гравця як у грі загалом, так і на конкретній ролі, яку він наразі займає.
 
 <Box>
-  <GuideEntityEmbed Entity="RMCNewIconGuidebookPurple" Caption="Purple New"/>
+  <GuideEntityEmbed Entity="RMCNewIconGuidebookPurple" Caption="НОВИЙ Фіолетовий"/>
 </Box>
 
-[bold][color=#BF40BF]Purple[/color][/bold] is generally someone's first time playing that role ever. They will have less than one hour in that job. \n
-This icon will be replaced with the [bold][color=#ff000d]Red[/color][/bold] or [bold][color=#008000]Green[/color][/bold] new after they no longer qualify for this icon.
+[bold][color=#BF40BF]Фіолетовий[/color][/bold] зазвичай означає, що гравець уперше грає на цій ролі. На цій ролі він має не більше однієї години ігрового часу.
+Коли гравець більше не відповідатиме умовам для цієї іконки, його буде замінено на [bold][color=#ff000d]Червону[/color][/bold] або [bold][color=#008000]Зелену[/color][/bold] іконку [bold]"НОВИЙ"[/bold].
 
 <Box>
-  <GuideEntityEmbed Entity="RMCNewIconGuidebookRed" Caption="Red New"/>
+  <GuideEntityEmbed Entity="RMCNewIconGuidebookRed" Caption="НОВИЙ Червоний"/>
 </Box>
 
-[bold][color=#ff000d]Red[/color][/bold] indicates new both the game and the role they are currently in.\n
-They will have less than twenty-five (25) hours of total playtime and less than ten (10) hours of total playtime in that role.
+[bold][color=#ff000d]Червоний[/color][/bold] означає, що гравець новий як у грі загалом, так і на поточній ролі.
+Він має менше двадцяти п'яти (25) годин загального ігрового часу та не більше десяти (10) годин ігрового часу на цій ролі.
 
 <Box>
-  <GuideEntityEmbed Entity="RMCNewIconGuidebookYellow" Caption="Yellow New"/>
+  <GuideEntityEmbed Entity="RMCNewIconGuidebookYellow" Caption="НОВИЙ Жовтий"/>
 </Box>
 
-[bold][color=#B8B823]Yellow[/color][/bold] indicates new to the game, but has experience in that specific role.\n
-You will generally see this in roles like Riflemen, Nurse, etc.
+[bold][color=#B8B823]Жовтий[/color][/bold] означає, що гравець має менше двадцяти п'яти (25) годин загального ігрового часу, але вже має понад десять (10) годин на поточній ролі.
+Зазвичай ви побачите це на таких ролях, як Стрілець, Медичний Помічник тощо.
 
 <Box>
-  <GuideEntityEmbed Entity="RMCNewIconGuidebookGreen" Caption="Green New"/>
+  <GuideEntityEmbed Entity="RMCNewIconGuidebookGreen" Caption="НОВИЙ Зелений"/>
 </Box>
 
-[bold][color=#008000]Green[/color][/bold] indicates new to the job, but not the game. \n
-This icon, along with [bold][color=#BF40BF]Purple[/color][/bold] NEW will by far be the most seen \n
+[bold][color=#008000]Зелений[/color][/bold] означає, що гравець уже має щонайменше двадцять п'ять (25) годин загального ігрового часу, але ще має не більше десяти (10) годин на поточній ролі.
+Ця іконка, разом із [bold][color=#BF40BF]Фіолетовим[/color][/bold] [bold]"НОВИЙ"[/bold], траплятиметься найчастіше.
 
-You should be using these all of these icons to assist new members of the community or know who may need additional guideance should they ask for it. Always remember to at minimum show patience and understanding with new players.\n
+Використовуйте ці іконки, щоб допомагати новим учасникам спільноти та розуміти, кому може знадобитися додаткова підказка, якщо вони про неї попросять. Завжди пам'ятайте: з новими гравцями варто проявляти щонайменше терпіння та розуміння.
 
-Currently, there is a bug at times where no new icon will display when someone has no playtime in a role. If you aren't sure, remember that oftentimes you can use a player's rank to loosely gauge experience (IE: PVT Riflemen, or PFC Corpsmen.).
+Наразі іноді трапляється помилка, через яку іконка [bold]"НОВИЙ"[/bold] не відображається, навіть якщо гравець не має ігрового часу на цій ролі. Якщо ви не впевнені, пам'ятайте, що звання гравця часто дозволяє приблизно оцінити його досвід, наприклад: Рядовий Стрілець або РПК Бойовий Медик.
+
+### Переклад зробив Dmytr0-Translate
 </Document>

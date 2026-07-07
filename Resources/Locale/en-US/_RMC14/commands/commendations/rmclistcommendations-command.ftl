@@ -1,29 +1,29 @@
 # List Commendations Command
-cmd-rmclistcommendations-desc = Lists commendations by round, player, id, or recent entries.
-cmd-rmclistcommendations-help = Usage:
+cmd-rmclistcommendations-desc = Показує список нагород за раундом, гравцем, id або нещодавніми записами.
+cmd-rmclistcommendations-help = Використання:
   rmclistcommendations last <count> [type]
-    - Lists the most recent commendations
-    - count: number of most recent commendations to show
-    - type: type commendation filter (all default)
-  
+    - Показує список нещодавніх нагород
+    - count: кількість нещодавних нагород для показу
+    - type: фільтр типу нагород (всі за замовчуванням)
+
   rmclistcommendations round <roundId> [type]
-    - Lists all commendations for a specific round
-    - type: type commendation filter (all default)
+    - Показує список всіх нагород для специфічного раунду
+    - type: фільтр типу нагород (всі за замовчуванням)
 
   rmclistcommendations id <commendationId>
-    - Lists a single commendation by id
-  
+    - Показує одну нагороду за id
+
   rmclistcommendations player giver <usernameOrId> <count> [type]
-    - Lists commendations given by a player
-    - count: number of most recent commendations to show
-    - type: type commendation filter (all default)
-  
+    - Показує список нагород виданих гравцем
+    - count: кількість нещодавніх нагород для показу
+    - type: фільтр типу нагород (всі за замовчуванням)
+
   rmclistcommendations player receiver <usernameOrId> <count> [type]
-    - Lists commendations received by a player
-    - count: number of most recent commendations to show
-    - type: type commendation filter (all default)
-  
-  Examples:
+    - Показує список нагород отриманих гравцем
+    - count: кількість нещодавніх нагород для показу
+    - type: фільтр типу нагород (всі за замовчуванням)
+
+  Приклади:
     rmclistcommendations last 10
     rmclistcommendations last 5 jelly
     rmclistcommendations round 42
@@ -33,36 +33,36 @@ cmd-rmclistcommendations-help = Usage:
     rmclistcommendations player receiver PlayerName 5 jelly
 
 # Errors
-cmd-rmclistcommendations-invalid-arguments = Incorrect arguments!
-cmd-rmclistcommendations-invalid-round-id = Invalid round ID!
-cmd-rmclistcommendations-invalid-id = Invalid commendation ID!
-cmd-rmclistcommendations-invalid-type = Invalid type '{ $type }'!
-cmd-rmclistcommendations-invalid-player-mode = Invalid player mode! Must be 'giver' or 'receiver'.
-cmd-rmclistcommendations-invalid-count = Invalid count! Must be a positive number.
-cmd-rmclistcommendations-player-not-found = Player '{ $player }' not found.
-cmd-rmclistcommendations-no-results = No commendations found.
+cmd-rmclistcommendations-invalid-arguments = Некоректні аргументи!
+cmd-rmclistcommendations-invalid-round-id = Недійсний ID раунду!
+cmd-rmclistcommendations-invalid-id = Недійсний ID нагороди!
+cmd-rmclistcommendations-invalid-type = Недійсний тип '{ $type }'!
+cmd-rmclistcommendations-invalid-player-mode = Недійсний тип гравця! Має бути 'giver' або 'receiver'.
+cmd-rmclistcommendations-invalid-count = Недійсна кількість! Має бути натуральним числом.
+cmd-rmclistcommendations-player-not-found = Гравця '{ $player }' не знайдено.
+cmd-rmclistcommendations-no-results = Не знайдено нагород.
 
 # Headers
-cmd-rmclistcommendations-last-header = Showing { $count } most recent commendations (requested: { $total }):
-cmd-rmclistcommendations-round-header = Commendations for Round { $round } ({ $count } total):
-cmd-rmclistcommendations-id-header = Commendation { $id }:
-cmd-rmclistcommendations-giver-header = Showing { $count } most recent commendations given (requested: { $total }):
-cmd-rmclistcommendations-receiver-header = Showing { $count } most recent commendations received (requested: { $total }):
+cmd-rmclistcommendations-last-header = Показ { $count } нещодавніх нагород (requested: { $total }):
+cmd-rmclistcommendations-round-header = Нагороди для Раунду { $round } ({ $count } total):
+cmd-rmclistcommendations-id-header = Нагорода { $id }:
+cmd-rmclistcommendations-giver-header = Показ { $count } нещодавно виданих нагород (requested: { $total }):
+cmd-rmclistcommendations-receiver-header = Показ { $count } нещодавно отриманих нагород (requested: { $total }):
 
 # Format
 cmd-rmclistcommendations-format = id [{ $id }] { $type }: { $name } - { $giverUserName } ({ $giver }) → { $receiverUserName } ({ $receiver }) Round { $round }: { $text }
 
 # Completion hints
-cmd-rmclistcommendations-hint-mode = Mode (last, round, id, or player)
-cmd-rmclistcommendations-hint-mode-last = List most recent commendations
-cmd-rmclistcommendations-hint-mode-round = List commendations by round
-cmd-rmclistcommendations-hint-mode-id = List a commendation by id
-cmd-rmclistcommendations-hint-mode-player = List commendations by player
-cmd-rmclistcommendations-hint-round-id = Round ID
-cmd-rmclistcommendations-hint-commendation-id = Commendation ID
-cmd-rmclistcommendations-hint-player-mode = Player mode (giver or receiver)
-cmd-rmclistcommendations-hint-player-giver = Commendations given by player
-cmd-rmclistcommendations-hint-player-receiver = Commendations received by player
-cmd-rmclistcommendations-hint-player = Player username or UserId
-cmd-rmclistcommendations-hint-count = Number of commendations to show
-cmd-rmclistcommendations-hint-type = Type commendation filter
+cmd-rmclistcommendations-hint-mode = Режим (last, round, id, або player)
+cmd-rmclistcommendations-hint-mode-last = Показує список нещодавних нагород
+cmd-rmclistcommendations-hint-mode-round = Показує список нагород за раундом
+cmd-rmclistcommendations-hint-mode-id = Показує список нагород за Id
+cmd-rmclistcommendations-hint-mode-player = Показує список нагород за гравцем
+cmd-rmclistcommendations-hint-round-id = ID Раунду
+cmd-rmclistcommendations-hint-commendation-id = ID Нагороди
+cmd-rmclistcommendations-hint-player-mode = Тип гравця (giver або receiver)
+cmd-rmclistcommendations-hint-player-giver = Нагороди видані гравцем
+cmd-rmclistcommendations-hint-player-receiver = Нагороди отримані гравцем
+cmd-rmclistcommendations-hint-player = Ім'я користувача або UserId
+cmd-rmclistcommendations-hint-count = Кількість нагород для показу
+cmd-rmclistcommendations-hint-type = Фільтр типу нагород

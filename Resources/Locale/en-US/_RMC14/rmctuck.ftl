@@ -1,2 +1,2 @@
-rmc-untuck = Untuck features when worn
-rmc-tuck = Tuck features when worn
+rmc-untuck = Показувати особливості голови при носінні
+rmc-tuck = Приховати особливості голови при носінні

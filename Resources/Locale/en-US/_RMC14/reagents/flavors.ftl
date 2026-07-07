@@ -1,2 +1,2 @@
-rmc-flavor-complex-whiskey = like expensive molasses
-rmc-flavor-complex-mango = like mangoes
+rmc-flavor-complex-whiskey = як коштовна патока
+rmc-flavor-complex-mango = як манго

@@ -71,3 +71,12 @@
 - type: entity
   parent: [MriyaMilitiaVeryLightBase, RMCCoatMilitiaHauberk]
   id: MriyaCoatMilitiaHauberk
+
+- type: entity
+  parent: RMCArmorPMCRiot
+  id: MRRMCArmorPMCRiot
+  suffix: ГШР, дуже легка
+  components:
+  - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
+    walkModifier: 0.897
+    sprintModifier: 0.897
