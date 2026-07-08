@@ -53,7 +53,7 @@ public sealed partial class SponsorListEui : BaseEui
             _menu.SponsorsList.AddChild(new Label
             {
                 Text = Loc.GetString("sponsors-eui-loading-or-empty"),
-                StyleClasses = { StyleClass.LabelHeading }
+                StyleClasses = { StyleNano.StyleClassLabelHeading }
             });
             return;
         }
@@ -70,7 +70,7 @@ public sealed partial class SponsorListEui : BaseEui
             {
                 Text = rankName,
                 FontColorOverride = groupColor,
-                StyleClasses = { StyleClass.LabelHeading }
+                StyleClasses = { StyleNano.StyleClassLabelHeading }
             };
 
             if (_menu.SponsorsList.ChildCount > 0)

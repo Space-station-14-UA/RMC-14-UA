@@ -96,20 +96,20 @@ public sealed partial class PersonalSponsorEui : BaseEui
             GhostLabel = new Label
             {
                 Text = Loc.GetString("sponsors-eui-personal-ghost-color"),
-                StyleClasses = { StyleClass.LabelHeading }
+                StyleClasses = { StyleNano.StyleClassLabelHeading }
             };
 
             OocLabel = new Label
             {
                 Text = Loc.GetString("sponsors-eui-personal-ooc-color"),
-                StyleClasses = { StyleClass.LabelHeading }
+                StyleClasses = { StyleNano.StyleClassLabelHeading }
             };
 
             NameLabel = new Label
             {
                 Text = playerName,
                 HorizontalAlignment = HAlignment.Center,
-                StyleClasses = { StyleClass.LabelHeading }
+                StyleClasses = { StyleNano.StyleClassLabelHeading }
             };
 
             var tabs = new TabContainer { VerticalExpand = true };
@@ -259,7 +259,7 @@ public sealed partial class PersonalSponsorEui : BaseEui
             RanksContainer.RemoveAllChildren();
             if (state.AllowedRanks.Count == 0)
             {
-                RanksContainer.AddChild(new Label { Text = Loc.GetString("sponsors-eui-personal-no-ranks"), StyleClasses = { StyleClass.Italic } });
+                RanksContainer.AddChild(new Label { Text = Loc.GetString("sponsors-eui-personal-no-ranks"), StyleClasses = { StyleNano.StyleClassItalic} });
             }
             else
             {

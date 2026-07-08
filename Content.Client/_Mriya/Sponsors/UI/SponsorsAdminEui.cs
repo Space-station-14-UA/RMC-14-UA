@@ -223,7 +223,7 @@ public sealed partial class AdminSponsorsEui : BaseEui
             {
                 Text = headerText,
                 FontColorOverride = headerColor,
-                StyleClasses = { StyleClass.LabelHeading }
+                StyleClasses = { StyleNano.StyleClassLabelHeading}
             };
 
             if (_menu.SponsorsList.ChildCount > 0)
@@ -387,7 +387,7 @@ public sealed partial class AdminSponsorsEui : BaseEui
                 Children =
                 {
                     nameControl,
-                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-window-ranks-label"), StyleClasses = { StyleClass.LabelHeading }, Margin = new Thickness(0, 10, 0, 5) },
+                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-window-ranks-label"), StyleClasses = { StyleNano.StyleClassLabelHeading }, Margin = new Thickness(0, 10, 0, 5) },
                     new ScrollContainer { VerticalExpand = true, MinSize = new Vector2(0, 150), Children = { ranksVBox } },
                     new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-window-override-colors-label"), Margin = new Thickness(0, 10, 0, 5) },
                     GhostColorEdit,
@@ -452,7 +452,7 @@ public sealed partial class AdminSponsorsEui : BaseEui
                 SeparationOverride = 5,
                 Children =
                 {
-                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-rank-window-basic-settings-label"), StyleClasses = { StyleClass.LabelHeading } },
+                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-rank-window-basic-settings-label"), StyleClasses = { StyleNano.StyleClassLabelHeading } },
                     NameEdit,
                     new BoxContainer { Orientation = LayoutOrientation.Horizontal, Children = { new Label{Text= Loc.GetString("sponsors-eui-edit-sponsor-rank-window-priority-label")}, PrioritySpin } },
                     ShowInWindowCheck,
@@ -461,11 +461,11 @@ public sealed partial class AdminSponsorsEui : BaseEui
                     new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-rank-window-base-color-label"), Margin = new Thickness(0, 10, 0, 0) },
                     ColorEdit,
 
-                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-rank-window-ghost-settings-label"), StyleClasses = { StyleClass.LabelHeading }, Margin = new Thickness(0, 10, 0, 0) },
+                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-rank-window-ghost-settings-label"), StyleClasses = { StyleNano.StyleClassLabelHeading }, Margin = new Thickness(0, 10, 0, 0) },
                     CanGhostCheck,
                     DefaultGhostEdit,
 
-                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-rank-window-ooc-settings-label"), StyleClasses = { StyleClass.LabelHeading }, Margin = new Thickness(0, 10, 0, 0) },
+                    new Label { Text = Loc.GetString("sponsors-eui-edit-sponsor-rank-window-ooc-settings-label"), StyleClasses = { StyleNano.StyleClassLabelHeading }, Margin = new Thickness(0, 10, 0, 0) },
                     CanOocCheck,
                     DefaultOocEdit,
 
