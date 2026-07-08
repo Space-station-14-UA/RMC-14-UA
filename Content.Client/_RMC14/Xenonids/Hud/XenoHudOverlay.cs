@@ -73,7 +73,7 @@ public sealed class XenoHudOverlay : Overlay
     private readonly ResPath _rsiPath = new("/Textures/_RMC14/Interface/xeno_hud.rsi");
     private readonly ResPath _rsiPathSlow = new("/Textures/_RMC14/Effects/xeno_stomp.rsi");
     private readonly ResPath _rsiPathFreeze = new("/Textures/_RMC14/Effects/xeno_freeze.rsi");
-    private readonly ResPath _rsiPathMriya = new("/Textures/Mriya/Interface/xeno_hud.rsi"); // Mriya
+    private readonly ResPath _rsiPathMriya = new("/Textures/_Mriya/Interface/xeno_hud.rsi"); // Mriya
 
     public XenoHudOverlay()
     {
