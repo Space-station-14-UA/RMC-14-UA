@@ -17,7 +17,7 @@ reagent-name-dead-rum = deadrum
 reagent-desc-dead-rum = Distilled alcoholic drink made from saltwater.
 
 reagent-name-ethanol = етанол
-reagent-desc-ethanol = Простий спирт, при вживанні викликає сп'яніння, легкозаймистий.
+reagent-desc-ethanol = Простий спирт, при вживанні викликає сп'яніння, а також отруєння, легкозаймистий.
 
 reagent-name-gin = gin
 reagent-desc-gin = A distilled alcoholic drink that derives its predominant flavour from juniper berries.

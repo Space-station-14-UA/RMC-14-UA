@@ -11,7 +11,7 @@ reagent-name-charcoal = вугілля
 reagent-desc-charcoal = Чорна пориста речовина.
 
 reagent-name-chlorine = хлор
-reagent-desc-chlorine = Жовто-зелений газ, токсичний для людей.
+reagent-desc-chlorine = Жовто-зелений газ, токсичний для більшості живих істот.
 
 reagent-name-copper = мідь
 reagent-desc-copper = М'який, пластичний і ковкий метал із дуже високою тепло та електропровідністю.
@@ -20,7 +20,7 @@ reagent-name-fluorine = фтор
 reagent-desc-fluorine = Дуже токсичний блідо-жовтий газ. Надзвичайно реактивний.
 
 reagent-name-gold = золото
-reagent-desc-gold = Золото - це щільний, м'який, блискучий метал, який є найпластичнішим і найтяжчим з усіх відомих металів.
+reagent-desc-gold = Золото – це щільний, м'який, блискучий метал, який є одним з найпластичніших і найтяжчих з усіх відомих металів.
 
 reagent-name-hydrogen = водень
 reagent-desc-hydrogen = Легкий та легкозаймистий газ.
@@ -35,7 +35,7 @@ reagent-name-lithium = літій
 reagent-desc-lithium = М'який, сріблясто-білий лужний метал. Дуже реактивний і спалахує при контакті з водою.
 
 reagent-name-mercury = ртуть
-reagent-desc-mercury = Сріблястий метал, рідкий за кімнатної температури. Дуже токсичний для людей.
+reagent-desc-mercury = Сріблястий метал, рідкий за кімнатної температури. Дуже токсичний для більшості живих істот.
 
 reagent-name-potassium = калій
 reagent-desc-potassium = М'який, блискучий сірий метал. Реактивніший за літій.

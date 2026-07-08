@@ -74,7 +74,7 @@ reagent-name-tonic-water = tonic water
 reagent-desc-tonic-water = It tastes strange but at least the quinine keeps the Space Malaria at bay.
 
 reagent-name-water = вода
-reagent-desc-water = Безбарвна рідина, що потрібна людям для виживання.
+reagent-desc-water = Безбарвна рідина, що потрібна більшості живих істот для виживання.
 
 reagent-name-ice = ice
 reagent-desc-ice = Frozen water.
