@@ -19,17 +19,17 @@
       takeAll: CMMedicalSet
       entries:
       - id: CMVendorBundleSquadMedicalEssentials
-      - id: RMCPortableDialysis # MR
+      - id: RMCPortableDialysis # Mriya
     - name: Польові Лікувальні Засоби
       entries:
-      # MR start
+      # Mriya start
       - id: CMUpgradedBurnKit10
         points: 6
         recommended: true
       - id: CMUpgradedTraumaKit10
         points: 6
         recommended: true
-      # MR end
+      # Mriya end
       - id: CMBurnKit10
         points: 2
         recommended: true
@@ -75,7 +75,7 @@
 #      - id: CMPillCanisterTramadol
 #        points: 5
 #        recommended: true
-      # MR start
+      # Mriya start
       - id: RMCPillCanisterIron
         points: 5
         recommended: true
@@ -85,7 +85,7 @@
       - id: CMPillCanisterKelotaneDermaline
         points: 10
         recommended: true
-      # MR end
+      # Mriya end
     - name: Автоінжектори
       entries:
       - id: CMBicaridineAutoInjector

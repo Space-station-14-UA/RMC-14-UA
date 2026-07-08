@@ -62,8 +62,8 @@
 - type: entity
   parent: CMLockerCommanderSecure
   id: CMLockerCommanderSecureFilled
-  name: сейф командувача # MR
-  description: "Сейф Командувача операції, в якому зберігаються комплекти Почесних Вартових.\nНа ньому вигравіювано напис: \"Розпоряджатися вмістом можуть особи, які є актуальним Командувачем операції. Не зважаючи на їх посаду чи звання\"." # MR
+  name: сейф командувача # Mriya
+  description: "Сейф Командувача операції, в якому зберігаються комплекти Почесних Вартових.\nНа ньому вигравіювано напис: \"Розпоряджатися вмістом можуть особи, які є актуальним Командувачем операції. Не зважаючи на їх посаду чи звання\"." # Mriya
   suffix: Filled
   components:
   - type: StorageFill
@@ -71,7 +71,7 @@
       - id: RMCKitHonorGuard
       - id: RMCKitHonorGuard
   - type: AccessReader
-    access: [["RMCAccessSeniorCommand"]] # MR. CMAccessCO в перент прототипа
+    access: [["RMCAccessSeniorCommand"]] # Mriya. CMAccessCO в перент прототипа
 
 - type: entity
   parent: CMLockerStaff

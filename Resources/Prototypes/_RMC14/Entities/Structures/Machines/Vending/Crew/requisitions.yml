@@ -75,9 +75,9 @@
       - id: RMCM54CMK1Case
         amount: 3
       - id: RMCML66DCase
-        amount: 1 # MR. 2 в оригіналі
+        amount: 1 # Mriya. 2 в оригіналі
       - id: RMCM2CCase
-        amount: 1 # MR. 2 в оригіналі
+        amount: 1 # Mriya. 2 в оригіналі
       - id: RMCCaseFlamer
         amount: 2
       - id: RMCM85A1Case
@@ -292,7 +292,7 @@
         amount: 10
       - id: RMCMagazineSMGNailgun
         amount: 4
-      - id: MRKitSherpa # MR
+      - id: MRKitSherpa # Mriya
         amount: 2
     - name: Довідники
       entries:
@@ -668,7 +668,7 @@
         amount: 11
       - id: RMCAttachmentRecoilCompensator
         amount: 7
-      - id: RMCAttachmentBarrelCharger # MR
+      - id: RMCAttachmentBarrelCharger # Mriya
         amount: 3
       - id: RMCAttachmentRecoilCompensatorM13
         amount: 7

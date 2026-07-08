@@ -857,7 +857,7 @@
         amount: 1
         doAfter: 0.25
 
-    # MR. СГ
+    # Mriya. СГ
     - to: MRBoxBulletsSmartGunEmpty
       steps:
       - material: RMCSheetCardboard
@@ -1004,6 +1004,6 @@
   - node: RMCBoxMagazinePowerCellsHigh
     entity: RMCBoxMagazinePowerCellsHigh
 
-  # MR. СГ
+  # Mriya. СГ
   - node: MRBoxBulletsSmartGunEmpty
     entity: MRBoxBulletsSmartGunEmpty

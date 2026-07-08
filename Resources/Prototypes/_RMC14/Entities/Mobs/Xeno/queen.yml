@@ -269,7 +269,7 @@
       components:
       - RMCFireImmunityBypass  # Only fires with this component can bypass immunity
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 2 # MR. 1.4 в оригіналі
+    value: 2 # Mriya. 1.4 в оригіналі
   - type: QueenEyeAction
   - type: StunFriendlyXenoOnStep
     whitelist:
@@ -289,7 +289,7 @@
     components:
     - type: Gibbable
   - type: CanBeLarvaQueued
-  - type: XenoRankNames # MR. Імператриця за 1500 годин
+  - type: XenoRankNames # Mriya. Імператриця за 1500 годин
     rankNames:
       0: rmc-xeno-young
       2: rmc-xeno-mature

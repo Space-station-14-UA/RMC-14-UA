@@ -811,7 +811,7 @@
     - state: closed
       map: [ "closedLayer" ]
   - type: RotaryPhone
-    category: Морпіхи # MR. Переклад. Marine в оригіналі
+    category: Морпіхи # Mriya. Переклад. Marine в оригіналі
     canDnd: true
   - type: RotaryPhoneBackpack
   - type: UserInterface
@@ -962,7 +962,7 @@
     grid:
     - 0,0,14,1 # 15
   - type: RotaryPhone
-    category: Морпіхи # MR. Переклад. Marine в оригіналі
+    category: Морпіхи # Mriya. Переклад. Marine в оригіналі
   - type: ItemCamouflage
     camouflageVariations: {}
   - type: GenericVisualizer

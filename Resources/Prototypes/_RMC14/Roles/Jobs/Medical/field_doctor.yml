@@ -7,7 +7,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: CMJobDoctor
-    time: 18000 # MR. 5 годин, 10 в оригіналі
+    time: 18000 # Mriya. 5 годин, 10 в оригіналі
   ranks:
     RMCRankSecondLT: []
   startingGear: CMGearFieldDoctor
@@ -16,7 +16,7 @@
   supervisors: cm-job-supervisors-cmo
   accessGroups:
   - RMCFieldDoctor
-  - Researcher # MR
+  - Researcher # Mriya
   roleWeight: 0.25
   special:
   - !type:AddComponentSpecial
@@ -28,7 +28,7 @@
         RMCSkillFireman: 1
         RMCSkillMedical: 3
         RMCSkillSurgery: 2
-    - type: CMVendorUser # MR
+    - type: CMVendorUser # Mriya
       id: RMCFieldDoctor
       points: 45
     - type: RMCUserBulkyArmorIncapable

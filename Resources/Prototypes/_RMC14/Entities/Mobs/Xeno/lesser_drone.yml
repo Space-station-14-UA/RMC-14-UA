@@ -82,12 +82,12 @@
       types:
         Heat: 15
   - type: RMCGibOnDeath
-    gibChance: 0.75 # MR. 1.0 в оригіналі
+    gibChance: 0.75 # Mriya. 1.0 в оригіналі
   - type: RMCSpawnEntitiesOnGib
     entities:
     - RMCDecalSpawnerGibsLesserDrone
     - RMCGibEffectXenoLesserDrone
-  - type: Butcherable # MR
+  - type: Butcherable # Mriya
     spawned:
     - id: MRFoodMeatXeno
       amount: 2
@@ -137,7 +137,7 @@
   - type: RemoveComponents
     components:
     - type: CanBeLarvaQueued
-  - type: XenoEvolution # MR
+  - type: XenoEvolution # Mriya
     strains:
     - RMCXenoLesserCarrier
     - MRXenoLesserRunner

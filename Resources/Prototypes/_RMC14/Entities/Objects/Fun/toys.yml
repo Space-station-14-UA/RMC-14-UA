@@ -13,7 +13,7 @@
     slots:
     - HEAD
   - type: UseDelay
-    delay: 5 # MR. 120 в оригіналі
+    delay: 5 # Mriya. 120 в оригіналі
   - type: EmitSoundOnLand
     sound:
       collection: ToyFall
@@ -32,7 +32,7 @@
   suffix: RMC
   components:
   - type: UseDelay
-    delay: 5 # MR. 120 в оригіналі
+    delay: 5 # Mriya. 120 в оригіналі
   - type: EmitSoundOnLand
     sound:
       collection: ToyFall
@@ -46,7 +46,7 @@
   suffix: RMC
   components:
   - type: UseDelay
-    delay: 5 # MR. 120 в оригіналі
+    delay: 5 # Mriya. 120 в оригіналі
   - type: EmitSoundOnLand
     sound:
       collection: ToyFall
@@ -60,7 +60,7 @@
   suffix: RMC
   components:
   - type: UseDelay
-    delay: 5 # MR. 120 в оригіналі
+    delay: 5 # Mriya. 120 в оригіналі
   - type: EmitSoundOnLand
     sound:
       collection: ToyFall
@@ -74,7 +74,7 @@
   suffix: RMC
   components:
   - type: UseDelay
-    delay: 5 # MR. 120 в оригіналі
+    delay: 5 # Mriya. 120 в оригіналі
   - type: EmitSoundOnLand
     sound:
       collection: ToyFall

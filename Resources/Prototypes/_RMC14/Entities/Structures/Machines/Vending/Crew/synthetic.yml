@@ -248,7 +248,7 @@
         points: 5
       - id: CMPillCanisterKelotane
         points: 5
-      - id: RMCPillCanisterIron # MR. Залізо Синтам
+      - id: RMCPillCanisterIron # Mriya. Залізо Синтам
         points: 5
         recommended: true
       # /obj/item/storage/pill_bottle/peridaxon - 5 Points

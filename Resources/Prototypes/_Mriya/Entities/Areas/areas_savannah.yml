@@ -153,7 +153,7 @@
   id: SMCAreaSavannahPortPointDefense
   name: Аварійні Порти Стикування Лівого Борту
 
-## MR start
+## Mriya start
 - type: entity
   parent: SMCAreaSavannahBrig
   id: SMCAreaSavannahArmory
@@ -163,7 +163,7 @@
   parent: SMCAreaSavannahBrig
   id: SMCAreaSavannahObservationRoom
   name: Кімната Спостереження
-## MR end
+## Mriya end
 
 # КОМАНДУВАННЯ
 
@@ -182,7 +182,7 @@
   id: SMCAreaSavannahLiaison
   name: Приймальня Представника
 
-## MR start
+## Mriya start
 - type: entity
   parent: SMCAreaSavannahLiaison
   id: SMCAreaSavannahLiaisonOffice
@@ -197,7 +197,7 @@
   parent: SMCAreaSavannahLiaison
   id: SMCAreaSavannahLiaisonStorage
   name: Склад Представника
-## MR end
+## Mriya end
 
 - type: entity
   parent: SMCAreaSavannahCommand
@@ -247,7 +247,7 @@
   - type: Area
     retrieveItemObjective: true
 
-## MR start
+## Mriya start
 - type: entity
   parent: SMCAreaSavannahCommand
   id: SMCAreaSavannahVehicleStorage
@@ -262,7 +262,7 @@
   parent: SMCAreaSavannahBrig
   id: SMCAreaSavannahSynthetic
   name: Сховище Синтетиків
-## MR end
+## Mriya end
 
 # МЕДИЧНИЙ
 
@@ -290,7 +290,7 @@
   id: SMCAreaSavannahMedicalPreparation
   name: Медичні Казарми
 
-## MR start
+## Mriya start
 - type: entity
   parent: SMCAreaSavannahMedical
   id: SMCAreaSavannahMedicalResearch
@@ -328,7 +328,7 @@
   parent: SMCAreaSavannahMedical
   id: SMCAreaSavannahMedicalRestroom
   name: Кімната Відпочинку Медичного
-## MR end
+## Mriya end
 
 # ПІДТРИМКА
 
@@ -370,12 +370,12 @@
   id: SMCAreaSavannahCanteen
   name: Їдальня
 
-## MR start
+## Mriya start
 - type: entity
   parent: SMCAreaSavannahAuxiliary
   id: SMCAreaSavannahBotany
   name: Ботаніка
-## MR end
+## Mriya end
 
 # КАЗАРМИ
 
@@ -536,7 +536,7 @@
   id: SMCAreaSavannahChurch
   name: Церква
 
-## MR start
+## Mriya start
 - type: entity
   parent: SMCAreaSavannah
   id: SMCAreaSavannahPress
@@ -556,4 +556,4 @@
   parent: SMCAreaSavannah
   id: SMCAreaSavannahOuter
   name: Зовнішня обшивка
-## MR end
+## Mriya end

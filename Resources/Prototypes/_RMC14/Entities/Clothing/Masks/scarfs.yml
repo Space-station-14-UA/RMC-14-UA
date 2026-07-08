@@ -20,7 +20,7 @@
     slots:
       - mask
       - neck
-  - type: Tag # MR
+  - type: Tag # Mriya
     tags:
     - MRScarf
 
@@ -246,7 +246,7 @@
     slots:
     - mask
     - neck
-  - type: Tag # MR
+  - type: Tag # Mriya
     tags:
     - MRScarf
 

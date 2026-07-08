@@ -72,14 +72,14 @@
         amount: 5
     - name: Одяг
       entries:
-      - id: JumpsuitMarine # MR
+      - id: JumpsuitMarine # Mriya
         amount: 10
-      - id: CMBootsBlack # MR
+      - id: CMBootsBlack # Mriya
         amount: 10
       - id: CMMaskGas
         amount: 15
       - id: CMMaskCoif
         amount: 15
-      - id: BedrollFolded # MR
+      - id: BedrollFolded # Mriya
         amount: 10
 

@@ -5,7 +5,7 @@
   - RMCXenoVentCrawler
   id: CMXenoLarva
   name: Лярва
-  description: Мала чужопланетна червоподібна істота, яка дуже швидко збільшується в розмірах. Схоже скоро з неї з'явиться щось нове. # MR
+  description: Мала чужопланетна червоподібна істота, яка дуже швидко збільшується в розмірах. Схоже скоро з неї з'явиться щось нове. # Mriya
   components:
   - type: GuideHelp
     guides:
@@ -102,10 +102,10 @@
       3: rmc-xeno-elder-larva
       4: rmc-xeno-elder-larva
       5: rmc-xeno-elder-larva
-      6: rmc-xeno-elder-larva # MR
-      7: rmc-xeno-elder-larva # MR
-      8: rmc-xeno-elder-larva # MR
-      9: rmc-xeno-elder-larva # MR
+      6: rmc-xeno-elder-larva # Mriya
+      7: rmc-xeno-elder-larva # Mriya
+      8: rmc-xeno-elder-larva # Mriya
+      9: rmc-xeno-elder-larva # Mriya
   - type: FixedIdentity
     name: cm-job-name-xeno-larva
   - type: VentCrawler

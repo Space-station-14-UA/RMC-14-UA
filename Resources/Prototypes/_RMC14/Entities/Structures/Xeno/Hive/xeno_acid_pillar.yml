@@ -54,7 +54,7 @@
     plasma: 250
   - type: XenoSecretionLimited
     id: HiveAcidPillarXeno
-    amount: 2 # MR. 1 в оригіналі
+    amount: 2 # Mriya. 1 в оригіналі
   - type: DeletedByWeedKiller
   - type: Flammable
     fireSpread: false

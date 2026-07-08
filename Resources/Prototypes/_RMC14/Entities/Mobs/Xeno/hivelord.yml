@@ -93,14 +93,14 @@
   - type: FixedIdentity
     name: cm-job-name-xeno-hivelord
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.7 # MR. 0.2 в оригіналі
+    value: 0.7 # Mriya. 0.2 в оригіналі
   - type: RMCSurgeryXenoHeart
     item: RMCOrganXenoHeartT2
 
 - type: entity
   parent: CMXenoHivelordBase
   id: CMXenoHivelord
-  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Будівниця справді великих вуликів. # MR
+  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Будівниця справді великих вуликів. # Mriya
   components:
   - type: CanBuildThickFromConstructNode
   - type: GuideHelp
@@ -158,7 +158,7 @@
 - type: entity
   parent: CMXenoHivelordBase
   id: CMXenoHivelordResinWhisperer
-  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Схоже має якийсь особливий зв'язок з травою за допомогою довших лап. # MR
+  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Схоже має якийсь особливий зв'язок з травою за допомогою довших лап. # Mriya
   suffix: Resin Whisperer
   components:
   - type: CanBuildThickFromConstructNode
@@ -215,7 +215,7 @@
 - type: entity
   parent: CMXenoHivelordBase
   id: CMXenoHivelordDesigner
-  description: Велика чужопланетна істота з повноцінними лапами та хоботом. З її лап капає якась дивна люмінісцентна рідина. # MR
+  description: Велика чужопланетна істота з повноцінними лапами та хоботом. З її лап капає якась дивна люмінісцентна рідина. # Mriya
   suffix: Designer
   components:
   - type: GuideHelp

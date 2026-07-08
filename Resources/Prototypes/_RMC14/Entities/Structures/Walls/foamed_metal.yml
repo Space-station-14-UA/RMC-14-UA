@@ -77,7 +77,7 @@
 - type: entity
   parent: RMCBaseFoamedMetal
   id: RMCFoamedAluminiumMetal
-  name: сугроб # MR. "foamed aluminium metal в оригіналі", тимчасова зміна. Це все одно плейсхолдер сугробів.
+  name: сугроб # Mriya. "foamed aluminium metal в оригіналі", тимчасова зміна. Це все одно плейсхолдер сугробів.
   description: Сніговий сугроб, точно не алюміній. #Mriya. "A lightweight foamed metal wall" в оригіналі.
   suffix: RMC
   components:
@@ -96,7 +96,7 @@
       state: metal_foam-north
     - map: [ "enum.EdgeLayer.West" ]
       state: metal_foam-west
-  - type: Destructible # MR. Додано заради снігової баби
+  - type: Destructible # Mriya. Додано заради снігової баби
     thresholds:
     - trigger:
         !type:DamageTrigger

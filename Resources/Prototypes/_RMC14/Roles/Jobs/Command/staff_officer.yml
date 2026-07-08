@@ -26,7 +26,7 @@
   marineAuthorityLevel: 13
   supervisors: rmc-job-supervisors-commander
   accessGroups:
-  - MarineMain # MR. SO в оригіналі. Більше доступів
+  - MarineMain # Mriya. SO в оригіналі. Більше доступів
   roleWeight: 0.25
   special:
   - !type:AddComponentSpecial
@@ -37,14 +37,14 @@
         RMCSkillConstruction: 2
         RMCSkillEngineer: 2
         RMCSkillFirearms: 1
-        RMCSkillFireman: 2 # MR. 1 в оригіналі
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillIntel: 1
-        RMCSkillJtac: 4 # MR. 3 в оригіналі
+        RMCSkillJtac: 4 # Mriya. 3 в оригіналі
         RMCSkillLeadership: 2
         RMCSkillMedical: 2
         RMCSkillOverwatch: 1
         RMCSkillPolice: 1
-        RMCSkillPowerLoader: 2 # MR. 1 в оригіналі
+        RMCSkillPowerLoader: 2 # Mriya. 1 в оригіналі
         RMCSkillSurgery: 1
         RMCSkillVehicles: 2
     - type: MarineOrders
@@ -63,7 +63,7 @@
       background:
         sprite: /Textures/_RMC14/Interface/map_blips.rsi
         state: background_command
-    - type: RMCTrackable # MR
+    - type: RMCTrackable # Mriya
     - type: MutinyEligible
     - type: RMCAwardRecommendation
     - type: SeeNewPlayers
@@ -75,7 +75,7 @@
     shoes: RMCShoesLaceup
     head: CMHeadCapOfficer
     id: CMIDCardStaffOfficer
-    ears: CMHeadsetSeniorCommand # MR. RMCHeadsetMarineCommand в оригіналі
+    ears: CMHeadsetSeniorCommand # Mriya. RMCHeadsetMarineCommand в оригіналі
     pocket1: RMCPouchGeneralLarge
     pocket2: RMCPouchGeneralLarge
   inhand:

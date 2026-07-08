@@ -9,10 +9,10 @@
     trackerModes:
     - SquadLeader
     - FireteamLeader
-    # MR start. Бо чому ні?
+    # Mriya start. Бо чому ні?
     - CommandingOfficer
     - ExecutiveOfficer
-    # MR end
+    # Mriya end
     - SeniorEnlistedAdvisor
     - PrimaryLandingZone
   - type: GrantTacMapAlert
@@ -55,7 +55,7 @@
     - ExecutiveOfficer
     - SquadLeader
     - FireteamLeader
-    # MR start
+    # Mriya start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -63,7 +63,7 @@
     - ChiefMedicalOfficer
     - Quartermaster
     - SeniorEnlistedAdvisor
-    # MR end
+    # Mriya end
     - PrimaryLandingZone
 
 - type: entity
@@ -141,7 +141,7 @@
     - ExecutiveOfficer
     - SquadLeader
     - FireteamLeader
-    # MR start
+    # Mriya start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -149,7 +149,7 @@
     - ChiefMedicalOfficer
     - Quartermaster
     - SeniorEnlistedAdvisor
-    # MR end
+    # Mriya end
     - PrimaryLandingZone
 
 - type: entity
@@ -227,7 +227,7 @@
     - ExecutiveOfficer
     - SquadLeader
     - FireteamLeader
-    # MR start
+    # Mriya start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -235,7 +235,7 @@
     - ChiefMedicalOfficer
     - Quartermaster
     - SeniorEnlistedAdvisor
-    # MR end
+    # Mriya end
     - PrimaryLandingZone
 
 - type: entity
@@ -313,7 +313,7 @@
     - ExecutiveOfficer
     - SquadLeader
     - FireteamLeader
-    # MR start
+    # Mriya start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -321,7 +321,7 @@
     - ChiefMedicalOfficer
     - Quartermaster
     - SeniorEnlistedAdvisor
-    # MR end
+    # Mriya end
     - PrimaryLandingZone
 
 - type: entity
@@ -392,7 +392,7 @@
       - CMEncryptionKeySquadLeader
   - type: RMCHeadset
     radioTextIncrease: 3
-  - type: GrantSquadLeaderTracker # MR
+  - type: GrantSquadLeaderTracker # Mriya
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -428,7 +428,7 @@
     - ExecutiveOfficer
     - SquadLeader
     - FireteamLeader
-    # MR start
+    # Mriya start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -436,7 +436,7 @@
     - ChiefMedicalOfficer
     - Quartermaster
     - SeniorEnlistedAdvisor
-    # MR end
+    # Mriya end
     - PrimaryLandingZone
 
 - type: entity
@@ -493,7 +493,7 @@
       - CMEncryptionKeySquadLeader
   - type: RMCHeadset
     radioTextIncrease: 3
-  - type: GrantSquadLeaderTracker # MR
+  - type: GrantSquadLeaderTracker # Mriya
     defaultMode: CommandingOfficer
     trackerModes:
     - CommandingOfficer
@@ -529,7 +529,7 @@
     - ExecutiveOfficer
     - SquadLeader
     - FireteamLeader
-    # MR start
+    # Mriya start
     - AuxiliarySupportOfficer
     - StaffOfficer
     - ChiefMilitaryPolice
@@ -537,7 +537,7 @@
     - ChiefMedicalOfficer
     - Quartermaster
     - SeniorEnlistedAdvisor
-    # MR end
+    # Mriya end
     - PrimaryLandingZone
 
 - type: entity

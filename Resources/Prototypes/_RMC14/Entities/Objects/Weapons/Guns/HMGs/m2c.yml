@@ -50,7 +50,7 @@
     - FullAuto
     recoilUnwielded: 0
     scatterUnwielded: 0
-    baseFireRate: 7 # MR. 10 в оригіналі. Імба зброя нам не треба
+    baseFireRate: 7 # Mriya. 10 в оригіналі. Імба зброя нам не треба
     modifiers:
       FullAuto:
         maxScatterModifier: 0

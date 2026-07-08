@@ -364,7 +364,7 @@
       Classic: _RMC14/Objects/Clothing/Head/Helmets/m3/scout/classic.rsi
       Urban: _RMC14/Objects/Clothing/Head/Helmets/m3/scout/urban.rsi
   - type: RotaryPhone
-    category: Морпіхи # MR. Переклад. Marine в оригіналі
+    category: Морпіхи # Mriya. Переклад. Marine в оригіналі
     canDnd: true
     phoneId: RMCTelephoneScout
     phoneCanBeTransferred: false

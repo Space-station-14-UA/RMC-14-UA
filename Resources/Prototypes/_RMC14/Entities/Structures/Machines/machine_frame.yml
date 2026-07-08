@@ -1,8 +1,8 @@
 - type: entity
   parent: UnfinishedMachineFrame
   id: CMMachineFrameUnfinished
-  name: рама машини # MR
-  description: Машина на стадії будівництва. Потрібно більше деталей. # MR
+  name: рама машини # Mriya
+  description: Машина на стадії будівництва. Потрібно більше деталей. # Mriya
   suffix: RMC14, Unfinished
   placement:
     mode: SnapgridCenter
@@ -37,8 +37,8 @@
 - type: entity
   parent: MachineFrame
   id: CMMachineFrame
-  name: рама машини # MR
-  description: Машина на стадії будівництва. Потрібно більше деталей. # MR
+  name: рама машини # Mriya
+  description: Машина на стадії будівництва. Потрібно більше деталей. # Mriya
   suffix: RMC14, Ready
   placement:
     mode: SnapgridCenter
@@ -75,8 +75,8 @@
 - type: entity
   parent: MachineFrameDestroyed
   id: CMMachineFrameDestroyed
-  name: зруйнована рама машини # MR
-  description: Колись це була машина... Наврядч від цього зараз багато сенсу. # MR
+  name: зруйнована рама машини # Mriya
+  description: Колись це була машина... Наврядч від цього зараз багато сенсу. # Mriya
   suffix: RMC14
   placement:
     mode: SnapgridCenter

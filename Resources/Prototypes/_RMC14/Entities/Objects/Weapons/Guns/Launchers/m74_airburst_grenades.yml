@@ -90,7 +90,7 @@
 - type: entity
   parent: RMC40MMGrenadeM74AGMF
   id: RMCBatonSlugHIRR
-  name: ВІГС сповільнюючий # MR. HIRR – High-Intensity Rubber Round, Високо-Інтенсивний Гумовний Снаряд – ВІГС
+  name: ВІГС сповільнюючий # Mriya. HIRR – High-Intensity Rubber Round, Високо-Інтенсивний Гумовний Снаряд – ВІГС
   description: Високо-Інтенсивний Гумовний Снаряд, родич гумової М15. Для його використання потрібний гранатомет. Був знятий з озброєння поліції через завелику смертність тих, в кого нею стріляли. Зараз використовується як менш смертоносний варіант боротьби з ворожими силами. ВІГС був неймовірно популярним під час конфлікту на Арктурі, бо зміг дуже ефективно виводити сили спротиву майже на той світ.
   components:
   - type: Sprite
@@ -352,7 +352,7 @@
 - type: entity
   parent: RMCBaseBullet
   id: RMCBaseAirburstRound
-  name: снаряд # MR
+  name: снаряд # Mriya
   categories: [ HideSpawnMenu ]
   abstract: true
   components:

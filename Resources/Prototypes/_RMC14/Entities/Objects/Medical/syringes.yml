@@ -1,8 +1,8 @@
 - type: entity
   parent: Syringe
   id: CMSyringe
-  name: шприц # MR
-  description: Використовується для забору крові або введення речовин в тіло пацієнта. # MR
+  name: шприц # Mriya
+  description: Використовується для забору крові або введення речовин в тіло пацієнта. # Mriya
   suffix: RMC14
   components:
   - type: SolutionContainerVisuals

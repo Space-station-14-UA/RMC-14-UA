@@ -19,7 +19,7 @@
     tags:
     - RMCSeat
   - type: RMCMesonsNonviewable
-  - type: Rotatable # MR. Крутити стільці.
+  - type: Rotatable # Mriya. Крутити стільці.
   - type: Damageable
     damageContainer: StructuralMarine
     damageModifierSet: StructuralMarine

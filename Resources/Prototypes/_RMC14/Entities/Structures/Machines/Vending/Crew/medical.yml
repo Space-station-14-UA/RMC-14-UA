@@ -35,7 +35,7 @@
       entries:
       - id: CMVendorBundleCrewMedicalEssentialsNurse
     - name: Стандартне екіпірування
-      jobs: # MR
+      jobs: # Mriya
       - CMNurse
       - CMDoctor
       - CMResearcher
@@ -44,7 +44,7 @@
       entries:
       - id: CMHandsLatex
       - id: CMHeadsetMedical
-    - name: Стандартне екіпірування # MR
+    - name: Стандартне екіпірування # Mriya
       jobs:
       - RMCFieldDoctor
       takeAll: CMStandard
@@ -59,9 +59,9 @@
       choices: { CMEyewear: 1 }
       entries:
       - id: RMCGlassesMedicalHUDGlasses
-      - id: RMCGlassesReagentHUDGlasses # MR
+      - id: RMCGlassesReagentHUDGlasses # Mriya
 #      - id: Prescription Medical HUD Glasses
-    - name: Броня # MR
+    - name: Броня # Mriya
       jobs:
       - RMCFieldDoctor
       choices: { CMArmor: 1 }
@@ -71,7 +71,7 @@
         recommended: true
       - id: CMArmorM3VLBallistics
         recommended: true
-    - name: Зброя # MR
+    - name: Зброя # Mriya
       jobs:
       - RMCFieldDoctor
       choices: { RMCKitBase: 1 }
@@ -205,7 +205,7 @@
         name: M276 pattern medical storage rig (Full)
         recommended: true
     - name: Підсумки
-      jobs: # MR
+      jobs: # Mriya
       - CMNurse
       - CMDoctor
       - CMResearcher
@@ -243,7 +243,7 @@
         recommended: true
         name: Pressurized Reagent Canister Pouch\n(EMPTY)
       - id: RMCPouchSling
-    - name: Підсумки # MR
+    - name: Підсумки # Mriya
       jobs:
       - RMCFieldDoctor
       choices: { RMCPouch: 2 }
@@ -277,9 +277,9 @@
     - name: Жилети
       choices: { CMAccessories: 1 }
       entries:
-      - id: RMCWebbingSurgicalGreen # MR
+      - id: RMCWebbingSurgicalGreen # Mriya
         recommended: true
-      - id: RMCWebbingSurgicalBlue # MR
+      - id: RMCWebbingSurgicalBlue # Mriya
         recommended: true
       - id: CMWebbingBrown
       - id: CMWebbingBlack
@@ -289,14 +289,14 @@
       - id: RMCWebbingBlackSmall
       - id: RMCWebbingDropPouch
       - id: RMCWebbingDropPouchBlack
-    - name: Маски # MR
+    - name: Маски # Mriya
       choices: { CMMask: 1 }
       entries:
       - id: CMMaskSterile
       - id: CMMaskGas
       - id: CMMaskCoif
       - id: RMCMaskRebreather
-    - name: Додаткове обладнання # MR
+    - name: Додаткове обладнання # Mriya
       jobs:
       - RMCFieldDoctor
       entries:

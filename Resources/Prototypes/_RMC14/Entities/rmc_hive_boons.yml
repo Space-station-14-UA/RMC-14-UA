@@ -24,8 +24,8 @@
   description: Приводить нову сховану лярв у вулик.
   components:
   - type: HiveBoonDefinition
-    cost: 1 # MR. 5 в оригіналі. Кількість також зменшена у HiveBoonSystem.cs
-    reusable: true # MR. false в оригіналі
+    cost: 1 # Mriya. 5 в оригіналі. Кількість також зменшена у HiveBoonSystem.cs
+    reusable: true # Mriya. false в оригіналі
     duplicateId: RMCHiveBoonLarvaSurge
     event: !type:HiveBoonActivateLarvaSurgeEvent
 
@@ -39,8 +39,8 @@
     cost: 0
     pylons: 2
     cooldown: 15m
-    unlockAt: 80m # MR. 90 в оригіналі
-    unlockAtRandomAdd: 10m # MR. 25 в оригіналі
+    unlockAt: 80m # Mriya. 90 в оригіналі
+    unlockAtRandomAdd: 10m # Mriya. 25 в оригіналі
     duplicateId: RMCHiveBoonKing
     noLivingKing: true
     requiresCore: true

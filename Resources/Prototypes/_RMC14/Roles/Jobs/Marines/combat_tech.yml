@@ -28,7 +28,7 @@
   accessGroups:
   - CombatTech
   overwatchSortPriority: -1
-  overwatchRoleName: Бойові Техніки # MR, бо це назва
+  overwatchRoleName: Бойові Техніки # Mriya, бо це назва
   roleWeight: 1
   displayWeight: 1
   special:
@@ -42,7 +42,7 @@
         RMCSkillFirearms: 1
         RMCSkillFireman: 1
         RMCSkillJtac: 1
-        RMCSkillMedical: 1 # MR
+        RMCSkillMedical: 1 # Mriya
         RMCSkillVehicles: 1
     - type: CMVendorUser
       id: CMCombatTech

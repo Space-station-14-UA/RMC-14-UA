@@ -78,7 +78,7 @@
       components:
       - RMCTrainingDummy
   - type: AccessReader
-    access: [ ["CMAccessMedical"] ] # MR. В оригіналі тут ГЛ та Інструктор
+    access: [ ["CMAccessMedical"] ] # Mriya. В оригіналі тут ГЛ та Інструктор
   - type: RMCMesonsNonviewable
 
 - type: entity

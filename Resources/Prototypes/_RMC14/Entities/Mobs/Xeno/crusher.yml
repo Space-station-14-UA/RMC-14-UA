@@ -37,7 +37,7 @@
     - ActionXenoDevolve
     tier: 3
     hudOffset: -0.15,0.1
-    unlockAt: 1200 # MR. 20 хвилин. 15 (900) в оригіналі
+    unlockAt: 1200 # Mriya. 20 хвилин. 15 (900) в оригіналі
   - type: XenoRegen
     standHealingMultiplier: 0.66
   - type: XenoHeavy
@@ -104,7 +104,7 @@
   - type: StunOnExplosionReceived
     weak: false
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 1.2 # MR. 0.7 в оригіналі
+    value: 1.2 # Mriya. 0.7 в оригіналі
   - type: TantrumSpeedBuff
   - type: FixedIdentity
     name: cm-job-name-xeno-crusher
@@ -114,7 +114,7 @@
 - type: entity
   parent: CMXenoCrusherBase
   id: RMCXenoCrusher
-  description: Масивна чужопланетна істота з чорним панцирем на все тіло й величезними лапами. Виглядає, ніби танк. # MR
+  description: Масивна чужопланетна істота з чорним панцирем на все тіло й величезними лапами. Виглядає, ніби танк. # Mriya
   components:
   - type: Xeno
     actionIds:
@@ -142,7 +142,7 @@
 - type: entity
   parent: CMXenoCrusherBase
   id: RMCXenoCrusherCharger
-  description: Масивна чужопланетна істота з коричневим панцирем на все тіло й величезними лапами. Виглядає, ніби таран?.. # MR
+  description: Масивна чужопланетна істота з коричневим панцирем на все тіло й величезними лапами. Виглядає, ніби таран?.. # Mriya
   suffix: Charger
   components:
   - type: Sprite

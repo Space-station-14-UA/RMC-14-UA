@@ -9,7 +9,7 @@
   - type: Storage
     maxItemSize: Ginormous
     grid:
-    - 0,0,9,0 # MR. 0,0,8,0 в оригіналі
+    - 0,0,9,0 # Mriya. 0,0,8,0 в оригіналі
   - type: Sprite
     sprite: _RMC14/Objects/Storage/procase_mini.rsi
   - type: Icon
@@ -22,7 +22,7 @@
     - id: CMPacketPillsKelotane
     - id: CMPacketPillsBicaridine
     - id: WeaponShotgunM890Guard
-    - id: RMCPouchShotgunLarge # MR. RMCPouchGeneralLarge в оригіналі
-    - id: RMCBoxShotgunBuckshot # MR. CMShellShotgunBuckshot в оригіналі
-    - id: RMCBoxShotgunBuckshot # MR. CMShellShotgunBuckshot в оригіналі
-    - id: RMCBinoculars # MR
+    - id: RMCPouchShotgunLarge # Mriya. RMCPouchGeneralLarge в оригіналі
+    - id: RMCBoxShotgunBuckshot # Mriya. CMShellShotgunBuckshot в оригіналі
+    - id: RMCBoxShotgunBuckshot # Mriya. CMShellShotgunBuckshot в оригіналі
+    - id: RMCBinoculars # Mriya

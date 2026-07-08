@@ -21,7 +21,7 @@
       giveMapBlip:
         sprite: /Textures/_Mriya/Interface/map_blips.rsi
         state: sherpa
-      bypassLimit: false # MR. Особливі ролі лише один раз
+      bypassLimit: false # Mriya. Особливі ролі лише один раз
       jobWhitelists:
         - popup: rmc-pamphlets-rifleman-warning
           jobProto: CMRifleman

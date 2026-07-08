@@ -416,13 +416,13 @@
   - PonchoSnowRMC
   - PatchPeaceRMC
   - PDTLKitRMC
-  # MR start
+  # Mriya start
   - PatchWeYaRMC
   - PatchWeYaRMCSquare
   - PatchWeYaRMCBlack
   - PatchTSERMC
   - PatchOliveBranch
-  # MR end
+  # Mriya end
 
 - type: loadoutGroup
   id: AccessoriesRMCPVE

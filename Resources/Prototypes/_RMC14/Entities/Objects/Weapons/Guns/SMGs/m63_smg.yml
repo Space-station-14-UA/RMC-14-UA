@@ -237,7 +237,7 @@
 - type: entity
   parent: CMMagazineSMGM63
   id: RMCMagazineSMGM63HEAP
-  name: М63 ВБ магазин (10х20 мм) # MR. ВБ (HEAP) – ВибуховоБронебійні
+  name: М63 ВБ магазин (10х20 мм) # Mriya. ВБ (HEAP) – ВибуховоБронебійні
   suffix: HEAP
   components:
   - type: BallisticAmmoProvider
@@ -271,7 +271,7 @@
 - type: entity
   parent: CMMagazineSMGM63
   id: RMCMagazineSMGM63WP
-  name: М63 СП магазин (10х20 мм) # MR. СП(WP) – СтіноПробивні
+  name: М63 СП магазин (10х20 мм) # Mriya. СП(WP) – СтіноПробивні
   suffix: WP
   components:
   - type: BallisticAmmoProvider

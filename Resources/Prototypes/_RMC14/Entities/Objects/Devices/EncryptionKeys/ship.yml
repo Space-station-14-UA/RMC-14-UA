@@ -492,14 +492,14 @@
     - MarineJTAC
     - MarineMedical
     - MarineIntel
-    # MR start
+    # Mriya start
     - MarineAlpha
     - MarineBravo
     - MarineCharlie
     - MarineDelta
     - MarineEcho
     - MarineFoxtrot
-    # MR end
+    # Mriya end
     defaultChannel: MarineCommand
   - type: Sprite
     state: cap_key
@@ -540,7 +540,7 @@
     - MarineEngineer
     - MarineMedical
     - MarineRequisition
-    # MR start
+    # Mriya start
     - MarineJTAC
     - MarineIntel
     - MarineAlpha
@@ -549,7 +549,7 @@
     - MarineDelta
     - MarineEcho
     - MarineFoxtrot
-    # MR end
+    # Mriya end
     defaultChannel: MarineCommand
   - type: Sprite
     state: cap_key

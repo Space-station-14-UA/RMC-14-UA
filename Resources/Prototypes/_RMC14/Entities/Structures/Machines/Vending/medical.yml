@@ -140,7 +140,7 @@
         amount: 4
       - id: CMPillCanisterKelotane
         amount: 4
-      - id: RMCPillCanisterIron # MR
+      - id: RMCPillCanisterIron # Mriya
         amount: 1
 #      - id: CMPillCanisterOxycodone # TODO RMC14
 #        amount: 3

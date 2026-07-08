@@ -30,7 +30,7 @@
     tags:
     - DoorBumpOpener
     - RMCSynthGrabbable
-  - type: Butcherable # MR
+  - type: Butcherable # Mriya
     spawned:
     - id: MRFoodMeatXeno
       amount: 5

@@ -2,7 +2,7 @@
   abstract: true
   parent: CMBulletBase
   id: CMPelletShotgunBase
-  name: снаряд # MR
+  name: снаряд # Mriya
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

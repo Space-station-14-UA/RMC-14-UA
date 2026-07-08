@@ -10,7 +10,7 @@
   - type: Item
     size: Tiny
   - type: SkillPamphlet
-    bypassLimit: true # MR. Дайте читати довідники скільки лізе
+    bypassLimit: true # Mriya. Дайте читати довідники скільки лізе
     whitelists:
     - popup: rmc-pamphlets-cant-use
       restrictions:
@@ -99,9 +99,9 @@
     state: pamphlet_jtac
   - type: SkillPamphlet
     addSkills:
-      RMCSkillJtac: 2 # MR. 1 в оригіналі
+      RMCSkillJtac: 2 # Mriya. 1 в оригіналі
     skillCap:
-      RMCSkillJtac: 3 # MR. 2 в оригіналі
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі
     bypassLimit: true
 
 # gives spotter skill / bypasses limit
@@ -118,9 +118,9 @@
     addComps:
     - type: SpotterWhitelist
     addSkills:
-      RMCSkillJtac: 2 # MR. 1 в оригіналі
+      RMCSkillJtac: 2 # Mriya. 1 в оригіналі
     skillCap:
-      RMCSkillJtac: 3 # MR. 2 в оригіналі. RMC14: In case they read another one first.
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі. RMC14: In case they read another one first.
     giveJobTitle: rmc-job-name-spotter
     givePrefix: rmc-job-prefix-spotter
     isAppendPrefix: false
@@ -130,7 +130,7 @@
     giveMapBlip:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: spotter
-    bypassLimit: false # MR. Особливі ролі лише один раз
+    bypassLimit: false # Mriya. Особливі ролі лише один раз
     jobWhitelists:
     - popup: rmc-pamphlets-rifleman-warning
       jobProto: CMRifleman
@@ -226,7 +226,7 @@
     giveMapBlip:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: loader
-    bypassLimit: false # MR. Особливі ролі лише один раз
+    bypassLimit: false # Mriya. Особливі ролі лише один раз
     jobWhitelists:
     - popup: rmc-pamphlets-rifleman-warning
       jobProto: CMRifleman
@@ -245,10 +245,10 @@
     bypassSkill: true
     addSkills:
       RMCSkillEngineer: 1
-      RMCSkillJtac: 3 # MR. 2 в оригіналі
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі
     skillCap:
       RMCSkillEngineer: 2 # RMC14: In case they read another one first.
-      RMCSkillJtac: 3 # MR. 2 в оригіналі
+      RMCSkillJtac: 3 # Mriya. 2 в оригіналі
     giveJobTitle: rmc-job-name-mortar-operator
     givePrefix: rmc-job-prefix-mortar-operator
     isAppendPrefix: false
@@ -258,7 +258,7 @@
     giveMapBlip:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: mortar
-    bypassLimit: false # MR. Особливі ролі лише один раз
+    bypassLimit: false # Mriya. Особливі ролі лише один раз
     jobWhitelists:
     - popup: rmc-pamphlets-rifleman-warning
       jobProto: CMRifleman
@@ -458,12 +458,12 @@
     language: French
 
 # gives russian language
-- type: entity # MR. Це русняве лайно, зустрічатися окрім як через адмін спавн не повинно
+- type: entity # Mriya. Це русняве лайно, зустрічатися окрім як через адмін спавн не повинно
   parent: CMPamphletLanguage
   id: CMPamphletLanguageRussian
   name: брудний туалетний папір
   description: НАЩО ТИ НА ЦЕ ДИВИШСЯ?? ВИКИНЬ!!!
-  suffix: руснява мова # MR
+  suffix: руснява мова # Mriya
   components:
   - type: SkillPamphlet
     language: Russian

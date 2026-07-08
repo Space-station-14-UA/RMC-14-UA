@@ -122,7 +122,7 @@
     - HiveRecoveryNodeXenoConstructionNode
     - HivePlasmaTreeXenoConstructionNode
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.7 # MR. 0.2 в оригіналі
+    value: 0.7 # Mriya. 0.2 в оригіналі
   - type: FixedIdentity
     name: cm-job-name-xeno-burrower
   - type: RMCSurgeryXenoHeart

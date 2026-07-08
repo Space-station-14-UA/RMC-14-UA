@@ -92,7 +92,7 @@
   - RMCBoxBulletsSMGAPEmptyBuild
   - RMCBoxBulletsPistolEmptyBuild
   - RMCBoxBulletsPistolAPEmptyBuild
-  - MRBoxBulletsSmartGunEmptyBuild # MR
+  - MRBoxBulletsSmartGunEmptyBuild # Mriya
 
 - type: rmcConstruction
   parent: RMCCardboardBuildBase

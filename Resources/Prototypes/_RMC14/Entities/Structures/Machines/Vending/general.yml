@@ -36,14 +36,14 @@
         amount: 10
       - id: RMCCassetteTapePigeonBeans
         amount: 10
-      # MR start
+      # Mriya start
       - id: MRCassetteTapeFire
         amount: 10
       - id: MRCassetteTapeManSoldWorld
         amount: 10
       - id: MRCassetteTapeUa
         amount: 10
-      # MR end
+      # Mriya end
       - id: RMCCassetteTapeCustom
         amount: 20
     - name: Гральні карти
@@ -52,7 +52,7 @@
         amount: 10
     - name: Журнали
       entries:
-      # MR start. Журнали "Хто я? Де я?"
+      # Mriya start. Журнали "Хто я? Де я?"
       - id: MRMagazineWhoIWhereIN1
         amount: 10
       - id: MRMagazineWhoIWhereIN2
@@ -95,7 +95,7 @@
         amount: 10
       - id: MRMagazineWhoIWhereIN21
         amount: 10
-      # MR end    
+      # Mriya end    
       - id: RMCMagazineBootsN160
         amount: 10
       - id: RMCMagazineBootsN07

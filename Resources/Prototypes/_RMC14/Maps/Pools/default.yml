@@ -1,4 +1,4 @@
-# MR. У нашому білді використовується MRDefaultMapPool та MRDefaultMapPoolSavannah
+# Mriya. У нашому білді використовується MRDefaultMapPool та MRDefaultMapPoolSavannah
 - type: gameMapPool
   id: RMCDefaultMapPool
   maps:

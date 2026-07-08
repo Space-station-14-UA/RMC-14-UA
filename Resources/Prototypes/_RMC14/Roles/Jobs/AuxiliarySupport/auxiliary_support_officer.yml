@@ -37,7 +37,7 @@
   marineAuthorityLevel: 12
   supervisors: rmc-job-supervisors-commander
   accessGroups:
-  - MarineMain # MR. ASO в оригіналі. Більше доступів
+  - MarineMain # Mriya. ASO в оригіналі. Більше доступів
   roleWeight: 0.25
   special:
   - !type:AddComponentSpecial
@@ -48,9 +48,9 @@
         RMCSkillEndurance: 1
         RMCSkillEngineer: 2
         RMCSkillFirearms: 1
-        RMCSkillFireman: 2 # MR. 1 в оригіналі
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillIntel: 2
-        RMCSkillJtac: 4 # MR. 3 в оригіналі
+        RMCSkillJtac: 4 # Mriya. 3 в оригіналі
         RMCSkillLeadership: 3
         RMCSkillMedical: 2
         RMCSkillNavigations: 1
@@ -60,7 +60,7 @@
         RMCSkillPolice: 1
         RMCSkillPowerLoader: 2
         RMCSkillSurgery: 1
-        RMCSkillVehicles: 2 # MR. 1 в оригіналі
+        RMCSkillVehicles: 2 # Mriya. 1 в оригіналі
     - type: MarineOrders
     - type: RMCPointing
     - type: JobPrefix

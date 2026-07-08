@@ -1,6 +1,6 @@
 ﻿- type: entity
   parent: Dropper
-  name: піпетка # MR
+  name: піпетка # Mriya
   description: Піпетка, піпетка звичайна. Здатна переміщувати до 5 одиниць речовини.
   id: RMCDropper
   components:
