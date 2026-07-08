@@ -18,6 +18,13 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// </summary>
     [DataField]
     public string? GroupBy;
+
+    // Mriya
+    /// <summary>
+    /// Uses for sponsor loadouts, identifies which sponsor the loadout belongs to. If not null, the loadout will only be shown if the sponsor is selected.
+    /// </summary>
+    [DataField]
+    public string? SponsorTag;
     /*
      * You can either use an existing StartingGearPrototype or specify it inline to avoid bloating yaml.
      */

@@ -1,17 +1,19 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Content.Server.Database;
+using Content.Server.Mriya.Sponsors;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.Preferences.Loadouts;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Content.Server.Preferences.Managers
 {
@@ -29,6 +31,7 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly ILogManager _log = default!;
         [Dependency] private readonly UserDbDataManager _userDb = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private ISponsorManager _sponsorManager = default!; // mriya TODO: partial
 
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
@@ -261,6 +264,8 @@ namespace Content.Server.Preferences.Managers
             DebugTools.Assert(prefsData.Prefs != null);
             prefsData.Prefs = SanitizePreferences(session, prefsData.Prefs, _dependencies);
 
+            prefsData.Prefs = SanitizeSponsorPreferences(session, prefsData.Prefs); // mriya
+
             prefsData.PrefsLoaded = true;
 
             var msg = new MsgPreferencesAndSettings();
@@ -282,6 +287,85 @@ namespace Content.Server.Preferences.Managers
             return _cachedPlayerPrefs.ContainsKey(session.UserId);
         }
 
+        // Mriya Start
+        private PlayerPreferences SanitizeSponsorPreferences(ICommonSession session, PlayerPreferences prefs)
+        {
+            return new PlayerPreferences(prefs.Characters.Select(p =>
+            {
+                if (p.Value is not HumanoidCharacterProfile profile)
+                    return p;
+
+                var newLoadouts = new Dictionary<string, RoleLoadout>(profile.Loadouts);
+                bool modified = false;
+
+                foreach (var (roleName, roleLoadout) in profile.Loadouts)
+                {
+                    var filteredLoadout = new RoleLoadout(roleName) { EntityName = roleLoadout.EntityName };
+                    bool roleModified = false;
+
+                    foreach (var (groupName, loadouts) in roleLoadout.SelectedLoadouts)
+                    {
+                        var validGroupItems = new List<Loadout>();
+
+                        foreach (var item in loadouts)
+                        {
+                            if (!_prototypeManager.TryIndex<LoadoutPrototype>(item.Prototype, out var proto))
+                                continue;
+
+                            // ПЕРЕВІРКА ТЕГУ
+                            if (!string.IsNullOrEmpty(proto.SponsorTag))
+                            {
+                                if (!_sponsorManager.HasTag(session.UserId, proto.SponsorTag))
+                                {
+                                    _sawmill.Warning($"User {session.UserId} has sponsor item {proto.ID} in profile but lacks tag {proto.SponsorTag}. Removing.");
+                                    roleModified = true;
+                                    modified = true;
+                                    continue; // Пропускаємо цей предмет
+                                }
+                            }
+                            validGroupItems.Add(item);
+                        }
+                        filteredLoadout.SelectedLoadouts[groupName] = validGroupItems;
+                    }
+
+                    if (roleModified)
+                        newLoadouts[roleName] = filteredLoadout;
+                }
+
+                if (modified)
+                {
+                    var newProfile = profile.WithLoadouts(newLoadouts);
+                    return new KeyValuePair<int, ICharacterProfile>(p.Key, newProfile);
+                }
+
+                return p;
+            }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor, prefs.ConstructionFavorites);
+        }
+
+        public void RefreshPreferences(NetUserId userId)
+        {
+            if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || prefsData.Prefs == null)
+                return;
+
+            if (!_playerManager.TryGetSessionById(userId, out var session))
+                return;
+
+            prefsData.Prefs = SanitizePreferences(session, prefsData.Prefs, _dependencies);
+            prefsData.Prefs = SanitizeSponsorPreferences(session, prefsData.Prefs);
+
+            var msg = new MsgPreferencesAndSettings
+            {
+                Preferences = prefsData.Prefs,
+                Settings = new GameSettings
+                {
+                    MaxCharacterSlots = MaxCharacterSlots
+                }
+            };
+            _netManager.ServerSendMessage(msg, session.Channel);
+
+            _sawmill.Info($"Preferences for {userId} were refreshed and pushed to client.");
+        }
+        // Mriya End
 
         /// <summary>
         /// Tries to get the preferences from the cache

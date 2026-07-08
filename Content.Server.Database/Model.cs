@@ -13,7 +13,7 @@ using NpgsqlTypes;
 
 namespace Content.Server.Database
 {
-    public abstract class ServerDbContext : DbContext
+    public abstract partial class ServerDbContext : DbContext // mriya partial class is in a separate file
     {
         protected ServerDbContext(DbContextOptions options) : base(options)
         {
@@ -66,6 +66,8 @@ namespace Content.Server.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            ConfigureMriya(modelBuilder);
+
             modelBuilder.Entity<Preference>()
                 .HasIndex(p => p.UserId)
                 .IsUnique();
