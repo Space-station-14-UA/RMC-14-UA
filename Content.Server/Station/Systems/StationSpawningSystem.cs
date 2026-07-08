@@ -2,6 +2,7 @@ using Content.Server.Access.Systems;
 using Content.Server.Humanoid;
 using Content.Server.IdentityManagement;
 using Content.Server.Mind.Commands;
+using Content.Server.Mriya.Sponsors;
 using Content.Server.PDA;
 using Content.Server.Station.Components;
 using Content.Shared.Access.Components;
@@ -41,6 +42,19 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly PdaSystem _pdaSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private ISponsorManager _sponsorManager = default!;
+
+    protected override bool IsLoadoutAllowed(EntityUid entity, LoadoutPrototype proto) // mriya
+    {
+        if (string.IsNullOrEmpty(proto.SponsorTag))
+            return true;
+
+        if (!TryComp<ActorComponent>(entity, out var actor))
+        {
+            return true;
+        }
+        return _sponsorManager.HasTag(actor.PlayerSession.UserId, proto.SponsorTag);
+    }
 
     /// <summary>
     /// Attempts to spawn a player character onto the given station.

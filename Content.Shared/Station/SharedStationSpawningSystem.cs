@@ -56,11 +56,19 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                     continue;
                 }
 
+                if (!IsLoadoutAllowed(entity, loadoutProto)) // mriya
+                    continue;
+
                 EquipStartingGear(entity, loadoutProto, raiseEvent: false);
             }
         }
 
         EquipRoleName(entity, loadout, roleProto);
+    }
+
+    protected virtual bool IsLoadoutAllowed(EntityUid entity, LoadoutPrototype proto) // mriya
+    {
+        return true; // За замовчуванням дозволяємо все
     }
 
     /// <summary>
