@@ -3061,7 +3061,7 @@ entities:
     - type: Transform
       pos: 27.5,9.5
       parent: 1
-- proto: SMCSpawnerCorpseDoctor
+- proto: MMCSpawnerCorpseDoctor
   entities:
   - uid: 386
     components:

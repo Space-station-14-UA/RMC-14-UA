@@ -1,32 +1,32 @@
 # Більше варіацій в порівнянні з РМС
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseCLFSoldier
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseCLFSoldier
   name: Спавнер Трупа – Солдат ФВК
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseCLFSoldier
+    spawn: MMCCorpseCLFSoldier
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseCLFMedic
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseCLFMedic
   name: Спавнер Трупа – Медик ФВК
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseCLFMedic
+    spawn: MMCCorpseCLFMedic
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseCLFEngineer
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseCLFEngineer
   name: Спавнер Трупа – Інженер ФВК
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseCLFEngineer
+    spawn: MMCCorpseCLFEngineer
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseCLFSpecialist
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseCLFSpecialist
   name: Спавнер Трупа – Спеціаліст ФВК
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseCLFSpecialist
+    spawn: MMCCorpseCLFSpecialist

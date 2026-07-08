@@ -2,7 +2,7 @@
 - type: entity
   abstract: true
   parent: RMCMapInsertBase
-  id: SMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoBase
   suffix: Інсерт Варадеро
   components:
   - type: MapInsert
@@ -11,8 +11,8 @@
     replaceAreas: true
 
 - type: entity
-  parent: SMCMapInsertVaraderoBase
-  id: SMCMapInsertVaraderoCLFRaid
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoCLFRaid
   name: Вторгнення ФВК
   components:
   - type: MapInsert
@@ -21,8 +21,8 @@
       probability: 1
 
 - type: entity
-  parent: SMCMapInsertVaraderoBase
-  id: SMCMapInsertVaraderoResturant
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoResturant
   name: Ресторан
   components:
   - type: MapInsert
@@ -31,8 +31,8 @@
       probability: 0
 
 - type: entity
-  parent: SMCMapInsertVaraderoBase
-  id: SMCMapInsertVaraderoAltHospital
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoAltHospital
   name: Альтернативний Мед
   components:
   - type: MapInsert
@@ -44,8 +44,8 @@
       probability: 1
 
 - type: entity
-  parent: SMCMapInsertVaraderoBase
-  id: SMCMapInsertVaraderoEngiHold
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoEngiHold
   name: Холд Інжу
   components:
   - type: MapInsert

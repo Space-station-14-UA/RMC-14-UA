@@ -1,48 +1,48 @@
 # Чомусь РМСні спавнери цих ролей лише з пробитими грудьми. Не підходить для режиму з ФВК, тому робимо власні
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseDoctor
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseDoctor
   name: Спавнер Трупа – Лікар
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseDoctor
+    spawn: MMCCorpseDoctor
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseEngineer
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseEngineer
   name: Спавнер Трупа – Інженер
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseEngineer
+    spawn: MMCCorpseEngineer
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseSecurity
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseSecurity
   name: Спавнер Трупа – Офіцер
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseSecurity
+    spawn: MMCCorpseSecurity
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseScientist
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseScientist
   name: Спавнер Трупа – Науковець
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseScientist
+    spawn: MMCCorpseScientist
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseLiaison
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseLiaison
   name: Спавнер Трупа – Представник Корпорації
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseLiaison
+    spawn: MMCCorpseLiaison
 
 - type: entity
-  parent: SMCSpawnerCorpse
-  id: SMCSpawnerCorpseMiner
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseMiner
   name: Спавнер Трупа – Шахтар
   components:
   - type: CorpseSpawner
-    spawn: SMCCorpseMiner
+    spawn: MMCCorpseMiner

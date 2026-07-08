@@ -13,7 +13,7 @@
 
 - type: entity
   parent: RMCAreaAlmayer
-  id: SMCAreaSavannah
+  id: MMCAreaSavannah
   suffix: Зона Саванни
   abstract: true
   components:
@@ -26,150 +26,150 @@
 # ТЕХ. ПРИМІЩЕННЯ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahMaints
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahMaints
   abstract: true
   components:
   - type: Sprite
     state: other
 
 - type: entity
-  parent: SMCAreaSavannahMaints
-  id: SMCAreaSavannahMaintsStarboardBow
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsStarboardBow
   name: Тех. Приміщення Переднього Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahMaints
-  id: SMCAreaSavannahMaintsPortBow
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsPortBow
   name: Тех. Приміщення Переднього Лівого Борту
 
 - type: entity
-  parent: SMCAreaSavannahMaints
-  id: SMCAreaSavannahMaintsStarboardBeam
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsStarboardBeam
   name: Тех. Приміщення Центрального Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahMaints
-  id: SMCAreaSavannahMaintsPortBeam
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsPortBeam
   name: Тех. Приміщення Центрального Лівого Борту
 
 - type: entity
-  parent: SMCAreaSavannahMaints
-  id: SMCAreaSavannahMaintsStarboardQuarter
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsStarboardQuarter
   name: Тех. Приміщення Заднього Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahMaints
-  id: SMCAreaSavannahMaintsPortQuarter
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsPortQuarter
   name: Тех. Приміщення Заднього Лівого Борту
 
 # КОРИДОРИ (загальні)
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahCorridorAmidship
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCorridorAmidship
   name: Центральний Коридор
   components:
   - type: Sprite
     state: other
 
 - type: entity
-  parent: SMCAreaSavannahCorridorAmidship
-  id: SMCAreaSavannahCorridorEngineering
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorEngineering
   name: Інженерний Коридор
 
 - type: entity
-  parent: SMCAreaSavannahCorridorAmidship
-  id: SMCAreaSavannahCorridorEscape
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorEscape
   name: Коридор до Подів Евакуації
 
 - type: entity
-  parent: SMCAreaSavannahCorridorAmidship
-  id: SMCAreaSavannahCorridorBriefingStarboard
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorBriefingStarboard
   name: Коридор Брифінгу Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahCorridorAmidship
-  id: SMCAreaSavannahCorridorBriefingPort
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorBriefingPort
   name: Коридор Брифінгу Лівого Борту
 
 # БРІГ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahBrig
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahBrig
   abstract: true
   components:
   - type: Sprite
     state: security
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigCMP
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigCMP
   name: Офіс ГВСП
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigWarden
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigWarden
   name: Офіс Наглядача
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigRange
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigRange
   name: Тир Брігу
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigOB
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigOB
   name: Гармата Орбітального Бомбардування
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigCorridor
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigCorridor
   name: Головний Коридор Брігу
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigBow
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigBow
   name: Передній Коридор Брігу
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigPrison
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigPrison
   name: Тюрма Брігу
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahBrigPrep
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigPrep
   name: Казарми Брігу
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahStarboardPointDefense
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahStarboardPointDefense
   name: Аварійні Порти Стикування Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahPortPointDefense
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahPortPointDefense
   name: Аварійні Порти Стикування Лівого Борту
 
 ## Mriya start
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahArmory
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahArmory
   name: Зброярня Брігу
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahObservationRoom
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahObservationRoom
   name: Кімната Спостереження
 ## Mriya end
 
 # КОМАНДУВАННЯ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahCommand
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCommand
   abstract: true
   components:
   - type: Sprite
@@ -178,70 +178,70 @@
     minimapColor: '#2D3FA2EE'
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahLiaison
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahLiaison
   name: Приймальня Представника
 
 ## Mriya start
 - type: entity
-  parent: SMCAreaSavannahLiaison
-  id: SMCAreaSavannahLiaisonOffice
+  parent: MMCAreaSavannahLiaison
+  id: MMCAreaSavannahLiaisonOffice
   name: Офіс Представника
 
 - type: entity
-  parent: SMCAreaSavannahLiaison
-  id: SMCAreaSavannahLiaisonCabinet
+  parent: MMCAreaSavannahLiaison
+  id: MMCAreaSavannahLiaisonCabinet
   name: Кабінет Представника
 
 - type: entity
-  parent: SMCAreaSavannahLiaison
-  id: SMCAreaSavannahLiaisonStorage
+  parent: MMCAreaSavannahLiaison
+  id: MMCAreaSavannahLiaisonStorage
   name: Склад Представника
 ## Mriya end
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahPilotBunks
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahPilotBunks
   name: Койки Пілотів
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahOfficerBunks
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahOfficerBunks
   name: Койки Офіцерів
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahCommandingOfficer
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCommandingOfficer
   name: Офіс Командуючого Офіцера
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahCICCorridorPort
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCICCorridorPort
   name: Лівий Коридор БІЦ
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahCICCorridorStarboard
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCICCorridorStarboard
   name: Правий Коридор БІЦ
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahCIC
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCIC
   name: Бойовий Інформаційний Центр
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahASO
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahASO
   name: Офіс ОП та Гіперсон Командування
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahTComms
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahTComms
   name: Телекоми
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahIO
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahIO
   name: Офіс Розвідки
   components:
   - type: Area
@@ -249,26 +249,26 @@
 
 ## Mriya start
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahVehicleStorage
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahVehicleStorage
   name: Сховище Транспорта
 
 - type: entity
-  parent: SMCAreaSavannahCommand
-  id: SMCAreaSavannahVehiceCrew
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahVehiceCrew
   name: Койки Операторів Транспорту
 
 - type: entity
-  parent: SMCAreaSavannahBrig
-  id: SMCAreaSavannahSynthetic
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahSynthetic
   name: Сховище Синтетиків
 ## Mriya end
 
 # МЕДИЧНИЙ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahMedical
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahMedical
   name: Медичний Відділ
   components:
   - type: Sprite
@@ -276,152 +276,152 @@
   - type: IntelRecoverCorpsesArea
 
 - type: entity
-  parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalSurgery
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalSurgery
   name: Хірургічні палати
 
 - type: entity
-  parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalChemistry
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalChemistry
   name: Хімічна
 
 - type: entity
-  parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalPreparation
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalPreparation
   name: Медичні Казарми
 
 ## Mriya start
 - type: entity
-  parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalResearch
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalResearch
   name: Лабораторія
   components:
   - type: Area
     retrieveItemObjective: true
 
 - type: entity
-  parent: SMCAreaSavannahMedicalResearch
-  id: SMCAreaSavannahMedicalResearchContaimentCell
+  parent: MMCAreaSavannahMedicalResearch
+  id: MMCAreaSavannahMedicalResearchContaimentCell
   name: Камери Утримування Лабораторії
 
 - type: entity
-  parent: SMCAreaSavannahMedicalResearch
-  id: SMCAreaSavannahMedicalResearchStorage
+  parent: MMCAreaSavannahMedicalResearch
+  id: MMCAreaSavannahMedicalResearchStorage
   name: Склад Лабораторії
 
 - type: entity
-  parent: SMCAreaSavannahMedicalResearch
-  id: SMCAreaSavannahMedicalResearchChemistry
+  parent: MMCAreaSavannahMedicalResearch
+  id: MMCAreaSavannahMedicalResearchChemistry
   name: Хімічна Лабораторії
 
 - type: entity
-  parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalMorgue
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalMorgue
   name: Морг
 
 - type: entity
-  parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalCMO
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalCMO
   name: Офіс Головного Лікаря
 
 - type: entity
-  parent: SMCAreaSavannahMedical
-  id: SMCAreaSavannahMedicalRestroom
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalRestroom
   name: Кімната Відпочинку Медичного
 ## Mriya end
 
 # ПІДТРИМКА
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahAuxiliary
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahAuxiliary
   abstract: true
   components:
   - type: Sprite
     state: requi
 
 - type: entity
-  parent: SMCAreaSavannahAuxiliary
-  id: SMCAreaSavannahHangarPort
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahHangarPort
   name: Ангар Лівого Борту
 
 - type: entity
-  parent: SMCAreaSavannahAuxiliary
-  id: SMCAreaSavannahHangarStarboard
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahHangarStarboard
   name: Ангар Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahAuxiliary
-  id: SMCAreaSavannahPilotsRoom
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahPilotsRoom
   name: Кімната Пілотів
 
 - type: entity
-  parent: SMCAreaSavannahAuxiliary
-  id: SMCAreaSavannahRequisitions
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahRequisitions
   name: Постачання
 
 - type: entity
-  parent: SMCAreaSavannahRequisitions
-  id: SMCAreaSavannahQuartermaster
+  parent: MMCAreaSavannahRequisitions
+  id: MMCAreaSavannahQuartermaster
   name: Офіс Офіцера Логістики
 
 - type: entity
-  parent: SMCAreaSavannahAuxiliary
-  id: SMCAreaSavannahCanteen
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahCanteen
   name: Їдальня
 
 ## Mriya start
 - type: entity
-  parent: SMCAreaSavannahAuxiliary
-  id: SMCAreaSavannahBotany
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahBotany
   name: Ботаніка
 ## Mriya end
 
 # КАЗАРМИ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahAlphaBravo
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahAlphaBravo
   name: Казарми Альфа-Браво
   components:
   - type: Sprite
     state: alpha_bravo
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahAlpha
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahAlpha
   name: Казарми Альфа
   components:
   - type: Sprite
     state: alpha
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahBravo
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahBravo
   name: Казарми Браво
   components:
   - type: Sprite
     state: bravo
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahCharlieDelta
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCharlieDelta
   name: Казарми Чарлі-Дельта
   components:
   - type: Sprite
     state: charlie_delta
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahCharlie
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCharlie
   name: Казарми Чарлі
   components:
   - type: Sprite
     state: charlie
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahDelta
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahDelta
   name: Казарми Дельта
   components:
   - type: Sprite
@@ -430,8 +430,8 @@
 # ІНЖЕНЕРНИЙ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahEngineering
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahEngineering
   name: Інженерія
   components:
   - type: Sprite
@@ -440,35 +440,35 @@
     minimapColor: '#C19504E7'
 
 - type: entity
-  parent: SMCAreaSavannahEngineering
-  id: SMCAreaSavannahEngineeringGenerator
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahEngineeringGenerator
   name: Реакторна Установка Судна
 
 - type: entity
-  parent: SMCAreaSavannahEngineering
-  id: SMCAreaSavannahChiefEngineer
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahChiefEngineer
   name: Офіс Головного Інженера
 
 - type: entity
-  parent: SMCAreaSavannahEngineering
-  id: SMCAreaSavannahEngineeringPreparations
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahEngineeringPreparations
   name: Інженерні Казарми
 
 - type: entity
-  parent: SMCAreaSavannahEngineering
-  id: SMCAreaSavannahAtmosStarboard
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahAtmosStarboard
   name: Атмос Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahEngineering
-  id: SMCAreaSavannahAtmosPort
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahAtmosPort
   name: Атмос Лівого Борту
 
 # ПОМПИ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahLifeboatPumps
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahLifeboatPumps
   abstract: true
   components:
   - type: Sprite
@@ -480,80 +480,80 @@
     hijackEvacuationType: Add
 
 - type: entity
-  parent: SMCAreaSavannahLifeboatPumps
-  id: SMCAreaSavannahPumpStarboardBow
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpStarboardBow
   name: Помпа Переднього Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahLifeboatPumps
-  id: SMCAreaSavannahPumpStarboardQuarter
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpStarboardQuarter
   name: Помпа Заднього Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahLifeboatPumps
-  id: SMCAreaSavannahPumpPortBow
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpPortBow
   name: Помпа Переднього Лівого Борту
 
 - type: entity
-  parent: SMCAreaSavannahLifeboatPumps
-  id: SMCAreaSavannahPumpPortQuarter
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpPortQuarter
   name: Помпа Заднього Лівого Борту
 
 # ІНШЕ
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahSEA
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahSEA
   name: Офіс Інструктора та Тир
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahBriefing
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahBriefing
   name: Брифінг Зала
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahLifeboatAmidship
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahLifeboatAmidship
   name: Центральне Стикування Рятувальних Шлюпок
 
 - type: entity
-  parent: SMCAreaSavannahLifeboatAmidship
-  id: SMCAreaSavannahLifeboatStarboard
+  parent: MMCAreaSavannahLifeboatAmidship
+  id: MMCAreaSavannahLifeboatStarboard
   name: Стикування Рятувальної Шлюпки Правого Борту
 
 - type: entity
-  parent: SMCAreaSavannahLifeboatAmidship
-  id: SMCAreaSavannahLifeboatPort
+  parent: MMCAreaSavannahLifeboatAmidship
+  id: MMCAreaSavannahLifeboatPort
   name: Стикування Рятувальної Шлюпки Лівого Борту
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahMemorial
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahMemorial
   name: Меморіал
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahChurch
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahChurch
   name: Церква
 
 ## Mriya start
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahPress
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahPress
   name: Офіс Преси
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahDisposals
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahDisposals
   name: Смітник
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahToilets
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahToilets
   name: Вбиральні
 
 - type: entity
-  parent: SMCAreaSavannah
-  id: SMCAreaSavannahOuter
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahOuter
   name: Зовнішня обшивка
 ## Mriya end

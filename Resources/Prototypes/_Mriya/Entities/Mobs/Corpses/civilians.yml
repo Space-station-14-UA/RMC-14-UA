@@ -1,7 +1,7 @@
 # Чомусь РМСні спавнери цих ролей лише з пробитими грудьми. Не підходить для режиму з ФВК, тому робимо власні
 - type: randomHumanoidSettings
   parent: RMCCorpseDoctor
-  id: SMCCorpseDoctor
+  id: MMCCorpseDoctor
   components:
   - type: RemoveComponents
     components:
@@ -9,7 +9,7 @@
 
 - type: randomHumanoidSettings
   parent: RMCCorpseEngineer
-  id: SMCCorpseEngineer
+  id: MMCCorpseEngineer
   components:
   - type: RemoveComponents
     components:
@@ -17,7 +17,7 @@
 
 - type: randomHumanoidSettings
   parent: RMCCorpseSecurity
-  id: SMCCorpseSecurity
+  id: MMCCorpseSecurity
   components:
   - type: RemoveComponents
     components:
@@ -25,7 +25,7 @@
 
 - type: randomHumanoidSettings
   parent: RMCCorpseScientist
-  id: SMCCorpseScientist
+  id: MMCCorpseScientist
   components:
   - type: RemoveComponents
     components:
@@ -33,7 +33,7 @@
 
 - type: randomHumanoidSettings
   parent: RMCCorpseLiaison
-  id: SMCCorpseLiaison
+  id: MMCCorpseLiaison
   components:
   - type: RemoveComponents
     components:
@@ -41,7 +41,7 @@
 
 - type: randomHumanoidSettings
   parent: RMCCorpseMiner
-  id: SMCCorpseMiner
+  id: MMCCorpseMiner
   components:
   - type: RemoveComponents
     components:

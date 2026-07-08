@@ -1,6 +1,6 @@
 - type: entity
   parent: CMDoubleDoorAlmayerGlass
-  id: SMCDoubleDoorBlackLiaisonLocked
+  id: MMCDoubleDoorBlackLiaisonLocked
   suffix: Січ, Корпорат, Зачинено
   components:
   - type: AccessReader
@@ -8,7 +8,7 @@
 
 - type: entity
   parent: CMDoubleDoorPersonalSolid
-  id: SMCDoubleDoorWhiteLiaisonLocked
+  id: MMCDoubleDoorWhiteLiaisonLocked
   suffix: Січ, Корпорат, Зачинено
   components:
   - type: AccessReader

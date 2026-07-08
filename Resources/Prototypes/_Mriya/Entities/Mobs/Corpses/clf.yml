@@ -1,6 +1,6 @@
 # Більше варіацій в порівнянні з РМС
 - type: randomHumanoidSettings
-  id: SMCCorpseCLF
+  id: MMCCorpseCLF
   abstract: true
   components:
   - type: Rank
@@ -10,16 +10,16 @@
       - CLF
 
 - type: randomHumanoidSettings
-  parent: [SMCCorpseCLF, RMCCorpse]
-  id: SMCCorpseCLFSoldier
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFSoldier
   components:
   - type: Loadout
     prototypes:
-    - SMCGearCorpseCLFSoldier
-    - SMCGearCorpseCLFSoldierAlt
+    - MMCGearCorpseCLFSoldier
+    - MMCGearCorpseCLFSoldierAlt
 
 - type: startingGear
-  id: SMCGearCorpseCLFSoldier
+  id: MMCGearCorpseCLFSoldier
   equipment:
     head: MRHeadMilitiaHood
     ears: RMCHeadsetDistressCLF
@@ -38,7 +38,7 @@
     - CMShellShotgunIncendiaryBuckshot
 
 - type: startingGear
-  id: SMCGearCorpseCLFSoldierAlt
+  id: MMCGearCorpseCLFSoldierAlt
   equipment:
     head: CMHeadBandRebel
     ears: RMCHeadsetDistressCLF
@@ -61,16 +61,16 @@
     - RMCMagazineRifleMAR40
 
 - type: randomHumanoidSettings
-  parent: [SMCCorpseCLF, RMCCorpse]
-  id: SMCCorpseCLFMedic
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFMedic
   components:
   - type: Loadout
     prototypes:
-    - SMCGearCorpseCLFMedic
-    - SMCGearCorpseCLFMedicAlt
+    - MMCGearCorpseCLFMedic
+    - MMCGearCorpseCLFMedicAlt
 
 - type: startingGear
-  id: SMCGearCorpseCLFMedic
+  id: MMCGearCorpseCLFMedic
   equipment:
     head: CMHeadBandRed
     ears: RMCHeadsetDistressCLF
@@ -95,7 +95,7 @@
     - CMStasisBagFolded
 
 - type: startingGear
-  id: SMCGearCorpseCLFMedicAlt
+  id: MMCGearCorpseCLFMedicAlt
   equipment:
     head: MRHeadMilitiaHood
     ears: RMCHeadsetDistressCLF
@@ -122,16 +122,16 @@
     - CMDefibrillator
 
 - type: randomHumanoidSettings
-  parent: [SMCCorpseCLF, RMCCorpse]
-  id: SMCCorpseCLFEngineer
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFEngineer
   components:
   - type: Loadout
     prototypes:
-    - SMCGearCorpseCLFEngineer
-    - SMCGearCorpseCLFEngineerAlt
+    - MMCGearCorpseCLFEngineer
+    - MMCGearCorpseCLFEngineerAlt
 
 - type: startingGear
-  id: SMCGearCorpseCLFEngineer
+  id: MMCGearCorpseCLFEngineer
   equipment:
     head: CMHeadBeretEngineer
     ears: RMCHeadsetDistressCLF
@@ -165,7 +165,7 @@
     - CMShellShotgunFlechette
 
 - type: startingGear
-  id: SMCGearCorpseCLFEngineerAlt
+  id: MMCGearCorpseCLFEngineerAlt
   equipment:
     head: RMCHelmetWelding
     mask: RMCCombatUtilityKnifeA
@@ -195,14 +195,14 @@
     - CMShellShotgunFlechette
 
 - type: randomHumanoidSettings
-  parent: [SMCCorpseCLF, RMCCorpse]
-  id: SMCCorpseCLFSpecialist
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFSpecialist
   components:
   - type: Loadout
-    prototypes: [ SMCGearCorpseCLFSpecialist ]
+    prototypes: [ MMCGearCorpseCLFSpecialist ]
 
 - type: startingGear
-  id: SMCGearCorpseCLFSpecialist
+  id: MMCGearCorpseCLFSpecialist
   equipment:
     head: MRHeadMilitiaHood
     ears: RMCHeadsetDistressCLF

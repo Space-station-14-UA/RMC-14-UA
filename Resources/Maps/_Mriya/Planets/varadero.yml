@@ -179582,7 +179582,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 179.5,29.5
       parent: 1
-- proto: RMCPlatformKutjevoSMCorner
+- proto: RMCPlatformKutjevoMMCorner
   entities:
   - uid: 25507
     components:
@@ -191604,42 +191604,42 @@ entities:
     - type: Transform
       pos: 48.680775,142.76036
       parent: 1
-- proto: SMCMapInsertVaraderoAltHospital
+- proto: MMCMapInsertVaraderoAltHospital
   entities:
   - uid: 27736
     components:
     - type: Transform
       pos: 46.5,84.5
       parent: 1
-- proto: SMCMapInsertVaraderoCLFRaid
+- proto: MMCMapInsertVaraderoCLFRaid
   entities:
   - uid: 27737
     components:
     - type: Transform
       pos: 8.5,66.5
       parent: 1
-- proto: SMCMapInsertVaraderoEngiHold
+- proto: MMCMapInsertVaraderoEngiHold
   entities:
   - uid: 27738
     components:
     - type: Transform
       pos: 46.5,68.5
       parent: 1
-- proto: SMCMapInsertVaraderoResturant
+- proto: MMCMapInsertVaraderoResturant
   entities:
   - uid: 27739
     components:
     - type: Transform
       pos: 84.5,106.5
       parent: 1
-- proto: SMCSpawnerCorpseCLFEngineer
+- proto: MMCSpawnerCorpseCLFEngineer
   entities:
   - uid: 27740
     components:
     - type: Transform
       pos: 124.5,95.5
       parent: 1
-- proto: SMCSpawnerCorpseCLFMedic
+- proto: MMCSpawnerCorpseCLFMedic
   entities:
   - uid: 27741
     components:
@@ -191651,7 +191651,7 @@ entities:
     - type: Transform
       pos: 107.5,47.5
       parent: 1
-- proto: SMCSpawnerCorpseCLFSoldier
+- proto: MMCSpawnerCorpseCLFSoldier
   entities:
   - uid: 27743
     components:
@@ -191688,7 +191688,7 @@ entities:
     - type: Transform
       pos: 145.5,135.5
       parent: 1
-- proto: SMCSpawnerCorpseDoctor
+- proto: MMCSpawnerCorpseDoctor
   entities:
   - uid: 27750
     components:
@@ -191725,7 +191725,7 @@ entities:
     - type: Transform
       pos: 52.5,85.5
       parent: 1
-- proto: SMCSpawnerCorpseEngineer
+- proto: MMCSpawnerCorpseEngineer
   entities:
   - uid: 27757
     components:
@@ -191762,7 +191762,7 @@ entities:
     - type: Transform
       pos: 109.5,108.5
       parent: 1
-- proto: SMCSpawnerCorpseLiaison
+- proto: MMCSpawnerCorpseLiaison
   entities:
   - uid: 26278
     components:
@@ -191779,7 +191779,7 @@ entities:
     - type: Transform
       pos: 68.5,79.5
       parent: 1
-- proto: SMCSpawnerCorpseMiner
+- proto: MMCSpawnerCorpseMiner
   entities:
   - uid: 26281
     components:
@@ -191811,7 +191811,7 @@ entities:
     - type: Transform
       pos: 113.5,36.5
       parent: 1
-- proto: SMCSpawnerCorpseScientist
+- proto: MMCSpawnerCorpseScientist
   entities:
   - uid: 27764
     components:
@@ -191828,7 +191828,7 @@ entities:
     - type: Transform
       pos: 87.5,68.5
       parent: 1
-- proto: SMCSpawnerCorpseSecurity
+- proto: MMCSpawnerCorpseSecurity
   entities:
   - uid: 27767
     components:

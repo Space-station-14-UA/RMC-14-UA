@@ -254,7 +254,7 @@
 # Спавнера
 - type: entity
   parent: MarkerBase
-  id: SMCSpawnMobMothroach
+  id: MMCSpawnMobMothroach
   name: спавнер тарганомолі
   suffix: Мрія
   components:
@@ -269,7 +269,7 @@
 
 - type: entity
   parent: MarkerBase
-  id: SMCSpawnMobMothroachSynth
+  id: MMCSpawnMobMothroachSynth
   name: спавнер синтетичної тарганомолі
   suffix: Мрія
   components:

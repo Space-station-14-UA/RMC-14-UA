@@ -1121,7 +1121,7 @@ entities:
     - type: Transform
       pos: 1.5200396,6.666679
       parent: 1
-- proto: SMCSpawnerCorpseSecurity
+- proto: MMCSpawnerCorpseSecurity
   entities:
   - uid: 150
     components:

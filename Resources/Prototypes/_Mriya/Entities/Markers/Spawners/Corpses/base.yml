@@ -1,5 +1,5 @@
 - type: entity
   parent: RMCSpawnerCorpse
-  id: SMCSpawnerCorpse
+  id: MMCSpawnerCorpse
   name: Спавнер Трупа – Невідомий
   suffix: Січ

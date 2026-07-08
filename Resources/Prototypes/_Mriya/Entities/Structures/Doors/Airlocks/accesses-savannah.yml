@@ -1,6 +1,6 @@
 - type: entity
   parent: CMAirlockSecure
-  id: SMCAirlockSecureLiaisonLocked
+  id: MMCAirlockSecureLiaisonLocked
   suffix: Січ, Корпорат, Зачинено
   components:
   - type: AccessReader

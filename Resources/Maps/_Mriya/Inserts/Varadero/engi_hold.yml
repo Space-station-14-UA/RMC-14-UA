@@ -1192,14 +1192,14 @@ entities:
     - type: Transform
       pos: 5.6522884,5.652348
       parent: 1
-- proto: SMCSpawnerCorpseEngineer
+- proto: MMCSpawnerCorpseEngineer
   entities:
   - uid: 165
     components:
     - type: Transform
       pos: 5.5,8.5
       parent: 1
-- proto: SMCSpawnerCorpseSecurity
+- proto: MMCSpawnerCorpseSecurity
   entities:
   - uid: 151
     components:

@@ -4831,7 +4831,7 @@ entities:
     - type: Transform
       pos: 4.5,12.5
       parent: 1
-- proto: SMCSpawnerCorpseCLFSpecialist
+- proto: MMCSpawnerCorpseCLFSpecialist
   entities:
   - uid: 130
     components:

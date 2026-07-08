@@ -1,6 +1,6 @@
 - type: entity
   parent: RMCAreaShuttle
-  id: SMCAreaShuttleDrop
+  id: MMCAreaShuttleDrop
   components:
   - type: Area
     resinAllowed: false
@@ -21,24 +21,24 @@
     alwaysPowered: true
 
 - type: entity
-  parent: SMCAreaShuttleDrop
-  id: SMCAreaShuttleAlamo
+  parent: MMCAreaShuttleDrop
+  id: MMCAreaShuttleAlamo
   name: Шатл Аламо
   components:
   - type: Sprite
     state: shuttlered
 
 - type: entity
-  parent: SMCAreaShuttleDrop
-  id: SMCAreaShuttleNormandy
+  parent: MMCAreaShuttleDrop
+  id: MMCAreaShuttleNormandy
   name: Шатл Нормандія
   components:
   - type: Sprite
     state: shuttle
 
 - type: entity
-  parent: SMCAreaShuttleDrop
-  id: SMCAreaShuttleLifeboat
+  parent: MMCAreaShuttleDrop
+  id: MMCAreaShuttleLifeboat
   name: Евакуаціний шатл Промінчик
   components:
   - type: Sprite

@@ -1,6 +1,6 @@
 - type: entity
   parent: RMCAreaBase
-  id: SMCAreaERT
+  id: MMCAreaERT
   abstract: true
   components:
   - type: Area
@@ -8,8 +8,8 @@
     alwaysPowered: true
 
 - type: entity
-  parent: SMCAreaERT
-  id: SMCAreaERTFax
+  parent: MMCAreaERT
+  id: MMCAreaERTFax
   name: Аванпост Факс-Відповідача
   suffix: Аванпост Факс-Відповідача, Всередині
   components:
@@ -17,8 +17,8 @@
     state: green
 
 - type: entity
-  parent: SMCAreaERT
-  id: SMCAreaERTFaxExterior
+  parent: MMCAreaERT
+  id: MMCAreaERTFaxExterior
   name: Аванпост Факс-Відповідача
   suffix: Аванпост Факс-Відповідача, Ззовні
   components:
