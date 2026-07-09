@@ -14,6 +14,9 @@ using DbSponsorRank = Content.Server.Database.SponsorRank;
 
 namespace Content.Server.Mriya.Sponsors.UI;
 
+/// <summary>
+/// Eui window for managing sponsors and sponsor ranks. This window is accessible only to users with the +PERMISSIONS admin flag. It allows admins to view, add, update, and remove sponsors and their associated ranks, as well as manage sponsor rank properties such as colors, visibility, and priority.
+/// </summary>
 public sealed class AdminSponsorsEui : BaseEui
 {
     [Dependency] private IPlayerManager _playerManager = default!;

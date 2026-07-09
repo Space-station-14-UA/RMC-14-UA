@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Content.Server.Mriya.Sponsors.UI;
 
+/// <summary>
+/// EUI window for displaying and managing personal sponsor settings. Allows players to view and modify their own sponsor settings, including custom ghost and OOC colors, as well as selecting ranks associated with their sponsorship.
+/// </summary>
 public sealed partial class PersonalSponsorEui : BaseEui
 {
     [Dependency] private IServerDbManager _db = default!;
@@ -37,7 +40,6 @@ public sealed partial class PersonalSponsorEui : BaseEui
         _isLoading = true;
         StateDirty();
 
-        // Завантажуємо спонсора зі всіма його ролями та рангами
         _cachedSponsor = await _db.GetSponsorDataForAsync(Player.UserId);
 
         _isLoading = false;
@@ -48,19 +50,19 @@ public sealed partial class PersonalSponsorEui : BaseEui
     {
         if (_isLoading || _cachedSponsor == null)
         {
-            // Якщо ще вантажимо, або гравець не спонсор взагалі (відправляємо порожні дозволи)
+            // If still loading or the player is not a sponsor at all (sending empty permissions)
             return new PersonalSponsorSettingsEuiState(
                 false, false, null, null, null, null, new List<PersonalSponsorRankInfo>());
         }
 
-        // 1. Вираховуємо глобальні права гравця (чи є хоча б один ранг, що це дозволяє)
+        // 1. Calculate global player permissions (whether at least one rank allows it)
         var canSetCustomGhostColor = _cachedSponsor.RoleAssignments.Any(ra => ra.Rank != null && ra.Rank.CanSetGhostColor);
         var canSetCustomOocColor = _cachedSponsor.RoleAssignments.Any(ra => ra.Rank != null && ra.Rank.CanSetOocColor);
 
-        // 2. Формуємо відсортований список доступних рангів для вибору фіксованих кольорів
+        // 2. Generate a sorted list of available ranks for selecting fixed colors
         var allowedRanks = _cachedSponsor.RoleAssignments
             .Where(ra => ra.Rank != null && ra.Rank.ShowInSponsorWindow)
-            // Сортуємо: чим менше число, тим вище пріоритет
+            // Sort: the lower the number, the higher the priority
             .OrderBy(ra => ra.Rank!.Priority)
             .Select(ra => new PersonalSponsorRankInfo
             {
@@ -72,7 +74,7 @@ public sealed partial class PersonalSponsorEui : BaseEui
             })
             .ToList();
 
-        // 3. Відправляємо стан на клієнт
+        // 3. Send the state to the client
         return new PersonalSponsorSettingsEuiState(
             canSetCustomGhostColor,
             canSetCustomOocColor,
@@ -101,11 +103,11 @@ public sealed partial class PersonalSponsorEui : BaseEui
 
         bool isModified = false;
 
-        // Очищаємо кольори: видаляємо прозорість і перевіряємо на валідність формату HEX
+        // Sanitize colors: remove transparency and validate HEX format
         var safeGhostColor = StripAlpha(msg.NewGhostColor);
         var safeOocColor = StripAlpha(msg.NewOocColor);
 
-        // --- ПРИВИД ---
+        // ghost color
         var canSetGhostColor = _cachedSponsor.RoleAssignments.Any(ra => ra.Rank != null && ra.Rank.CanSetGhostColor);
 
         if (canSetGhostColor)
@@ -134,7 +136,7 @@ public sealed partial class PersonalSponsorEui : BaseEui
             }
         }
 
-        // --- ООС ---
+        // OOC color
         var canSetOocColor = _cachedSponsor.RoleAssignments.Any(ra => ra.Rank != null && ra.Rank.CanSetOocColor);
 
         if (canSetOocColor)
@@ -163,7 +165,7 @@ public sealed partial class PersonalSponsorEui : BaseEui
             }
         }
 
-        // --- ЗБЕРЕЖЕННЯ ---
+        // save if modified
         if (isModified)
         {
             await _db.UpdateSponsorAsync(_cachedSponsor);
@@ -174,6 +176,11 @@ public sealed partial class PersonalSponsorEui : BaseEui
         }
     }
 
+    /// <summary>
+    /// Strips the alpha channel from a color string and returns a valid HEX color string without transparency. If the input is invalid or empty, returns null.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
     private string? StripAlpha(string? input)
     {
         if (string.IsNullOrWhiteSpace(input))
@@ -187,4 +194,8 @@ public sealed partial class PersonalSponsorEui : BaseEui
     }
 }
 
+/// <summary>
+/// Event raised when a player saves their custom ghost color. This event can be used to trigger additional actions or updates in response to the change in ghost color settings.
+/// </summary>
+/// <param name="Session">active sessions</param>
 public record struct SaveGhostColorEvent(ICommonSession Session);

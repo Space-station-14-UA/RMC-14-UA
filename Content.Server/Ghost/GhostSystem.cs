@@ -526,6 +526,8 @@ namespace Content.Server.Ghost
                 _minds.TransferTo(mind.Owner, ghost, mind: mind.Comp);
             Log.Debug($"Spawned ghost \"{ToPrettyString(ghost)}\" for {mind.Comp.CharacterName}.");
 
+            RaiseLocalEvent(ghost, new SpawnGhostForPlayerEvent(mind), true); // mriya
+
             // we changed the entity name above
             // we have to call this after the mind has been transferred since some mind roles modify the ghost's name
             _nameMod.RefreshNameModifiers(ghost);

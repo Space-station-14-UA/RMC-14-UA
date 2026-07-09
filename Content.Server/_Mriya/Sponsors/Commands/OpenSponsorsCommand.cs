@@ -6,6 +6,9 @@ using Robust.Shared.Console;
 
 namespace Content.Server.Mriya.Sponsors.Commands
 {
+    /// <summary>
+    /// Administrative command for opening the sponsor and rank configuration window. Restricted to administrators with the <see cref="AdminFlags.Permissions"/> flag. Used for managing sponsors and their server access rights.
+    /// </summary>
     [AdminCommand(AdminFlags.Permissions)]
     public sealed partial class OpenSponsorsCommand : LocalizedEntityCommands
     {
@@ -27,6 +30,9 @@ namespace Content.Server.Mriya.Sponsors.Commands
         }
     }
 
+    /// <summary>
+    /// Player command that opens the sponsor list window. Available to all players for viewing the list of sponsors.
+    /// </summary>
     [AnyCommand]
     public sealed partial class OpenSponsorsWindowCommand : LocalizedEntityCommands
     {
@@ -48,12 +54,15 @@ namespace Content.Server.Mriya.Sponsors.Commands
         }
     }
 
+    /// <summary>
+    /// Command to open the personal sponsor settings window. Available to all players for viewing and modifying their own sponsor settings.
+    /// </summary>
     [AnyCommand]
     public sealed partial class OpenPersonalSponsorWindowCommand : LocalizedEntityCommands
     {
         [Dependency] private EuiManager _euiManager = default!;
 
-        public override string Command => "sponsorsettings"; // Або можеш змінити на "sponsorpersonal"
+        public override string Command => "sponsorsettings";
 
         public override void Execute(IConsoleShell shell, string argStr, string[] args)
         {
@@ -64,7 +73,6 @@ namespace Content.Server.Mriya.Sponsors.Commands
                 return;
             }
 
-            // Відкриваємо наше нове вікно персональних налаштувань
             var ui = new PersonalSponsorEui();
             _euiManager.OpenEui(ui, player);
         }

@@ -14,6 +14,9 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Mriya.Sponsors.UI;
 
+/// <summary>
+/// EUI window for sponsor administration. Allows adding, editing, and deleting sponsors and their ranks.
+/// </summary>
 [UsedImplicitly]
 public sealed partial class AdminSponsorsEui : BaseEui
 {
@@ -48,6 +51,10 @@ public sealed partial class AdminSponsorsEui : BaseEui
         _menu.Close();
     }
 
+    /// <summary>
+    /// Opens the edit sponsor window. If data is null, it opens a window for adding a new sponsor. Otherwise, it opens a window for editing the existing sponsor.
+    /// </summary>
+    /// <param name="data">The sponsor data. If not null, enables editing and deleting; otherwise, opens the creation form.</param>
     private void OpenEditWindow(AdminSponsorsEuiState.SponsorData? data)
     {
         var window = new EditSponsorWindow(this, data);
@@ -67,6 +74,10 @@ public sealed partial class AdminSponsorsEui : BaseEui
         _subWindows.Add(window);
     }
 
+    /// <summary>
+    /// Sponsor rank edit window. If the rank is not null, opens the window to edit the existing rank; otherwise, opens the form to create a new rank.
+    /// </summary>
+    /// <param name="rank">The sponsor rank data. If provided, enables editing; otherwise, initializes a new rank creation.</param>
     private void OpenRankEditWindow(KeyValuePair<int, AdminSponsorsEuiState.SponsorRankData>? rank)
     {
         var window = new EditSponsorRankWindow(this, rank);
@@ -86,6 +97,10 @@ public sealed partial class AdminSponsorsEui : BaseEui
         _subWindows.Add(window);
     }
 
+    /// <summary>
+    /// Saves a new or existing sponsor. If popup.SourceData is not null, updates the existing sponsor; otherwise, adds a new one.
+    /// </summary>
+    /// <param name="popup">The window where the save action was triggered.</param>
     private void SaveSponsorPressed(EditSponsorWindow popup)
     {
         var selectedRanks = popup.RankCheckboxes
@@ -116,6 +131,10 @@ public sealed partial class AdminSponsorsEui : BaseEui
         popup.Close();
     }
 
+    /// <summary>
+    /// Saves or creates a new rank.
+    /// </summary>
+    /// <param name="popup">The rank edit window.</param>
     private void SaveSponsorRankPressed(EditSponsorRankWindow popup)
     {
         var tagsList = popup.TagsEdit.Text
@@ -162,6 +181,10 @@ public sealed partial class AdminSponsorsEui : BaseEui
         _menu.OpenCentered();
     }
 
+    /// <summary>
+    /// Updates the sponsor administration window based on the EUI state. If the state is loading, does nothing. Otherwise, updates the list of sponsors and their ranks.
+    /// </summary>
+    /// <param name="state">The new state.</param>
     public override void HandleState(EuiStateBase state)
     {
         if (state is not AdminSponsorsEuiState s || s.IsLoading)
@@ -169,8 +192,8 @@ public sealed partial class AdminSponsorsEui : BaseEui
 
         _ranks = s.SponsorRanks;
 
+        // Update the sponsor list
         _menu.SponsorsList.RemoveAllChildren();
-
         var groupedSponsors = new Dictionary<int, List<AdminSponsorsEuiState.SponsorData>>();
 
         foreach (var sponsor in s.Sponsors)
@@ -201,7 +224,6 @@ public sealed partial class AdminSponsorsEui : BaseEui
             .ThenBy(k => k == -1 ? 0 : _ranks[k].Priority)
             .ToList();
 
-        // 3. Відмальовуємо групи
         foreach (var rankId in sortedRankIds)
         {
             var group = groupedSponsors[rankId];
@@ -272,6 +294,7 @@ public sealed partial class AdminSponsorsEui : BaseEui
             }
         }
 
+        // Update the sponsor ranks list
         _menu.SponsorsRanksList.RemoveAllChildren();
         foreach (var kv in s.SponsorRanks.OrderBy(r => r.Value.Priority))
         {
@@ -286,6 +309,9 @@ public sealed partial class AdminSponsorsEui : BaseEui
         }
     }
 
+    /// <summary>
+    /// Window for displaying and editing sponsors and their ranks. Contains tabs for the sponsor list and the rank list.
+    /// </summary>
     private sealed class Menu : DefaultWindow
     {
         public readonly BoxContainer SponsorsList;
@@ -326,6 +352,9 @@ public sealed partial class AdminSponsorsEui : BaseEui
         protected override Vector2 ContentsMinimumSize => new Vector2(600, 400);
     }
 
+    /// <summary>
+    /// Sponsor edit window. If the data is not null, opens the window to edit the existing sponsor; otherwise, opens the form to add a new sponsor.
+    /// </summary>
     private sealed class EditSponsorWindow : DefaultWindow
     {
         public readonly AdminSponsorsEuiState.SponsorData? SourceData;
@@ -399,6 +428,9 @@ public sealed partial class AdminSponsorsEui : BaseEui
         }
     }
 
+    /// <summary>
+    /// Sponsor rank edit window. If the data is not null, opens the window to edit the existing rank; otherwise, opens the form to create a new rank.
+    /// </summary>
     private sealed class EditSponsorRankWindow : DefaultWindow
     {
         public readonly int? SourceId;

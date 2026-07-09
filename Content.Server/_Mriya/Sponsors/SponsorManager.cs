@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Content.Server.Mriya.Sponsors;
 
 /// <summary>
-/// Менеджер налаштувань спонсорів. Кешує дані при підключенні та надає зручний API для інших систем.
+/// Manages sponsor configurations. Caches data on player connection and exposes a convenient API for other systems.
 /// </summary>
 public sealed class SponsorManager : ISponsorManager, IPostInjectInit
 {
@@ -40,6 +40,12 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
     #region Lifecycle & Database Loading
 
     // Should only be called via UserDbDataManager.
+    /// <summary>
+    /// Loads sponsor data for a user. Called when the user connects.
+    /// </summary>
+    /// <param name="session">The player session.</param>
+    /// <param name="cancel">The cancellation token.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
     public async Task<PlayerSponsorData> LoadData(ICommonSession session, CancellationToken cancel = default)
     {
         if (!ShouldStorePrefs(session.Channel.AuthType))
@@ -64,13 +70,17 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
 
             async Task LoadPrefs()
             {
-                var spons = await GetOrCreateSponsorAsync(session.UserId, cancel);
+                var spons = await GetSponsorAsync(session.UserId, cancel);
                 sponsorData.Sponsor = spons;
             }
             return sponsorData;
         }
     }
 
+    /// <summary>
+    /// Finalizes the sponsor data loading process for a user. Called after the data has been loaded and is ready for use.
+    /// </summary>
+    /// <param name="session">The player session.</param>
     public void FinishLoad(ICommonSession session)
     {
         var sponsData = _cachedPlayerPrefs[session.UserId];
@@ -79,6 +89,10 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         SyncTags(session);
     }
 
+    /// <summary>
+    /// Synchronizes the sponsor tags for a user by sending the relevant information to the client. This method is called after the sponsor data has been loaded and is ready for use.
+    /// </summary>
+    /// <param name="session">The player session.</param>
     private void SyncTags(ICommonSession session)
     {
         if (!_cachedPlayerPrefs.TryGetValue(session.UserId, out var data) || data.Sponsor == null)
@@ -87,7 +101,6 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         var sponsor = data.Sponsor;
         var msg = new MsgSponsorInfo();
 
-        // Збираємо унікальні теги з усіх призначених ролей
         msg.Tags = sponsor.RoleAssignments
             .Where(ra => ra.Rank != null)
             .SelectMany(ra => ra.Rank!.Tags.Select(t => t.TagValue))
@@ -97,22 +110,42 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         _netManager.ServerSendMessage(msg, session.Channel);
     }
 
+    /// <summary>
+    /// Clears the player's cache after disconnection. Called when the player disconnects from the server.
+    /// </summary>
+    /// <param name="session">The player session.</param>
     public void OnClientDisconnected(ICommonSession session)
     {
         _cachedPlayerPrefs.Remove(session.UserId);
     }
 
+    /// <summary>
+    /// Checks whether the user's sponsor data is present in the cache. Used to verify if the sponsor settings for a specific user have been loaded.
+    /// </summary>
+    /// <param name="session">The player session.</param>
+    /// <returns>True if the data exists in the cache; otherwise, false.</returns>
     public bool HavePreferencesLoaded(ICommonSession session)
     {
         return _cachedPlayerPrefs.ContainsKey(session.UserId);
     }
 
-    private async Task<MriyaSponsor?> GetOrCreateSponsorAsync(NetUserId userId, CancellationToken cancel)
+    /// <summary>
+    /// Gets sponsor data for a specific user from the database.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <param name="cancel">The cancellation token.</param>
+    /// <returns>The sponsor data if found; otherwise, <c>null</c>.</returns>
+    private async Task<MriyaSponsor?> GetSponsorAsync(NetUserId userId, CancellationToken cancel)
     {
         var prefs = await _db.GetSponsorDataForAsync(userId, cancel);
         return prefs;
     }
 
+    /// <summary>
+    /// Determines whether the sponsor preferences should be stored for a given login type. This is used to decide if the sponsor data should be cached for a user based on their login type.
+    /// </summary>
+    /// <param name="loginType"></param>
+    /// <returns></returns>
     internal static bool ShouldStorePrefs(LoginType loginType)
     {
         return loginType.HasStaticUserId();
@@ -131,6 +164,13 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
 
     #region Raw Data Access
 
+    /// <summary>
+    /// Attempts to get the cached sponsor settings for a specific user. 
+    /// Returns true if the data exists in the cache and is retrieved successfully; otherwise, false.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <param name="playerSponsor">When this method returns, contains the sponsor data if found; otherwise, null.</param>
+    /// <returns>True if the data was found in the cache; otherwise, false.</returns>
     public bool TryGetCachedSponsor(NetUserId userId, [NotNullWhen(true)] out MriyaSponsor? playerSponsor)
     {
         if (_cachedPlayerPrefs.TryGetValue(userId, out var spons))
@@ -143,6 +183,13 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         return false;
     }
 
+    /// <summary>
+    /// Gets the sponsor settings for a specific user from the cache. 
+    /// Throws an exception if the data has not been loaded yet.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <returns>The sponsor settings for the specified user.</returns>
+    /// <exception cref="InvalidOperationException">Thrown when the sponsor settings are not yet loaded in the cache.</exception>
     public MriyaSponsor GetSponsor(NetUserId userId)
     {
         var spons = _cachedPlayerPrefs[userId].Sponsor;
@@ -154,7 +201,12 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         return spons;
     }
 
-    public MriyaSponsor? GetSichSponsorOrNull(NetUserId? userId)
+    /// <summary>
+    /// Returns the sponsor or null if not found. Provides a safe way to check for a sponsor without throwing an exception.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <returns>The sponsor data if found; otherwise, null.</returns>
+    public MriyaSponsor? GetMriyaSponsorOrNull(NetUserId? userId)
     {
         if (userId == null)
             return null;
@@ -168,6 +220,13 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
 
     #region Feature Helpers (Фасад)
 
+    /// <summary>
+    /// Checks if the player has a specific tag within their active ranks. 
+    /// Used to verify access permissions for certain features or content based on sponsor tags.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <param name="tag">The tag to check for.</param>
+    /// <returns><c>true</c> if the player has the tag; otherwise, <c>false</c>.</returns>
     public bool HasTag(NetUserId userId, string tag)
     {
         if (!TryGetCachedSponsor(userId, out var sponsor) || sponsor.RoleAssignments == null)
@@ -177,6 +236,9 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
             ra.Rank != null && ra.Rank.Tags != null && ra.Rank.Tags.Any(t => t.TagValue == tag));
     }
 
+    /// <summary>
+    /// Returns the selected ghost color if the player has permission to use it; otherwise, null.
+    /// </summary>
     public string? GetGhostColor(NetUserId userId)
     {
         if (!TryGetCachedSponsor(userId, out var sponsor) || sponsor.RoleAssignments == null)
@@ -202,6 +264,9 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         return null;
     }
 
+    /// <summary>
+    /// Returns the selected OOC chat color if the player has permission to use it; otherwise, null.
+    /// </summary>
     public string? GetOocColor(NetUserId userId)
     {
         if (!TryGetCachedSponsor(userId, out var sponsor) || sponsor.RoleAssignments == null)
@@ -231,6 +296,9 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
 
     #region Cache Management
 
+    /// <summary>
+    /// Completely reloads all online players. Use with caution due to potential database overhead.
+    /// </summary>
     public async Task ReloadSponsorsAsync()
     {
         _cachedPlayerPrefs.Clear();
@@ -249,12 +317,15 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         }
     }
 
+    /// <summary>
+    /// Reloads the data for a specific player. Useful when an admin updates a player's rank during the game.
+    /// </summary>
     public async Task ReloadSponsorAsync(NetUserId userId, CancellationToken cancel = default)
     {
         if (!_playerManager.TryGetSessionById(userId, out var session))
             return;
 
-        var spons = await GetOrCreateSponsorAsync(userId, cancel);
+        var spons = await GetSponsorAsync(userId, cancel);
 
         if (_cachedPlayerPrefs.TryGetValue(userId, out var data))
         {
@@ -269,6 +340,10 @@ public sealed class SponsorManager : ISponsorManager, IPostInjectInit
         _prefsManager.RefreshPreferences(userId);
     }
 
+    /// <summary>
+    /// Instantly updates the object in the cache without querying the database. 
+    /// Used after a player changes settings (e.g., color) via the UI and those changes have already been saved to the database.
+    /// </summary>
     public void UpdateCache(NetUserId userId, MriyaSponsor updatedSponsor)
     {
         if (_cachedPlayerPrefs.TryGetValue(userId, out var data))

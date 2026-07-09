@@ -8,6 +8,10 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.Mriya.Sponsors;
 
+/// <summary>
+/// System for managing sponsor ghosts. It is responsible for setting the ghost color based on the sponsor's settings.
+/// In the future, it can be extended to add additional features, such as special effects or custom ghost behaviors for sponsors.
+/// </summary>
 public sealed class SponsorGhostSystem : EntitySystem
 {
     [Dependency] private readonly ISponsorManager _sponsorManager = default!;
@@ -74,6 +78,9 @@ public sealed class SponsorGhostSystem : EntitySystem
     }
 }
 
+/// <summary>
+/// Подія для спавну привида для гравця. Використовується для ініціалізації кольору привида на основі налаштувань спонсора.
+/// </summary>
 public struct SpawnGhostForPlayerEvent
 {
     public readonly EntityUid? Entity;

@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace Content.Server.Mriya.Sponsors.UI;
 
+/// <summary>
+/// EUI window for displaying the sponsor list. This window is accessible to all players and shows a list of sponsors along with their top rank and associated color. The list is sorted by rank priority and then by username.
+/// </summary>
 public sealed class SponsorListEui : BaseEui
 {
     [Dependency] private IServerDbManager _db = default!;
@@ -38,6 +41,11 @@ public sealed class SponsorListEui : BaseEui
         return new SponsorListEuiState(_publicSponsors);
     }
 
+    /// <summary>
+    /// Loads sponsors from the database, then groups and sorts them by their top rank and username. 
+    /// Only ranks that are configured to be shown in the sponsor window (<see cref="SponsorRank.ShowInSponsorWindow"/>) are considered. 
+    /// The resulting list is stored in _publicSponsors, and the EUI state is updated accordingly.
+    /// </summary>
     private async void LoadFromDb()
     {
         _isLoading = true;

@@ -11,6 +11,9 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Mriya.Sponsors.UI;
 
+/// <summary>
+/// EUI window for displaying the sponsor list.
+/// </summary>
 [UsedImplicitly]
 public sealed partial class SponsorListEui : BaseEui
 {
@@ -41,6 +44,10 @@ public sealed partial class SponsorListEui : BaseEui
         _menu.OpenCentered();
     }
 
+    /// <summary>
+    /// Updates the EUI state. Used for updating the sponsor list.
+    /// </summary>
+    /// <param name="state">The new state.</param>
     public override void HandleState(EuiStateBase state)
     {
         if (state is not SponsorListEuiState s)
@@ -93,8 +100,14 @@ public sealed partial class SponsorListEui : BaseEui
         }
     }
 
+    /// <summary>
+    /// Menu window for displaying the sponsor list.
+    /// </summary>
     private sealed class Menu : DefaultWindow
     {
+        /// <summary>
+        /// Container for the sponsor list. Each sponsor is added as a child of this container.
+        /// </summary>
         public readonly BoxContainer SponsorsList;
 
         public Menu()

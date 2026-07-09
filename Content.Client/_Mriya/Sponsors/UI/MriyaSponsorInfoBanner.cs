@@ -3,6 +3,9 @@ using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.Mriya.Sponsors.UI;
 
+/// <summary>
+/// A banner button that opens the sponsor list window.
+/// </summary>
 public sealed class MriyaSponsorInfoBanner : BoxContainer
 {
     public MriyaSponsorInfoBanner()

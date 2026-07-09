@@ -15,6 +15,9 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Mriya.Sponsors.UI;
 
+/// <summary>
+/// EUI window for personal sponsor settings, allowing users to view their active tiers, customize colors, and view available sponsor items.
+/// </summary>
 [UsedImplicitly]
 public sealed partial class PersonalSponsorEui : BaseEui
 {
@@ -45,6 +48,10 @@ public sealed partial class PersonalSponsorEui : BaseEui
         _window.Close();
     }
 
+    /// <summary>
+    /// Handles the EUI state update based on the received <see cref="PersonalSponsorSettingsEuiState"/>.
+    /// </summary>
+    /// <param name="state">The new state.</param>
     public override void HandleState(EuiStateBase state)
     {
         if (state is not PersonalSponsorSettingsEuiState s)
@@ -53,6 +60,13 @@ public sealed partial class PersonalSponsorEui : BaseEui
         _window.UpdateState(s);
     }
 
+    /// <summary>
+    /// Sends a message to the server to save the user's personal sponsor settings, including ghost and OOC colors and selected rank IDs.
+    /// </summary>
+    /// <param name="ghostColor">The saved custom ghost color.</param>
+    /// <param name="oocColor">The saved custom OOC chat color.</param>
+    /// <param name="ghostRankId">The saved selected rank ID for the ghost color.</param>
+    /// <param name="oocRankId">The saved selected rank ID for the OOC chat color.</param>
     public void SaveSettings(string? ghostColor, string? oocColor, int? ghostRankId, int? oocRankId)
     {
         SendMessage(new PersonalSponsorEuiMsg.UpdateSettings
@@ -64,6 +78,9 @@ public sealed partial class PersonalSponsorEui : BaseEui
         });
     }
 
+    /// <summary>
+    /// Represents the personal sponsor settings window, allowing users to view their active tiers, customize colors, and view available sponsor items.
+    /// </summary>
     private sealed class PersonalSponsorWindow : DefaultWindow
     {
         private const int OptionNone = -1;
@@ -114,6 +131,7 @@ public sealed partial class PersonalSponsorEui : BaseEui
 
             var tabs = new TabContainer { VerticalExpand = true };
 
+        // ranks tab
             RanksContainer = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
@@ -134,6 +152,8 @@ public sealed partial class PersonalSponsorEui : BaseEui
             };
             TabContainer.SetTabTitle(overviewBox, Loc.GetString("sponsors-eui-personal-tab-overview"));
 
+        // colors tab
+            // Ghost color section
             GhostDropdown = new OptionButton { HorizontalExpand = true };
             GhostColorPicker = new ColorSelectorSliders
             {
@@ -164,6 +184,7 @@ public sealed partial class PersonalSponsorEui : BaseEui
                 }
             };
 
+            // OOC color section
             OocDropdown = new OptionButton { HorizontalExpand = true };
             OocColorPicker = new ColorSelectorSliders
             {
@@ -207,6 +228,7 @@ public sealed partial class PersonalSponsorEui : BaseEui
             };
             TabContainer.SetTabTitle(colorsScroll, Loc.GetString("sponsors-eui-personal-tab-colors"));
 
+        // loadouts tab
             var loadoutsScroll = new ScrollContainer { VerticalExpand = true };
             var loadoutsGrid = new GridContainer
             {
@@ -248,6 +270,10 @@ public sealed partial class PersonalSponsorEui : BaseEui
             });
         }
 
+        /// <summary>
+        /// Updates the window based on the received state.
+        /// </summary>
+        /// <param name="state">The new state.</param>
         public void UpdateState(PersonalSponsorSettingsEuiState state)
         {
             var topRank = state.AllowedRanks.FirstOrDefault();
@@ -342,6 +368,13 @@ public sealed partial class PersonalSponsorEui : BaseEui
             }
         }
 
+        /// <summary>
+        /// Generates a dropdown menu for color selection, including "None" and "Custom" options, as well as colors from available ranks.
+        /// </summary>
+        /// <param name="dropdown">The reference to the dropdown component.</param>
+        /// <param name="canSetCustom">Indicates whether the user can set a custom color.</param>
+        /// <param name="ranks">The available ranks for the user.</param>
+        /// <param name="isGhost">Indicates whether this selection is for a ghost.</param>
         private void PopulateDropdown(OptionButton dropdown, bool canSetCustom, List<PersonalSponsorRankInfo> ranks, bool isGhost)
         {
             dropdown.Clear();

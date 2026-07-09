@@ -5,11 +5,13 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Mriya.Sponsors;
 
+/// <summary>
+/// Network message containing sponsor information. Used to transmit the list of sponsor tags from the server to the client.
+/// </summary>
 public sealed class MsgSponsorInfo : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;
 
-    // Список тегів, які має гравець
     public List<string> Tags = new();
 
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)

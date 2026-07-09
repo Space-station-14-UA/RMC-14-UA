@@ -10,44 +10,91 @@ namespace Content.Server.Mriya.Sponsors;
 public interface ISponsorManager
 {
     void Init();
-    Task<PlayerSponsorData> LoadData(ICommonSession session, CancellationToken cancel);
-    void FinishLoad(ICommonSession session);
-    void OnClientDisconnected(ICommonSession session);
-    bool HavePreferencesLoaded(ICommonSession session);
-
-    bool TryGetCachedSponsor(NetUserId userId, [NotNullWhen(true)] out MriyaSponsor? playerPreferences);
-    MriyaSponsor GetSponsor(NetUserId userId);
-    MriyaSponsor? GetSichSponsorOrNull(NetUserId? userId);
 
     /// <summary>
-    /// Перевіряє, чи має гравець в своїх активних рангах вказаний тег.
+    /// Loads sponsor data for a user. Called when the user connects.
     /// </summary>
+    /// <param name="session">The player session.</param>
+    /// <param name="cancel">The cancellation token.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    Task<PlayerSponsorData> LoadData(ICommonSession session, CancellationToken cancel);
+
+    /// <summary>
+    /// Finalizes the sponsor data loading process for a user. Called after the data has been loaded and is ready for use.
+    /// </summary>
+    /// <param name="session">The player session.</param>
+    void FinishLoad(ICommonSession session);
+
+    /// <summary>
+    /// Clears the player's cache after disconnection. Called when the player disconnects from the server.
+    /// </summary>
+    /// <param name="session">The player session.</param>
+    void OnClientDisconnected(ICommonSession session);
+
+    /// <summary>
+    /// Checks whether the user's sponsor data is present in the cache. Used to verify if the sponsor settings for a specific user have been loaded.
+    /// </summary>
+    /// <param name="session">The player session.</param>
+    /// <returns>True if the data exists in the cache; otherwise, false.</returns>
+    bool HavePreferencesLoaded(ICommonSession session);
+
+    /// <summary>
+    /// Attempts to get the cached sponsor settings for a specific user. 
+    /// Returns true if the data exists in the cache and is retrieved successfully; otherwise, false.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <param name="playerSponsor">When this method returns, contains the sponsor data if found; otherwise, null.</param>
+    /// <returns>True if the data was found in the cache; otherwise, false.</returns>
+    bool TryGetCachedSponsor(NetUserId userId, [NotNullWhen(true)] out MriyaSponsor? playerPreferences);
+
+    /// <summary>
+    /// Gets the sponsor settings for a specific user from the cache. 
+    /// Throws an exception if the data has not been loaded yet.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <returns>The sponsor settings for the specified user.</returns>
+    /// <exception cref="InvalidOperationException">Thrown when the sponsor settings are not yet loaded in the cache.</exception>
+    MriyaSponsor GetSponsor(NetUserId userId);
+
+    /// <summary>
+    /// Returns the sponsor or null if not found. Provides a safe way to check for a sponsor without throwing an exception.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <returns>The sponsor data if found; otherwise, null.</returns>
+    MriyaSponsor? GetMriyaSponsorOrNull(NetUserId? userId);
+
+    /// <summary>
+    /// Checks if the player has a specific tag within their active ranks. 
+    /// Used to verify access permissions for certain features or content based on sponsor tags.
+    /// </summary>
+    /// <param name="userId">The ID of the user.</param>
+    /// <param name="tag">The tag to check for.</param>
+    /// <returns><c>true</c> if the player has the tag; otherwise, <c>false</c>.</returns>
     bool HasTag(NetUserId userId, string tag);
 
     /// <summary>
-    /// Повертає обраний колір привида, якщо гравець має на це права. Інакше - null.
+    /// Returns the selected ghost color if the player has permission to use it; otherwise, null.
     /// </summary>
     string? GetGhostColor(NetUserId userId);
 
     /// <summary>
-    /// Повертає обраний колір OOC чату, якщо гравець має на це права. Інакше - null.
+    /// Returns the selected OOC chat color if the player has permission to use it; otherwise, null.
     /// </summary>
     string? GetOocColor(NetUserId userId);
 
-    // --- Керування кешем та перезавантаження ---
     /// <summary>
-    /// Повністю перечитує всіх онлайн-гравців. Викликати обережно через можливе навантаження на БД.
+    /// Completely reloads all online players. Use with caution due to potential database overhead.
     /// </summary>
     Task ReloadSponsorsAsync();
 
     /// <summary>
-    /// Перезавантажує дані конкретного гравця. Корисно, коли адмін оновив ранг гравця під час гри.
+    /// Reloads the data for a specific player. Useful when an admin updates a player's rank during the game.
     /// </summary>
     Task ReloadSponsorAsync(NetUserId userId, CancellationToken cancel = default);
 
     /// <summary>
-    /// Миттєво оновлює об'єкт у кеші без запиту до БД. 
-    /// Використовується після того, як гравець змінив налаштування (наприклад, колір) через UI і ми вже зберегли це в БД.
+    /// Instantly updates the object in the cache without querying the database. 
+    /// Used after a player changes settings (e.g., color) via the UI and those changes have already been saved to the database.
     /// </summary>
     void UpdateCache(NetUserId userId, MriyaSponsor updatedSponsor);
 }

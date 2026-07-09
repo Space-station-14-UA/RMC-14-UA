@@ -11,6 +11,9 @@ using Content.Shared.Input;
 
 namespace Content.Client.Mriya.Sponsors.UI;
 
+/// <summary>
+/// UI component for displaying a sponsor loadout prototype. Displays a sprite and provides a tooltip with a name and description.
+/// </summary>
 public sealed partial class SponsorLoadoutControl : PanelContainer
 {
     [Dependency] private IEntityManager _entManager = default!;

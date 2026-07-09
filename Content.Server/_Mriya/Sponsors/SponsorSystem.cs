@@ -6,6 +6,9 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Mriya.Sponsors;
 
+/// <summary>
+/// System responsible for handling sponsor-related functionality, including opening sponsor windows and managing sponsor data. It listens for network events related to sponsor requests and opens the appropriate EUI windows for personal, admin, and sponsor list views.
+/// </summary>
 public sealed partial class SponsorSystem : EntitySystem
 {
     [Dependency] private EuiManager _euiManager = default!;
