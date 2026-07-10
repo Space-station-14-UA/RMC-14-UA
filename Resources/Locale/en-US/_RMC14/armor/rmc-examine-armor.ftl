@@ -3,7 +3,7 @@ rmc-armor-bullet = захист від куль
 rmc-armor-bio = біозахист
 rmc-armor-explosion-armor = поглинання вибухів
 rmc-examine-armor =  - [color=yellow]{$text}[/color] - [color=lightblue]{$value}[/color].
-rmc-examine-armor-xeno-header = [color=white]{CAPITALIZE($xeno)} має:[/color]
+rmc-examine-armor-xeno-header = [color=white]Ксенонід має:[/color]
 rmc-examine-armor-xeno = - [color=lightblue]{$armor}[/color] [color=yellow]броні[/color]
 rmc-examine-armor-xeno-frontal = - [color=lightblue]{$armor}[/color] [color=yellow]передньої броні[/color]
 rmc-examine-armor-xeno-side = - [color=lightblue]{$armor}[/color] [color=yellow]бічної броні[/color]
