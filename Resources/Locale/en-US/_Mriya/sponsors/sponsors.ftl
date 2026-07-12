@@ -60,8 +60,11 @@ sponsors-eui-menu-remove-sponsor-rank-button = Видалити ранг
 
 sponsors-open-panel = Класні Мрійники
 
-cmd-sponsors-desc = Opens the sponsor permissions panel.
-cmd-sponsors-help = Usage: permissions
+cmd-sponsors-desc = Відкриває панель керування спонсорами
+cmd-sponsors-help = Використання: sponsors
 
-cmd-sponsorwindow-desc = Opens the sponsor window.
-cmd-sponsorwindow-help = Usage: sponsorswindow
+cmd-sponsorsettings-desc = Відкриває панель спонсора
+cmd-sponsorsettings-help = Використання: sponsorsettings
+
+cmd-sponsorwindow-desc = Відкриває список спонсорів
+cmd-sponsorwindow-help = Використання: sponsorswindow
