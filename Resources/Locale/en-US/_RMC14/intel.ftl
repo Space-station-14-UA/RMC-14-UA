@@ -24,9 +24,9 @@ rmc-intel-color-grey = [color=#949494]сірого кольору[/color]
 rmc-intel-color-green = [color=#5dbf36]зеленого кольору[/color]
 rmc-intel-color-cracked-blue = [color=#3449eb]тріснуто-синього кольору[/color]
 rmc-intel-color-bloodied-blue = [color=#3449eb]скривавлено-синього кольору[/color]
-rmc-intel-color-unknown = невідомого кольору
+rmc-intel-color-unknown = непромаркована
 rmc-intel-clue-found = Ви дізнаєтесь щось про {$clue}.
-rmc-intel-personal-clues-added = Нові зачіпки було додано до ваших персональних зачіпок
+rmc-intel-personal-clues-added = Нові зачіпки було додано до вашого персонального записника
 rmc-intel-clue-label-number = #{$number}
 rmc-intel-clue-label-serial = #{$serial}
 rmc-intel-clue-label-unmarked = відсутнє видиме позначення
@@ -41,7 +41,7 @@ rmc-intel-clue-safe = Відкрийте сейф {$label}, з комбінац�
 rmc-intel-data-terminal-password-prompt = Введіть пароль
 rmc-intel-data-terminal-no-power = У терміналу відсутнє живлення!
 rmc-intel-data-terminal-no-comms = На терміналі відображено помилку підключення до мережі.
-rmc-intel-data-terminal-wrong-password = Термінал відхиляє наданий пароль.
+rmc-intel-data-terminal-wrong-password = Термінал відхиляє введений пароль.
 rmc-intel-data-terminal-started = Ви починаєте завантажувати дані.
 rmc-intel-data-terminal-uploading = Схоже термінал вже щось завантажує. Краще запевнитися, що його нічого не зупинить.
 rmc-intel-data-terminal-finished = Термінал видає тихий писк, повідомляючи про завершення завантаження.
@@ -49,9 +49,9 @@ rmc-intel-data-terminal-complete = На екрані присутнє повід
 rmc-intel-disk-reader-key-prompt = Введіть ключ шифрування
 rmc-intel-disk-reader-no-power = У ЦИФРОЗ терміналу відсутнє живлення.
 rmc-intel-disk-reader-occupied = Дисковод ЦИФРОЗ терміналу вже зайнятий. Почекайте, поки термінал завершить обробку.
-rmc-intel-disk-reader-empty = Дисковод ЦИФРОЗ терміналу порожній.
+rmc-intel-disk-reader-empty = Дисковод терміналу ЦИФРОЗ порожній.
 rmc-intel-disk-reader-wrong-key = Дисковод заперечно пищить, відхиляючи диск.
-rmc-intel-disk-reader-insert-failed = Цей диск не може бути прочитаний.
+rmc-intel-disk-reader-insert-failed = Цей диск не може бути зчитаний.
 rmc-intel-disk-reader-started = Ви вставляєте диск та вводите ключ шифрування.
 rmc-intel-disk-reader-finished = ЦИФРОЗ термінал схвально пищить, повертаючи диск.
 rmc-intel-disk-reader-power-lost = Через відсутність живлення ЦИФРОЗ термінал повертає диск, вимикаючись посеред обробки.
