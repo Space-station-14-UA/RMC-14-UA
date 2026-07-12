@@ -129,17 +129,17 @@
       state: lesser_runner
   - type: Evasion # Як в лессера
     evasion: 10
-  - type: SlowOnPull # Швидше за всіх
+  - type: SlowOnPull # Менше за всіх
     slowdowns:
-    - multiplier: 0.75
+    - multiplier: 0.3
       whitelist:
         components:
         - Marine
-    - multiplier: 0.8
+    - multiplier: 0.35
       whitelist:
         components:
         - XenoLight
-    - multiplier: 0.5
+    - multiplier: 0.25
       whitelist:
         components:
         - XenoHeavy

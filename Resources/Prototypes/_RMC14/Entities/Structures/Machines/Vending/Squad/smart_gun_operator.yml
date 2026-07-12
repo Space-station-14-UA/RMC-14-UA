@@ -71,7 +71,7 @@
     - name: Предмети Одягу
       entries:
       - id: MRScabbardShotgunSG # Mriya
-        points: 15
+        points: 20
       - id: RMCScabbardMacheteSGFilled
         points: 15
       - id: RMCPouchFuelTank

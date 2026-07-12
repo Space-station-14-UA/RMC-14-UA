@@ -24,10 +24,10 @@
       entries:
       # Mriya start
       - id: CMUpgradedBurnKit10
-        points: 6
+        points: 8
         recommended: true
       - id: CMUpgradedTraumaKit10
-        points: 6
+        points: 8
         recommended: true
       # Mriya end
       - id: CMBurnKit10

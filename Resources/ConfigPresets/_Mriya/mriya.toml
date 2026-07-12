@@ -56,7 +56,7 @@ survivors_maximum = 0
 marines_per_survivor = 15
 job_slot_scaling = true
 distress_xenos_minimum = 1
-emote_cooldown_seconds = 0
+emote_cooldown_seconds = 1 # 20 в оригіналі, щоб не зловживали
 force_hijack_end_time_minutes = 15
 late_joins_burrowed_larva_death_time = 0
 disconnected_xeno_ghost_role_time_seconds = 120
@@ -102,12 +102,12 @@ motd = "Вітаємо на сервері Морпіхоти Мрії! Якщо
 #Поради (вже тут, вже перекладені)
 dataset = "MR_RMC_Tips"
 login_dataset = "MR_RMC_Tips"
-out_of_game_frequency = 150 # lobbyduration/2, 2.5 хвилини
+out_of_game_frequency = 60 # lobbyduration/5, кожну хвилину
 
 [vote]
 #Приколи з голосуванням для РМС. Відредаговано під наші потреби
 preset_enabled = true
-restart_ghost_percentage = 75
+restart_ghost_percentage = 60 # 85 в ванілі
 timerpreset = 60
 
 [votekick]
