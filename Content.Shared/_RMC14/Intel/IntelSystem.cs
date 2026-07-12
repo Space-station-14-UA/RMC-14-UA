@@ -73,20 +73,21 @@ public sealed class IntelSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-
+// Mriya start
+// Translating Latin chars and Greek letters to Ukrainian
     private static readonly char[] UppercaseLetters =
     {
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+        'А', 'Б', 'В', 'Ґ', 'Д', 'Е', 'Є', 'Ж', 'И', 'К', 'Л', 'М',
+        'Н', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ш',
     };
 
     private static readonly string[] GreekLetters =
     {
-        "Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta", "Eta", "Theta",
-        "Iota", "Kappa", "Lambda", "Mu", "Nu", "Xi", "Omicron", "Pi", "Rho",
-        "Sigma", "Tau", "Upsilon", "Phi", "Chi", "Psi", "Omega",
+        "Альфа", "Бета", "Гамма", "Дельта", "Епсилон", "Дзета", "Ета", "Тета",
+        "Йота", "Каппа", "Лямбда", "Мю", "Ню", "Ксі", "Омікрон", "Пі", "Ро",
+        "Сігма", "Тау", "Іпсилон", "Фі", "Хі", "Псі", "Омега",
     };
-
+// Mriya end.
     private static readonly (string State, LocId Color)[] FolderColors =
     {
         ("folder_red", "rmc-intel-color-red"),
