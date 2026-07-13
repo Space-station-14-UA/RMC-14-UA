@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: RMCPropTrashFull
-  name: full trash bag
-  description: It's the heavy-duty black polymer kind. It's full of old trash, you don't want to touch it.
+  name: повний пакет сміття
+  description: Промисловий чорний полімерний пакет. Повний старого сміття, вам не хочеться його торкатися.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Misc/prop_trash.rsi
@@ -12,8 +12,8 @@
   parent: RMCPropTrashFull
   id: RMCPropBananaPeel
   suffix: RMC
-  name: banana peel
-  description: A peel from a banana.
+  name: бананова шкірка
+  description: Шкірка від банана.
   components:
   - type: Sprite
     state: banana_peel
