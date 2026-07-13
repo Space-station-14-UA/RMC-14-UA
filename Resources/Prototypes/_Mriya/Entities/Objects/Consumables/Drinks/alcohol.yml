@@ -1,0 +1,26 @@
+# Просунута технологія вже надпитих пляшок спеціально для Саванни
+- type: entity
+  parent: RMCDrinkAlcoholVodka
+  id: MMCDrinkAlcoholVodkaHalf
+  suffix: Мрія, Половина
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 50
+
+- type: entity
+  parent: RMCDrinkAlcoholVodka
+  id: MMCDrinkAlcoholVodkaQuarter
+  suffix: Мрія, Чвертина
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 25

@@ -1,9 +1,9 @@
 - type: entity
   parent: CMLockerBase
   id: CMLockerCMDCabinet
-  name: command tablet cabinet
+  name: шафка з планшетом командира
   suffix: Empty
-  description: A bulletproof cabinet containing the command tablet for usage by a Commander.
+  description: Куленепробивна шафка для речей Командира операції. До неї мають доступ лише Командири та наближені до них за рангом особи.
   # description: A bulletproof cabinet containing the command tablet for usage by the CO and XO. Opens only to them and department heads. (Parity desc, once Senior access is implemented)
   components:
   - type: WallMount
@@ -12,7 +12,7 @@
     drawdepth: WallMountedItems
     sprite: _RMC14/Structures/Wallmounts/cmdcabinet.rsi
   - type: EntityStorage
-    capacity: 4 # for storing a tablet and headset, as well as for one more additional thing if needed
+    capacity: 4 # Mriya. 3 в оригіналі. Планшет, гарнітура, картка та ще щось за бажанням
     isCollidableWhenOpen: true
     enteringOffset: 0, -0.6
     enteringRange: 0.03
@@ -47,14 +47,70 @@
     children:
     - id: RMCTabletCO
     - id: CMHeadsetSeniorCommand
-    - id: RMCIDCCardReserve # Додавання білду Січі. Резервна картка
+    - id: MRIDCCardReserve # Mriya. Резервна картка для офіцерів
 
-- type: entity # Додавання білду Січі. Резервна картка для потреб офіцерів.
-  parent: CMIDCardBase
-  id: RMCIDCCardReserve
-  name: резервна картка
-  description: "Зовнішньо звичайна айді картка КМПОН, єдине, на ній вигравіювано текст: \"РЕЗЕРВНА КАРТКА ДЛЯ ПОТРЕБ ОФІЦЕРСЬКОГО СКЛАДУ. Розпоряджатися нею має право лише актуальний командир операції. Володіння карткою без його дозволу рівноцінно викраденню картки офіцера.\""
+- type: entity
+  parent: CMLockerBase
+  id: RMCEmergencySurgicalCabinet
+  name: аварійна шафка з хірургічним обладнанням
+  description: Гіпербезпечна, самостерилізуюча настінна шафа, що містить додаткові портативні хірургічні столи, системи розвантаження з хірургічними інструментами та портативні апарати для діалізу. Вона розблоковується та відкривається самостійно під час атаки на корабель.
+  suffix: Empty
+  placement:
+    mode: SnapgridCenter
   components:
-  - type: Tag
-    tags:
-    - CommandTablet
+  - type: WallMount
+    arc: 175
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _RMC14/Structures/Wallmounts/surgical.rsi
+  - type: Corrodible
+    isCorrodible: false
+  - type: Destructible
+    thresholds: []
+  - type: EntityStorage
+    isCollidableWhenOpen: true
+    enteringOffset: 0, -0.6
+    enteringRange: 0.03
+    whitelist:
+      tags:
+      - CMRollerItem
+      - CMRollerBed
+      components:
+      - Webbing
+      - PortableDialysis
+  - type: RMCEntityStorageWhitelist
+    whitelist:
+      tags:
+      - CMRollerItem
+      - CMRollerBed
+      components:
+      - Webbing
+      - PortableDialysis
+  - type: AccessReader
+    access: [["CMAccessMedical"]]
+  - type: RMCLockerOpenOnHijack
+  - type: RMCMesonsNonviewable
+
+- type: entity
+  parent: RMCEmergencySurgicalCabinet
+  id: RMCEmergencySurgicalCabinetFilled
+  suffix: Fills on Hijack
+  components:
+  - type: RMCOnHijackFill
+    jobs:
+    - CMCMO
+    - CMDoctor
+    scaleWithJobs: true
+    table: !type:NestedSelector
+      tableId: RMCEmergencySurgicalCabinetTable
+
+- type: entityTable
+  id: RMCEmergencySurgicalCabinetTable
+  table: !type:AllSelector
+    children:
+    - id: CMPortableSurgicalBedSpawnFolded
+    - id: RMCPortableDialysis
+    - !type:GroupSelector
+      children:
+      - id: RMCWebbingSurgicalGreen
+      - id: RMCWebbingSurgicalBlue

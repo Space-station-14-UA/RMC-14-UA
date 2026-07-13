@@ -1,4 +1,4 @@
-﻿# Командування
+# Командування
 cm-job-name-senior-enlisted-advisor = Інструктор
 cm-job-description-senior-enlisted-advisor = Наставляйте та навчайте малодосвідчених чи вже не дуже морпіхів. Намагайтеся не згадувати історії з В'єтнаму. Будьте готові допомагати Командуванню у багатьох питаннях.
 cm-job-prefix-senior-enlisted-advisor = ІНС

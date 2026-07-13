@@ -20,6 +20,15 @@
     - type: NpcFactionMember
       factions:
       - WeYa
+    - type: Language
+      spokenLanguages:
+      - English
+      - Japanese
+      understoodLanguages:
+      - English
+      - Japanese
+      currentLanguage: English
+      defaultLanguage: English
     - type: Skills
       skills:
         RMCSkillCqc: 1
@@ -82,7 +91,7 @@
     id: RMCIDCardPMC
     ears: RMCHeadsetDistressPMC
     jumpsuit: RMCJumpsuitVeteranPMCMedic
-    outerClothing: CMArmorM4PMCLight
+    outerClothing: MRCMArmorM4PMCLight #Mriya. ГШР легка версія броні
     gloves: RMCHandsVeteranPMC
     head: ArmorHelmetPMC
     shoes: RMCBootsPMCFilled

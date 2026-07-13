@@ -1,0 +1,56 @@
+<Document>
+## Навігація по посібникам КМПОН
+
+Вітаємо! Тут ви можете швидко знайти потрібний вам посібник, не витрачаючи багато часу на їх пошуки в каталозі!
+
+### Інженерне 
+- [textlink="Обслуговуючий Інженер" link="RMCGuideRoleMaintenanceTechnician"]
+- [textlink="Бойовий Технік" link="RMCGuideRoleCombatTechnician"]
+- [textlink="Телекомунікаційні та Сенсорні вежі" link="RMCGuideCommunicationsTowers"]
+
+### Медичне
+- [textlink="Медицина" link="RMCMedical"]
+- Лікар (наразі відсутній, планується розробка)
+- Бойовий Медик (наразі відсутній, планується розробка)
+
+### Хімічне
+- [textlink="Хімікати" link="RMCChemicals"]
+- [textlink="Медичні хімікати" link="RMCMedicine"]
+- [textlink="Паливо для вогнемета" link="RMCOrdinanceChemicals"]
+
+### Збройні Спеціалісти
+- [textlink="Збройні спеціалісти" link="RMCGuideRoleSpec"]
+- [textlink="Розвідник" link="RMCGuideRoleSpecScout"]
+- [textlink="Гранатометник" link="RMCGuideRoleSpecGrenadier"]
+- [textlink="Ракетник" link="RMCGuideRoleSpecDemo"] (планується незначне оновлення)
+- Вогнеметник (наразі відсутній, планується розробка)
+- [textlink="Снайпери" link="RMCGuideRoleSpecSniper"]
+
+### Інші ролі морпіхів
+- [textlink="Стрілець" link="RMCGuideRoleRifleman"]
+- [textlink="Оператор СмартГана" link="RMCGuideRoleSGO"]
+- [textlink="Керування Загоном 101" link="RMCGuideSquadLeader"]
+
+### Інші бойові ролі
+- [textlink="Десантування та БАП" link="RMCGuideRoleCAS"]
+- [textlink="Розвідка" link="RMCIntel"] (планується значне оновлення)
+
+### Інші не бойові ролі
+- [textlink="Постачання" link="RMCRequisitions"]
+- [textlink="Військова Служба Правопорядку" link="RMCGuideRoleMilitaryPolice"]
+- [textlink="Представник Корпорації" link="RMCGuideCorporateLiaison"]
+- Кок (наразі відсутній, планується розробка)
+
+### Кухня
+- [textlink="Рецепти Їжі" link="RMCGuideFood"]
+- [textlink="Рецепти Напоїв" link="RMCGuideDrinks"]
+
+### Інше
+- [textlink="Знай своє командування" link="RMCGuideCommandRoles"]
+- [textlink="Структура морської піхоти" link="MRMarineStructure"]
+- [textlink="Комунікація – Залог Успіху" link="RMCGuideMarineCommunications"]
+- [textlink="Іконки нових гравців" link="RMCGuideNewIcons"]
+- [textlink="Міномет" link="RMCGuideRoleMortar"]
+
+### Створив Dmytr0-Translate
+</Document>

@@ -11,8 +11,6 @@
   name: Преторіанець
   description: Велика й небезпечна чужопланетна істота, яка видається досить універсальною.
   components:
-  - type: GhostRole
-    name: cm-job-name-xeno-praetorian
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Praetorian/praetorian.rsi
   - type: MobState
@@ -40,7 +38,7 @@
     - ActionXenoDevolve
     tier: 3
     hudOffset: -0.15,0.16
-    unlockAt: 1200 # Sich. 20 хвилин. 15 (900) в оригіналі
+    unlockAt: 1200 # Mriya. 20 хвилин. 15 (900) в оригіналі
   - type: XenoHeavy
   - type: XenoDevolve
     devolvesTo:
@@ -115,7 +113,7 @@
         components:
         - XenoHeavy
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 1.2 # Sich. 0.7 в оригіналі
+    value: 1.2 # Mriya. 0.7 в оригіналі
   - type: FixedIdentity
     name: cm-job-name-xeno-praetorian
   - type: RMCSurgeryXenoHeart
@@ -124,7 +122,7 @@
 - type: entity
   parent: CMXenoPraetorianBase
   id: CMXenoPraetorian
-  description: Велика й небезпечна чужопланетна істота, у якої на шиї велика кислотна почка. Видається досить універсальною. # Sich
+  description: Велика й небезпечна чужопланетна істота, у якої на шиї велика кислотна почка. Видається досить універсальною. # Mriya
   components:
   - type: GuideHelp
     guides:
@@ -150,7 +148,7 @@
     - RMCXenoPraetorianOppressor
     - RMCXenoPraetorianVanguard
     - RMCXenoPraetorianValkyrie
-    - SichXenoPraetorianWarden # Sich. Повернення Наглядача
+    - MRXenoPraetorianWarden # Mriya. Повернення Наглядача
   - type: AcidTrap
   - type: RMCActionOrder
     id: CMXenoPraetorian
@@ -158,7 +156,7 @@
 - type: entity
   parent: CMXenoPraetorianBase
   id: RMCXenoPraetorianValkyrie
-  description: Велика й небезпечна чужопланетна істота, має характерний синій гребінь та товстий панцир й потужні лапи, а на хвості якась дивна штуковина. # Sich
+  description: Велика й небезпечна чужопланетна істота, має характерний синій гребінь та товстий панцир й потужні лапи, а на хвості якась дивна штуковина. # Mriya
   suffix: Valkyrie
   components:
   - type: GuideHelp
@@ -232,17 +230,25 @@
 - type: entity
   parent: CMXenoPraetorianBase
   id: RMCXenoPraetorianDancer
-  description: Велика й небезпечна чужопланетна істота, має характерний фіолетовий гребінь та видається швидкою й дуже маневреною. # Sich
+  description: Велика й небезпечна чужопланетна істота, має характерний фіолетовий гребінь та видається швидкою й дуже маневреною. # Mriya
   suffix: Dancer
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Praetorian/dancer_praetorian.rsi
+  - type: XenoRegen
+    critHealMultiplier: 0.4455  # 35% increased regeneration
+    standHealingMultiplier: 0.567
+    restHealMultiplier: 1.35
+  - type: XenoCappedPheromones
+    cappedPheromones:
+      Recovery: 3
   - type: Xeno
     actionIds:
     - ActionXenoRest
     - ActionXenoRegurgitate
     - ActionXenoWatch
-    - ActionXenoTailStab
+    - ActionXenoTailStabLance
+    - ActionXenoTailStabLanceAlt
     - ActionXenoImpale
     - ActionXenoDodge
     - ActionXenoTailTrip
@@ -262,6 +268,11 @@
       groups:
         Brute: 40
   - type: XenoTailTrip
+  - type: XenoAltTailStab
+    tailDamage:
+      groups:
+        Brute: 8
+  - type: XenoSwiftSteps
   - type: XenoHidden
   - type: RMCActionOrder
     id: RMCXenoPraetorianDancer
@@ -269,7 +280,7 @@
 - type: entity
   parent: CMXenoPraetorianBase
   id: RMCXenoPraetorianVanguard
-  description: Велика й небезпечна чужопланетна істота, у неї характерний червоний гребінь та її панцир видається досить "динамічним". # Sich
+  description: Велика й небезпечна чужопланетна істота, у неї характерний червоний гребінь та її панцир видається досить "динамічним". # Mriya
   suffix: Vanguard
   components:
   - type: GuideHelp
@@ -323,7 +334,7 @@
 - type: entity
   parent: CMXenoPraetorianBase
   id: RMCXenoPraetorianOppressor
-  description: Велика й небезпечна чужопланетна істота, її хвіст виглядає набагато більшим та потужнішим. # Sich
+  description: Велика й небезпечна чужопланетна істота, її хвіст виглядає набагато більшим та потужнішим. # Mriya
   suffix: Oppressor
   components:
   - type: GuideHelp

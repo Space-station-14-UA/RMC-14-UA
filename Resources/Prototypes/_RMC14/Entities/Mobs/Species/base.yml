@@ -21,6 +21,7 @@
         layer:
         - Opaque
         - XenoProjectileImpassable
+        - Marine
       fix2:
         shape:
           !type:PhysShapeCircle
@@ -33,6 +34,7 @@
   - type: InjectableSolution
     solution: chemicals
   - type: RMCStamina
+  - type: RMCPulse
   - type: Bloodstream
     bloodReagent: Blood
     bloodMaxVolume: 560
@@ -80,8 +82,9 @@
     - DoorBumpOpener
   - type: Marine
   - type: RMCSuitLight
+  - type: RMCLastBodyScanResult
   - type: HolocardState
-  - type: Hunger # Sich. Відкат на ванільні значення. Теоретичні до 2.5 годин без їжі
+  - type: Hunger # Mriya. Відкат на ванільні значення. Теоретичні до 2.5 годин без їжі
 #    baseDecayRate: 0.025
 #    thresholds:
 #      Overfed: 550
@@ -96,7 +99,7 @@
 #      Starving: 1
 #      Dead: 0
   - type: Thirst
-    baseDecayRate: 0.05 # Sich. 0.01666666666 в оригіналі, 0.1 в ванілі. Теоретичні до 2,5 годин без води
+    baseDecayRate: 0.05 # Mriya. 0.01666666666 в оригіналі, 0.1 в ванілі. Теоретичні до 2,5 годин без води
   - type: Body
     prototype: Human
     requiredLegs: 2
@@ -227,6 +230,13 @@
       whitelist:
         components:
         - RequisitionsCrate #Lockers/Crates
+  - type: Language
+    spokenLanguages:
+      - English
+    understoodLanguages:
+      - English
+    currentLanguage: English
+    defaultLanguage: English
   - type: MobThresholds
     thresholds:
       0: Alive

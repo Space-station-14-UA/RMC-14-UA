@@ -35,7 +35,7 @@
       entries:
       - id: CMVendorBundleCrewMedicalEssentialsNurse
     - name: Стандартне екіпірування
-      jobs: # Sich
+      jobs: # Mriya
       - CMNurse
       - CMDoctor
       - CMResearcher
@@ -44,7 +44,7 @@
       entries:
       - id: CMHandsLatex
       - id: CMHeadsetMedical
-    - name: Стандартне екіпірування # Sich
+    - name: Стандартне екіпірування # Mriya
       jobs:
       - RMCFieldDoctor
       takeAll: CMStandard
@@ -59,9 +59,9 @@
       choices: { CMEyewear: 1 }
       entries:
       - id: RMCGlassesMedicalHUDGlasses
-      - id: RMCGlassesReagentHUDGlasses # Sich
+      - id: RMCGlassesReagentHUDGlasses # Mriya
 #      - id: Prescription Medical HUD Glasses
-    - name: Броня # Sich
+    - name: Броня # Mriya
       jobs:
       - RMCFieldDoctor
       choices: { CMArmor: 1 }
@@ -71,7 +71,7 @@
         recommended: true
       - id: CMArmorM3VLBallistics
         recommended: true
-    - name: Зброя # Sich
+    - name: Зброя # Mriya
       jobs:
       - RMCFieldDoctor
       choices: { RMCKitBase: 1 }
@@ -83,14 +83,40 @@
       - id: RMCWeaponPistolM82FEmpty # Це теж зброя :godo:
     - name: Уніформа
       choices: { CMUniform: 1 }
+      jobs:
+      - CMNurse
       entries:
-      - id: CMScrubsGreen
-      - id: CMScrubsBlue
       - id: RMCScrubsLightBlue
+        recommended: true
+      - id: RMCScrubsPharm
       - id: CMScrubsPurple
       - id: RMCScrubsOlive
       - id: RMCScrubsGrey
-    - name: Одяг
+      - id: RMCScrubsBrown
+      - id: RMCScrubsWhite
+      - id: RMCScrubsBlack
+    - name: Уніформа
+      choices: { CMUniform: 1 }
+      jobs:
+      - CMDoctor
+      - RMCFieldDoctor
+      - CMCMO
+      - CMResearcher
+      entries:
+      - id: CMScrubsBlue
+        recommended: true
+      - id: CMScrubsGreen
+        recommended: true
+      - id: RMCScrubsPharm
+        recommended: true
+      - id: CMScrubsPurple
+      - id: RMCScrubsOlive
+      - id: RMCScrubsGrey
+      - id: RMCScrubsBrown
+      - id: RMCScrubsWhite
+      - id: RMCScrubsBlack
+      - id: RMCScrubsLightBlue
+    - name: Костюми
       jobs:
       - CMNurse
       choices: { CMSuit: 1 }
@@ -99,30 +125,61 @@
     - name: Одяг
       jobs:
       - CMDoctor
+      - RMCFieldDoctor
+      - CMCMO
+      - CMResearcher
       choices: { CMSuit: 1 }
       entries:
       - id: RMCLabcoat
+        recommended: true
+      - id: RMCLabcoatShort
+        name: High-Cut Labcoat
+      - id: RMCLabcoatLong
+        name: Low-Cut Labcoat
+      - id: RMCLabcoatPharm
+        recommended: true
       - id: RMCMedicalApron
-#    - name: Сніжне спорядження (Тільки для снігу)
-#      takeall: CMSnowgear
-#      entries:
-#      - id: Snowcoat
-#      - id: Balaclava
-#      - id: Snow Scarf
+    - name: Snow gear (Snow use only)
+      takeAll: CMMedicalSet
+      entries:
+      - id: RMCCoatSnow
+      - id: RMCMaskBalaclava
+      - id: RMCMaskTornScarfBlack
+        name: Snow Scarf
     - name: Шапочки
       choices: { CMHeadwear: 1 }
+      jobs:
+      - CMNurse
       entries:
-      - id: CMHeadCapSurgOrange
-      - id: CMHeadCapSurgBlue
+      - id: CMHeadCapSurgLightBlue
+        recommended: true
+      - id: CMHeadCapSurgPharm
       - id: CMHeadCapSurgPurple
-      - id: CMHeadCapSurgGreen
-    - name: Поясне спорядження
-      choices: { CMBelt: 1 }
+      - id: CMHeadCapSurgOlive
+      - id: CMHeadCapSurgGrey
+      - id: CMHeadCapSurgBrown
+      - id: CMHeadCapSurgWhite
+      - id: CMHeadCapSurgBlack
+    - name: Головні убори
+      choices: { CMHeadwear: 1 }
+      jobs:
+      - CMDoctor
+      - RMCFieldDoctor
+      - CMCMO
+      - CMResearcher
       entries:
-      - id: CMBeltMedicBagFilled
-        name: M276 pattern lifesaver bag (Full)
-      - id: CMBeltMedicalFilled
-        name: M276 pattern medical storage rig (Full)
+      - id: CMHeadCapSurgBlue
+        recommended: true
+      - id: CMHeadCapSurgGreen
+        recommended: true
+      - id: CMHeadCapSurgPharm
+        recommended: true
+      - id: CMHeadCapSurgPurple
+      - id: CMHeadCapSurgOlive
+      - id: CMHeadCapSurgGrey
+      - id: CMHeadCapSurgBrown
+      - id: CMHeadCapSurgWhite
+      - id: CMHeadCapSurgBlack
     - name: Рюкзаки
       choices: { CMBackpack: 1 }
       entries:
@@ -134,10 +191,21 @@
         replaceSlot: back
       - id: CMBackpackMedical
         replaceSlot: back
+        recommended: true
       - id: CMSatchelMedical
         replaceSlot: back
+        recommended: true
+    - name: Belt
+      choices: { CMBelt: 1 }
+      entries:
+      - id: CMBeltMedicBagFilled
+        name: M276 pattern lifesaver bag (Full)
+        recommended: true
+      - id: CMBeltMedicalFilled
+        name: M276 pattern medical storage rig (Full)
+        recommended: true
     - name: Підсумки
-      jobs: # Sich
+      jobs: # Mriya
       - CMNurse
       - CMDoctor
       - CMResearcher
@@ -153,6 +221,7 @@
         name: first-aid pouch (pills)
       - id: RMCPouchFirstResponder
       - id: RMCPouchMedical
+        recommended: true
       - id: RMCPouchMedkit
         recommended: true
       - id: RMCPouchReagentCanisterBicaridine
@@ -174,7 +243,7 @@
         recommended: true
         name: Pressurized Reagent Canister Pouch\n(EMPTY)
       - id: RMCPouchSling
-    - name: Підсумки # Sich
+    - name: Підсумки # Mriya
       jobs:
       - RMCFieldDoctor
       choices: { RMCPouch: 2 }
@@ -208,9 +277,9 @@
     - name: Жилети
       choices: { CMAccessories: 1 }
       entries:
-      - id: CMWebbingSurgicalGreen # Sich
+      - id: RMCWebbingSurgicalGreen # Mriya
         recommended: true
-      - id: CMWebbingSurgicalBlue # Sich
+      - id: RMCWebbingSurgicalBlue # Mriya
         recommended: true
       - id: CMWebbingBrown
       - id: CMWebbingBlack
@@ -220,14 +289,14 @@
       - id: RMCWebbingBlackSmall
       - id: RMCWebbingDropPouch
       - id: RMCWebbingDropPouchBlack
-    - name: Маски # Sich
+    - name: Маски # Mriya
       choices: { CMMask: 1 }
       entries:
       - id: CMMaskSterile
       - id: CMMaskGas
       - id: CMMaskCoif
       - id: RMCMaskRebreather
-    - name: Додаткове обладнання # Sich
+    - name: Додаткове обладнання # Mriya
       jobs:
       - RMCFieldDoctor
       entries:

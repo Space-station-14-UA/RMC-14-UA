@@ -1,56 +1,56 @@
-<Document>
-  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]КОРПУС МОРСЬКОЇ ПІХОТИ ОБ'ЄДНАНИХ НАЦІЙ[/bold][/head]\n
+﻿<Document>
+  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]UNITED NATIONS MARINE CORPS[/bold][/head]\n
   [color=#5f698a]▀ ▄▀ █ ▀█ [/color]
 
-  #Знай своє командування
-  ##Довідник щодо командного складу та керівників відділів
+  #Know your betters
+  ##A guide to command staff and department heads
 
-  Отже, ви прокинулися, ситі, одягнені й озброєні. Дісталися до брифінгу й тепер думаєте, кому підлизатися, щоб отримати медальку чи підвищення. Тримайте короткий огляд начальства - щоб знали, чию дупу цілувати:
+  So, you're awake, you're fed, you're dressed, and you're armed. You've made it to briefing and now you're wondering who to suck up to for that medal or promotion. Here's a rundown on the brass so you can get to kissing ass:
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCO"/>
   </Box>
-  -[bold]Командуючий Офіцер[/bold] (КО) — верхівка всієї ієрархії, саме вони керують цим цирком. Вони накажуть своїм офіцерам що робити, аби невдовзі вже ВОНИ обов'язково це сказали ТОБІ. Ми ж знаємо який ти хороший, чи не так?
-  -Вони мають абсолютну владу на цьому кораблі й підпорядковуються лише Вищому Командуванню.
+  -The [bold]Commanding Officer[/bold] (commonly referred to as CO) is running the show. They will tell the other officers what to do so they can tell YOU what to do.
+  -The position of CO is held only by those who have proven their courage, loyalty, and competence. They have supreme authority aboard this vessel, and answer only to High Command.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleXO"/>
   </Box>
-  -[bold]Виконавчий Офіцер[/bold] (ВО) — друга особа в командному складі після КО. Якщо КО – це мозок, то ВО – його права рука.
+  -The [bold]Executive Officer[/bold] (or XO) is second to the Commanding Officer. If the CO is the brain, the XO is the hand.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleSO"/>
   </Box>
-  -[bold]Штабний Офіцер[/bold] (ШО) — координує дії загонів, підтримуючи зв'язок із їхніми лідерами та передаючи отримані звіти й розвіддані ВО та КО. Він веде нагляд за загоном і має доступ до камери на вашому шоломі (який ВИ звісно носите, так?).
+  -A [bold]Staff Officer[/bold] (or SO) coordinates with the squad leaders and relays orders and intel to the XO and CO. They run overwatch on the squad and can see through the camera on your helmet (which you ARE wearing, aren't you?).
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCMP"/>
   </Box>
-  -[bold]Голова Військової Служби Правопорядку[/bold] (ГВСП) — наглядає за роботою Військової служби правопорядку та забезпечує дотримання і виконання статуту Морської піхоти.
+  -The [bold]Chief of Military Police[/bold] oversees the Military Police and ensures that Marine Law is observed and enforced.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCMO"/>
   </Box>
-  -[bold]Головний Лікар[/bold] (ГЛ) — наглядає за медичним відділом і слідкує, щоб персонал працював ефективно, а дослідження проводилися безпечно й етично.
+  -The [bold]Chief Medical Officer[/bold] oversees the Medbay and ensures the medical staff are operating efficiently and that research is being conducted safely and ethically.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleASO"/>
   </Box>
-  -[bold]Офіцер Підтримки[/bold] (ОП) — наглядає за ангаром, розвідкою, відділом постачання та інженерії. Попри те, що постачання й інженерія мають власних керівників, ОП має безпосередню владу над ними.
+  -The [bold]Auxiliary Support Officer[/bold] oversees the Hangar, Intel, and Engineering departments. While Engineering has their own section head, the ASO has direct authority over them.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCE"/>
   </Box>
-  -[bold]Головний Інженер[/bold] (ГІ) — наглядає за обслуговуючими інженерами.
+  -The [bold]Chief Engineer[/bold] oversees the Maintenance and Ordnance Technicians.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleQM"/>
   </Box>
-  -[bold]Офіцер Логістики[/bold] (ОЛ) — керує відділом постачаннь, відповідає за логістику та наглядає за вантажниками.
+  -The [bold]Logistics Officer[/bold] operates the requisitions department and oversees the Requisitions Technicians.
   <Box>
-  Гляньте Ланцюг командування, щоб дізнатися, хто за ким іде в ієрархії. І пам'ятайте:
+  Refer to the Commander Succession to learn the pecking order and remember:
   </Box>
   <Box>
-    [bold]ВІДДАТИ ЧЕСТЬ![/bold]
+    [bold]SALUTE![/bold]
   </Box>
 
   ### Guide by teatotaltemplar

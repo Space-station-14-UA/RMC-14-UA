@@ -1,4 +1,4 @@
-﻿rmc-host = host
-rmc-rouny = Rouny
-rmc-wehny = Wehny
-rmc-lesser-carrier = Lesser Carrier
+rmc-host = інкубатор
+rmc-rouny = Руня
+rmc-wehny = Веххі
+rmc-lesser-carrier = Мала Носійка

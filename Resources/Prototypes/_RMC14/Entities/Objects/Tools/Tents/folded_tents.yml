@@ -75,7 +75,7 @@
       collapseToolPrototype: CMEntrenchingTool
       areaBlockedCheck: true
       failIfNotSurface: true
-      deploySetups: # Sich. Вміст змінено
+      deploySetups: # Mriya. Вміст змінено
         - prototype: RMCTentUNMCStandardCommand
           neverRedeployableSetup: false
           mode: ReactiveParental
@@ -135,7 +135,7 @@
       size: Huge
     - type: Sprite
       sprite: _RMC14/Objects/Tents/folded_tents.rsi
-      layers: # Sich. Він став великим
+      layers: # Mriya. Він став великим
         - state: big_tent
         - state: med_base
     - type: RMCDeployable
@@ -143,7 +143,7 @@
         !type:PhysShapeAabb
         bounds: "-0.4,0.6,3.4,4.4" # The non-perfect rectangle allows the tent to be placed close to the walls
       collapseToolPrototype: CMEntrenchingTool
-      deploySetups: # Sich. Вміст змінено
+      deploySetups: # Mriya. Вміст змінено
         - prototype: RMCTentUNMCStandardMedical
           mode: ReactiveParental
           offset: -0.2, 0
@@ -153,7 +153,7 @@
         - prototype: CMMedilinkSupplyPort
           mode: Reactive
           offset: -1.5, 0.5
-        - prototype: SMCRotaryPhoneWallmountMedicalTent
+        - prototype: MMCRotaryPhoneWallmountMedicalTent
           mode: Reactive
           offset: -1.5, 0.5
         - prototype: CMChair
@@ -228,7 +228,7 @@
         !type:PhysShapeAabb
         bounds: "-0.4,0.6,3.4,4.4"
       collapseToolPrototype: CMEntrenchingTool
-      deploySetups: # Sich. Вміст змінено
+      deploySetups: # Mriya. Вміст змінено
         - prototype: RMCTentUNMCExtendedReq
           mode: ReactiveParental
           offset: -0.2, 0
@@ -243,7 +243,7 @@
         - prototype: CMASRSConsolePowered
           mode: Reactive
           offset: 1.5, 0.5
-        - prototype: SMCColMarTechFOBSupplies
+        - prototype: MMCColMarTechFOBSupplies
           mode: Reactive
           offset: 1.5, -0.5
         - prototype: CMRack
@@ -269,7 +269,7 @@
         !type:PhysShapeAabb
         bounds: "-0.4,0.6,3.4,4.4"
       collapseToolPrototype: CMEntrenchingTool
-      deploySetups: # Sich. Вміст змінено
+      deploySetups: # Mriya. Вміст змінено
         - prototype: RMCTentUNMCExtendedMess
           mode: ReactiveParental
           offset: -0.2, 0
@@ -293,7 +293,7 @@
         - prototype: CMVendorIngredientsLockedPowered
           mode: Reactive
           offset: 1.5, 0.5
-        - prototype: SMCRotaryPhoneWallmountMessTent
+        - prototype: MMCRotaryPhoneWallmountMessTent
           mode: Reactive
           offset: 1.5, 0.5
         - prototype: CMLockerFridge
@@ -324,7 +324,7 @@
         !type:PhysShapeAabb
         bounds: "-0.4,0.6,3.4,4.4"
       collapseToolPrototype: CMEntrenchingTool
-      deploySetups: # Sich. Вміст змінено
+      deploySetups: # Mriya. Вміст змінено
         - prototype: RMCTentUNMCExtendedMP
           mode: ReactiveParental
           offset: -0.2, 0
@@ -357,8 +357,66 @@
           offset: 1.5, -0.5
         - prototype: CMVendorSec
           offset: 0.5, -1.5
-        - prototype: SMCRotaryPhoneWallmountMPTent
+        - prototype: MMCRotaryPhoneWallmountMPTent
           mode: Reactive
           offset: 0.25, -1.5
         - prototype: CMLockerPolice
           offset: 1.5, -1.5
+
+- type: entity
+  parent: BaseItem
+  id: RMCTentUNMCExtendedCorrespondentFolded
+  name: folded Correspondent Field Tent
+  description: A standard civilian tent. This one is equipped for news on the go. Unfold in a suitable location for interviews. ENTRANCE TO THE SOUTH.
+  components:
+    - type: Item
+      size: Huge
+    - type: Sprite
+      sprite: _RMC14/Objects/Tents/folded_tents.rsi
+      layers:
+        - state: big_tent
+        - state: correspondent_big
+    - type: RMCDeployable
+      deployArea:
+        !type:PhysShapeAabb
+        bounds: "-0.4,0.6,3.4,4.4" # The non-perfect rectangle allows the tent to be placed close to the walls
+      collapseToolPrototype: CMEntrenchingTool
+      deploySetups:
+        - prototype: RMCTentUNMCExtendedCorrespondent
+          mode: ReactiveParental
+          anchor: true
+          offset: -0.2, 0
+          angle: 0
+        - prototype: CMChair
+          offset: 0.5, -0.5
+          angle: 90
+        - prototype: CMTable
+          offset: 1.5, 0.5
+        - prototype: CMTable
+          offset: 1.5, -0.5
+        - prototype: CMTable
+          offset: -1.5, 0.5
+        - prototype: CMTable
+          offset: 0.5, 0.5
+        - prototype: CMTable
+          offset: -1.5, -0.5
+        - prototype: CMRack
+          offset: 0.5, -1.5
+        - prototype: RMCDigitalClock
+          offset: -1.5, -0.5
+          angle: 90
+        - prototype: RMCRotaryPhoneCorrespondentTent
+          offset: 0.5, 0.5
+          mode: Reactive
+        - prototype: CMFilingCabinetTall
+          offset: -0.5, 0.5
+          angle: 180
+        - prototype: RMCLamp
+          offset: 1.5, -0.5
+          mode: Reactive
+        - prototype: CMFaxPressTent 
+          offset: -1.5, 0.5
+          mode: Reactive
+        - prototype: CMPaperBin10
+          offset: 1.5, 0.5
+          anchor: false

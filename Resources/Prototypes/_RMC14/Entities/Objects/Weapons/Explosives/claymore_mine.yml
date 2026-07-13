@@ -88,7 +88,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCShrapnel
-#  name: шрапнель – Sich
+#  name: шрапнель – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -118,6 +118,44 @@
     thresholds:
     - range: 5
       falloff: 35
+
+# Pre-armed claymores for mapping
+
+- type: entity
+  parent: RMCExplosiveClaymoreMine
+  id: RMCExplosiveClaymoreMineArmed
+  suffix: Armed, No IFF
+  components:
+  - type: RMCLandmine
+    armed: true
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    layers:
+    - state: active
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Physics
+    bodyType: Static
+  - type: CollisionWake
+    enabled: False
+
+- type: entity
+  parent: RMCExplosiveClaymoreMineArmed
+  id: RMCExplosiveClaymoreMineArmedUNMC
+  suffix: Armed, UNMC
+  components:
+  - type: RMCLandmine
+    armed: true
+    faction: FactionMarine
+
+- type: entity
+  parent: RMCExplosiveClaymoreMineArmed
+  id: RMCExplosiveClaymoreMineArmedCLF
+  suffix: Armed, CLF
+  components:
+  - type: RMCLandmine
+    armed: true
+    faction: FactionCLF
 
 # Tags
 

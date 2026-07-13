@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "All Rights Reserved. Created by PERKARTER for Mriya",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "item-cat1"
+    },
+    {
+      "name": "item-cat2"
+    },
+    {
+      "name": "item-cat1-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "item-cat2-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "item-cat1-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "item-cat2-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "item-cat1-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "item-cat2-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cat1",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "cat1_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "cat1_rest",
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "cat1_sit",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "cat2",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "cat2_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "cat2_rest",
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "cat2_sit",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    }
+  ]
+}

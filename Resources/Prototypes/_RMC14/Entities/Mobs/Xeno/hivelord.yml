@@ -11,8 +11,6 @@
   name: Володарка Вулика
   description: Велика чужопланетна істота з повноцінними лапами та хоботом. Будівниця справді великих вуликів.
   components:
-  - type: GhostRole
-    name: cm-job-name-xeno-hivelord
   - type: MobState
     allowedStates:
     - Alive
@@ -95,14 +93,14 @@
   - type: FixedIdentity
     name: cm-job-name-xeno-hivelord
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.7 # Sich. 0.2 в оригіналі
+    value: 0.7 # Mriya. 0.2 в оригіналі
   - type: RMCSurgeryXenoHeart
     item: RMCOrganXenoHeartT2
 
 - type: entity
   parent: CMXenoHivelordBase
   id: CMXenoHivelord
-  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Будівниця справді великих вуликів. # Sich
+  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Будівниця справді великих вуликів. # Mriya
   components:
   - type: CanBuildThickFromConstructNode
   - type: GuideHelp
@@ -130,10 +128,12 @@
     buildDelay: 1
     canBuild:
     - WallXenoResinThick
+    - WallXenoResinReflective
     - WallXenoMembraneThick
     - DoorXenoResinThick
     - XenoStickyResin
     - XenoFastResin
+    - XenoResinSpikes
     - HiveAcidPillarXeno
     canOrderConstruction:
     - HiveCoreXenoConstructionNode
@@ -158,7 +158,7 @@
 - type: entity
   parent: CMXenoHivelordBase
   id: CMXenoHivelordResinWhisperer
-  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Схоже має якийсь особливий зв'язок з травою за допомогою довших лап. # Sich
+  description: Велика чужопланетна істота з повноцінними лапами та хоботом. Схоже має якийсь особливий зв'язок з травою за допомогою довших лап. # Mriya
   suffix: Resin Whisperer
   components:
   - type: CanBuildThickFromConstructNode
@@ -187,6 +187,7 @@
     - DoorXenoResin
     - XenoStickyResin
     - XenoFastResin
+    - XenoResinSpikes
     - XenoWeedsSource
     canOrderConstruction:
     - HiveCoreXenoConstructionNode
@@ -214,7 +215,7 @@
 - type: entity
   parent: CMXenoHivelordBase
   id: CMXenoHivelordDesigner
-  description: Велика чужопланетна істота з повноцінними лапами та хоботом. З її лап капає якась дивна люмінісцентна рідина. # Sich
+  description: Велика чужопланетна істота з повноцінними лапами та хоботом. З її лап капає якась дивна люмінісцентна рідина. # Mriya
   suffix: Designer
   components:
   - type: GuideHelp
@@ -241,12 +242,6 @@
     - ActionXenoDevolve
     - ActionXenoZoom
   - type: DesignerStrain
-    greaterResinSurgePlasmaCost: 250
-    greaterResinSurgeCooldown: 30
-    greaterResinSurgeRange: 7
-    greaterResinSurgeBuildTime: 1
-    greaterResinSurgeAnimationEffect: RMCEffectWallXenoResinThick
-    greaterResinSurgeWallPrototype: WallXenoResinThickSurge
   - type: DesignerCrosshair
     optimizedWallRsi:
       sprite: _RMC14/Structures/designer_nodes.rsi
@@ -287,8 +282,8 @@
     plasmaRegenOnWeeds: 5.5
     plasmaTransferDelay: 0.5
   - type: XenoPheromones
-    pheromonesMultiplier: 3
-    pheroSuffix: strong
+    pheromonesMultiplier: 3.5
+    pheroSuffix: designer
   - type: Tackle
     max: 4
     chance: 0.45

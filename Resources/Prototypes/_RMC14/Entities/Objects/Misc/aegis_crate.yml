@@ -1,7 +1,7 @@
 - type: entity
   id: RMCAegisBox
-  name: AEGIS Secure Crate
-  description: A secure storage crate for transportation of AEGIS equipment. Seems sturdy enough to withstand any blows outside of an orbital strike. It is locked and requires an AEGIS ID card to open.
+  name: Безпечний Контейнер ЕГІДА
+  description: Безпечний ящик для транспортування обладнання ЕГІДА. Здається достатньо міцним, щоб витримати будь-що. Якщо він закритий, то для розблокування потрібна спеціальна ключ-картка ЕГІДА. Зверніться до найближчого представника ЕГІДА по неї.
   placement:
     mode: SnapgridCenter
   components:

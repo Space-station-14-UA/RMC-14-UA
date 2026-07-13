@@ -661,6 +661,41 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("job", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.MriyaSponsor", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("SelectedGhostColor")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("selected_ghost_color");
+
+                    b.Property<int?>("SelectedGhostRankId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("selected_ghost_rank_id");
+
+                    b.Property<string>("SelectedOocColor")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("selected_ooc_color");
+
+                    b.Property<int?>("SelectedOocRankId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("selected_ooc_rank_id");
+
+                    b.HasKey("UserId")
+                        .HasName("PK_mriya_sponsors");
+
+                    b.HasIndex("SelectedGhostRankId")
+                        .HasDatabaseName("IX_mriya_sponsors_selected_ghost_rank_id");
+
+                    b.HasIndex("SelectedOocRankId")
+                        .HasDatabaseName("IX_mriya_sponsors_selected_ooc_rank_id");
+
+                    b.ToTable("mriya_sponsors", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
                 {
                     b.Property<int>("Id")
@@ -1055,6 +1090,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("rmc_commendations_id");
 
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("deleted");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("deleted_at");
+
+                    b.Property<Guid?>("DeletedById")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("deleted_by_id");
+
                     b.Property<Guid>("GiverId")
                         .HasColumnType("TEXT")
                         .HasColumnName("giver_id");
@@ -1087,18 +1134,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("text");
 
-                    b.Property<bool>("Deleted")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("deleted");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("deleted_at");
-
-                    b.Property<Guid?>("DeletedById")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("deleted_by_id");
-
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER")
                         .HasColumnName("type");
@@ -1106,8 +1141,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasKey("Id")
                         .HasName("PK_rmc_commendations");
 
-                    b.HasIndex("DeletedById")
-                        .HasDatabaseName("IX_rmc_commendations_deleted_by_id");
+                    b.HasIndex("DeletedById");
 
                     b.HasIndex("GiverId");
 
@@ -1444,6 +1478,60 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("rmc_squad_preferences", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Rank", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("rank_id");
+
+                    b.Property<string>("JobName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job_name");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.Property<string>("RankName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("rank_name");
+
+                    b.HasKey("Id")
+                        .HasName("PK_rank");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("rank", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.RankTag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("rank_tags_id");
+
+                    b.Property<int>("SponsorRankId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("sponsor_rank_id");
+
+                    b.Property<string>("TagValue")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("tag_value");
+
+                    b.HasKey("Id")
+                        .HasName("PK_rank_tags");
+
+                    b.HasIndex("SponsorRankId")
+                        .HasDatabaseName("IX_rank_tags_sponsor_rank_id");
+
+                    b.ToTable("rank_tags", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
                 {
                     b.Property<Guid>("PlayerUserId")
@@ -1772,6 +1860,72 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsUnique();
 
                     b.ToTable("server_unban", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.SponsorRank", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("sponsor_ranks_id");
+
+                    b.Property<bool>("CanSetGhostColor")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("can_set_ghost_color");
+
+                    b.Property<bool>("CanSetOocColor")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("can_set_ooc_color");
+
+                    b.Property<string>("DefaultColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("default_color");
+
+                    b.Property<string>("DefaultGhostColor")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("default_ghost_color");
+
+                    b.Property<string>("DefaultOocColor")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("default_ooc_color");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("name");
+
+                    b.Property<int>("Priority")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("priority");
+
+                    b.Property<bool>("ShowInSponsorWindow")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("show_in_sponsor_window");
+
+                    b.HasKey("Id")
+                        .HasName("PK_sponsor_ranks");
+
+                    b.ToTable("sponsor_ranks", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.SponsorRoleAssignment", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
+
+                    b.Property<int>("RankId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("rank_id");
+
+                    b.HasKey("UserId", "RankId")
+                        .HasName("PK_sponsor_role_assignments");
+
+                    b.HasIndex("RankId")
+                        .HasDatabaseName("IX_sponsor_role_assignments_rank_id");
+
+                    b.ToTable("sponsor_role_assignments", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
@@ -2133,6 +2287,25 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.MriyaSponsor", b =>
+                {
+                    b.HasOne("Content.Server.Database.SponsorRank", "SelectedGhostRank")
+                        .WithMany()
+                        .HasForeignKey("SelectedGhostRankId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .HasConstraintName("FK_mriya_sponsors_sponsor_ranks_selected_ghost_rank_id");
+
+                    b.HasOne("Content.Server.Database.SponsorRank", "SelectedOocRank")
+                        .WithMany()
+                        .HasForeignKey("SelectedOocRankId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .HasConstraintName("FK_mriya_sponsors_sponsor_ranks_selected_ooc_rank_id");
+
+                    b.Navigation("SelectedGhostRank");
+
+                    b.Navigation("SelectedOocRank");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.OwnsOne("Content.Server.Database.TypedHwid", "LastSeenHWId", b1 =>
@@ -2289,6 +2462,13 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             modelBuilder.Entity("Content.Server.Database.RMCCommendation", b =>
                 {
+                    b.HasOne("Content.Server.Database.Player", "DeletedBy")
+                        .WithMany("CommendationsDeleted")
+                        .HasForeignKey("DeletedById")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .HasConstraintName("FK_rmc_commendations_player_deleted_by_id");
+
                     b.HasOne("Content.Server.Database.Player", "Giver")
                         .WithMany("CommendationsGiven")
                         .HasForeignKey("GiverId")
@@ -2304,13 +2484,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_rmc_commendations_player_receiver_id");
-
-                    b.HasOne("Content.Server.Database.Player", "DeletedBy")
-                        .WithMany("CommendationsDeleted")
-                        .HasForeignKey("DeletedById")
-                        .HasPrincipalKey("UserId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .HasConstraintName("FK_rmc_commendations_player_deleted_by_id");
 
                     b.HasOne("Content.Server.Database.Round", "Round")
                         .WithMany("Commendations")
@@ -2506,6 +2679,30 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Rank", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("Ranks")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_rank_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.RankTag", b =>
+                {
+                    b.HasOne("Content.Server.Database.SponsorRank", "SponsorRank")
+                        .WithMany("Tags")
+                        .HasForeignKey("SponsorRankId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_rank_tags_sponsor_ranks_sponsor_rank_id");
+
+                    b.Navigation("SponsorRank");
+                });
+
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", "Player")
@@ -2688,6 +2885,27 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Ban");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SponsorRoleAssignment", b =>
+                {
+                    b.HasOne("Content.Server.Database.SponsorRank", "Rank")
+                        .WithMany("RoleAssignments")
+                        .HasForeignKey("RankId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_sponsor_role_assignments_sponsor_ranks_rank_id");
+
+                    b.HasOne("Content.Server.Database.MriyaSponsor", "Sponsor")
+                        .WithMany("RoleAssignments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_sponsor_role_assignments_mriya_sponsors_sponsor_user_id");
+
+                    b.Navigation("Rank");
+
+                    b.Navigation("Sponsor");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2737,6 +2955,11 @@ namespace Content.Server.Database.Migrations.Sqlite
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Navigation("BanHits");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.MriyaSponsor", b =>
+                {
+                    b.Navigation("RoleAssignments");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Player", b =>
@@ -2822,6 +3045,8 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.Navigation("NamedItems");
 
+                    b.Navigation("Ranks");
+
                     b.Navigation("SquadPreference");
 
                     b.Navigation("Traits");
@@ -2883,6 +3108,13 @@ namespace Content.Server.Database.Migrations.Sqlite
             modelBuilder.Entity("Content.Server.Database.ServerRoleBan", b =>
                 {
                     b.Navigation("Unban");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.SponsorRank", b =>
+                {
+                    b.Navigation("RoleAssignments");
+
+                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

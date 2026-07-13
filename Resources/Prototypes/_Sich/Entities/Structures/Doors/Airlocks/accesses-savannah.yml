@@ -1,7 +1,0 @@
-- type: entity
-  parent: CMAirlockSecure
-  id: SMCAirlockSecureLiaisonLocked
-  suffix: Січ, Корпорат, Зачинено
-  components:
-  - type: AccessReader
-    access: [ [ "RMCAccessWeYa" ] ]

@@ -12,6 +12,7 @@ using Content.Shared.Jittering;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew; // Mriya
 using Robust.Shared.Player;
 
 namespace Content.Shared._RMC14.Xenonids.Aid;
@@ -28,6 +29,7 @@ public sealed class XenoAidSystem : EntitySystem
     [Dependency] private readonly SharedRMCActionsSystem _rmcActions = default!;
     [Dependency] private readonly SharedRMCDamageableSystem _rmcDamageable = default!;
     [Dependency] private readonly SharedXenoHiveSystem _hive = default!;
+    [Dependency] private readonly SharedStatusEffectsSystem _statusEffect = default!; // Mriya
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly XenoSystem _xeno = default!;
     [Dependency] private readonly XenoEnergySystem _xenoEnergy = default!;
@@ -131,6 +133,13 @@ public sealed class XenoAidSystem : EntitySystem
                 {
                     _statusEffects.TryRemoveStatusEffect(target, status);
                 }
+
+                // Mriya start
+                foreach (var status in xeno.Comp.AilmentsRemoveNew)
+                {
+                    _statusEffect.TryRemoveStatusEffect(target, status);
+                }
+                // Mriya end
 
                 EntityManager.RemoveComponents(target, xeno.Comp.ComponentsRemove);
 

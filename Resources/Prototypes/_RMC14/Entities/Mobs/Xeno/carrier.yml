@@ -101,7 +101,7 @@
   - type: XenoInhands
     prefix: carrier
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 0.7 # Sich. 0.2 в оригіналі
+    value: 0.7 # Mriya. 0.2 в оригіналі
   - type: FixedIdentity
     name: cm-job-name-xeno-carrier
   - type: RMCSurgeryXenoHeart
@@ -110,7 +110,7 @@
 - type: entity
   parent: RMCXenoCarrierBase
   id: CMXenoCarrier
-  description: Висока чужопланетна істота з дивними лапами, величезним пузом та купою ніг. По ній повзають дивні крапобоподібні істоти. # Sich
+  description: Висока чужопланетна істота з дивними лапами, величезним пузом та купою ніг. По ній повзають дивні крапобоподібні істоти. # Mriya
   components:
   - type: GuideHelp
     guides:
@@ -133,6 +133,9 @@
     - map: [ "enum.XenoInhandVisualLayers.Left" ]
       visible: false
     - map: [ "enum.XenoInhandVisualLayers.Right" ]
+      visible: false
+    - map: [ "enum.RMCShieldVisuals.Base" ]
+      sprite: _RMC14/Effects/xeno_shields.rsi
       visible: false
   - type: Xeno
     actionIds:
@@ -158,7 +161,7 @@
 - type: entity
   parent: RMCXenoCarrierBase
   id: RMCXenoCarrierEggsac
-  description: Висока чужопланетна істота з дивними лапами, величезним пузом та купою ніг. Її пузо постійно дивно пульсує... # Sich
+  description: Висока чужопланетна істота з дивними лапами, величезним пузом та купою ніг. Її пузо постійно дивно пульсує... # Mriya
   suffix: Eggsac
   components:
   - type: CanBuildThickFromConstructNode

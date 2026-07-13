@@ -1,0 +1,33 @@
+- type: entity
+  id: MRCalmed
+  parent: CMDistressSignal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 0
+  - type: CMDistressSignalRule
+    requireXenoPlayers: false     # не треба готові ксено
+    spawnXenos: false             # готових ксено не заспавнить
+    spawnSurvivors: false         # готових виживших не заспавнить
+    roundEndCheckDelay: 108000    # перша перевірка чи виконано умови для завершення раунду відбудеться 30 години після старту раунду  (адміністрація розбереться)
+    bioscan: false                # без біоскану (адміністрація розбереться х2)
+    startARESAnnouncements: false # АРЕС не вітає морпіхів. ТОДО: зробити кастомні оголошення
+
+- type: entity
+  id: MREventSunRiders
+  parent: MRCalmed
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: CMDistressSignalRule
+    squadIds: ["SquadSunRiders"] # загін "Сонячні вершники" з івентового корабля
+    extraSquadIds: []            # без інтелу й форкону (сурви не спавняться)
+
+- type: entity
+  id: MRDistressSignalCLF
+  parent: MRCalmed
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: CMDistressSignalRule
+    startARESAnnouncements: true
+    bioscan: true
+#    spawnSurvivors: true – ТОДО

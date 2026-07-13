@@ -51,7 +51,7 @@ namespace Content.Client.Info
             changelogButton.OnPressed += args => UserInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
             buttons.AddChild(changelogButton);
 
-// Sich commented. Зайві кнопки
+// Mriya commented. Зайві кнопки
 //            var roadmapButton = new Button 
 //            {
 //                Text = Loc.GetString("cm-ui-roadmap"),

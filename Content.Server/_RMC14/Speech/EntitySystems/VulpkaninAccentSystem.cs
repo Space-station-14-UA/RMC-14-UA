@@ -21,10 +21,10 @@ public sealed class VulpkaninAccentSystem : EntitySystem
 
         message = Regex.Replace(message, "r+", _random.Pick(new List<string> { "rr", "rrr" }));
         message = Regex.Replace(message, "R+", _random.Pick(new List<string> { "RR", "RRR" }));
-        // Sich start. Локалізація
+        // Mriya start. Локалізація
         message = Regex.Replace(message, "р+", _random.Pick(new List<string> { "рр", "ррр" }));
         message = Regex.Replace(message, "Р+", _random.Pick(new List<string> { "РР", "РРР" }));
-        // Sich end
+        // Mriya end
 
         args.Message = message;
     }

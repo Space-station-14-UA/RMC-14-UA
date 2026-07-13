@@ -16,8 +16,8 @@ reagent-desc-egg = Cooked chicken embryo, delicious.
 reagent-name-raw-egg = raw egg
 reagent-desc-raw-egg = Used for baking.
 
-reagent-name-sugar = sugar
-reagent-desc-sugar = Tasty spacey sugar!
+reagent-name-sugar = цукор
+reagent-desc-sugar = Космічно смачний цукор!
 
 reagent-name-blackpepper = black pepper
 reagent-desc-blackpepper = Often used to flavor food or make people sneeze.

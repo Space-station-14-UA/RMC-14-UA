@@ -1,0 +1,313 @@
+# Адаптація всіляких тварин під умови механік РМС (нема атмосфери, не треба гост роль)
+## Так, лише ніаножук й вже не один. Ці молі класні. Питання?
+
+# Тварини
+- type: entity
+  parent: [RMCRodent, MobMothroach]
+  id: MRMobMothroach
+  name: тарганоміль
+  description: Це чарівно-пустотливий побічний продукт численних спроб генетично змішати молей з тарганами. Бззз!
+  suffix: Мрія, Ніаножук
+  components:
+  - type: GhostRole
+    prob: 0
+  - type: PressureImmunity
+  - type: Respirator
+    minSaturation: 5.0
+  - type: Temperature
+    heatDamageThreshold: 423
+    coldDamageThreshold: 0
+  - type: Speech
+    speechVerb: Moth
+    speechSounds: Moth # Перенесено з КД
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] # Додано Flap
+  - type: BodyEmotes # Зроблено заради Flap, вже є в Білді візардів, як буде оновлення від них – видалити нашу
+    soundsId: MRMothBodyEmotes
+  - type: Vocal
+    sounds:
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
+  - type: Inventory
+    templateId: MRmothroach
+  - type: UserIFF
+    factions:
+    - FactionMarine
+
+- type: entity
+  parent: MRMobMothroach
+  id: MRMobMothroachSynth
+  name: синтетична тарганоміль
+  description: "Це чарівно-пустотливий побічний продукт розробки синтетиків у вигляді ніан. Роботичне бззз!\nМає ледь помітний напис \"Прототип Люнет\" на лівому крилі."
+  suffix: Мрія, Ніаножук, Адмеме
+  components:
+  - type: Sprite
+    sprite: _Mriya/Mobs/Pets/synth_mothroach.rsi
+  - type: Clothing
+    sprite: _Mriya/Mobs/Pets/synth_mothroach.rsi
+  - type: Synth
+  - type: CMArmor # Так, її не знищити
+    immuneToAP: true
+    melee: 50
+    bullet: 50
+    bio: 50
+    explosionArmor: 100
+  - type: RMCImmuneToFireTileDamage
+  - type: CanEscapeInventory
+    baseResistTime: 0.5 # 5 в оригінальної
+  - type: StunOnHit # Щоб кусати тих, хто чипає
+    whitelist:
+      components:
+      - Marine
+  - type: StaminaDamageOnHit
+    damage: 100
+  - type: MeleeRequiresSkill # Щоб не могли бити нею
+    skills:
+      RMCSkillPolice: 3
+  - type: Skills
+    skills:
+      RMCSkillPolice: 3
+  - type: TacticalMapIcon
+    icon:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: synth
+  - type: Puller
+    needsHands: false
+  - type: VentCrawler
+    ventCrawlIcon: lesser
+  - type: RMCTrayCrawler
+  - type: Language
+    spokenLanguages:
+    - English
+    - French
+    - Japanese
+    - German
+    - Chinese
+    - Spanish
+    - MREnglish
+    - SignLanguage
+    - Xeno
+    understoodLanguages:
+    - English
+    - French
+    - Japanese
+    - German
+    - Chinese
+    - Spanish
+    - MREnglish
+    - SignLanguage
+    - Xeno
+    currentLanguage: English
+    defaultLanguage: English
+  # Вбудована гарнітура старт
+  - type: CMGhost
+  - type: ViewIntelObjectives
+  - type: GrantAreaInfo
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.TacticalMapUserUi.Key:
+        type: TacticalMapUserBui
+      enum.ViewIntelObjectivesUI.Key:
+        type: ViewIntelObjectivesBui
+        requireInputValidation: false
+      enum.SquadLeaderTrackerUI.Key:
+        type: SquadInfoBui
+      enum.DialogUiKey.Key:
+        type: DialogBui
+  - type: TacMapMarineAlert
+  - type: TacticalMapUser
+    actionId: RMCActionOpenTacticalMapGhost
+    marines: true
+    xenos: true
+    liveUpdate: true
+  - type: ShowMarineIcons
+    factions:
+    - UNMC
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Hivemind
+    - MarineCommon
+    - MarineCommand
+    - MarineMilitaryPolice
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - MarineEngineer
+    - MarineMedical
+    - MarineRequisition
+    - MarineJTAC
+    - MarineIntel
+  - type: ActiveRadio
+    channels:
+    - Hivemind
+    - MarineCommon
+    - MarineCommand
+    - MarineMilitaryPolice
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - MarineEngineer
+    - MarineMedical
+    - MarineRequisition
+    - MarineJTAC
+    - MarineIntel
+  - type: SquadLeaderTracker
+    mode: Synthetic
+    trackerModes:
+    - Synthetic
+    - CommandingOfficer
+    - ExecutiveOfficer
+    - AuxiliarySupportOfficer
+    - StaffOfficer
+    - ChiefMilitaryPolice
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Quartermaster
+    - SquadLeader
+    - PrimaryLandingZone
+  # Вбудована гарнітура все
+  - type: Access
+    groups:
+    - ShipMasterAccess
+    - Corp
+    - Colony
+    - Synth
+  - type: WarpPoint
+    follow: true
+    location: Люнет
+  - type: RemoveComponents
+    components:
+    - type: Destructible # Щоб не розривало на шмаття
+    - type: ReplacementAccent # Вона може повноцінно балакати
+      accent: mothroach
+
+- type: entity
+  parent: RMCMobCatCalico
+  id: MRMobCatNox
+  name: Нокс
+  description: "Молода кішка темно-чорного забарвлення.\nВаш погляд губиться в цих зелених очах..."
+  components:
+  - type: Sprite
+    sprite: _Mriya/Mobs/Pets/co_cat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cat1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cat1
+      Critical:
+        Base: cat1_dead
+      Dead:
+        Base: cat1_dead
+  - type: Item
+    sprite: _Mriya/Mobs/Pets/co_cat.rsi
+    heldPrefix: item-cat1
+  - type: Clothing
+    sprite: _Mriya/Mobs/Pets/co_cat.rsi
+    equippedPrefix: item-cat1
+  - type: MobThresholds # Кішка має мати більше здоров'я, у каліко малувато.
+    thresholds:
+      0: Alive
+      45: Critical
+      50: Dead
+  - type: WarpPoint
+    location: Нокс
+  - type: UserIFF # Кішка мусить жити
+    factions:
+    - FactionMarine
+
+- type: entity
+  parent: MRMobCatNox
+  id: MRMobCatLux
+  name: Люкс
+  description: "Молода кішка світло-білого забарвлення.\nВам доволі боляче дивитися на неї, занадто яскраво..."
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cat2
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cat2
+      Critical:
+        Base: cat2_dead
+      Dead:
+        Base: cat2_dead
+  - type: Item
+    heldPrefix: item-cat2
+  - type: Clothing
+    equippedPrefix: item-cat2
+  - type: WarpPoint
+    location: Люкс
+
+# Спавнера
+- type: entity
+  parent: MarkerBase
+  id: MMCSpawnMobMothroach
+  name: спавнер тарганомолі
+  suffix: Мрія
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: icon
+      sprite: Mobs/Animals/mothroach/mothroach.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MRMobMothroach
+
+- type: entity
+  parent: MarkerBase
+  id: MMCSpawnMobMothroachSynth
+  name: спавнер синтетичної тарганомолі
+  suffix: Мрія
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: icon
+      sprite: _Mriya/Mobs/Pets/synth_mothroach.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MRMobMothroachSynth
+
+- type: entity
+  parent: MarkerBase
+  id: MMCSpawnMobCatNox
+  name: спавнер кішки Нокс
+  suffix: Мрія
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: cat1
+      sprite: _Mriya/Mobs/Pets/co_cat.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MRMobCatNox
+
+- type: entity
+  parent: MarkerBase
+  id: MMCSpawnMobCatLux
+  name: спавнер кішки Люкс
+  suffix: Мрія
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: cat2
+      sprite: _Mriya/Mobs/Pets/co_cat.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MRMobCatLux

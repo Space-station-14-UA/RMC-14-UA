@@ -98,6 +98,9 @@
   id: RMCPodDoor
   description: Здається, що його зовсім не легко відчинити. Може краще пошукати якусь кнопку чи щось типу того?
   components:
+  - type: VehicleSmashable
+    smashSound:
+      path: /Audio/_RMC14/Effects/metal_crash.ogg
   - type: Door
     canPry: true
   - type: XenoCrusherChargable

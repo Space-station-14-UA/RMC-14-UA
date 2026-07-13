@@ -1,7 +1,7 @@
 - type: entity
   parent: [RMCBaseSlideMagazineVisualsBallistic, RMCWeaponRevolverBase]
   id: RMCWeaponRevolverMateba
-  name: кастомний револьвер Матеба # Sich Мають інший формат назви, бо зброя КО
+  name: кастомний револьвер Матеба # Mriya Мають інший формат назви, бо зброя КО
   description: Авторевольвер .454 Матеба 6 Уніка — це напівавтоматична ручна гармата, яка використовує власну віддачу для обертання барабану. Надзвичайно рідкісний, непомірно дорогий та неймовірно потужний, зазвичай його використовують старші офіцери КМПОН. Стильний, вишуканий й, перш за все, надзвичайно смертоносний.
   components:
   - type: Sprite
@@ -351,7 +351,7 @@
 - type: entity
   parent: CMBulletBase #Base bullet
   id: RMCBulletMateba
-#  name: куля (.454) – Sich
+#  name: куля (.454) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -366,7 +366,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletMatebaHighImpact #High impact
-#  name: ПУД куля (.454) – Sich
+#  name: ПУД куля (.454) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -395,20 +395,20 @@
 - type: entity
   parent: RMCBulletMatebaHighImpact
   id: RMCBulletMatebaHighImpactArmorPiercing #HIAP
-#  name: бронебійна ПУД куля (.454) – Sich
+#  name: бронебійна ПУД куля (.454) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 45
+        Piercing: 50
   - type: CMArmorPiercing
     amount: 50
 
 - type: entity
   parent: CMBulletBase
   id: RMCBulletMatebaHighExplosive #Explosive
-#  name: вибухова куля (.454) – Sich
+#  name: вибухова куля (.454) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

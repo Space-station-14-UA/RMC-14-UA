@@ -1,7 +1,10 @@
-﻿# Не морпіхотний персонал
+﻿# Non Marine Personnel
 cm-job-name-correspondent = Кореспондент
-cm-job-description-correspondent = Напишіть та запишіть все, що захочете. Як наприклад - героїчних морпіхів!
+cm-job-description-correspondent = Знімайте та повідомляєте про все, що вважаєте за потрібне! Покажіть життя та працю КМПОН зсередини.
 cm-job-prefix-correspondent = ПРЕСС
+cm-job-name-combat-correspondent = Військовий Кореспондент
+cm-job-description-combat-correspondent = Ви залучені до роботи в КМПОН, щоб зняти та показати реалії фронту, як воно є. Зніміть всі подвиги та злочини морпіхів!
+cm-job-prefix-combat-correspondent = ВК
 CMJobCorrespondent = Кореспондент
 
 cm-job-name-liaison = Представник Корпорації

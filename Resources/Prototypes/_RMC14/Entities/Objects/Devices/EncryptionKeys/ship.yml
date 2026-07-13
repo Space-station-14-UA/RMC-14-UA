@@ -435,6 +435,21 @@
   - type: Sprite
     state: cap_key
 
+# Executive Bodyguard
+- type: entity
+  parent: CMEncryptionKey
+  id: RMCEncryptionKeyExecutiveBodyguard
+  name: executive bodyguard radio encryption key
+  components:
+  - type: EncryptionKey
+    channels:
+    - MarineMedical
+    - WEYA
+    - MarineMilitaryPolice
+    defaultChannel: WEYA
+  - type: Sprite
+    state: cap_key
+
 # Combat Correspondent
 - type: entity
   parent: CMEncryptionKey
@@ -477,12 +492,14 @@
     - MarineJTAC
     - MarineMedical
     - MarineIntel
-    - MarineAlpha # Sich. До кінця цього компоненту
+    # Mriya start
+    - MarineAlpha
     - MarineBravo
     - MarineCharlie
     - MarineDelta
     - MarineEcho
     - MarineFoxtrot
+    # Mriya end
     defaultChannel: MarineCommand
   - type: Sprite
     state: cap_key
@@ -515,7 +532,7 @@
 - type: entity
   parent: CMEncryptionKey
   id: CMEncryptionKeyCrewman
-  name: ключ шифрування члена екіпажу
+  name: ключ шифрування оператора транспорту
   components:
   - type: EncryptionKey
     channels:
@@ -523,6 +540,16 @@
     - MarineEngineer
     - MarineMedical
     - MarineRequisition
+    # Mriya start
+    - MarineJTAC
+    - MarineIntel
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    # Mriya end
     defaultChannel: MarineCommand
   - type: Sprite
     state: cap_key

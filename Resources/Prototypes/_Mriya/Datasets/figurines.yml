@@ -1,0 +1,77 @@
+- type: localizedDataset
+  id: MRFigurinesNyavka
+  values:
+    prefix: mriya-figurines-nyavka-
+    count: 3
+
+- type: localizedDataset
+  id: MRFigurinesKholod
+  values:
+    prefix: mriya-figurines-kholod-
+    count: 1
+
+- type: localizedDataset
+  id: MRFigurinesAnta
+  values:
+    prefix: mriya-figurines-anta-
+    count: 1
+
+- type: localizedDataset
+  id: MRFigurinesNich
+  values:
+    prefix: mriya-figurines-nich-
+    count: 6
+
+- type: localizedDataset
+  id: MRFigurinesShepit
+  values:
+    prefix: mriya-figurines-shepit-
+    count: 4
+
+- type: localizedDataset
+  id: MRFigurinesShield
+  values:
+    prefix: mriya-figurines-shield-
+    count: 4
+
+- type: localizedDataset
+  id: MRFigurinesSyrena
+  values:
+    prefix: mriya-figurines-syrena-
+    count: 4
+
+- type: localizedDataset
+  id: MRFigurinesArchangel
+  values:
+    prefix: mriya-figurines-archangel-
+    count: 1
+
+- type: localizedDataset
+  id: MRFigurinesAssi
+  values:
+    prefix: mriya-figurines-assi-
+    count: 2
+
+- type: localizedDataset
+  id: MRFigurinesAltra
+  values:
+    prefix: mriya-figurines-altra-
+    count: 4
+
+- type: localizedDataset
+  id: MRFigurinesSonechko
+  values:
+    prefix: mriya-figurines-sonechko-
+    count: 3
+
+- type: localizedDataset
+  id: MRFigurinesNesomi
+  values:
+    prefix: mriya-figurines-nesomi-
+    count: 5
+
+- type: localizedDataset
+  id: MRFigurinesLynette
+  values:
+    prefix: mriya-figurines-lynette-
+    count: 4

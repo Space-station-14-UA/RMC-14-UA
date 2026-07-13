@@ -1,0 +1,559 @@
+# Початково мапа Тунгусочки (Tunguso4ka), але вже довгий час перероблюється Пігріхою (Pgriha) під потреб нашого серверу. Помітки MR start/end зроблені на прототипах яких не було в оригіналі
+# Структура:
+# . Тех. Приміщення
+# . Коридори (загальні)
+# . Бріг
+# . Командування
+# . Медичний
+# . Підтримка
+# . Казарми
+# . Інженерний
+# . Помпи
+# . Інше
+
+- type: entity
+  parent: RMCAreaAlmayer
+  id: MMCAreaSavannah
+  suffix: Зона Саванни
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _RMC14/Areas/savannah.rsi
+    state: savannah
+  - type: Area
+    powerNet: savannah
+
+# ТЕХ. ПРИМІЩЕННЯ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahMaints
+  abstract: true
+  components:
+  - type: Sprite
+    state: other
+
+- type: entity
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsStarboardBow
+  name: Тех. Приміщення Переднього Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsPortBow
+  name: Тех. Приміщення Переднього Лівого Борту
+
+- type: entity
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsStarboardBeam
+  name: Тех. Приміщення Центрального Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsPortBeam
+  name: Тех. Приміщення Центрального Лівого Борту
+
+- type: entity
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsStarboardQuarter
+  name: Тех. Приміщення Заднього Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahMaints
+  id: MMCAreaSavannahMaintsPortQuarter
+  name: Тех. Приміщення Заднього Лівого Борту
+
+# КОРИДОРИ (загальні)
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCorridorAmidship
+  name: Центральний Коридор
+  components:
+  - type: Sprite
+    state: other
+
+- type: entity
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorEngineering
+  name: Інженерний Коридор
+
+- type: entity
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorEscape
+  name: Коридор до Подів Евакуації
+
+- type: entity
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorBriefingStarboard
+  name: Коридор Брифінгу Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahCorridorAmidship
+  id: MMCAreaSavannahCorridorBriefingPort
+  name: Коридор Брифінгу Лівого Борту
+
+# БРІГ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahBrig
+  abstract: true
+  components:
+  - type: Sprite
+    state: security
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigCMP
+  name: Офіс ГВСП
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigWarden
+  name: Офіс Наглядача
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigRange
+  name: Тир Брігу
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigOB
+  name: Гармата Орбітального Бомбардування
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigCorridor
+  name: Головний Коридор Брігу
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigBow
+  name: Передній Коридор Брігу
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigPrison
+  name: Тюрма Брігу
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahBrigPrep
+  name: Казарми Брігу
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahStarboardPointDefense
+  name: Аварійні Порти Стикування Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahPortPointDefense
+  name: Аварійні Порти Стикування Лівого Борту
+
+## Mriya start
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahArmory
+  name: Зброярня Брігу
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahObservationRoom
+  name: Кімната Спостереження
+## Mriya end
+
+# КОМАНДУВАННЯ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCommand
+  abstract: true
+  components:
+  - type: Sprite
+    state: command
+  - type: Area
+    minimapColor: '#2D3FA2EE'
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahLiaison
+  name: Приймальня Представника
+
+## Mriya start
+- type: entity
+  parent: MMCAreaSavannahLiaison
+  id: MMCAreaSavannahLiaisonOffice
+  name: Офіс Представника
+
+- type: entity
+  parent: MMCAreaSavannahLiaison
+  id: MMCAreaSavannahLiaisonCabinet
+  name: Кабінет Представника
+
+- type: entity
+  parent: MMCAreaSavannahLiaison
+  id: MMCAreaSavannahLiaisonStorage
+  name: Склад Представника
+## Mriya end
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahPilotBunks
+  name: Койки Пілотів
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahOfficerBunks
+  name: Койки Офіцерів
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCommandingOfficer
+  name: Офіс Командуючого Офіцера
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCICCorridorPort
+  name: Лівий Коридор БІЦ
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCICCorridorStarboard
+  name: Правий Коридор БІЦ
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahCIC
+  name: Бойовий Інформаційний Центр
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahASO
+  name: Офіс ОП та Гіперсон Командування
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahTComms
+  name: Телекоми
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahIO
+  name: Офіс Розвідки
+  components:
+  - type: Area
+    retrieveItemObjective: true
+
+## Mriya start
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahVehicleStorage
+  name: Сховище Транспорта
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahVehiceCrew
+  name: Койки Операторів Транспорту
+
+- type: entity
+  parent: MMCAreaSavannahBrig
+  id: MMCAreaSavannahSynthetic
+  name: Сховище Синтетиків
+## Mriya end
+
+# МЕДИЧНИЙ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahMedical
+  name: Медичний Відділ
+  components:
+  - type: Sprite
+    state: medical
+  - type: IntelRecoverCorpsesArea
+
+- type: entity
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalSurgery
+  name: Хірургічні палати
+
+- type: entity
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalChemistry
+  name: Хімічна
+
+- type: entity
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalPreparation
+  name: Медичні Казарми
+
+## Mriya start
+- type: entity
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalResearch
+  name: Лабораторія
+  components:
+  - type: Area
+    retrieveItemObjective: true
+
+- type: entity
+  parent: MMCAreaSavannahMedicalResearch
+  id: MMCAreaSavannahMedicalResearchContaimentCell
+  name: Камери Утримування Лабораторії
+
+- type: entity
+  parent: MMCAreaSavannahMedicalResearch
+  id: MMCAreaSavannahMedicalResearchStorage
+  name: Склад Лабораторії
+
+- type: entity
+  parent: MMCAreaSavannahMedicalResearch
+  id: MMCAreaSavannahMedicalResearchChemistry
+  name: Хімічна Лабораторії
+
+- type: entity
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalMorgue
+  name: Морг
+
+- type: entity
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalCMO
+  name: Офіс Головного Лікаря
+
+- type: entity
+  parent: MMCAreaSavannahMedical
+  id: MMCAreaSavannahMedicalRestroom
+  name: Кімната Відпочинку Медичного
+## Mriya end
+
+# ПІДТРИМКА
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahAuxiliary
+  abstract: true
+  components:
+  - type: Sprite
+    state: requi
+
+- type: entity
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahHangarPort
+  name: Ангар Лівого Борту
+
+- type: entity
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahHangarStarboard
+  name: Ангар Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahPilotsRoom
+  name: Кімната Пілотів
+
+- type: entity
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahRequisitions
+  name: Постачання
+
+- type: entity
+  parent: MMCAreaSavannahRequisitions
+  id: MMCAreaSavannahQuartermaster
+  name: Офіс Офіцера Логістики
+
+- type: entity
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahCanteen
+  name: Їдальня
+
+## Mriya start
+- type: entity
+  parent: MMCAreaSavannahAuxiliary
+  id: MMCAreaSavannahBotany
+  name: Ботаніка
+## Mriya end
+
+# КАЗАРМИ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahAlphaBravo
+  name: Казарми Альфа-Браво
+  components:
+  - type: Sprite
+    state: alpha_bravo
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahAlpha
+  name: Казарми Альфа
+  components:
+  - type: Sprite
+    state: alpha
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahBravo
+  name: Казарми Браво
+  components:
+  - type: Sprite
+    state: bravo
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCharlieDelta
+  name: Казарми Чарлі-Дельта
+  components:
+  - type: Sprite
+    state: charlie_delta
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahCharlie
+  name: Казарми Чарлі
+  components:
+  - type: Sprite
+    state: charlie
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahDelta
+  name: Казарми Дельта
+  components:
+  - type: Sprite
+    state: delta
+
+# ІНЖЕНЕРНИЙ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahEngineering
+  name: Інженерія
+  components:
+  - type: Sprite
+    state: engineering
+  - type: Area
+    minimapColor: '#C19504E7'
+
+- type: entity
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahEngineeringGenerator
+  name: Реакторна Установка Судна
+
+- type: entity
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahChiefEngineer
+  name: Офіс Головного Інженера
+
+- type: entity
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahEngineeringPreparations
+  name: Інженерні Казарми
+
+- type: entity
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahAtmosStarboard
+  name: Атмос Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahAtmosPort
+  name: Атмос Лівого Борту
+
+# ПОМПИ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahLifeboatPumps
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _RMC14/Areas/areas_almayer.rsi
+    state: lifeboat_pump
+  - type: Area
+    hijackEvacuationArea: true
+    hijackEvacuationWeight: 0.25 # 0.1 в оригіналі
+    hijackEvacuationType: Add
+
+- type: entity
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpStarboardBow
+  name: Помпа Переднього Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpStarboardQuarter
+  name: Помпа Заднього Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpPortBow
+  name: Помпа Переднього Лівого Борту
+
+- type: entity
+  parent: MMCAreaSavannahLifeboatPumps
+  id: MMCAreaSavannahPumpPortQuarter
+  name: Помпа Заднього Лівого Борту
+
+# ІНШЕ
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahSEA
+  name: Офіс Інструктора та Тир
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahBriefing
+  name: Брифінг Зала
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahLifeboatAmidship
+  name: Центральне Стикування Рятувальних Шлюпок
+
+- type: entity
+  parent: MMCAreaSavannahLifeboatAmidship
+  id: MMCAreaSavannahLifeboatStarboard
+  name: Стикування Рятувальної Шлюпки Правого Борту
+
+- type: entity
+  parent: MMCAreaSavannahLifeboatAmidship
+  id: MMCAreaSavannahLifeboatPort
+  name: Стикування Рятувальної Шлюпки Лівого Борту
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahMemorial
+  name: Меморіал
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahChurch
+  name: Церква
+
+## Mriya start
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahPress
+  name: Офіс Преси
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahDisposals
+  name: Смітник
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahToilets
+  name: Вбиральні
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahOuter
+  name: Зовнішня обшивка
+## Mriya end

@@ -27,6 +27,7 @@
     - Burst
     soundGunshot:
       path: /Audio/_RMC14/Weapons/Guns/Gunshots/su6_shoot.ogg
+  - type: GunClickToFire
   - type: RMCSelectiveFire
     baseFireModes:
     - SemiAuto
@@ -68,7 +69,7 @@
 - type: entity
   parent: CMBaseMagazinePistol
   id: RMCMagazinePistolSU6
-  name: СП-6 магазин (.45 АПК) # Sich. ACP – Automatic Colt Pistol, Автоматичний Пістолет Кольт – АПК
+  name: СП-6 магазин (.45 АПК) # Mriya. ACP – Automatic Colt Pistol, Автоматичний Пістолет Кольт – АПК
   components:
   - type: Tag
     tags:
@@ -104,7 +105,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletPistol45ACP
-#  name: куля (.45 ACP) – Sich
+#  name: куля (.45 ACP) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

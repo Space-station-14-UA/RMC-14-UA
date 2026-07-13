@@ -4,12 +4,39 @@
   name: cm-job-name-senior-enlisted-advisor
   description: cm-job-description-senior-enlisted-advisor
   playTimeTracker: CMJobSeniorEnlistedAdvisor
-  ranks: # TODO Selectable Ranks for SEA
+#  requirements: – MR. Якщо ми даємо людині вайтліст, то вона вже достатньо награла
+#  - !type:DepartmentTimeRequirement
+#    department: CMSquad
+#    time: 54000 # 15 hours
+#  - !type:TotalJobsTimeRequirement
+#    group: CMJobsEngineering
+#    time: 36000 # 10 hours
+#  - !type:DepartmentTimeRequirement
+#    department: CMMilitaryPolice
+#    time: 54000 # 15 hours
+#  - !type:TotalJobsTimeRequirement
+#    group: CMJobsMedical
+#    time: 54000 # 15 hours
+#  - !type:DepartmentTimeRequirement
+#    department: CMCommand
+#    time: 54000 # 15 hours
+#  - !type:DepartmentTimeRequirement
+#    department: CMRequisitions
+#    time: 36000 # 10 hours
+  ranks:
     RMCRankSergeantMajor:
     - !type:RoleTimeRequirement
       role: CMJobSeniorEnlistedAdvisor
       time: 252000 # 70 hours
+    RMCRankMasterGunnerySergeant:
+    - !type:RoleTimeRequirement
+      role: CMJobSeniorEnlistedAdvisor
+      time: 252000 # 70 hours
     RMCRankFirstSergeant:
+    - !type:RoleTimeRequirement
+      role: CMJobSeniorEnlistedAdvisor
+      time: 36000 # 10 hours
+    RMCRankMasterSergeant:
     - !type:RoleTimeRequirement
       role: CMJobSeniorEnlistedAdvisor
       time: 36000 # 10 hours
@@ -19,7 +46,7 @@
   joinNotifyCrew: true
   latejoinArrivalSound:
     path: /Audio/_RMC14/Announcements/ARES/attention_jingle.ogg
-  marineAuthorityLevel: 5
+  marineAuthorityLevel: 0 # Mriya. 5 в оригіналі, ніяких інструкторів-командирів
   supervisors: rmc-job-supervisors-commander
   whitelisted: true
   accessGroups:
@@ -46,7 +73,7 @@
         RMCSkillPowerLoader: 2
         RMCSkillResearch: 1
         RMCSkillSurgery: 2
-        RMCSkillVehicles: 2
+        RMCSkillVehicles: 3 # Mriya. 2 в оригіналі
     - type: MarineOrders
     - type: CMVendorUser
       id: CMSeniorEnlistedAdvisor

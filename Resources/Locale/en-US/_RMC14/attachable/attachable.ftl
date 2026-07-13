@@ -13,6 +13,7 @@ rmc-aslot-harness = Harness
 rmc-attachable-activation-fail-not-wielded = {CAPITALIZE($holder)} треба тримати в двох руках, щоб активувати {$attachable}!
 rmc-attachable-activation-fail-not-held = {CAPITALIZE($holder)} потрібно тримати, щоб активувати {$attachable}!
 rmc-attachable-activation-fail-not-owned = {CAPITALIZE($holder)} треба тримати або екіпірувати щоб активувати {$attachable}!
+rmc-attachable-activation-fail-on-vehicle = Ви не можете розгорнути {$attachable}, коли знаходитеся в транспорті!
 
 rmc-attachable-shoot-fail-not-wielded = {CAPITALIZE($holder)} потрібно тримати в руках, щоб стріляти {$attachable}!
 
@@ -72,3 +73,10 @@ rmc-attachable-examine-speed-walk = [color={$colour}]{$sign}{TOSTRING($speed, "F
 rmc-attachable-examine-speed-sprint = [color={$colour}]{$sign}{TOSTRING($speed, "F2")}[/color] множник швидкості бігу.
 
 rmc-attachable-examine-wield-delay = [color={$colour}]{$sign}{$delay}[/color] секунд затримки.
+
+rmc-attachable-examine-verb-text = View Compatible Attachments
+rmc-attachable-examine-window-title = Compatible Attachments
+rmc-attachable-examine-no-slots = This weapon has no attachment slots.
+rmc-attachable-examine-header = [bold]Attachment slots:[/bold]
+rmc-attachable-examine-slot-filled = • [bold]{$slot}:[/bold] {$attachment}
+rmc-attachable-examine-slot-empty = • [bold]{$slot}:[/bold] [color=gray]empty[/color]

@@ -1,64 +1,76 @@
-<Document>
+﻿<Document>
   Guide by Kynthos on Discord
 
-  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]КОРПУС МОРСЬКОЇ ПІХОТИ ОБ'ЄДНАНИХ НАЦІЙ[/bold][/head]\n
+  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]UNITED NATIONS MARINE CORPS[/bold][/head]\n
   [color=#5f698a]▀ ▄▀ █ ▀█ [/color]
 
-  ##Обслуговуючий інженер
+  ##Maintenance Technician
 
-  Обслуговуючий інженер є членом інженерного відділу корабля. Його основне завдання це підтримка цілісності судна: як через складні інженерні роботи з енергосистемою, так і виконуючи простіші завдання, на кшталт прибирання коридорів. За наявності відповідного дозволу від керівництва, інженеру можуть доручити будівельні проєкти як на борту корабля, так і в межах операції. Від вас очікуються такі завдання:
+  The Maintenance Technician is a member of the warship's Engineering department. Their primary job is to maintain the integrity of the warship, both the complex engineering tasks of maintaining power, and the menial tasks of keeping the hallways clean. With proper authorization, the Maintenance Technician may be entrusted with various construction projects, on the warship or within the AO. The following tasks are expected from you:
 
-  #Підтримання енергопостачання
+  #Maintaining Power
 
-  Енергопостачання як на Саванні, так і в районі операцій залежить від повністю справних генераторів.
+  Power on the Almayer requires generators.
 
   <Box>
     <GuideEntityEmbed Entity="RMCGeneratorFusion"/>
     <GuideEntityEmbed Entity="RMCGeneratorFusionColony"/>
   </Box>
 
-  На борту Саванни електроенергію забезпечують [bold]термоядерні реактори S-52[/bold]. Вони вже повністю активні на початку кожної операції та залишаються справними, навіть якщо їх не обслуговувати.
+  Aboard the Almayer, power is supplied by the [bold]S-52 Fusion Reactors[/bold]. These start fully operational and powered at the beginning of each operation, and will be completely fine if left unattended in most cases.
 
-  У районі операцій електроенергію забезпечують [bold]геотермальні генератори G-11[/bold]. Вони будуть зламані та знеструмлені на момент висадки морських піхотинців, і зазвичай саме бойові техніки відповідають за їхнє відновлення. Обсяг необхідної роботи залежить від ступеня пошкодження машини. Щоб відремонтувати генератор:
+    #Reloading the Orbital Cannon
 
-  - Спочатку скористайтеся [bold]зварювальним апаратом[/bold], щоб зварити панелі.
-  - Потім використовуйте [bold]кусачки[/bold], щоб полагодити дроти.
-  - Нарешті скористайтеся [bold]гайковим ключем[/bold], щоб закріпити машину на місці.
+    The bow of the Almayer houses the devastating Orbital Cannon, used to rain hellfire upon the enemies of the UNMC. Maintenance Technicians are directly responsible for maintaining this on behalf of the CIC, which is accessible via the nearby Maintenance tunnels. This should be only conducted under direct orders from the Commander of the operation to ensure the correct bomb is chambered.
 
-  Коли загоряється синій екран, генератор працює і подає електроенергію.
+    The Almayer will start with random warheads found nearby the Cannon, as well as plenty of solid fuel tanks to power the machine. Command will have the means to obtain more warheads should they be required.
 
-  Енергія, вироблена генераторами, бездротово передається до [bold]ЗКЖ[/bold] (зовнішніх контролерів живлення). Вони зберігають невеликий запас енергії на випадок відмови генераторів. Далі живлення розподіляється до найближчої електроніки - дверей, освітлення, автоматів тощо. Якщо ЗКЖ буде знищено, відповідна ділянка залишиться без енергії. Відремонтувати ЗКЖ надзвичайно просто - достатньо лише скористатися викруткою, як би іронічно це не звучало.
+    There are several bombs you may be asked to load, and you can confirm the payload type by inspecting it.
 
-  #Побудова ПОБ
+    Once the payload type is confirmed with the Commander, use the Orbital Cannon Console to determine how much fuel launching the payload will take. This will be different between operations.
 
-  Іноді може виникнути потреба тимчасово відправити корабельний персонал для будівництва та обслуговування [bold]Передової Оперативної Бази (ПОБ)[/bold] у районі операцій. У такому разі залишайтеся на постійному зв’язку з [bold]Головним Інженером[/bold] - саме він координує завдання та відповідає за вашу безпеку. Небезпечні роботи слід залишити [bold]бойовим технікам[/bold].
+    Using a Power Loader, carry the Warhead and the correct number of Solid fuel tanks and insert them into the Orbital Cannon itself. The Cannon Console will display what has been loaded in case you forget. Once the Cannon is loaded, use the Console to load the payload, and then chamber the payload.
 
-  #Взламування
+    [bold]While a loaded payload can be unloaded, once a payload is chambered it can only be unloaded by firing the cannon![/bold]
 
-  У надзвичайних ситуаціях або за наявності дозволу може виникнути потреба у взламувані чогось, щоб дістатися до недоступної ділянки. Для цього вам знадобиться [bold]ізоляційні рукавички[/bold], а також викрутка, кусачки та мультитул. Щоб почати взлом:
+    Upon completion, notify your superiors, as only they are authorized to fire such a brutal weapon. Until the Cannon needs to be reloaded, your job here is complete.
 
-  - Скористайтеся викруткою, щоб відкрити панель обслуговування.
-  - Отримайте доступ до внутрішньої панелі з дротами.
-  - [bold]У ізоляційних рукавичках[/bold] використовуйте мультитул або кусачки, щоб пульсувати та перерізати чи відновити дроти відповідно. Кожен дріт відповідає за окрему функцію, і взаємодія з ним вимикає або змінює її роботу. Комбінації дротів змінюються з кожною операцією, тому вам доведеться визначати їх самостійно.
-  - Після завершення скористайтеся викруткою, щоб закрити панель.
+  #Constructing the FOB
 
-  Більшість операцій зі зламу проводяться на дверях і торгових автоматах. Найпоширеніші застосування:
+  It may be necessary to temporarily send down shipside staff to construct and maintain the Forward Operating Base in the AO. If this happens stay in constant contact with the Chief Engineer who will direct tasks and keep you safe. Dangerous work should be left to the Combat Technicians.
 
-  - [Bold]Болтування або розболтування дверей[/bolt]: Заболтувати двері можна, пульснувши або перерізавши дріт, який керує болтами. Щоби зняти болтування, спершу відновіть живлення, а потім пульсніть дріт болтів. Увага: простий ремонт дроту не знімає болти - це лише відновлює живлення.
-  - [bold]Відкриття зачинених дверей шляхом зламу[/bold]: Щоб відкрити двері, до яких ви не маєте доступу, переріжте обидва дроти, що живлять двері. Після цього скористайтеся [bold]ломом[/bold], щоб примусово відчинити знеструмлені двері. Пульсація одного з дротів живлення тимчасово вимикає живлення дверей - цього буває достатньо, щоби їх відкрити.
-  - [bold]Доступ до заблокованого торгового автомата[/bold]: Щоб зняти ID-перевіку на автоматі, переріжте дріт, відповідальний за перевірку доступу. Після цього будь-хто зможе вільно видавати товари. Якщо ж подати імпульс на цей дріт - ID-перевірка вимкнеться лише на короткий час.
+  #Hacking
+
+  In emergencies or when authorized, hacking your way through obstacles to access an inaccessible area may be required. For any hacking job, you will want to be wearing some [bold]insulated gloves[/bold] as well as be equipped with a screwdriver, wire cutters, and security access tuner. To begin hacking:
+
+  <Box>
+    <GuideEntityEmbed Entity="CMHandsInsulated"/>
+    <GuideEntityEmbed Entity="CMScrewdriver"/>
+    <GuideEntityEmbed Entity="CMMultitool"/>
+  </Box>
+
+  - Use a screwdriver to open the maintenance panel.
+  - Access the machine to open the wire panel.
+  - [bold]While wearing insulated gloves[/bold] use a security access tuner or wire cutter to pulse or cut/repair the wires respectively. Each wire will correspond to a function of the machine you are hacking and interacting with each will disable or alter the way that function works. The wires that control each function will vary between operations.
+  - Once finished, use a screwdriver to close the maintenance panel.
+
+  Most hacking exercises will occur on doors and vending machines. The most common applications are:
+
+  - [Bold]Bolting or Unbolting a Door[/bolt]: Bolting a door is as simple as pulsing or cutting the wire that powers the bolt function. To unbolt a door, you will need to repair the power wires, and then pulse the wire that controls the bolt function. Repairing the wire will not unbolt the door.
+  - [bold]Hacking a door open[/bold]: To open a door you do not have access to, cut the two wires that controls the door power. Then use a crowbar to pry the unpowered door open. Pulsing one of the power wires will temporarily disable power to the door.
+  - [bold]Accessing a locked vending machine[/bold]: To access a vending machine you do not have access to, cut the wire that controls the ID access check, which will allow anyone to dispense items. Pulsing this wire instead will only temporarily disable the ID access check.
 
 
 
-  Якщо хочете знати більше про хитрощі зламу, не соромтесь запитати своїх колег-інженерів або Головного Інженера.
+  For additional hacking secrets, try asking your fellow Maintenance Technicians or your direct supervisor, the Chief Engineer.
 
-  #Робота, за яку ніхто не хоче братись робити
+  #Jobs no one else wants to do
 
-  Заміна лампочок, прибирання сміття та ремонт після вандалізму - лише частина з багатьох "брудних" завдань, які вам доручать. Усе це входить до інженерного обслуговування. Якщо вам це набридло, ви завжди можете запросити дозвіл на щось креативніше - або просто бродити коридорами Саванни в пошуках нагоди.
+  Replacing lights, cleaning up trash, and repairing vandalism are among the many menial tasks you will be entrusted with. It all falls under maintenance. If you've had enough of this, you can always seek authorization for something more creative or explore the halls of the Almayer until an opportunity arises.
 
-  Коли ви розвинете свої інженерні навички, спробуйте зіграти за [textlink="Бойового Техніка" link="RMCGuideRoleCombatTechnician"]
+  Once you are comfortable with your Engineering skills, try enlisting as a [textlink="Combat Technician" link="RMCGuideRoleCombatTechnician"].
 
-  Якщо ви не впевнені, що робити або куди йти - зверніться до [bold]Інструктора[/bold] за допомогою.
+  If you are ever unsure of what to do or where to go, seek out the Senior Enlisted Advisor for additional assistance.
 
   <Box>
     <GuideEntityEmbed Entity="CMGuidebookRoleSEA"/>

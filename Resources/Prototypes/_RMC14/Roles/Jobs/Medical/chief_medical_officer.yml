@@ -3,6 +3,7 @@
   id: CMCMO
   name: rmc-job-name-cmo
   description: rmc-job-description-cmo
+  newToJobInfo: rmc-new-to-job-cmo
   playTimeTracker: CMJobCMO
   requirements:
   - !type:TotalJobsTimeRequirement
@@ -33,7 +34,7 @@
     - type: Skills
       skills:
         RMCSkillEndurance: 1
-        RMCSkillFirearms: 1 # Sich. 0 в оригіналі
+        RMCSkillFirearms: 1 # Mriya. 0 в оригіналі
         RMCSkillFireman: 1
         RMCSkillIntel: 1
         RMCSkillJtac: 3

@@ -1,0 +1,13 @@
+# Командуючий офіцер
+- type: loadoutGroup
+  id: MRCOVisor
+  name: mriya-loadout-group-role-specific-visor
+  loadouts:
+  - MRCONightVisionVisor
+
+# Інструктор
+- type: loadoutGroup
+  id: MRSEAVisor
+  name: mriya-loadout-group-role-specific-visor
+  loadouts:
+  - MRSEANightVisionVisor

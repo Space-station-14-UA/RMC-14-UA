@@ -1,22 +1,23 @@
-﻿rmc-power-loader-hands-occupied = You need both hands free to operate {THE($mech)}.
-rmc-power-loader-cant-grab-full = {THE($mech)}'s clamps are full! Drop something first.
-rmc-power-loader-too-close = You can't place something that close!
-rmc-power-loader-too-far = That is too far away!
-rmc-power-loader-cant-drop-occupied = You can't drop {THE($drop)} here, something is blocking the way!
+rmc-power-loader-hands-occupied = Ваші руки мають бути вільними щоб керувати {$mech}.
+rmc-power-loader-cant-grab-full = Затискачі {$mech} повні! Спочатку покладіть щось.
+rmc-power-loader-too-close = Ви не можете покласти щось так близько!
+rmc-power-loader-too-far = Задалеко!
+rmc-power-loader-cant-drop-occupied = Ви не можете покласти {$drop} тут, щось стоїть на заваді!
 
-rmc-power-loader-nothing-attached = There's nothing attached here!
-rmc-power-loader-discard-empty = You discard the empty {$ammo}.
-rmc-power-loader-transfer-ammo = You transfer {$rounds} {$rounds ->
-  [one] round
-  *[other] rounds
-} to {THE($ammo)}.
-rmc-power-loader-wrong-weapon = That's the wrong kind of ammo!
-rmc-power-loader-wrong-ammo = They're different types of ammo!
-rmc-power-loader-full-ammo = {CAPITALIZE(THE($ammo))} is full!
+rmc-power-loader-nothing-attached = Тут нічого не закріплено!
+rmc-power-loader-discard-empty = Ви скидаєте порожні {$ammo}.
+rmc-power-loader-transfer-ammo = Ви переносите {$rounds} {$rounds ->
+  [one] набій
+  *[other] набоїв
+} в {$ammo}.
+rmc-power-loader-wrong-weapon = Несумісний тип боєприпасів!
+rmc-power-loader-wrong-ammo = Це різні типи боєприпасів!
+rmc-power-loader-full-ammo = {CAPITALIZE($ammo)} повний!
 
-rmc-power-loader-occupied-weapon = There's already a weapon installed there!
-rmc-power-loader-occupied-deployer = There's already an equipment deployer installed there!
-rmc-power-loader-occupied-ammo = You need to unload the ammo crate inside first!
-rmc-power-loader-ammo-no-weapon = You need to install a weapon first!
+rmc-power-loader-occupied-weapon = Сюди вже встановлено зброю!
+rmc-power-loader-occupied-deployer = Сюди вже встановлено спорядження!
+rmc-power-loader-occupied-ammo = Спочатку витягніть боєприпаси що всередині!
+rmc-power-loader-occupied-deployable = Спочатку розрядіть озброєння!
+rmc-power-loader-ammo-no-weapon = Спочатку встановіть зброю!
 
-rmc-power-loader-occupied = There's already something installed there!
+rmc-power-loader-occupied = Сюди вже щось встановлено!

@@ -8,13 +8,9 @@ cm-cpr-other-perform-fail = {$performer} невдало робить СЛР {$ta
 
 rmc-cpr-dummy-verb-pickup = Підібрати
 rmc-cpr-dummy-verb-reset = Скинути лічильник кількості СЛР
-rmc-cpr-dummy-deploy-self = Ви налаштовуєте манекен для СЛР.
-rmc-cpr-dummy-deploy-others = {$user} налаштовує манекен для СЛР!
-rmc-cpr-dummy-success-self = Ви робите СЛР для манекенена.
-rmc-cpr-dummy-success-others = {$user} робить СЛР для манекена.
-rmc-cpr-dummy-fail-self = Вам не вдалося зробити СЛР для манекена. Неправильний ритм, спробуйте сповільнитися.
-rmc-cpr-dummy-fail-others = {$user} невдало робить СЛР манекену.
+rmc-cpr-dummy-deploy-self = Вам не вдалося зробити СЛР для манекена. Неправильний ритм, спробуйте сповільнитися.
+rmc-cpr-dummy-deploy-others = {$user} невдало робить СЛР манекену.
 rmc-cpr-dummy-examine-successful = [color=green]Успішні СЛР: {$count}.[/color]
 rmc-cpr-dummy-examine-failed = [color=red]Невдалі СЛР: {$count}.[/color]
-rmc-cpr-dummy-reset-denied = Скидання лічильника СЛР може бути виконано лише {$jobs}
 rmc-cpr-dummy-reset-success = Ви скидаєте лічильник кількості СЛР.
+rmc-cpr-dummy-reset-denied = Скидання лічильника СЛР може бути виконано лише {$jobs}

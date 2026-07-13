@@ -34,18 +34,18 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "]=", "chatsan-frowns" },
         { ":D", "chatsan-smiles-widely" },
         { "D:", "chatsan-frowns-deeply" },
-        { ":Д", "chatsan-smiles-widely" }, // Sich
-        { "Д:", "chatsan-frowns-deeply" }, // Sich
+        { ":Д", "chatsan-smiles-widely" }, // Mriya
+        { "Д:", "chatsan-frowns-deeply" }, // Mriya
         { ":O", "chatsan-surprised" },
-        { ":О", "chatsan-surprised" }, // Sich
+        { ":О", "chatsan-surprised" }, // Mriya
         { "!", "chatsan-surprised" }, // RMC14
         { ":3", "chatsan-smiles" },
-        { ":з", "chatsan-smiles" }, // Sich
+        { ":з", "chatsan-smiles" }, // Mriya
         { ":S", "chatsan-uncertain" },
         { ":>", "chatsan-grins" },
         { ":<", "chatsan-pouts" },
         { "xD", "chatsan-laughs" },
-        { "хД", "chatsan-laughs" }, // Sich
+        { "хД", "chatsan-laughs" }, // Mriya
         { ":'(", "chatsan-cries" },
         { ":'[", "chatsan-cries" },
         { "='(", "chatsan-cries" },
@@ -57,15 +57,15 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { ";-;", "chatsan-cries" },
         { ";_;", "chatsan-cries" },
         { "qwq", "chatsan-cries" },
-        { ",),", "chatsan-cries" }, // Sich-MIU
+        { ",),", "chatsan-cries" }, // Mriya-MIU
         { "t.t", "rmc-chatsan-emote-sobs" }, // RMC14 should be cries after case sensitive emote detection
         { "t-t", "rmc-chatsan-emote-sobs" }, // RMC14
         { "t_t", "rmc-chatsan-emote-sobs" }, // RMC14
         { "t~t", "rmc-chatsan-emote-sobs" }, // RMC14
-        { "т.т", "rmc-chatsan-emote-sobs" }, // Sich
-        { "т-т", "rmc-chatsan-emote-sobs" }, // Sich
-        { "т_т", "rmc-chatsan-emote-sobs" }, // Sich
-        { "т~т", "rmc-chatsan-emote-sobs" }, // Sich
+        { "т.т", "rmc-chatsan-emote-sobs" }, // Mriya
+        { "т-т", "rmc-chatsan-emote-sobs" }, // Mriya
+        { "т_т", "rmc-chatsan-emote-sobs" }, // Mriya
+        { "т~т", "rmc-chatsan-emote-sobs" }, // Mriya
 //        { "T.t", "chatsan-cries" }, // RMC14
 //        { "T-t", "chatsan-cries" }, // RMC14
 //        { "T_t", "chatsan-cries" }, // RMC14
@@ -81,36 +81,36 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { ":u", "chatsan-smiles-smugly" },
         { ":v", "chatsan-smiles-smugly" },
         { ">:i", "chatsan-annoyed" },
-        { ">:і", "chatsan-annoyed" }, // Sich
+        { ">:і", "chatsan-annoyed" }, // Mriya
         { ":i", "chatsan-sighs" },
-        { ":і", "chatsan-sighs" }, // Sich
+        { ":і", "chatsan-sighs" }, // Mriya
         { ":|", "chatsan-sighs" },
         { ":p", "chatsan-stick-out-tongue" },
         { ";p", "chatsan-stick-out-tongue" },
-        { ":р", "chatsan-stick-out-tongue" }, // Sich
-        { ";р", "chatsan-stick-out-tongue" }, // Sich
+        { ":р", "chatsan-stick-out-tongue" }, // Mriya
+        { ";р", "chatsan-stick-out-tongue" }, // Mriya
         { ":b", "chatsan-stick-out-tongue" },
         { "0-0", "chatsan-wide-eyed" },
         { "o-o", "chatsan-wide-eyed" },
         { "o.o", "chatsan-wide-eyed" },
-        { "0_0", "chatsan-wide-eyed" }, // Sich
-        { "0.0", "chatsan-wide-eyed" }, // Sich
-        { "о-о", "chatsan-wide-eyed" }, // Sich
-        { "о.о", "chatsan-wide-eyed" }, // Sich
-        { "omg", "chatsan-wide-eyed" }, // Sich
-        { "омг", "chatsan-wide-eyed" }, // Sich
+        { "0_0", "chatsan-wide-eyed" }, // Mriya
+        { "0.0", "chatsan-wide-eyed" }, // Mriya
+        { "о-о", "chatsan-wide-eyed" }, // Mriya
+        { "о.о", "chatsan-wide-eyed" }, // Mriya
+        { "omg", "chatsan-wide-eyed" }, // Mriya
+        { "омг", "chatsan-wide-eyed" }, // Mriya
         { "._.", "chatsan-surprised" },
-        { "о_0", "chatsan-surprised" }, // Sich
-        { "0_о", "chatsan-surprised" }, // Sich
-        { "о.0", "chatsan-surprised" }, // Sich
-        { "0.о", "chatsan-surprised" }, // Sich
-        { ".).", "chatsan-surprised" }, // Sich-MIU
+        { "о_0", "chatsan-surprised" }, // Mriya
+        { "0_о", "chatsan-surprised" }, // Mriya
+        { "о.0", "chatsan-surprised" }, // Mriya
+        { "0.о", "chatsan-surprised" }, // Mriya
+        { ".).", "chatsan-surprised" }, // Mriya-MIU
         { ".-.", "chatsan-confused" },
         { "?", "chatsan-confused" }, // RMC14
         { "-_-", "chatsan-unimpressed" },
         { "smh", "chatsan-unimpressed" },
         { "o/", "chatsan-waves" },
-        { "о/", "chatsan-waves" }, // Sich
+        { "о/", "chatsan-waves" }, // Mriya
         { "^^/", "chatsan-waves" },
         { ":/", "chatsan-uncertain" },
         { ":\\", "chatsan-uncertain" },
@@ -120,23 +120,23 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "lel", "chatsan-laughs" },
         { "kek", "chatsan-laughs" },
         { "rofl", "chatsan-laughs" },
-        { "лмао", "chatsan-laughs" }, // Sich
-        { "лмфао", "chatsan-laughs" }, // Sich
-        { "лол", "chatsan-laughs" }, // Sich
-        { "кек", "chatsan-laughs" }, // Sich
-        { "рофл", "chatsan-laughs" }, // Sich
+        { "лмао", "chatsan-laughs" }, // Mriya
+        { "лмфао", "chatsan-laughs" }, // Mriya
+        { "лол", "chatsan-laughs" }, // Mriya
+        { "кек", "chatsan-laughs" }, // Mriya
+        { "рофл", "chatsan-laughs" }, // Mriya
         { "o7", "chatsan-salutes" },
-        { "о7", "chatsan-salutes" }, // Sich
+        { "о7", "chatsan-salutes" }, // Mriya
         { ";_;7", "chatsan-tearfully-salutes" },
         { ";-;7", "chatsan-tearfully-salutes" }, // RMC14
         { "t.t7", "chatsan-tearfully-salutes" }, // RMC14
         { "t-t7", "chatsan-tearfully-salutes" }, // RMC14
         { "t_t7", "chatsan-tearfully-salutes" }, // RMC14
         { "t~t7", "chatsan-tearfully-salutes" }, // RMC14
-        { "т.т7", "chatsan-tearfully-salutes" }, // Sich
-        { "т-т7", "chatsan-tearfully-salutes" }, // Sich
-        { "т_т7", "chatsan-tearfully-salutes" }, // Sich
-        { "т~т7", "chatsan-tearfully-salutes" }, // Sich
+        { "т.т7", "chatsan-tearfully-salutes" }, // Mriya
+        { "т-т7", "chatsan-tearfully-salutes" }, // Mriya
+        { "т_т7", "chatsan-tearfully-salutes" }, // Mriya
+        { "т~т7", "chatsan-tearfully-salutes" }, // Mriya
 //        { "T.t7", "chatsan-tearfully-salutes" }, // RMC14
 //        { "T-t7", "chatsan-tearfully-salutes" }, // RMC14
 //        { "T_t7", "chatsan-tearfully-salutes" }, // RMC14
@@ -150,7 +150,7 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
 //        { "T_T7", "chatsan-tearfully-salutes" }, // RMC14
 //        { "T~T7", "chatsan-tearfully-salutes" }, // RMC14
         { "idk", "chatsan-shrugs" },
-        { "хз", "chatsan-shrugs" }, // Sich
+        { "хз", "chatsan-shrugs" }, // Mriya
         { "idgaf", "chatsan-shrugs" }, // RMC14
         { ";)", "chatsan-winks" },
         { ";]", "chatsan-winks" },

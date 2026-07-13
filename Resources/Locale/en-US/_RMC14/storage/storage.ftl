@@ -9,22 +9,24 @@ rmc-storage-limit-max-ammo = Більше набоїв не влізе!
 rmc-storage-limit-max-ammo-webbing = Ви не можете покласти більше набоїв в розвантажку!
 rmc-storage-limit-one-binoculars = Тут вже є бінокль!
 rmc-storage-limit-one-command-tablet = Воно вже містить планшет!
-rmc-storage-limit-accessories = You can't fit any more accessories in the helmet!
-rmc-storage-limit-grenades = You can't fit any more grenades!
-rmc-storage-limit-not-ziptie-box = That slot is reserved for a ziptie box!
+rmc-storage-limit-accessories = Ви не можете начепити більше аксесуарів на шолом!
+rmc-storage-limit-grenades = Ви не можете вмістити більше гранат!
+rmc-storage-limit-not-ziptie-box = Це місце зарезервоване для коробки стяжок!
 rmc-storage-nothing-left = {CAPITALIZE($storage)} порожній. Нема що взяти.
 rmc-storage-limit-generic = Сховище не може вмістити більше цих предметів!
 
-rmc-holster-verb = Unholster
+rmc-holster-verb = Дістати
 rmc-storage-webbing-remove-verb = Зняти РПС
 rmc-storage-medal-remove-verb = Зняти медаль
-rmc-storage-holster-eject-verb = Unholster
-rmc-storage-nested-unable = You can't seem to open {THE($nested)} while it is in {THE($parent)}.
-rmc-storage-store-skill-unable = The storage cannot hold that item!
+rmc-storage-holster-eject-verb = Дістати
+rmc-storage-nested-unable = Схоже, ви не можете відкрити {$nested}, доки він знаходиться в {$parent}.
+rmc-storage-store-skill-unable = Це не може вмістити в себе цей предмет!
 
-rmc-storage-hand-switch = Switch Storage Drawing Method
+rmc-storage-hand-switch = Змінити Метод Взаємодії
 
-rmc-storage-hand-eject-last-item = Clicking {THE($storage)} with an empty hand now puts the last stored item in your hand.
-rmc-storage-hand-eject-first-item = Clicking {THE($storage)} with an empty hand now puts the first stored item in your hand.
-rmc-storage-hand-eject-unequips = Clicking {THE($storage)} now unequips it.
-rmc-storage-hand-eject-open = Clicking {THE($storage)} now opens it.
+rmc-storage-hand-eject-last-item = Тепер натискання на {$storage} пустою рукою перемістить останній предмет у вашу руку.
+rmc-storage-hand-eject-first-item = Тепер натискання на {$storage} пустою рукою перемістить перший предмет у вашу руку.
+rmc-storage-hand-eject-unequips = Тепер натискання на {$storage} зніматиме його.
+rmc-storage-hand-eject-open = Тепер натискання на {$storage} відкриватиме це.
+
+rmc-hijack-cabinet-locked = Цей сейф буде розблоковано автоматично під час процедури евакуації.

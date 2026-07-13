@@ -1,0 +1,10 @@
+# Наш власний аналог migration.yml. Працює так само, призначений для наших міграцій
+
+# 2026-06-18
+FoodMeatXeno: MRFoodMeatXeno
+FoodBurgerXeno: MRFoodBurgerXeno
+FoodMeatXenoCutlet: MRFoodMeatXenoCutlet
+FoodMeatXenoCutletCooked: MRFoodMeatXenoCutletCooked
+
+# 2026-06-19
+CMPamphletLanguageRussian: null

@@ -1,0 +1,15 @@
+- type: entity
+  parent: CMDoubleDoorAlmayerGlass
+  id: MMCDoubleDoorBlackLiaisonLocked
+  suffix: Січ, Корпорат, Зачинено
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessWeYa" ] ]
+
+- type: entity
+  parent: CMDoubleDoorPersonalSolid
+  id: MMCDoubleDoorWhiteLiaisonLocked
+  suffix: Січ, Корпорат, Зачинено
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessWeYa" ] ]

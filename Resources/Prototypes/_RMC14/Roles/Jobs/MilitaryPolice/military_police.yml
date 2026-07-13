@@ -37,7 +37,7 @@
         RMCSkillEndurance: 2
         RMCSkillFirearms: 1
         RMCSkillFireman: 2
-        RMCSkillMedical: 1 # Sich. 0 в оригіналі
+        RMCSkillMedical: 1 # Mriya. 0 в оригіналі
         RMCSkillPolice: 2
     - type: JobPrefix
       prefix: cm-job-prefix-militarypolice
@@ -62,7 +62,7 @@
     outerClothing: CMArmorM2MP
     ears: CMHeadsetMPO
     belt: CMBeltSecurityMPFilled
-    #    pocket1: TODO RMC14 tape recorder
+    pocket1: RMCUniversalRecorder
     pocket2: RMCPouchGeneralLarge
 
 - type: entity

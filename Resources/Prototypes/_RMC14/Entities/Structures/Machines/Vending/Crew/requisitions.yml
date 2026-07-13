@@ -8,6 +8,7 @@
     access:
     - [ "CMAccessRequisitions" ]
   - type: CMAutomatedVendor
+    canManualRestock: true
     sound:
       path: /Audio/_RMC14/Machines/vending_drop.ogg
       params:
@@ -18,11 +19,16 @@
 - type: entity
   parent: ColMarTechCargo
   id: ColMarTechCargoGuns
-  name: ASRS automated armaments vendor
-  description: An automated supply rack hooked up to a big storage of various firearms, explosives, load carrying equipment, and other miscellaneous items. Can be accessed by the Logistics Officer and Requisitions Technicians.
+  name: автоматизована стійка амуніції АТСС
+  description: Автоматизована стійка постачання, підключена до великого складу різноманітної вогнепальної зброї, вибухових засобів, розвантажувального спорядження та інших предметів. Доступна для Старшого Офіцерського Складу, Офіцера Логістики та Вантажників.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/guns.rsi
+    layers:
+    - map: ["base"]
+      state: "off"
+    - map: ["enum.PowerDeviceVisualLayers.Powered"]
+      state: "base"
   - type: RMCRequisitionsVendor
   - type: CMAutomatedVendor
     baseSprite:
@@ -32,7 +38,7 @@
       sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/guns.rsi
       state: vend
     sections:
-    - name: Primary firearms
+    - name: Основна зброя
       entries:
       - id: WeaponShotgunM42A2
         amount: 30
@@ -42,7 +48,7 @@
         amount: 60
       - id: WeaponRifleM4SPR
         amount: 20
-    - name: Sidearms
+    - name: Пістолети
       entries:
       - id: RMCWeaponPistolM77Empty
         amount: 50
@@ -54,7 +60,7 @@
         amount: 50
       - id: RMCWeaponPistolM82FEmpty
         amount: 20
-    - name: Restricted Firearms
+    - name: Додаткова зброя
       entries:
       - id: RMCGunCasePistolMK80
         amount: 4
@@ -69,9 +75,9 @@
       - id: RMCM54CMK1Case
         amount: 3
       - id: RMCML66DCase
-        amount: 1 # Sich. 2 в оригіналі
+        amount: 1 # Mriya. 2 в оригіналі
       - id: RMCM2CCase
-        amount: 1 # Sich. 2 в оригіналі
+        amount: 1 # Mriya. 2 в оригіналі
       - id: RMCCaseFlamer
         amount: 2
       - id: RMCM85A1Case
@@ -80,7 +86,7 @@
         amount: 3
       - id: RMCXM51Case
         amount: 3
-    - name: Explosives
+    - name: Вибухівка
       entries:
       - id: CMGrenadeFragOld
         amount: 2
@@ -90,8 +96,8 @@
         amount: 25
       - id: RMCGrenadeIncendiary
         amount: 4
-      #- id: M40 HPDP White Phosphorus Smoke Grenade
-      #  amount: 4
+      - id: RMCGrenadeWhitePhosphorusCompound
+        amount: 4
       - id: CMGrenadeSmoke
         amount: 5
       - id: RMC40MMGrenadeM74AGMF
@@ -112,7 +118,7 @@
         amount: 3
       - id: RMCExplosiveBreachingCharge
         amount: 2
-    - name: Webbings
+    - name: Ремінно-плечові системи
       entries:
       - id: CMWebbingBrown
         amount: 2
@@ -138,7 +144,7 @@
         amount: 1
       - id: RMCOuterClothingExternalWebbing
         amount: 2
-    - name: Backpacks
+    - name: Рюкзаки
       entries:
       - id: CMBackpackMarine
         amount: 15
@@ -152,7 +158,7 @@
         amount: 1
       - id: RMCSatchelWelder
         amount: 5
-     # - id: RMCBackpackAmmo Sich
+     # - id: RMCBackpackAmmo – MR
      #   amount: 2
       - id: RMCBackpackRTO
         amount: 2
@@ -160,7 +166,7 @@
         amount: 20
       - id: RMCSatchelGrenadeSpec
         amount: 2
-    - name: Belts
+    - name: Ремені
       entries:
       - id: RMCBeltUtilityGeneral
         amount: 2
@@ -187,7 +193,7 @@
         amount: 10
       - id: CMBeltMortar
         amount: 2
-    - name: Pouches
+    - name: Підсумки
       entries:
       - id: RMCPouchAutoinjector
         amount: 1
@@ -240,7 +246,7 @@
         amount: 1
       - id: RMCPouchShotgunLarge
         amount: 1
-    - name: Essential Devices
+    - name: Основні пристрої
       entries:
       - id: RMCMotionDetector
         amount: 4
@@ -256,9 +262,9 @@
         amount: 1
       - id: RMCSentryLaptop
         amount: 4
-      #- id: Spare PDT/L Battle Buddy Kit
-      #  amount: 4
-    - name: Flare and Light
+      - id: CMSparePDTLBattleBuddyKit
+        amount: 4
+    - name: Ліхтарі та фаєри
       entries:
       - id: RMCFlashlight # Combat Flashlight
         amount: 8
@@ -266,7 +272,7 @@
         amount: 2
       - id: CMPackFlare
         amount: 10
-    - name: Miscellaneous
+    - name: Додаткове обладнання
       entries:
       - id: CMEntrenchingTool
         amount: 4
@@ -274,8 +280,8 @@
         amount: 10
       - id: RMCScabbardMacheteFilled
         amount: 6
-      #- id: MB-6 Folding Barricades (x3)
-      #   amount: 3
+      - id: CMFoldingBarricadesMB6x3
+        amount: 3
       - id: RMCWeldingGoggles
         amount: 3
       - id: CMFireExtinguisherPortable
@@ -286,9 +292,9 @@
         amount: 10
       - id: RMCMagazineSMGNailgun
         amount: 4
-      - id: SichRMCKitSherpa # Sich
+      - id: MRKitSherpa # Mriya
         amount: 2
-    - name: Pamphlets
+    - name: Довідники
       entries:
       - id: CMPamphletJTAC
         amount: 1
@@ -296,7 +302,7 @@
         amount: 1
       - id: CMPamphletPowerloader
         amount: 1
-    - name: Explosive Boxes
+    - name: Упаковки з вибухівкою
       hasBoxes: true
       entries:
       - id: CMPacketGrenadeFragOldFilled
@@ -304,6 +310,11 @@
         box: CMGrenadeFragOld
         boxAmount: 3
         boxSlots: 3
+      - id: RMCBoxClaymoreMineFilled
+        name: M20 Claymore anti-personnel mine box
+        box: RMCExplosiveClaymoreMine
+        boxAmount: 5
+        boxSlots: 5
       - id: CMPacketGrenadeHighExplosiveFilled
         name: упаковка гранат М40 ФПП
         box: CMGrenadeHighExplosive
@@ -312,6 +323,11 @@
       - id: RMCPacketGrenadeIncendiaryFilled
         name: упаковка гранат М40 ВІРЗ
         box: RMCGrenadeIncendiary
+        boxAmount: 3
+        boxSlots: 3
+      - id: RMCPacketGrenadeWhitePhosphorusCompoundFilled
+        name: 30mm CCDP grenade packet
+        box: RMCGrenadeWhitePhosphorusCompound
         boxAmount: 3
         boxSlots: 3
       - id: RMCPacketGrenadeSmokeFilled
@@ -349,18 +365,32 @@
         box: RMCBatonSlugHIRR
         boxAmount: 3
         boxSlots: 3
+  - type: GuideHelp
+    guides:
+    - RMCRequisitions
 
 #AMMUNITION VENDOR
 - type: entity
   parent: ColMarTechCargo
   id: ColMarTechCargoAmmo
-  name: ASRS automated munition vendor
-  description: An automated supply rack hooked up to a big storage of various ammunition types. Can be accessed by the Logistics Officer and Requisitions Technicians.
+  name: автоматизована стійка боєприпасів АТСС
+  description: Автоматизована стійка постачання, підключена до великого складу різних типів боєприпасів. Доступна для Старшого Офіцерського Складу, Офіцера Логістики та Вантажників.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/ammo.rsi
+    layers:
+    - map: ["base"]
+      state: "off"
+    - map: ["enum.PowerDeviceVisualLayers.Powered"]
+      state: "base"
   - type: RMCRequisitionsVendor
   - type: CMAutomatedVendor
+    ignoreBulkRestockById:
+    - RMCBoxShotgunBuckshot
+    - RMCBoxShotgunFlechette
+    - RMCBoxShotgunSlugs
+    - RMCBoxShotgunBreaching
+    - RMCBox458SOCOM
     baseSprite:
       sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/ammo.rsi
       state: base
@@ -368,7 +398,7 @@
       sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/ammo.rsi
       state: vend
     sections:
-    - name: Regular ammunition
+    - name: Звичайні набої
       entries:
       - id: RMCBoxShotgunBuckshot
         amount: 56
@@ -390,12 +420,8 @@
         amount: 100
       - id: RMCMagazinePistolM13
         amount: 100
-    - name: Armor-piercing ammunition
+    - name: Бронебійні набої
       entries:
-      - id: RMCMagazinePistolM13AP
-        amount: 14
-      - id: RMCMagazinePistolM13ExtAP
-        amount: 6
       - id: CMMagazinePistolM77AP
         amount: 50
       - id: CMMagazineRifleM4SPRAP
@@ -406,17 +432,17 @@
         amount: 10
       - id: RMCMagazinePistolM1984AP
         amount: 2
-    - name: Extended ammunition
+    - name: Збільшені магазини
       entries:
-      - id: RMCMagazinePistolM13Ext
-        amount: 10
       - id: CMMagazineSMGM63Ext
         amount: 10
       - id: CMMagazineRifleM4SPRExt
         amount: 10
       - id: CMMagazineRifleM54CExt
         amount: 8
-    - name: Special ammunition
+      - id: RMCMagazinePistolM13Ext
+        amount: 5
+    - name: Спеціальні набої
       entries:
       - id: RMCPowerCellSmartgun
         amount: 4
@@ -432,7 +458,7 @@
         amount: 2
       - id: RMCBox458SOCOM
         amount: 4
-    - name: Restricted firearm ammunition
+    - name: Додаткові набої
       entries:
       - id: CMMagazinePistolMK80
         amount: 11
@@ -452,55 +478,65 @@
         amount: 2
       - id: RMCMagazineShotgunXM51
         amount: 3
-    - name: Magazine Boxes
+    - name: Коробки з магазинами
       hasBoxes: true
       entries:
       - id: RMCBoxMagazinePistolM13
-        name: Magazine Box (M13 x 22)
+        name: коробка з магазинами (М13 х 16)
         box: RMCMagazinePistolM13
+
       - id: RMCBoxMagazinePistolM13Ext
-        name: Magazine Box (Ext M13 x 14)
+        name: коробка з магазинами (Розширені М13 х 10)
         box: RMCMagazinePistolM13Ext
-      - id: RMCBoxMagazinePistolM13AP
-        name: Magazine Box (M13 AP x 22)
-        box: RMCMagazinePistolM13AP
-      - id: RMCBoxMagazinePistolM13ExtAP
-        name: Magazine Box (Ext M13 AP x 14)
-        box: RMCMagazinePistolM13ExtAP
+
       - id: RMCBoxMagazineSMGM63
-        name: Magazine Box (M63 x 12)
+        name: коробка з магазинами (М63 х 12)
         box: CMMagazineSMGM63
+
       - id: RMCBoxMagazineSMGM63AP
-        name: Magazine Box (AP M63 x 12)
+        name: коробка з магазинами (ББ М63 х 12)
         box: CMMagazineSMGM63AP
+
       - id: RMCBoxMagazineSMGM63Ext
-        name: Magazine Box (Ext M63 x 10)
+        name: коробка з магазинами (Розширені М63 х 10)
         box: CMMagazineSMGM63Ext
+
       - id: RMCBoxMagazineRifleM54C
-        name: Magazine Box (M54C x 10)
+        name: коробка з магазинами (М54С х 10)
         box: CMMagazineRifleM54C
+
       - id: RMCBoxMagazineRifleM54CAP
-        name: Magazine Box (AP M54C x 10)
+        name: коробка з магазинами (ББ М54С х 10)
         box: CMMagazineRifleM54CAP
+
       - id: RMCBoxMagazineRifleM54CExt
-        name: Magazine Box (Ext M54C x 8)
+        name: коробка з магазинами (Розширені М54С х 8)
         box: CMMagazineRifleM54CExt
+
       - id: RMCBoxMagazinePistolM1984
-        name: Magazine Box (M1984 x 16)
+        name: коробка з магазинами (М1984 х 16)
         box: CMMagazinePistolM1984
-#      - name: Magazine Box (AP M1984 x 16)
-#        box: CMMagazinePistolM1984AP
-#      - name: Magazine Box (HP M1984 x 16)
-#        box: CMMagazineSMGM63
+
+      - id: RMCBoxMagazinePistolM1984AP
+        name: Magazine Box (AP M1984 x 16)
+        box: RMCMagazinePistolM1984AP
+
+      - id: RMCBoxMagazinePistolM1984HP
+        name: Magazine Box (HP M1984 x 16)
+        box: RMCMagazinePistolM1984HP
+
       - id: RMCBoxMagazineRifleM4SPR
-        name: Magazine Box (M4SPR x 16)
+        name: коробка з магазинами (М4СПГ х 16)
         box: CMMagazineRifleM4SPR
+
       - id: RMCBoxMagazineRifleM4SPRAP
-        name: Magazine Box (AP M4SPR x 16)
+        name: коробка з магазинами (ББ М4СПГ х 16)
         box: CMMagazineRifleM4SPRAP
+
       - id: RMCBoxMagazineRifleM4SPRExt
-        name: Magazine Box (Ext M4SPR x 16)
+        name: коробка з магазинами (Розширені М4СПГ х 16)
         box: CMMagazineRifleM4SPRExt
+
 #      - name: Magazine Box (M54CE2 x 8)
 #        box: RMCCrateMagazineRifleM54CE2
 #      - name: Magazine Box (M54CE2 Holo-Target x 8)
@@ -510,87 +546,111 @@
 #      - name: Magazine Box (M54C MK1 AP x 8)
 #        box: CMMagazineSMGM63
       - id: RMCBoxShellsBuckshot
-        name: Magazine Box (Buckshot x 100)
+        name: коробка з набоями (Картеч х 100)
         box: RMCBoxShotgunBuckshot
         boxAmount: 4
+
       - id: RMCBoxShellsFlechette
-        name: Magazine Box (Flechette x 100)
+        name: коробка з набоями (Флешетні х 100)
         box: RMCBoxShotgunFlechette
         boxAmount: 4
+
       - id: RMCBoxShellsSlugs
-        name: Magazine Box (Slugs x 100)
+        name: коробка з набоями (Кулеві х 100)
         box: RMCBoxShotgunSlugs
         boxAmount: 4
+
       - id: RMCBoxShellsBreaching
-        name: Magazine Box (16g) (Breaching x 120)
+        name: коробка з набоями (Пробивні х 120)
         box: RMCBoxShotgunBreaching
         boxAmount: 4
+
       - id: RMCBoxMagazinePistolM77AP
-        name: Magazine Box (M77 AP x 16)
+        name: коробка з магазинами (ББ М77 х 16)
         box: CMMagazinePistolM77AP
+
       - id: RMCBoxMagazinePistolSU6
-        name: Magazine Box (SU-6 x 16)
+        name: коробка з магазинами (СП-6 х 16)
         box: RMCMagazinePistolSU6
+
       - id: RMCBoxMagazinePistolMK80
-        name: Magazine Box (MK80 x 16)
+        name: коробка з магазинами (МК80 х 16)
         box: CMMagazinePistolMK80
+
 #      - name: Magazine Box (XM51 x 8)
 #        box: RMCMagazineShotgunXM51
-#      - name: Magazine Box (.458 SOCOM x 300) # TODO RMC14
-#        box: RMCBox458SOCOM
-#      - name: Magazine Box (M2C x 8)
-#        box: CMMagazineSMGM63
-#      - name: Magazine Box (M56B x 8)
-#        box: CMMagazineSMGM63
-#      - name: Magazine Box (ML66D x 8)
-#        box: CMMagazineSMGM63
+      - id: RMCBoxBullets458
+        box: RMCBox458SOCOM
+        boxAmount: 3
+        boxSlots: 3
+#      - id: RMCBoxMagazineM2C
+#        name: Ammo Box (M2C x 8)
+#        box: RMCMagazineM2C
+#      - id: RMCBoxMagazineSmartGun
+#        name: Drum Box (ML66A x 8)
+#        box: RMCMagazineSmartGun
+#      - id: RMCBoxMagazineML66D
+#        name: Drum Box (ML66D x 8)
+#        box: RMCMagazineML66D
+
       - id: RMCBoxMagazineRevolverM44
-        name: Magazine Box (M44 x 16)
+        name: коробка з швидкозарядниками (М44 х 16)
         box: RMCSpeedLoaderM44
+
       - id: RMCBoxMagazineRevolverM44Marksman
-        name: Magazine Box (Marksman M44 x 16)
+        name: коробка з швидкозарядниками (М44 для точної стрільби х 16)
         box: RMCSpeedLoader44Marksman
+
 #      - name: Magazine Box (Heavy M44 x 16)
 #        box: CMMagazineSMGM63
 #      - name: Magazine Box (UT-Napthal Fuel x 8)
 #        box: CMMagazineSMGM63
-    - name: Ammunition Boxes
+
+    - name: Коробки з набоями
       hasBoxes: true
       entries:
       - id: RMCBoxBulletsSMG
-        name: SMG HV ammunition box (10x20mm) (M63)
+        name: коробка набоїв для ПК (10х20 мм) (М63)
         box: CMMagazineSMGM63
         boxSlots: 13 # 600 / 48, yes we lose half a mag to the void
       - id: RMCBoxBulletsSMGAP
-        name: SMG ammunition box (10x20mm AP) (M63)
+        name: коробка набоїв для ПК (10х20 мм ББ) (М63)
         box: CMMagazineSMGM63AP
         boxSlots: 13 # 600 / 48, yes we lose half a mag to the void
       - id: RMCBoxBulletsRifle
-        name: rifle ammunition box (10x24mm) (M4SPR)
+        name: коробка набоїв для гвинтівок (10х24 мм) (М4СПГ)
         box: CMMagazineRifleM4SPR
         boxSlots: 24 # 600 / 25
       - id: RMCBoxBulletsRifleAP
-        name: rifle ammunition box (10x24mm AP) (M4SPR)
+        name: коробка набоїв для гвинтівок (10х24 мм ББ) (М4СПГ)
         box: CMMagazineRifleM4SPRAP
         boxSlots: 24 # 600 / 25
       - id: RMCBoxBulletsRifle
-        name: rifle ammunition box (10x24mm) (M54C)
+        name: коробка набоїв для гвинтівок (10х24 мм) (М54С)
         box: CMMagazineRifleM54C
         boxSlots: 15 # 600 / 40
       - id: RMCBoxBulletsRifleAP
-        name: rifle ammunition box (10x24mm AP) (M54C)
+        name: коробка набоїв для гвинтівок (10х24 мм ББ) (М54С)
         box: CMMagazineRifleM54CAP
         boxSlots: 15 # 600 / 40
+  - type: GuideHelp
+    guides:
+    - RMCRequisitions
 
 #ATTACHMENTS VENDOR
 - type: entity
   parent: ColMarTechCargo
   id: ColMarTechCargoAttachments
-  name: AEGIS Armaments attachments vendor
-  description: An automated supply rack hooked up to a big storage of weapons attachments. Can be accessed by the Logistics Officer and Requisitions Technicians.
+  name: автоматизована стійка оснащення ЕГІДА
+  description: Автоматизована стійка постачання, підключена до великого складу різних типів оснащення для зброї. Доступна для Старшого Офіцерського Складу, Офіцера Логістики та Вантажників.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/attachments.rsi
+    layers:
+    - map: ["base"]
+      state: "off"
+    - map: ["enum.PowerDeviceVisualLayers.Powered"]
+      state: "base"
   - type: RMCRequisitionsVendor
   - type: CMAutomatedVendor
     baseSprite:
@@ -600,7 +660,7 @@
       sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/attachments.rsi
       state: vend
     sections:
-    - name: Barrel
+    - name: Ствол
       entries:
       - id: RMCAttachmentExtendedBarrel
         amount: 7
@@ -608,6 +668,8 @@
         amount: 11
       - id: RMCAttachmentRecoilCompensator
         amount: 7
+      - id: RMCAttachmentBarrelCharger # Mriya
+        amount: 3
       - id: RMCAttachmentRecoilCompensatorM13
         amount: 7
       - id: RMCAttachmentSuppressor
@@ -616,7 +678,7 @@
         amount: 7
       - id: RMCAttachmentShotgunChoke
         amount: 5
-    - name: Rail
+    - name: Рейкова планка
       entries:
       - id: RMCAttachmentB8SmartScope
         amount: 4
@@ -634,7 +696,7 @@
         amount: 10
       - id: RMCAttachmentS84xTelescopicScope
         amount: 5
-    - name: Underbarrel
+    - name: Підствольне кріплення
       entries:
       - id: RMCAttachmentAngledGrip
         amount: 7
@@ -662,12 +724,12 @@
         amount: 10
       - id: RMCAttachmentVerticalGrip
         amount: 10
-    - name: Stock
+    - name: Приклад
       entries:
       - id: RMCAttachmentM13StockSolid
-        amount: 5
+        amount: 3
       - id: RMCAttachmentM13StockCollapsible
-        amount: 5
+        amount: 2
       - id: RMCAttachmentM42A2CollapsibleStock
         amount: 5
       - id: RMCAttachmentM63ArmBrace
@@ -682,13 +744,16 @@
         amount: 5
       - id: RMCAttachmentM44MagnumSharpshooterStock
         amount: 5
+  - type: GuideHelp
+    guides:
+    - RMCRequisitions
 
 #UNIFORM VENDOR
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechCargoUniform
-  name: ASRS surplus uniform vendor
-  description: An automated supply rack hooked up to a big storage of standard marine uniforms. Can be accessed by the Logistics Officer and Requisitions Technicians.
+  name: стійка для додаткового спорядження АТСС
+  description: Автоматизована стійка постачання, підключена до великого складу різного додаткового спорядження. Доступна для Старшого Офіцерського Складу, Офіцера Логістики та Вантажників.
   suffix: Requisitions
   components:
   - type: AccessReader
@@ -697,8 +762,9 @@
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/clothing.rsi
   - type: CMAutomatedVendor
+    canManualRestock: true
     sections:
-    - name: Uniform
+    - name: Уніформа
       entries:
       - id: JumpsuitMarine
         amount: 20
@@ -706,7 +772,7 @@
         amount: 5
       - id: CMJumpsuitMarineMedic
         amount: 5
-    - name: Boots
+    - name: Чоботи
       entries:
       - id: CMBootsBlack
         amount: 20
@@ -714,7 +780,7 @@
         amount: 5
       - id: CMBootsGrey
         amount: 5
-    - name: Backpacks
+    - name: Рюкзази
       entries:
       - id: CMBackpackMarine
         amount: 20
@@ -728,7 +794,7 @@
         amount: 10
       - id: CMSatchelMarineMedic
         amount: 10
-    - name: Armor
+    - name: Броня
       entries:
       - id: ArmorHelmetM10
         amount: 20
@@ -754,7 +820,7 @@
         amount: 10
       - id: RMCArmorM3LightPadded
         amount: 10
-    - name: Gloves
+    - name: Рукавички
       entries:
       - id: CMHandsBrown
         amount: 40
@@ -762,9 +828,11 @@
         amount: 40
       - id: CMHandsBlackMarine
         amount: 40
-    - name: Radio
+    - name: Радіо
       entries:
       - id: RMCHeadsetShip
+        amount: 5
+      - id: RMCHeadsetMarine
         amount: 5
       - id: CMEncryptionKeyAlpha
         amount: 5
@@ -790,7 +858,7 @@
       #  amount: 8
       - id: CMEncryptionKeyRequisition
         amount: 5
-    - name: Masks
+    - name: Маски
       entries:
       - id: CMMaskGas
         amount: 20
@@ -798,7 +866,7 @@
         amount: 10
       - id: RMCMaskRebreather
         amount: 20
-    - name: Goggles
+    - name: Окуляри
       entries:
       - id: RMCGogglesBallistic
         amount: 10
@@ -808,7 +876,7 @@
         amount: 10
       - id: RMCGlassesMarineRpg
         amount: 10
-    - name: Miscellaneous
+    - name: Різне
       entries:
       - id: BedrollFolded
         amount: 30
@@ -835,9 +903,12 @@
       - id: RMCPatchUnitedNationsSquare
         name: United Nations flag shoulder patch
         amount: 15
-    - name: Books
+    - name: Книги
       entries:
       - id: RMCGuidebookLawMarine
         amount: 10
       - id: RMCGuidebookSOP
         amount: 10
+  - type: GuideHelp
+    guides:
+    - RMCRequisitions

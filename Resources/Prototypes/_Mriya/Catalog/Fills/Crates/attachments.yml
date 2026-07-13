@@ -1,0 +1,9 @@
+- type: entity
+  id: MRCrateAttachmentBarrelCharger
+  parent: RMCCrateBase
+  name: Ящик зарядників для ствола (3 шт)
+  components:
+  - type: StorageFill
+    contents:
+      - id: RMCAttachmentBarrelCharger
+        amount: 3

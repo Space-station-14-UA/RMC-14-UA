@@ -1,5 +1,5 @@
-# supervisors
-cm-job-supervisors-we-ya = Корпорації Вестон-Ямада
+﻿# supervisors
+cm-job-supervisors-we-ya = Офісу Корпорації Вестон-Ямада
 cm-job-supervisors-aso = Офіцеру Підтримки
 cm-job-supervisors-co = Командуючому Офіцеру
 rmc-job-supervisors-commander = поточному Командиру
@@ -8,6 +8,9 @@ cm-job-supervisors-ares = АРЕСу і АПОЛЛО
 cm-job-supervisors-po = Пілотам транспортного й бойового шатлів
 cm-job-supervisors-marine-high-command = Вищому Командуванню Морпіхоти
 cm-job-supervisors-cmp = Голові ВСП
+rmc-job-supervisors-provost-marshal = Маршалу Провосту
+rmc-job-supervisors-provost-sector-marshal = Секторальному Маршалу Провосту
+rmc-job-supervisors-provost-team-leader = Лідеру Групи Провоста
 cm-job-supervisors-qm = Офіцеру Логістики
 cm-job-supervisors-ce = Головному Інженеру
 cm-job-supervisors-sl = Теперішньому Лідеру Загона

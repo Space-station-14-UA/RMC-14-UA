@@ -296,7 +296,7 @@
   description: Міцна, як дух нації. У кожній краплі - вогонь степу й свободи Запоріжжя.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Consumable/Drinks/red_star_vodka.rsi
+    sprite: _Mriya/Objects/Consumable/Drinks/horilka_cossacks.rsi # Mriya. Нормальне пойло, а не лайно
   - type: SolutionContainerManager
     solutions:
       drink:

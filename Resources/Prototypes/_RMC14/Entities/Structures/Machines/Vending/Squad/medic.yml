@@ -19,8 +19,17 @@
       takeAll: CMMedicalSet
       entries:
       - id: CMVendorBundleSquadMedicalEssentials
+      - id: RMCPortableDialysis # Mriya
     - name: Польові Лікувальні Засоби
       entries:
+      # Mriya start
+      - id: CMUpgradedBurnKit10
+        points: 8
+        recommended: true
+      - id: CMUpgradedTraumaKit10
+        points: 8
+        recommended: true
+      # Mriya end
       - id: CMBurnKit10
         points: 2
         recommended: true
@@ -66,9 +75,17 @@
 #      - id: CMPillCanisterTramadol
 #        points: 5
 #        recommended: true
-      - id: RMCPillCanisterIron # Sich. Залізо БМам
+      # Mriya start
+      - id: RMCPillCanisterIron
         points: 5
         recommended: true
+      - id: RMCPillCanisterMeralyneBicaridine
+        points: 10
+        recommended: true
+      - id: CMPillCanisterKelotaneDermaline
+        points: 10
+        recommended: true
+      # Mriya end
     - name: Автоінжектори
       entries:
       - id: CMBicaridineAutoInjector
@@ -104,7 +121,8 @@
         points: 18
       - id: RMCPacketGrenadeIncendiaryFilled
         points: 18
-    #    CMM40HPDPWhitePhosphorusPacketx3grenades: 18P
+      - id: RMCPacketGrenadeWhitePhosphorusFilled
+        points: 18
       - id: RMCPacketGrenadeSmokeFilled
         points: 9
       - id: RMCPacketGrenadeM74AGMFFilled
@@ -125,10 +143,6 @@
         points: 6
       - id: CMMagazineRifleM4SPRExt
         points: 6
-      - id: RMCMagazinePistolM13AP
-        points: 6
-      - id: RMCMagazinePistolM13ExtAP
-        points: 8
       - id: CMMagazineSMGM63AP
         points: 6
       - id: CMMagazineSMGM63Ext

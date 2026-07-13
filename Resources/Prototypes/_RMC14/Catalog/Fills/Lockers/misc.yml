@@ -62,8 +62,8 @@
 - type: entity
   parent: CMLockerCommanderSecure
   id: CMLockerCommanderSecureFilled
-  name: сейф командувача # Sich
-  description: "Сейф Командувача операції, в якому зберігаються комплекти Почесних Вартових.\nНа ньому вигравіювано напис: \"Розпоряджатися вмістом можуть особи, які є актуальним Командувачем операції. Не зважаючи на їх посаду чи звання\"." # Sich
+  name: сейф командувача # Mriya
+  description: "Сейф Командувача операції, в якому зберігаються комплекти Почесних Вартових.\nНа ньому вигравіювано напис: \"Розпоряджатися вмістом можуть особи, які є актуальним Командувачем операції. Не зважаючи на їх посаду чи звання\"." # Mriya
   suffix: Filled
   components:
   - type: StorageFill
@@ -71,7 +71,7 @@
       - id: RMCKitHonorGuard
       - id: RMCKitHonorGuard
   - type: AccessReader
-    access: [["RMCAccessSeniorCommand"]] # Sich. CMAccessCO в перент прототипа
+    access: [["RMCAccessSeniorCommand"]] # Mriya. CMAccessCO в перент прототипа
 
 - type: entity
   parent: CMLockerStaff
@@ -131,22 +131,30 @@
     - id: RMCWeaponPistolPK7
     - id: RMCMagazinePistolPK7
     - id: RMCMagazinePistolPK7
+    - id: RMCBackpackRTOBagPhone
 
-- type: entity # Sich. Ця шафа фактично поглинула в себе частину речей з RMCCrateFieldDoctor, а частину віддала вендору. Вміст змінений.
-  parent: CMLockerMedical
-  id: RMCLockerFieldDoctor
-  name: шафа польового лікаря # Sich
+- type: entity
+  parent: RMCLockerFieldDoctor
+  id: RMCLockerFieldDoctorFilled
   suffix: Filled, Field Doctor
   components:
   - type: StorageFill
     contents:
     - id: RMCArmorHelmetM10FieldDoctor
     - id: RMCPatchMedic
-    - id: RMCPortableDialysis
-    - id: CMPortableSurgicalBedSpawnFolded
-    - id: RMCBoxSterileMask
-    - id: RMCBoxLatexGloves
-    - id: RMCSprayBottleSpaceCleaner
-    - id: CMMaskGasMedical
-    - id: CMEntrenchingTool
-    - id: RMCToolboxMechanicalFilled
+    - id: CMBootsBlack
+    - id: CMMRE
+
+- type: entity
+  parent: RMCLockerMiner
+  id: RMCLockerMinerFilled
+  suffix: Filled, Secure
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCHandsBlack
+    - id: RMCShoesJackboots
+    - id: RMCFlashlightLantern
+    - id: RMCShovel
+    - id: RMCPickaxe
+    # TODO: Add Meson Goggles, Analyzer, Orebag

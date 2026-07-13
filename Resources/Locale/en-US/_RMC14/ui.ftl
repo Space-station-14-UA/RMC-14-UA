@@ -3,6 +3,7 @@ cm-ui-rmc14 = РМС
 rmc-ui-options-cassettes-volume = Гучність касет:
 rmc-ui-options-hijack-song-volume = Гучність музики хайджеку:
 rmc-ui-options-xeno-ability-previews = Показувати попередній перегляд здібностей ксено
+rmc-ui-options-marine-equipment-previews = Показувати попередній перегляд спорядження морпіхів
 
 rmc-ui-voicelines = Репліки
 rmc-ui-options-tab-voicelines = Репліки
@@ -38,6 +39,7 @@ rmc-ui-audio-emotes-feroxi = Відтворювати емоції ферокс�
 rmc-ui-audio-emotes-skrell = Відтворювати емоції скреллів
 
 cm-ui-roadmap = Дорожня мапа
+rmc-ui-roadmap-orbital-bombardment = Орбітальне Бомбардування
 
 rmc-ui-link-discord-account = Прив'язати Дискорд
 rmc-ui-link-discord-account-text = Натисни кнопку нижче, щоб скопіювати свій код.

@@ -13,12 +13,6 @@
       map: [ "enum.ToggleableVisuals.Layer" ]
       visible: false
   - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.ToggleableVisuals.Enabled:
-        enum.ToggleableVisuals.Layer:
-          True: { visible: true }
-          False: { visible: false }
   - type: Item
     size: Normal
     sprite: _RMC14/Objects/Medical/defib.rsi
@@ -70,16 +64,40 @@
     price: 100
   - type: GuideHelp
     guides:
-    - Medical Doctor
+    - RMCMedical
   - type: RequiresSkill
     skills:
       RMCSkillMedical: 2
+  - type: InteractedBlacklist
+    blacklist:
+      components:
+      - Xeno
 
 - type: entity
   id: CMDefibrillator
   parent: [CMBaseDefibrillator, RMCPowerCellSlotUnremovable]
   suffix: RMC14
   components:
+  - type: Sprite
+    layers:
+    - state: defib
+    - state: defib_on
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      visible: false
+    - state: full
+      map: [ "enum.DefibrillatorVisualLayers.Overlay"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.DefibrillatorVisuals.DefibrillatorCharge:
+        enum.DefibrillatorVisualLayers.Overlay:
+          Empty: { state: empty }
+          Low: { state: low }
+          Half: { state: half }
+          Full: { state: full }
   - type: PowerCellDraw
     enabled: false
     useRate: 66
@@ -94,6 +112,15 @@
   parent: CMDefibrillator
   suffix: RMC14, Розряджений
   components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Medical/defib.rsi
+    layers:
+    - state: defib
+    - state: defib_on
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      visible: false
+    - state: empty
+      map: [ "enum.DefibrillatorVisualLayers.Overlay"]
   - type: ItemSlots
     slots:
       cell_slot:
@@ -179,6 +206,44 @@
   id: RMCSynthResetKeySMART
   name: СМАРТ ключ перезавантаження синтетика Ве-Я
   description: Цей пристрій може виправити серйозні збої чи програмні помилки у прошивці синтетів, а також перезапускати їх після аварійного завершення роботи. Через високе енергоспоживання після кожного використання потрібно заряджати його. Цей пристрій має власний штучний інтелект, завдяки чому будь-хто може використовувати його без ризику пошкодити обладнання.
+  components:
+  - type: RequiresSkill
+    skills:
+      RMCSkillEngineer: 0
+
+- type: entity
+  parent: RMCSynthResetKey
+  id: RMCSynthResetKeyHalcyon
+  name: ключ перезавантаження синтетика Галкіон
+  description: Цей пристрій корпорації Галкіон може виправити серйозні збої чи програмні помилки у прошивці синтетів, а також перезапускати їх після аварійного завершення роботи.
+
+- type: entity
+  parent: RMCSynthResetKeySMART
+  id: RMCSynthResetKeyHalcyonSMART
+  name: СМАРТ ключ перезавантаження синтетика Галкіон
+  description: Цей пристрій корпорації Галкіон може виправити серйозні збої чи програмні помилки у прошивці синтетів, а також перезапускати їх після аварійного завершення роботи. Через високе енергоспоживання після кожного використання потрібно заряджати його. Цей пристрій має власний штучний інтелект, завдяки чому будь-хто може використовувати його без ризику пошкодити обладнання.
+  components:
+  - type: RequiresSkill
+    skills:
+      RMCSkillEngineer: 0
+
+- type: entity
+  parent: RMCSynthResetKeySMART
+  id: RMCSynthResetKeyMakeshift
+  name: саморобний ключ синтетика
+  description: Зроблений, як то кажуть, "з лайна та палок" ключ для перезавантаження синтетиків. Виглядає не дуже надійно, але схоже працює. Точно варто це пхати в машину за сотні тисяч, а то й мільйони доларів? Через високе енергоспоживання після кожного використання потрібно заряджати його.
+
+- type: entity
+  parent: RMCSynthResetKey
+  id: RMCSynthResetKeyNovaris
+  name: ключ перезавантаження синтетика Новаріс
+  description: Цей пристрій корпорації Новаріс, розроблений в партнерстві з Вестон-Ямада, він може виправити серйозні збої чи програмні помилки у прошивці синтетів, а також перезапускати їх після аварійного завершення роботи.
+
+- type: entity
+  parent: RMCSynthResetKeyNovaris
+  id: RMCSynthResetKeyNovarisSMART
+  name: СМАРТ ключ перезавантаження синтетика Новаріс
+  description: Цей пристрій корпорації Новаріс, розроблений в партнерстві з Вестон-Ямада, він може виправити серйозні збої чи програмні помилки у прошивці синтетів, а також перезапускати їх після аварійного завершення роботи. Через високе енергоспоживання після кожного використання потрібно заряджати його. Цей пристрій має власний штучний інтелект, завдяки чому будь-хто може використовувати його без ризику пошкодити обладнання.
   components:
   - type: RequiresSkill
     skills:

@@ -1,2 +1,2 @@
-﻿rmc-reagent-name-synth-blood = synth blood
-rmc-reagent-desc-synth-blood = A form of white latex. Used for the cooling of synthetic components.
+rmc-reagent-name-synth-blood = синтетична кров
+rmc-reagent-desc-synth-blood = Різновид білого латексу. Використовується для охолодження компонентів синтетиків.

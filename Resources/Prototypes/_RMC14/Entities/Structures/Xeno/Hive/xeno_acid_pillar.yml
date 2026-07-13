@@ -54,7 +54,7 @@
     plasma: 250
   - type: XenoSecretionLimited
     id: HiveAcidPillarXeno
-    amount: 2 # Sich. 1 в оригіналі
+    amount: 2 # Mriya. 1 в оригіналі
   - type: DeletedByWeedKiller
   - type: Flammable
     fireSpread: false
@@ -62,3 +62,4 @@
     damage:
       types:
         Heat: 2
+  - type: XenoChargeDontHit

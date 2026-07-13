@@ -1,0 +1,60 @@
+- type: emoteSounds
+  id: MRUnisexAvali
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: MRAvaliScreams
+    Laugh:
+      collection: MRAvaliLaugh
+    Cough:
+      collection: MRAvaliCough
+    Yawn:
+      path: /Audio/_Mriya/Voice/Avali/avali_yawn.ogg
+    Crying:
+      collection: MRAvaliCry
+    Whistle:
+      collection: MRAvaliWhistle
+    Call:
+      collection: MRAvaliCall
+    RMCAvaliChirp:
+      collection: MRAvaliChirp
+    Hiss:
+      path: /Audio/_Mriya/Voice/Avali/avali_hiss.ogg
+    Scree:
+      collection: MRAvaliScree
+    Squawk:
+      path: /Audio/_Mriya/Voice/Avali/avali_squawk.ogg
+    RMCSkrellTrill:
+      path: /Audio/_Mriya/Voice/Avali/avali_trill.ogg
+    RMCSkrellWarble:
+      path: /Audio/_Mriya/Voice/Avali/avali_warble.ogg
+    Wurble:
+      path: /Audio/_Mriya/Voice/Avali/avali_wurble.ogg
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
+      path: /Audio/_Mriya/Voice/Avali/avali_gasp.ogg
+    DefaultDeathgasp:
+      path: /Audio/_Mriya/Voice/Avali/avali_deathgasp.ogg
+
+- type: emoteSounds
+  parent: [MRUnisexAvali, RMCMaleHuman]
+  id: MRMaleAvali
+
+- type: emoteSounds
+  parent: [MRUnisexAvali, RMCFemaleHuman]
+  id: MRFemaleAvali
+
+- type: emoteSounds
+  parent: GeneralBodyEmotes
+  id: MRMothBodyEmotes
+  sounds:
+    Flap:
+      path: /Audio/_Mriya/Voice/Moth/moth_flap.ogg
+      params:
+        variation: 0.125

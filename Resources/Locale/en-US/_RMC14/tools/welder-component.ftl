@@ -1,1 +1,1 @@
-﻿rmc-welder-component-danger = That was close! However, you realized you had the welder on and prevented disaster.
+rmc-welder-component-danger = Це було близько! В будь якому разі, ви зрозуміли що у вас була зварка, тож ви запобігли катастрофі.

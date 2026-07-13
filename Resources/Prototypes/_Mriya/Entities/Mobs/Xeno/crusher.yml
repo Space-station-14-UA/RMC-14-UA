@@ -1,0 +1,27 @@
+- type: entity
+  parent: [ MRXenoBaseOld, RMCXenoCrusher ]
+  id: MRXenoCrusherOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Crusher/crusher.rsi
+  - type: Xeno
+    hudOffset: 0,0.375
+  - type: XenoEvolution
+    strains:
+    - MRXenoCrusherChargerOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MRXenoWarriorOld
+
+- type: entity
+  parent: [ MRXenoBaseOld, RMCXenoCrusherCharger ]
+  id: MRXenoCrusherChargerOld
+  suffix: Бойова, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Crusher/charger_crusher.rsi
+  - type: Xeno
+    hudOffset: 0,0.375
+  - type: XenoDevolve
+    devolvesTo:
+    - MRXenoWarriorOld

@@ -15,10 +15,11 @@ using Content.Client.Guidebook;
 using Content.Client.Launcher;
 using Content.Client.Lobby;
 using Content.Client.Mapping;
+using Content.Client.Mriya.Sponsors;
 using Content.Client.Parallax.Managers;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Client.Playtime;
 using Content.Client.Players.RateLimiting;
+using Content.Client.Playtime;
 using Content.Client.Replay;
 using Content.Client.Screenshot;
 using Content.Client.Stylesheets;
@@ -66,6 +67,7 @@ namespace Content.Client.IoC
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<TitleWindowManager>();
             collection.Register<ClientsidePlaytimeTrackingManager>();
+            collection.Register<IClientSponsorManager, ClientSponsorManager>(); // mriya
 
             // RMC14
             collection.Register<LinkAccountManager>();

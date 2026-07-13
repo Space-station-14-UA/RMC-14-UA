@@ -14,3 +14,27 @@ rmc-trait-spanish-accent-desc = ¿Хола сеньйорита, чи не зн�
 
 rmc-trait-scottish-accent-name = Шотландський акцент (відсутній переклад)
 rmc-trait-scottish-accent-desc = Для людей, що походять з клану Гієлан.
+
+rmc-trait-spanish-language-name = Іспанська мова
+rmc-trait-spanish-language-desc = Ви можете спілкуватися та розуміти іспанську. Хола!
+
+rmc-trait-french-language-name = Французька мова
+rmc-trait-french-language-desc = Ви можете спілкуватися та розуміти французьку. Бонжур!
+
+rmc-trait-japanese-language-name = Японська мова
+rmc-trait-japanese-language-desc = Ви можете спілкуватися та розуміти японську. Конічіва!
+
+rmc-trait-chinese-language-name = Китайська мова
+rmc-trait-chinese-language-desc = Ви можете спілкуватися та розуміти китайську. Ніхао!
+
+rmc-trait-russian-language-name = руснява мова
+rmc-trait-russian-language-desc = Та блять. Іді нахуй х2.
+
+rmc-trait-german-language-name = Німецька мова
+rmc-trait-german-language-desc = Ви можете спілкуватися та розуміти німецьку. Хало!
+
+rmc-trait-scandinavian-language-name = Скандинавська мова
+rmc-trait-scandinavian-language-desc = Ви можете спілкуватися та розуміти скандинавську. Хальснігар!
+
+rmc-trait-group-languages = Знання мов
+rmc-trait-group-other-speech = Особливості вимови

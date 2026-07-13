@@ -5,7 +5,7 @@
 - type: traitCategory
   id: SpeechTraits
   name: trait-category-speech
-  maxTraitPoints: 2
+  maxTraitPoints: 5 # Mriya. 2 в оригіналі
 
 - type: traitCategory
   id: Quirks

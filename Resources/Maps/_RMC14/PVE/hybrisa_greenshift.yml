@@ -204824,7 +204824,7 @@ entities:
     - type: Transform
       pos: -49.5,-106.5
       parent: 1
-- proto: RMCPlatformKutjevoSMCorner
+- proto: RMCPlatformKutjevoMMCorner
   entities:
   - uid: 23622
     components:

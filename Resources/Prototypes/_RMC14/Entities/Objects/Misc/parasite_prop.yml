@@ -6,10 +6,10 @@
   components:
   - type: Transform
     anchored: false
-#  - type: Physics – Sich. Щоб можна було тягати
+#  - type: Physics – MR. Щоб можна було тягати
 #    bodyType: Static
 #    canCollide: false
   - type: Sprite
     sprite:  _RMC14/Mobs/Xenonids/Parasite/parasite.rsi
     state: impregnated
-  - type: Pullable # Sich. Тягати
+  - type: Pullable # Mriya. Тягати

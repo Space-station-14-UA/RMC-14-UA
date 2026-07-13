@@ -208,9 +208,64 @@
   - type: RMCDazeableAction
 
 - type: entity
+  id: ActionXenoPsychicWhisper
+  parent: ActionXenoBase
+  name: Психічний Шепіт
+  description: Передати психічне повідомлення найближчому розуму.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: psychic_whisper
+    useDelay: 10
+  - type: TargetAction
+    range: 7
+  - type: EntityTargetAction
+    event: !type:XenoPsychicWhisperActionEvent
+    canTargetSelf: false
+    toggleOutline: false
+    whitelist:
+      components:
+      - MobState
+  - type: RMCDazeableAction
+
+- type: entity
+  id: ActionXenoPsychicRadiance
+  parent: ActionXenoBase
+  name: Психічний Резонанс (100)
+  description: Резонувати психічним повідомленням до найближчих розумамів.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: psychic_radiance
+    useDelay: 10
+  - type: InstantAction
+    event: !type:XenoPsychicRadianceActionEvent
+  - type: RMCDazeableAction
+
+- type: entity
+  id: ActionXenoGiveOrder
+  parent: ActionXenoBase
+  name: Віддати Наказ (100)
+  description: Надіслати психічний наказ тому, за ким ви спостерігаєте.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: queen_order
+    useDelay: 10
+  - type: InstantAction
+    event: !type:XenoGiveOrderActionEvent
+  - type: RMCDazeableAction
+
+- type: entity
   id: ActionXenoGrowOvipositor
   parent: ActionXenoBase
-  name: Прикріпитися до Яйцеклада (700) # TODO RMC14 proper plasma costs
+  name: Прикріпитися до Яйцеклада (500)
   description: Стаєте нерухомою та починаєте відкладати яйця з яких потім вилізуть гарнюні паразитики. Має п'ятихвилинну перезарядку. [color=red]ЦЕ ЄДИНИЙ СПОСІБ КСЕНОЇДАМ ОТРИМУВАТИ ОЧКИ ЕВОЛЮЦІЇ ПІСЛЯ ПОЧАТКУ РАУНДУ![/color]
   components:
   - type: Action
@@ -372,15 +427,15 @@
 - type: entity
   id: ActionXenoDodge
   parent: ActionXenoBase
-  name: Ухилення (200)
-  description: Отримуєте прискорення на 7 секунд і можете вільно проходити крізь союзників та ворогів. Ваша швидкість подвоюється поблизу нерухомих ворогів.
+  name: Ухилення
+  description: Отримати прискорення на 7 секунд та вільно проходити крізь союзників і ворогів. Ви ухиляєтесь від кожного третього снаряда [color=red]окрім снайперських куль та ракет[/color]. Можна вимкнути достроково, щоб припинити ухилення — перезарядка дорівнює подвоєному часу використання.
   components:
   - type: Action
     itemIconStyle: NoItem
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
       state: prae_dodge
-    useDelay: 19
+    useDelay: 13
   - type: InstantAction
     event: !type:XenoDodgeActionEvent
 

@@ -7,12 +7,12 @@ public sealed class MothAccentSystem : EntitySystem
 {
     private static readonly Regex RegexLowerBuzz = new Regex("z{1,3}");
     private static readonly Regex RegexUpperBuzz = new Regex("Z{1,3}");
-    // Sich start. Локалізація
+    // Mriya start. Локалізація
     private static readonly Regex RegexLowerCyrillicBzhh = new Regex("ж{1,3}");
     private static readonly Regex RegexUpperCyrillicBzhh = new Regex("Ж{1,3}");
     private static readonly Regex RegexLowerCyrillicBzz = new Regex("з{1,3}");
     private static readonly Regex RegexUpperCyrillicBzz = new Regex("З{1,3}");
-    // Sich end
+    // Mriya end
 
     public override void Initialize()
     {
@@ -28,7 +28,7 @@ public sealed class MothAccentSystem : EntitySystem
         message = RegexLowerBuzz.Replace(message, "zzz");
         // buZZZ
         message = RegexUpperBuzz.Replace(message, "ZZZ");
-        // Sich start. Локалізація
+        // Mriya start. Локалізація
         // бжжж
         message = RegexLowerCyrillicBzhh.Replace(message, "жжж");
         // БЖЖЖ
@@ -37,7 +37,7 @@ public sealed class MothAccentSystem : EntitySystem
         message = RegexLowerCyrillicBzz.Replace(message, "ззз");
         // БЗЗЗ
         message = RegexUpperCyrillicBzz.Replace(message, "ЗЗЗ");
-        // Sich end
+        // Mriya end
 
         args.Message = message;
     }

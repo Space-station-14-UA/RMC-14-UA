@@ -1,6 +1,6 @@
-rmc-marine-command-override-no-senior-command-found = No senior command staff found. The automatic transfer of Commander authority will be launched in one minute. To ensure that you as a candidate are not ignored, please keep your ID with you.
-rmc-marine-command-override-no-candidates-found = Automatic transfer of Commander authority has been cancelled. Reason: No relevant candidates found.
-rmc-marine-command-override-senior-command-found = Automatic transfer of Commander authority has been cancelled. Reason: Senior сommand staff found.
-rmc-marine-command-override-commander-chosen = Due to the absence of senior command staff, { $job } { $character } appointed acting Commander and will assume command until further notice. Please direct all inquiries and follow instructions accordingly.
-                                            Command headset is available in the CIC Command Tablet cabinet.
-rmc-marine-command-override-access-added = Missing necessary command accesses added to ID.
+rmc-marine-command-override-no-senior-command-found = Старшого командування не виявлено. Автоматичну передачу повноважень Командира буде розпочато через одну хвилину. Щоб впевнитись що ви будете розглянути як кандидат, будь ласка, носіть при собі ID.
+rmc-marine-command-override-no-candidates-found = Автоматичну передачу повноважень Командира було скасовано. Причина: Відповідних кандидатів не знайдено.
+rmc-marine-command-override-senior-command-found = Автоматичну передачу повноважень Командира було скасовано. Причина: Старше командування було знайдено.
+rmc-marine-command-override-commander-chosen = Через відсутність старшого командного складу, { $job } { $character } призначено виконуючим обов’язки Командира, та буде командувати операцією до подальшого повідомлення. Просимо надсилати всі запити та дотримуватися відповідних інструкцій.
+                                            Командний навушник доступний в Шафці Командного Планшету в БІЦі.
+rmc-marine-command-override-access-added = До ID додано всі необхідні командні доступи.

@@ -1,0 +1,33 @@
+# Заміняє подібне з Prototypes\_RMC14\rmc_job_slot_scaling.yml. Додає по одному ОРу, Спецу та ОСГ при онлайні 30+
+## Воно працює через якусь навіть по тестам мало зрозумілу дупу, тож значення приблизні
+- type: entity
+  id: MRJobSlotScaling
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: JobSlotScaling
+    jobs:
+      CMIntelOfficer:
+        factor: 10 # ~20 готових для 2 ОРів
+        c: 1
+        min: 1
+        max: 2
+      CMWeaponsSpecialist:
+        factor: 7 # 13-20 готовий для 3 спеців
+        c: 1
+        min: 2
+        max: 3
+      CMSmartGunOperator:
+        factor: 7 # 13-20 готовий для 3 ОСГ
+        c: 1
+        min: 2
+        max: 3
+      RMCJobSynthetic:
+        factor: 7 # 7-12 готових для 1 синта
+        c: 1
+        min: 0
+        max: 1
+      CMMessTech:
+        factor: 10 # ~20 готових для 2 коків
+        c: 1
+        min: 1
+        max: 2

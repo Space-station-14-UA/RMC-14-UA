@@ -1,0 +1,108 @@
+## Версія королеви для випадків, коли у морпіхів сильна раундстарт перевага над вуликом. Застосовується адміністрацією вручну
+- type: entity
+  parent: CMXenoQueen
+  id: MRXenoQueenBloody
+  name: Кривава Королева
+  description: Велетенська чужопланетна істота від кроків якої тремтить земля. Найбільша та найжорстокіша. Вона вкрита якоюсь жахливою червоною смолою, виглядає ще більш загрозливо...
+  suffix: Січ
+  components:
+  # Час ставати червоною
+  - type: Sprite
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+      color: "#BB0A1E"
+    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
+      sprite: _RMC14/Mobs/Xenonids/Queen/ovipositor.rsi
+      color: "#BB0A1E"
+    - map: [ "enum.RMCDamageVisualLayers.Base" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Left" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Right" ]
+      visible: false
+    - map: [ "enum.RMCShieldVisuals.Base" ]
+      sprite: _RMC14/Effects/xeno_shields.rsi
+      visible: false
+  # Збільшення потужності феромонів на 50%
+  - type: XenoPheromones
+    pheromonesMultiplier: 6
+    pheroSuffix: king
+  # Збільшення запасів та швидкості відновлення плазми на 50%
+  - type: XenoPlasma
+    plasma: 1500
+    maxPlasma: 1500
+    plasmaRegenOnWeeds: 6
+    plasmaTransferDelay: 0
+  # Збільшення броні до рівня захисника
+  - type: CMArmor
+    xenoArmor: 35
+    explosionArmor: 100
+  # Прибирання необхідності чекати 10 хвилин
+  - type: XenoMaturing
+    delay: 0
+  # Більш цінна для інтелу
+  - type: IntelRecoverCorpseObjectiveOnDeath
+    value: 3 # 2 в звичайної
+  # Кривава Імператриця
+  - type: XenoRankNames
+    rankNames:
+      0: rmc-xeno-young
+      2: rmc-xeno-mature
+      3: rmc-xeno-elder
+      4: rmc-xeno-ancient
+      5: rmc-xeno-prime
+      6: rmc-xeno-apex
+      7: rmc-xeno-royal
+      8: rmc-xeno-legendary
+      9: mriya-xeno-forever-bloody-queen
+
+## Версія з старими спрайтами
+- type: entity
+  parent: [ MRXenoBaseOld, CMXenoQueen ]
+  id: MRXenoQueenOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
+      sprite: _RMC14/Mobs/OldXenonids/Queen/ovipositor.rsi
+    - map: [ "enum.RMCDamageVisualLayers.Base" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Left" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Right" ]
+      visible: false
+    - map: [ "enum.RMCShieldVisuals.Base" ]
+      sprite: _RMC14/Effects/xeno_shields.rsi
+      visible: false
+  - type: Xeno
+    hudOffset: -0.05,0.15
+
+## Версія кривавої з старими спрайтами
+- type: entity
+  parent: [ MRXenoBaseOld, MRXenoQueenBloody ]
+  id: MRXenoQueenBloodyOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+      color: "#BB0A1E"
+    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
+      sprite: _RMC14/Mobs/OldXenonids/Queen/ovipositor.rsi
+      color: "#BB0A1E"
+    - map: [ "enum.RMCDamageVisualLayers.Base" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Left" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Right" ]
+      visible: false
+    - map: [ "enum.RMCShieldVisuals.Base" ]
+      sprite: _RMC14/Effects/xeno_shields.rsi
+      visible: false
+  - type: Xeno
+    hudOffset: -0.05,0.15

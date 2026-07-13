@@ -32,7 +32,7 @@
   parent: RMCMarineUniformBase
   id: CMScrubsBlue
   name: синя медична форма
-  description: Вона зроблена із спеціального матеріалу, що забезпечує малий захист проти біологічних загроз. Ця має синій колір.
+  description: Вона зроблена із спеціального матеріалу, що забезпечує малий захист проти біологічних загроз. Ця має синій колір. Нагадує вам про лохину.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/blue.rsi
@@ -50,7 +50,7 @@
   parent: CMScrubsBlue
   id: CMScrubsPurple
   name: фіолетова медична форма
-  description: Вона зроблена із спеціального матеріалу, що забезпечує малий захист проти біологічних загроз. Ця має фіолетовий колір.
+  description: Вона зроблена із спеціального матеріалу, що забезпечує малий захист проти біологічних загроз. Ця має фіолетовий колір. Модні лікарі люблять одягати ці винні форми.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/purple.rsi
@@ -68,7 +68,7 @@
   parent: CMScrubsBlue
   id: RMCScrubsLightBlue
   name: блакитна медична форма
-  description: Вона зроблена із спеціального матеріалу, що забезпечує малий захист проти біологічних загроз. Ця має блакитний колір.
+  description: Вона зроблена із спеціального матеріалу, що забезпечує малий захист проти біологічних загроз. Ця має блакитний колір. Асоціюється з медсестрами.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/lightblue.rsi
@@ -99,3 +99,48 @@
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/grey.rsi
+
+- type: entity
+  parent: CMScrubsBlue
+  id: RMCScrubsBrown
+  name: brown medical scrubs
+  description: They're made of a special fiber that provides minor protection against biohazards. Doctors without specialties wear these to calm and ground patients. These are a ruddy brown.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/brown.rsi
+
+- type: entity
+  parent: CMScrubsBlue
+  id: RMCScrubsBlack
+  name: morgue medical scrubs
+  description: They're made of a special fiber that provides minor protection against biohazards. They're worn by doctors who are making autopsies. These are black as coal. Morbid.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/black.rsi
+
+- type: entity
+  parent: CMScrubsBlue
+  id: RMCScrubsWhite
+  name: white medical scrubs
+  description: They're made of a special fiber that provides minor protection against biohazards. Cherished by all doctors who enjoy cleanliness, these are white as snow.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/white.rsi
+
+- type: entity
+  parent: CMScrubsBlue
+  id: RMCScrubsPharm
+  name: pharmaceutical physician's medical scrubs
+  description: They're made of a special fiber that provides minor protection against biohazards. Doctors with a specialty in pharmaceuticals wear these. These are white with orange shoulder stripes.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/pharm.rsi
+
+- type: entity
+  parent: CMScrubsBlue
+  id: RMCScrubsCMO
+  name: chief medical officer's medical scrubs
+  description: They're made of a special fiber that provides minor protection against biohazards. These are jade green and adorned with peach stripes that denote the wearer is the Chief Medical Officer.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Scrubs/cmo.rsi

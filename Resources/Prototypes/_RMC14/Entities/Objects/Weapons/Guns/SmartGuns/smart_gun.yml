@@ -151,6 +151,9 @@
     rsi:
       sprite: _RMC14/Interface/MousePointer/smartgun_mouse.rsi
       state: all
+  - type: GuideHelp
+    guides:
+    - RMCGuideRoleSGO
 
 - type: entity
   parent: RMCSmartGunNoCamo
@@ -363,6 +366,9 @@
     - suitStorage
   - type: RefillableByBulletBox
     bulletType: RMCBoxBulletsSmartGun
+  - type: GuideHelp
+    guides:
+    - RMCGuideRoleSGO
 
 - type: entity
   parent: RMCMagazineSmartGun
@@ -381,7 +387,7 @@
   parent: RMCMagazineSmartGun
   id: RMCMagazineSmartGunHT
   name: МЛ66A барабанний магазин з ГН (10х30 мм)
-  description: ГН – голографічне наведення. Має всередині відповідні кулі, завдяки ним чим більше куль влучить в одну ціль, тим більше пошкоджень будуть наносити наступні кулі. # Sich
+  description: ГН – голографічне наведення. Має всередині відповідні кулі, завдяки ним чим більше куль влучить в одну ціль, тим більше пошкоджень будуть наносити наступні кулі. # Mriya
   components:
   - type: BallisticAmmoProvider
     whitelist:
@@ -430,11 +436,12 @@
 - type: entity
   parent: CMBulletBase
   id: CMBulletSmartGun10x30mm
-#  name: куля (10x30мм) – Sich
+#  name: куля (10x30мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/bullet_projectiles.rsi
+    drawdepth: OverMobs
     layers:
     - state: bullet
       shader: unshaded
@@ -460,7 +467,7 @@
 - type: entity
   parent: CMBulletSmartGun10x30mm
   id: RMCBulletSmartGun10x30mmirradiated
-#  name: куля ЗУ (10х30 мм) – Sich
+#  name: куля ЗУ (10х30 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -471,7 +478,7 @@
 - type: entity
   parent: CMBulletSmartGun10x30mm
   id: RMCBulletSmartGun10x30mmHT
-#  name: куля ГН (10х30 мм) – Sich
+#  name: куля ГН (10х30 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

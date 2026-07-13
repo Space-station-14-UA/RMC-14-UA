@@ -1,0 +1,24 @@
+- type: language # Справжня англійська на заміну тій, яку ми замінили на українську. Стає додатковою мовою, тому отримує їх параметри
+  id: MREnglish
+  name: "Англійська"
+  description: "Найрозповсюджена мова у світі та головна мова міжпланетного спілкування. Думаю, ви це вже чули!"
+  isVisibleLanguage: true
+  typefaceId: Default
+  textSize: null
+  showLanguageName: true
+  showLanguageIcon: true
+  languageIcon:
+    sprite: /Textures/_RMC14/Interface/flags.rsi
+    state: GB
+  canUseRadio: true
+  needsSpeech: true
+  expectedVocabularySize: 100 # 120 в інших додаткових, інгліш легше
+  obfuscationMethod:
+    !type:SyllableObfuscation
+    replacement: ["uh", "eh", "hm", "mm", "huh", "erm", "..."]
+    minSyllables: 1
+    maxSyllables: 3
+  speechOverride:
+    chatTypeOverride: null
+    speechVerbOverrides: null
+    messageWrapOverrides: {}

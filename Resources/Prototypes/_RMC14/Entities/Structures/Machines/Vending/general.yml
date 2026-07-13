@@ -2,8 +2,8 @@
 - type: entity
   parent: ColMarTechBaseAnchorable
   id: CMVendorCassettes
-  name: Rec-Vend
-  description: Contains We-Ya approved recreational items, like Cassette Players and Cards.
+  name: Цікавинка-Мат
+  description: "Містить найрізноманітніші дрібнички, схвалені Ве-Я: касетні плеєри, гральні карти, журнали й тому подібне."
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/cassette_player.rsi
@@ -11,9 +11,10 @@
     - state: "off"
     - state: "normal-unshaded"
   - type: CMAutomatedVendor
+    canManualRestock: true
     hackable: true
     sections:
-    - name: Cassettes
+    - name: Касети
       entries:
       - id: RMCCassettePlayer
         amount: 50
@@ -29,24 +30,72 @@
         amount: 10
       - id: RMCCassetteTapeRedQwesta
         amount: 10
-#      - id: RMCCassetteTapeBolgarich - русняве
+#      - id: RMCCassetteTapeBolgarich – MR. русняве
 #        amount: 10
       - id: RMCCassetteTapeQwertyquerty
         amount: 10
       - id: RMCCassetteTapePigeonBeans
         amount: 10
-      - id: RMCSichCassetteTape
+      # Mriya start
+      - id: MRCassetteTapeFire
         amount: 10
-      - id: RMCSichCassetteTapeManSoldWorld
+      - id: MRCassetteTapeManSoldWorld
         amount: 10
-      - id: RMCSichCassetteTapeUa
+      - id: MRCassetteTapeUa
         amount: 10
+      # Mriya end
       - id: RMCCassetteTapeCustom
         amount: 20
-    - name: Cards
-      entries: []
-    - name: Magazines
+    - name: Гральні карти
       entries:
+      - id: RMCPlayingCardDeck
+        amount: 10
+    - name: Журнали
+      entries:
+      # Mriya start. Журнали "Хто я? Де я?"
+      - id: MRMagazineWhoIWhereIN1
+        amount: 10
+      - id: MRMagazineWhoIWhereIN2
+        amount: 10
+      - id: MRMagazineWhoIWhereIN3
+        amount: 10
+      - id: MRMagazineWhoIWhereIN4
+        amount: 10
+      - id: MRMagazineWhoIWhereIN5
+        amount: 10
+      - id: MRMagazineWhoIWhereIN6
+        amount: 10
+      - id: MRMagazineWhoIWhereIN7
+        amount: 10
+      - id: MRMagazineWhoIWhereIN8
+        amount: 10
+      - id: MRMagazineWhoIWhereIN9
+        amount: 10
+      - id: MRMagazineWhoIWhereIN10
+        amount: 10
+      - id: MRMagazineWhoIWhereIN11
+        amount: 10
+      - id: MRMagazineWhoIWhereIN12
+        amount: 10
+      - id: MRMagazineWhoIWhereIN13
+        amount: 10
+      - id: MRMagazineWhoIWhereIN14
+        amount: 10
+      - id: MRMagazineWhoIWhereIN15
+        amount: 10
+      - id: MRMagazineWhoIWhereIN16
+        amount: 10
+      - id: MRMagazineWhoIWhereIN17
+        amount: 10
+      - id: MRMagazineWhoIWhereIN18
+        amount: 10
+      - id: MRMagazineWhoIWhereIN19
+        amount: 10
+      - id: MRMagazineWhoIWhereIN20
+        amount: 10
+      - id: MRMagazineWhoIWhereIN21
+        amount: 10
+      # Mriya end    
       - id: RMCMagazineBootsN160
         amount: 10
       - id: RMCMagazineBootsN07
@@ -91,7 +140,7 @@
         amount: 10
       - id: RMCMagazineWeYaOrreryN258
         amount: 10
-    - name: Pins
+    - name: Значки
       entries:
       - id: RMCClothingNeckLGBTPin
         amount: 15
@@ -119,7 +168,7 @@
         amount: 15
       - id: RMCClothingNeckGoldAutismPin
         amount: 15
-    - name: Other
+    - name: Інше
       entries:
       - id: CMPaper
         amount: 15

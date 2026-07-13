@@ -1,0 +1,46 @@
+- type: gamePreset
+  id: MRCalmed
+  alias:
+  - calmed
+  - Calmed
+  - extended
+  - Extended
+  name: mriya-calmed-preset-title
+  description: mriya-calmed-preset-description
+  showInVote: true
+  rules:
+  - MRCalmed
+
+- type: gamePreset
+  id: MREventSunRiders
+  alias:
+  - event
+  - Event
+  name: mriya-event-preset-title
+  description: mriya-event-preset-description
+  showInVote: false
+  rules:
+  - MREventSunRiders
+
+- type: gamePreset
+  id: MRDistressSignalCLF
+  alias:
+  - distresssignalclf
+  - cmdistresssignalclf
+  - cmdsclf
+  name: mriya-event-clf-preset-title
+  description: mriya-event-clf-preset-description
+  showInVote: false
+  rules:
+  - MRDistressSignalCLF
+
+- type: gamePreset
+  id: MRSandbox
+  alias:
+  - sandbox
+  name: mriya-sandbox-preset-title
+  description: mriya-sandbox-preset-description
+  showInVote: false
+  rules:
+  - MRCalmed
+  - Sandbox

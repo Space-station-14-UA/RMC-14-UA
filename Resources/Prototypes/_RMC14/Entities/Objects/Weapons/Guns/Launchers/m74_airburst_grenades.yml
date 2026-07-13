@@ -90,7 +90,7 @@
 - type: entity
   parent: RMC40MMGrenadeM74AGMF
   id: RMCBatonSlugHIRR
-  name: ВІГС сповільнюючий # Sich. HIRR – High-Intensity Rubber Round, Високо-Інтенсивний Гумовний Снаряд – ВІГС
+  name: ВІГС сповільнюючий # Mriya. HIRR – High-Intensity Rubber Round, Високо-Інтенсивний Гумовний Снаряд – ВІГС
   description: Високо-Інтенсивний Гумовний Снаряд, родич гумової М15. Для його використання потрібний гранатомет. Був знятий з озброєння поліції через завелику смертність тих, в кого нею стріляли. Зараз використовується як менш смертоносний варіант боротьби з ворожими силами. ВІГС був неймовірно популярним під час конфлікту на Арктурі, бо зміг дуже ефективно виводити сили спротиву майже на той світ.
   components:
   - type: Sprite
@@ -120,6 +120,14 @@
     deleteOnSpawn: true
     proto: RMCAirBurstProjectileSmoke
 
+- type: entity
+  parent: RMC40MMGrenadeM74AGMS
+  id: RMC40MMGrenadeM74AGMSVehicle
+  components:
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: RMCAirBurstProjectileSmokeVehicle
+
 #PROJECTILES
 - type: entity
   abstract: true
@@ -138,7 +146,7 @@
   - type: Projectile
     deleteOnCollide: false
     impactEffect: BulletImpactEffect
-    maxFixedRange: 7
+    maxFixedRange: 8.463 #The result of CircleAreaFromSquareAbilityRange(7)
     damage:
       types:
         Piercing: 100
@@ -201,6 +209,9 @@
   - type: DirectionalTileFireOnTrigger
     range: 3
     spawn: RMCTileFire
+    sound: /Audio/_RMC14/Effects/hit_on_shattered_glass.ogg
+    intensity: 20
+    duration: 15
 
 - type: entity
   parent: RMCBaseAirBurstProjectile
@@ -273,16 +284,27 @@
       path: /Audio/Effects/gen_hit.ogg
   - type: SpawnOnTerminate
     spawn: RMCSmoke
-    projectileAdjust: false
   - type: SoundOnTrigger
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
+
+- type: entity
+  parent: RMCAirBurstProjectileSmoke
+  id: RMCAirBurstProjectileSmokeVehicle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: RMCAirBurstProjectileSmokeVehicle
+    count: 3
+    spread: 45
+  - type: TimedDespawn
+    lifetime: 2
 
 #Payload projectiles
 - type: entity
   parent: RMCBaseBullet
   id: RMCStarShellBullet
-#  name: сяюча зірочка – Sich
+#  name: сяюча зірочка – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -330,7 +352,7 @@
 - type: entity
   parent: RMCBaseBullet
   id: RMCBaseAirburstRound
-  name: снаряд # Sich
+  name: снаряд # Mriya
   categories: [ HideSpawnMenu ]
   abstract: true
   components:
@@ -339,7 +361,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCHornetRound
-#  name: .22 шрапнель шершня – Sich
+#  name: .22 шрапнель шершня – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -361,7 +383,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCShrapnelJagged
-#  name: зазубрена шрапнель – Sich
+#  name: зазубрена шрапнель – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -394,7 +416,7 @@
 - type: entity
   parent: RMCBaseAirburstRound
   id: RMCShrapnelIncendiary
-#  name: розпечена шрапнель – Sich
+#  name: розпечена шрапнель – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

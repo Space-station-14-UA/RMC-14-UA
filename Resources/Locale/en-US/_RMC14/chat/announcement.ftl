@@ -1,5 +1,5 @@
 rmc-announcement-author = Командування
-rmc-announcement-author-shipside = Command Ship
+rmc-announcement-author-shipside = Командування Судна
 rmc-announcement-author-highcommand = Вище Командування
 rmc-announcement-author-queen-mother = Королева Матір
 rmc-announcement-message = [font size=16][bold][color=#CECECE]Оголошення {$author}[/color][/bold][/font][font size=16][color=red]
@@ -44,7 +44,7 @@ rmc-announcement-emergency-dropship-crash = [font size=16][bold][color=#CECECE]�
 
 rmc-announcement-delta = [color=#CECECE][font size=16][bold]СИСТЕМУ САМОЗНИЩЕННЯ КОРАБЛЯ АКТИВОВАНО[/bold][/font][/color][color=red][font size=16][bold]
 
-     НЕБЕЗПЕКА, АВАРІЙНУ СИСТЕМУ САМОЗНИЩЕННЯ КОРАБЛЯ АКТИВОВАНО! ПРОСЛІДУЙТЕ ДО ВІДСІКУ САМОЗНИЩЕННЯ ДЛЯ ВСТАВЛЕННЯ СТЕРЖНЯ КЕРУВАННЯ![/bold][/font][/color]
+     НЕБЕЗПЕКА, АРЕС АКТИВУВАВ АВАРІЙНУ СИСТЕМУ САМОЗНИЩЕННЯ КОРАБЛЯ АКТИВОВАНО! НАВЧЕНОМУ ТА АВТОРИЗОВАНОМУ ПЕРСОНАЛУ ПРОСЛІДУВАТИ ДО РЕАКТОРІВ ТА НАЛАШТУВАТИ РЕАКТОРИ.[/bold][/font][/color]
 
 rmc-announcement-general-quarters = УВАГА! БОЙОВА ТРИВОГА! ВСІМ ЗАЙНЯТИ СВОЇ БОЙОВІ ПОСТИ!
 
@@ -60,4 +60,4 @@ rmc-announcement-unidentified-lifesigns = [color=#CECECE][font size=16][bold]Н�
 
     Виявлено невідомі життєві сигнали ({$count}) на борту шатла {$name}. Рекомендація: заблокувати всі зовнішні входи, включно з вентиляційними та технічними каналами.[/bold][/font][/color]
 
-rmc-announcement-shipside-header = Please write a message to announce to the crew
+rmc-announcement-shipside-header = Будь ласка, напишіть повідомлення щоб зробити оголошення екіпажу

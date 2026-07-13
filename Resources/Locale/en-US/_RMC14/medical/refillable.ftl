@@ -2,7 +2,7 @@ cm-refillable-solution-full = {CAPITALIZE($target)} заповнено!
 cm-refillable-solution-cannot-refill = {CAPITALIZE($user)} не може перезаправити {$target}.
 cm-refillable-solution-whirring-noise = {CAPITALIZE($user)} дзижчіть, коли наповнює ваш {$target}.
 
-rmc-bottle-closed = Герметична кришка повністю закриває її.
+rmc-bottle-open = Воно не закрито.
 rmc-bottle-put-lid = Закрити кришку
 rmc-bottle-remove-lid = Зняти кришку
 

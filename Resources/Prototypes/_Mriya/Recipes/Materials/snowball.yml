@@ -1,0 +1,8 @@
+- type: rmcConstruction
+  id: MRSnowwomanBuild
+  name: сніжна баба
+  prototype: MRSnowwoman
+  doAfterTime: 10
+  doAfterTimeMin: 1
+  materialCost: 3
+  ignoreBuildRestrictions: true

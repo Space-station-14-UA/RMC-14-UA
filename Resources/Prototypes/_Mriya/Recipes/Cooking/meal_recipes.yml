@@ -1,0 +1,54 @@
+- type: microwaveMealRecipe
+  id: RecipeParasiteLegCooked
+  name: смажена ніжка паразита
+  result: MRFoodParasiteLegCooked
+  time: 30
+  group: Savory
+  solids:
+    MRFoodParasiteLeg: 1
+
+- type: microwaveMealRecipe
+  id: RecipeQueenSalad
+  name: салат Королева
+  result: MRFoodQueenSalad
+  time: 5
+  group: Salad
+  reagents:
+    OilOlive: 5
+  solids:
+    FoodBowlBig: 1
+    FoodOnionRedSlice: 1
+    FoodBreadPlainSlice: 1
+    FoodCabbage: 1
+    RMCXenoEmbryo: 1
+
+- type: microwaveMealRecipe
+  id: RecipeXenoEmbryoCooked
+  name: смажений ембріон
+  result: MRFoodLarvaCooked
+  time: 30
+  group: Savory
+  solids:
+    FoodLemon: 1
+    RMCXenoEmbryo: 1
+
+- type: microwaveMealRecipe
+  id: RecipeXenoParasitelegs
+  name: паразитоніжка
+  result: MRFoodParasitelegs
+  time: 10
+  group: Savory
+  solids:
+    FoodBreadBaguette: 1
+    FoodCheeseSlice: 1
+    MRFoodParasiteLeg: 5
+
+- type: microwaveMealRecipe
+  id: RecipeXenoburger
+  name: ксенобургер
+  result: MRFoodBurgerXeno
+  time: 10
+  group: Savory
+  solids:
+    FoodBreadBun: 1
+    MRFoodMeatXeno: 2

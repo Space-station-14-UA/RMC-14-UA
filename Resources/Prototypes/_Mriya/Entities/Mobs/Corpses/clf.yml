@@ -1,0 +1,227 @@
+# Більше варіацій в порівнянні з РМС
+- type: randomHumanoidSettings
+  id: MMCCorpseCLF
+  abstract: true
+  components:
+  - type: Rank
+    rank: RMCRankCLFRebel
+  - type: NpcFactionMember
+    factions:
+      - CLF
+
+- type: randomHumanoidSettings
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFSoldier
+  components:
+  - type: Loadout
+    prototypes:
+    - MMCGearCorpseCLFSoldier
+    - MMCGearCorpseCLFSoldierAlt
+
+- type: startingGear
+  id: MMCGearCorpseCLFSoldier
+  equipment:
+    head: MRHeadMilitiaHood
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFWebbing
+    gloves: RMCHandsBlack
+    shoes: RMCShoesBrown
+    id: MRIDCardCLFSoldier
+    belt: RMCM276ShotgunShellLoadingRig
+    pocket1: RMCFlashlight
+  storage:
+    belt:
+    - CMShellShotgunBuckshot
+    - CMShellShotgunSlugs
+    - CMShellShotgunSlugs
+    - CMShellShotgunFlechette
+    - CMShellShotgunIncendiaryBuckshot
+
+- type: startingGear
+  id: MMCGearCorpseCLFSoldierAlt
+  equipment:
+    head: CMHeadBandRebel
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFWebbing
+    gloves: RMCHandsBlack
+    shoes: RMCShoesGreen
+    id: MRIDCardCLFSoldier
+    back: CMSatchel
+    belt: CMBeltMarine
+    pocket1: RMCFlashlight
+    pocket2: RMCPouchFirstAidERTFill
+  storage:
+    back:
+    - RMCGrenadeMolotov
+    - RMCGrenadeMolotov
+    - RMCGrenadeIED
+    belt:
+    - RMCMagazineRifleMAR40Ext
+    - RMCMagazineRifleMAR40Ext
+    - RMCMagazineRifleMAR40
+
+- type: randomHumanoidSettings
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFMedic
+  components:
+  - type: Loadout
+    prototypes:
+    - MMCGearCorpseCLFMedic
+    - MMCGearCorpseCLFMedicAlt
+
+- type: startingGear
+  id: MMCGearCorpseCLFMedic
+  equipment:
+    head: CMHeadBandRed
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFWebbingSurgical
+    gloves: CMHandsLatex
+    shoes: RMCShoesWhite
+    id: MRIDCardCLFMedic
+    back: CMBackpackMedical
+    belt: CMBeltMedicBagFilled
+    pocket1: RMCFlashlight
+    pocket2: RMCPouchMedkitFillAdvanced
+  storage:
+    back:
+    - RMCGrenadeMolotov
+    - CMFireExtinguisherPortable
+    - CMCrowbar
+    - CMRollerBedSpawnFolded
+    - RMCKitchenKnifeButcher
+    - RMCDefibrillatorCompact
+    belt:
+    - CMStasisBagFolded
+    - CMStasisBagFolded
+
+- type: startingGear
+  id: MMCGearCorpseCLFMedicAlt
+  equipment:
+    head: MRHeadMilitiaHood
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFWebbingMAR50
+    gloves: CMHandsLatex
+    shoes: RMCShoesPrisoner
+    id: MRIDCardCLFMedic
+    back: CMSatchelMedical
+    belt: CMBeltMedicalFilled
+    pocket1: RMCFlashlight
+    pocket2: RMCPouchMedkitFillAdvanced
+  storage:
+    jumpsuit:
+    - CMGrenadeSmoke
+    - CMGrenadeSmoke
+    - CMGrenadeSmoke
+    back:
+    - RMCGrenadeMolotov
+    - RMCGrenadeMolotov
+    - CMFireExtinguisherPortable
+    - RMCMRECLF
+    - CMRollerBedSpawnFolded
+    belt:
+    - CMDefibrillator
+
+- type: randomHumanoidSettings
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFEngineer
+  components:
+  - type: Loadout
+    prototypes:
+    - MMCGearCorpseCLFEngineer
+    - MMCGearCorpseCLFEngineerAlt
+
+- type: startingGear
+  id: MMCGearCorpseCLFEngineer
+  equipment:
+    head: CMHeadBeretEngineer
+    ears: RMCHeadsetDistressCLF
+    eyes: ClothingEyesGlassesMeson
+    jumpsuit: RMCJumpsuitCLFWebbingMAR50
+    gloves: CMHandsInsulated
+    shoes: RMCShoesOrange
+    id: MRIDCardCLFEngineer
+    back: CMBackpackEngineer
+    belt: RMCBeltConstruction
+    pocket1: RMCPouchShotgun
+    pocket2: RMCPouchFirstAidERTFill
+  storage:
+    jumpsuit:
+    - CMCrowbar
+    - CMWirecutter
+    - CMScrewdriver
+    back:
+    - RMCBoxClaymoreMineFilled
+    - RMCGrenadeMolotov
+    - RMCMRECLF
+    - RMCM5Bayonet
+    belt:
+    - CMSheetMetal20
+    - CMSheetPlasteel30
+    - RMCExplosivePlastic
+    - RMCExplosiveBreachingCharge
+    pocket1:
+    - CMShellShotgunIncendiaryBuckshot
+    - CMShellShotgunIncendiary
+    - CMShellShotgunFlechette
+
+- type: startingGear
+  id: MMCGearCorpseCLFEngineerAlt
+  equipment:
+    head: RMCHelmetWelding
+    mask: RMCCombatUtilityKnifeA
+    ears: RMCHeadsetDistressCLF
+    eyes: ClothingEyesGlassesMeson # ТОДО. Замінити на РМСні
+    jumpsuit: RMCJumpsuitCLFWebbingMAR50
+    outerClothing: MRCoatMilitiaHauberk
+    gloves: CMHandsInsulated
+    shoes: RMCShoesYellow
+    id: MRIDCardCLFEngineer
+    belt: CMBeltUtilityFilled
+    back: RMCSatchelLightpackWelder
+    pocket1: RMCPouchConstructionFillLowGrade
+    pocket2: RMCPouchFirstAidERTFill
+  storage:
+    jumpsuit:
+    - CMShellShotgunBuckshot
+    - CMShellShotgunIncendiary
+    back:
+    - RMCExplosiveBreachingCharge
+    - RMCBinocularsCiv
+    - RMCMRECLF
+    - RMCFlashlight
+    - RMCBoxClaymoreMineFilled
+    outerClothing:
+    - CMShellShotgunFlechette
+    - CMShellShotgunFlechette
+
+- type: randomHumanoidSettings
+  parent: [MMCCorpseCLF, RMCCorpse]
+  id: MMCCorpseCLFSpecialist
+  components:
+  - type: Loadout
+    prototypes: [ MMCGearCorpseCLFSpecialist ]
+
+- type: startingGear
+  id: MMCGearCorpseCLFSpecialist
+  equipment:
+    head: MRHeadMilitiaHood
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFSoldier
+    outerClothing: MRCoatMilitia
+    gloves: CMHandsBlackMarine
+    shoes: RMCShoesCombat
+    id: MRIDCardCLFSpecialist
+    back: RMCSatchelLightpack
+    belt: RMCMK80BeltFilled
+    pocket1: RMCFlashlight
+    pocket2: RMCPouchFirstAidERTFill
+  storage:
+    back:
+    - RMCVisorNightVision
+    - CMShellShotgunIncendiaryBuckshot
+    - CMShellShotgunIncendiaryBuckshot
+    - CMShellShotgunIncendiaryBuckshot
+    - CMGrenadeFragOld
+    - RMCMagazineMar50LMG
+    outerClothing:
+    - RMCBinocularsCiv

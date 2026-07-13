@@ -4,6 +4,7 @@
   name: стелаж
   description: Стелаж із металевих полиць, розташованих одна над одною. Відмінно підходить для зберігання, але не дуже - як укриття.
   components:
+  - type: VehicleSmashable
   - type: Transform
     anchored: false
   - type: Physics

@@ -37,7 +37,7 @@
   - SquadLeader
   overwatchSortPriority: -6
   overwatchShowName: true
-  overwatchRoleName: Лідер Загону # Sich, бо це назва
+  overwatchRoleName: Лідер Загону # Mriya, бо це назва
   roleWeight: 1
   displayWeight: 6
   special:
@@ -50,9 +50,9 @@
         RMCSkillEndurance: 2
         RMCSkillEngineer: 2
         RMCSkillFirearms: 1
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillIntel: 1
-        RMCSkillJtac: 3 # Sich. 2 в оригіналі
+        RMCSkillJtac: 3 # Mriya. 2 в оригіналі
         RMCSkillLeadership: 1
         RMCSkillMedical: 1
         RMCSkillVehicles: 1

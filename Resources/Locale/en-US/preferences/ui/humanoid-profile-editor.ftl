@@ -68,5 +68,5 @@ humanoid-profile-editor-no-traits = Особливості не доступні
 humanoid-profile-editor-trait-count-hint = Доступні бали: [{$current}/{$max}]
 
 trait-category-disabilities = Обмеження
-trait-category-speech = Особливості вимови
+trait-category-speech = Мовлення
 trait-category-quirks = Дивацтва

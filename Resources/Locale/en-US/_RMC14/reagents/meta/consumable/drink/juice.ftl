@@ -1,2 +1,2 @@
-rmc-reagent-name-juice-mango = mango juice
-rmc-reagent-desc-juice-mango = Tasty tasty mango juice. 
+rmc-reagent-name-juice-mango = сік манго
+rmc-reagent-desc-juice-mango = Неймовірно смачний манговий сік.

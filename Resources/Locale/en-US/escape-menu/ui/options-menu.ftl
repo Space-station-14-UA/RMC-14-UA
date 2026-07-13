@@ -57,6 +57,7 @@ ui-options-show-combat-mode-indicators = Показувати індикатор
 ui-options-opaque-storage-window = Непрозоре вікно сховища
 ui-options-show-ooc-patron-color = Показувати колір Патрона у OOC
 ui-options-show-looc-on-head = Показати повідомлення ЛOOC над головами персонажів
+ui-options-show-dead-on-ghost = Показати повідомлення мертвого чату над головами привидів
 ui-options-fancy-speech = Показати імена в бульбашках
 ui-options-fancy-name-background = Додати фон до імен у бульбашках
 ui-options-vsync = Вертикальна синхронізація
@@ -128,6 +129,8 @@ ui-options-header-text-other = Інше введення тексту
 
 ui-options-hotkey-keymap = Використовувати клавіші QWERTY (США)
 ui-options-hotkey-toggle-walk = Перемикати біг
+ui-options-hold-to-attack-melee = Утримувати для атаки (ближній бій)
+ui-options-hold-to-attack-ranged = Утримувати для атаки (на відстані)
 
 ui-options-function-move-up = Переміщення вгору
 ui-options-function-move-left = Переміщення вліво
@@ -158,6 +161,9 @@ ui-options-function-move-stored-item = Перемістити предмет у 
 ui-options-function-rotate-stored-item = Повернути предмет у сховище
 ui-options-function-save-item-location = Зберегти позицію предмета
 ui-options-static-storage-ui = Закріпити сховище на хотбарі
+ui-options-function-smart-equip-suit-storage = Розумне спорядження на броню
+ui-options-function-smart-equip-pocket1 = Розумне спорядження в кишеню 1
+ui-options-function-smart-equip-pocket2 = Розумне спорядження в кишеню 2
 
 ui-options-function-smart-equip-backpack =  Швидко покласти в рюкзак
 ui-options-function-smart-equip-belt = Швидко покласти в пояс
