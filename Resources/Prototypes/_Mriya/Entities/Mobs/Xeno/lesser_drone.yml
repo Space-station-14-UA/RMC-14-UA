@@ -1,0 +1,171 @@
+# Мала бігунка, ще одна можлива еволюція лессера. Саме так!
+- type: entity
+  parent:
+  - CMXenoDeveloped
+  - CMXenoTail
+  - CMXenoFlammable
+  - RMCXenoSpeechSounds
+  - RMCXenoVentCrawler
+  id: MRXenoLesserRunner
+  name: Мала Бігунка
+  description: Малесенька фіолетова та дуже аеродинамічна чужопланетна істота, схоже її лапи створені для бігу та це все, що вона вміє.
+  components:
+  - type: GhostRole
+    name: roles-lesser-runner-name
+    description: roles-lesser-runner-description
+    raffle:
+      settings: short
+  - type: FiremanCarriable
+    canThrow: true
+    carrierWhitelist:
+      components:
+      - Synth
+  - type: Sprite
+    sprite: _Mriya/Mobs/Xenonids/LesserDrone/lesser_runner.rsi
+  - type: RMCXenoDamageVisuals
+    prefix: lesser_runner
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - RMCSynthGrabbable
+  - type: XenoRegen
+    restHealMultiplier: 2 # 1.75 в ранера
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead # 1.5 кулі
+  - type: DamageOffWeeds
+    damage:
+      types:
+        Blunt: 1 # 2.5 в лессера. Хвилина поза травою.
+  - type: Xeno
+    role: CMXenoLesserDrone
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoWatch
+    - ActionXenoHide
+    - ActionXenoTailStab
+    tier: 0
+    hudOffset: -0.25, 0
+    contributesToVictory: false
+    countedInSlots: false
+    unlockAt: 0
+    muteOnSpawn: true
+  - type: Fixtures # Як в ранера, проходити під столами
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 85
+        mask:
+        - Impassable
+        - HighImpassable
+        - LowImpassable
+        - BarbedBarricade
+        - BarricadeImpassable
+        layer:
+        - SmallMobLayer # Від паразита
+      fix2:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 85
+        layer:
+        - BulletImpassable
+  - type: XenoHide # Як в ранера
+  - type: XenoPlasma # Як в ранера
+    plasma: 0
+    maxPlasma: 0
+    plasmaRegenOnWeeds: 0
+  - type: XenoLight
+  - type: MeleeWeapon
+    attackRate: 1.4 # Як в ранера
+    damage:
+      groups:
+        Brute: 10 # 20 в лессера
+  - type: XenoTailStab
+    tailDamage:
+      groups:
+        Brute: 12 # 24 в лессера
+  - type: Tackle # 4-5 у ранера та лессера
+    min: 6
+    max: 7
+    chance: 0.4
+    stunMin: 4
+    stunMax: 4
+  - type: MovementSpeedModifier # 5.55 та 10 в ранера. Воно ще швидше
+    baseWalkSpeed: 7.5
+    baseSprintSpeed: 15
+  - type: AcidBloodSplash # Як в лессера
+    damage:
+      types:
+        Heat: 15
+  - type: RMCGibOnDeath
+    gibChance: 0.9 # 0.75 в лессера
+  - type: RMCSpawnEntitiesOnGib
+    entities:
+    - RMCDecalSpawnerGibsLesserDrone
+    - RMCGibEffectXenoLesserDrone
+  - type: Butcherable
+    spawned:
+    - id: MRFoodMeatXeno
+      amount: 1
+  - type: WhitelistPickup
+    whitelist:
+      components:
+      - XenoFruit
+  - type: TunnelRenamer
+  - type: XenoHiveCoreRole
+  - type: RMCSize # Як в лессера
+    size: VerySmallXeno
+  - type: TacticalMapIcon
+    icon:
+      sprite: /Textures/_Mriya/Interface/map_blips.rsi
+      state: lesser_runner
+  - type: Evasion # Як в лессера
+    evasion: 10
+  - type: SlowOnPull # Менше за всіх
+    slowdowns:
+    - multiplier: 0.3
+      whitelist:
+        components:
+        - Marine
+    - multiplier: 0.35
+      whitelist:
+        components:
+        - XenoLight
+    - multiplier: 0.25
+      whitelist:
+        components:
+        - XenoHeavy
+  - type: XenoInhands
+    prefix: lesser
+  - type: XenoHidden
+  - type: FixedIdentity
+    name: mriya-lesser-runner
+  - type: VentCrawler
+    ventCrawlIcon: lesser
+  - type: RMCActionOrder
+    id: MRXenoLesserRunner
+  - type: MindTakeoverBehavior
+    ejectFromLarvaQueues: false
+  - type: XenoStrain
+    name: mriya-xeno-lesser-runner-name
+    description: mriya-xeno-lesser-runner-description
+    popup: mriya-xeno-lesser-runner-popup
+  - type: RemoveComponents
+    components:
+    - type: CanBeLarvaQueued
+
+# Прототип з старою версією спрайтів
+- type: entity
+  parent: [ MRXenoBaseOld, CMXenoLesserDrone ]
+  id: MRXenoLesserDroneOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/LesserDrone/lesser_drone.rsi

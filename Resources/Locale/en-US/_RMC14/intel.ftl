@@ -15,29 +15,29 @@ rmc-intel-misc = Різне
 rmc-intel-personal = Особисті підказки
 
 rmc-intel-data-disk-uploaded = {$baseName} (uploaded)
-rmc-intel-color-red = red
-rmc-intel-color-black = black
-rmc-intel-color-blue = blue
-rmc-intel-color-yellow = yellow
-rmc-intel-color-white = white
-rmc-intel-color-grey = grey
-rmc-intel-color-green = green
-rmc-intel-color-cracked-blue = cracked blue
-rmc-intel-color-bloodied-blue = bloodied blue
+rmc-intel-color-red = [color=#eb4034]red[/color]
+rmc-intel-color-black = [color=#000000]black[/color]
+rmc-intel-color-blue = [color=#3449eb]blue[/color]
+rmc-intel-color-yellow = [color=#ebe534]yellow[/color]
+rmc-intel-color-white = [color=#ffffff]white[/color]
+rmc-intel-color-grey = [color=#949494]grey[/color]
+rmc-intel-color-green = [color=#5dbf36]green[/color]
+rmc-intel-color-cracked-blue = [color=#3449eb]cracked blue[/color]
+rmc-intel-color-bloodied-blue = [color=#3449eb]bloodied blue[/color]
 rmc-intel-color-unknown = unmarked
 rmc-intel-clue-found = You make out something about {$clue}.
 rmc-intel-personal-clues-added = New clues have been added to your personal clues.
 rmc-intel-clue-label-number = #{$number}
 rmc-intel-clue-label-serial = #{$serial}
 rmc-intel-clue-label-unmarked = no visible label
-rmc-intel-clue-paper-scrap = A paper scrap {$label} in {$area}.
-rmc-intel-clue-progress-report = A progress report {$label} in {$area}.
-rmc-intel-clue-folder = A {$color} folder {$label} in {$area}.
-rmc-intel-clue-technical-manual = A technical manual {$label} in {$area}.
-rmc-intel-clue-experimental-device = Retrieve {$name} {$label} in {$area}.
-rmc-intel-clue-data-disk = Retrieve {$color} computer disk {$label} in {$area}, decryption password is {$key}.
-rmc-intel-clue-data-terminal = Upload data from data terminal {$label} in {$area}, the password is {$password}.
-rmc-intel-clue-safe = Crack open a safe {$label} in {$area}, the combination lock is {$code}.
+rmc-intel-clue-paper-scrap = paper scrap {$label} in {$area}.
+rmc-intel-clue-progress-report = progress report {$label} in {$area}.
+rmc-intel-clue-folder = {$color} folder {$label} in {$area}.
+rmc-intel-clue-technical-manual = technical manual {$label} in {$area}.
+rmc-intel-clue-experimental-device = {$name} {$label} in {$area}.
+rmc-intel-clue-data-disk = {$color} disk [bold]{$label}[/bold], decryption key is [bold]{$key}[/bold] in {$area}.
+rmc-intel-clue-data-terminal = Upload data from terminal [bold]{$label}[/bold], password is [bold]{$password}[/bold] in {$area}.
+rmc-intel-clue-safe = Crack open the safe {$label}, combination lock is [bold]{$code}[/bold] in {$area}.
 rmc-intel-data-terminal-password-prompt = Enter the password
 rmc-intel-data-terminal-no-power = This terminal has no power!
 rmc-intel-data-terminal-no-comms = The terminal flashes a network connection error.
@@ -126,7 +126,7 @@ rmc-intel-tech-unlock-tier-3-name = Розблокувати Рівень 3
 rmc-intel-tech-unlock-tier-4-name = Розблокувати Рівень 4
 rmc-intel-tech-unlock-tier-description = Підвищує рівень авторизації активів.
 rmc-intel-tech-requisition-arc-name = БТР-Р Хамві
-rmc-intel-tech-requisition-arc-description = Розблоковує Хамві в розвідницькій модифікації, як транспорт.
+rmc-intel-tech-requisition-arc-description = Розблоковує БТР Хамві в розвідницькій модифікації, як транспорт.
 rmc-intel-tech-requisition-budget-name = Додатковий бюджет для Логістики
 rmc-intel-tech-requisition-budget-description = Збільшує бюджет логістики для закупівлі оснащення. Додаткові 10000 доларів.
 rmc-intel-tech-dropship-budget-name = Додатковий бюджет для Шатлів
@@ -147,7 +147,7 @@ rmc-intel-tech-nuclear-device-description = Purchase a nuclear device. Only purc
 ## Tech Tree Announcements
 rmc-intel-tech-announcement-special-assets-author = СПЕЦІАЛЬНІ АКТИВИ САВАННИ АВТОРИЗОВАНО
 rmc-intel-tech-announcement-defcon-author = ПІДВИЩЕННЯ РІВНЯ ГОТОВНОСТІ ЗАХИСТУ САВАННИ
-rmc-intel-tech-announcement-arc = Висадка БТР-Р була авторизована для цієї операції.
+rmc-intel-tech-announcement-arc = Розгортання БТР-Р Хамві в розвідницькій модифікації було авторизована для цієї операції.
 rmc-intel-tech-announcement-requisition-budget = На цю операцію було виділено додатковий бюджет для логістики.
 rmc-intel-tech-announcement-dropship-budget = Для цієї операції надано додаткові ресурси фабрикатора деталей шатлів.
 rmc-intel-tech-announcement-tier-2 = РІВЕНЬ ОЦІНКИ ЗАГРОЗИ ПІДВИЩЕНО ДО ДРУГОГО РІВНЯ. Активи ДРУГОГО РІВНЯ були авторизовані для врегулювання ситуації.

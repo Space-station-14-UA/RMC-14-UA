@@ -1,6 +1,6 @@
 rmc-acid-resist = Ви зупиняєтеся, падаєте й котитеся, намагаючись позбавитися кислоти.
-rmc-acid-resist-partial = You stop, drop, and roll, getting rid of some of the acid... but it's still melting you!
-rmc-acid-gun-second-wind-spent = {CAPITALIZE(THE($target))} can't be cleared of acid; its already to damaged.
+rmc-acid-resist-partial = Ви зупинились, лягли, та почали перекочуватись щоб здихатись цієї кислоти... але вона досі плавить тебе!
+rmc-acid-gun-second-wind-spent = {CAPITALIZE($target)} не можна очистити від кислоти; воно вже занадто пошкоджене.
 
 rmc-glob-start-self = Починається викидання великої газової кулі!
 rmc-glob-start-others = {$user} готується виплюнути величезну кулю!

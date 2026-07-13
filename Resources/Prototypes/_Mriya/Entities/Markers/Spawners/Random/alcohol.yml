@@ -1,0 +1,93 @@
+# Просунута технологія випадкового алкоголю спеціально для Саванни
+# Спавнери
+- type: entity
+  parent: MarkerBase
+  id: MMCRandomAlcohol10
+  name: Спавнер Випадкового Алкоголю
+  suffix: Мрія, 10%
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Mriya/Objects/Consumable/Drinks/horilka_cossacks.rsi
+          state: icon
+    - type: EntityTableSpawner
+      table: !type:NestedSelector
+        tableId: MMCRandomAllAlcoholTable
+        prob: 0.1
+
+- type: entity
+  parent: MMCRandomAlcohol10
+  id: MMCRandomAlcohol25
+  suffix: Мрія, 25%
+  components:
+    - type: EntityTableSpawner
+      table: !type:NestedSelector
+        tableId: MMCRandomAllAlcoholTable
+        prob: 0.25
+
+- type: entity
+  parent: MMCRandomAlcohol10
+  id: MMCRandomAlcohol50
+  suffix: Мрія, 50%
+  components:
+    - type: EntityTableSpawner
+      table: !type:NestedSelector
+        tableId: MMCRandomAllAlcoholTable
+        prob: 0.5
+
+- type: entity
+  parent: MMCRandomAlcohol10
+  id: MMCRandomAlcohol100
+  suffix: Мрія, 100%
+  components:
+    - type: EntityTableSpawner
+      table: !type:NestedSelector
+        tableId: MMCRandomAllAlcoholTable
+        prob: 1
+
+# Столи. За ростом градуса, притримуйтеся порядку, а то буде білка на гвинтокрилі
+- type: entityTable
+  id: MMCRandomAllAlcoholTable
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: MMCRandomCommonAlcoholTable
+      weight: 0.7
+    - !type:NestedSelector
+      tableId: MMCRandomRareAlcoholTable
+      weight: 0.2
+    - !type:NestedSelector
+      tableId: MMCRandomStrongAlcoholTable
+      weight: 0.1
+
+- type: entityTable
+  id: MMCRandomCommonAlcoholTable
+  table: !type:GroupSelector
+    children:
+    - id: CMDrinkCanFruitBeer # Зрада алкоголіків
+    - id: RMCDrinkCanSequoiaBeer
+    - id: CMDrinkCanBeerLite
+    - id: CMDrinkCanAle
+
+- type: entityTable
+  id: MMCRandomRareAlcoholTable
+  table: !type:GroupSelector
+    children:
+    - id: RMCBeerCoolerFilled
+    - id: RMCDrinkAlcoholPurpleWine
+    - id: RMCDrinkAlcoholGrenadine
+    - id: RMCDrinkAlcoholMelonLiquor
+    - id: RMCDrinkAlcoholBlueCuracao
+    - id: RMCDrinkAlcoholKahlua
+    - id: MMCDrinkAlcoholVodkaQuarter
+
+- type: entityTable
+  id: MMCRandomStrongAlcoholTable
+  table: !type:GroupSelector
+    children:
+    - id: RMCDrinkAlcoholGin
+    - id: RMCDrinkAlcoholVermouth
+    - id: RMCDrinkAlcoholDavenport
+    - id: MMCDrinkAlcoholVodkaHalf
+    - id: RMCDrinkAlcoholVodka

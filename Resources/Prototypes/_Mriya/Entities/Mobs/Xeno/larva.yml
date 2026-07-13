@@ -1,0 +1,14 @@
+- type: entity
+  parent: [ MRXenoBaseOld, CMXenoLarva ]
+  id: MRXenoLarvaOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Larva/larva.rsi
+  - type: Xeno
+    hudOffset: -0.15,0.1
+  - type: XenoEvolution
+    evolvesTo:
+    - MRXenoDroneOld
+    - MRXenoDefenderOld
+    - MRXenoSentinelOld
+    - MRXenoRunnerOld

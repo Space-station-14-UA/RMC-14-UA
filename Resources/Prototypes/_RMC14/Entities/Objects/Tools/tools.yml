@@ -1,8 +1,8 @@
 - type: entity
   parent: Screwdriver
   id: CMScrewdriver
-  name: викрутка # Sich
-  description: Крутіть туди, потім сюди, розкрутіть, перекрутіть, відкрутіть, закрутіть, якщо ви ще не зрозуміли вона дозволяє крутити шурупи і таке інше. # Sich
+  name: викрутка # Mriya
+  description: Крутіть туди, потім сюди, розкрутіть, перекрутіть, відкрутіть, закрутіть, якщо ви ще не зрозуміли вона дозволяє крутити шурупи і таке інше. # Mriya
   components:
   - type: RandomSprite
     available:
@@ -46,8 +46,8 @@
 - type: entity
   parent: Wirecutter
   id: CMWirecutter
-  name: кусачки # Sich
-  description: Гострогубці які перекусують все, що ви лиш можете уявити. Обережно, не відкусіть собі пальці. # Sich
+  name: кусачки # Mriya
+  description: Гострогубці які перекусують все, що ви лиш можете уявити. Обережно, не відкусіть собі пальці. # Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Tools/wirecutters.rsi
@@ -89,8 +89,8 @@
 - type: entity
   parent: Wrench
   id: CMWrench
-  name: гайковий ключ # Sich
-  description: "Дуже поширений інструмент для відкручування і прикручування. Не забувайте: \"По часовій - закручую, проти часової - відкручую\"." # Sich
+  name: гайковий ключ # Mriya
+  description: "Дуже поширений інструмент для відкручування і прикручування. Не забувайте: \"По часовій - закручую, проти часової - відкручую\"." # Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Tools/wrench.rsi
@@ -220,8 +220,8 @@
 - type: entity
   parent: [Crowbar, RMCBaseMeleeWeapon]
   id: CMCrowbar
-  name: лом # Sich
-  description: Багатофункціональна річ, нею можна як і двері відчинити, так і голову ксеноморфа проломити. # Sich
+  name: лом # Mriya
+  description: Багатофункціональна річ, нею можна як і двері відчинити, так і голову ксеноморфа проломити. # Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Tools/crowbar.rsi
@@ -297,8 +297,8 @@
 - type: entity
   parent: HandLabeler
   id: CMHandLabeler
-  name: ручний етикетувальник # Sich
-  description: Штуковина, яка використовується для маркування предметів та об'єктів будь-яким написом, який прийде вам в голову. # Sich
+  name: ручний етикетувальник # Mriya
+  description: Штуковина, яка використовується для маркування предметів та об'єктів будь-яким написом, який прийде вам в голову. # Mriya
   suffix: RMC14
   components:
     - type: Sprite
@@ -322,8 +322,8 @@
 - type: entity
   parent: Shovel
   id: RMCShovel
-  name: лопата # Sich
-  description: Великий інструмент для вскапування та перекидання землі. # Sich
+  name: лопата # Mriya
+  description: Великий інструмент для вскапування та перекидання землі. # Mriya
   suffix: RMC
   components:
   - type: Sprite

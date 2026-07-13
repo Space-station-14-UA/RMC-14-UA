@@ -1,38 +1,39 @@
-reagent-name-rmcphoron = Phoron
-reagent-desc-rmcphoron = A special form of metallic plasma that is not found on Earth. While phoron is highly flammable and extremely toxic, its high energy density makes it one of the best solid fuel alternatives. Liquid phoron is often used for research purposes and in the medical industry a catalyst to many advanced chemicals.
+reagent-name-rmcphoron = Форон
+reagent-desc-rmcphoron = Спеціальна форма металічної плазми не земного погодження. Хоча форон і легкозаймистий та дуже токсичний, його висока енергетична щільність робить його одним з найкращих твердопаливних речовин. Рідкий форон часто використовується для дослідницьких цілей в медичній галузі, та як каталізатор для синтезу просунутих реагентів.
 
-reagent-name-rmcnapalm-ut = UT-Napthal Fuel
-reagent-desc-rmcnapalm-ut = Known as Ultra Thick Napthal Fuel, a sticky combustible liquid chemical, typically used with flamethrowers.
+reagent-name-rmcnapalm-ut = НВ-Нафталінове Паливо
+reagent-desc-rmcnapalm-ut = Відоме як Надзвичайно В'язке Нафталінове Паливо, клейка горюча рідка хімічна речовина, зазвичай використовується у вогнеметах.
 
-reagent-name-rmcbgel = Napalm B-Gel
-reagent-desc-rmcbgel = Unlike its liquid contemporaries, this gelled variant of napalm is easily extinguished, but shoots far and lingers on the ground in a viscous mess, while reacting with inorganic materials to ignite them.
+reagent-name-rmcbgel = Напалм "Бі-Гель"
+reagent-desc-rmcbgel = На відміну від своїх рідких аналогів, цей гелеподібний різновид напалму легко загасити, але розлітається далеко і довго залишається на землі у вигляді в’язкої маси, під час взаємодії з неорганічними речовинами, що призводить до їхнього займання.
 
-reagent-name-rmcnapalm-b = Napalm B
-reagent-desc-rmcnapalm-b = A special variant of napalm that's unable to cling well to anything, but disperses over a wide area while burning slowly. The composition reacts with inorganic materials to ignite them, causing severe damage.
+reagent-name-rmcnapalm-b = Напалм "Бі"
+reagent-desc-rmcnapalm-b = Спеціальний різновид напалму, який погано прилипає до будь-яких поверхонь, але при цьому розповсюджується на великій площі, повільно згораючи. Ця суміш вступає в реакцію з неорганічними матеріалами, запалюючи їх і завдаючи серйозних пошкоджень.
 
-reagent-name-rmcrapalm-x = Napalm X
-reagent-desc-rmcrapalm-x = A sticky combustible liquid chemical that burns extremely hot.
+reagent-name-rmcrapalm-x = Напалм "Екс"
+reagent-desc-rmcrapalm-x = Клейка горюча рідка хімічна речовина, яка горить з надзвичайно високою температурою.
 
-reagent-name-rmcnapalm = Napalm
-reagent-desc-rmcnapalm = This will probably ignite before you get to read this.
+reagent-name-rmcnapalm = Напалм
+reagent-desc-rmcnapalm = Це, мабуть, спалахне ще до того, як ви встигнете це прочитати.
 
-reagent-name-rmcnapalm-sticky = Sticky-Napalm
-reagent-desc-rmcnapalm-sticky = A custom napalm mix, stickier and lasts longer but lower damage.
+reagent-name-rmcnapalm-sticky = Клейкий Напалм
+reagent-desc-rmcnapalm-sticky = Спеціально розроблена суміш напалму: вона липкіша і діє довше, але завдає менше шкоди.
 
-reagent-name-rmcnapalm-hc = High-Combustion Napalm Fuel
-reagent-desc-rmcnapalm-hc = A custom napalm mix, higher damage but not as sticky.
+reagent-name-rmcnapalm-hc = Високотемпературне Напалмове Паливо
+reagent-desc-rmcnapalm-hc = Спеціально розроблена суміш напалму: завдає більшої шкоди, але не така липка.
 
-reagent-name-rmcclf3 = Chlorine Trifluoride
-reagent-desc-rmcclf3 = A highly reactive interhalogen compound capaple of self ignition. A very strong oxidizer and is extremely reactive with most organic and inorganic materials.
+reagent-name-rmcclf3 = Трифторид Хлору
+reagent-desc-rmcclf3 = Високореактивна галогенідна сполука, здатна до самозаймання. Дуже сильний окислювач, який вступає у надзвичайно бурхливі реакції з більшістю органічних та неорганічних речовин.
 
-reagent-name-rmcnapalm-e = Napalm E
-reagent-desc-rmcnapalm-e = A sticky combustible liquid chemical that penetrates the best fire retardants.
+reagent-name-rmcnapalm-e = Напалм "І"
+reagent-desc-rmcnapalm-e =  Клейка горюча рідка хімічна речовина, яка проникає навіть крізь найкращі вогнезахисні матеріали.
 
-reagent-name-rmcnapalm-ex = Napalm EX
-reagent-desc-rmcnapalm-ex = A sticky combustible liquid chemical made up of a combonation of rare and dangerous reagents both that penetrates the best fire retardants, and burns extremely hot.
+reagent-name-rmcnapalm-ex = Напалм "І-Екс"
+reagent-desc-rmcnapalm-ex = Клейка горюча рідка хімічна речовина, що складається з суміші рідкісних і небезпечних реагентів, яка проникає навіть крізь найкращі вогнезахисні матеріали та горить з надзвичайно високою температурою.
 
+# НЕ ПЕРЕКЛАДАТИ КОМУНЯК
 reagent-name-rmcr189 = R189
 reagent-desc-rmcr189 = A SPP chemical, it burns at an extremely high tempature and is designed to melt directly through fortified positions or bunkers.
 
-reagent-name-rmcmethane = Methane
-reagent-desc-rmcmethane = An easily combustible hydrocarbon that can very rapidly expand a fire, even explosively at the right concentrations. It is used primarily as fuel to make heat and light or manufacturing of organic chemicals.
+reagent-name-rmcmethane = Метан
+reagent-desc-rmcmethane = Легкозаймистий вуглеводень, який може дуже швидко розпалити пожежу, а при відповідних концентраціях — навіть спричинити вибух. Використовується переважно як паливо для опалення та освітлення або у виробництві органічних хімічних речовин.

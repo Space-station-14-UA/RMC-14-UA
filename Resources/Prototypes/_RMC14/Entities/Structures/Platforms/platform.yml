@@ -27,6 +27,7 @@
     anchored: true
   - type: Sprite
     sprite: _RMC14/Structures/platforms.rsi
+    drawdepth: HighFloorObjects
   - type: InteractionOutline
   - type: Clickable
 
@@ -298,7 +299,7 @@
 
 - type: entity
   parent: CMPlatformCorner
-  id: RMCPlatformKutjevoSMCorner
+  id: RMCPlatformKutjevoMMCorner
   name: raised metal edge
   description: A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
   components:

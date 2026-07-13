@@ -10,7 +10,7 @@ public sealed class LizardAccentSystem : EntitySystem
     private static readonly Regex RegexInternalX = new(@"(\w)x");
     private static readonly Regex RegexLowerEndX = new(@"\bx([\-|r|R]|\b)");
     private static readonly Regex RegexUpperEndX = new(@"\bX([\-|r|R]|\b)");
-    // Sich start. Локалізація
+    // Mriya start. Локалізація
     private static readonly Regex RegexLowerCyrillicS = new("с+");
     private static readonly Regex RegexUpperCyrillicS = new("С+");
     private static readonly Regex RegexLowerCyrillicSh = new("ш+");
@@ -19,7 +19,7 @@ public sealed class LizardAccentSystem : EntitySystem
     private static readonly Regex RegexUpperCyrillicShch = new("Щ+");
     private static readonly Regex RegexLowerCyrillicZh = new("ж+");
     private static readonly Regex RegexUpperCyrillicZh = new("Ж+");
-    // Sich end
+    // Mriya end
 
     public override void Initialize()
     {
@@ -41,7 +41,7 @@ public sealed class LizardAccentSystem : EntitySystem
         message = RegexLowerEndX.Replace(message, "ecks$1");
         // eckS
         message = RegexUpperEndX.Replace(message, "ECKS$1");
-        // Sich start. Локалізація
+        // Mriya start. Локалізація
         // сссупер
         message = RegexLowerCyrillicS.Replace(message, "ссс");
         // СССУПЕР
@@ -58,7 +58,7 @@ public sealed class LizardAccentSystem : EntitySystem
         message = RegexLowerCyrillicZh.Replace(message, "жшш");
         // ЖШШнець
         message = RegexUpperCyrillicZh.Replace(message, "ЖШШ");
-        // Sich end
+        // Mriya end
 
         args.Message = message;
     }

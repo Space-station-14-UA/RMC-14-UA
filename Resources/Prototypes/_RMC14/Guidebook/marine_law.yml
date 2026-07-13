@@ -1,4 +1,4 @@
-# Mriya. У нас не використовуються, дивіться _Sich\Guidebook\mriya_marine_law.yml
+# Mriya. У нас не використовуються, дивіться _Mriya\Guidebook\mriya_marine_law.yml
 #- type: guideEntry
 #  parent: RMC
 #  id: RMCMarineLaw
@@ -196,7 +196,7 @@
   # SOP
 
 # SOP
-#- type: guideEntry – Mriya. У нас власне
+#- type: guideEntry – MR. У нас власне
 #  parent: RMC
 #  id: RMCMarineSOP
 #  name: rmc-guide-entry-marine-sop

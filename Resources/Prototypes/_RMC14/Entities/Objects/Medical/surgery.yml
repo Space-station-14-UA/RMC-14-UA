@@ -3,8 +3,8 @@
   parent: BaseToolSurgery
   id: CMBaseToolSurgery
   abstract: true
-#  name: retractor – Sich
-#  description: Retracts stuff. – Sich
+#  name: retractor – MR
+#  description: Retracts stuff. – MR
   components:
   - type: Item
     size: Small

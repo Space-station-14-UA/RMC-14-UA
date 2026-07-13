@@ -26,7 +26,7 @@ using MSLogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace Content.Server.Database
 {
-    public interface IServerDbManager
+    public partial interface IServerDbManager // mriya partial interface is in a separate file
     {
         void Init();
 
@@ -476,7 +476,7 @@ namespace Content.Server.Database
         public string? Payload { get; set; }
     }
 
-    public sealed class ServerDbManager : IServerDbManager
+    public sealed partial class ServerDbManager : IServerDbManager // mriya partial class is in a separate file
     {
         public static readonly Counter DbReadOpsMetric = Metrics.CreateCounter(
             "db_read_ops",

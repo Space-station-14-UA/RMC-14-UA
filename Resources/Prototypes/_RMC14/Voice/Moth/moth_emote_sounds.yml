@@ -1,7 +1,7 @@
 - type: emoteSounds
-  parent: [UnisexMoth, RMCBaseMaleSounds] # Sich. Змінено порядок
+  parent: [UnisexMoth, RMCBaseMaleSounds] # Mriya. Змінено порядок
   id: RMCMaleMoth
 
 - type: emoteSounds
-  parent: [UnisexMoth, RMCBaseFemaleSounds] # Sich. Змінено порядок
+  parent: [UnisexMoth, RMCBaseFemaleSounds] # Mriya. Змінено порядок
   id: RMCFemaleMoth

@@ -1,8 +1,8 @@
-no-eorg-popup-title = RMC14
-no-eorg-popup-label = Welcome to the End of Round!
-no-eorg-popup-message = [bold]End-of-round grief (EORG)[/bold] is not allowed at RMC14. Please stay in character until the lobby screen appears to maintain an immersive environment for everyone. Thank you for respecting the community rules!
-no-eorg-popup-rule = [bold][color=#a4885c]End of round is not end of roleplay. End of round grief is not permitted and will result in an instant unappealable 3 hour game ban, or worse.[/color][/bold]
-no-eorg-popup-rule-text = This includes any friendly fire at round end regardless of who started the griefing, as the round may not be entirely over even if the main condition has been reached. This also includes suicide attempts of any kind without a valid roleplay reason.
-no-eorg-popup-close-button = Sounds good!
-no-eorg-popup-close-button-wait = The close button will be enabled after {$time} seconds.
-no-eorg-popup-skip-checkbox = Don't show this again.
+no-eorg-popup-title = РМС14-Мрія
+no-eorg-popup-label = Вітаємо з Кінцем Раунду!
+no-eorg-popup-message = [bold]Гріф в кінці раунду (EORG)[/bold] заборонений на РМС14-Мрія. Будь ласка, відігруйте вашого персонажа допоки не з'явиться екран лоббі щоб зберігати імерсивне середовище для всіх. Дякуємо за дотримання правил спільноти!
+no-eorg-popup-rule = [bold][color=#a4885c]Кінець раунду - не кінець рольової гри. Гріф в кінці раунду заборонений та призведе до моментального ігрового блокування на 3 години без права апеляції, або гірше.[/color][/bold]
+no-eorg-popup-rule-text = Це включає в себе, але не обмежується: вогнем по своїм в кінці раунду, незважаючи на те, хто почав стрілянину, оскільки раунд може не завершитися повністю, навіть якщо основні умови вже виконані. Це також включає в себе будь які спроби суїциду без дійсної роле-плей причини.
+no-eorg-popup-close-button = Звучить кльово!
+no-eorg-popup-close-button-wait = Кнопку "закрити" буде увімкнено через {$time} секунд.
+no-eorg-popup-skip-checkbox = Не показувати знову.

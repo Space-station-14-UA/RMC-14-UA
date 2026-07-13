@@ -67,6 +67,13 @@
   name: ОН-577 десантна вартова турель
   description: Повністю автономна оборонна турель, що здатна ефективно знищувати ворогів на близько-середній дистанції. Оснащена модифікованою автогарматою M32-S та внутрішньою стрічкою з набоями.
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 60
   - type: PointLight
     radius: 40
     energy: 10.0
@@ -74,7 +81,7 @@
     mask: /Textures/Effects/LightMasks/double_cone.png
   - type: RotatingLight
     speed: 90
-#  - type: Gun – Mriya. Нам не треба випадкове вбивство квіни за пів секунди
+#  - type: Gun – MR. Нам не треба випадкове вбивство квіни за пів секунди
 #    fireRate: 15
 #    selectedMode: FullAuto
 #    availableModes:

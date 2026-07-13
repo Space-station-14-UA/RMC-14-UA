@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._Harmony.ReadyManifest.UI;
 using Content.Client._RMC14;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Examine;
@@ -1841,6 +1842,21 @@ namespace Content.Client.Stylesheets
                     {
                         BackgroundColor = FancyTreeSelectedRowColor,
                     }),
+
+                // Harmony start - ready manifest
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorNoReady)
+                    .Prop(Label.StylePropertyFontColor, Color.Red),
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorLowReady)
+                    .Prop(Label.StylePropertyFontColor, Color.Red),
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorMediumReady)
+                    .Prop(Label.StylePropertyFontColor, Color.Orange),
+                Element<Label>()
+                    .Class(ReadyManifestJobListing.StyleClassReadyIndicatorHighReady)
+                    .Prop(Label.StylePropertyFontColor, Color.LightGreen),
+                // Harmony end - ready manifest
 
                 // Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)

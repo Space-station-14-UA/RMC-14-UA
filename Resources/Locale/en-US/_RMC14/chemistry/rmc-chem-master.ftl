@@ -46,26 +46,26 @@ rmc-chem-master-create-transfer-bottle = Створити та перенест�
 
 rmc-chem-master-not-enough-space-solution = У буфері недостатньо хімікатів!
 
-rmc-chem-master-presets = Presets
-rmc-chem-master-preset-saved-title = Saved Presets:
-rmc-chem-master-preset-none-saved = [italic]No saved presets.[/italic]
-rmc-chem-master-preset-create-new = Create New Preset
-rmc-chem-master-preset-show-quick-access = Show Quick Access
-rmc-chem-master-preset-hide-quick-access = Hide Quick Access
-rmc-chem-master-preset-reorder = Reorder
-rmc-chem-master-preset-hide = Hide
+rmc-chem-master-presets = Пресети
+rmc-chem-master-preset-saved-title = Збережені Пресети:
+rmc-chem-master-preset-none-saved = [italic]Немає збережених пресетів.[/italic]
+rmc-chem-master-preset-create-new = Створити Новий Пресет
+rmc-chem-master-preset-show-quick-access = Показати Швидкий Доступ
+rmc-chem-master-preset-hide-quick-access = Приховати Швидкий Доступ
+rmc-chem-master-preset-reorder = Перезамовити
+rmc-chem-master-preset-hide = Приховати
 
-rmc-chem-master-preset-name-required = Preset Name: *
-rmc-chem-master-preset-bottle-color-optional = Pill Bottle Color: (optional)
-rmc-chem-master-preset-bottle-label-optional = Pill Bottle Label: (optional)
-rmc-chem-master-preset-label-info = [italic]First 3 characters will be shown on the bottle icon.[/italic]
-rmc-chem-master-preset-pill-color-optional = Pill Color: (optional)
-rmc-chem-master-preset-additional-options = Additional Options:
-rmc-chem-master-preset-use-name-as-label = Use preset name as the bottle label
-rmc-chem-master-preset-clear = Clear
-rmc-chem-master-preset-save = Save
+rmc-chem-master-preset-name-required = Назва Пресету: *
+rmc-chem-master-preset-bottle-color-optional = Колір Таблетниці: (опціонально)
+rmc-chem-master-preset-bottle-label-optional = Етикетка Таблетниці: (опціонально)
+rmc-chem-master-preset-label-info = [italic]Перші 3 літери будуть показані на іконці пляшки.[/italic]
+rmc-chem-master-preset-pill-color-optional = Колір Таблетки: (опціонально)
+rmc-chem-master-preset-additional-options = Додаткові Налаштування:
+rmc-chem-master-preset-use-name-as-label = Використовувати назву пресету як етикетку пляшки
+rmc-chem-master-preset-clear = Очистити
+rmc-chem-master-preset-save = Зберегти
 
-rmc-chem-master-preset-quick-access-slot = Quick Access Slot:
-rmc-chem-master-preset-button-text = Button Text:
-rmc-chem-master-preset-edit-title = Edit Preset: {$name}
-rmc-chem-master-preset-clear-selection = Clear Selection
+rmc-chem-master-preset-quick-access-slot = Комірка Швидкого Доступу:
+rmc-chem-master-preset-button-text = Текст Кнопки:
+rmc-chem-master-preset-edit-title = Змінити Пресет: {$name}
+rmc-chem-master-preset-clear-selection = Очистити Обране

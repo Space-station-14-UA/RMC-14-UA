@@ -63,7 +63,7 @@
       background:
         sprite: /Textures/_RMC14/Interface/map_blips.rsi
         state: background_command
-    - type: RMCTrackable # Sich
+    - type: RMCTrackable # Mriya
     - type: MutinyEligible
     - type: RMCAwardRecommendation
     - type: SeeNewPlayers
@@ -75,7 +75,7 @@
     shoes: RMCShoesLaceup
     head: CMHeadCapOfficer
     id: CMIDCardStaffOfficer
-    ears: CMHeadsetSeniorCommand # Sich. RMCHeadsetMarineCommand в оригіналі
+    ears: CMHeadsetSeniorCommand # Mriya. RMCHeadsetMarineCommand в оригіналі
     pocket1: RMCPouchGeneralLarge
     pocket2: RMCPouchGeneralLarge
   inhand:

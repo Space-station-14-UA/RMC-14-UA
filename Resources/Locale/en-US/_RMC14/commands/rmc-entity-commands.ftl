@@ -1,8 +1,8 @@
-cmd-fixpower-desc = Force the RMCPowerSystem to recalculate all power related entities.
-cmd-fixpower-help = Usage: fixpower
+cmd-fixpower-desc = Примусити RMCPowerSystem перерахувати всі енергоспоживчі сутності.
+cmd-fixpower-help = Використання: fixpower
 
-cmd-nukemap-desc = Kills and destroys everything on a map!
+cmd-nukemap-desc = Вбиває і знищує все на мапі!
 cmd-nukemap-help = nukemap <mapID>
 
-cmd-orbitaldrop-desc = Puts an entity in a drop pod and supply drops it to the given coordinates.
+cmd-orbitaldrop-desc = Кладе сутність в скидальну капсулу і скидує її на вказані координати.
 cmd-orbitaldrop-help = orbitaldrop <entity> <x> <y> <mapId> [dropDelay=5] [dropDuration=3] [timeToOpen=2] [scatter=0] [useParachute=true]

@@ -1,4 +1,0 @@
-- type: deviceFrequency
-  id: SichHunterSensor
-  name: Hunter Tracking frequency
-  frequency: 1459 # arbitrary unseen frequency

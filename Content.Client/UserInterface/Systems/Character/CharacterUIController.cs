@@ -130,7 +130,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, jobID, entityName) = data; // Sich
+        var (entity, job, objectives, briefing, jobID, entityName) = data; // Mriya
 
         _window.SpriteView.SetEntity(entity);
 

@@ -1,0 +1,94 @@
+- type: material
+  id: MRSnowball
+  stackEntity: MRSheetSnowball
+  name: сніжка
+  icon: { sprite: _Mriya/Objects/Materials/snowball.rsi, state: snowball }
+  price: 0
+
+- type: stack
+  id: MRSnowball
+  name: сніжка
+  icon: { sprite: /Textures/_Mriya/Objects/Materials/snowball.rsi, state: snowball }
+  spawn: MRSheetSnowball
+  maxCount: 3
+
+- type: entity
+  parent: SheetOtherBase
+  id: MRSheetSnowball
+  name: сніжки
+  description: Сніжки. Зі снігу. Круто!
+  suffix: Заповнені
+  components:
+    - type: RMCConstructionItem
+      buildable:
+      - MRSnowwomanBuild
+    - type: Material
+    - type: PhysicalComposition
+      materialComposition:
+        MRSnowball: 100
+    - type: Stack
+      count: 3
+      stackType: MRSnowball
+      baseLayer: base
+      layerStates:
+        - snowball
+        - snowball_2
+        - snowball_3
+        - snowball_4
+    - type: Sprite
+      sprite: _Mriya/Objects/Materials/snowball.rsi
+      state: snowball_4
+      layers:
+        - state: snowball_4
+          map: ["base"]
+    - type: Item
+      sprite: _Mriya/Objects/Materials/snowball.rsi
+      heldPrefix: сніжка
+      size: Normal
+    - type: Appearance
+    - type: Tag
+      tags:
+      - Sheet
+    - type: UserInterface
+      interfaces:
+        enum.RMCConstructionUiKey.Key:
+          type: RMCConstructionBui
+
+- type: entity
+  parent: MRSheetSnowball
+  id: MRSheetSnowball2
+  name: сніжки
+  description: Сніжки. Зі снігу. Круто!
+  suffix: "2"
+  components:
+    - type: Sprite
+      state: snowball_3
+    - type: Stack
+      stackType: MRSnowball
+      count: 2
+
+- type: entity
+  parent: MRSheetSnowball
+  id: MRSheetSnowball3
+  name: сніжки
+  description: Сніжки. Зі снігу. Круто!
+  suffix: "3"
+  components:
+    - type: Sprite
+      state: snowball_4
+    - type: Stack
+      stackType: MRSnowball
+      count: 3
+
+- type: entity
+  parent: MRSheetSnowball
+  id: MRSheetSnowball1
+  name: сніжка
+  description: Сніжка. Одна, самісінька.
+  suffix: Один
+  components:
+    - type: Sprite
+      state: snowball_2
+    - type: Stack
+      stackType: MRSnowball
+      count: 1

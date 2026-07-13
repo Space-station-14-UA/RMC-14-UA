@@ -339,7 +339,7 @@ public sealed partial class CMDistressSignalRuleComponent : Component
 
     [DataField]
     public List<string> AuxiliaryMaps = new() {
-        "/Maps/_Sich/admin_fax_old.yml", // Sich, admin_fax.yml
+        "/Maps/_Mriya/admin_fax_old.yml" // Mriya, наша версія факсів
         "/Maps/_Mriya/Hunter/Leviathan_of_the_Shadows.yml" // Mriya, Leviathan
     };
 
@@ -368,7 +368,7 @@ public sealed partial class CMDistressSignalRuleComponent : Component
     public bool DoJobSlotScaling = true;
 
     [DataField]
-    public bool AutoEnd = false;
+    public bool AutoEnd = true;
 
     [DataField]
     public bool StartARESAnnouncements = true;

@@ -1,0 +1,19 @@
+# Дод. конфіг (задіювати разом з mriya.toml або rmc.toml, ставлячи цей другим). Для тестування якихось змін в більш зручному форматі
+
+[game]
+# Час лобі до 30 хвилин, а час до рестарту до 5 годин (тримати 2 клієнта не завжди зручно, tbh)
+map = "RMCDev"
+lobbyduration = 18000
+round_restart_time = 180000
+
+[rmc]
+# Старт без готового на ксено та дебаг БАП
+distress_xenos_minimum = 0
+dropship_cas_debug = true
+dropship_initial_delay_minutes = 0
+boons_live_marine_requirement = 0
+communication_tower_xeno_takeover_minutes = 0
+
+[chat]
+#Безінформаційне повідомлення дня
+motd = ""

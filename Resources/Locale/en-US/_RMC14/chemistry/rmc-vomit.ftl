@@ -1,4 +1,4 @@
-rmc-vomit-self = You throw up!
-rmc-vomit-others = {CAPITALIZE(THE($person))} throws up!
-rmc-vomit-nausea = You feel nauseous...
-rmc-vomit-warning = You feel like you are about to throw up!
+rmc-vomit-self = Вас вирвало!
+rmc-vomit-others = {CAPITALIZE($person)} блює!
+rmc-vomit-nausea = Вас нудить...
+rmc-vomit-warning = Ви відчуваєте, ніби вас ось-ось знудить!

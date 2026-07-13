@@ -21,6 +21,7 @@ using Content.Server.GhostKick;
 using Content.Server.Info;
 using Content.Server.Mapping;
 using Content.Server.Maps;
+using Content.Server.Mriya.Sponsors;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
@@ -86,6 +87,8 @@ namespace Content.Server.IoC
 
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();
+
+            IoCManager.Register<ISponsorManager, SponsorManager>(); // Mriya
 
             // RMC14
             IoCManager.Register<LinkAccountManager>();

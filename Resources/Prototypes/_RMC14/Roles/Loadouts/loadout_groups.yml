@@ -416,13 +416,13 @@
   - PonchoSnowRMC
   - PatchPeaceRMC
   - PDTLKitRMC
-  # Sich start
+  # Mriya start
   - PatchWeYaRMC
   - PatchWeYaRMCSquare
   - PatchWeYaRMCBlack
   - PatchTSERMC
   - PatchOliveBranch
-  # Sich end
+  # Mriya end
 
 - type: loadoutGroup
   id: AccessoriesRMCPVE
@@ -931,6 +931,15 @@
   - NeckerchiefWhiteRMC
   - NeckerchiefRedRMC
 
+- type: loadoutGroup
+  id: SynthGenRMC
+  name: rmc-loadout-group-synth
+  maxLimit: 1
+  minLimit: 1
+  loadouts:
+  - RMCSynthGenOne
+  - RMCSynthGenTwo
+  - RMCSynthGenThree
 # Watches
 - type: loadoutGroup
   id: WatchesBasicRMC

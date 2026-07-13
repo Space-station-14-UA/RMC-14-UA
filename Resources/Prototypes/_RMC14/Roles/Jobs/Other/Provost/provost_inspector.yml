@@ -23,8 +23,8 @@
   startingGear: RMCGearProvostInspector
   icon: RMCJobIconProvostInspector
   joinNotifyCrew: true
+  supervisors: rmc-job-supervisors-provost-marshal
   marineAuthorityLevel: 0
-  supervisors: cm-job-supervisors-marine-high-command
   accessGroups:
   - ShipMasterAccess
   special:
@@ -55,7 +55,7 @@
       background:
         sprite: /Textures/_RMC14/Interface/map_blips.rsi
         state: background_mp
-  hidden: true # Sich. Не має сенсу у нас
+  hidden: true # Mriya. Не має сенсу у нас
 
 - type: entity
   parent: CMSpawnPointJobBase
@@ -74,7 +74,7 @@
     eyes: CMGlassesSecurity
     ears: RMCHeadsetProvost
     jumpsuit: CMJumpsuitProvostSenior
-    gloves: CMHandsBlackMarine # TODO RMC14 black gloves
+    gloves: RMCHandsBlackFireResistance
     shoes: CMBootsBlackFilled
     id: RMCIDCardProvostInspector
     belt: RMCBeltHolsterPistolHandcannonFilled

@@ -1,0 +1,10 @@
+- type: gameMapPool
+  id: MRDefaultMapPool
+  maps:
+  - MRSavannah
+#  - Almayer – На жаль це лише проб
+
+- type: gameMapPool
+  id: MRDefaultMapPoolSavannah
+  maps:
+  - MRSavannah

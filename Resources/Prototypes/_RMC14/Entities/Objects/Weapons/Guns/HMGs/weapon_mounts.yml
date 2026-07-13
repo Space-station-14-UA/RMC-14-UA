@@ -172,8 +172,8 @@
     tags:
     - ML66DMount
   - type: WeaponMount
-    assembleDelay: 5 # Sich. 1.5 в оригіналі. Щоб отримати реальний час розгортання (поставити плюс налаштувати) множ на 2.
-    disassembleDelay: 5 # Sich. 1.5 в оригіналі.
+    assembleDelay: 5 # Mriya. 1.5 в оригіналі. Щоб отримати реальний час розгортання (поставити плюс налаштувати) множ на 2.
+    disassembleDelay: 5 # Mriya. 1.5 в оригіналі.
     mountableWhitelist:
       tags:
         - RMCSmartGunMounted
@@ -276,8 +276,8 @@
     mountOnDeploy: true
     mountExclusionAreaSize: 0
     barricadeExclusionAreaSize: 2
-    assembleDelay: 2.5 # Sich. 0.5 в оригіналі
-    disassembleDelay: 5 # Sich. 1.5 в оригіналі
+    assembleDelay: 2.5 # Mriya. 0.5 в оригіналі
+    disassembleDelay: 5 # Mriya. 1.5 в оригіналі
     undeploySound: null
     acidableWhileUndeployed: true
   - type: Tag

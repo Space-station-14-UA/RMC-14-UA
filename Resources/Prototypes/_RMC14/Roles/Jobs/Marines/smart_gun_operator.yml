@@ -28,7 +28,7 @@
   - SmartGunOperator
   overwatchSortPriority: -3
   overwatchShowName: true
-  overwatchRoleName: Оператори СмартГану # Sich, бо це назва
+  overwatchRoleName: Оператори СмартГану # Mriya, бо це назва
   roleWeight: 1
   displayWeight: 3
   special:
@@ -39,8 +39,8 @@
         RMCSkillEndurance: 1
         RMCSkillFirearms: 1
         RMCSkillFireman: 1
-        RMCSkillJtac: 2 # Sich. 1 в оригіналі
-        RMCSkillMedical: 1 # Sich. 0 в оригіналі
+        RMCSkillJtac: 2 # Mriya. 1 в оригіналі
+        RMCSkillMedical: 1 # Mriya. 0 в оригіналі
         RMCSkillSmartGun: 1
     - type: CMVendorUser
       id: CMSmartGunOperator

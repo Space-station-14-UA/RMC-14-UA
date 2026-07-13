@@ -1,0 +1,13 @@
+- type: gameMap
+  id: MRAdminFax
+  mapName: Міжнародний Пункт Ретрансляції Повідомлень
+  mapPath: /Maps/_Mriya/admin_fax_old.yml
+  minPlayers: 0
+  maxRandomOffset: 0
+  randomRotation: false
+  stations:
+    AdminFax:
+      stationProto: UNMCHighCommand
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Міжнародний Пункт Ретрансляції Повідомлень'

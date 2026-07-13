@@ -6,7 +6,4 @@
   - type: GameRule
     minPlayers: 1
   - type: CMDistressSignalRule
-    auxiliaryMaps:
-    - /Maps/_Sich/admin_fax_old.yml
-    - /Maps/_Mriya/Hunter/Leviathan_of_the_Shadows.yml
-    roundEndCheckDelay: 300 # Sich. 60 в оригіналі
+    roundEndCheckDelay: 300 # Mriya. 60 в оригіналі

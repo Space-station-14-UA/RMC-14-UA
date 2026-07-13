@@ -5,13 +5,18 @@
   - RMCXenoVentCrawler
   id: CMXenoLarva
   name: Лярва
-  description: Мала чужопланетна червоподібна істота, яка дуже швидко збільшується в розмірах. Схоже скоро з неї з'явиться щось нове. # Sich
+  description: Мала чужопланетна червоподібна істота, яка дуже швидко збільшується в розмірах. Схоже скоро з неї з'явиться щось нове. # Mriya
   components:
   - type: GuideHelp
     guides:
     - RMCGuideRoleDrone
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Larva/larva.rsi
+  - type: FiremanCarriable
+    canThrow: true
+    carrierWhitelist:
+      components:
+      - Synth
   - type: MobState
     allowedStates:
     - Alive
@@ -39,7 +44,7 @@
     plasma: 10
     maxPlasma: 10
     plasmaRegenOnWeeds: 0.1
-#  - type: RMCGibOnDeath – Sich
+#  - type: RMCGibOnDeath – MR
 #    gibChance: 0.25
   - type: RMCSpawnEntitiesOnGib
     entities:
@@ -97,10 +102,10 @@
       3: rmc-xeno-elder-larva
       4: rmc-xeno-elder-larva
       5: rmc-xeno-elder-larva
-      6: rmc-xeno-elder-larva # Sich
-      7: rmc-xeno-elder-larva # Sich
-      8: rmc-xeno-elder-larva # Sich
-      9: rmc-xeno-elder-larva # Sich
+      6: rmc-xeno-elder-larva # Mriya
+      7: rmc-xeno-elder-larva # Mriya
+      8: rmc-xeno-elder-larva # Mriya
+      9: rmc-xeno-elder-larva # Mriya
   - type: FixedIdentity
     name: cm-job-name-xeno-larva
   - type: VentCrawler

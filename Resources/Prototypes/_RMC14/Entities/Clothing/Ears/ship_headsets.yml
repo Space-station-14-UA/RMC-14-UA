@@ -382,7 +382,7 @@
     - Synthetic
     # Mriya end
     - MilitaryWarden
-    #- ProvostInspector – Mriya
+    #- ProvostInspector – MR
 
 - type: entity
   parent: CMHeadsetCMP
@@ -401,7 +401,7 @@
     - SeniorEnlistedAdvisor
     - Synthetic
     # Mriya end
-    #- ProvostInspector – Mriya
+    #- ProvostInspector – MR
 
 - type: entity
   parent: RMCHeadsetShip
@@ -734,6 +734,14 @@
       key_slots:
       - CMEncryptionKeyCommon
       - CMEncryptionKeyCrewman
+  - type: RMCRadioFilter # Mriya
+    disabledChannels:
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
   - type: HeadsetMultiBroadcast
     cooldown: 60
   - type: RMCHeadset

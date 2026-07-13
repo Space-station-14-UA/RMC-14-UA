@@ -1,0 +1,27 @@
+- type: entity
+  parent: [ MRXenoBaseOld, CMXenoCarrier ]
+  id: MRXenoCarrierOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Carrier/carrier.rsi
+  - type: Xeno
+    hudOffset: 0,0.35
+  - type: XenoEvolution
+    strains:
+    - MRXenoCarrierEggsacOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MRXenoDroneOld
+
+- type: entity
+  parent: [ MRXenoBaseOld, RMCXenoCarrierEggsac ]
+  id: MRXenoCarrierEggsacOld
+  suffix: Яйцетворча, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Carrier/eggsac_carrier.rsi
+  - type: Xeno
+    hudOffset: 0,0.35
+  - type: XenoDevolve
+    devolvesTo:
+    - MRXenoDroneOld

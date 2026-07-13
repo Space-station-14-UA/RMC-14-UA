@@ -15,10 +15,10 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
-    speechSounds: Moth # Sich. Перенесено з КД
-    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] # Sich. Додано Flap
-  - type: BodyEmotes # Sich. Зроблено заради Flap, вже є в Білді візардів, як буде оновлення від них – видалити нашу
-    soundsId: SichMothBodyEmotes
+    speechSounds: Moth # Mriya. Перенесено з КД
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] # Mriya. Додано Flap
+  - type: BodyEmotes # Mriya. Зроблено заради Flap, вже є в Білді візардів, як буде оновлення від них – видалити нашу
+    soundsId: MRMothBodyEmotes
   - type: TypingIndicator
     proto: moth
   - type: Vocal

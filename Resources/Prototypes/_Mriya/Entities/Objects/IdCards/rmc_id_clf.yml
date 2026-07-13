@@ -1,0 +1,47 @@
+- type: entity
+  parent: RMCIDCardCLFBase
+  id: MRIDCardCLFSoldier
+  name: айді картка солдата ФВК
+  components:
+  - type: PresetIdCard
+    job: MRCLFSoldier
+
+- type: entity
+  parent: RMCIDCardCLFBase
+  id: MRIDCardCLFEngineer
+  name: айді картка інженера ФВК
+  components:
+  - type: PresetIdCard
+    job: MRCLFEngineer
+
+- type: entity
+  parent: RMCIDCardCLFBase
+  id: MRIDCardCLFMedic
+  name: айді картка медика ФВК
+  components:
+  - type: PresetIdCard
+    job: MRCLFMedic
+
+- type: entity
+  parent: RMCIDCardCLFBase
+  id: MRIDCardCLFSpecialist
+  name: айді картка спеціаліста ФВК
+  components:
+  - type: PresetIdCard
+    job: MRCLFSpecialist
+
+- type: entity
+  parent: RMCIDCardCLFBase
+  id: MRIDCardCLFCellLeader
+  name: айді картка лідера ФВК
+  components:
+  - type: PresetIdCard
+    job: MRCLFCellLeader
+
+- type: entity
+  parent: RMCIDCardCLFBase
+  id: MRIDCardCLFCellCommander
+  name: айді картка командира ячейки ФВК
+  components:
+  - type: PresetIdCard
+    job: MRCLFCellCommander

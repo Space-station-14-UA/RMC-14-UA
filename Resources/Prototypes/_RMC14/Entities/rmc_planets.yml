@@ -217,7 +217,7 @@
   - type: RMCPlanetMapPrototype
     map: /Maps/_RMC14/prison.yml
     camouflage: Classic
-    # minPlayers: 130 – Mriya. Ми любимо Флоріду!
+    # minPlayers: 130 – MR. Ми любимо Флоріду!
     specialFaxes:
       Liaison: RMCPaperWeYaLiaisonBriefingFiorina
     announcement: "Автоматичний сигнал лиха було отримано з в'язниці суворого режиму \"Орбітальна Тюрма Фіоріна\". Початково станція існувала на орбіті планети Фіоріна-161 заради розвідки покладів платини цієї ж планети, але після їх вичерпання була перебудована у Орбітальну тюрму та Науковий комплекс, ціллю дослідження якого стало ████████. Для встановлення причин сигналу СОС, найближчим часом з ДКП-Саванна \"Січ\" буде відправлена група реагування."
@@ -464,7 +464,7 @@
       RMCSurvivorCommandingOfficer:
       - RMCSurvivorForeconCommander: 1
       RMCSurvivorForeconBase:
-#      - RMCSurvivorForeconSquadLeader: 1 - Mriya commented. З нашими 1-2 сурвами воно просто не має сенсу
+#      - RMCSurvivorForeconSquadLeader: 1 - MR commented. З нашими 1-2 сурвами воно просто не має сенсу
 #      - RMCSurvivorForeconSniper: 1
 #      - RMCSurvivorForeconSmartgunOperator: 1
       - RMCSurvivorForeconMarksman: 1

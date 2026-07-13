@@ -1,0 +1,555 @@
+# Тут на все посилаються інші, тому замість префіксу MR – RMC.
+## Всі ніки авторів взяті з їх гітів, якщо треба, то шукайте по ньому, або питайте в ДС Мрії
+## Якщо коментар про авторство перекладу відсутній, то перекладу нема
+- type: guideEntry
+  abstract: true
+  id: MR
+  isCM: true
+
+- type: guideEntry # Перекладали Dmytr0-Translate та Pgriha
+  parent: MR
+  id: RMC14
+  name: "Вітаємо у РМС Мрії!"
+  priority: 1
+  text: "/ServerInfo/Guidebook/_Mriya/RMC14.xml"
+  children:
+  - RMCGuideNewPlayer
+  - MRGuidesMarineNavigation # Додав Dmytr0-Translate
+  - RMCGuideMarine
+  - RMCGuideXenonid
+  - RMCSurvivor
+
+# Базові гайди для нових гравців
+- type: guideEntry
+  parent: MR
+  id: RMCGuideNewPlayer
+  name: "Посібники для нових гравців"
+  priority: 1
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/RMCGuideNewPlayer.xml"
+  children:
+  - RMCGuideRoleRifleman
+  - RMCGuideRoleDrone
+
+- type: guideEntry # Перекладав
+  parent: MR
+  id: RMCGuideRoleRifleman
+  priority: 1
+  name: "Стрілець"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleRifleman.xml"
+
+- type: guideEntry # Перекладав
+  parent: MR
+  id: RMCGuideRoleDrone
+  priority: 2
+  name: "Дрон"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleDrone.xml"
+
+# Посібник морпіхів з посиланням на інші
+- type: guideEntry # Створив Dmytr0-Translate
+  parent: MR
+  id: MRGuidesMarineNavigation
+  priority: 2
+  name: "Навігація по посібникам КМПОН"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/MRGuidesMarineNavigation.xml"
+
+# Ролі морпіхів
+- type: guideEntry
+  parent: MR
+  id: RMCGuideMarine
+  name: "Ролі та Посібники Морпіхоти"
+  priority: 3
+  text: "/ServerInfo/Guidebook/_Mriya/RMC14.xml"
+  children:
+  - MRMarineStructure
+  - RMCGuideCommandRoles
+  - RMCMedical
+  - RMCGuideMarineCommunications
+  - RMCGuideRoleSGO
+  - RMCGuideRoleSpec
+  - RMCGuideSquadLeader
+  - RMCRequisitions
+  - RMCGuideRoleMaintenanceTechnician
+  - RMCGuideRoleCAS
+  - RMCIntel
+  - RMCGuideRoleMilitaryPolice
+  - RMCGuideCorporateLiaison
+  - RMCGuideFood
+  - RMCGuideDrinks
+  - RMCGuideNewIcons
+
+- type: guideEntry # Створив Dmytr0-Translate
+  parent: MR
+  id: MRMarineStructure
+  priority: 1
+  name: "Структура морської піхоти"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/MRMarineStructure.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCSurvivor
+  priority: 1
+  name: "Вцілілі"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/RMCGuideSurvivor.xml"
+
+- type: guideEntry # Перекладав Pgriha
+  parent: MR
+  id: RMCMedical
+  priority: 2
+  name: "Медицина"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideMedical.xml"
+  children:
+  - RMCChemicals
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCRequisitions
+  priority: 3
+  name: "Постачання"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRequisitions.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate. Треба буде оновити.
+  parent: MR
+  id: RMCIntel
+  priority: 4
+  name: "Розвідка"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideIntel.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleMilitaryPolice
+  priority: 5
+  name: "Військова Служба Правопорядку"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleMilitaryPolice.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleCombatTechnician
+  priority: 6
+  name: "Бойовий Технік"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleCombatTechnician.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleMaintenanceTechnician
+  priority: 7
+  name: "Обслуговуючий Інженер"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleMaintenanceTechnician.xml"
+  children:
+  - RMCGuideRoleCombatTechnician
+  - RMCGuideCommunicationsTowers
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleSGO
+  priority: 8
+  name: "Оператор СмартГана"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleSGO.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideCommandRoles
+  priority: 9
+  name: "Знай своє командування"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideCommandRoles.xml"
+
+# Ролі морпіхів – Спеціалісти
+- type: guideEntry # Перекладали Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleSpec
+  priority: 10
+  name: "Збройні спеціалісти"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleSpec.xml"
+  children:
+  - RMCGuideRoleSpecScout
+  - RMCGuideRoleSpecGrenadier
+  - RMCGuideRoleSpecDemo
+  - RMCGuideRoleSpecSniper
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleSpecScout
+  priority: 1
+  name: "Розвідник"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleSpecScout.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleSpecGrenadier
+  priority: 2
+  name: "Гранатометник"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleSpecGrenadier.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleSpecDemo
+  priority: 3
+  name: "Ракетник"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleSpecDemo.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleSpecSniper
+  priority: 4
+  name: "Снайпери"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleSpecSniper.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleCAS
+  priority: 11
+  name: "Десантування та БАП"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleCAS.xml"
+  children:
+  - RMCGuideRoleMortar
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideMarineCommunications
+  priority: 12
+  name: "Комунікація – Залог Успіху"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideMarineCommunications.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideCorporateLiaison
+  name: "Представник Корпорації"
+  priority: 13
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideCorporateLiaison.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideSquadLeader
+  name: "Керування Загоном 101"
+  priority: 14
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideSquadLeader.xml"
+
+- type: guideEntry # Перекладав Pgriha
+  parent: MR
+  id: RMCGuideNewIcons
+  priority: 15
+  name: "Іконки нових гравців"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideNewIcons.xml"
+
+# Обладнання/структури морпіхів
+- type: guideEntry # Перекладав POMAHtop
+  parent: MR
+  id: RMCGuideCommunicationsTowers
+  priority: 1
+  name: "Телекомунікаційні та Сенсорні вежі"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideCommunicationsTowers.xml"
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideRoleMortar
+  priority: 2
+  name: "Міномет"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideRoleMortar.xml"
+
+# Готування їжі
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideFood
+  name: "Рецепти Їжі"
+  priority: 7
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideFood.xml"
+  filterEnabled: True
+
+- type: guideEntry # Перекладав Dmytr0-Translate
+  parent: MR
+  id: RMCGuideDrinks
+  name: "Рецепти Напоїв"
+  priority: 8
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideDrinks.xml"
+  filterEnabled: True
+
+# Хімія
+- type: guideEntry # Перекладав Pgriha
+  parent: MR
+  id: RMCChemicals
+  name: "Хімікати"
+  text: "/ServerInfo/Guidebook/_Mriya/Chemicals/RMCChemicals.xml"
+  priority: 8
+  children:
+  #  - RMCElements
+  - RMCMedicine
+  #  - RMCNarcotics
+  #  - RMCPyrotechnic
+  #  - RMCToxins
+  #  - RMCFoods
+  #  - RMCBotanical
+  #  - RMCBiological
+  #  - RMCOthers
+  - RMCOrdinanceChemicals
+  filterEnabled: True
+
+- type: guideEntry # Перекладав Pgriha
+  parent: MR
+  id: RMCMedicine
+  name: "Медичні"
+  priority: 1
+  text: "/ServerInfo/Guidebook/_Mriya/Chemicals/Medicine.xml"
+  filterEnabled: True
+
+- type: guideEntry # Перекладав Pgriha
+  parent: MR
+  id: RMCOrdinanceChemicals
+  name: "Паливо для Вогнеметів"
+  priority: 2
+  text: "/ServerInfo/Guidebook/_Mriya/Chemicals/OT.xml"
+  filterEnabled: True
+
+# Ролі Ксеноїдів
+- type: guideEntry
+  parent: MR
+  id: RMCGuideXenonid
+  name: "Ролі та Посібники Вулика"
+  priority: 4
+  text: "/ServerInfo/Guidebook/_Mriya/RMC14.xml"
+  children:
+  - RMCGuideXenonidRoles
+  - RMCGuideHiveStructures
+  - RMCGuideResinHoles
+  - RMCGuideXenonidMap
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideXenonidRoles
+  name: "Касти Ксеноїдів"
+  priority: 4
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideXenonidRoles.xml"
+  children:
+  - RMCGuideXenonidT1
+  - RMCGuideXenonidT2
+  - RMCGuideXenonidT3
+  - RMCGuideRoleQueen
+  - RMCGuideRoleParasite
+
+# Ролі Ксеноїдів – Т1
+- type: guideEntry
+  parent: MR
+  id: RMCGuideXenonidT1
+  name: "Ксеноїди Т1"
+  priority: 1
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideXenonidRoles.xml"
+  children:
+  - RMCGuideRoleDefender
+  - RMCGuideRoleSentinel
+  - RMCGuideRoleRunner
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleDefender
+  priority: 1
+  name: "Захисниця"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleDefender.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleSentinel
+  priority: 2
+  name: "Вартова"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleSentinel.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleRunner
+  priority: 3
+  name: "Бігунка"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleRunner.xml"
+
+# Ролі Ксеноїдів – Т2
+- type: guideEntry
+  parent: MR
+  id: RMCGuideXenonidT2
+  name: "Ксеноїди Т2"
+  priority: 2
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideXenonidRoles.xml"
+  children:
+  - RMCGuideRoleWarrior
+  - RMCGuideRoleSpitter
+  - RMCGuideRoleLurker
+  - RMCGuideRoleHivelord
+  - RMCGuideRoleBurrower
+  - RMCGuideRoleCarrier
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleWarrior
+  priority: 1
+  name: "Воїтелька"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleWarrior.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleSpitter
+  priority: 2
+  name: "Плювака"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleSpitter.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleLurker
+  priority: 3
+  name: "Мисливиця"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleLurker.xml"
+  children:
+  - RMCGuideRoleVampire
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleVampire
+  priority: 1
+  name: "Вампірша"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleVampire.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleHivelord
+  priority: 4
+  name: "Володарка"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleHivelord.xml"
+  children:
+  - RMCGuideRoleDesigner
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleDesigner
+  priority: 1
+  name: "Володарка Дизайнерка"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideDesignerHivelord.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleBurrower
+  priority: 5
+  name: "Копачка"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleBurrower.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleCarrier
+  priority: 6
+  name: "Носійка"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleCarrier.xml"
+  children:
+  - RMCGuideRoleEggsac
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleEggsac
+  priority: 1
+  name: "Яйцетворчка Носійка"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleEggsac.xml"
+
+# Ролі Ксеноїдів – Т3
+- type: guideEntry
+  parent: MR
+  id: RMCGuideXenonidT3
+  name: "Ксеноїди Т3"
+  priority: 3
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideXenonidRoles.xml"
+  children:
+  - RMCGuideRoleCrusher
+  - RMCGuideRolePraetorian
+  - RMCGuideRoleRavager
+  - RMCGuideRoleBoiler
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleCrusher
+  priority: 1
+  name: "Руйнівниця"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleCrusher.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRolePraetorian
+  priority: 2
+  name: "Проеторіанець"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRolePraetorian.xml"
+  children:
+  - RMCGuideRoleValkyrie
+  - RMCGuideRoleOppressor
+  - RMCGuideRoleVanguard
+
+## Ролі Ксеноїдів – Т3 – Мутації Проетора
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleValkyrie
+  priority: 1
+  name: "Валькірія"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleValkyrie.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleOppressor
+  priority: 2
+  name: "Гнобителька"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleOppressor.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleVanguard
+  priority: 3
+  name: "Авангард"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleVanguard.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleRavager
+  priority: 3
+  name: "Жнець"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleRavager.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleBoiler
+  priority: 4
+  name: "Бойлер"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleBoiler.xml"
+  children:
+  - RMCGuideRoleSapper
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleSapper
+  priority: 4
+  name: "Бойлер Сапер"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleSapper.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleQueen
+  priority: 4
+  name: "Королева"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleQueen.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideRoleParasite
+  priority: 5
+  name: "Паразит"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideRoleParasite.xml"
+
+# Структури Ксеноїдів
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideHiveStructures
+  priority: 1
+  name: "Посібник по Структурах Ксеноїдів"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideHiveStructures.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideResinHoles
+  priority: 2
+  name: "Посібник по Пасткам"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideResinHoles.xml"
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideXenonidMap
+  priority: 6
+  name: "Іконки мапи Ксеноїдів"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideXenonidMapIcons.xml"

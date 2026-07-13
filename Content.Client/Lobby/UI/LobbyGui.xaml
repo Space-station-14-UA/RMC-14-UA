@@ -8,6 +8,7 @@
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
+    xmlns:mriya="clr-namespace:Content.Client.Mriya.Sponsors.UI"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets">
     <!-- Background -->
     <TextureRect Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"
@@ -36,6 +37,11 @@
                                                Align="Left"
                                                FontColorOverride="{x:Static maths:Color.DarkGray}"
                                                StyleClasses="LabelBig" HorizontalExpand="True" />
+                                        <!-- Begin Harmony - ready manifest button -->
+                                        <Button Name="ManifestButton" Access="Public"
+                                                Text="{Loc 'ui-lobby-manifest-button'}"
+                                                StyleClasses="ButtonBig" MinWidth="137" />
+                                        <!-- End Harmony - ready manifest button -->
                                         <!-- RMC14 -->
                                         <Button Name="JoinXenoButton" Access="Public"
                                                 Text="{Loc 'rmc-lobby-join-xeno'}"
@@ -61,6 +67,7 @@
                     </PanelContainer>
                     <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                         <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
+                        <mriya:MriyaSponsorInfoBanner Name="MriyaSponsorInfoPanel" VerticalExpand="false" Margin="3 3 3 3" />
                         <PanelContainer StyleClasses="AngleRect">
                             <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
                         </PanelContainer>

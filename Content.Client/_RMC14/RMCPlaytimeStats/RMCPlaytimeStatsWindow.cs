@@ -69,7 +69,7 @@ public sealed partial class RMCPlaytimeStatsWindow : FancyWindow
     {
         if (playtime >= _prismaticTime)
             return RMCPlaytimeMedalType.Prismatic;
-        else if (playtime >= _emeraldTime) // Sich. Посунуто, бо багфікс
+        else if (playtime >= _emeraldTime) // Mriya. Посунуто, бо багфікс
             return RMCPlaytimeMedalType.Emerald;
         else if (playtime >= _amethystTime)
             return RMCPlaytimeMedalType.Amethyst;
@@ -112,12 +112,12 @@ public sealed partial class RMCPlaytimeStatsWindow : FancyWindow
                 RMCPlaytimeMedalType.Silver => "hudxenoupgrade3-ui",
                 RMCPlaytimeMedalType.Gold => "hudxenoupgrade4-ui",
                 RMCPlaytimeMedalType.Platinum => "hudxenoupgrade5-ui",
-                RMCPlaytimeMedalType.Ruby => "hudxenoupgrade6-ui", // Sich. Шеврони від Міюгі. До кінця
+                RMCPlaytimeMedalType.Ruby => "hudxenoupgrade6-ui", // Mriya. Шеврони від Міюгі. До кінця
                 RMCPlaytimeMedalType.Amethyst => "hudxenoupgrade7-ui",
                 _ => "hudxenoupgrade8-ui"
             };
 
-            return new SpriteSpecifier.Rsi(new ResPath("/Textures/_Sich/Interface/xeno_hud.rsi"), iconName); // Sich. "/Textures/_RMC14/Interface/xeno_hud.rsi" в оригіналі
+            return new SpriteSpecifier.Rsi(new ResPath("/Textures/_Mriya/Interface/xeno_hud.rsi"), iconName); // Mriya. "/Textures/_RMC14/Interface/xeno_hud.rsi" в оригіналі
         }
 
         foreach (var type in GetMedalTypesDescending(medalType.Value))
@@ -155,6 +155,9 @@ public sealed partial class RMCPlaytimeStatsWindow : FancyWindow
             var playtime = rolePlaytime.Value;
 
             if (!_prototypeManager.TryIndex<JobPrototype>(jobId, out var job))
+                continue;
+
+            if (!job.IsCM) // Mriya. Приховування ванільних трекерів
                 continue;
 
             var depts = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>()
@@ -352,6 +355,9 @@ public sealed partial class RMCPlaytimeStatsWindow : FancyWindow
         foreach (var kvp in rolePlaytimes.OrderBy(r => Loc.GetString(r.Key)))
         {
             if (!_prototypeManager.TryIndex<JobPrototype>(kvp.Key, out var job))
+                continue;
+
+            if (!job.IsCM) // Mriya. Приховування ванільних трекерів
                 continue;
 
             var dept = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>()

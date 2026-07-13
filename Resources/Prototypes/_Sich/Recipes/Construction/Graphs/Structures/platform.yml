@@ -1,8 +1,0 @@
-- type: constructionGraph
-  id: HunterPlatformBaseDestructible
-  start: start
-  graph:
-  - node: start
-
-  - node: platformBroken
-    entity: HunterPlatformBroken

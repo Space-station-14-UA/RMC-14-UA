@@ -1,4 +1,4 @@
-rmc-xeno-strain-specialized-into = It has specialized into {INDEFINITE($strain)} {$strain}.
+rmc-xeno-strain-specialized-into = Мутувала в {$strain}.
 
 rmc-xeno-trapper-name = Сапер
 rmc-xeno-trapper-description = Ви жертвуєте бомбардуванням, нейротоксином, кислотну завісу, розбризкуванням кислоти, трохи швидкості та трохи здоров'я, зменшення броні щоб отримати здатність створювати кислотні міни та пастки.
@@ -196,3 +196,7 @@ rmc-xeno-designer-description = Ви втрачаєте:
     - Великий сплес смоли, який перетворює дизайнерські ноди на слабкі відбивні стіни
     - Дещо сильніші штовхання
 rmc-xeno-designer-popup = Ти дизайнер вулика, тож розширюй його межі до нескінченності!
+
+rmc-xeno-magicalgirl-name = Магічна Дівчинка
+rmc-xeno-magicalgirl-description = Отримай свою Плазмову паличку від Королеви-Матері та перетворися на Чарівну Дівчинку, щоб боротися із силами зла!
+rmc-xeno-magicalgirl-popup = З силою Плазми та Смоли. Трансформуюся!

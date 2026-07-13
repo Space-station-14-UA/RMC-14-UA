@@ -1,3 +1,4 @@
+using Content.Client.Mriya.Sponsors;
 using Content.Shared.Clothing;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
@@ -73,8 +74,17 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
 
         LoadoutsContainer.DisposeAllChildren();
 
+        var clientSponsor = collection.Resolve<IClientSponsorManager>();
         // Get all loadout prototypes for this group.
-        var validProtos = _groupProto.Loadouts.Select(id => protoMan.Index(id));
+        var validProtos = _groupProto.Loadouts
+           .Select(id => protoMan.Index(id))
+           .Where(p =>
+           {
+               if (string.IsNullOrEmpty(p.SponsorTag))
+                   return true;
+
+               return clientSponsor.HasTag(p.SponsorTag);
+           });
 
         /*
          * Group the prototypes based on their GroupBy field.

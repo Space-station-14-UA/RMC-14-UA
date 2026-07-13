@@ -1,0 +1,7 @@
+## Для всіх прототипів з старими спрайтами ксено
+- type: entity
+  id: MRXenoBaseOld
+  suffix: Січ, Стара
+  abstract: true
+  components:
+    - type: XenoHidden # Прибирання з РМС адмін панелі та оголошень

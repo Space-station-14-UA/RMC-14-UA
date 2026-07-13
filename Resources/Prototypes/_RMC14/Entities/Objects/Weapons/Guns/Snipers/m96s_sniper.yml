@@ -183,7 +183,7 @@
 - type: entity
   parent: RMCBaseBullet
   id: CMBulletSniper10x28mm
-#  name: куля (10х28 мм) – Sich
+#  name: куля (10х28 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -217,7 +217,7 @@
 - type: entity
   parent: CMBulletSniper10x28mm
   id: CMBulletSniper10x28mmIncendiary
-#  name: куля (10х28 мм) – Sich
+#  name: куля (10х28 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -236,7 +236,7 @@
 - type: entity
   parent: CMBulletSniper10x28mm
   id: CMBulletSniper10x28mmFlak
-#  name: куля (10х28 мм) – Sich
+#  name: куля (10х28 мм) – MR
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile

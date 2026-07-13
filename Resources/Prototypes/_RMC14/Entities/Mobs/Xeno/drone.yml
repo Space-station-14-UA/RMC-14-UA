@@ -105,7 +105,7 @@
     evolvesToWithoutPoints:
     - CMXenoQueen
   - type: Evasion
-    evasion: 20
+    evasion: 15
   - type: XenoInhands
     prefix: drone
   - type: IntelRecoverCorpseObjectiveOnDeath
@@ -118,7 +118,7 @@
 - type: entity
   parent: CMXenoDroneBase
   id: CMXenoDrone
-  description: Чужопланетна істота з повноцінними лапами та малим хоботом, яка видається досить універсальною. # Sich
+  description: Чужопланетна істота з повноцінними лапами та малим хоботом, яка видається досить універсальною. # Mriya
   components:
   - type: GuideHelp
     guides:
@@ -164,7 +164,7 @@
 - type: entity
   parent: CMXenoDroneBase
   id: CMXenoDroneGardener
-  description: Чужопланетна зелена істота з повноцінними лапами та малим хоботом, виглядає особливо притягливо. # Sich
+  description: Чужопланетна зелена істота з повноцінними лапами та малим хоботом, виглядає особливо притягливо. # Mriya
   suffix: Gardener
   components:
   - type: Sprite
@@ -229,7 +229,7 @@
 - type: entity
   parent: CMXenoDroneBase
   id: CMXenoDroneHealer
-  description: Чужопланетна більш фіолетова істота з повноцінними лапами та малим хоботом. # Sich
+  description: Чужопланетна більш фіолетова істота з повноцінними лапами та малим хоботом. # Mriya
   suffix: Healer
   components:
   - type: Sprite

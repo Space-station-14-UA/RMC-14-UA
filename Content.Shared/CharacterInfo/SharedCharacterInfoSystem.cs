@@ -19,16 +19,16 @@ public sealed class CharacterInfoEvent : EntityEventArgs
 {
     public readonly NetEntity NetEntity;
     public readonly string JobTitle;
-    public readonly string? JobId; // Sich
+    public readonly string? JobId; // Mriya
     public readonly Dictionary<string, List<ObjectiveInfo>> Objectives;
     public readonly string? Briefing;
 
-    public CharacterInfoEvent(NetEntity netEntity, string jobTitle, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, string? jobId) // Sich
+    public CharacterInfoEvent(NetEntity netEntity, string jobTitle, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, string? jobId) // Mriya
     {
         NetEntity = netEntity;
         JobTitle = jobTitle;
         Objectives = objectives;
         Briefing = briefing;
-        JobId = jobId; // Sich
+        JobId = jobId; // Mriya
     }
 }

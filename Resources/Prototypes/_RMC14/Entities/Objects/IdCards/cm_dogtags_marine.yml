@@ -103,7 +103,7 @@
   parent: CMIDCardStandardDogtag
   id: RMCDogtagPVEHospitalCorpsman
   name: жетони Бойового Медика
-  suffix: PVE #Sich
+  suffix: PVE #Mriya
   components:
   - type: PresetIdCard
     job: CMPVEHospitalCorpsman
@@ -117,7 +117,7 @@
   parent: CMIDCardStandardDogtag
   id: RMCDogtagPVERifleman
   name: жетони Стрільця
-  suffix: PVE #Sich
+  suffix: PVE #Mriya
   components:
   - type: PresetIdCard
     job: CMPVERifleman
@@ -131,7 +131,7 @@
   parent: CMIDCardStandardDogtag
   id: RMCDogtagPVESmartGunOperator
   name: жетони Оператора Смартгана
-  suffix: PVE #Sich
+  suffix: PVE #Mriya
   components:
   - type: PresetIdCard
     job: CMPVESmartGunOperator
@@ -145,7 +145,7 @@
   parent: CMIDCardStandardDogtag
   id: RMCDogtagPVESquadLeader
   name: жетони Лідера Загону
-  suffix: PVE #Sich
+  suffix: PVE #Mriya
   components:
   - type: PresetIdCard
     job: CMPVESquadLeader
@@ -159,7 +159,7 @@
   parent: CMIDCardStandardDogtag
   id: RMCDogtagPVESectionSergeant
   name: жетони Сержанта Відділення
-  suffix: PVE #Sich
+  suffix: PVE #Mriya
   components:
   - type: PresetIdCard
     job: CMPVESectionSergeant

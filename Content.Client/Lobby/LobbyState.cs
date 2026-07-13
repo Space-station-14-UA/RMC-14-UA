@@ -1,3 +1,4 @@
+using Content.Client._Harmony.ReadyManifest;
 using Content.Client._RMC14.LinkAccount;
 using Content.Client._RMC14.Lobby;
 using Content.Client.Audio;
@@ -37,6 +38,7 @@ namespace Content.Client.Lobby
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
+        private ReadyManifestSystem _readyManifestSystem = default!; // Harmony
 
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
@@ -54,6 +56,7 @@ namespace Content.Client.Lobby
             _gameTicker = _entityManager.System<ClientGameTicker>();
             _contentAudioSystem = _entityManager.System<ContentAudioSystem>();
             _contentAudioSystem.LobbySoundtrackChanged += UpdateLobbySoundtrackInfo;
+            _readyManifestSystem = _entityManager.System<ReadyManifestSystem>(); // Harmony
 
             chatController.SetMainChat(true);
 
@@ -74,6 +77,7 @@ namespace Content.Client.Lobby
 
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
             Lobby.CharacterPreview.PatronPerks.OnPressed += OnPatronPerksPressed;
+            Lobby.ManifestButton.OnPressed += OnManifestPressed; // Harmony
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
 
@@ -100,6 +104,7 @@ namespace Content.Client.Lobby
 
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
             Lobby.CharacterPreview.PatronPerks.OnPressed -= OnPatronPerksPressed;
+            Lobby!.ManifestButton.OnPressed -= OnManifestPressed; // Harmony
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
@@ -122,6 +127,15 @@ namespace Content.Client.Lobby
         {
             _userInterfaceManager.GetUIController<LinkAccountUIController>().TogglePatronPerksWindow();
         }
+
+        // Harmony start - ready manifest
+        private void OnManifestPressed(BaseButton.ButtonEventArgs args)
+        {
+            if (_gameTicker.IsGameStarted)
+                return;
+            _readyManifestSystem.RequestReadyManifest();
+        }
+        // Harmony end - ready manifest
 
         private void OnReadyPressed(BaseButton.ButtonEventArgs args)
         {
@@ -202,6 +216,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.ToggleMode = false;
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ObserveButton.Disabled = false;
+                Lobby!.ManifestButton.Disabled = true; // Harmony
 
                 // RMC14
                 Lobby.ReadyButton.AddStyleClass("OpenLeft");
@@ -215,6 +230,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
                 Lobby!.ObserveButton.Disabled = true;
+                Lobby!.ManifestButton.Disabled = false; // Harmony
 
                 // RMC14
                 Lobby.ReadyButton.RemoveStyleClass("OpenLeft");

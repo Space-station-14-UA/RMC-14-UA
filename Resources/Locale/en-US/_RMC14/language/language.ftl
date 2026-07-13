@@ -13,6 +13,7 @@ language-Japanese-name = Японська
 language-Chinese-name = Китайська
 language-Russian-name = лайняна
 language-German-name = Німецька
+language-Scandinavian-name = Скандинавська
 language-SignLanguage-name = Мова Жестів
 language-Primitive-name = Примітивна
 
@@ -26,6 +27,7 @@ language-Japanese-description = Стара мова планети Земля. �
 language-Chinese-description = Стара мова планети Земля. Ніхао, Нахаї!
 language-Russian-description = Мертва мова.
 language-German-description = Стара мова планети Земля. Хало, Мадхен!
+language-Scandinavian-description = Стара мова планети Земля. Хей, Фрун!
 language-SignLanguage-description = Універсальна мова, яка використовує замість звуків жести.
 language-Primitive-description = Примітивна мова тварин, що складається з вереску, ухання та виразних жестів.
 

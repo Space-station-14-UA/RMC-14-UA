@@ -19,5 +19,5 @@ public sealed partial class XenoExpandWeedsActionEvent : WorldTargetActionEvent
     public FixedPoint2 SourcePlasmaCost = 260;
 
     [DataField, AutoNetworkedField]
-    public TimeSpan SourceCooldown = TimeSpan.FromSeconds(7);
+    public TimeSpan SourceCooldown = TimeSpan.FromSeconds(3); // Mriya. 7 в оригіналі
 }

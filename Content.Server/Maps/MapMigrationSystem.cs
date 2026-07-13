@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using Robust.Shared.ContentPack;
@@ -23,6 +23,7 @@ public sealed class MapMigrationSystem : EntitySystem
     [Dependency] private readonly IResourceManager _resMan = default!;
 
     private const string MigrationFile = "/migration.yml";
+    private const string MriyaMigrationFile = "/mriyamigration.yml"; // Mriya. Наш власний файлик міграції
 
     public override void Initialize()
     {
@@ -47,16 +48,30 @@ public sealed class MapMigrationSystem : EntitySystem
     {
         mappings = null;
         var path = new ResPath(MigrationFile);
+
         if (!_resMan.TryContentFileRead(path, out var stream))
             return false;
+        // Mriya start
+        var mrpath = new ResPath(MriyaMigrationFile);
 
+        if (_resMan.TryContentFileRead(mrpath, out var mrstream))
+        {
+            var combinedStream = new MemoryStream();
+            stream.CopyTo(combinedStream);
+            var newline = System.Text.Encoding.UTF8.GetBytes("\n");
+            combinedStream.Write(newline, 0, newline.Length);
+            mrstream.CopyTo(combinedStream);
+            combinedStream.Position = 0;
+            stream = combinedStream;
+        }
+        //Mriya end
         using var reader = new StreamReader(stream, EncodingHelpers.UTF8);
         var documents = DataNodeParser.ParseYamlStream(reader).FirstOrDefault();
 
         if (documents == null)
             return false;
 
-        mappings = (MappingDataNode) documents.Root;
+        mappings = (MappingDataNode)documents.Root;
         return true;
     }
 

@@ -152,7 +152,7 @@
         - XenoEgg
   - type: XenoInhands
     prefix: lesser
-#  - type: XenoEggSustainer – Mriya. Нерф, бо не адмеме
+#  - type: XenoEggSustainer – MR. Нерф, бо не адмеме
 #    maxSustainedEggs: 1
 #    sustainedEggsRange: 7
   - type: MovementSpeedModifier
@@ -187,9 +187,9 @@
     - id: MRFoodMeatXeno
       amount: 2
   - type: XenoStrain
-    name: sich-xeno-lesser-carrier-name
-    description: sich-xeno-lesser-carrier-description
-    popup: sich-xeno-lesser-carrier-popup
+    name: mriya-xeno-lesser-carrier-name
+    description: mriya-xeno-lesser-carrier-description
+    popup: mriya-xeno-lesser-carrier-popup
   - type: VentCrawler
     ventCrawlIcon: lesser
   - type: RMCActionOrder # Збереження біндів
@@ -199,4 +199,9 @@
   - type: RemoveComponents
     components:
     - type: CanBeLarvaQueued
+  - type: FiremanCarriable
+    canThrow: true
+    carrierWhitelist:
+      components:
+      - Synth
   # Mriya end

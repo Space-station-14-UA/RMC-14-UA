@@ -1,0 +1,10 @@
+- type: loadout
+  id: MRCONightVisionVisor
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: CMJobCommandingOfficer
+      time: 630000 # Платина, 175 годин
+  equipment:
+    belt: MRGlassesCOSight # візор з'являється на поясі щоб можна було обрати окуляри 

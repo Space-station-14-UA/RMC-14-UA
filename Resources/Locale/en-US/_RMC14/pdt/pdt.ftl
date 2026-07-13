@@ -1,17 +1,17 @@
-rmc-pdt-locator-no-link = The locator tube has no linked PDT bracelet.
-rmc-pdt-locator-no-signal = The locator tube cannot establish a signal to the linked PDT bracelet.
+rmc-pdt-locator-no-link = Локатор не під'єднано до браслету PDT.
+rmc-pdt-locator-no-signal = Локатор не може налагодити з'єднання зі з'єднаним браслетом PDT.
 rmc-pdt-locator-scan-readout = {$distance}-{$direction}
 rmc-pdt-locator-scan-close-readout = --><--
-rmc-pdt-locator-scan-result = The locator tube displays: {$readout}.
-rmc-pdt-bracelet-ping = {$bracelet} beeps twice.
+rmc-pdt-locator-scan-result = Локатор показує: {$readout}.
+rmc-pdt-bracelet-ping = {$bracelet} двічі пілікає.
 
-rmc-pdt-pair-already = The locator tube and PDT bracelet are already paired.
-rmc-pdt-pair-busy = One of the devices is already paired to a live partner.
-rmc-pdt-pair-success = You pair the PDT devices. Serial: {$serial}.
+rmc-pdt-pair-already = Локатор та браслет PDT вже з'єднані.
+rmc-pdt-pair-busy = Один з пристроїв вже приєднано до живого партнера.
+rmc-pdt-pair-success = Ви з'єднуєте пристрої PDT. Серійний номер: {$serial}.
 
-rmc-pdt-examine-serial = Serial: [color=cyan]{$serial}[/color].
-rmc-pdt-serial-unset = unassigned
-rmc-pdt-locator-examine-linked = It is linked to a PDT bracelet.
-rmc-pdt-locator-examine-unlinked = It is not linked to any PDT bracelet.
-rmc-pdt-bracelet-examine-linked = It is linked to a PDT/L locator tube.
-rmc-pdt-bracelet-examine-unlinked = It is not linked to any PDT/L locator tube.
+rmc-pdt-examine-serial = Серійний номер: [color=cyan]{$serial}[/color].
+rmc-pdt-serial-unset = непризначений
+rmc-pdt-locator-examine-linked = З'єднано з браслетом PDT.
+rmc-pdt-locator-examine-unlinked = Не з'єднано з браслетом PDT.
+rmc-pdt-bracelet-examine-linked = З'єднано з локатором PDT/L.
+rmc-pdt-bracelet-examine-unlinked = Не приєднано до жодного локатору PDT/L.

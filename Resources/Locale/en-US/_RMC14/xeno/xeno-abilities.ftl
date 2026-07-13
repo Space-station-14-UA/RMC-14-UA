@@ -6,7 +6,7 @@ rmc-xeno-not-enough-energy = Наших енергетичних запасів 
 rmc-xeno-energy-increase-user = Ми відчуваємо, як наші внутрішні резерви енергії зростають!
 
 # Internal health
-## Sich. Під абілки Наглядача, в оригіналі щось типу "запаси здоров'я", але як вони з Валькірією дуже схожі, то буде теж лють
+## Mriya. Під абілки Наглядача, в оригіналі щось типу "запаси здоров'я", але як вони з Валькірією дуже схожі, то буде теж лють
 rmc-xeno-not-enough-internal-health = Наших запасів люті недостатньо!
 rmc-xeno-internal-health-increase-user = Ми відчуваємо, як наші внутрішні запаси люті зростають!
 
@@ -15,22 +15,22 @@ rmc-xeno-not-enough-fury = Ми ще недостатньо розлючені �
 rmc-xeno-fury-increase-user = Нас переповнює лють!
 
 # Queen psychic communication
-rmc-xeno-psychic-whisper-message = Whisper to {$target}.
-rmc-xeno-psychic-whisper-sent = We whisper to {$target}.
-rmc-xeno-psychic-target-unknown = that mind
-rmc-xeno-psychic-radiance-message = Radiate a psychic message.
-rmc-xeno-psychic-radiance-no-targets = There are no nearby minds to radiate to.
-rmc-xeno-psychic-radiance-sent = We radiate our thoughts to {$count} nearby minds.
-rmc-xeno-psychic-give-order-message = Give an order to {$target}.
-rmc-xeno-psychic-give-order-must-watch = We must be watching a sister to give an order.
-rmc-xeno-psychic-give-order-sent = We give an order to {$target}.
-rmc-xeno-psychic-target-invalid = That mind is no longer within our reach.
-rmc-xeno-psychic-message-xeno = [color=#921992][font size=14][bold]The voice of {$queen} resonates in your head:[/bold] "{$message}"[/font][/color]
-rmc-xeno-psychic-message-alien = [color=#921992][font size=14][bold]You hear a strange, alien voice in your head:[/bold] "{$message}"[/font][/color]
-rmc-xeno-psychic-message-order = [color=#921992][font size=14][bold]{$queen} commands you:[/bold] "{$message}"[/font][/color]
-rmc-xeno-psychic-ghost-whisper = [color=#921992][font size=14][bold]Psychic Whisper ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
-rmc-xeno-psychic-ghost-radiance = [color=#921992][font size=14][bold]Psychic Radiance ({$queen}, {$count} recipients):[/bold] "{$message}"[/font][/color]
-rmc-xeno-psychic-ghost-order = [color=#921992][font size=14][bold]Psychic Order ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-whisper-message = Шепотіти до {$target}.
+rmc-xeno-psychic-whisper-sent = Ми шепчемо до {$target}.
+rmc-xeno-psychic-target-unknown = цього розуму
+rmc-xeno-psychic-radiance-message = Транслювати психічне повідомлення.
+rmc-xeno-psychic-radiance-no-targets = Поруч жодних розумів для транслювання повідомлення.
+rmc-xeno-psychic-radiance-sent = Ми транслюємо наші думки до {$count} розумів поруч.
+rmc-xeno-psychic-give-order-message = Віддати наказ {$target}.
+rmc-xeno-psychic-give-order-must-watch = Ми повинні спостерігати за сестрою щоб віддати наказ.
+rmc-xeno-psychic-give-order-sent = Ми віддаємо наказ {$target}.
+rmc-xeno-psychic-target-invalid = Цей розум поза зоною нашої досяжності.
+rmc-xeno-psychic-message-xeno = [color=#921992][font size=14][bold]Голос {$queen} відлунює у вашій голові:[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-message-alien = [color=#921992][font size=14][bold]Ви чуєте дивний, чужий голос у вашій голові:[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-message-order = [color=#921992][font size=14][bold]{$queen} наказує вам:[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-ghost-whisper = [color=#921992][font size=14][bold]Психічний Шепіт ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-ghost-radiance = [color=#921992][font size=14][bold]Психічна Трансляція ({$queen}, {$count} recipients):[/bold] "{$message}"[/font][/color]
+rmc-xeno-psychic-ghost-order = [color=#921992][font size=14][bold]Психічний Наказ ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
 
 # Acid reserves
 rmc-xeno-not-enough-acid = У вас недостатньо накопиченої кислоти!
@@ -80,25 +80,25 @@ rmc-xeno-evolution-start-self = Ми починаємо викручуватис
 rmc-xeno-evolution-start-others = {$xeno} починає викручуватись і корчитись.
 
 # Insight
-rmc-xeno-insight-empower = We have gained sufficient insight in our prey to empower our next Deploy Traps!
+rmc-xeno-insight-empower = Ми отримали достатнє уявлення про нашу здобич, щоб успішно розставити посилені Пастки!
 
 # Deploy Traps
-rmc-xeno-deploy-traps-self = We create a sudden surge of traps!
-rmc-xeno-deploy-traps-others = The sapper creates a sudden surge of traps!
-rmc-xeno-deploy-traps-empower = We have tapped into our reserves to prepare a stronger Acid Mine!
-rmc-xeno-deploy-traps-range-fail = That target is too far away!
-rmc-xeno-deploy-traps-see-fail = There's something in the way!
+rmc-xeno-deploy-traps-self = Ми створюємо раптовий сплеск пасток!
+rmc-xeno-deploy-traps-others = Сапер створює раптовий сплеск пасток!
+rmc-xeno-deploy-traps-empower = Ми задіяли свої резерви, щоб підготувати більш потужні Кислотні Міни!
+rmc-xeno-deploy-traps-range-fail = Ціль загадеко!
+rmc-xeno-deploy-traps-see-fail = Щось стоїть на заваді!
 
 
 # Acid Mine
-rmc-xeno-acid-mine-self = We coax a hidden mine to detonate!
-rmc-xeno-acid-mine-others = The sapper coaxes a hidden mine to detonate!
-rmc-xeno-acid-mine-range-fail = That target is too far away!
-rmc-xeno-acid-mine-see-fail = There's something in the way!
+rmc-xeno-acid-mine-self = Ми змушуємо приховану міну вибухнути!
+rmc-xeno-acid-mine-others = Сапер змушує приховану міну вибухнути!
+rmc-xeno-acid-mine-range-fail = Ціль задалеко!
+rmc-xeno-acid-mine-see-fail = Щось стоїть на заваді!
 
 # Adrenaline Surge
-rmc-xeno-adrenaline-surge-ready = You feel your adrenaline glands refill! Your speed boost will activate again.
-rmc-xeno-adrenaline-surge-start = Your adrenaline surges to enhance your speed!
+rmc-xeno-adrenaline-surge-ready = Ви відчуваєте, як ваші адреналінові залози поповнюються! Прискорення знову активується.
+rmc-xeno-adrenaline-surge-start = Рівень адреналіну різко зростає, щоб підвищити швидкість!
 
 # Fortify
 cm-xeno-fortify-cant-headbutt = Не можна битися головою під час укріплення!
@@ -468,10 +468,10 @@ rmc-xeno-queen-eye-expand-weeds-name = Розширити Траву (50)
 rmc-xeno-queen-eye-expand-weeds-desc = Розширює траву далі, або створює вузол на вже існуючій.
 
 # Swift Steps
-rmc-xeno-swift-steps-self = We narrowly dodge {THE($bullet)}!
-rmc-xeno-swift-steps-others = {CAPITALIZE(THE($user))} darts aside, evading {THE($bullet)}!
+rmc-xeno-swift-steps-self = Ми ледь ухилилися від {$bullet}!
+rmc-xeno-swift-steps-others = {CAPITALIZE($user)} відскакує в сторону, ухиляючись від {$bullet}!
 
 # Finesse
-rmc-xeno-marked-critical-apply = You feel fear washing down your spine... you could be next!
-rmc-xeno-marked-critical-disappear = You calm down and get back to your senses.
-rmc-xeno-marked-critical-consumed = You've been knocked back to your senses!
+rmc-xeno-marked-critical-apply = Ти відчуваєш, як страх пробігає по твоїй спині… ти можеш стати наступним!
+rmc-xeno-marked-critical-disappear = Ти заспокоюєшся і приходиш до тями.
+rmc-xeno-marked-critical-consumed = Ти нарешті прийшов до тями!

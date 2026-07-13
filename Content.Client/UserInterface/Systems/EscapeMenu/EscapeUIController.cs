@@ -35,7 +35,7 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 
     private MenuButton? EscapeButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.EscapeButton;
 
-// Sich commented. Зайві кнопки
+// Mriya commented. Зайві кнопки
 //    public override void Initialize()
 //    {
 //        _linkAccount.Updated += () =>
@@ -86,7 +86,7 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 
         _escapeWindow.CreditsButton.OnPressed += _ => new CreditsWindow().OpenCentered();
 
-// Sich commented. Зайві кнопки
+// Mriya commented. Зайві кнопки
 //        _escapeWindow.PatronPerksButton.Visible = _linkAccount.CanViewPatronPerks();
 //        _escapeWindow.PatronPerksButton.OnPressed += _ =>
 //        {

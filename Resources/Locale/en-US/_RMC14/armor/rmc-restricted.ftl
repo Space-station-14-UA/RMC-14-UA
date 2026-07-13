@@ -1,19 +1,19 @@
-﻿rmc-armor-not-intel-jumpsuit = You cannot wear this without wearing a marine intelligence officer uniform.
+rmc-intel-not-intel-jumpsuit = Ви не можете вдягнути це без уніформи офіцера розвідки.
 
-rmc-armor-not-marine-jumpsuit = You cannot wear this without wearing a UNMC uniform.
+rmc-armor-not-marine-jumpsuit = Ви не можете вдягнути це без уніформи КМПОН.
 
-rmc-armor-not-un-security-jumpsuit = You cannot wear this without wearing a United Nations security uniform.
+rmc-armor-not-un-security-jumpsuit = Ви не можете вдягнути це без уніформи Безпеки ОН.
 
-rmc-armor-not-mp-jumpsuit = You cannot wear this without wearing a military police jumpsuit.
+rmc-armor-not-mp-jumpsuit = Ви не можете вдягнути це без уніформи військової поліції.
 
-rmc-armor-not-warden-jumpsuit = You cannot wear this without wearing a military warden uniform.
+rmc-armor-not-warden-jumpsuit = Ви не можете вдягнути це без уніформи наглядача ВСП.
 
-rmc-armor-not-cmp-jumpsuit = You cannot wear this without wearing a chief MP uniform.
+rmc-armor-not-cmp-jumpsuit = Ви не можете вдягнути це без уніформи Голови ВСП.
 
-rmc-armor-not-pmc-jumpsuit = You cannot wear this without wearing PMC fatigues.
+rmc-armor-not-pmc-jumpsuit = Ви не можете вдягнути це без уніформи ПВК.
 
-rmc-armor-not-spp-jumpsuit = You cannot wear this without wearing SPP fatigues.
+rmc-armor-not-spp-jumpsuit = Ви не можете вдягнути це без уніформи СПН.
 
-rmc-armor-not-cmb-jumpsuit = You cannot wear this without wearing a CMB uniform.
+rmc-armor-not-cmb-jumpsuit = Ви не можете вдягнути це без уніформи БКМ.
 
-rmc-armor-not-tse-jumpsuit = You cannot wear this without wearing a TSE uniform.
+rmc-armor-not-tse-jumpsuit = Ви не можете вдягнути це без уніформи ІТС.

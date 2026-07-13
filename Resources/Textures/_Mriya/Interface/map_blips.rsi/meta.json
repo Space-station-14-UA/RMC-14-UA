@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "sherpa by github HorvatBG-gif, lesser_runner by Miyugi",
+    "size": {
+      "x": 7,
+      "y": 7
+    },
+    "states": [
+        {
+            "name": "sherpa"
+        },
+        {
+            "name": "lesser_runner"
+        }
+    ]
+}

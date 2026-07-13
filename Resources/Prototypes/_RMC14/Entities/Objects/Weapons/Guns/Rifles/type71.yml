@@ -118,7 +118,7 @@
 
 - type: entity
   parent: RMCWeaponRifleType71
-  name: Тип 71-В штурмова гвинтівка # Sich. F – Flamer, вогнемет – В
+  name: Тип 71-В штурмова гвинтівка # Mriya. F – Flamer, вогнемет – В
   id: RMCWeaponRifleType71Flamer
   description: Схоже, це менш поширений варіант Тип 71 із вбудованим вогнеметом, що видається особливо крутим.
   components:
@@ -237,6 +237,13 @@
       color: "#9C9A19"
   - type: RefillableByBulletBox
     bulletType: null
+
+- type: entity
+  parent: RMCMagazineRifleType71HEAP
+  id: RMCMagazineRifleType71HEAPEmpty
+  suffix: HEAP, Empty
+  components:
+  - type: RMCEmptyMag
 
 - type: entity
   parent: RMCMagazineRifleType71

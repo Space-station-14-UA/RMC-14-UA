@@ -1,0 +1,57 @@
+# Дуплікати Варадерських інсертів для мапи під ФВК
+- type: entity
+  abstract: true
+  parent: RMCMapInsertBase
+  id: MMCMapInsertVaraderoBase
+  suffix: Інсерт Варадеро
+  components:
+  - type: MapInsert
+    clearEntities: true
+    clearDecals: true
+    replaceAreas: true
+
+- type: entity
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoCLFRaid
+  name: Вторгнення ФВК
+  components:
+  - type: MapInsert
+    variations:
+    - spawn: "/Maps/_Mriya/Inserts/Varadero/clf_raid.yml"
+      probability: 1
+
+- type: entity
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoResturant
+  name: Ресторан
+  components:
+  - type: MapInsert
+    variations:
+    - spawn: "/Maps/_Mriya/Inserts/Varadero/varadero_resturant.yml"
+      probability: 0
+
+- type: entity
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoAltHospital
+  name: Альтернативний Мед
+  components:
+  - type: MapInsert
+    clearEntities: true
+    clearDecals: true
+    replaceAreas: false
+    variations:
+    - spawn: "/Maps/_Mriya/Inserts/Varadero/varadero_alt_hospital.yml"
+      probability: 1
+
+- type: entity
+  parent: MMCMapInsertVaraderoBase
+  id: MMCMapInsertVaraderoEngiHold
+  name: Холд Інжу
+  components:
+  - type: MapInsert
+    clearEntities: true
+    clearDecals: true
+    replaceAreas: false
+    variations:
+    - spawn: "/Maps/_Mriya/Inserts/Varadero/engi_hold.yml"
+      probability: 1

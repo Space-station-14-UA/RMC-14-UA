@@ -29,7 +29,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Database
 {
-    public abstract class ServerDbBase
+    public abstract partial class ServerDbBase // mriya partial class is in a separate file
     {
         private readonly ISawmill _opsLog;
 

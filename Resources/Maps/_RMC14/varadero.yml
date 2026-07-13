@@ -177069,7 +177069,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 179.5,29.5
       parent: 1
-- proto: RMCPlatformKutjevoSMCorner
+- proto: RMCPlatformKutjevoMMCorner
   entities:
   - uid: 24667
     components:

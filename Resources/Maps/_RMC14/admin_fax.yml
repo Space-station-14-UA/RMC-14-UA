@@ -11983,7 +11983,7 @@ entities:
     - type: Transform
       pos: 37.5,-10.5
       parent: 2
-- proto: RMCPlatformKutjevoSMCorner
+- proto: RMCPlatformKutjevoMMCorner
   entities:
   - uid: 1292
     components:

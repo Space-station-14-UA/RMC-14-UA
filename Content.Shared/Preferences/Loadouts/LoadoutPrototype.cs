@@ -18,6 +18,13 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// </summary>
     [DataField]
     public string? GroupBy;
+
+    // Mriya
+    /// <summary>
+    /// Uses for sponsor loadouts, identifies which sponsor the loadout belongs to. If not null, the loadout will only be shown if the sponsor is selected.
+    /// </summary>
+    [DataField]
+    public string? SponsorTag;
     /*
      * You can either use an existing StartingGearPrototype or specify it inline to avoid bloating yaml.
      */
@@ -55,4 +62,10 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// <inheritdoc />
     [DataField]
     public Dictionary<string, List<EntProtoId>> Storage { get; set; } = new();
+
+    /// <summary>
+    /// RMC14, basically this ignores the equipment part of the loadout system and just raises an event and adds the components from the equipment to the person.
+    /// </summary>
+    [DataField]
+    public bool ComponentsAdd = false;
 }

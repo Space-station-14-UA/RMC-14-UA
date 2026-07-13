@@ -51,7 +51,7 @@
     - ActionXenoDevolve
     tier: 3
     hudOffset: 0,0.1
-    unlockAt: 1200 # Sich. 20 хвилин. 15 (900) в оригіналі
+    unlockAt: 1200 # Mriya. 20 хвилин. 15 (900) в оригіналі
   - type: XenoRegen
     standHealingMultiplier: 0.66
   - type: XenoHeavy
@@ -127,7 +127,7 @@
     debuffModifier: 1.2
   - type: RMCImmuneToFireTileDamage
   - type: IntelRecoverCorpseObjectiveOnDeath
-    value: 1.2 # Sich. 0.7 в оригіналі
+    value: 1.2 # Mriya. 0.7 в оригіналі
   - type: TantrumSpeedBuff
   - type: XenoCruelty
   - type: TacticalMapIcon
@@ -142,7 +142,7 @@
 - type: entity
   parent: RMCXenoRavagerBase
   id: CMXenoRavager
-  description: Величезна, огидна, червона чужопланетна істота з броньованим панцирем та серпоподібними метровими лезами. Виглядає, ніби природжена вбивця. # Sich
+  description: Величезна, огидна, червона чужопланетна істота з броньованим панцирем та серпоподібними метровими лезами. Виглядає, ніби природжена вбивця. # Mriya
   components:
   - type: XenoShield
   - type: XenoLeap
@@ -180,7 +180,7 @@
 - type: entity
   parent: RMCXenoRavagerBase
   id: RMCXenoRavagerBerserker
-  description: Величезна, огидна, більш червона чужопланетна істота з броньованим панцирем та серпоподібними метровими лезами. Виглядає, ніби справді природжена вбивця. # Sich
+  description: Величезна, огидна, більш червона чужопланетна істота з броньованим панцирем та серпоподібними метровими лезами. Виглядає, ніби справді природжена вбивця. # Mriya
   suffix: Berserker
   components:
   - type: Sprite
@@ -257,7 +257,7 @@
 - type: entity
   parent: RMCXenoRavagerBase
   id: RMCXenoRavagerHedgehog
-  description: Величезна, огидна, червона чужопланетна істота з броньованим панцирем та серпоподібними метровими лезами. Більшість її тіла вкрита дивними кісткоподібними уламками. # Sich
+  description: Величезна, огидна, червона чужопланетна істота з броньованим панцирем та серпоподібними метровими лезами. Більшість її тіла вкрита дивними кісткоподібними уламками. # Mriya
   suffix: Hedgehog
   components:
   - type: Sprite

@@ -1,0 +1,48 @@
+# Чомусь РМСні спавнери цих ролей лише з пробитими грудьми. Не підходить для режиму з ФВК, тому робимо власні
+- type: entity
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseDoctor
+  name: Спавнер Трупа – Лікар
+  components:
+  - type: CorpseSpawner
+    spawn: MMCCorpseDoctor
+
+- type: entity
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseEngineer
+  name: Спавнер Трупа – Інженер
+  components:
+  - type: CorpseSpawner
+    spawn: MMCCorpseEngineer
+
+- type: entity
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseSecurity
+  name: Спавнер Трупа – Офіцер
+  components:
+  - type: CorpseSpawner
+    spawn: MMCCorpseSecurity
+
+- type: entity
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseScientist
+  name: Спавнер Трупа – Науковець
+  components:
+  - type: CorpseSpawner
+    spawn: MMCCorpseScientist
+
+- type: entity
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseLiaison
+  name: Спавнер Трупа – Представник Корпорації
+  components:
+  - type: CorpseSpawner
+    spawn: MMCCorpseLiaison
+
+- type: entity
+  parent: MMCSpawnerCorpse
+  id: MMCSpawnerCorpseMiner
+  name: Спавнер Трупа – Шахтар
+  components:
+  - type: CorpseSpawner
+    spawn: MMCCorpseMiner

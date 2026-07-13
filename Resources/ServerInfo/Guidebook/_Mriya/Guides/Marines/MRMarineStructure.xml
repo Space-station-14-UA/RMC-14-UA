@@ -1,0 +1,813 @@
+<Document>
+## Структура морської піхоти
+
+КМПОН складається не лише з морпіхів. Під час операції разом працюють командування, бойові загони, військова служба правопорядку, медичний відділ, інженери, постачання, пілоти та інші допоміжні ролі.
+
+Цей посібник пояснює базову структуру морської піхоти: які ролі існують, до яких відділів вони належать, які мають звання та хто кому підпорядковується.
+
+### Командування
+
+До командування належать ролі, які керують операцією, координують загони та ухвалюють ключові рішення.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Командуючий Офіцер (КО)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Майор / Підполковник / Полковник
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Очолює всю операцію та є найвищою командною особою на борту Саванни. Визначає стратегію, координує роботу відділів і несе остаточну відповідальність за успіх місії. [bold]Доступний для гри тільки гравцям з вайтлістом КО.[/bold]
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Виконавчий Офіцер (ВО)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Капітан
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Є наступним у ланцюгу командування після КО, допомагає керувати Саванною, відділами та операцією.
+    </Box>
+  </ColorBox>
+
+      <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Штабний Офіцер (ШО)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант / Перший Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Спостерігає за загонами завдяки консолю спостереження, координує їхні дії та підтримує зв'язок між морпіхами, підтримкою і командуванням.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Військова Служба Правопорядку
+
+Військова Служба Правопорядку відповідає за дотримання Морського Права та Стандартних Операційних Процедур. У питаннях закону вона має окрему вертикаль.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Голова Військової Служби Правопорядку (ГВСП)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант / Перший Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Керує Військовою Службою Правопорядку, адмініструє бріг і стежить за дотриманням Морського Права на Саванні.
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Військовий Наглядач (ВН)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Сержант / Штаб-Сержант / Комендор-Сержант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Керує брігом, відповідає за ув'язнених та порядок у зоні утримання.
+    </Box>
+  </ColorBox>
+
+      <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Військовий Поліціянт (ВП)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Капрал / Сержант / Штаб-Сержант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Дотримується Морського Права та слідкує, аби його дотримувалися всі.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Відділ Підтримки
+
+Відділ підтримки забезпечує розвідку, транспорт, авіаційну підтримку, евакуацію та координацію допоміжних служб.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Офіцер Підтримки (ОП)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Перший Лейтенант / Капітан
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Координує допоміжні відділи, зокрема постачання, розвідку та пілотів.
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Офіцер Розвідки (ОР)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Збирає інформацію про колонію, її мешканців і загрозу, а потім використовує ці дані для найрізноманітніших бонусів для Саванни.
+    </Box>
+  </ColorBox>
+
+      <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Інструктор (ІНС)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Комендор-Сержант / Майстер-Сержант / Перший Сержант / Майстер Комендор-Сержант / Сержант-Майор
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Наставляє та навчає морпіхів, допомагає новачкам і підтримує командування у різних питаннях. [bold]Доступний для гри тільки гравцям з вайтлістом Ментора.[/bold]
+    </Box>
+  </ColorBox>
+
+   <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Пілот Бойового Шатла (БП)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Ворент-Офіцер / Старший Ворент-Офіцер / Другий Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Забезпечує повітряну підтримку морпіхів за допомогою озброєння бойового шатла.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Пілот Транспортного Шатла (ТП)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Ворент-Офіцер / Старший Ворент-Офіцер / Другий Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Перевозить морпіхів на поле бою та з поля бою, а також може допомагати з бойовою підтримкою за потреби.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Помічний Пілота (ПП)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Капрал / Сержант / Штаб-Сержант / Ворент-Офіцер
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Допомагає пілотам транспортних і бойових шатлів, готує шатли до роботи та може взяти пілотування на себе за потреби.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Оператор Транспорту (ОПТР)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Керує та обслуговує техніку, висаджується з нею в зону операції та забезпечує прикриття морпіхів.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Інженерний Відділ
+
+Інженерний відділ відповідає за енергопостачання, ремонт, корабельні системи, технічне обслуговування та підтримку важкого обладнання.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Головний Інженер (ГІ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант / Перший Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Координує роботу інженерів, відповідає за технічний стан Саванни.
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Обслуговуючий Інженер (ОІ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Рядовий / Рядовий Першого Класу / Молодший Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Підтримує реактори Саванни в робочому стані, та й в цілому виконує найрізноманітніші задачі.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Медичний відділ
+
+Медичний відділ відповідає за лікування поранених, стабілізацію критичних пацієнтів, хірургію та повернення особового складу до строю.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Головний Лікар (ГЛ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант / Перший Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Керує медичним відділом, контролює лікарів, дослідження, медичні поставки та загальну організацію лікування.
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Лікар (ЛКР)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Лікує персонал корабля, виробляє необхідні хімікати та проводить складні хірургічні операції.
+    </Box>
+  </ColorBox>
+
+      <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Польовий Лікар (ПЛКР)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Допомагає медичному відділу, висаджується на землю та підтримує морпіхів живими в зоні операції.
+    </Box>
+  </ColorBox>
+
+   <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Медичний Помічний (МДПМ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Капрал / Сержант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Допомагає лікарям, доглядає за пацієнтами та виконує базові медичні задачі.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Постачання
+
+Постачання відповідає за спорядження, зброю, боєприпаси, матеріали та доставку вантажів для морпіхів.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Офіцер Логістики (ОЛ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Другий Лейтенант / Перший Лейтенант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Керує відділом постачання, організовує вантажників і забезпечує стабільне надсилання спорядження на фронт.
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Вантажник (ВНТ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Рядовий / Рядовий Першого Класу / Молодший Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Готує ящики, виконує замовлення морпіхів і допомагає Офіцеру Логістики.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Синтетики, цивільні та корпоративні ролі
+
+Ці ролі не є основною бойовою ланкою КМПОН, але можуть виконувати важливі допоміжні, інформаційні або корпоративні задачі.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Синтетик (СИНТ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Ворент-Офіцер / Старший Ворент-Офіцер
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Підтримує та допомагає відділам і персоналу КМПОН. [bold]Доступний для гри тільки гравцям з вайтлістом Синтетика.[/bold]
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Військовий Кореспондент (ВК)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Працює разом із КМПОН, документує фронт і висвітлює події бойових дій.
+    </Box>
+  </ColorBox>
+
+      <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Кок (Кок)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Рядовий / Рядовий Першого Класу / Молодший Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Готує їжу та напої для морпіхів і персоналу Саванни.
+    </Box>
+  </ColorBox>
+
+   <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Представник Корпорації (ПК)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Молодший Керівник / Керівник / Старший Керівник / Старший Спеціаліст
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Є зв'язковим між Ве-Я та КМПОН, надсилає факси й відстоює інтереси компанії.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Корпоративний Охоронець (КОх)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Стажер-Офіцер Особистої Охорони / Офіцер Особистої Охорони / Спеціаліст Особистої Охорони / Координатор Особистої Охорони
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Особистий охоронець Представника Корпорації, якого слід захищати.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Кореспондент (ПРЕСС)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Цивільний
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Знімає та висвітлює події на Саванні, показуючи життя і роботу КМПОН зсередини.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Морські піхотинці
+
+Морські піхотинці є основною силою КМПОН. Кожен загін має власного Лідера Загону, Лідерів Вогневих Груп і інші ролі.
+
+<Table Columns="3">
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Роль[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Звання[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox Color="#3A3A3A">
+    <Box HorizontalAlignment="Center" Margin="4">
+      [bold]Опис[/bold]
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Лідер Загону (ЛЗ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Сержант / Штаб-Сержант / Комендор-Сержант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Керує загоном, організовує його дії та виконує завдання, поставлене Командуванням.
+    </Box>
+  </ColorBox>
+
+    <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Лідер Вогневої Групи (ЛВГ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Молодший Капрал / Капрал / Сержант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Командує своєю вогневою групою, виконує накази Лідера Загону та координує підтримку, зокрема БАП.
+    </Box>
+  </ColorBox>
+
+      <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Збройний спеціаліст (ЗСПЦ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Молодший Капрал / Капрал / Сержант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Використовує потужніше озброєння та краще спорядження для отримання переваги над ворогом.
+    </Box>
+  </ColorBox>
+
+   <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Оператор СмартГану (ОСГ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Молодший Капрал / Капрал / Сержант
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Прикриває загін вогнем і забезпечує вогневу підтримку за допомогою СмартГана.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Бойовий Медик (БМ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Рядовий Першого Класу / Молодший Капрал / Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Підтримує морпіхів у бойовому стані, стабілізує поранених і відправляє важких пацієнтів до медичного відділу.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Бойовий Технік (БТ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Рядовий Першого Класу / Молодший Капрал / Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Будує та розбирає барикади, підтримує ПОБ і виконує інженерні задачі загону.
+    </Box>
+  </ColorBox>
+
+        <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Стрілець (СТЛ)
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Рядовий / Рядовий Першого Класу / Молодший Капрал
+    </Box>
+  </ColorBox>
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="4">
+      Виконує накази старших, бере участь у бою та є основною бойовою одиницею загону.
+    </Box>
+  </ColorBox>
+</Table>
+
+### Створив Dmytr0-Translate
+</Document>

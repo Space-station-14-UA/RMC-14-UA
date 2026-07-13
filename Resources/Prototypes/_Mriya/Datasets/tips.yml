@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: MR_RMC_Tips
+  values:
+    prefix: mriya-rmc-tips-
+    count: 143

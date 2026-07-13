@@ -91,7 +91,7 @@
     id: RMCIDCardPMC
     ears: RMCHeadsetDistressPMC
     jumpsuit: RMCJumpsuitVeteranPMCMedic
-    outerClothing: CMArmorM4PMCLight
+    outerClothing: MRCMArmorM4PMCLight #Mriya. ГШР легка версія броні
     gloves: RMCHandsVeteranPMC
     head: ArmorHelmetPMC
     shoes: RMCBootsPMCFilled

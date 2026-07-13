@@ -312,7 +312,7 @@
   - node: spider cutlet
     entity: FoodMeatSpiderCutletCooked
 
-#- type: constructionGraph – Mriya. У нас своє
+#- type: constructionGraph – MR. У нас своє
 #  id: XenoCutlet
 #  start: start
 #  graph:

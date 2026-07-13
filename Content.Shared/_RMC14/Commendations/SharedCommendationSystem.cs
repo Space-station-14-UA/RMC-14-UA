@@ -36,16 +36,16 @@ public abstract class SharedCommendationSystem : EntitySystem
     protected static readonly IReadOnlyList<EntProtoId> SpecialMedalIds = new[]
     {
         new EntProtoId("RMCMedalHighCommandHonor"),
-        // Sich starts. Костиль, подробиці в Prototypes\_Sich\Entities\Objects\medals.yml
-        new EntProtoId("SichMedalGoldExceptionalHeroismEngilsh"),
-        new EntProtoId("SichMedalSilverValorEngilsh"),
-        new EntProtoId("SichMedalBronzeDistinguishedConductEngilsh"),
-        new EntProtoId("SichMedalBronzeHeartEngilsh"),
-        new EntProtoId("SichMedalGoldExceptionalHeroismUkrainian"),
-        new EntProtoId("SichMedalSilverValorUkrainian"),
-        new EntProtoId("SichMedalBronzeDistinguishedConductUkrainian"),
-        new EntProtoId("SichMedalBronzeHeartUkrainian")
-        // Sich ends.
+        // Mriya starts. Костиль, подробиці в Prototypes\_Mriya\Entities\Objects\medals.yml
+        new EntProtoId("MRMedalGoldExceptionalHeroismEngilsh"),
+        new EntProtoId("MRMedalSilverValorEngilsh"),
+        new EntProtoId("MRMedalBronzeDistinguishedConductEngilsh"),
+        new EntProtoId("MRMedalBronzeHeartEngilsh"),
+        new EntProtoId("MRMedalGoldExceptionalHeroismUkrainian"),
+        new EntProtoId("MRMedalSilverValorUkrainian"),
+        new EntProtoId("MRMedalBronzeDistinguishedConductUkrainian"),
+        new EntProtoId("MRMedalBronzeHeartUkrainian")
+        // Mriya ends.
     };
 
     /// <summary>

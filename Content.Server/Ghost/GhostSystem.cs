@@ -1,10 +1,9 @@
-using System.Linq;
-using System.Numerics;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
+using Content.Server.Mriya.Sponsors;
 using Content.Server.Roles.Jobs;
 using Content.Server.Warps;
 using Content.Shared._RMC14.Ghost;
@@ -42,6 +41,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using System.Linq;
+using System.Numerics;
 
 namespace Content.Server.Ghost
 {
@@ -112,6 +113,14 @@ namespace Content.Server.Ghost
             SubscribeLocalEvent<ToggleGhostVisibilityToAllEvent>(OnToggleGhostVisibilityToAll);
 
             SubscribeLocalEvent<GhostComponent, GetVisMaskEvent>(OnGhostVis);
+
+            SubscribeLocalEvent<GhostComponent, SetGhostColorMsg>(SetSponsorGhostColor); // mriya
+        }
+
+        private void SetSponsorGhostColor(Entity<GhostComponent> ent, ref SetGhostColorMsg args) // mriya
+        {
+            ent.Comp.Color = args.Color;
+            Dirty(ent, ent.Comp);
         }
 
         private void OnGhostVis(Entity<GhostComponent> ent, ref GetVisMaskEvent args)
@@ -516,6 +525,8 @@ namespace Content.Server.Ghost
             else
                 _minds.TransferTo(mind.Owner, ghost, mind: mind.Comp);
             Log.Debug($"Spawned ghost \"{ToPrettyString(ghost)}\" for {mind.Comp.CharacterName}.");
+
+            RaiseLocalEvent(ghost, new SpawnGhostForPlayerEvent(mind), true); // mriya
 
             // we changed the entity name above
             // we have to call this after the mind has been transferred since some mind roles modify the ghost's name

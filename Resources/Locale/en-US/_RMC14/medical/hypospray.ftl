@@ -1,15 +1,15 @@
-﻿rmc-hypospray-label = Volume: [color=white]{$currentVolume}/{$totalVolume}[/color]
-    Injecting ([color=white]{$transferVolume}u[/color])
+rmc-hypospray-label = Об'єм: [color=white]{$currentVolume}/{$totalVolume}[/color]
+    Введення ([color=white]{$transferVolume}u[/color])
 
-rmc-hypospray-label-novial = No Vial
-    Injecting ([color=white]{$transferVolume}u[/color])
+rmc-hypospray-label-novial = Без Флакону
+    Введення ([color=white]{$transferVolume}од[/color])
 
-rmc-hypospray-fail-tacreload = You aren't experienced enough to load this any faster.
-rmc-hypospray-swap-tacreload = You begin swapping vials.
-rmc-hypospray-load-tacreload = You begin loading a vial into {THE($hypo)}.
+rmc-hypospray-fail-tacreload = Вас не навчили вставляти це швидше.
+rmc-hypospray-swap-tacreload = Ви починаєте замінювати флакони.
+rmc-hypospray-load-tacreload = Ви починаєте вставляти флакон в {$hypo}.
 
-rmc-hypospray-loaded = It is loaded with {INDEFINITE($vial)} {$vial}.
-rmc-hypospray-no-vial = No vial loaded.
-rmc-hypospray-amount-change = Now injecting {$amount}u.
-rmc-hypospray-full = {THE($vial)} is full.
+rmc-hypospray-loaded = Має в собі {$vial}.
+rmc-hypospray-no-vial = Флакон Відсутній.
+rmc-hypospray-amount-change = Тепер вводиться {$amount}u.
+rmc-hypospray-full = {$vial} повний.
 

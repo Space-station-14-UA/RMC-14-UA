@@ -1,0 +1,36 @@
+- type: entity
+  parent: [ MRXenoBaseOld, CMXenoDefender ]
+  id: MRXenoDefenderOld
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Defender/defender.rsi
+  - type: Xeno
+    hudOffset: 0,0.2
+  - type: XenoEvolution
+    evolvesTo:
+    - MRXenoWarriorOld
+    evolvesToWithoutPoints:
+    - MRXenoQueenOld
+    strains:
+    - MRXenoDefenderSteelcrestOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MRXenoLarvaOld
+
+- type: entity
+  parent: [ MRXenoBaseOld, CMXenoDefenderSteelcrest ]
+  id: MRXenoDefenderSteelcrestOld
+  suffix: Сталева, Січ, Стара
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/OldXenonids/Defender/steelcrest_defender.rsi
+  - type: Xeno
+    hudOffset: 0,0.2
+  - type: XenoEvolution
+    evolvesTo:
+    - MRXenoWarriorOld
+    evolvesToWithoutPoints:
+    - MRXenoQueenOld
+  - type: XenoDevolve
+    devolvesTo:
+    - MRXenoLarvaOld

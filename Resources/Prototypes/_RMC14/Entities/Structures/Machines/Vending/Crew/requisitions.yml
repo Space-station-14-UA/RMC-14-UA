@@ -75,9 +75,9 @@
       - id: RMCM54CMK1Case
         amount: 3
       - id: RMCML66DCase
-        amount: 1 # Sich. 2 в оригіналі
+        amount: 1 # Mriya. 2 в оригіналі
       - id: RMCM2CCase
-        amount: 1 # Sich. 2 в оригіналі
+        amount: 1 # Mriya. 2 в оригіналі
       - id: RMCCaseFlamer
         amount: 2
       - id: RMCM85A1Case
@@ -96,7 +96,7 @@
         amount: 25
       - id: RMCGrenadeIncendiary
         amount: 4
-      - id: RMCPacketGrenadeWhitePhosphorusCompoundFilled
+      - id: RMCGrenadeWhitePhosphorusCompound
         amount: 4
       - id: CMGrenadeSmoke
         amount: 5
@@ -158,7 +158,7 @@
         amount: 1
       - id: RMCSatchelWelder
         amount: 5
-     # - id: RMCBackpackAmmo – Sich
+     # - id: RMCBackpackAmmo – MR
      #   amount: 2
       - id: RMCBackpackRTO
         amount: 2
@@ -292,7 +292,7 @@
         amount: 10
       - id: RMCMagazineSMGNailgun
         amount: 4
-      - id: SichKitSherpa # Sich
+      - id: MRKitSherpa # Mriya
         amount: 2
     - name: Довідники
       entries:
@@ -323,6 +323,11 @@
       - id: RMCPacketGrenadeIncendiaryFilled
         name: упаковка гранат М40 ВІРЗ
         box: RMCGrenadeIncendiary
+        boxAmount: 3
+        boxSlots: 3
+      - id: RMCPacketGrenadeWhitePhosphorusCompoundFilled
+        name: 30mm CCDP grenade packet
+        box: RMCGrenadeWhitePhosphorusCompound
         boxAmount: 3
         boxSlots: 3
       - id: RMCPacketGrenadeSmokeFilled

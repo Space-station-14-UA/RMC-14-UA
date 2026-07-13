@@ -799,7 +799,7 @@ namespace Content.Shared.Preferences
                     if (i > 0 && numberEndingAllowed && c >= '0' && c <= '9')
                         continue;
 
-//                    if (c < 'A' || c > 'Z') – Sich commented. Cyrillic xeno names
+//                    if (c < 'A' || c > 'Z') – Mriya commented. Cyrillic xeno names
 //                        return string.Empty;
                 }
 
@@ -938,6 +938,22 @@ namespace Content.Shared.Preferences
             profile._loadouts = copied;
             return profile;
         }
+
+        // Mriya Start
+        public HumanoidCharacterProfile WithLoadouts(Dictionary<string, RoleLoadout> loadouts)
+        {
+            var profile = Clone();
+            var copied = new Dictionary<string, RoleLoadout>(loadouts.Count);
+
+            foreach (var (role, loadout) in loadouts)
+            {
+                copied[role] = loadout.Clone();
+            }
+
+            profile._loadouts = copied;
+            return profile;
+        }
+        // Mriya End
 
         public RoleLoadout GetLoadoutOrDefault(string id, ICommonSession? session, ProtoId<SpeciesPrototype>? species, IEntityManager entManager, IPrototypeManager protoManager)
         {

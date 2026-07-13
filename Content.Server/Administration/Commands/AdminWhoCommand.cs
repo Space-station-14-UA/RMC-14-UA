@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Commands;
 
-[AnyCommand] // Sich. [AdminCommand(AdminFlags.AdminWho)] в оригіналі. Прибирання обмежень
+[AnyCommand] // Mriya. [AdminCommand(AdminFlags.AdminWho)] в оригіналі. Прибирання обмежень
 public sealed class AdminWhoCommand : LocalizedCommands
 {
     [Dependency] private readonly IAfkManager _afkManager = default!;
