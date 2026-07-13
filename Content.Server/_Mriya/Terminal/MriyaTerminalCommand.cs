@@ -2,10 +2,10 @@ using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 
-namespace Content.Server._Sich.Terminal;
+namespace Content.Server._Mriya.Terminal;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class SichTerminalCommand : IConsoleCommand
+public sealed class MriyaTerminalCommand : IConsoleCommand
 {
     public string Command => "terminalmsg";
     public string Description => "Відправляє повідомлення до терміналу комунікації";
@@ -20,7 +20,7 @@ public sealed class SichTerminalCommand : IConsoleCommand
         }
 
         var message = string.Join(" ", args);
-        var system = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<SichTerminalSystem>();
+        var system = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<MriyaTerminalSystem>();
         
         system.SendCorporateMessage(message);
         shell.WriteLine($"Корпоративне повідомлення відправлено: {message}");

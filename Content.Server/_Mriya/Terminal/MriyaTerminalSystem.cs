@@ -1,7 +1,7 @@
 using Content.Server.Administration.Logs;
 using Content.Shared.Database;
 using Content.Server.Chat.Managers;
-using Content.Shared._Sich.Terminal;
+using Content.Shared._Mriya.Terminal;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
@@ -15,9 +15,9 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Player;
 
-namespace Content.Server._Sich.Terminal;
+namespace Content.Server._Mriya.Terminal;
 
-public sealed class SichTerminalSystem : SharedSichTerminalSystem
+public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
@@ -30,18 +30,18 @@ public sealed class SichTerminalSystem : SharedSichTerminalSystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SichTerminalComponent, SichTerminalSendMessage>(OnSendMessage);
-        SubscribeLocalEvent<SichTerminalComponent, BoundUIOpenedEvent>(OnUIOpened);
-        SubscribeLocalEvent<SichTerminalComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
-        SubscribeLocalEvent<SichTerminalComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
+        SubscribeLocalEvent<MriyaTerminalComponent, MriyaTerminalSendMessage>(OnSendMessage);
+        SubscribeLocalEvent<MriyaTerminalComponent, BoundUIOpenedEvent>(OnUIOpened);
+        SubscribeLocalEvent<MriyaTerminalComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
+        SubscribeLocalEvent<MriyaTerminalComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
     }
 
-    private void OnUIOpened(EntityUid uid, SichTerminalComponent component, BoundUIOpenedEvent args)
+    private void OnUIOpened(EntityUid uid, MriyaTerminalComponent component, BoundUIOpenedEvent args)
     {
         UpdateUI(uid, component);
     }
 
-    private void OnItemInserted(EntityUid uid, SichTerminalComponent component, EntInsertedIntoContainerMessage args)
+    private void OnItemInserted(EntityUid uid, MriyaTerminalComponent component, EntInsertedIntoContainerMessage args)
     {
         if (args.Container.ID != component.IdCardSlotId)
             return;
@@ -49,7 +49,7 @@ public sealed class SichTerminalSystem : SharedSichTerminalSystem
         UpdateAuthorization(uid, component);
     }
 
-    private void OnItemRemoved(EntityUid uid, SichTerminalComponent component, EntRemovedFromContainerMessage args)
+    private void OnItemRemoved(EntityUid uid, MriyaTerminalComponent component, EntRemovedFromContainerMessage args)
     {
         if (args.Container.ID != component.IdCardSlotId)
             return;
@@ -59,7 +59,7 @@ public sealed class SichTerminalSystem : SharedSichTerminalSystem
         UpdateUI(uid, component);
     }
 
-    private void UpdateAuthorization(EntityUid uid, SichTerminalComponent component)
+    private void UpdateAuthorization(EntityUid uid, MriyaTerminalComponent component)
     {
         component.AuthorizedName = null;
 
@@ -85,7 +85,7 @@ public sealed class SichTerminalSystem : SharedSichTerminalSystem
 
     public void BroadcastMessage(string message)
     {
-        var query = EntityQueryEnumerator<SichTerminalComponent>();
+        var query = EntityQueryEnumerator<MriyaTerminalComponent>();
         while (query.MoveNext(out var uid, out var component))
         {
             // Add message to the terminal
@@ -101,7 +101,7 @@ public sealed class SichTerminalSystem : SharedSichTerminalSystem
         }
     }
 
-    private void OnSendMessage(EntityUid uid, SichTerminalComponent component, SichTerminalSendMessage args)
+    private void OnSendMessage(EntityUid uid, MriyaTerminalComponent component, MriyaTerminalSendMessage args)
     {
         if (!component.IsInput)
             return;
@@ -180,9 +180,9 @@ public sealed class SichTerminalSystem : SharedSichTerminalSystem
         BroadcastMessage($"[{sender}]: {message}");
     }
 
-    private void UpdateUI(EntityUid uid, SichTerminalComponent component)
+    private void UpdateUI(EntityUid uid, MriyaTerminalComponent component)
     {
-        _ui.SetUiState(uid, SichTerminalUiKey.Key, new SichTerminalState(component.IsInput, component.Messages, component.AuthorizedName));
+        _ui.SetUiState(uid, MriyaTerminalUiKey.Key, new MriyaTerminalState(component.IsInput, component.Messages, component.AuthorizedName));
     }
 
     public void SendCorporateMessage(string message)

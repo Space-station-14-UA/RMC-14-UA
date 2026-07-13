@@ -10,18 +10,18 @@
     anchored: false
     noRot: false
   - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
+    sprite: _Mriya/Structures/Machines/console.rsi
     state: console
-  - type: SichTerminal
+  - type: MriyaTerminal
     isInput: true
   - type: Clickable
   - type: Rotatable
   - type: ActivatableUI
-    key: enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key
+    key: enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key
   - type: UserInterface
     interfaces:
-      enum.Content.Shared._Sich.Terminal.SichTerminalUiKey.Key:
-        type: SichTerminalBoundUserInterface
+      enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key:
+        type: MriyaTerminalBoundUserInterface
   - type: ItemSlots
     slots:
       id_card:
@@ -57,7 +57,7 @@
   description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
   suffix: Мрія, Ввід (Корпорат)
   components:
-  - type: SichTerminal
+  - type: MriyaTerminal
     isInput: true
     requiredAccesses:
     - RMCAccessWeYa
@@ -68,7 +68,7 @@
   description: Офіцерський термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
   suffix: Мрія, Ввід (Командування)
   components:
-  - type: SichTerminal
+  - type: MriyaTerminal
     isInput: true
     requiredAccesses:
     - RMCAccessCommand
@@ -79,7 +79,7 @@
   description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
   suffix: Мрія, Перегляд
   components:
-  - type: SichTerminal
+  - type: MriyaTerminal
     isInput: false
   - type: RemoveComponents
     components:
@@ -94,7 +94,7 @@
   description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
   components:
   - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
+    sprite: _Mriya/Structures/Machines/console.rsi
     state: broken
 
 # Настінний
@@ -106,7 +106,7 @@
   suffix: Мрія, Ввід
   components:
   - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
+    sprite: _Mriya/Structures/Machines/console.rsi
     state: wall
   - type: WallMount
     arc: 360
@@ -143,7 +143,7 @@
   description: Корпоративний термінал для прямого каналу зв'язку з представниками та КМПОН.
   suffix: Мрія, Перегляд
   components:
-  - type: SichTerminal
+  - type: MriyaTerminal
     isInput: false
   - type: RemoveComponents
     components:
@@ -158,7 +158,7 @@
   description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
   components:
   - type: Sprite
-    sprite: _Sich/Structures/Machines/console.rsi
+    sprite: _Mriya/Structures/Machines/console.rsi
     state: broken_wall
   - type: WallMount
     arc: 360

@@ -1,15 +1,15 @@
-using Content.Shared._Sich.Terminal;
+using Content.Shared._Mriya.Terminal;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Sich.Terminal;
+namespace Content.Client._Mriya.Terminal;
 
 [UsedImplicitly]
-public sealed class SichTerminalBoundUserInterface : BoundUserInterface
+public sealed class MriyaTerminalBoundUserInterface : BoundUserInterface
 {
-    private SichTerminalWindow? _window;
+    private MriyaTerminalWindow? _window;
 
-    public SichTerminalBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    public MriyaTerminalBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
 
@@ -17,11 +17,11 @@ public sealed class SichTerminalBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _window = new SichTerminalWindow();
+        _window = new MriyaTerminalWindow();
         _window.OnClose += Close;
         _window.OnMessageEntered += msg =>
         {
-            SendMessage(new SichTerminalSendMessage(msg));
+            SendMessage(new MriyaTerminalSendMessage(msg));
         };
         
         _window.OpenCentered();
@@ -31,7 +31,7 @@ public sealed class SichTerminalBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
-        if (state is not SichTerminalState terminalState)
+        if (state is not MriyaTerminalState terminalState)
             return;
 
         _window?.SetState(terminalState);

@@ -1,22 +1,22 @@
 using System.Collections.Generic;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Sich.Terminal;
+namespace Content.Shared._Mriya.Terminal;
 
 [Serializable, NetSerializable]
-public enum SichTerminalUiKey : byte
+public enum MriyaTerminalUiKey : byte
 {
     Key
 }
 
 [Serializable, NetSerializable]
-public sealed class SichTerminalState : BoundUserInterfaceState
+public sealed class MriyaTerminalState : BoundUserInterfaceState
 {
     public readonly bool IsInput;
     public readonly List<string> Messages;
     public readonly string? AuthorizedName;
 
-    public SichTerminalState(bool isInput, List<string> messages, string? authorizedName)
+    public MriyaTerminalState(bool isInput, List<string> messages, string? authorizedName)
     {
         IsInput = isInput;
         Messages = messages;
@@ -25,11 +25,11 @@ public sealed class SichTerminalState : BoundUserInterfaceState
 }
 
 [Serializable, NetSerializable]
-public sealed class SichTerminalSendMessage : BoundUserInterfaceMessage
+public sealed class MriyaTerminalSendMessage : BoundUserInterfaceMessage
 {
     public readonly string Message;
 
-    public SichTerminalSendMessage(string message)
+    public MriyaTerminalSendMessage(string message)
     {
         Message = message;
     }
