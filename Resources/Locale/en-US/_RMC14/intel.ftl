@@ -26,7 +26,7 @@ rmc-intel-color-cracked-blue = [color=#3449eb]тріснуто-синього к
 rmc-intel-color-bloodied-blue = [color=#3449eb]скривавлено-синього кольору[/color]
 rmc-intel-color-unknown = непромаркована
 rmc-intel-clue-found = Ви дізнаєтесь щось про {$clue}.
-rmc-intel-personal-clues-added = Нові зачіпки було додано до вашого персонального записника
+rmc-intel-personal-clues-added = Нові зачіпки було додано до вашого персонального записника.
 rmc-intel-clue-label-number = #{$number}
 rmc-intel-clue-label-serial = #{$serial}
 rmc-intel-clue-label-unmarked = відсутнє видиме позначення
