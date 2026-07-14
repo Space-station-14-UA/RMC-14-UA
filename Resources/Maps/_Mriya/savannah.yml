@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.2
   forkId: ""
   forkVersion: ""
-  time: 07/14/2026 13:32:16
-  entityCount: 15467
+  time: 07/14/2026 14:02:32
+  entityCount: 15457
 maps:
 - 1
 grids:
@@ -94697,58 +94697,6 @@ entities:
     components:
     - type: Transform
       pos: 33.702923,12.317857
-      parent: 1
-- proto: RMCCableHeavy
-  entities:
-  - uid: 15300
-    components:
-    - type: Transform
-      pos: 10.5,84.5
-      parent: 1
-  - uid: 15301
-    components:
-    - type: Transform
-      pos: 11.5,84.5
-      parent: 1
-  - uid: 15302
-    components:
-    - type: Transform
-      pos: 12.5,84.5
-      parent: 1
-  - uid: 15303
-    components:
-    - type: Transform
-      pos: 12.5,83.5
-      parent: 1
-  - uid: 15304
-    components:
-    - type: Transform
-      pos: 12.5,82.5
-      parent: 1
-  - uid: 15305
-    components:
-    - type: Transform
-      pos: 14.5,82.5
-      parent: 1
-  - uid: 15306
-    components:
-    - type: Transform
-      pos: 14.5,83.5
-      parent: 1
-  - uid: 15307
-    components:
-    - type: Transform
-      pos: 14.5,84.5
-      parent: 1
-  - uid: 15308
-    components:
-    - type: Transform
-      pos: 15.5,84.5
-      parent: 1
-  - uid: 15309
-    components:
-    - type: Transform
-      pos: 16.5,84.5
       parent: 1
 - proto: RMCCableTerminal
   entities:
