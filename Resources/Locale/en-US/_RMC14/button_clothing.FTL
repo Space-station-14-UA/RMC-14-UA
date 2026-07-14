@@ -1,2 +1,2 @@
-rmc-button-up-verb = Button up
-rmc-unbutton-verb = Unbutton
+rmc-button-up-verb = Застібнути
+rmc-unbutton-verb = Розстібнути

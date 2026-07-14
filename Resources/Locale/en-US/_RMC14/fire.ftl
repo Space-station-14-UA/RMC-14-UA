@@ -1,1 +1,1 @@
-﻿rmc-xeno-plasma-frenzy-fire = The heat of the fire roars in your veins! KILL! CHARGE! DESTROY!
+rmc-xeno-plasma-frenzy-fire = Вогняне тепло бурлить у ваших венах! ВБИТИ! В АТАКУ! ЗНИЩИТИ!

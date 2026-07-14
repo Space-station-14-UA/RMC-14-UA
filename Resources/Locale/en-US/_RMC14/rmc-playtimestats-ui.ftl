@@ -1,5 +1,5 @@
-ui-playtime-department-total = Total playtime in { $department }: { $time }
+ui-playtime-department-total = Загальний час гри в { $department }: { $time }
 
-ui-playtime-no-data = No playtime data available.
+ui-playtime-no-data = Дані про час гри недоступні.
 
-ui-playtime-general-tab = Overall
+ui-playtime-general-tab = Загальний

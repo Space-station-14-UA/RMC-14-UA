@@ -1,6 +1,6 @@
-﻿rmc-immune-to-ignition-examine = [color=cyan]{CAPITALIZE(SUBJECT($ent))} can't be {$direct ->
+rmc-immune-to-ignition-examine = [color=cyan]Ксеноїда не можна {$direct ->
     [true]{""}
-    *[false]{"indirectly "}
-    }ignited![/color]
-rmc-immune-to-fire-tile-damage-examine = [color=cyan]{CAPITALIZE(SUBJECT($ent))} takes no damage from tile fires![/color]
-rmc-fire-armor-debuff-modifier-examine = [color=cyan]{CAPITALIZE(SUBJECT($ent))} has {POSS-ADJ($ent)} armor reduced {$percentage}% less when standing on green fire![/color]
+    *[false]{"опосередковано "}
+    }підпалити![/color]
+rmc-immune-to-fire-tile-damage-examine = [color=cyan]Ксеноїд не отримує шкоди від вогню на підлозі![/color]
+rmc-fire-armor-debuff-modifier-examine = [color=cyan]Броня ксеноїда зменшується на {$percentage}% коли стоїть на зеленому вогні![/color]
