@@ -41,7 +41,7 @@
 - type: entity
   parent: RMCSkillBase
   id: RMCSkillEndurance
-  name: Стійкість
+  name: Витривалість
   categories: [ HideSpawnMenu ]
 
 - type: entity
