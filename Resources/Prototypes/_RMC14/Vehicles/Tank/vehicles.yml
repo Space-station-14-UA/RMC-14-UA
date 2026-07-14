@@ -215,6 +215,8 @@
   parent: VehicleTankBase
   id: VehicleTank
   components:
+  - type: MRVehicleNickname            #Mriya, випадкові імена для транспорту 
+    dataset: MRVehicleNicknamesTank
   - type: VehicleEnter
     interiorPath: /Maps/_RMC14/Vehicles/tank_interior.yml
     enterDoAfter: 1.0

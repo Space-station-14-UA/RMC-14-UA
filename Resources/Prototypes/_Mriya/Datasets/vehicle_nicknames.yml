@@ -1,0 +1,18 @@
+- type: localizedDataset
+  id: MRVehicleNicknamesHumvee
+  values:
+    prefix: mriya-vehicle-nickname-humvee-
+    count: 1
+
+- type: localizedDataset
+  id: MRVehicleNicknamesTank
+  values:
+    prefix: mriya-vehicle-nickname-tank-
+    count: 1
+
+- type: localizedDataset
+  id: MRVehicleNicknamesAPC
+  values:
+    prefix: mriya-vehicle-nickname-apc-
+    count: 1
+
