@@ -5,3 +5,13 @@
   components:
   - type: AccessReader
     access: [ [ "RMCAccessWeYa" ] ]
+
+- type: entity
+  parent: CMAirlockSecure
+  id: MMCAirlockSecureAICoreLocked
+  suffix: Січ, Ядро ШІ, Зачинено
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Doors/Airlocks/rusted_white_door.rsi
+  - type: AccessReader
+    access: [ [ "CMAccessCO" ], [ "CMAccessCE" ], [ "RMCAccessSynth" ] ]
