@@ -150,7 +150,7 @@
 - type: entity
   parent: RMCSkillBase
   id: RMCSkillSmartGun
-  name: Смартган
+  name: СмартГан
   categories: [ HideSpawnMenu ]
 
 - type: entity
