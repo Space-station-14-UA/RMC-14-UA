@@ -1,7 +1,7 @@
 - type: entity
   parent: CMAirlockSecure
   id: MMCAirlockSecureLiaisonLocked
-  suffix: Січ, Корпорат, Зачинено
+  suffix: Мрія, Корпорат, Зачинено
   components:
   - type: AccessReader
     access: [ [ "RMCAccessWeYa" ] ]
@@ -9,7 +9,7 @@
 - type: entity
   parent: CMAirlockSecure
   id: MMCAirlockSecureAICoreLocked
-  suffix: Січ, Ядро ШІ, Зачинено
+  suffix: Мрія, Ядро ШІ, Зачинено
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/rusted_white_door.rsi

@@ -1,7 +1,7 @@
 - type: entity
   parent: CMWindoorSecure
   id: MMCWindoorSecureAICoreLocked
-  suffix: Січ, Ядро ШІ, Зачинено
+  suffix: Мрія, Ядро ШІ, Зачинено
   components:
   - type: AccessReader
     access: [ [ "CMAccessCO" ], [ "CMAccessCE" ], [ "RMCAccessSynth" ] ]
