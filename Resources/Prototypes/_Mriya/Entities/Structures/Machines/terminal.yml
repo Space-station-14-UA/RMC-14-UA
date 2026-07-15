@@ -18,7 +18,7 @@
   - type: UserInterface
     interfaces:
       enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key:
-        type: MRTerminalBoundUserInterface
+        type: MriyaTerminalBoundUserInterface
   - type: ItemSlots
     slots:
       id_card:
