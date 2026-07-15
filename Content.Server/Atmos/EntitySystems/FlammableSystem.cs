@@ -555,7 +555,8 @@ namespace Content.Server.Atmos.EntitySystems
                     DamageSpecifier? damage;
                     if (HasComp<XenoComponent>(uid))
                     {
-                        damage = flammable.Intensity * (flammable.FireStacks / flammable.Duration * 0.2 + 0.8) * ev.Multiplier * flammable.Damage / 2;
+                        var duration = Math.Max(1, flammable.Duration);
+                        damage = flammable.Intensity * (flammable.FireStacks / duration * 0.2 + 0.8) * ev.Multiplier * flammable.Damage / 2;
                     }
                     else
                     {

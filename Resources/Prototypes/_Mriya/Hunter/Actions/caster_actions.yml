@@ -22,10 +22,10 @@
   description: Наплічна енергетична зброя мисливців. Використовуйте Space для зміни режимів.
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Weapons/caster.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Caster/caster.rsi
     state: plasma_bone
   - type: Item
-    sprite: _Sich/Objects/Weapons/caster.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Caster/caster.rsi
   - type: HunterCaster
   - type: Unremoveable
   - type: UniqueAction

@@ -6,11 +6,11 @@
   suffix: Sich, Hunter
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Clothing/Head/Mask/visor.rsi
+    sprite: _Mriya/Hunter/Objects/Devices/hunter_module.rsi
     state: icon
   - type: Visor
     onIcon:
-      sprite: _Sich/Objects/Clothing/Head/Mask/visor.rsi
+      sprite: _Mriya/Hunter/Objects/Devices/hunter_module.rsi
       state: icon
   - type: RMCHunterNightVisionVisor
   - type: ToggleVisor

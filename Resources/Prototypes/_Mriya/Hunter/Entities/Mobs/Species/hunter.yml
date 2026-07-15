@@ -39,8 +39,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      380: Critical
+      400: Critical
       450: Dead
+  - type: CMArmor
+    xenoArmor: 15
   - type: Temperature
     heatDamageThreshold: 360
     coldDamageThreshold: -150

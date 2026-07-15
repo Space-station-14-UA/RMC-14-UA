@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseItem
+  id: HunterTeleporter
+  name: телепортер мисливця
+  description: Просунутий пристрій телепортації, розроблений мисливцями. Дозволяє миттєво переміщуватися на значні відстані з певними обмеженнями.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Devices/teleporter.rsi
+    layers:
+    - state: teleporter
+  - type: Item
+    size: Small
+  - type: UseDelay
+    delay: 300
+  - type: ActivatableUI
+    key: enum.HunterTeleporterUiKey.Key
+    inHandsOnly: true
+    requiresComplex: false
+    verbText: ui-verb-open-teleporter
+  - type: UserInterface
+    interfaces:
+      enum.HunterTeleporterUiKey.Key:
+        type: HunterTeleporterBui
+  - type: HunterTeleporter
+

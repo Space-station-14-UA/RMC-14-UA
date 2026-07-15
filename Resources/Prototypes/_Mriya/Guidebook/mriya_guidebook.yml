@@ -18,6 +18,7 @@
   - RMCGuideMarine
   - RMCGuideXenonid
   - RMCSurvivor
+  - RMCGuideHunter
 
 # Базові гайди для нових гравців
 - type: guideEntry
@@ -553,3 +554,20 @@
   priority: 6
   name: "Іконки мапи Ксеноїдів"
   text: "/ServerInfo/Guidebook/_Mriya/Guides/Xenonid/RMCGuideXenonidMapIcons.xml"
+
+# Гайди Мисливців; Створено та інтегровано Roct'от
+- type: guideEntry
+  parent: MR
+  id: RMCGuideHunter
+  name: "Кодекс Честі Мисливців"
+  priority: 5
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/RMCGuideHunter.xml"
+  children:
+  - RMCGuideHunterCodex
+
+- type: guideEntry
+  parent: MR
+  id: RMCGuideHunterCodex
+  name: "Кодекс Честі"
+  priority: 1
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/RMCGuideHunterCodex.xml"

@@ -14133,7 +14133,7 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,-7.5
-      parent: 1
+      parent: 2
 - proto: RMCFigurineXenoXippy
   entities:
   - uid: 2921

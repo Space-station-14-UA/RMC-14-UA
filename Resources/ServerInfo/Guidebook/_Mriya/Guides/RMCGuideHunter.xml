@@ -28,14 +28,14 @@
    Маючи доступ до систем корабля, ви готові обрати свій арсенал. Скористайтеся автоматами спорядження на борту, щоб підготуватися до висадки:
 
    <Box>
-   <GuideEntityEmbed Entity="HuntTechleft"/><GuideEntityEmbed Entity="HuntTechlcenter"/><GuideEntityEmbed Entity="HuntTechcenter"/><GuideEntityEmbed Entity="HuntTechrcenter"/><GuideEntityEmbed Entity="HuntTechright"/>
+   <GuideEntityEmbed Entity="HuntTechleft"/><GuideEntityEmbed Entity="HuntTechlcenter"/><GuideEntityEmbed Entity="HuntTechrcenter"/><GuideEntityEmbed Entity="HuntTechright"/>
    </Box>
 
    Тут зберігається спадщина ваших предків:
-   * [bold]Основна зброя:[/bold] Списи, сокири, мечі, глефи. Оберіть те, що найкраще відповідає вашому стилю побою.
-   * [bold]Кігті:[/bold] Один з найважливіших елементів. Оберіть модуль кігтів і [italic]обов'язково[/italic] встановіть його у ваші браслети.
+   * [bold]Основна зброя:[/bold] Списи, сокири, мечі, глефи. Оберіть те, що найкраще відповідає вашому стилю.
+   * [bold]Кігті та Ятагани:[/bold] Один з найважливіших елементів. Оберіть модуль кігтів і [italic]обов'язково[/italic] встановіть його у ваші браслети.
    * [bold]Плазмовий кастер:[/bold] Наплічна енергетична зброя для дистанційного бою.
-   * [bold]Спорядження:[/bold] Маски, броня, аптечки та пастки.
+   * [bold]Спорядження:[/bold] Маски, броня, медікомп та пастки.
 
    Пам'ятайте: зброя робить вас небезпечним, але лише Честь робить вас Мисливцем. Хай ваше лезо буде гострим.
 </Document>

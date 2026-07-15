@@ -13,15 +13,15 @@
       outerClothing:
       - state: equipped-OUTERCLOTHING
       - map: ["enum.HunterCasterVisualLayers.Base"]
-        sprite: _Sich/Objects/Weapons/caster.rsi
+        sprite: _Mriya/Hunter/Objects/Weapons/Caster/caster.rsi
         state: onmob
         visible: false
   - type: FireProtection
     reduction: 0.8
   - type: CMArmor
-    melee: 15
-    bullet: 30
-    bio: 20
+    melee: 25
+    bullet: 55
+    bio: 45
     explosionArmor: 35
   - type: HunterCloak
     actionId: ActionToggleHunterCloak

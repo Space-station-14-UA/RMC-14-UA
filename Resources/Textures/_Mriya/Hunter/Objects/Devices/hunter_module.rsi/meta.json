@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Створено Гусем | Roct спеціально для білду РМС Січі",
+  "copyright": "Використано текстури з СМСС13 (заглушка)",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,12 @@
   "states": [
     {
       "name": "module"
+    },
+    {
+      "name": "scimitar"
+    },
+    {
+      "name": "visor"
     }
   ]
 }

@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   id: AbstractHunterMeleeBase
-  parent: [BaseItem, RMCBaseMeleeWeapon]
+  parent: BaseItem
   components:
   - type: MeleeDamageMultiplier
     multiplier: 2.2
@@ -10,6 +10,8 @@
       - Xeno
   - type: CMArmorPiercing
     amount: 10
+  - type: MeleeWeapon
+    angle: 0
 
 - type: entity
   id: HunterDuellingSword
@@ -137,6 +139,33 @@
       - state: equipped-BACKPACK3
 
 - type: entity
+  id: HunterHarpoon
+  parent: AbstractHunterMeleeBase
+  name: гарпун
+  description: Компактний гарпун.
+  suffix: Sich, Hunter
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/hunter_harpoon.rsi
+    state: harpoon
+  - type: Item
+    size: Small
+  - type: MeleeWeapon
+    attackRate: 0.8
+    damage:
+      types:
+        Piercing: 14
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 23
+  - type: Sharp
+  - type: EmbeddableProjectile
+  - type: ThrowingAngle
+    angle: -45
+  - type: LandAtCursor
+
+- type: entity
   id: HunterSpear
   parent: AbstractHunterMeleeBase
   name: спис
@@ -144,7 +173,7 @@
   suffix: Sich, Hunter
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Weapons/Melee/spear.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/spear.rsi
     state: spear
   - type: Item
     size: Large
@@ -163,7 +192,7 @@
     angle: -45
   - type: LandAtCursor
   - type: Clothing
-    sprite: _Sich/Objects/Weapons/Melee/spear.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/spear.rsi
     slots:
     - Back
     clothingVisuals:
@@ -184,7 +213,7 @@
   suffix: Sich, Hunter
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Weapons/Melee/long_axe.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/long_axe.rsi
     state: icon
   - type: Item
     size: Large
@@ -206,7 +235,7 @@
         Slash: 20
   - type: MeleeRequiresWield
   - type: Clothing
-    sprite: _Sich/Objects/Weapons/Melee/long_axe.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/long_axe.rsi
     slots:
     - Back
     clothingVisuals:
@@ -224,7 +253,7 @@
   suffix: Sich, Hunter
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Weapons/Melee/war_axe.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/war_axe.rsi
     state: icon
   - type: Item
     size: Large
@@ -241,7 +270,7 @@
     doAfterDuration: 4.0
   - type: HunterRecallWeapon
   - type: Clothing
-    sprite: _Sich/Objects/Weapons/Melee/war_axe.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/war_axe.rsi
     slots:
     - Belt
 
@@ -253,7 +282,7 @@
   suffix: Sich, Hunter
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Weapons/Melee/staff.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/staff.rsi
     state: icon
   - type: Item
     size: Large
@@ -266,7 +295,7 @@
     soundHit:
         path: /Audio/Weapons/genhit1.ogg
   - type: Clothing
-    sprite: _Sich/Objects/Weapons/Melee/staff.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/staff.rsi
     slots:
     - Back
     clothingVisuals:
@@ -276,8 +305,8 @@
 - type: entity
   parent: AbstractHunterMeleeBase
   id: HunterKnife
-  name: ніж мисливця
-  description: Короткий зазубрений ніж.
+  name: кинжал
+  description: Короткий кинжал, що використовується мисливцями для ближнього бою, зокрема у церемоніальних двобоях.
   suffix: Sich, Hunter
   components:
   - type: Sprite
@@ -299,7 +328,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 20
+        Slash: 25
   - type: Sharp
   - type: UsableWhileDevoured
   - type: DisarmMalus
@@ -353,7 +382,7 @@
   suffix: Sich, Hunter
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Weapons/Melee/hunt_scythe.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/hunt_scythe.rsi
     state: icon
   - type: Item
     size: Large
@@ -365,7 +394,7 @@
         Slash: 35
   - type: Sharp
   - type: Clothing
-    sprite: _Sich/Objects/Weapons/Melee/hunt_scythe.rsi
+    sprite: _Mriya/Hunter/Objects/Weapons/Melee/hunt_scythe.rsi
     slots:
     - Back
     clothingVisuals:

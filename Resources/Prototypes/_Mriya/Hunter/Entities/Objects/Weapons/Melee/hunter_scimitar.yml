@@ -33,7 +33,7 @@
   description: Модуль для браслетів мисливця, що вбудовує висувні ятагани — важчу альтернативу кігтям.
   components:
   - type: Sprite
-    sprite: _Mriya/Hunter/Objects/Weapons/Melee/hunter_scimitar.rsi
-    state: alt
+    sprite: _Mriya/Hunter/Objects/Devices/hunter_module.rsi
+    state: scimitar
   - type: HunterClawModule
     clawPrototype: RMCHunterScimitar
