@@ -74,7 +74,7 @@ public sealed class IntelSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 // Mriya start
-// Translating Latin chars and Greek letters to Ukrainian
+// Локалізація латинських символів та грецьких літер на українську
     private static readonly char[] UppercaseLetters =
     {
         'А', 'Б', 'В', 'Ґ', 'Д', 'Е', 'Є', 'Ж', 'И', 'К', 'Л', 'М',

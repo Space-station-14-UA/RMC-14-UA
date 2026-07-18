@@ -218,8 +218,8 @@
 - type: entity
   parent: RMCCommunicationsConsoleBase
   id: RMCSigintTerminal
-  name: ЦИФРОЗ термінал
-  description: Комп'ютер розвідки, для каталогізації та дистрибуції даних. У ньому присутній дисковод.
+  name: ЦИФРОЗ термінал # Mriya. ЦИФрова РОЗвідка.
+  description: Термінал Цифрової Розвідки. Використовується для каталогізації та дистрибуції цифрових даних. У нього присутній дисковод!
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/computer.rsi
@@ -244,7 +244,7 @@
   parent: RMCCommunicationsConsoleBase
   id: RMCIntelDataTerminal
   name: термінал даних
-  description: Комп'ютерний термінал з невимовною назвою.
+  description: Комп'ютерний термінал з незрозумілою наліпкою на ньому.
   suffix: Intel
   components:
   - type: Sprite
