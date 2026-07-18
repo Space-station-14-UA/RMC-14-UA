@@ -15,5 +15,6 @@
       - id: CMPamphletLanguageGerman
       - id: CMPamphletLanguageSpanish
       - id: CMPamphletLanguageFrench
+      - id: CMPamphletLanguageScandinavian
       - id: CMPamphletLanguageSign
       - id: MRPamphletLanguageEnglish
