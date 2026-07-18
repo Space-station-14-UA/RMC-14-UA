@@ -2,17 +2,17 @@
   id: MRVehicleNicknamesHumvee
   values:
     prefix: mriya-vehicle-nickname-humvee-
-    count: 1
+    count: 43
 
 - type: localizedDataset
   id: MRVehicleNicknamesTank
   values:
     prefix: mriya-vehicle-nickname-tank-
-    count: 1
+    count: 23
 
 - type: localizedDataset
   id: MRVehicleNicknamesAPC
   values:
     prefix: mriya-vehicle-nickname-apc-
-    count: 1
+    count: 29
 
