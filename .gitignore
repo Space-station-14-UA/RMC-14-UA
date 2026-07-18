@@ -306,3 +306,4 @@ Resources/MapImages
 
 # Direnv stuff
 .direnv/
+publish_ss14.sh
