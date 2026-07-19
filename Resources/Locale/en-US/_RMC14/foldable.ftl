@@ -32,7 +32,7 @@ rmc-gun-foldable-launcher-fold-finish-others = {$user} згортає {$weapon}.
 rmc-gun-foldable-launcher-unfold-finish-self = Ви розгорнули {$weapon}.
 rmc-gun-foldable-launcher-unfold-finish-others = {$user} розгортає {$weapon}.
 
-rmc-gun-foldable-launcher-examine = [bold]Натисніть кнопку [color=cyan]унікальної дії[/color] (Пробіл за замовчуванням) щоб згорнути зброю.[/bold]
-rmc-gun-foldable-launcher-examine-unfold = [bold]Натисніть кнопку [color=cyan]активувати в руці[/color] (Я за замовчуванням) щоб розгорнути зброю.[/bold]
+rmc-gun-foldable-launcher-examine = [bold]Натисніть кнопку [color=cyan]унікальної дії[/color] (Пробіл за замовчуванням), щоб згорнути зброю.[/bold]
+rmc-gun-foldable-launcher-examine-unfold = [bold]Натисніть кнопку [color=cyan]активувати в руці[/color] (Я за замовчуванням), щоб розгорнути зброю.[/bold]
 
-rmc-gun-foldable-launcher-fold-already-fired-attempt = {$weapon} вже вистрілили - ви не можете скласти його назад!
+rmc-gun-foldable-launcher-fold-already-fired-attempt = {$weapon} вже вистрілили – ви не можете скласти його назад!

@@ -10,7 +10,7 @@ rmc-chat-bans-no-player-found = [color=red]Не знайдено гравця з
 rmc-chat-bans-no-type-specified = [color=red]Встановіть тип чату для блокування![/color]
 rmc-chat-bans-added-admin-alert = {$admin} заблокував {$target} від використання {$type} чату до {$date}. Причина: {$reason}
 rmc-chat-bans-dead = Мертвого
-rmc-chat-bans-looc = LOOC
+rmc-chat-bans-looc = ЛOOC
 rmc-chat-bans-ooc = OOC
 rmc-chat-bans-unban = Розблокувати
 
