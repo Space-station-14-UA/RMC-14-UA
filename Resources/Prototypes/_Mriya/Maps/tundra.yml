@@ -1,5 +1,5 @@
 - type: gameMap
-  id: MRUNSTundra
+  id: MRTundraPVE
   mapName: Наполеон
   mapPath: /Maps/_Mriya/tundra.yml
   minPlayers: 0
@@ -16,9 +16,12 @@
             # Командування
             CMPVEPlatoonCommander: [1, 1]
 
+            # Інші
+            RMCJobSynthetic: [1, 1]
+
             # Морпіхи
             CMPVESectionSergeant: [1, 1]
             CMPVESquadLeader: [2, 2]
             CMPVESmartGunOperator: [2, 2]
             CMPVEHospitalCorpsman: [2, 2]
-            CMPVERifleman: [10, 10]
+            CMPVERifleman: [16, 16]

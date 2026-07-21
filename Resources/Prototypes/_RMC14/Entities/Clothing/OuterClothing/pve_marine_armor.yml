@@ -181,8 +181,8 @@
 - type: entity
   parent: RMCPVEArmorCaseBase
   id: RMCPVEArmorCaseM3
-  name: standard M3 pattern marine armor set
-  description: A case containing standard M3 pattern marine armor, an M10 helmet, and attachable armor pieces.
+  name: набір стандартної броні КМПОН зразка М3
+  description: Кейс що містить стандартну броню зразка М3, шолом М10 та додаткові елементи броні.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Storage/PVE_Cases/Armor/marine.rsi
@@ -213,8 +213,8 @@
 - type: entity
   parent: RMCPVEArmorCaseBase
   id: RMCPVEArmorCaseM3Smooth
-  name: smooth M3 pattern marine armor set
-  description: A case containing smooth M3 pattern marine armor, an M10 helmet, and attachable armor pieces.
+  name: набір гладкої броні КМПОН зразка М3
+  description: Кейс що містить гладку броню зразка М3, шолом М10 та додаткові елементи броні.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Storage/PVE_Cases/Armor/marine.rsi
@@ -245,8 +245,8 @@
 - type: entity
   parent: RMCPVEArmorCaseBase
   id: RMCPVEArmorCaseM3Ridged
-  name: ridged M3 pattern marine armor set
-  description: A case containing ridged M3 pattern marine armor, an M10 helmet, and attachable armor pieces.
+  name: набір ребристої броні КМПОН зразка М3
+  description: Кейс що містить ребристу броню зразка М3, шолом М10 та додаткові елементи броні.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Storage/PVE_Cases/Armor/marine.rsi
@@ -277,8 +277,8 @@
 - type: entity
   parent: RMCPVEArmorCaseBase
   id: RMCPVEArmorCaseB12
-  name: B12 pattern marine armor set
-  description: A case containing B12 pattern marine armor, an M10 helmet, and attachable armor pieces.
+  name: набір броні КМПОН зразка Б12
+  description: Кейс що містить броню зразка Б12, шолом М10 та додаткові елементи броні.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Storage/PVE_Cases/Armor/marine.rsi
@@ -309,8 +309,8 @@
 - type: entity
   parent: RMCPVEArmorCaseBase
   id: RMCPVEArmorCaseM3SGO
-  name: ML66A combat harness set
-  description: A case containing an ML66A combat harness, an M10 helmet, and attachable armor pieces.
+  name: набір бойового кріплення МЛ66А
+  description: Кейс що містить бойове кріплення МЛ66А, шолом M10 та додаткові елементи броні.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Storage/PVE_Cases/Armor/marine.rsi
