@@ -1,0 +1,11 @@
+- type: entity
+  parent: RMCHoodBioGeneral
+  id: MRHoodBioUNMC
+  name: біозахисний каптур КМПОН
+  description: Каптур, що захищає лице та голову бійців КМПОН від біологічних загроз.
+  suffix: Мрія
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Clothing/Head/Helmets/biohelmet_unmc.rsi
+  - type: Clothing
+    sprite: _Mriya/Objects/Clothing/Head/Helmets/biohelmet_unmc.rsi
