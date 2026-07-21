@@ -1,0 +1,53 @@
+﻿- type: startingGear
+  id: MRAIGearWeYaSoldier1
+  equipment:
+    id: RMCIDCardPMC
+    jumpsuit: RMCJumpsuitVeteranPMC
+    outerClothing: RMCArmorM4PMCNoLight
+    gloves: RMCHandsVeteran
+    head: RMCArmorHelmetPMCTactical
+    shoes: RMCBootsPMCFilled
+    mask: RMCMaskCoifPMC
+    ears: RMCHeadsetDistressPMC
+    back: RMCSatchelPMC
+    belt: RMCM77BeltPMCFilled
+    pocket1: RMCPouchFirstAidPMCFill
+    pocket2: RMCPouchMagazineLargePMC
+  inhand:
+  - MMCAIWeaponRifleM54C2
+
+- type: startingGear
+  id: MRAIGearWeYaSoldier2
+  equipment:
+    id: RMCIDCardPMC
+    jumpsuit: RMCJumpsuitVeteranPMC
+    outerClothing: CMArmorM4PMHeavy
+    gloves: RMCHandsVeteran
+    head: RMCArmorHelmetPMCTactical
+    shoes: RMCBootsPMCFilled
+    mask: RMCMaskCoifPMC
+    ears: RMCHeadsetDistressPMC
+    back: RMCSatchelPMC
+    belt: RMCM77BeltPMCFilled
+    pocket1: RMCPouchFirstAidPMCFill
+    pocket2: RMCPouchMagazineLargePMC
+  inhand:
+  - MMCAIWeaponRifleM54C2
+
+- type: startingGear
+  id: MRAIGearWeYaSoldier3
+  equipment:
+    id: RMCIDCardPMC
+    jumpsuit: RMCJumpsuitVeteranPMC
+    outerClothing: RMCArmorM4PMCBulletProof
+    gloves: RMCHandsVeteran
+    head: RMCArmorHelmetPMCTactical
+    shoes: RMCBootsPMCFilled
+    mask: RMCMaskCoifPMC
+    ears: RMCHeadsetDistressPMC
+    back: RMCSatchelPMC
+    belt: RMCM77BeltPMCFilled
+    pocket1: RMCPouchFirstAidPMCFill
+    pocket2: RMCPouchMagazineLargePMC
+  inhand:
+  - MMCAIWeaponRifleM54C2

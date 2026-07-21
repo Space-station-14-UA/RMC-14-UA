@@ -1,0 +1,62 @@
+﻿- type: startingGear
+  id: MRAIGearCLFSoldier1
+  equipment:
+    head: RMCHeadMilitiaHood
+    mask: RMCCombatUtilityKnifeA
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFWebbing
+    outerClothing: RMCCoatMilitiaVest
+    gloves: CMHandsBlackMarine
+    shoes: RMCShoesBrown
+    id: RMCIDCardCLFSoldier
+    belt: CMBeltMarine
+    back: RMCSatchelBlue
+    pocket1: RMCMRECLF
+    pocket2: RMCPouchFirstAidERTFill
+  inhand:
+  - MMCAIWeaponRifleMAR40
+  storage:
+    outerClothing:
+    - CMCrowbar
+
+- type: startingGear
+  id: MRAIGearCLFSoldier2
+  equipment:
+    head: RMCHeadMilitiaHood
+    mask: RMCCombatUtilityKnifeA
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFWebbing
+    outerClothing: RMCCoatMilitia
+    gloves: CMHandsBlackMarine
+    shoes: RMCShoesBrown
+    id: RMCIDCardCLFSoldier
+    belt: CMBeltMarine
+    back: RMCSatchelNorm
+    pocket1: RMCMRECLF
+    pocket2: RMCPouchFirstAidERTFill
+  inhand:
+  - MMCAIWeaponRifleMAR40
+  storage:
+    outerClothing:
+    - CMCrowbar
+
+- type: startingGear
+  id: MRAIGearCLFSoldier3
+  equipment:
+    head: RMCHeadMilitiaBucket
+    mask: RMCCombatUtilityKnifeA
+    ears: RMCHeadsetDistressCLF
+    jumpsuit: RMCJumpsuitCLFWebbing
+    outerClothing: RMCCoatMilitiaHauberk
+    gloves: CMHandsBlackMarine
+    shoes: RMCShoesBrown
+    id: RMCIDCardCLFSoldier
+    belt: CMBeltMarine
+    back: RMCSatchelBlue
+    pocket1: RMCMRECLF
+    pocket2: RMCPouchFirstAidERTFill
+  inhand:
+  - MMCAIWeaponRifleMAR40
+  storage:
+    outerClothing:
+    - CMCrowbar

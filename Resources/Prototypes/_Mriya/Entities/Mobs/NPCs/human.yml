@@ -1,0 +1,65 @@
+- type: entity
+  name: Базовий ШІ солдат
+  parent: CMMobHuman
+  id: MMCMobHostileHuman
+  suffix: Мрія, ШІ
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: InputMover
+  - type: MobMover
+  - type: RemoveComponents
+    components:
+    - type: ActiveInputMover
+    - type: SSDIndicator
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    softness: 1
+    autoRot: true
+  - type: HTN
+    rootTask:
+      task: MRHumanoidHostileCompound
+    blackboard:
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: "/Audio/_RMC14/Voice/Human/male_scream_5.ogg"
+      VisionRadius: !type:Single
+        10.0
+      AggroVisionRadius: !type:Single
+        10.0
+  - type: Skills
+    skills:
+      RMCSkillFirearms: 1
+      RMCSkillMeleeWeapons: 1
+      RMCSkillFireman: 1
+      RMCSkillMedical: 1
+      RMCSkillEndurance: 1
+
+- type: entity
+  name: Солдат ФВК
+  parent: MMCMobHostileHuman
+  id: MRMobHostileCLFSoldier
+  components:
+  - type: NpcFactionMember
+    factions:
+      - CLF
+  - type: Loadout
+    prototypes:
+      - MRAIGearCLFSoldier1
+      - MRAIGearCLFSoldier2
+      - MRAIGearCLFSoldier3
+
+- type: entity
+  name: Солдат ПВК Ве-Я
+  parent: MMCMobHostileHuman
+  id: MRMobHostileWeYaSoldier
+  components:
+  - type: NpcFactionMember
+    factions:
+      - WeYa
+  - type: Loadout
+    prototypes:
+      - MRAIGearWeYaSoldier1
+      - MRAIGearWeYaSoldier2
+      - MRAIGearWeYaSoldier3
