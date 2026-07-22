@@ -4,8 +4,8 @@
 - type: entity
   parent: AlwaysPoweredWallLight
   id: RMCLightFixtureAlwaysPowered
-  name: light fixture
-  description: A lighting fixture that is fitted with a bright fluorescent light tube. Looking at it for too long makes your eyes go watery.
+  name: настінний світильник
+  description: Настінний світильник, оснащений яскравою флуоресцентною трубкою. Задивіться на нього й в вас підуть сльози.
   suffix: Always powered, DO NOT MAP
   components:
   - type: Transform
@@ -83,7 +83,7 @@
 - type: entity
   parent: RMCLightFixtureAlwaysPowered
   id: RMCLightFixtureDoubleAlwaysPowered
-  description: A lighting fixture that can be fitted with two bright fluorescent light tubes for that extra eye-watering goodness.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -201,7 +201,7 @@
 - type: entity
   parent: RMCLightFixtureEmpty
   id: RMCLightFixtureDoubleEmpty
-  description: A lighting fixture that can be fitted with two bright fluorescent light tubes for that extra eye-watering goodness.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -316,7 +316,7 @@
 - type: entity
   parent: RMCLightFixture
   id: RMCLightFixtureDouble
-  description: A lighting fixture that can be fitted with two bright fluorescent light tubes for that extra eye-watering goodness.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -406,7 +406,7 @@
 - type: entity
   parent: RMCLightFixtureAlwaysPowered
   id: RMCLightFixtureSmallAlwaysPowered
-  description: A small lighting fixture that is fitted with a bright fluorescent light bulb. Looking at it for too long makes your eyes go watery.
+  description: Маленький настіннийсвітильник, обладнаний яскравою флуоресцентною лампочкою. Задивіться на нього й в вас підуть сльози.
   suffix: Always powered, DO NOT MAP
   components:
   - type: Sprite

@@ -10,7 +10,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepSL
-  name: squad leader preparations
+  name: Підготовка Лідера Загону
   suffix: Locked
   components:
   - type: AccessReader
@@ -19,7 +19,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepSpec
-  name: squad specialist preparations
+  name: Підготовка Збройного Спеціаліста
   suffix: Locked
   components:
   - type: AccessReader
@@ -28,7 +28,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepEngineer
-  name: squad comtech preparations
+  name: Підготовка Бойового Техніка
   suffix: Locked
   components:
   - type: AccessReader
@@ -37,7 +37,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepMedical
-  name: squad medical preparations
+  name: Підготовка Бойового Медика
   suffix: Locked
   components:
   - type: AccessReader
@@ -46,7 +46,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepSmart
-  name: squad smart gun operator preparations
+  name: Підготовка Оператора СмартГана
   suffix: Locked
   components:
   - type: AccessReader
@@ -55,7 +55,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepFTL
-  name: squad fireteam leader preparations
+  name: Підготовка Лідера Вогневої Групи
   suffix: Locked
   components:
   - type: AccessReader
@@ -81,7 +81,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaSL
-  name: alpha squad leader preparations
+  name: Альфа підготовка Лідера Загону
   suffix: Locked
   components:
   - type: AccessReader
@@ -90,7 +90,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaSpec
-  name: alpha squad specialist preparations
+  name: Альфа підготовка Збройного Спеціаліста
   suffix: Locked
   components:
   - type: AccessReader
@@ -99,7 +99,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaEngineer
-  name: alpha squad comtech preparations
+  name: Альфа підготовка Бойового Техніка
   suffix: Locked
   components:
   - type: AccessReader
@@ -108,7 +108,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaMedical
-  name: alpha squad medical preparations
+  name: Альфа підготовка Бойового Медика
   suffix: Locked
   components:
   - type: AccessReader
@@ -117,7 +117,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaSmart
-  name: alpha squad smart gun operator preparations
+  name: Альфа підготовка Оператора СмартГана
   suffix: Locked
   components:
   - type: AccessReader
@@ -126,7 +126,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaFTL
-  name: alpha squad fireteam leader preparations
+  name: Альфа підготовка Лідера Вогневої Групи
   suffix: Locked
   components:
   - type: AccessReader
@@ -152,7 +152,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoSL
-  name: bravo squad leader preparations
+  name: Браво підготовка Лідера Загону
   suffix: Locked
   components:
   - type: AccessReader
@@ -161,7 +161,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoSpec
-  name: bravo squad specialist preparations
+  name: Браво підготовка Збройного Спеціаліста
   suffix: Locked
   components:
   - type: AccessReader
@@ -170,7 +170,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoEngineer
-  name: bravo squad comtech preparations
+  name: Браво підготовка Бойового Техніка
   suffix: Locked
   components:
   - type: AccessReader
@@ -179,7 +179,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoMedical
-  name: bravo squad medical preparations
+  name: Браво підготовка Бойового Медика
   suffix: Locked
   components:
   - type: AccessReader
@@ -188,7 +188,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoSmart
-  name: bravo squad smart gun operator preparations
+  name: Браво підготовка Оператора СмартГана
   suffix: Locked
   components:
   - type: AccessReader
@@ -197,7 +197,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoFTL
-  name: bravo squad fireteam leader preparations
+  name: Браво підготовка Лідера Вогневої Групи
   suffix: Locked
   components:
   - type: AccessReader
@@ -223,7 +223,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieSL
-  name: charlie squad leader preparations
+  name: Чарлі підготовка Лідера Загону
   suffix: Locked
   components:
   - type: AccessReader
@@ -232,7 +232,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieSpec
-  name: charlie squad specialist preparations
+  name: Чарлі підготовка Збройного Спеціаліста
   suffix: Locked
   components:
   - type: AccessReader
@@ -241,7 +241,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieEngineer
-  name: charlie squad comtech preparations
+  name: Чарлі підготовка Бойового Техніка
   suffix: Locked
   components:
   - type: AccessReader
@@ -250,7 +250,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieMedical
-  name: charlie squad medical preparations
+  name: Чарлі підготовка Бойового Медика
   suffix: Locked
   components:
   - type: AccessReader
@@ -259,7 +259,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieSmart
-  name: charlie squad smart gun operator preparations
+  name: Чарлі підготовка Оператора СмартГана
   suffix: Locked
   components:
   - type: AccessReader
@@ -268,7 +268,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieFTL
-  name: charlie squad fireteam leader preparations
+  name: Чарлі підготовка Лідера Вогневої Групи
   suffix: Locked
   components:
   - type: AccessReader
@@ -294,7 +294,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaSL
-  name: delta squad leader preparations
+  name: Дельта підготовка Лідера Загону
   suffix: Locked
   components:
   - type: AccessReader
@@ -303,7 +303,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaSpec
-  name: delta squad specialist preparations
+  name: Дельта підготовка Збройного Спеціаліста
   suffix: Locked
   components:
   - type: AccessReader
@@ -312,7 +312,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaEngineer
-  name: delta squad comtech preparations
+  name: Дельта підготовка Бойового Техніка
   suffix: Locked
   components:
   - type: AccessReader
@@ -321,7 +321,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaMedical
-  name: delta squad medical preparations
+  name: Дельта підготовка Бойового Медика
   suffix: Locked
   components:
   - type: AccessReader
@@ -330,7 +330,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaSmart
-  name: delta squad smart gun operator preparations
+  name: Дельта підготовка Оператора СмартГана
   suffix: Locked
   components:
   - type: AccessReader
@@ -339,7 +339,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaFTL
-  name: delta squad fireteam leader preparations
+  name: Дельта підготовка Лідера Вогневої Групи
   suffix: Locked
   components:
   - type: AccessReader

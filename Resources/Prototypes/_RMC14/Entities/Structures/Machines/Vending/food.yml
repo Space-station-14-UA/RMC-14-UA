@@ -24,7 +24,7 @@
     - name: Готові страви
       entries:
       - id: CMMRE
-        name: UNMC Meal Ready to Eat
+        name: брендовий сухпай Ве-Я
         amount: 15
       - id: CMMarinePreparedMealChicken
         amount: 15
@@ -45,7 +45,7 @@
       - id: CMCanteen
         amount: 10
       - id: CMMetalFlask
-        name: metal flask (empty)
+        name: металева фляга (порожня)
         amount: 10
       - id: CMMarineFlask
         amount: 5

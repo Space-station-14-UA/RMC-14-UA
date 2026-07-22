@@ -10,8 +10,8 @@
 - type: entity
   parent: CMBaseWall
   id: CMWallMetal
-  name: wall
-  description: A huge chunk of metal used to separate rooms.
+  name: стіна
+  description: Великий шмат металу, що використовується для розділення кімнат.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/metal.rsi
@@ -55,8 +55,8 @@
 - type: entity
   parent: CMWallMetal
   id: CMWallMetalAlmayer
-  name: wall
-  description: A huge chunk of metal used to separate rooms.
+  name: стіна
+  description: Великий шмат металу, що використовується для розділення кімнат.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_black.rsi
@@ -164,8 +164,8 @@
 - type: entity
   parent: CMWallMetal
   id: CMWallMetalAlmayerWhite
-  name: wall
-  description: A huge chunk of metal used to separate rooms.
+  name: стіна
+  description: Великий шмат металу, що використовується для розділення кімнат.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_white.rsi
@@ -191,8 +191,8 @@
 - type: entity
   parent: CMBaseWall
   id: RMCBaseWallReinforced
-  name: reinforced wall
-  description: A huge chunk of reinforced metal used to separate rooms.
+  name: армована стіна
+  description: Великий шмат армованого металу, що використовується для розділення кімнат. 
   abstract: true
   components:
   - type: Sprite
@@ -247,8 +247,8 @@
 - type: entity
   parent: RMCBaseWallReinforced
   id: CMWallReinforcedAlmayer
-  name: reinforced hull
-  description: A reinforced metal wall used to separate rooms and make up the ship.
+  name: армований корпус
+  description: Армована металева стіна, що використовується для розділення кімнат і формування корабля.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_black.rsi
@@ -273,7 +273,7 @@
 - type: entity
   parent: RMCBaseWallReinforced
   id: RMCWallAlmayerReinforcedDeco1
-  name: reinforced hull
+  name: армований корпус
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_black.rsi
@@ -356,8 +356,8 @@
 - type: entity
   parent: RMCBaseWallReinforced
   id: CMWallReinforcedAlmayerWhite
-  name: reinforced hull
-  description: A reinforced metal wall used to separate rooms and make up the ship.
+  name: армований корпус
+  description: Армована металева стіна, що використовується для розділення кімнат і формування корабля.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_white.rsi
@@ -382,8 +382,8 @@
 - type: entity
   parent: RMCBaseWallReinforced
   id: CMWallReinforcedAlmayerAI
-  name: reinforced hull
-  description: A reinforced metal wall used to isolate potentially dangerous areas.
+  name: армований корпус
+  description: Армована металева стіна, що використовується для ізоляції потенційно небезпечних зон.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_aicore.rsi
@@ -409,8 +409,8 @@
 - type: entity
   parent: CMBaseWallInvincible
   id: CMWallReinforcedHeavy
-  name: heavy reinforced hull
-  description: A huge chunk of ultra-reinforced metal used to separate rooms. Looks virtually indestructible.
+  name: міцний армований корпус
+  description: Великий шматок надзвичайно армованого металу, що використовується для розділення кімнат. Виглядає невразливим.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/rwall.rsi
@@ -429,8 +429,8 @@
 - type: entity
   parent: CMWallReinforcedHeavy
   id: CMWallReinforcedHeavyAlmayer
-  name: heavy reinforced hull
-  description: A highly reinforced metal wall used to separate rooms and make up the ship. It would take a great impact to weaken this wall.
+  name: міцний армований корпус
+  description: Міцний армований корпус, що використовується для розділення кімнат і формування корабля. Знадобиться велика сила, щоб пошкодити цю стіну.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_black.rsi
@@ -522,8 +522,8 @@
 - type: entity
   parent: CMWallReinforcedHeavy
   id: CMWallReinforcedHeavyAlmayerWhite
-  name: heavy reinforced hull
-  description: A highly reinforced metal wall used to separate rooms and make up the ship. It would take a great impact to weaken this wall.
+  name: міцний армований корпус
+  description: Міцний армований корпус, що використовується для розділення кімнат і формування корабля. Знадобиться велика сила, щоб пошкодити цю стіну.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_white.rsi
@@ -540,8 +540,8 @@
 - type: entity
   parent: CMWallReinforcedHeavy
   id: CMWallReinforcedHeavyAlmayerAI
-  name: heavy reinforced hull
-  description: An extremely reinforced metal wall used to isolate potentially dangerous areas. Looks virtually indestructible.
+  name: міцний армований корпус
+  description: Міцний армований корпус, що використовується для ізоляції потенційно небезпечних зон. Виглядає невразливим.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_aicore.rsi
@@ -558,8 +558,8 @@
 - type: entity
   parent: CMWallReinforcedHeavy
   id: CMWallReinforcedHeavyAlmayerAINoLights
-  name: heavy reinforced hull
-  description: An extremely reinforced metal wall used to isolate potentially dangerous areas. Looks virtually indestructible.
+  name: міцний армований корпус
+  description: Міцний армований корпус, що використовується для ізоляції потенційно небезпечних зон. Виглядає невразливим.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/almayer_aicore_nolights.rsi
