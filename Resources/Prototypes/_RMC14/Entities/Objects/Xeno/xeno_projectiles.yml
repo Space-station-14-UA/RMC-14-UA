@@ -55,8 +55,8 @@
     damage:
       types:
         Heat: 20 # TODO RMC14 damage fall-off and higher at close range
-  - type: CMArmorPiercing
-    amount: 10
+#  - type: CMArmorPiercing – Mriya. Броня повинна бути потужною
+#    amount: 10
   - type: XenoProjectile
     deleteOnFriendlyXeno: true
   - type: RMCProjectileAccuracy

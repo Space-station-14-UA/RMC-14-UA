@@ -251,8 +251,8 @@
 - type: entity
   parent: RMCRocket84mm
   id: RMCRocket84mmWhitePhosphorus
-  name: 84mm white phosphorus rocket
-  description: A rocket tube loaded with a white phosphorus incendiary warhead. Has two damaging factors. On hit disperses X-Variant Napthal (blue flames) in a 4-meter radius circle, ignoring cover, while simultaneously bursting into highly heated shrapnel that ignites targets within slightly bigger area.
+  name: 84-мм біло-фосфорна ракета
+  description: Ракета, сумісна з ПТГ-М5, оснащена запальним біло-фосфорним (БФ) зарядом. Має два фактори ураження. При попаданні розсіює Ікс версію напалма (синє полум'я) по колу радіусом в 4 метри, ігноруючи будь-які укриття, одночасно розкидуючи осколки у трохи більшому радіусі.
   components:
   - type: CartridgeAmmo
     proto: RMCProjectileRocket84mmWhitePhosphorus
@@ -270,7 +270,7 @@
 - type: entity
   parent: RMCBaseProjectileRocket84mm
   id: RMCProjectileRocket84mmWhitePhosphorus
-  name: 84mm white phosphorus rocket
+  name: 84-мм біло-фосфорна ракета
   categories: [ HideSpawnMenu ]
   components:
   - type: TriggerOnCollide

@@ -1,4 +1,4 @@
-﻿rmc-intel-suffix = {$baseName} ({$number})
+rmc-intel-suffix = {$baseName} ({$number})
 rmc-intel-unlocked = {$baseName} ({$unlocked})
 rmc-intel-label-name = {$baseName} {$label}
 rmc-intel-label-name-parenthetical = {$baseName} ({$label})
@@ -14,68 +14,68 @@ rmc-intel-retrieve = Відновлене
 rmc-intel-misc = Різне
 rmc-intel-personal = Особисті підказки
 
-rmc-intel-data-disk-uploaded = {$baseName} (uploaded)
-rmc-intel-color-red = [color=#eb4034]red[/color]
-rmc-intel-color-black = [color=#000000]black[/color]
-rmc-intel-color-blue = [color=#3449eb]blue[/color]
-rmc-intel-color-yellow = [color=#ebe534]yellow[/color]
-rmc-intel-color-white = [color=#ffffff]white[/color]
-rmc-intel-color-grey = [color=#949494]grey[/color]
-rmc-intel-color-green = [color=#5dbf36]green[/color]
-rmc-intel-color-cracked-blue = [color=#3449eb]cracked blue[/color]
-rmc-intel-color-bloodied-blue = [color=#3449eb]bloodied blue[/color]
-rmc-intel-color-unknown = unmarked
-rmc-intel-clue-found = You make out something about {$clue}.
-rmc-intel-personal-clues-added = New clues have been added to your personal clues.
+rmc-intel-data-disk-uploaded = {$baseName} (завантажено)
+rmc-intel-color-red = [color=#eb4034]червоного кольору[/color]
+rmc-intel-color-black = [color=#000000]чорного кольору[/color]
+rmc-intel-color-blue = [color=#3449eb]синього кольору[/color]
+rmc-intel-color-yellow = [color=#ebe534]жовтого кольору[/color]
+rmc-intel-color-white = [color=#ffffff]білого кольору[/color]
+rmc-intel-color-grey = [color=#949494]сірого кольору[/color]
+rmc-intel-color-green = [color=#5dbf36]зеленого кольору[/color]
+rmc-intel-color-cracked-blue = [color=#3449eb]тріснуто-синього кольору[/color]
+rmc-intel-color-bloodied-blue = [color=#3449eb]скривавлено-синього кольору[/color]
+rmc-intel-color-unknown = непромаркована
+rmc-intel-clue-found = Ви дізнаєтесь щось про {$clue}.
+rmc-intel-personal-clues-added = Нові зачіпки було додано до вашого персонального записника.
 rmc-intel-clue-label-number = #{$number}
 rmc-intel-clue-label-serial = #{$serial}
-rmc-intel-clue-label-unmarked = no visible label
-rmc-intel-clue-paper-scrap = paper scrap {$label} in {$area}.
-rmc-intel-clue-progress-report = progress report {$label} in {$area}.
-rmc-intel-clue-folder = {$color} folder {$label} in {$area}.
-rmc-intel-clue-technical-manual = technical manual {$label} in {$area}.
-rmc-intel-clue-experimental-device = {$name} {$label} in {$area}.
-rmc-intel-clue-data-disk = {$color} disk [bold]{$label}[/bold], decryption key is [bold]{$key}[/bold] in {$area}.
-rmc-intel-clue-data-terminal = Upload data from terminal [bold]{$label}[/bold], password is [bold]{$password}[/bold] in {$area}.
-rmc-intel-clue-safe = Crack open the safe {$label}, combination lock is [bold]{$code}[/bold] in {$area}.
-rmc-intel-data-terminal-password-prompt = Enter the password
-rmc-intel-data-terminal-no-power = This terminal has no power!
-rmc-intel-data-terminal-no-comms = The terminal flashes a network connection error.
-rmc-intel-data-terminal-wrong-password = The terminal rejects the password.
-rmc-intel-data-terminal-started = You start uploading the data.
-rmc-intel-data-terminal-uploading = Looks like the terminal is already uploading, better make sure nothing interrupts it!
-rmc-intel-data-terminal-finished = The terminal pings softly as it finishes the upload.
-rmc-intel-data-terminal-complete = There's a message on the screen that the data upload finished successfully.
-rmc-intel-disk-reader-key-prompt = Enter the encryption key
-rmc-intel-disk-reader-no-power = The SIGINT terminal has no power.
-rmc-intel-disk-reader-occupied = There's already a disk inside the SIGINT terminal, wait for it to finish first!
-rmc-intel-disk-reader-empty = The SIGINT terminal has no disk inserted.
-rmc-intel-disk-reader-wrong-key = The reader buzzes, ejecting the disk.
-rmc-intel-disk-reader-insert-failed = The disk cannot be inserted.
-rmc-intel-disk-reader-started = You insert the disk and enter the decryption key.
-rmc-intel-disk-reader-finished = The SIGINT terminal pings softly as the upload finishes and ejects the disk.
-rmc-intel-disk-reader-power-lost = The SIGINT terminal powers down mid-operation as the area loses power and ejects the disk.
-rmc-intel-disk-reader-disk-complete = The reader displays a message stating this disk has already been read and refuses to accept it.
-rmc-intel-safe-code-prompt = Enter the safe combination.
-rmc-intel-safe-wrong-code = The safe does not open.
-rmc-intel-safe-complete = The safe unlocks.
-rmc-intel-reading-start = You start reading the {$thing}.
-rmc-intel-reading-cancelled = You get distracted and lose your train of thought, you'll have to start over reading this.
-rmc-intel-reading-inactive = You don't notice anything useful. You probably need to find its instructions on a paper scrap.
-rmc-intel-reading-finished = You finish reading the {$thing}.
-rmc-intel-console-typing-start = You start typing in intel into the computer...
-rmc-intel-console-typing-no-new = You start typing in intel into the computer... and you have nothing new to add...
-rmc-intel-console-typing-cancelled = You get distracted and lose your train of thought, you'll have to start the typing over...
-rmc-intel-console-submit-no-new = ...and you have nothing new to add...
-rmc-intel-console-submit-done = ...and done! You uploaded {$amount} entries!
-rmc-intel-survivor-pickup = I have no use for the {$thing}.
-    I should focus on getting help first.
-rmc-intel-survivor-read = I have no need to read the {$thing}.
-    I should focus on getting help first.
-rmc-intel-survivor-xeno-pull = Trying to take the {$thing} with me will only slow me down.
-    I should focus on getting help first.
-rmc-intel-survivor-corpse-pull = I can't save {$thing}, they'll only slow me down.
-    I should focus on getting help first.
+rmc-intel-clue-label-unmarked = відсутнє видиме позначення
+rmc-intel-clue-paper-scrap = паперовий клаптик {$label} у {$area}.
+rmc-intel-clue-progress-report = звіт {$label} у {$area}.
+rmc-intel-clue-folder = {$color} папка {$label} у {$area}.
+rmc-intel-clue-technical-manual = посібник {$label} у {$area}.
+rmc-intel-clue-experimental-device = {$name} {$label} у {$area}.
+rmc-intel-clue-data-disk = {$color} картридж [bold]{$label}[/bold], з кодом дешифрування [bold]{$key}[/bold] у {$area}.
+rmc-intel-clue-data-terminal = Завантажте дані з терміналу [bold]{$label}[/bold], пароль [bold]{$password}[/bold] у {$area}.
+rmc-intel-clue-safe = Відкрийте сейф {$label}, з комбінацією [bold]{$code}[/bold] у {$area}.
+rmc-intel-data-terminal-password-prompt = Введіть пароль
+rmc-intel-data-terminal-no-power = У терміналу відсутнє живлення!
+rmc-intel-data-terminal-no-comms = На терміналі відображено помилку підключення до мережі.
+rmc-intel-data-terminal-wrong-password = Термінал відхиляє введений пароль.
+rmc-intel-data-terminal-started = Ви починаєте завантажувати дані.
+rmc-intel-data-terminal-uploading = Схоже термінал вже щось завантажує. Краще запевнитися, що його нічого не зупинить.
+rmc-intel-data-terminal-finished = Термінал видає тихий писк, повідомляючи про завершення завантаження.
+rmc-intel-data-terminal-complete = На екрані присутнє повідомлення про успішно завершене завантаження.
+rmc-intel-disk-reader-key-prompt = Введіть ключ шифрування
+rmc-intel-disk-reader-no-power = У ЦИФРОЗ терміналу відсутнє живлення.
+rmc-intel-disk-reader-occupied = Зчитувач ЦИФРОЗ терміналу вже зайнятий. Почекайте, поки термінал завершить обробку.
+rmc-intel-disk-reader-empty = Зчитувач терміналу ЦИФРОЗ порожній.
+rmc-intel-disk-reader-wrong-key = Зчитувач заперечно пищить, відхиляючи картридж.
+rmc-intel-disk-reader-insert-failed = Цей картридж не може бути зчитаний.
+rmc-intel-disk-reader-started = Ви вставляєте картридж та вводите ключ шифрування.
+rmc-intel-disk-reader-finished = ЦИФРОЗ термінал схвально пищить, повертаючи картридж.
+rmc-intel-disk-reader-power-lost = Через відсутність живлення ЦИФРОЗ термінал повертає картридж, вимикаючись посеред обробки.
+rmc-intel-disk-reader-disk-complete = На дисплеї з'являється повідомлення про те, що картридж уже прочитано. Зчитувач повертає картридж.
+rmc-intel-safe-code-prompt = Введіть комбінацію до сейфа.
+rmc-intel-safe-wrong-code = Сейф не відчиняється.
+rmc-intel-safe-complete = Сейф відчиняється.
+rmc-intel-reading-start = Ви починаєте читати {$thing}.
+rmc-intel-reading-cancelled = Ви відволікаєтесь, втрачаючи думку. Доведеться читати з початку.
+rmc-intel-reading-inactive = Ви не дізнаєтеся нічого корисного. Ймовірно, вам треба знайти інструкції на паперовому клаптику.
+rmc-intel-reading-finished = Ви закінчуєте читати {$thing}.
+rmc-intel-console-typing-start = Ви починаєте вводити розвідувальні дані у комп'ютер..
+rmc-intel-console-typing-no-new = Ви починаєте вводити розвідувальні дані у комп'ютер...і у вас немає нової інформації...
+rmc-intel-console-typing-cancelled = Ви відволікаєтесь, втрачаючи думку. Доведеться вводити все з початку...
+rmc-intel-console-submit-no-new = ...і у вас немає нової інформації...
+rmc-intel-console-submit-done = ...і готово! Ви завантажили {$amount} записів!
+rmc-intel-survivor-pickup = Я не маю користі від{$thing}.
+    Я маю зосередитись на пошуку допомоги!
+rmc-intel-survivor-read = Я не маю потреби читати {$thing}.
+    Я маю зосередитись на пошуку допомоги!
+rmc-intel-survivor-xeno-pull = Спроба узяти {$thing} тільки сповільнить мене.
+    Я маю зосередитись на пошуку допомоги!
+rmc-intel-survivor-corpse-pull = Я не зможу врятувати {$thing}, це тільки сповільнить мене.
+    Я маю зосередитись на пошуку допомоги!
 
 
 ## Intel Objectives Window

@@ -18,7 +18,7 @@ rmc-job-name-rcm-marksman = Снайпер
 rmc-job-prefix-rcm-marksman = КМ СНП
 
 rmc-ghost-name-rcm-breacher = Штурмовик Королівської Морпіхоти (Дружній)
-rmc-job-name-rcm-breacher = Штурмовим
+rmc-job-name-rcm-breacher = Штурмовик
 rmc-job-prefix-rcm-breacher = КМ ШТР
 
 rmc-ghost-name-rcm-medic = Мед-Тех Королівської Морпіхоти (Дружній)

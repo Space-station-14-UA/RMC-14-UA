@@ -12,7 +12,15 @@
       "directions": 4
     },
     {
+      "name": "wall",
+      "directions": 4
+    },
+    {
       "name": "broken",
+      "directions": 4
+    },
+    {
+      "name": "broken_wall",
       "directions": 4
     }
   ]

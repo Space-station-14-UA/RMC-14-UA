@@ -1,9 +1,10 @@
+# Звичайний
 - type: entity
   parent: [ BaseMachinePowered, RMCConstructibleMachine ]
   id: MRTerminalInput
   name: термінал комунікації
-  suffix: Січ, Ввід
-  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  description: Термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  suffix: Мрія, Ввід
   components:
   - type: Transform
     anchored: false
@@ -11,14 +12,16 @@
   - type: Sprite
     sprite: _Mriya/Structures/Machines/console.rsi
     state: console
-  - type: MRTerminal
+  - type: MriyaTerminal
     isInput: true
+  - type: Clickable
+  - type: Rotatable
   - type: ActivatableUI
     key: enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key
   - type: UserInterface
     interfaces:
       enum.Content.Shared._Mriya.Terminal.MriyaTerminalUiKey.Key:
-        type: MRTerminalBoundUserInterface
+        type: MriyaTerminalBoundUserInterface
   - type: ItemSlots
     slots:
       id_card:
@@ -27,15 +30,6 @@
           components:
           - IdCard
           - Pda
-  - type: WallMount
-    arc: 360
-  - type: EmitSoundOnUIOpen
-    sound:
-      collection: RMCKeyboardTyping
-      params:
-        volume: -1
-  - type: Corrodible
-    isCorrodible: false
   - type: Destructible
     thresholds:
     - trigger:
@@ -59,15 +53,39 @@
 
 - type: entity
   parent: MRTerminalInput
-  id: MRTerminalOutput
-  suffix: Січ, Перегляд
-  description: Корпоративний термінал для перегляду каналу зв'язку Ве-Я та їх представника.
+  id: MRTerminalInputCorporate
+  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  suffix: Мрія, Ввід (Корпорат)
   components:
-  - type: MRTerminal
+  - type: MriyaTerminal
+    isInput: true
+    requiredAccesses:
+    - RMCAccessWeYa
+
+- type: entity
+  parent: MRTerminalInput
+  id: MRTerminalInputCommand
+  description: Офіцерський термінал для прямого каналу зв'язку з Ве-Я. Має слот для ID-картки.
+  suffix: Мрія, Ввід (Командування)
+  components:
+  - type: MriyaTerminal
+    isInput: true
+    requiredAccesses:
+    - RMCAccessCommand
+
+- type: entity
+  parent: MRTerminalInput
+  id: MRTerminalOutput
+  description: Корпоративний термінал для прямого каналу зв'язку з Ве-Я.
+  suffix: Мрія, Перегляд
+  components:
+  - type: MriyaTerminal
     isInput: false
   - type: RemoveComponents
     components:
     - type: ItemSlots
+    - type: ApcPowerReceiver
+    - type: Anchorable
 
 - type: entity
   parent: ComputerBroken
@@ -78,3 +96,69 @@
   - type: Sprite
     sprite: _Mriya/Structures/Machines/console.rsi
     state: broken
+
+# Настінний
+- type: entity
+  parent: MRTerminalInput
+  id: MRWallmountTerminalInput
+  name: настінний термінал комунікації
+  description: Термінал для прямого каналу зв'язку з Ве-Я з вашої стіни! Має слот для ID-картки.
+  suffix: Мрія, Ввід
+  components:
+  - type: Sprite
+    sprite: _Mriya/Structures/Machines/console.rsi
+    state: wall
+  - type: WallMount
+    arc: 360
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MRWallmountTerminalBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: [ MRWallmountTerminalInput, MRTerminalInputCorporate ]
+  id: MRWallmountTerminalInputCorporate
+  suffix: Мрія, Ввід (Корпорат)
+
+- type: entity
+  parent: [ MRWallmountTerminalInput, MRTerminalInputCommand ]
+  id: MRWallmountTerminalInputCommand
+  suffix: Мрія, Ввід (Командування)
+
+- type: entity
+  parent: MRWallmountTerminalInput
+  id: MRWallmountTerminalOutput
+  description: Корпоративний термінал для прямого каналу зв'язку з представниками та КМПОН.
+  suffix: Мрія, Перегляд
+  components:
+  - type: MriyaTerminal
+    isInput: false
+  - type: RemoveComponents
+    components:
+    - type: ItemSlots
+    - type: ApcPowerReceiver
+    - type: Anchorable
+
+- type: entity
+  parent: ComputerBroken
+  id: MRWallmountTerminalBroken
+  name: зламаний настінний термінал комунікації
+  description: Це корпоративний термінал комунікації з Ве-Я... Принаймні був.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Structures/Machines/console.rsi
+    state: broken_wall
+  - type: WallMount
+    arc: 360

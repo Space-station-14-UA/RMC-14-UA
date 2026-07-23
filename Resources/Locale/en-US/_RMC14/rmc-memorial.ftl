@@ -1,2 +1,2 @@
-rmc-memorial-start = To our fallen soldiers: 
-rmc-memorial-add = You add {THE($tags)} to {THE($slab)}.
+rmc-memorial-start = Нашим полеглим воїнам:
+rmc-memorial-add = Ви повісили {$tags} на {$slab}.

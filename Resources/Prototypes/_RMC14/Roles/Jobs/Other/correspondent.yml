@@ -42,12 +42,12 @@
   hasIcon: false
 
 - type: job
-  parent: RMCJobRibbonBase
+  parent: CMJobBase # Mriya. RMCJobRibbonBase. Він військовий, так нащо йому цивільні медалі?
   id: CMCombatCorrespondent
   name: cm-job-name-combat-correspondent
   description: cm-job-description-combat-correspondent
   newToJobInfo: rmc-new-to-job-combat-correspondent
-  playTimeTracker: CMJobCorrespondent
+  playTimeTracker: MRJobCombatCorrespondent # Mriya. CMJobCorrespondent в оригіналі, власний трекер для фіксу відображення в статистиці
   requirements:
   - !type:TotalDepartmentsTimeRequirement
     group: CMDepartmentsHuman
@@ -142,4 +142,8 @@
 
 - type: playTimeTracker
   id: CMJobCorrespondent
+  isHumanoid: true
+
+- type: playTimeTracker # Mriya. Тут, бо це фактично багфікс й коли офіційки додадуть сюди свій, щоб я це помітив та прибрав наш
+  id: MRJobCombatCorrespondent
   isHumanoid: true

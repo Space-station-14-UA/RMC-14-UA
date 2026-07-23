@@ -300,8 +300,8 @@
 - type: entity
   parent: CMGrenadeHighExplosive
   id: RMCGrenadeBlastM12
-  name: M12 blast grenade
-  description: A high-explosive grenade produced for private security firms. It explodes around 3 seconds after the pin has been pulled.
+  name: М12 вибухова граната
+  description: Фугасна граната, виготовлена ​​для різних ПВК. Вибухає приблизно через 3 секунди після того, як витягнули чеку.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/m12blast.rsi

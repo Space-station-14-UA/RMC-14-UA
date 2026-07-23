@@ -153,7 +153,6 @@
   id: MMCAreaSavannahPortPointDefense
   name: Аварійні Порти Стикування Лівого Борту
 
-## Mriya start
 - type: entity
   parent: MMCAreaSavannahBrig
   id: MMCAreaSavannahArmory
@@ -163,7 +162,6 @@
   parent: MMCAreaSavannahBrig
   id: MMCAreaSavannahObservationRoom
   name: Кімната Спостереження
-## Mriya end
 
 # КОМАНДУВАННЯ
 
@@ -182,7 +180,6 @@
   id: MMCAreaSavannahLiaison
   name: Приймальня Представника
 
-## Mriya start
 - type: entity
   parent: MMCAreaSavannahLiaison
   id: MMCAreaSavannahLiaisonOffice
@@ -197,7 +194,6 @@
   parent: MMCAreaSavannahLiaison
   id: MMCAreaSavannahLiaisonStorage
   name: Склад Представника
-## Mriya end
 
 - type: entity
   parent: MMCAreaSavannahCommand
@@ -247,7 +243,6 @@
   - type: Area
     retrieveItemObjective: true
 
-## Mriya start
 - type: entity
   parent: MMCAreaSavannahCommand
   id: MMCAreaSavannahVehicleStorage
@@ -262,7 +257,11 @@
   parent: MMCAreaSavannahBrig
   id: MMCAreaSavannahSynthetic
   name: Сховище Синтетиків
-## Mriya end
+
+- type: entity
+  parent: MMCAreaSavannahCommand
+  id: MMCAreaSavannahAICore
+  name: Ядро АРЕС
 
 # МЕДИЧНИЙ
 
@@ -290,7 +289,6 @@
   id: MMCAreaSavannahMedicalPreparation
   name: Медичні Казарми
 
-## Mriya start
 - type: entity
   parent: MMCAreaSavannahMedical
   id: MMCAreaSavannahMedicalResearch
@@ -328,7 +326,6 @@
   parent: MMCAreaSavannahMedical
   id: MMCAreaSavannahMedicalRestroom
   name: Кімната Відпочинку Медичного
-## Mriya end
 
 # ПІДТРИМКА
 
@@ -370,12 +367,10 @@
   id: MMCAreaSavannahCanteen
   name: Їдальня
 
-## Mriya start
 - type: entity
   parent: MMCAreaSavannahAuxiliary
   id: MMCAreaSavannahBotany
   name: Ботаніка
-## Mriya end
 
 # КАЗАРМИ
 
@@ -464,6 +459,11 @@
   id: MMCAreaSavannahAtmosPort
   name: Атмос Лівого Борту
 
+- type: entity
+  parent: MMCAreaSavannahEngineering
+  id: MMCAreaSavannahAICoreMaintenance
+  name: Технічні приміщення ядра АРЕС
+
 # ПОМПИ
 
 - type: entity
@@ -536,7 +536,6 @@
   id: MMCAreaSavannahChurch
   name: Церква
 
-## Mriya start
 - type: entity
   parent: MMCAreaSavannah
   id: MMCAreaSavannahPress
@@ -556,4 +555,8 @@
   parent: MMCAreaSavannah
   id: MMCAreaSavannahOuter
   name: Зовнішня обшивка
-## Mriya end
+
+- type: entity
+  parent: MMCAreaSavannah
+  id: MMCAreaSavannahAICoreReception
+  name: Стійка доступу до ядра АРЕС

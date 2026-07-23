@@ -1,7 +1,7 @@
-﻿rmc-fulton-not-planet = You can't attach {THE($fulton)} to something here.
-rmc-fulton-underground = You can't attach {THE($fulton)} to something underground.
-rmc-fulton-not-dead = You can't attach {THE($fulton)} to {$target}, kill it first!
-rmc-fulton-not-unrevivable = You can't attach {THE($fulton)} to {$target}, they still have a chance!
-rmc-fulton-attach-start-self = You begin to attach {THE($fulton)} onto {$target}.
-rmc-fulton-attach-start-others = {$user} begins attaching {THE($fulton)} onto {$target}.
-rmc-fulton-attach-failed = You can't attach {THE($fulton)} to {$target}.
+rmc-fulton-not-planet = Ви не можете причепити {$fulton} до чогось тут.
+rmc-fulton-underground = Ви не можете причепити {$fulton} до чогось під землею.
+rmc-fulton-not-dead = Ви не можете причипити {$fulton} до {$target}, спочатку вбийте це!
+rmc-fulton-not-unrevivable = Ви не можете причепити {$fulton} до {$target}, їх все ще можна врятувати!
+rmc-fulton-attach-start-self = Ви починаєте чіпляти {$fulton} до {$target}.
+rmc-fulton-attach-start-others = {$user} починає чіпляти {$fulton} до {$target}.
+rmc-fulton-attach-failed = Ви не можете причепити {$fulton} до {$target}.

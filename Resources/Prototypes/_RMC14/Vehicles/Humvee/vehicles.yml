@@ -4,6 +4,8 @@
   name: humvee
   description: A fast armored utility vehicle outfitted for patrols and support.
   components:
+  - type: MRVehicleNickname            #Mriya, випадкові імена для транспорту
+    dataset: MRVehicleNicknamesHumvee
   - type: Vehicle
     movementKind: Grid
   - type: LagCompensation

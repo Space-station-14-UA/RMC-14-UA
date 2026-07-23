@@ -1,0 +1,8 @@
+# Для ядра, щоб його не зносило ОБ
+- type: damageContainer
+  id: MRHiveCore
+  supportedGroups:
+  - Brute
+  supportedTypes:
+  - Heat
+  - Shock

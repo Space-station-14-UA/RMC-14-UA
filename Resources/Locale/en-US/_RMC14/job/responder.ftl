@@ -35,7 +35,7 @@ rmc-job-description-clf-responder = "Ви є членом регіонально
 rmc-job-prefix-clf-responder = ІНФО
 
 #Відповідач на Факси від СПН
-rmc-job-name-spp-responder = Офіцер Зв'язку СПН. Комуняки. . .
+rmc-job-name-spp-responder = Офіцер Зв'язку СПН
 rmc-job-description-spp-responder = "Ви дієте від імені Регіонального командування СПН, відповідаючи на факси, надіслані до командування СПН."
 
 #Відповідач на Факси від ІТС

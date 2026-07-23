@@ -70,7 +70,7 @@
   - type: HiveConstructionLimited
     id: HiveCoreXeno
   - type: RoofingEntity
-    range: 20.870 # Mriya. 11.848 в оригіналі, кращий захист від ОБ. squareRadius(18) (10 в оригіналі, радіус ОБ 16)
+    range: 11.848
   - type: EvolutionBonus
   - type: WarpPoint
     location: ядро вулика # Mriya, бо це назва
@@ -86,6 +86,13 @@
   - type: RMCTrackable
   - type: RMCMesonsNonviewable
     xenoVisible: true
+  # Mriya start. Захист від ОБ
+  - type: CMArmor
+    explosionArmor: 100
+  - type: RMCImmuneToFireTileDamage
+  - type: Damageable
+    damageContainer: MRHiveCore
+  # Mriya end
 
 - type: entity
   id: HiveCoreXenoConstructionNode

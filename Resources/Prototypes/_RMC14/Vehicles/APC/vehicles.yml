@@ -186,6 +186,8 @@
   parent: VehicleAPCBase
   id: VehicleAPC
   components:
+  - type: MRVehicleNickname            #Mriya, випадкові імена для транспорту 
+    dataset: MRVehicleNicknamesAPC
   - type: VehicleEnter
     interiorPath: /Maps/_RMC14/Vehicles/apc_transport_interior.yml
     enterDoAfter: 1.0
@@ -220,6 +222,8 @@
   name: armored personnel carrier (medical)
   description: A medical-configured APC outfitted with triage markings.
   components:
+  - type: MRVehicleNickname            #Mriya, випадкові імена для транспорту 
+    dataset: MRVehicleNicknamesAPC
   - type: Sprite
     layers:
     - map: [ base ]
@@ -281,6 +285,8 @@
   name: armored personnel carrier (command)
   description: A command-configured APC bristling with sensors and comms gear.
   components:
+  - type: MRVehicleNickname            #Mriya, випадкові імена для транспорту 
+    dataset: MRVehicleNicknamesAPC
   - type: Sprite
     layers:
     - map: [ base ]

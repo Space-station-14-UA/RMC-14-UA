@@ -57,7 +57,7 @@
 - type: entity
   id: RMCCrateFoldingBarricades
   parent: RMCCrateConstruction
-  name: MB-6 folding barricades crate
+  name: Ящик розкладних барикад МБ-6 (3 шт)
   components:
   - type: StorageFill
     contents:
