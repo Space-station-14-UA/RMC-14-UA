@@ -2,7 +2,7 @@
   id: CMDisposalUnit
   parent: DisposalUnitBase
   name: смітник
-  description: Пневматичний пристрій для збираннявідходів.
+  description: Пневматичний пристрій для збирання відходів.
   components:
   - type: VehicleSmashable
   - type: Sprite

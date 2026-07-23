@@ -406,7 +406,7 @@
 - type: entity
   parent: RMCLightFixtureAlwaysPowered
   id: RMCLightFixtureSmallAlwaysPowered
-  description: Маленький настіннийсвітильник, обладнаний яскравою флуоресцентною лампочкою. Задивіться на нього й в вас підуть сльози.
+  description: Маленький настінний світильник, обладнаний яскравою флуоресцентною лампочкою. Задивіться на нього й в вас підуть сльози.
   suffix: Always powered, DO NOT MAP
   components:
   - type: Sprite

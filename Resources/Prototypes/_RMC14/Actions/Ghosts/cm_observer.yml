@@ -75,8 +75,8 @@
 
 - type: entity
   id: ActionStopBeingFriends
-  name: Leave Friend
-  description: Stop being an imaginary friend.
+  name: Покинути друга
+  description: Більше не бути уявним другом цієї істоти.
   components:
   - type: Action
     checkCanInteract: false
