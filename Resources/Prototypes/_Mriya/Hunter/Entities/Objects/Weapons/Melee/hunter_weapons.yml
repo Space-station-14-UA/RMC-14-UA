@@ -197,6 +197,7 @@
       types:
         Piercing: 30
   - type: Sharp
+  - type: HunterRecallWeapon
   - type: EmbeddableProjectile
   - type: ThrowingAngle
     angle: 135

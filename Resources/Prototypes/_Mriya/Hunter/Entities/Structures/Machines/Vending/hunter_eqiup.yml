@@ -36,6 +36,9 @@
       - id: HunterStaff
         name: Посох Таруулана
         amount: 3
+      - id: HunterSpear
+        name: Спис
+        amount: 3
       - id: HunterScytheCleaving
         name: Бойова коса
         amount: 3
