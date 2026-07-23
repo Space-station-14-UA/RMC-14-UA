@@ -3,7 +3,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Content.Shared._Sich.Language;
 
-namespace Content.Client._Sich.Language.UI;
+namespace Content.Client._Mriya.Hunter.Language.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class HunterTranslatorWindow : DefaultWindow

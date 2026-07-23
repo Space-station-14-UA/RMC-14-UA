@@ -4,7 +4,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Content.Client._RMC14.Vendors;
 
-namespace Content.Client._Sich.Hunter;
+namespace Content.Client._Mriya.Hunter;
 
 [GenerateTypedNameReferences]
 public sealed partial class SichHunterVendorPanel : Control

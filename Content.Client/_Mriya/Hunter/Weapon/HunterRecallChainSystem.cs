@@ -2,7 +2,7 @@ using System.Numerics;
 using Content.Shared._Sich.Hunter.Weapon;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Sich.Hunter.Weapon;
+namespace Content.Client._Mriya.Hunter.Weapon;
 
 public sealed class HunterRecallChainSystem : EntitySystem
 {

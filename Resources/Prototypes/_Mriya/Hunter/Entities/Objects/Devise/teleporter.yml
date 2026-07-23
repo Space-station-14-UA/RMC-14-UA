@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: HunterTeleporter
-  name: телепортер мисливця
-  description: Просунутий пристрій телепортації, розроблений мисливцями. Дозволяє миттєво переміщуватися на значні відстані з певними обмеженнями.
+  name: телепортер
+  description: Просунутий пристрій телепортації. Дозволяє миттєво переміщуватися на значні відстані.
   components:
   - type: Sprite
     sprite: _Mriya/Hunter/Objects/Devices/teleporter.rsi
@@ -22,4 +22,15 @@
       enum.HunterTeleporterUiKey.Key:
         type: HunterTeleporterBui
   - type: HunterTeleporter
+
+- type: entity
+  parent: MarkerBase
+  id: HunterReturnPoint
+  name: Точка повернення
+  description: Маркер для повернення на Левіафан Тіней
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: HunterReturnPoint
 

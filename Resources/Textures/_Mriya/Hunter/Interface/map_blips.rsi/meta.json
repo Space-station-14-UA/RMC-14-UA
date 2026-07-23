@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Original by Mriya, custom artwork for RMC-14-UA",
+  "size": {
+    "x": 7,
+    "y": 7
+  },
+  "states": [
+    {
+      "name": "young"
+    },
+    {
+      "name": "pred"
+    },
+    {
+      "name": "captain"
+    },
+    {
+      "name": "thrall"
+    }
+  ]
+}

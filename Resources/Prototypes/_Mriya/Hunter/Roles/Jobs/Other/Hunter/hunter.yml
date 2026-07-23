@@ -1,42 +1,60 @@
 - type: job
   parent: CMJobBase
-  id: CMHunter
+  id: MRHunter
   name: Мисливець
-  description: Мисливець що вже почав полювання.
-  startingGear: RMCGearHunter
+  description: Мисливець, чий час полювання настав.
+  accessGroups:
+    - Colony
   hasIcon: false
   departmentRadio: null
   headOfDepartment: null
-  playTimeTracker: JobCMHunter
+  playTimeTracker: JobMRHunter
+  whitelisted: true
   special:
   - !type:AddComponentSpecial
     components:
     - type: NpcFactionMember
       factions:
       - Hunters
+    - type: Skills
+      skills:
+        RMCSkillConstruction: 2
+        RMCSkillCqc: 2
+        RMCSkillEndurance: 2
+        RMCSkillEngineer: 2
+        RMCSkillFirearms: 1
+        RMCSkillJtac: 3
+        RMCSkillMedical: 2
+  # Ранги відображаються від найвищого до найнижчого.
+  # Командир, Голова та Старійшини — не досяжні через час.
+  # Мисливець — 10 годин. Юна кров — за замовчуванням.
+  ranks:
+    MRRankHunter:
+    - !type:RoleTimeRequirement
+      role: JobMRHunter
+      time: 36000 # 10 годин
+    MRRankYoungBlood: []
+
 
 - type: playTimeTracker
-  id: JobCMHunter
+  id: JobMRHunter
   name: Мисливець
   isHumanoid: true
-
-- type: startingGear
-  id: RMCGearHunter
-  equipment:
-    jumpsuit: RMCHunterUniform
-    outerClothing: RMCArmorHunter
-    gloves: RMCHunterBracers
-    shoes: RMCBootsHunter
-    belt: RMCBeltBag
-    head: RMCHunterMask
 
 - type: entity
   parent: CMMobHunter
   id: CMMobHunterGhostRole
   suffix: Гост роль
   components:
+  - type: GhostRole
+    name: Мисливець
+    description: Мисливець, чий час полювання настав.
+    rules: Дотримуйтесь кодексу мисливця.
+    job: MRHunter
+    raffle:
+      settings: default
   - type: RMCJobSpawner
-    job: CMHunter
+    job: MRHunter
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: RandomMetadata
@@ -53,7 +71,7 @@
   - type: HumanoidAppearance
     species: Hunter
   - type: SpawnPoint
-    job_id: CMHunter
+    job_id: MRHunter
   - type: Sprite
     layers:
     - sprite: _RMC14/Markers/landmarks.rsi

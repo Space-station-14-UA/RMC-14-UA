@@ -7,11 +7,11 @@
   components:
   - type: Sprite
     sprite: _Mriya/Hunter/Objects/Devices/hunter_module.rsi
-    state: icon
+    state: visor
   - type: Visor
     onIcon:
       sprite: _Mriya/Hunter/Objects/Devices/hunter_module.rsi
-      state: icon
+      state: visor
   - type: RMCHunterNightVisionVisor
   - type: ToggleVisor
     ignoreRedundancy: true

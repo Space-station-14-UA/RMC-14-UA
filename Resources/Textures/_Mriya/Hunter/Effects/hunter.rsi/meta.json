@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "Sprites by HITAroko, adapted and installed by 2Sensei2. Updated by Pgriha",
+    "copyright": "Taken from CMSS13 at https://github.com/cmss13-devs/cmss13/blob/b3a7ffe2813a31ddcf429a5a864b4048851d66b0/icons/obj/items/hunter/pred_gear.dmi",
     "states": [
         {
             "name": "chain"

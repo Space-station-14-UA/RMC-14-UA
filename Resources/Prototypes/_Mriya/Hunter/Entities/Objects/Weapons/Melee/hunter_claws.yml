@@ -19,7 +19,7 @@
     attackRate: 1.6
     damage:
       types:
-        Slash: 12
+        Slash: 25
     soundHit:
       path: /Audio/_Mriya/Hunter/wristblades_hit.ogg
   - type: HunterClaws

@@ -22,7 +22,7 @@ public sealed class HunterTeleportRequestMsg(Vector2i position) : BoundUserInter
 }
 
 /// <summary>
-/// DoAfter event raised when the stand-still channel completes.
+/// DoAfter event raised when the stand-still channel completes (teleport to planet position).
 /// </summary>
 [Serializable, NetSerializable]
 public sealed partial class HunterTeleportDoAfterEvent : SimpleDoAfterEvent
@@ -33,4 +33,13 @@ public sealed partial class HunterTeleportDoAfterEvent : SimpleDoAfterEvent
     {
         TargetPosition = targetPosition;
     }
+}
+
+/// <summary>
+/// DoAfter event raised when the hunter activates the teleporter while on the planet,
+/// triggering a return to the Leviathan of the Shadows.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class HunterReturnToShipDoAfterEvent : SimpleDoAfterEvent
+{
 }

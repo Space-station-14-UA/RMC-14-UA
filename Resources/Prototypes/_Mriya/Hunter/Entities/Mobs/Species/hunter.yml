@@ -3,7 +3,7 @@
   name: Мисливець
   parent: BaseMobSpeciesHunter
   id: CMMobHunter
-  suffix: Sich, Hunter
+  suffix: Базовий
   components:
   - type: GuideHelp
     guides:

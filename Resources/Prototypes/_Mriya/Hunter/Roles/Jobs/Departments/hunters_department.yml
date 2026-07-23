@@ -1,10 +1,10 @@
 - type: department
   parent: CMDepartmentBase
-  id: CMHunters
-  name: department-CMHunters
-  description: cm-department-Hunters-description
+  id: MRHunters
+  name: department-mrhunters
+  description: mr-department-hunters-description
   color: "#c0c0c0"
   roles:
-  - CMHunter
+  - MRHunter
   departmentRadio: null
   headOfDepartment: null

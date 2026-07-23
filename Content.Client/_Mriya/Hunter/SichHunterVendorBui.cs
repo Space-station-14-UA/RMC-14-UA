@@ -18,7 +18,7 @@ using Robust.Shared.Utility;
 using static System.StringComparison;
 using static Robust.Client.UserInterface.Controls.LineEdit;
 
-namespace Content.Client._Sich.Hunter;
+namespace Content.Client._Mriya.Hunter;
 
 [UsedImplicitly]
 public sealed class SichHunterVendorBui : BoundUserInterface

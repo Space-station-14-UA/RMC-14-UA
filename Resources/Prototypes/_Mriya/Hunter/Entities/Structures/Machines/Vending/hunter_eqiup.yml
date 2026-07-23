@@ -1,13 +1,13 @@
 - type: entity
   parent: HuntTechBaseAnchorable
   id: HuntTech
-  name: Стійка спорядження мисливця
+  name: Стійка спорядження
   description: Масивна стійка з спорядженням для полювання
   components:
   - type: CMAutomatedVendor
     hackable: true
     sections:
-    - name: Основні мисливські припаси
+    - name: Основні мисливські набори
       takeAll: CMStandard
       entries:
       - id: VendorBundleHunterClothing
@@ -63,17 +63,8 @@
       - id: RMCHunterScimitarModule
         name: Ятагани
         amount: 3
-    - name: Аксесуари
+    - name: Плащі
       entries:
-      - id: RMCHunterCape
-        name: Плащ
-        amount: 3
-      - id: RMCHunterCapeCeremonial
-        name: Церемоніальний плащ
-        amount: 3
-      - id: RMCHunterCapeDamaged
-        name: Пошкоджений плащ
-        amount: 3
       - id: RMCHunterCapeHalf
         name: Половина плаща
         amount: 3
@@ -85,6 +76,33 @@
         amount: 3
       - id: RMCHunterCapeThird
         name: Третина плаща
+        amount: 3
+    - name: Плащ мисливця
+      ranks:
+      - MRRankHunter
+      - MRRankClanCommander
+      - MRRankClanHead
+      - MRRankElders
+      entries:
+      - id: RMCHunterCape
+        name: Плащ мисливця
+        amount: 3
+    - name: Плащ командира клану
+      ranks:
+      - MRRankClanCommander
+      - MRRankClanHead
+      - MRRankElders
+      entries:
+      - id: RMCHunterCapeDamaged
+        name: Пошкоджений плащ
+        amount: 3
+    - name: Плащ голови клану
+      ranks:
+      - MRRankClanHead
+      - MRRankElders
+      entries:
+      - id: RMCHunterCapeCeremonial
+        name: Церемоніальний плащ
         amount: 3
   - type: UserInterface
     interfaces:

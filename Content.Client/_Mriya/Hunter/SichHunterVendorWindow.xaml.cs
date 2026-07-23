@@ -3,7 +3,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client._Sich.Hunter;
+namespace Content.Client._Mriya.Hunter;
 
 [GenerateTypedNameReferences]
 public sealed partial class SichHunterVendorWindow : DefaultWindow

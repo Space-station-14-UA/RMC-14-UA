@@ -4,7 +4,6 @@
   id: BaseMobSpeciesHunter
   abstract: true
   name: Urist C.M. McHunter
-  suffix: Sich
   components:
   - type: Fixtures
     fixtures:
@@ -73,6 +72,11 @@
     - DoorBumpOpener
   - type: RMCSuitLight
   - type: Hunter
+  - type: Language
+    currentLanguage: Hunter
+    defaultLanguage: Hunter
+    spokenLanguages:
+    - Hunter
   - type: HunterEnergy
     energy: 1000
     maxEnergy: 1000
@@ -192,8 +196,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      250: Critical
-      300: Dead
+      400: Critical
+      450: Dead
   - type: MobStateActions
     actions:
       Critical:

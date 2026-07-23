@@ -434,3 +434,51 @@
   - type: Icon
     sprite: _Mriya/Hunter/Structures/Props/console.rsi
     state: overwatch
+
+
+# Яутджа-руни (пропи без взаємодії)
+
+- type: entity
+  id: HunterBigRed
+  name: яутджа-руна (велика)
+  description: Давній символ мисливців, намальований на поверхні.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: FloorObjects
+    noRot: false
+    sprite: _Mriya/Hunter/Structures/Props/yautja_red_decals.rsi
+    state: big_red
+
+- type: entity
+  id: HunterMedRedBottom
+  name: яутджа-руна (середня)
+  description: Давній символ мисливців, намальований на поверхні.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: FloorObjects
+    noRot: false
+    sprite: _Mriya/Hunter/Structures/Props/yautja_red_decals.rsi
+    state: med_red_bottom
+
+- type: entity
+  id: HunterSmallRed
+  name: яутджа-руна (мала)
+  description: Давній символ мисливців, намальований на поверхні.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: FloorObjects
+    noRot: false
+    sprite: _Mriya/Hunter/Structures/Props/yautja_red_decals.rsi
+    state: smal_red

@@ -1,4 +1,3 @@
-# Autodoc Medical Pod (Hunter)
 - type: entity
   parent: RMCAutodoc
   id: AutodocHunter
@@ -28,7 +27,6 @@
   - type: ApcPowerReceiver
     needsPower: false
 
-# Autodoc Console (Hunter)
 - type: entity
   parent: RMCAutodocConsole
   id: AutodocHunterConsole

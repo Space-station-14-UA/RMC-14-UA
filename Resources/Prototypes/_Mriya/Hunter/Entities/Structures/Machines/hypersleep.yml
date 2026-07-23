@@ -1,6 +1,6 @@
 - type: entity
   parent: CryogenicSleepUnit
-  id: RMCHunterHypersleep
+  id: MRHunterCryo
   name: гіперсон
   description: Капсула для тривалого космічного сну, створена спеціально для мисливців.
   suffix: Mriya, Hunter
@@ -19,16 +19,8 @@
           False: { state: open }
 
 - type: entity
-  parent: RMCHunterHypersleep
-  id: RMCHunterHypersleepSpawner
-  suffix: Spawner, Roundstart AllJobs
-  components:
-  - type: ContainerSpawnPoint
-    containerId: storage
-
-- type: entity
-  parent: RMCHunterHypersleep
-  id: RMCHunterHypersleepSpawnerLateJoin
+  parent: MRHunterCryo
+  id: MRHunterCryoSpawnerLateJoin
   suffix: Spawner, LateJoin
   components:
   - type: ContainerSpawnPoint

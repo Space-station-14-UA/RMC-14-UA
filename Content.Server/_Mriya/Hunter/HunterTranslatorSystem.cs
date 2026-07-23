@@ -102,7 +102,8 @@ public sealed class HunterTranslatorSystem : EntitySystem
             message = message[..component.MaxLength];
 
 
-        AddComp<HunterTranslatingMessageComponent>(sender);
+        var translatingComp = AddComp<HunterTranslatingMessageComponent>(sender);
+        translatingComp.TranslationTarget = component.TranslationTarget;
 
         try
         {

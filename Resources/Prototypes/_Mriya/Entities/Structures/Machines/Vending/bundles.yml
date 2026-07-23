@@ -1,7 +1,7 @@
 - type: entity
   id: VendorBundleHunterArmor
   name: набір броні мисливця
-  description: Містить маску та броню мисливця
+  description: Містить броню для полювання
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -11,13 +11,12 @@
     bundle:
     - RMCHunterMask
     - RMCArmorHunter
-    - RMCBeltBag
     - RMCBootsHunter
 
 - type: entity
   id: VendorBundleHunterClothing
-  name: набір одягу мисливця
-  description: Містить звичний одяг мисливця
+  name: основний набір 
+  description: Містить одяг та основне спорядження
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -27,3 +26,5 @@
     bundle:
     - RMCHunterUniform
     - RMCMediComp
+    - HunterTeleporter
+    - RMCBeltBag

@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.Controls;
 using Content.Shared._Sich.Hunter;
 using Robust.Shared.Maths;
 
-namespace Content.Client._Sich.Hunter;
+namespace Content.Client._Mriya.Hunter;
 
 public sealed partial class HunterCrewWindow : DefaultWindow
 {

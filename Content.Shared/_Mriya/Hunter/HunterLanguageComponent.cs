@@ -12,9 +12,8 @@ public sealed partial class HunterLanguageComponent : Component
     [DataField("understandsHuman")]
     public bool UnderstandsHuman = true;
 
-
-    [DataField("obfuscationPrefix")]
-    public string ObfuscationPrefix = "cm-hunter-speech-obfuscated-";
+    [DataField("understandsAllLanguages")]
+    public bool UnderstandsAllLanguages = true;
 }
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
@@ -46,7 +45,11 @@ public enum HunterTranslationCategory : byte
 }
 
 [RegisterComponent]
-public sealed partial class HunterTranslatingMessageComponent : Component {}
+public sealed partial class HunterTranslatingMessageComponent : Component
+{
+    [DataField]
+    public HunterTranslationCategory TranslationTarget = HunterTranslationCategory.All;
+}
 
 [Serializable, NetSerializable]
 public enum HunterTranslatorUiKey : byte

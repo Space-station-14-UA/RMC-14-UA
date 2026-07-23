@@ -1,5 +1,5 @@
 - type: entity
-  id: SichMicrowave
+  id: MRHuntMicrowave
   parent: KitchenMicrowave
   name: мікрохвильова піч
   description: Пристрій для швидкого приготування їжі за допомогою мікрохвильових хвиль.
@@ -33,17 +33,11 @@
     needsPower: false
 
 - type: entity
-  id: SichVendingMachineHuntSoda
-  parent: VendingMachineCola
+  id: MRHuntSoda
+  parent: CMDispenserSoda
   name: хант-сода
   description: Автомат для видачі безалкогольних напоїв людей.
   components:
-  - type: VendingMachine
-    offState: soda
-    brokenState: soda
-    normalState: soda
-    ejectState: soda
-    denyState: soda
   - type: ApcPowerReceiver
     needsPower: false
   - type: Sprite
@@ -57,17 +51,11 @@
       shader: unshaded
 
 - type: entity
-  id: SichVendingMachineHuntBooze
-  parent: VendingMachineBooze
+  id: MRHuntBooze
+  parent: CMDispenserBooze
   name: алко-хант
   description: Автомат для видачі алкогольних напоїв людей.
   components:
-  - type: VendingMachine
-    offState: booze
-    brokenState: booze
-    normalState: booze
-    ejectState: booze
-    denyState: booze
   - type: ApcPowerReceiver
     needsPower: false
   - type: Sprite
@@ -81,8 +69,8 @@
       shader: unshaded
 
 - type: entity
-  parent: CMLockerFridge
-  id: HunterLockerFridgeEmpty
+  parent: RMCCrateFreezer
+  id: HunterFridgeEmpty
   name: холодильник
   description: Холодильник для зберігання м'яса
   suffix: Пустий
@@ -95,8 +83,8 @@
   - type: AntiRottingContainer
 
 - type: entity
-  parent: HunterLockerFridgeEmpty
-  id: HunterLockerFridgeMeat
+  parent: HunterFridgeEmpty
+  id: HunterFridgeMeat
   name: холодильник
   suffix: (М'ясо)
   components:
@@ -106,8 +94,8 @@
       amount: 14
 
 - type: entity
-  parent: HunterLockerFridgeEmpty
-  id: HunterLockerFridgeXeno
+  parent: HunterFridgeEmpty
+  id: HunterFridgeXeno
   name: холодильник
   suffix: (Ксено)
   components:
@@ -117,8 +105,8 @@
       amount: 14
 
 - type: entity
-  parent: HunterLockerFridgeEmpty
-  id: HunterLockerFridgeFilled
+  parent: HunterFridgeEmpty
+  id: HunterFridgeFilled
   name: холодильник
   suffix: (Ксено + М'ясо)
   components:
@@ -170,7 +158,7 @@
 
 - type: entity
   parent: CMCatwalk
-  id: SichGrate
+  id: MRHunterGrate
   name: решітка
   description: Решітка... Просто решітка
   components:
@@ -183,7 +171,7 @@
 
 - type: entity
   parent: SpaceHeaterEnabled
-  id: SichFreezer
+  id: MRHunterFreezer
   name: охолоджувач
   description: Пасивний охолоджувач, що генерує холод у зоні навколо.
   components:
@@ -211,7 +199,7 @@
 
 - type: entity
   parent: CMVendorDinnerware
-  id: SichVendorDinnerware
+  id: MRHunterDinnerware
   name: роздавач посуду
   description: Автомат для видачі столових приборів та кухонного приладдя.
   components:
@@ -231,8 +219,8 @@
     needsPower: false
 
 - type: entity
-  parent: RMCChemMasterIndustrial
-  id: SichChemMasterIndustrial
+  parent: RMCKitchenReagentGrinder
+  id: MRHunterMixer
   name: міксер
   description: Хімічний маніпулятор промислового класу.
   components:
@@ -252,10 +240,6 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
-  - type: AccessReader
-    _deleted: true
-  - type: RequiresSkill
-    _deleted: true
   - type: ApcPowerReceiver
     needsPower: false
 

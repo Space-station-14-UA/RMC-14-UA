@@ -1,7 +1,7 @@
 using Content.Shared._Sich.Language;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Sich.Language.UI;
+namespace Content.Client._Mriya.Hunter.Language.UI;
 
 public sealed class HunterTranslatorBoundUserInterface : BoundUserInterface
 {

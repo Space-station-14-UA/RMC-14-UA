@@ -61,9 +61,9 @@ public sealed class HunterCasterSystem : EntitySystem
                 Dirty(armor.Value, comp);
                 
                 _audio.PlayPvs(comp.SoundOff, performer);
+                _popup.PopupEntity(Loc.GetString("hunter-caster-retracted"), performer, performer);
             }
             
-            _popup.PopupEntity("Ви згорнули плазмовий кастер.", performer, performer);
             return;
         }
         
@@ -76,12 +76,12 @@ public sealed class HunterCasterSystem : EntitySystem
                 comp.Active = true;
                 comp.SpawnedCaster = caster;
                 _audio.PlayPvs(comp.SoundOn, performer);
-                _popup.PopupEntity("Ви розгорнули плазмовий кастер.", performer, performer);
+                _popup.PopupEntity(Loc.GetString("hunter-caster-deployed"), performer, performer);
             }
             else
             {
                 QueueDel(caster);
-                _popup.PopupEntity("Ваші руки зайняті!", performer, performer);
+                _popup.PopupEntity(Loc.GetString("hunter-caster-hands-busy"), performer, performer);
             }
             
             Dirty(armor.Value, comp);
@@ -135,11 +135,9 @@ public sealed class HunterCasterSystem : EntitySystem
         
         var modeName = comp.CurrentMode switch
         {
-            HunterCasterMode.Disabler => "Дезайблер",
-            HunterCasterMode.Immobilizer => "Паралізуючий вибух",
-            HunterCasterMode.Bolt => "Плазмовий постріл",
-            HunterCasterMode.Eradicator => "Плазмовий знищувач",
-            _ => "Невідомо"
+            HunterCasterMode.Disabler => Loc.GetString("hunter-caster-mode-disabler"),
+            HunterCasterMode.Bolt     => Loc.GetString("hunter-caster-mode-bolt"),
+            _                         => Loc.GetString("hunter-caster-mode-unknown")
         };
 
         // Update ammo provider with mode-specific cost and projectile
@@ -147,11 +145,9 @@ public sealed class HunterCasterSystem : EntitySystem
         {
             var (cost, proto) = comp.CurrentMode switch
             {
-                HunterCasterMode.Disabler        => (30f,   "ProjectileHunterStun"),
-                HunterCasterMode.Immobilizer => (150f,  "ProjectileHunterImmobilizer"),
-                HunterCasterMode.Bolt        => (175f,  "PlasmaRifleBolt"),
-                HunterCasterMode.Eradicator  => (1000f, "ProjectileHunterEradicator"),
-                _                            => (30f,   "ProjectileHunterStun")
+                HunterCasterMode.Disabler => (30f,   "ProjectileHunterStun"),
+                HunterCasterMode.Bolt     => (175f,  "PlasmaRifleBolt"),
+                _                         => (30f,   "ProjectileHunterStun")
             };
 
             ammo.FireCost = cost;
@@ -160,7 +156,7 @@ public sealed class HunterCasterSystem : EntitySystem
         }
 
         if (_net.IsServer)
-            _popup.PopupEntity($"Режим змінено на: {modeName}", args.UserUid, args.UserUid);
+            _popup.PopupEntity(Loc.GetString("hunter-caster-mode-changed", ("mode", modeName)), args.UserUid, args.UserUid);
 
         args.Handled = true;
     }

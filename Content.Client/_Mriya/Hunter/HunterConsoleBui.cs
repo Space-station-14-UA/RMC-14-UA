@@ -2,7 +2,7 @@ using Content.Shared._Sich.Hunter;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Sich.Hunter;
+namespace Content.Client._Mriya.Hunter;
 
 [UsedImplicitly]
 public sealed class HunterCrewBui : BoundUserInterface

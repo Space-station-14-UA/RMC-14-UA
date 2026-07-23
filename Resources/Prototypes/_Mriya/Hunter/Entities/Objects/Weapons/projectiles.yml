@@ -18,8 +18,6 @@
     radius: 3.25
     energy: 2.2
 
-# ---- Impact Effects ----
-
 - type: entity
   id: PlasmaImpactEffect
   categories: [ HideSpawnMenu ]
@@ -134,12 +132,18 @@
     forceSound: true
     damage:
       types:
-        Heat: 0
+        Heat: 50
   - type: PointLight
     enabled: true
     color: "#50d9ff"
     radius: 3.25
     energy: 2.1
+  - type: RMCProjectileDamageFalloff
+    thresholds:
+    - range: 20
+      falloff: 0.1
+      ignoreModifiers: true
+    minRemainingDamageMult: 0.85
   - type: TimedDespawn
     lifetime: 4
 
@@ -153,7 +157,7 @@
     impactEffect: PlasmaImpactEffect
     damage:
       types:
-        Heat: 18
+        Heat: 40
   - type: TriggerOnCollide
     fixtureID: projectile
   - type: ExplodeOnTrigger
@@ -183,8 +187,8 @@
     impactEffect: PlasmaHeavyImpactEffect
     damage:
       types:
-        Heat: 32
-        Structural: 8
+        Heat: 45
+        Structural: 30
   - type: IgniteOnCollide
     fireStacks: 0.35
   - type: TriggerOnCollide
@@ -234,3 +238,28 @@
       types:
         Piercing: 24
         Slash: 6
+
+- type: entity
+  id: ProjectileHunterStun
+  parent: BaseBullet
+  name: stun bolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/stun_projectiles.rsi
+    layers:
+    - state: stun
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 0
+  - type: StaminaDamageOnHit
+    damage: 50
+  - type: RMCStunOnHit
+    stuns:
+    - stunTime: 5
+      stunArea: 0.1
+  - type: StunOnCollide
+    stunAmount: 5
+    knockdownAmount: 5

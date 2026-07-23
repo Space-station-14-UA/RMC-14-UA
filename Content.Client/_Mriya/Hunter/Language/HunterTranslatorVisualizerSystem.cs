@@ -3,7 +3,7 @@ using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Inventory;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Sich.Language;
+namespace Content.Client._Mriya.Hunter.Language;
 
 public sealed class HunterTranslatorVisualizerSystem : EntitySystem
 {

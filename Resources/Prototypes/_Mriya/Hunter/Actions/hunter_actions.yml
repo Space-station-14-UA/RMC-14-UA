@@ -1,4 +1,3 @@
-# Використовується кастомна система фону
 - type: entity
   parent: BaseAction
   id: ActionToggleHunterCloak
@@ -29,7 +28,7 @@
   description: Завдяки еволюційним перевагам та надзвичайно потужним м'язам, мисливець здатний здійснювати стрибки довжиною майже чотири метри.
   components:
   - type: Action
-    useDelay: 8
+    useDelay: 5
     icon:
       sprite: _Mriya/Hunter/Actions/hunter_action.rsi
       state: jump
@@ -82,9 +81,6 @@
     background:
       sprite: _Mriya/Hunter/Actions/hunter_action.rsi
       state: hunter_template
-    backgroundOn:
-      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
-      state: hunter_template_on
   - type: InstantAction
     event: !type:HunterRecallActionEvent {}
 - type: entity
@@ -127,3 +123,24 @@
   - type: InstantAction
     event: !type:HunterZoomActionEvent {}
 
+- type: entity
+  id: HunterActionTranslator
+  parent: BaseAction
+  name: hunter-action-translator-name
+  description: hunter-action-translator-desc
+  components:
+  - type: Action
+    useDelay: 0
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Mriya/Hunter/Actions/translator.rsi
+      state: icon
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+    backgroundOn:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template_on
+  - type: InstantAction
+    event: !type:HunterTranslatorActionEvent

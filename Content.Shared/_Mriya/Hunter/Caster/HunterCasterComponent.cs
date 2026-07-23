@@ -43,10 +43,8 @@ public SoundSpecifier? SoundOn = new SoundPathSpecifier("/Audio/_Mriya/Hunter/pr
 [Serializable, NetSerializable]
 public enum HunterCasterMode : byte
 {
-    Disabler,
-    Immobilizer,
-    Bolt,
-    Eradicator
+    Disabler,  // Нелетальний: знерухомлення
+    Bolt,      // Летальний: плазмовий постріл
 }
 
 [Serializable, NetSerializable]

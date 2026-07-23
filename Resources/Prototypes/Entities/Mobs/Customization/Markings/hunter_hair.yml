@@ -3,9 +3,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: standard
 
 - type: marking
@@ -13,9 +14,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: short_thick
 
 - type: marking
@@ -23,9 +25,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: straight_thin
 
 - type: marking
@@ -33,9 +36,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: long_tied
 
 - type: marking
@@ -43,9 +47,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: short_thin
 
 - type: marking
@@ -53,9 +58,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: long_curved
 
 - type: marking
@@ -63,9 +69,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: long_straight
 
 - type: marking
@@ -73,9 +80,10 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: long_wide
 
 - type: marking
@@ -83,7 +91,8 @@
   bodyPart: Hair
   markingCategory: Hair
   canBeDisplaced: false
+  RMCFollowSkinColor: false
   speciesRestriction: [Hunter]
   sprites:
-    - sprite: Mobs/Customization/hunter_hair.rsi
+    - sprite: _Mriya/Hunter/Mobs/Customization/hunter_hair.rsi
       state: short_wide

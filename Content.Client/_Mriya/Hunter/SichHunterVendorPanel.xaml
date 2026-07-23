@@ -1,6 +1,6 @@
 <controls:SichHunterVendorPanel
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client._Sich.Hunter"
+    xmlns:controls="clr-namespace:Content.Client._Mriya.Hunter"
     xmlns:rmc="clr-namespace:Content.Client._RMC14.Vendors"
     HorizontalExpand="True">
     <PanelContainer Name="Panel" Access="Public">
