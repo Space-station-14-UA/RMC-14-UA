@@ -3,9 +3,9 @@
 - type: entity
   parent: RMCGunRackBase
   id: RMCGunRackM34IncineratorEmpty
-  name: M34 Incinerator rack
+  name: стійка для вогнеметів М34
   suffix: M34 Incinerator, Empty
-  description: AEGIS-produced gun rack for storage of long guns. While initial model was supposed to be extremely modifiable, UNMC commissioned racks with fixed slots which only fit M34 Incinerator Units. Some say they were cheaper, and some say the main reason was marine's ability to easily break anything more complex than a tungsten ball.
+  description: Стійка виробництва компанії ЕГІДА для зберігання довгоствольної зброї. Хоча початкова модель мала бути надзвичайно адаптивною, КМПОН замовили стійки з фіксованими кріпленнями, виготовленими виключно для вогнеметів М34. Дехто каже, що вони були дешевшими, а дехто стверджує, що головною причиною стала здатність морпіхів легко зламати все, що складніше за вольфрамову кульку.
   components:
   - type: ContainerContainer
     containers:
