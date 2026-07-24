@@ -255,7 +255,7 @@
         amount: 10
       - id: RMCBoxPackFlareCAS
         amount: 1
-    - name: Sidearms
+    - name: Пістолети
       entries:
       - id: RMCWeaponPistolM77
         amount: 5
