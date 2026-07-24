@@ -6,8 +6,6 @@
   accessGroups:
     - Colony
   hasIcon: false
-  departmentRadio: null
-  headOfDepartment: null
   playTimeTracker: JobMRHunter
   whitelisted: true
   special:
@@ -38,13 +36,12 @@
 
 - type: playTimeTracker
   id: JobMRHunter
-  name: Мисливець
+  name: playtime-tracking-job-mrhunter
   isHumanoid: true
 
 - type: entity
   parent: CMMobHunter
   id: CMMobHunterGhostRole
-  suffix: Гост роль
   components:
   - type: GhostRole
     name: Мисливець

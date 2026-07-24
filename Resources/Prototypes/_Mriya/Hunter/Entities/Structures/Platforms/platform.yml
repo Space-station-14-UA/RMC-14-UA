@@ -8,7 +8,7 @@
     sprite: _Mriya/Hunter/Structures/platforms.rsi
     state: hunter_platform
   - type: Construction
-    graph: HunterPlatformBaseDestructible
+    graph: CMPlatformBaseDestructible
     node: start
 
 - type: entity
@@ -25,7 +25,7 @@
     sprite: _RMC14/Structures/platforms.rsi
     state: hunter_platform_broken
   - type: Construction
-    graph: HunterPlatformBaseDestructible
+    graph: CMPlatformBaseDestructible
     node: platformBroken
 
 - type: entity
@@ -38,7 +38,7 @@
     sprite: _Mriya/Hunter/Structures/platforms.rsi
     state: hunter_platform_round
   - type: Construction
-    graph: HunterPlatformBaseDestructible
+    graph: CMPlatformBaseDestructible
     node: start
 
 - type: entity
@@ -51,7 +51,7 @@
     sprite: _Mriya/Hunter/Structures/platforms.rsi
     state: hunter_platform_corner
   - type: Construction
-    graph: HunterPlatformBaseDestructible
+    graph: CMPlatformBaseDestructible
     node: start
   
 - type: entity
@@ -64,5 +64,5 @@
     sprite: _Mriya/Hunter/Structures/platforms.rsi
     state: hunter_platform_deco
   - type: Construction
-    graph: HunterPlatformBaseDestructible
+    graph: CMPlatformBaseDestructible
     node: start

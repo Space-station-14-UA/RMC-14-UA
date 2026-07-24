@@ -26,9 +26,6 @@
           Broken: { visible: false }
   - type: Appearance
   - type: Construction
-    _deleted: true
-  - type: Machine
-    enabled: false
   - type: ApcPowerReceiver
     needsPower: false
 
@@ -153,8 +150,8 @@
     autoRecharge: true
     autoRechargeRate: 1000000000
   - type: PowerNetworkBattery
-    maxSupply: 1000000000
-    maxCharge: 0
+    maxSupplyRate: 1000000000
+    maxChargeRate: 0
 
 - type: entity
   parent: CMCatwalk

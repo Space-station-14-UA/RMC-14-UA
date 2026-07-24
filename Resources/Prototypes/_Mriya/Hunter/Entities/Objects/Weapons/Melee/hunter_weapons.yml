@@ -214,7 +214,6 @@
       types:
         Piercing: 8
   - type: Wieldable
-    wieldInhanded: true
 
 - type: entity
   id: HunterLongAxe

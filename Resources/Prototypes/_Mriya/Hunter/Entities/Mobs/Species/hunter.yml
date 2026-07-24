@@ -1,6 +1,5 @@
 - type: entity
   save: false
-  name: Мисливець
   parent: BaseMobSpeciesHunter
   id: CMMobHunter
   suffix: Базовий

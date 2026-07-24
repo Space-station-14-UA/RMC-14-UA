@@ -5,5 +5,4 @@
 - type: accessGroup
   id: RMCAccessHunter
   tags:
-  - Colony
   - RMCAccessHunter

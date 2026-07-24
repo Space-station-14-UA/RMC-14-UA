@@ -31,10 +31,9 @@
   - type: UniqueAction
   - type: Gun
     fireRate: 1
-    useAction: true
   - type: HunterCasterAmmoProvider
     fireCost: 30
-    proto: ProjectileHunterStun
+    prototype: ProjectileHunterStun
   - type: StaticPrice
     price: 5000
   - type: WieldedCrosshair
