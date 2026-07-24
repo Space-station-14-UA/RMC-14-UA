@@ -50,8 +50,8 @@ rmc-job-prefix-rcm-pve-section-leader = ЛС
 rmc-job-name-rcm-pve-team-leader = Лідер Групи
 rmc-job-prefix-rcm-pve-team-leader = ЛГ
 
-rmc-job-name-rcm-pve-gpmg-gunner = GPMG Стрілець
-rmc-job-prefix-rcm-pve-gpmg-gunner = GPMG
+rmc-job-name-rcm-pve-gpmg-gunner = Кулеметник
+rmc-job-prefix-rcm-pve-gpmg-gunner = КЛМТ
 
 rmc-job-name-rcm-pve-medical-assistant = Медичний Асистент
 rmc-job-prefix-rcm-pve-medical-assistant = МА
@@ -66,4 +66,4 @@ rmc-job-name-rcm-pve-bombardment-specialist = Спеціаліст з Вибух
 rmc-job-prefix-rcm-pve-bombardment-specialist = СПЦВБ
 
 rmc-job-name-rcm-pve-troop-commander = Командер
-rmc-job-prefix-rcm-pve-troop-commander = Ком
+rmc-job-prefix-rcm-pve-troop-commander = КОМ

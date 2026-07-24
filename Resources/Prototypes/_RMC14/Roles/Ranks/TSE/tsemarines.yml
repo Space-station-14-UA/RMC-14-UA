@@ -24,8 +24,8 @@
 
 - type: rank
   id: RMCRankTSEColourSergeant
-  name: Флаг-Сержант
-  prefix: Фл.С-нт.
+  name: Старший-Сержант
+  prefix: Ст.С-нт.
   paygrade: E5
 
 - type: rank
@@ -91,7 +91,7 @@
 - type: rank
   id: RMCRankTSELieutenantGeneral
   name: Генерал-Лейтенант
-  prefix: Ген.Л-т. #ГенМай.
+  prefix: Ген.Л-т. #ГенЛт.
   paygrade: O9
 
 - type: rank
