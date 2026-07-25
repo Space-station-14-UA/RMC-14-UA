@@ -17,7 +17,7 @@
             CMRoyalMarinesTroopCommanderPVE: [1, 1]
 
             # Морпіхи
-          # CMRoyalMarinesTroopSargePVE: [1, 1] 
+          # CMRoyalMarinesTroopSargePVE: [1, 1] в оригіналі додаткова ланка між командером та лідерами, нам таке поки не треба.
             CMRoyalMarinesSectionLeaderPVE: [1, 1]
             CMRoyalMarinesTeamLeaderPVE: [2, 2]
             CMRoyalMarinesAssaultEngineerPVE: [2, 2]

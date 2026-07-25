@@ -26391,7 +26391,7 @@ entities:
     - type: Transform
       pos: -87.83816,-78.37434
       parent: 1
-- proto: MMCDropshipDestinationAlamo
+- proto: MMCDropshipDestinationRCMPVE
   entities:
   - uid: 463
     components:

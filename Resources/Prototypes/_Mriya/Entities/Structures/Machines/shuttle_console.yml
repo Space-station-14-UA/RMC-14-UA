@@ -14,3 +14,11 @@
   components:
   - type: DropshipDestination
     spawn: "/Maps/_Mriya/Shuttles/normandy.yml"
+
+- type: entity
+  parent: CMDropshipDestination
+  id: MMCDropshipDestinationRCMPVE
+  suffix: ПВЕ, МПК
+  components:
+  - type: DropshipDestination
+    spawn: "/Maps/_Mriya/Shuttles/rcm_pve_shuttle.yml"
