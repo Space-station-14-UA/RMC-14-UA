@@ -1,8 +1,8 @@
 - type: entity
   parent: RMCTankReagentEmpty
   id: RMCHunterTankReagentFuel
-  name: паливний бак
-  description: Паливний бак для зберігання зварювального палива.
+  name: entity-rmc-hunter-tank-fuel-name
+  description: entity-rmc-hunter-tank-fuel-description
   suffix: Fuel
   components:
   - type: Sprite
@@ -48,14 +48,19 @@
 - type: entity
   parent: RMCTankReagentEmpty
   id: RMCHunterTankReagentWater
-  name: водяний бак
-  description: Бак для зберігання води.
+  name: entity-rmc-hunter-tank-water-name
+  description: entity-rmc-hunter-tank-water-description
   suffix: Water
   components:
   - type: Sprite
     sprite: _Mriya/Hunter/Structures/Storage/hunter_tank.rsi
     layers:
     - state: water_tank
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: water_tank
+    emptySpriteName: water_tank
+    changeColor: true
   - type: SolutionContainerManager
     solutions:
       tank:

@@ -31,6 +31,8 @@
   - type: UniqueAction
   - type: Gun
     fireRate: 1
+    soundGunshot:
+      path: /Audio/_Mriya/Hunter/pred_plasmacaster_fire.ogg
   - type: HunterCasterAmmoProvider
     fireCost: 30
     prototype: ProjectileHunterStun
