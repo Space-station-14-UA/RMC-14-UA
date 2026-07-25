@@ -311,6 +311,8 @@
         crate: RMCCrateRestrictedEquipmentArmorM4
       - cost: 2000
         crate: RMCCrateRestrictedEquipmentArmorB12
+      - cost: 2000  # Mriya
+        crate: MRCrateRestrictedEquipmentBiosuitUNMC
       - cost: 2000
         crate: RMCCrateRestrictedEquipmentIntelSupportKit
       - cost: 10000 # Mriya

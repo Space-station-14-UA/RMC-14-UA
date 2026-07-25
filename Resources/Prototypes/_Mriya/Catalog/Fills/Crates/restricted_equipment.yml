@@ -10,3 +10,13 @@
     - id: RMCMaskBreath
     - id: RMCDoubleEmergencyOxygenTankFilled
     - id: MRPaperChairSupplyDropeInstruction
+
+- type: entity
+  id: MRCrateRestrictedEquipmentBiosuitUNMC
+  parent: RMCCrateSecureGear
+  name: Ящик біокостюма КМПОН (біокостюм та біозахисний каптур)
+  components:
+  - type: StorageFill
+    contents:
+    - id: MRSuitBioUNMC
+    - id: MRHoodBioUNMC

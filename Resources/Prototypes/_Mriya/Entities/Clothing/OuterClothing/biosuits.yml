@@ -1,0 +1,16 @@
+- type: entity
+  parent: RMCSuitBioGeneral
+  id: MRSuitBioUNMC
+  name: біокостюм КМПОН
+  description: Костюм, що захищає бійців КМПОН від біологічних загроз.
+  suffix: Мрія
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Clothing/OuterClothing/Misc/biosuit_unmc.rsi
+  - type: Clothing
+    sprite: _Mriya/Objects/Clothing/OuterClothing/Misc/biosuit_unmc.rsi
+  - type: CMArmor
+    melee: 10
+    bullet: 15
+    bio: 100
+    explosionArmor: 10

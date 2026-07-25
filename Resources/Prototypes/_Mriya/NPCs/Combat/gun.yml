@@ -1,0 +1,28 @@
+- type: htnCompound
+  id: MRRangedCombatCompound
+  branches:
+    - preconditions:
+        - !type:ActiveHandComponentPrecondition
+          components:
+            - type: Gun
+        - !type:WieldedPrecondition
+          wielded: false
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:WieldOperator
+    
+    - preconditions:
+        - !type:GunAmmoPrecondition
+          minPercent: 0.001
+      tasks:
+        - !type:HTNCompoundTask
+          task: GunCombatCompound
+
+    -  preconditions:
+         - !type:ActiveHandComponentPrecondition
+           components:
+             - type: Gun
+           invert: true
+       tasks:
+         - !type:HTNCompoundTask
+           task: PickupGunCompound

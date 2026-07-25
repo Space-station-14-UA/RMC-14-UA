@@ -3,9 +3,9 @@
 - type: entity
   parent: RMCGunRackBase
   id: RMCGunRackM54CEmpty
-  name: M54C gun rack
+  name: стійка для гвинтівок М54С
   suffix: M54C, Empty
-  description: AEGIS-produced gun rack for storage of long guns. While initial model was supposed to be extremely modifiable, UNMC commissioned racks with fixed slots which only fit M54C rifles. Some say they were cheaper, and some say the main reason was marine's ability to easily break anything more complex than a tungsten ball.
+  description: Стійка виробництва компанії ЕГІДА для зберігання довгоствольної зброї. Хоча початкова модель мала бути надзвичайно адаптивною, КМПОН замовили стійки з фіксованими кріпленнями, виготовленими виключно для гвинтівок М54С. Дехто каже, що вони були дешевшими, а дехто стверджує, що головною причиною стала здатність морпіхів легко зламати все, що складніше за вольфрамову кульку.
   components:
   - type: ContainerContainer
     containers:
