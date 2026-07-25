@@ -150,7 +150,7 @@
     autoRecharge: true
     autoRechargeRate: 1000000000
   - type: PowerNetworkBattery
-    maxSupplyRate: 1000000000
+    maxChargeRate: 1000000000
     maxChargeRate: 0
 
 - type: entity

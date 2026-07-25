@@ -38,8 +38,8 @@
     controlsLocked: true
   - type: DeviceNetwork
     deviceNetId: Wireless
-    transmitFrequencyId: SichHunterSensor
-    receiveFrequencyId: SichHunterSensor
+    transmitFrequencyId: MRHunterSensor
+    receiveFrequencyId: MRHunterSensor
   - type: HunterCasterProvider
     soundOn:
       path: /Audio/_Mriya/Hunter/pred_plasmacaster_on.ogg

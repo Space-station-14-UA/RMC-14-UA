@@ -9,6 +9,10 @@
     sprite: _Mriya/Hunter/Structures/Storage/hunter_tank.rsi
     layers:
     - state: fuel_tank
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 0
+    drawFilled: false
   - type: SolutionContainerManager
     solutions:
       tank:

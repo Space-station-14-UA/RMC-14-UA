@@ -240,7 +240,6 @@
   - type: Execution
     doAfterDuration: 4.0
   - type: Wieldable
-    wieldInhanded: true
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -371,7 +370,6 @@
         Piercing: 10
   - type: Sharp
   - type: Wieldable
-    wieldInhanded: true
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -435,7 +433,6 @@
         Piercing: 12
   - type: Sharp
   - type: Wieldable
-    wieldInhanded: true
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -480,7 +477,6 @@
         Blunt: 18
   - type: Sharp
   - type: Wieldable
-    wieldInhanded: true
   - type: IncreaseDamageOnWield
     damage:
       types:

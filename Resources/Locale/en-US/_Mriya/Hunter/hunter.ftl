@@ -89,10 +89,11 @@ hunter-caster-retracted = Ви згорнули кастер
 hunter-caster-deployed = Ви розгорнули кастер
 hunter-caster-hands-busy = Ваші руки зайняті!
 
+## Назви
 ent-CMMobHunter = мисливець
 ent-CMMobHunter-desc = { "" }
 ent-CMMobHunterGhostRole = { ent-CMMobHunter }
 ent-CMMobHunterGhostRole-desc = { ent-CMMobHunter-desc }
 ent-CMMobHunterGhostRole-suffix = Гост роль
-
 playtime-tracking-job-mrhunter = Мисливець
+hunter = Мисливець
