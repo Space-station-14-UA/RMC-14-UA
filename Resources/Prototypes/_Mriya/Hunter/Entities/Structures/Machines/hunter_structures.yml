@@ -151,7 +151,6 @@
     autoRechargeRate: 1000000000
   - type: PowerNetworkBattery
     maxChargeRate: 1000000000
-    maxChargeRate: 0
 
 - type: entity
   parent: CMCatwalk
