@@ -19,8 +19,27 @@ using Content.Shared._F14;
 
 namespace Content.Server._F14;
 
+/// <summary>
+/// Серверна система, що відповідає за штучний інтелект Плачучого Янгола:
+/// обчислення поглядів гравців, перевірку освітлення, заморозку фізики, наведення ШІ та завдавання шкоди.
+/// </summary>
 public sealed class WeepingAngelSystem : EntitySystem
 {
+    /// <summary>
+    /// Інтервал перевірки наявності світла(може бути змінений для оптимізації/покращення геймплею).
+    /// </summary>
+    private const float DarknessCheckInterval = 0.25f;
+
+    /// <summary>
+    /// Максимальна відстань атаки.
+    /// </summary>
+    private const float MeleeAttackRangeSquared = 2.25f;
+
+    /// <summary>
+    /// базовий домаг, на випадок якщо буде нечайно прибраний з YML.
+    /// </summary>
+    private const int DefaultBluntDamage = 175;
+
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSys = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -34,24 +53,33 @@ public sealed class WeepingAngelSystem : EntitySystem
     private float _darknessTimer = 0f;
     private readonly Dictionary<EntityUid, bool> _darknessCache = new();
 
+    /// <summary>
+    /// Ініціалізує системи та підписується на події спроби атаки.
+    /// </summary>
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<WeepingAngelComponent, AttackAttemptEvent>(OnAttackAttempt);
     }
 
+    /// <summary>
+    /// Скасовує спробу атаки, якщо на янгола дивляться.
+    /// </summary>
     private void OnAttackAttempt(EntityUid uid, WeepingAngelComponent component, AttackAttemptEvent args)
     {
         if (component.IsWatched)
             args.Cancel();
     }
 
+    /// <summary>
+    /// Оновлює стани усіх янголів у грі - аури, погляди і тд.
+    /// <param name="frameTime">Час, що минув з останнього кадру.</param>
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         _darknessTimer += frameTime;
-        bool checkDarkness = _darknessTimer >= 0.25f;
+        bool checkDarkness = _darknessTimer >= DarknessCheckInterval;
         if (checkDarkness)
             _darknessTimer = 0f;
 
@@ -88,7 +116,7 @@ public sealed class WeepingAngelSystem : EntitySystem
                     _frozenAngels.Add(angelUid);
                     _physics.SetLinearVelocity(angelUid, Vector2.Zero, body: phys);
                     _movementSys.ChangeBaseSpeed(angelUid, 0f, 0f, 0f, move);
-                    RemComp<NPCSteeringComponent>(angelUid); // Вимикаємо навігацію ШІ
+                    RemComp<NPCSteeringComponent>(angelUid);
                 }
             }
             else
@@ -109,7 +137,7 @@ public sealed class WeepingAngelSystem : EntitySystem
                     _steering.Register(angelUid, targetXform.Coordinates);
 
                     var distSqr = (targetPos - angelPos).LengthSquared();
-                    if (distSqr <= 2.25f)
+                    if (distSqr <= MeleeAttackRangeSquared)
                     {
                         if (angelComp.AttackTimer <= 0f)
                         {
@@ -124,7 +152,7 @@ public sealed class WeepingAngelSystem : EntitySystem
                             else
                             {
                                 var dmg = new DamageSpecifier();
-                                dmg.DamageDict.Add("Blunt", 175);
+                                dmg.DamageDict.Add("Blunt", DefaultBluntDamage);
                                 _damageable.TryChangeDamage(targetUid, dmg, true, origin: angelUid);
                             }
                         }
@@ -138,6 +166,53 @@ public sealed class WeepingAngelSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Мітить усіх живих гравців і активовує кліпання
+    /// </summary>
+    private void ApplyAuraOptimized(EntityUid angelUid, WeepingAngelComponent angelComp, TransformComponent angelXform, Vector2 angelPos)
+    {
+        var sqrRange = angelComp.AuraRange * angelComp.AuraRange;
+        var blinkQuery = EntityQueryEnumerator<BlinkingComponent, TransformComponent>();
+
+        while (blinkQuery.MoveNext(out var uid, out var blink, out var xform))
+        {
+            if (HasComp<WeepingAngelComponent>(uid) || HasComp<GhostComponent>(uid))
+                continue;
+
+            if (xform.MapID != angelXform.MapID) continue;
+
+            var distSqr = (_transform.GetWorldPosition(xform) - angelPos).LengthSquared();
+            if (distSqr <= sqrRange)
+            {
+                _blinking.SetInAura(uid, blink, true);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Перевіряє, чи знаходиться янгол у темряві (відсутність джерел світла).
+    /// </summary>
+    private bool IsInDarknessOptimized(TransformComponent xform, float searchRadius, Vector2 pos)
+    {
+        var lightsQuery = EntityQueryEnumerator<PointLightComponent, TransformComponent>();
+
+        while (lightsQuery.MoveNext(out var lightUid, out var light, out var lightXform))
+        {
+            if (!light.Enabled || lightXform.MapID != xform.MapID) continue;
+
+            var lightPos = _transform.GetWorldPosition(lightXform);
+            var distSqr = (lightPos - pos).LengthSquared();
+
+            if (distSqr <= light.Radius * light.Radius)
+                return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Знаходить найближчого живого гравця.
+    /// </summary>
     private (EntityUid Uid, TransformComponent Xform, Vector2 Pos)? GetNearestTarget(EntityUid angelUid, TransformComponent angelXform, Vector2 angelPos, float maxRange)
     {
         EntityUid? nearest = null;
@@ -172,44 +247,9 @@ public sealed class WeepingAngelSystem : EntitySystem
         return null;
     }
 
-    private void ApplyAuraOptimized(EntityUid angelUid, WeepingAngelComponent angelComp, TransformComponent angelXform, Vector2 angelPos)
-    {
-        var sqrRange = angelComp.AuraRange * angelComp.AuraRange;
-        var blinkQuery = EntityQueryEnumerator<BlinkingComponent, TransformComponent>();
-
-        while (blinkQuery.MoveNext(out var uid, out var blink, out var xform))
-        {
-            if (HasComp<WeepingAngelComponent>(uid) || HasComp<GhostComponent>(uid))
-                continue;
-
-            if (xform.MapID != angelXform.MapID) continue;
-
-            var distSqr = (_transform.GetWorldPosition(xform) - angelPos).LengthSquared();
-            if (distSqr <= sqrRange)
-            {
-                _blinking.SetInAura(uid, blink, true);
-            }
-        }
-    }
-
-    private bool IsInDarknessOptimized(TransformComponent xform, float searchRadius, Vector2 pos)
-    {
-        var lightsQuery = EntityQueryEnumerator<PointLightComponent, TransformComponent>();
-
-        while (lightsQuery.MoveNext(out var lightUid, out var light, out var lightXform))
-        {
-            if (!light.Enabled || lightXform.MapID != xform.MapID) continue;
-
-            var lightPos = _transform.GetWorldPosition(lightXform);
-            var distSqr = (lightPos - pos).LengthSquared();
-
-            if (distSqr <= light.Radius * light.Radius)
-                return false;
-        }
-
-        return true;
-    }
-
+    /// <summary>
+    /// Перевіряє, чи дивиться хоч один гравець на янгола.
+    /// </summary>
     private bool IsBeingWatched(EntityUid angelUid, WeepingAngelComponent angelComp, TransformComponent angelXform, Vector2 angelPos)
     {
         var playerQuery = EntityQueryEnumerator<ActorComponent, TransformComponent>();

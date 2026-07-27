@@ -4,8 +4,15 @@ using Robust.Shared.GameObjects;
 
 namespace Content.Server._F14;
 
+/// <summary>
+/// Серверна частина кліпання, яка керує відліком часу закриття очей та таймерами примусового(єдниого виду) кліпання в аурі.
+/// </summary>
 public sealed class BlinkingSystem : EntitySystem
 {
+    /// <summary>
+    /// Оновлює таймери кліпання та викликає кліпання для гравців в аурі янгола.
+    /// </summary>
+    /// <param name="frameTime">Час, що минув з останнього кадру.</param>
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -13,11 +20,9 @@ public sealed class BlinkingSystem : EntitySystem
         var query = EntityQueryEnumerator<BlinkingComponent>();
         while (query.MoveNext(out var uid, out var blink))
         {
-            // ігнор ангелів та привидів
             if (HasComp<WeepingAngelComponent>(uid) || HasComp<GhostComponent>(uid))
                 continue;
 
-            // 1. Відлік заплющених очей
             if (blink.IsBlinking)
             {
                 blink.BlinkTimer -= frameTime;
@@ -28,14 +33,12 @@ public sealed class BlinkingSystem : EntitySystem
                 }
             }
 
-            // 2. Якщо гравець поза аурою — таймер скидається
             if (!blink.InAngelAura)
             {
                 blink.ForcedBlinkTimer = blink.ForcedBlinkInterval;
                 continue;
             }
 
-            // 3. Відлік часу біля ангела
             blink.ForcedBlinkTimer -= frameTime;
             if (blink.ForcedBlinkTimer <= 0f)
             {
@@ -47,6 +50,12 @@ public sealed class BlinkingSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Дає мітку аури янгола
+    /// </summary>
+    /// <param name="uid">EntityUid сутності.</param>
+    /// <param name="blink">Компонент кліпання.</param>
+    /// <param name="inAura">Чи знаходиться в аурі.</param>
     public void SetInAura(EntityUid uid, BlinkingComponent blink, bool inAura)
     {
         if (blink.InAngelAura == inAura)
