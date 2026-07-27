@@ -1,0 +1,55 @@
+- type: entity
+  id: MRMobAngel
+  parent: BaseMob
+  name: янгол
+  description: Дивна статуя янгола.
+  suffix: Мрія
+  components:
+  - type: WeepingAngel
+    walkSpeed: 8
+    sprintSpeed: 12
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 8
+    baseSprintSpeed: 12
+  - type: CombatMode
+    isInCombatMode: true
+  - type: MobState
+  - type: Damageable
+    damageContainer: Biological
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: angel
+      sprite: _F14/Mobs/wheepingangel.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      9999: Critical
+      10000: Dead
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound 
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 0
+    animation: WeaponArcFist
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 175
+  - type: NoSlip
+  - type: RMCSize
+    size: Humanoid
+  - type: MovementIgnoreGravity
+  - type: Language
+    understoodLanguages:
+      - English 
+  - type: RMCSetPose

@@ -45,6 +45,8 @@
   - type: MovementSpeedModifier
   - type: RequireProjectileTarget
     active: False
+  - type: Blinking
+
 
 - type: entity
   save: false
