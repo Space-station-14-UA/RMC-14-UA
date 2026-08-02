@@ -1,6 +1,6 @@
 - type: entity
   id: RMCSynthGenOne
-  name: Generation One
+  name: Першого Покоління # Mriya. Родовий відмінок, бо це використовується в описі персонажів-синтів
   components:
   - type: SynthGeneration
     generation: RMCSynthGenOne
@@ -44,7 +44,7 @@
 
 - type: entity
   id: RMCSynthGenTwo
-  name: Generation Two
+  name: Другого Покоління
   components:
   - type: SynthGeneration
     generation: RMCSynthGenTwo
@@ -82,7 +82,7 @@
 
 - type: entity
   id: RMCSynthGenThree
-  name: Generation Three
+  name: Третього Покоління
   components:
   - type: SynthGeneration
     generation: RMCSynthGenThree

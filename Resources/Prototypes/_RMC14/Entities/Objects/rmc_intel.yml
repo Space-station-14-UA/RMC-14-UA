@@ -218,7 +218,7 @@
 - type: entity
   parent: RMCCommunicationsConsoleBase
   id: RMCSigintTerminal
-  name: ЦИФРОЗ термінал # Mriya. ЦИФрова РОЗвідка.
+  name: термінал ЦИФРОЗ # Mriya. ЦИФрова РОЗвідка.
   description: Термінал Цифрової Розвідки. Використовується для каталогізації та дистрибуції цифрових даних. У нього присутній зчитувач для картриджів!
   components:
   - type: Sprite

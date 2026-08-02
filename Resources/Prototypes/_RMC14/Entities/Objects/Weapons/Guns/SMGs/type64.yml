@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: CMBaseWeaponSMG
-  name: Type 64 submachine gun
+  name: Тип 64 пістолет-кулемет
   id: RMCWeaponSMGType64
-  description: The standard submachinegun of the SPP, sporting an unusual 64 round helical magazine, it has a high fire-rate, but is unusually accurate. This one is bulky and unergonomic, denoting it as civilian use or as an export model.
+  description: Стандартний пістолет-кулемет СПН з незвичайним гвинтовим магазином на 64 патрони. Має високу скорострільність та точність. Ергономіка цієї моделі жахлива та тримати її не зручно, схоже це якась цивільна версія чи прототип. Комуняцьке лайно...
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/SMGs/type64.rsi
@@ -97,7 +97,7 @@
 - type: entity
   parent: CMMagazineRifleBase
   id: RMCMagazineSMGType64
-  name: "Type 64 magazine (10x20mm)"
+  name: Тип 64 магазин (10х20 мм)
   components:
   - type: Tag
     tags:
@@ -129,7 +129,7 @@
 - type: entity
   parent: RMCMagazineSMGType64
   id: RMCMagazineSMGType64Rubber
-  name: "Type 64 rubber magazine (10x20mm)"
+  name: Тип 64 гумовий магазин (10х20 мм)
   components:
   - type: Tag
     tags:
@@ -154,7 +154,7 @@
 - type: entity
   parent: CMCartridgeSMGBase
   id: RMCCartridgeType64
-  name: cartridge (10x20mm)
+  name: набій тип 64 (10х20 мм)
   components:
   - type: Tag
     tags:
@@ -166,7 +166,7 @@
 - type: entity
   parent: CMCartridgeSMGBase
   id: RMCCartridgeType64Rubber
-  name: cartridge (10x20mm)
+  name: гумовий набій тип 64 (10х20 мм)
   components:
   - type: Tag
     tags:
