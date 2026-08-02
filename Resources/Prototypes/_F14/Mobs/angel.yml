@@ -21,7 +21,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: angel
-      sprite: _F14/Mobs/wheepingangel.rsi
+      sprite: _F14/mobs/wheepingangel.rsi
   - type: MobThresholds
     thresholds:
       0: Alive
