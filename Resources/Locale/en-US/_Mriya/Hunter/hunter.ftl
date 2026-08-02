@@ -82,16 +82,12 @@ language-Hunter-description = Стандартизований діалект с
 
 ## Кастер
 hunter-caster-mode-disabler = Нелетальний
-entity-rmc-hunter-tank-fuel-name = паливний бак
-entity-rmc-hunter-tank-fuel-description = Паливний бак для зберігання зварювального палива.
-entity-rmc-hunter-tank-water-name = водяний бак
-entity-rmc-hunter-tank-water-description = Бак для зберігання води.
 hunter-caster-mode-bolt = Летальний
 hunter-caster-mode-unknown = Невідомо
 hunter-caster-mode-changed = Режим змінено на: {$mode}
 hunter-caster-retracted = Ви згорнули кастер
 hunter-caster-deployed = Ви розгорнули кастер
-hunter-caster-hands-busy = Ваші руки зайняті!
+hunter-caster-hands-busy = Немає вільних рук!
 
 ## Назви
 ent-CMMobHunter = мисливець
