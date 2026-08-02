@@ -83,7 +83,7 @@
 - type: entity
   parent: RMCLightFixtureAlwaysPowered
   id: RMCLightFixtureDoubleAlwaysPowered
-  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками щоб викликати в вас ще більше сліз.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками, щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -201,7 +201,7 @@
 - type: entity
   parent: RMCLightFixtureEmpty
   id: RMCLightFixtureDoubleEmpty
-  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками щоб викликати в вас ще більше сліз.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками, щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -316,7 +316,7 @@
 - type: entity
   parent: RMCLightFixture
   id: RMCLightFixtureDouble
-  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками щоб викликати в вас ще більше сліз.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками, щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1

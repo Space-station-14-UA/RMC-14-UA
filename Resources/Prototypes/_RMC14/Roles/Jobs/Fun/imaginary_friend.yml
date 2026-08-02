@@ -2,7 +2,7 @@
   parent: [MobObserver, InventoryBase]
   id: RMCImaginaryFriend
   name: уявний друг
-  description: Прекрасний але нажаль несправжній друг.
+  description: Прекрасний але, на жаль, несправжній друг.
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

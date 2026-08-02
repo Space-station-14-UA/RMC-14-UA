@@ -9,7 +9,7 @@
 - type: entity
   parent: RMCDropshipDoorAftBase
   id: CMNormandyDoorAft
-  name: Вантажний шлюз Нормандії  
+  name: Вантажний шлюз Нормандії
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Dropships/Airlocks/normandy_cargo.rsi
