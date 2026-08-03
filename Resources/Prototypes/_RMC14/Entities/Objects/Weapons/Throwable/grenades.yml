@@ -78,8 +78,8 @@
   - CMGrenadeBase
   - RMCM40DPTags
   id: CMGrenadeHighExplosive
-  name: М40 ФПП граната
-  description: Фугасна граната Подвійного-Призначення. Оманливо невелика, але дуже потужна. Вона разом з М40 ОФ поступово витісняють М15 ОФ. Можна зарядити в гранатомет або кинути рукою. Час до детонації після активації 4 секунди. Намагайтеся не підірвати нею себе чи побратимів.
+  name: М40 ФПП граната # Mriya. HEDP в оригіналі. ФПП – Фугасна Подвійного Призначення
+  description: Фугасна граната Подвійного Призначення. Оманливо невелика, але дуже потужна. Вона разом з М40 ОФ поступово витісняють М15 ОФ. Можна зарядити в гранатомет або кинути рукою. Час до детонації після активації 4 секунди. Намагайтеся не підірвати нею себе чи побратимів.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/m40hedp.rsi
@@ -105,8 +105,8 @@
   - CMGrenadeBase
   - RMCM40DPTags
   id: CMGrenadeSmoke
-  name: М40 ВДР граната
-  description: Високодимна Розсіювальна граната. М40 ВДР маленька, але потужна димова граната. Базується на тій самій основі, що й М40 ФПП. Час до детонації після активації 2 секунди.
+  name: М40 ДПП граната # Mriya. HDSP в оригіналі. ДПП – Димова Подвійного Призначення, раніше ВДР – ВисокоДимна Розсіювальна
+  description: Димова граната Подвійного Призначення. М40 ДПП маленька, але потужна димова граната. Базується на тій самій основі, що й М40 ФПП. Час до детонації після активації 2 секунди.
   components:
   - type: OnUseTimerTrigger
     delay: 2
@@ -240,7 +240,7 @@
 - type: entity
   parent: CMGrenadeHighExplosive
   id: CMGrenadeFrag
-  name: М40 ОФ граната
+  name: М40 ОФ граната # Mriya. HEFA в оригіналі. ОФ – Осколково-Фугасна
   description: Осколково-Фугасна граната. Маленька, але сильна шрапнельна граната яка поступово витісняє М15. Можна зарядити в гранатомет чи кинути рукою. Час до детонації після активації 4 секунди. Намагайтеся не підірвати нею себе чи побратимів.
   components:
   - type: Sprite
@@ -317,7 +317,7 @@
 - type: entity
   parent: CMGrenadeBase
   id: RMCGrenadeTraining
-  name: М07 Навчальна Граната
+  name: М07 тренувальна граната
   description: Учбова версія гранати М40 ФПП, яка точно не має вибухнути... ТОЧНО. Можна зарядити в гранатомет, чи кинути рукою.
   components:
   - type: Sprite
@@ -337,8 +337,8 @@
   - RMCM40DPTags
   - CMGrenadeBase
   id: RMCGrenadeIncendiary
-  name: М40 ВІРЗ граната
-  description: Високоімпульсна Розсіювальна Запалювальна граната. М40 ВІРЗ хоч і маленька, але потужна запалювальна граната, призначена для спалення ворогів живцем або зменшення їх мобільності. Час до детонації після активації 4 секунди.
+  name: М40 ЗПП граната # Mriya. HIDP в оригіналі. ЗПП – Запалювальна Подвійного Призначення, раніше ВІРЗ – ВисокоІмпульсна Розсіювальна Запалювальна
+  description: Запалювальна граната Подвійного Призначення. М40 ЗПП хоч і маленька, але потужна запалювальна граната, призначена для спалення ворогів живцем або зменшення їх мобільності. Час до детонації після активації 4 секунди.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/m40hidp.rsi
@@ -355,8 +355,8 @@
   - RMCM40DPTags
   - CMGrenadeBase
   id: RMCGrenadeWhitePhosphorus
-  name: 30mm WPDP white phosphorus grenade
-  description: The 30mm WPDP is a small, but powerful phosphorus grenade. It is set to detonate in 2 seconds.
+  name: М30 БФПП граната # Mriya. WHDP в оригіналі. БФПП – Біло-Фосфорна Подвійного Призначення
+  description: Біло-Фосфорна граната Подвійного Призначення. Мала, але вкрай потужна граната, яка розсіює білий фосфор після детонації. Час до детонації після активації 2 секунди.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/m40wpdp.rsi
@@ -376,8 +376,8 @@
 - type: entity
   parent: RMCGrenadeWhitePhosphorus
   id: RMCGrenadeWhitePhosphorusCompound
-  name: 30mm CCDP chemical compound grenade
-  description: The 30mm CCDP is a small, but powerful chemical compound grenade, similar in effect to WPDP. Word on the block says that the CCDP doesn't actually release White Phosphorus, but some other chemical developed in We-Ya labs.
+  name: М30 ХПП граната # Mriya. CCDP в оригіналі. ХПП – Хімічна Подвійного Призначення
+  description: Хімічна граната Подвійного Призначення. Мала, але вкрай потужна граната, яка розсіює невідому, але все ще небезпечну суміш хімікатів після детонації. Схожа на БФПП, але розроблена в лабораторія Ве-Я. Час до детонації після активації 2 секунди.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/ied.rsi
@@ -436,9 +436,9 @@
 - type: entity
   parent: CMGrenadeBase
   id: RMCGrenade20mmIncendiary
-  name: L109A2 20mm incendiary grenade
+  name: Л109А1 20мм запалювальна граната
   suffix: PvE
-  description: A 20mm grenade that creates flames upon impact. Less powerful than full-sized grenades. Be careful how you handle these.
+  description: 20-мм граната, яка від удару утворює полум'я. Менш потужна, ніж повнорозмірні гранати. Будьте обережні та кидайте лише в ворога!
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/rcm20mm/incend.rsi
@@ -458,9 +458,9 @@
 - type: entity
   parent: CMGrenadeBase
   id: RMCGrenade20mmHE
-  name: L109A1 20mm HE grenade
+  name: Л109А1 20мм фугасна граната
   suffix: PVE
-  description: A 20mm grenade that explodes upon impact. Less powerful than full-sized grenades. Be careful how you handle these.
+  description: 20-мм граната, яка від удару вибухає. Менш потужна, ніж повнорозмірні гранати. Будьте обережні та кидайте лише в ворога!
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/rcm20mm/he.rsi

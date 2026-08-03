@@ -7,13 +7,13 @@
 - type: entity
   parent: RMCSkillBase
   id: RMCSkillAntagonist
-  name: Antagonist
+  name: Антагоніст
   categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RMCSkillBase
   id: RMCSkillConstruction
-  name: Construction
+  name: Будівництво
   categories: [ HideSpawnMenu ]
   components:
   - type: SkillDefinition
