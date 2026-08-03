@@ -61,15 +61,15 @@ chain-broken-container = Ланцюг був розірваний!
 
 ## Телепортер
 hunter-teleport-failed = Не вдалося телепортуватися
-hunter-teleport-blocked-landing-zone = Неможливо телепортуватися на зону посадки!
+hunter-teleport-blocked-landing-zone = Неможливо телепортуватися у зону посадки!
 hunter-teleport-blocked-cave = Неможливо телепортуватися в печери!
-hunter-teleport-blocked-invalid-target = Неможливо телепортуватися сюди!
-hunter-teleport-charging = Зарядка поля телепортації!
+hunter-teleport-blocked-invalid-target = Сюди неможливо телепортуватися!
+hunter-teleport-charging = Розгортання поля телепортації!
 hunter-teleport-returning-to-ship = Повернення на материнський корабель...
 hunter-teleport-success = Телепортація успішна
 ui-verb-open-teleporter = Обрати точку
-hunter-teleport-verb-mode-planet = Змінити режим: Телепортація у зону полювання
-hunter-teleport-verb-mode-ship = Змінити режим: Повернення на Левіафан
+hunter-teleport-verb-mode-planet = Змінити режим: Зона полювання
+hunter-teleport-verb-mode-ship = Змінити режим: Левіафан Тіней
 hunter-teleport-mode-planet-selected = Телепортер налаштовано на зону полювання
 hunter-teleport-mode-ship-selected = Телепортер налаштовано на повернення
 
@@ -97,3 +97,9 @@ ent-CMMobHunterGhostRole-desc = { ent-CMMobHunter-desc }
 ent-CMMobHunterGhostRole-suffix = Гост роль
 playtime-tracking-job-mrhunter = Мисливець
 hunter = Мисливець
+
+## Структури
+ent-hunter-tankwater-name = бак
+ent-hunter-tankwatter-desc = Об'ємний бак що наповнений водою.
+ent-hunter-tankfuel-name = бак
+ent-hunter-tankfuel-desc = Об'ємний бак що наповнений пальним.

@@ -1,8 +1,8 @@
 - type: entity
   parent: RMCTankReagentEmpty
   id: RMCHunterTankReagentFuel
-  name: бак з паливом
-  description: Паливний бак для зберігання палива.
+  name: ent-hunter-tankfuel-name
+  description: ent-hunter-tankfuel-desc
   suffix: Fuel
   components:
   - type: Sprite
@@ -48,8 +48,8 @@
 - type: entity
   parent: RMCTankReagentEmpty
   id: RMCHunterTankReagentWater
-  name: бак з водою
-  description: Водяний бак для зберігання води.
+  name: ent-hunter-tankwatter
+  description: ent-hunter-tankwatter-desc
   suffix: Water
   components:
   - type: Sprite
