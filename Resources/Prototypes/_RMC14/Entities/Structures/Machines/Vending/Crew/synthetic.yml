@@ -277,8 +277,6 @@
         points: 4
       - id: CMSynthGraft
         points: 4
-      - id: CMMiniTank # Mriya. Каністри синтам
-        points: 5
     - name: Other Supplies
       entries:
       - id: RMCBinoculars
