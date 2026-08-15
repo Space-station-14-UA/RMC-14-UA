@@ -25,3 +25,18 @@
             CMPVESmartGunOperator: [2, 2]
             CMPVEHospitalCorpsman: [2, 2]
             CMPVERifleman: [16, 16]
+
+
+- type: gameMap
+  id: MRTundraNOJOBS
+  mapName: Наполеон
+  mapPath: /Maps/_Mriya/tundra.yml
+  minPlayers: 0
+  maxRandomOffset: 0
+  randomRotation: false
+  stations:
+    UNSTundra:
+      stationProto: StandardUNMCWarship
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ДКП-Тундра "Наполеон"'

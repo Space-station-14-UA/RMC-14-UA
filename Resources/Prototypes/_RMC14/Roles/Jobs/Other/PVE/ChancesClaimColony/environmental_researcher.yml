@@ -5,7 +5,7 @@
   description: cm-job-description-survivor
   playTimeTracker: CMJobSurvivorChancesEnvironmentalResearcher
   startingGear: RMCGearSurvivorChancesEnvironmentalResearcher
-  spawnMenuRoleName: Environmental Researcher (Chances Colonist)
+  spawnMenuRoleName: Еколог-Дослідник (ПВЕ Фортуна)
   greeting: rmc-job-greeting-chances-colonist
   special:
   - !type:AddComponentSpecial

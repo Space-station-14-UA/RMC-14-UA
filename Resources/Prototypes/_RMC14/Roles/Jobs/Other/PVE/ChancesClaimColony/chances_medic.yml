@@ -5,7 +5,7 @@
   description: cm-job-description-survivor
   playTimeTracker: CMJobSurvivorChancesMedic
   startingGear: RMCGearSurvivorChancesMedic
-  spawnMenuRoleName: Chance's Claim Medic (Chances Colonist)
+  spawnMenuRoleName: Лікар (ПВЕ Фортуна)
   greeting: rmc-job-greeting-chances-colonist
   special:
   - !type:AddComponentSpecial
