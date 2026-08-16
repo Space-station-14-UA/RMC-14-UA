@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.2
   forkId: ""
   forkVersion: ""
-  time: 07/24/2026 18:34:30
-  entityCount: 6310
+  time: 08/16/2026 09:35:38
+  entityCount: 6319
 maps:
 - 1
 grids:
@@ -3059,8 +3059,8 @@ entities:
         -42,-86: MMCAreaGladiusCraneTunnel
         -45,-87: MMCAreaGladiusCraneTunnel
         -83,-86: MMCAreaGladiusCraneTunnel
-        -44,-33: RMCAreaPRTCraneTunnel
-        -44,-34: RMCAreaPRTCraneTunnel
+        -44,-33: MMCAreaGladiusCraneTunnel
+        -44,-34: MMCAreaGladiusCraneTunnel
         -43,-26: MMCAreaGladiusCargoBayUpper
         -43,-27: MMCAreaGladiusCargoBayUpper
         -43,-28: MMCAreaGladiusCargoBayUpper
@@ -4375,8 +4375,8 @@ entities:
         -84,9: MMCAreaGladiusHangar
         -84,10: MMCAreaGladiusHangar
         -84,11: MMCAreaGladiusHangar
-        -84,12: RMCAreaPRTHangar
-        -84,13: RMCAreaPRTHangar
+        -84,12: MMCAreaGladiusHangar
+        -84,13: MMCAreaGladiusHangar
         -85,-45: MMCAreaGladiusHangar
         -85,-44: MMCAreaGladiusHangar
         -85,-43: MMCAreaGladiusHangar
@@ -4434,8 +4434,8 @@ entities:
         -85,9: MMCAreaGladiusHangar
         -85,10: MMCAreaGladiusHangar
         -85,11: MMCAreaGladiusHangar
-        -85,12: RMCAreaPRTHangar
-        -85,13: RMCAreaPRTHangar
+        -85,12: MMCAreaGladiusHangar
+        -85,13: MMCAreaGladiusHangar
         -86,-45: MMCAreaGladiusHangar
         -86,-44: MMCAreaGladiusHangar
         -86,-43: MMCAreaGladiusHangar
@@ -4493,9 +4493,9 @@ entities:
         -86,9: MMCAreaGladiusHangar
         -86,10: MMCAreaGladiusHangar
         -86,11: MMCAreaGladiusHangar
-        -86,12: RMCAreaPRTHangar
-        -86,13: RMCAreaPRTHangar
-        -87,-47: RMCAreaPRTHangar
+        -86,12: MMCAreaGladiusHangar
+        -86,13: MMCAreaGladiusHangar
+        -87,-47: MMCAreaGladiusHangar
         -87,-46: MMCAreaGladiusHangar
         -87,-45: MMCAreaGladiusHangar
         -87,-44: MMCAreaGladiusHangar
@@ -4554,9 +4554,9 @@ entities:
         -87,9: MMCAreaGladiusHangar
         -87,10: MMCAreaGladiusHangar
         -87,11: MMCAreaGladiusHangar
-        -87,12: RMCAreaPRTHangar
-        -87,13: RMCAreaPRTHangar
-        -88,-47: RMCAreaPRTHangar
+        -87,12: MMCAreaGladiusHangar
+        -87,13: MMCAreaGladiusHangar
+        -88,-47: MMCAreaGladiusHangar
         -88,-46: MMCAreaGladiusHangar
         -88,-45: MMCAreaGladiusHangar
         -88,-44: MMCAreaGladiusHangar
@@ -4615,9 +4615,9 @@ entities:
         -88,9: MMCAreaGladiusHangar
         -88,10: MMCAreaGladiusHangar
         -88,11: MMCAreaGladiusHangar
-        -88,12: RMCAreaPRTHangar
-        -88,13: RMCAreaPRTHangar
-        -89,-47: RMCAreaPRTHangar
+        -88,12: MMCAreaGladiusHangar
+        -88,13: MMCAreaGladiusHangar
+        -89,-47: MMCAreaGladiusHangar
         -89,-46: MMCAreaGladiusHangar
         -89,-45: MMCAreaGladiusHangar
         -89,-44: MMCAreaGladiusHangar
@@ -4677,9 +4677,9 @@ entities:
         -89,9: MMCAreaGladiusHangar
         -89,10: MMCAreaGladiusHangar
         -89,11: MMCAreaGladiusHangar
-        -89,12: RMCAreaPRTHangar
-        -89,13: RMCAreaPRTHangar
-        -90,-47: RMCAreaPRTHangar
+        -89,12: MMCAreaGladiusHangar
+        -89,13: MMCAreaGladiusHangar
+        -90,-47: MMCAreaGladiusHangar
         -90,-46: MMCAreaGladiusHangar
         -90,-45: MMCAreaGladiusHangar
         -90,-44: MMCAreaGladiusHangar
@@ -4738,8 +4738,8 @@ entities:
         -90,9: MMCAreaGladiusHangar
         -90,10: MMCAreaGladiusHangar
         -90,11: MMCAreaGladiusHangar
-        -90,12: RMCAreaPRTHangar
-        -90,13: RMCAreaPRTHangar
+        -90,12: MMCAreaGladiusHangar
+        -90,13: MMCAreaGladiusHangar
         -91,-45: MMCAreaGladiusHangar
         -91,-44: MMCAreaGladiusHangar
         -91,-43: MMCAreaGladiusHangar
@@ -4797,8 +4797,8 @@ entities:
         -91,9: MMCAreaGladiusHangar
         -91,10: MMCAreaGladiusHangar
         -91,11: MMCAreaGladiusHangar
-        -91,12: RMCAreaPRTHangar
-        -91,13: RMCAreaPRTHangar
+        -91,12: MMCAreaGladiusHangar
+        -91,13: MMCAreaGladiusHangar
         -92,-45: MMCAreaGladiusHangar
         -92,-44: MMCAreaGladiusHangar
         -92,-43: MMCAreaGladiusHangar
@@ -4856,8 +4856,8 @@ entities:
         -92,9: MMCAreaGladiusHangar
         -92,10: MMCAreaGladiusHangar
         -92,11: MMCAreaGladiusHangar
-        -92,12: RMCAreaPRTHangar
-        -92,13: RMCAreaPRTHangar
+        -92,12: MMCAreaGladiusHangar
+        -92,13: MMCAreaGladiusHangar
         -93,-45: MMCAreaGladiusHangar
         -93,-44: MMCAreaGladiusHangar
         -93,-43: MMCAreaGladiusHangar
@@ -4915,9 +4915,9 @@ entities:
         -93,9: MMCAreaGladiusHangar
         -93,10: MMCAreaGladiusHangar
         -93,11: MMCAreaGladiusHangar
-        -93,12: RMCAreaPRTHangar
-        -93,13: RMCAreaPRTHangar
-        -94,-47: RMCAreaPRTHangar
+        -93,12: MMCAreaGladiusHangar
+        -93,13: MMCAreaGladiusHangar
+        -94,-47: MMCAreaGladiusHangar
         -94,-46: MMCAreaGladiusHangar
         -94,-45: MMCAreaGladiusHangar
         -94,-44: MMCAreaGladiusHangar
@@ -4976,9 +4976,9 @@ entities:
         -94,9: MMCAreaGladiusHangar
         -94,10: MMCAreaGladiusHangar
         -94,11: MMCAreaGladiusHangar
-        -94,12: RMCAreaPRTHangar
-        -94,13: RMCAreaPRTHangar
-        -95,-47: RMCAreaPRTHangar
+        -94,12: MMCAreaGladiusHangar
+        -94,13: MMCAreaGladiusHangar
+        -95,-47: MMCAreaGladiusHangar
         -95,-46: MMCAreaGladiusHangar
         -95,-45: MMCAreaGladiusHangar
         -95,-44: MMCAreaGladiusHangar
@@ -5037,9 +5037,9 @@ entities:
         -95,9: MMCAreaGladiusHangar
         -95,10: MMCAreaGladiusHangar
         -95,11: MMCAreaGladiusHangar
-        -95,12: RMCAreaPRTHangar
-        -95,13: RMCAreaPRTHangar
-        -96,-47: RMCAreaPRTHangar
+        -95,12: MMCAreaGladiusHangar
+        -95,13: MMCAreaGladiusHangar
+        -96,-47: MMCAreaGladiusHangar
         -96,-46: MMCAreaGladiusHangar
         -96,-45: MMCAreaGladiusHangar
         -96,-44: MMCAreaGladiusHangar
@@ -5098,9 +5098,9 @@ entities:
         -96,9: MMCAreaGladiusHangar
         -96,10: MMCAreaGladiusHangar
         -96,11: MMCAreaGladiusHangar
-        -96,12: RMCAreaPRTHangar
-        -96,13: RMCAreaPRTHangar
-        -97,-47: RMCAreaPRTHangar
+        -96,12: MMCAreaGladiusHangar
+        -96,13: MMCAreaGladiusHangar
+        -97,-47: MMCAreaGladiusHangar
         -97,-46: MMCAreaGladiusHangar
         -97,-45: MMCAreaGladiusHangar
         -97,-44: MMCAreaGladiusHangar
@@ -5159,8 +5159,8 @@ entities:
         -97,9: MMCAreaGladiusHangar
         -97,10: MMCAreaGladiusHangar
         -97,11: MMCAreaGladiusHangar
-        -97,12: RMCAreaPRTHangar
-        -97,13: RMCAreaPRTHangar
+        -97,12: MMCAreaGladiusHangar
+        -97,13: MMCAreaGladiusHangar
         -98,-45: MMCAreaGladiusHangar
         -98,-44: MMCAreaGladiusHangar
         -98,-43: MMCAreaGladiusHangar
@@ -5218,8 +5218,8 @@ entities:
         -98,9: MMCAreaGladiusHangar
         -98,10: MMCAreaGladiusHangar
         -98,11: MMCAreaGladiusHangar
-        -98,12: RMCAreaPRTHangar
-        -98,13: RMCAreaPRTHangar
+        -98,12: MMCAreaGladiusHangar
+        -98,13: MMCAreaGladiusHangar
         -99,-45: MMCAreaGladiusHangar
         -99,-44: MMCAreaGladiusHangar
         -99,-43: MMCAreaGladiusHangar
@@ -5277,8 +5277,8 @@ entities:
         -99,9: MMCAreaGladiusHangar
         -99,10: MMCAreaGladiusHangar
         -99,11: MMCAreaGladiusHangar
-        -99,12: RMCAreaPRTHangar
-        -99,13: RMCAreaPRTHangar
+        -99,12: MMCAreaGladiusHangar
+        -99,13: MMCAreaGladiusHangar
         -100,-45: MMCAreaGladiusHangar
         -100,-44: MMCAreaGladiusHangar
         -100,-43: MMCAreaGladiusHangar
@@ -5336,8 +5336,8 @@ entities:
         -100,9: MMCAreaGladiusHangar
         -100,10: MMCAreaGladiusHangar
         -100,11: MMCAreaGladiusHangar
-        -100,12: RMCAreaPRTHangar
-        -100,13: RMCAreaPRTHangar
+        -100,12: MMCAreaGladiusHangar
+        -100,13: MMCAreaGladiusHangar
         -101,-46: MMCAreaGladiusHangar
         -101,-45: MMCAreaGladiusHangar
         -101,-44: MMCAreaGladiusHangar
@@ -6305,7 +6305,7 @@ entities:
         -80,-71: MMCAreaGladiusMaintenaceLower
         -46,-14: MMCAreaGladiusMaintenanceUpper
         -64,-25: MMCAreaGladiusBriefing
-        -46,-15: RMCAreaPRTMaintenanceUpper
+        -46,-15: MMCAreaGladiusMaintenanceUpper
         -64,-26: MMCAreaGladiusBriefing
         -64,-28: MMCAreaGladiusBriefing
         -64,-27: MMCAreaGladiusBriefing
@@ -6442,10 +6442,10 @@ entities:
         -20,-19: MMCAreaGladiusMedbay
         -27,-19: MMCAreaGladiusMedbay
         -25,-18: MMCAreaGladiusMedbay
-        -20,-13: RMCAreaPRTMedbay
-        -20,-14: RMCAreaPRTMedbay
-        -19,-13: RMCAreaPRTMedbay
-        -19,-14: RMCAreaPRTMedbay
+        -20,-13: MMCAreaGladiusMedbay
+        -20,-14: MMCAreaGladiusMedbay
+        -19,-13: MMCAreaGladiusMedbay
+        -19,-14: MMCAreaGladiusMedbay
         -22,-22: MMCAreaGladiusSurgicalBay
         -22,-23: MMCAreaGladiusSurgicalBay
         -22,-24: MMCAreaGladiusSurgicalBay
@@ -6535,16 +6535,16 @@ entities:
         -21,-24: MMCAreaGladiusSurgicalBay
         -20,-23: MMCAreaGladiusSurgicalBay
         -20,-24: MMCAreaGladiusSurgicalBay
-        -20,-25: RMCAreaPRTSurgicalBay
+        -20,-25: MMCAreaGladiusSurgicalBay
         -19,-23: MMCAreaGladiusSurgicalBay
         -19,-24: MMCAreaGladiusSurgicalBay
-        -19,-25: RMCAreaPRTSurgicalBay
+        -19,-25: MMCAreaGladiusSurgicalBay
         -18,-23: MMCAreaGladiusSurgicalBay
         -18,-24: MMCAreaGladiusSurgicalBay
-        -18,-25: RMCAreaPRTSurgicalBay
-        -17,-23: RMCAreaPRTSurgicalBay
-        -17,-24: RMCAreaPRTSurgicalBay
-        -17,-25: RMCAreaPRTSurgicalBay
+        -18,-25: MMCAreaGladiusSurgicalBay
+        -17,-23: MMCAreaGladiusSurgicalBay
+        -17,-24: MMCAreaGladiusSurgicalBay
+        -17,-25: MMCAreaGladiusSurgicalBay
         -40,-17: MMCAreaGladiusMedbay
         -40,-18: MMCAreaGladiusMedbay
         -77,-17: MMCAreaGladiusCraneTunnel
@@ -6709,7 +6709,7 @@ entities:
         -46,-23: MMCAreaGladiusBunks
         -49,-19: MMCAreaGladiusBunks
         -48,-19: MMCAreaGladiusBunks
-        -21,-25: RMCAreaPRTSurgicalBay
+        -21,-25: MMCAreaGladiusSurgicalBay
         -21,-22: MMCAreaGladiusSurgicalBay
         -76,-35: MMCAreaGladiusCraneTunnel
         -108,-25: MMCAreaGladiusHangarCargo
@@ -6721,8 +6721,8 @@ entities:
         -48,-26: MMCAreaGladiusBunks
         -44,-23: MMCAreaGladiusHallways
         -44,-24: MMCAreaGladiusHallways
-        -44,-11: RMCAreaPRTHallways
-        -44,-12: RMCAreaPRTHallways
+        -44,-11: MMCAreaGladiusHallways
+        -44,-12: MMCAreaGladiusHallways
         -21,-21: MMCAreaGladiusSurgicalBay
         -20,-21: MMCAreaGladiusSurgicalBay
         -20,-22: MMCAreaGladiusSurgicalBay
@@ -7259,7 +7259,7 @@ entities:
   - uid: 15
     components:
     - type: MetaData
-      name: Спальня Командувача Сил
+      name: Спальня Командера
     - type: Transform
       pos: -48.5,-1.5
       parent: 1
@@ -7272,7 +7272,7 @@ entities:
   - uid: 16
     components:
     - type: MetaData
-      name: Офіс Командувача Сил
+      name: Офіс Командера
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -50.5,1.5
@@ -7284,7 +7284,7 @@ entities:
   - uid: 17
     components:
     - type: MetaData
-      name: Офіс Командувача Сил
+      name: Офіс Командера
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -43.5,1.5
@@ -7338,7 +7338,7 @@ entities:
   - uid: 23
     components:
     - type: MetaData
-      name: Freezer
+      name: Холодильник
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -20.5,7.5
@@ -9640,14 +9640,14 @@ entities:
   - uid: 432
     components:
     - type: MetaData
-      name: Common Lounge
+      name: Кімната Відпочинку
     - type: Transform
       pos: -39.5,-6.5
       parent: 1
   - uid: 433
     components:
     - type: MetaData
-      name: Common Lounge
+      name: Кімната Відпочинку
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -39.5,-7.5
@@ -9655,14 +9655,14 @@ entities:
   - uid: 434
     components:
     - type: MetaData
-      name: Galley
+      name: Камбуз
     - type: Transform
       pos: -31.5,6.5
       parent: 1
   - uid: 435
     components:
     - type: MetaData
-      name: Galley
+      name: Камбуз
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -31.5,5.5
@@ -9670,14 +9670,14 @@ entities:
   - uid: 436
     components:
     - type: MetaData
-      name: Canteen
+      name: Їдальня
     - type: Transform
       pos: -39.5,2.5
       parent: 1
   - uid: 437
     components:
     - type: MetaData
-      name: Canteen
+      name: Їдальня
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -39.5,1.5
@@ -9685,14 +9685,14 @@ entities:
   - uid: 438
     components:
     - type: MetaData
-      name: Canteen
+      name: Їдальня
     - type: Transform
       pos: -39.5,-0.5
       parent: 1
   - uid: 439
     components:
     - type: MetaData
-      name: Canteen
+      name: Їдальня
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -39.5,-1.5
@@ -9791,7 +9791,7 @@ entities:
   - uid: 450
     components:
     - type: MetaData
-      name: Bunkroom
+      name: Каюти
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -48.5,-18.5
@@ -9799,7 +9799,7 @@ entities:
   - uid: 451
     components:
     - type: MetaData
-      name: Bunkroom
+      name: Каюти
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -47.5,-18.5
@@ -9914,7 +9914,7 @@ entities:
       pos: -47.5,2.5
       parent: 1
     - type: FaxMachine
-      name: Гладіус - Офіс Командувача Сил
+      name: Гладіус - Офіс Командера
   - uid: 468
     components:
     - type: Transform
@@ -9954,6 +9954,32 @@ entities:
     components:
     - type: Transform
       pos: -20.47819,-22.781733
+      parent: 1
+- proto: CMHeadBandCharlie
+  entities:
+  - uid: 4982
+    components:
+    - type: Transform
+      pos: -47.761044,-25.609726
+      parent: 1
+- proto: CMHeadBandGreen
+  entities:
+  - uid: 4576
+    components:
+    - type: Transform
+      pos: -33.323196,-10.483016
+      parent: 1
+- proto: CMHeadBandIntel
+  entities:
+  - uid: 4971
+    components:
+    - type: Transform
+      pos: -45.705486,-23.39234
+      parent: 1
+  - uid: 5521
+    components:
+    - type: Transform
+      pos: -51.122444,-10.215543
       parent: 1
 - proto: CMHeadCapSurgGreen
   entities:
@@ -25131,7 +25157,7 @@ entities:
       pos: -44.5,-4.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -142187.03
+      secondsUntilStateChange: -143085.86
       state: Opening
     - type: Airlock
       autoClose: False
@@ -26574,7 +26600,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -147998.88
+      secondsUntilStateChange: -148897.7
       state: Opening
   - uid: 3436
     components:
@@ -32155,11 +32181,6 @@ entities:
       parent: 1
 - proto: RMCCondimentSoysauce
   entities:
-  - uid: 4487
-    components:
-    - type: Transform
-      pos: -26.419321,0.19452927
-      parent: 1
   - uid: 4488
     components:
     - type: Transform
@@ -32698,15 +32719,15 @@ entities:
       parent: 1
 - proto: RMCCouchEndLowerRed
   entities:
-  - uid: 4576
+  - uid: 4487
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
       pos: -24.5,-13.5
       parent: 1
 - proto: RMCCouchEndUpperRed
   entities:
-  - uid: 4577
+  - uid: 4465
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -32714,10 +32735,10 @@ entities:
       parent: 1
 - proto: RMCCouchMidRed
   entities:
-  - uid: 4578
+  - uid: 4468
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
       pos: -24.5,-12.5
       parent: 1
 - proto: RMCCrateBottledWaterX50
@@ -32985,7 +33006,7 @@ entities:
       pos: -47.5,-24.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -3250.292
+      secondsUntilStateChange: -4149.1226
       state: Closing
 - proto: RMCDeskBell
   entities:
@@ -36441,6 +36462,37 @@ entities:
     components:
     - type: Transform
       pos: -49.70168,-23.21506
+      parent: 1
+  - uid: 5520
+    components:
+    - type: Transform
+      pos: -74.478386,4.567851
+      parent: 1
+- proto: RMCMaskScarfDelta
+  entities:
+  - uid: 5518
+    components:
+    - type: Transform
+      pos: -60.41892,3.7111516
+      parent: 1
+- proto: RMCMaskScarfGreen
+  entities:
+  - uid: 4577
+    components:
+    - type: Transform
+      pos: -35.494606,-8.398235
+      parent: 1
+  - uid: 4578
+    components:
+    - type: Transform
+      pos: -50.411217,-21.618189
+      parent: 1
+- proto: RMCMaskScarfTan
+  entities:
+  - uid: 5517
+    components:
+    - type: Transform
+      pos: -62.893936,-11.467008
       parent: 1
 - proto: RMCMaskSmockBlack
   entities:
@@ -40395,7 +40447,7 @@ entities:
   - uid: 5956
     components:
     - type: MetaData
-      name: Блокування зброярні
+      name: Блокування Зброярні
     - type: Transform
       pos: -46.639362,0.11831173
       parent: 1
@@ -40760,6 +40812,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -24.5,-15.5
       parent: 1
+- proto: RMCRedArmband
+  entities:
+  - uid: 5519
+    components:
+    - type: Transform
+      pos: -61.487564,3.7389488
+      parent: 1
 - proto: RMCRollerBedHospitalSheet2
   entities:
   - uid: 491
@@ -40787,7 +40846,7 @@ entities:
   - uid: 6009
     components:
     - type: MetaData
-      name: Офіс Командувача Сил
+      name: Офіс Командера
     - type: Transform
       pos: -46.90364,-0.24610022
       parent: 1

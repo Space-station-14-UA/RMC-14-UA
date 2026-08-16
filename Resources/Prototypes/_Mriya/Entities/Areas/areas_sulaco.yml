@@ -43,3 +43,11 @@
   components:
   - type: Sprite
     state: shuttle
+
+- type: entity
+  parent: MMCAreaShuttleDrop
+  id: MMCAreaShuttleBarracuda
+  name: Шатл Баракуда
+  components:
+  - type: Sprite
+    state: shuttle

@@ -24,7 +24,7 @@
 
 - type: rank
   id: RMCRankTSEColourSergeant
-  name: Старший-Сержант
+  name: Старший Сержант
   prefix: Ст.С-нт.
   paygrade: E5
 
