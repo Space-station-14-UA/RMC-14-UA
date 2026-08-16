@@ -1,0 +1,24 @@
+- type: gameMap
+  id: MREpsilonPVE
+  mapName: Епсилон
+  mapPath: /Maps/_Mriya/epsilon.yml
+  minPlayers: 0
+  maxRandomOffset: 0
+  randomRotation: false
+  stations:
+    Epsilon:
+      stationProto: StandardUNMCWarship
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'К-73 "Епсилон"'
+        - type: StationJobs
+          availableJobs:
+           
+            # ПВК Ве-Я
+            CMPMCForceCommandPVE: [1, 1]
+
+            CMPMCForceLeadPVE: [1, 1]
+            CMPMCTeamLeadPVE: [2, 2]
+            CMPMCGunnerPVE: [2, 2]
+            CMPMCCorpsmanPVE: [2, 2]
+            CMPMCOperatorPVE: [ 12, 12 ]
