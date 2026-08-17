@@ -22,3 +22,11 @@
   components:
   - type: DropshipDestination
     spawn: "/Maps/_Mriya/Shuttles/rcm_pve_shuttle.yml"
+
+- type: entity
+  parent: CMDropshipDestination
+  id: MMCDropshipDestinationWEYAPMCPVE
+  suffix: ПВЕ, ПВК Ве-я
+  components:
+  - type: DropshipDestination
+    spawn: "/Maps/_Mriya/Shuttles/weya_pmc_pve_shuttle.yml"

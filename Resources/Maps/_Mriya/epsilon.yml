@@ -5751,12 +5751,12 @@ entities:
     - type: Transform
       pos: 20.22575,3.355138
       parent: 1
-- proto: CMDropshipDestination
+- proto: MMCDropshipDestinationWEYAPMCPVE
   entities:
   - uid: 1655
     components:
     - type: MetaData
-      name: WEYA 'Haurchefant' Hangar
+      name: Епсилон Ангар
     - type: Transform
       pos: 29.5,43.5
       parent: 1
@@ -14507,16 +14507,18 @@ entities:
   - uid: 2272
     components:
     - type: MetaData
-      name: Brief Room
+      name: Брифінг Зала
     - type: Transform
       pos: 30.751837,-15.140319
       parent: 1
+    - type: RotaryPhone
+      category: Епсилон
     - type: Fixtures
       fixtures: {}
   - uid: 2273
     components:
     - type: MetaData
-      name: Hangar
+      name: Ангар
     - type: Transform
       pos: 24.440586,31.538755
       parent: 1
@@ -14527,10 +14529,12 @@ entities:
   - uid: 2514
     components:
     - type: MetaData
-      name: Infirmary
+      name: Медичний
     - type: Transform
       pos: 39.392693,4.700836
       parent: 1
+    - type: RotaryPhone
+      category: Епсилон
     - type: Fixtures
       fixtures: {}
   - uid: 2598
@@ -14540,6 +14544,8 @@ entities:
     - type: Transform
       pos: -3.6066797,-20.304073
       parent: 1
+    - type: RotaryPhone
+      category: Епсилон
     - type: Fixtures
       fixtures: {}
 - proto: RMCSecureCase
