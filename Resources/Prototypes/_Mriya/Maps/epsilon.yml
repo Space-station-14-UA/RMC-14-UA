@@ -14,9 +14,10 @@
         - type: StationJobs
           availableJobs:
            
-            # ПВК Ве-Я
+            # Командування ПВК Ве-Я
             CMPMCForceCommandPVE: [1, 1]
 
+            # ПВК Ве-Я
             CMPMCForceLeadPVE: [1, 1]
             CMPMCTeamLeadPVE: [2, 2]
             CMPMCGunnerPVE: [2, 2]
