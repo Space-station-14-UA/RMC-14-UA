@@ -23,8 +23,8 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.38"
-        density: 500
+          bounds: "-0.49,-0.49,0.49,-0.3" # Mriya. Останнє -0.38 в оригіналі, щоб нормально перелазити
+        density: 50 # Mriya. 500 в оригіналі
         mask:
         - FullTileMask
         layer:

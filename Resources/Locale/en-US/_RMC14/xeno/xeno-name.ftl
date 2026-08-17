@@ -7,8 +7,8 @@ rmc-xeno-mature = Зріла {$baseName}
 rmc-xeno-elder = Старша {$baseName}
 rmc-xeno-ancient = Давня {$baseName}
 rmc-xeno-prime = Первісна {$baseName}
-#Mriya start
 rmc-xeno-apex = Верховна {$baseName}
+#Mriya start
 rmc-xeno-royal = Монарша {$baseName}
 rmc-xeno-legendary = Легендарна {$baseName}
 rmc-xeno-forever = Піднесена {$baseName}

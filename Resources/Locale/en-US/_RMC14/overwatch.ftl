@@ -98,9 +98,9 @@ rmc-overwatch-console-objective-secondary = [bold]Додаткова Задач�
 rmc-overwatch-console-objective-placeholder = Введіть текст задачі...
 rmc-overwatch-console-objective-update = Оновити
 rmc-overwatch-console-objective-cancel = Скасувати
-rmc-overwatch-console-announce-objective-updated = [color=#50ECA3][bold]Оголошення.[/bold] {$operatorName} [bold]оновив[/bold] {$objectiveType} загону: [font size=16][bold]{$objective}[/bold][/font][/color]
-rmc-overwatch-console-announce-objective-cancelled = [color=#50ECA3][bold]Оголошення.[/bold] {$operatorName} [bold]скасував[/bold] {$objectiveType} загону: [font size=16][bold]{$objective}[/bold][/font][/color]
-rmc-overwatch-console-objective-updated = [bold][color=#7FFFD4]'{$squadName}' {$objectiveType} оновлена. Нова задача: '{$objective}'.[/color][/bold]
-rmc-overwatch-console-objective-cancelled = [bold][color=#7FFFD4]'{$squadName}' {$objectiveType} '{$objective}' було скасовано.[/color][/bold]
+rmc-overwatch-console-announce-objective-updated = [color=#50ECA3][bold]Оголошення.[/bold] {$operatorName} [color=#008000][bold]оновив[/bold][/color] {$objectiveType} загону: [font size=16][bold]{$objective}[/bold][/font][/color]
+rmc-overwatch-console-announce-objective-cancelled = [color=#50ECA3][bold]Оголошення.[/bold] {$operatorName} [color=#FF0000][bold]скасував[/bold][/color] {$objectiveType} загону: [font size=16][bold]{$objective}[/bold][/font][/color]
+rmc-overwatch-console-objective-updated = [bold][color=#7FFFD4]'{$squadName}' {$objectiveType} [color=#008000]оновлена[/color]. Нова задача: '{$objective}'.[/color][/bold]
+rmc-overwatch-console-objective-cancelled = [bold][color=#7FFFD4]'{$squadName}' {$objectiveType} '{$objective}' [color=#FF0000]було скасовано[/color].[/bold]
 rmc-overwatch-console-objectives = Завдання вашого загону:
     {$objectives}

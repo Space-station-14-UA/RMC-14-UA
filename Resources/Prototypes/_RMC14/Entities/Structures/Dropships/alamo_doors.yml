@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: RMCDropshipDoorBase
   id: CMAlamoDoor
-  name: alamo crew hatch
+  name: шлюз Аламо
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Dropships/alamo.rsi
@@ -20,7 +20,7 @@
 - type: entity
   parent: RMCDropshipDoorAftBase
   id: CMAlamoDoorAft
-  name: alamo cargo door
+  name: Вантажний шлюз Аламо
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Dropships/Airlocks/alamo_cargo.rsi
@@ -28,7 +28,7 @@
 - type: entity
   parent: RMCDropshipDoorPortBase
   id: CMAlamoDoorPort
-  name: alamo crew hatch
+  name: шлюз лівого борту Аламо
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Dropships/Airlocks/alamo_doubledoor.rsi
@@ -36,7 +36,7 @@
 - type: entity
   parent: RMCDropshipDoorStarboardBase
   id: CMAlamoDoorStarboard
-  name: alamo crew hatch
+  name: шлюз правого борту Аламо
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Dropships/Airlocks/alamo_doubledoor.rsi

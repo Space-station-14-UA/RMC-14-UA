@@ -1,0 +1,23 @@
+- type: htnCompound
+  id: MRXenonidMeleeCombatCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: MRXenonidBeforeMeleeAttackTargetCompound
+
+- type: htnCompound
+  id: MRXenonidBeforeMeleeAttackTargetCompound
+  branches:
+    - preconditions:
+        - !type:PulledPrecondition
+          isPulled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnPullOperator
+            shutdownState: TaskFinished
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetCompound

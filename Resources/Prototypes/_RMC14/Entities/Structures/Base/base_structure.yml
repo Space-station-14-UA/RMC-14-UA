@@ -78,7 +78,7 @@
 - type: entity
   abstract: true
   id: RMCBaseWallInvincibleNoIcon
-  description: A huge chunk of metal used to separate rooms.
+  description: Великий шмат металу, що використовується для розділення кімнат.
   placement:
     mode: SnapgridCenter
     snap:
@@ -122,7 +122,7 @@
   abstract: true
   parent: RMCBaseWallInvincibleNoIcon
   id: CMBaseWallInvincible
-  description: A huge chunk of metal used to separate rooms.
+  description: Великий шмат металу, що використовується для розділення кімнат.
   placement:
     mode: SnapgridCenter
     snap:
@@ -135,7 +135,7 @@
   abstract: true
   parent: CMBaseWallInvincible
   id: CMBaseWall
-  description: A huge chunk of metal used to separate rooms.
+  description: Великий шмат металу, що використовується для розділення кімнат.
   components:
   - type: Damageable
     damageContainer: StructuralMarine

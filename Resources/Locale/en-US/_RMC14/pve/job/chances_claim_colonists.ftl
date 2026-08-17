@@ -1,47 +1,45 @@
-rmc-job-greeting-chances-colonist = You are a colonist living on LV-522. You are tasked by your employer, the Weston-Yamada Corporation, to preform your expected duties.
+rmc-job-greeting-chances-colonist = Ви колоніст ЖЗ-522 Земля Фортуни. Ве-Я найняла вас для виконання роботи на цьому об'єкті.
 
-  You are [bold][color=#51A16C][font size=16]NON-HOSTILE to the UNMC![/font][/color][/bold]
+rmc-job-name-colonist-chances-trucker = Оператор Важкого Обладнання
+rmc-job-description-colonist-chances-trucker = Operate heavy equipment in and around the colony. #описи поки що не чіпаєм, можливо в майбутньому створимо власні ролі для лейт-джоіну
+CMSurvivorChancesTrucker = Оператор Важкого Обладнання
 
-rmc-job-name-colonist-chances-trucker = Weston-Yamada Heavy Vehicle Operator
-rmc-job-description-colonist-chances-trucker = Operate heavy equipment in and around the colony.
-CMSurvivorChancesTrucker = Weston-Yamada Heavy Vehicle Operator
+rmc-job-name-colonist-chances-miner = Шахтар
+CMSurvivorChancesMiner = Шахтар
 
-rmc-job-name-colonist-chances-miner = Mining Surveyor
-CMSurvivorChancesMiner = Mining Surveyor
+rmc-job-name-colonist-chances-civilian = Сервісний Працівник
+CMSurvivorChancesCivilian = Сервісний Працівник
 
-rmc-job-name-colonist-chances-civilian = Catering Technician
-CMSurvivorChancesCivilian = Catering Technician
+rmc-job-name-colonist-administrative-clerk = Адміністративний Представник
+CMSurvivorAdministrativeClerk = Адміністративний Представник
 
-rmc-job-name-colonist-administrative-clerk = Administrative Clerk
-CMSurvivorAdministrativeClerk = Administrative Clerk
+rmc-job-name-colonist-operations-supervisor = Керівник Операцій
+CMSurvivorOperationsSupervisor = Керівник Операцій
 
-rmc-job-name-colonist-operations-supervisor = Operations Supervisor
-CMSurvivorOperationsSupervisor = Operations Supervisor
+rmc-job-name-colonist-chances-medic = Лікар
+CMSurvivorChancesMedic = Лікар
 
-rmc-job-name-colonist-chances-medic = Chance's Claim Medic
-CMSurvivorChancesMedic = Chance's Claim Medic
+rmc-job-name-colonist-chances-paramedic = Парамедик
+CMSurvivorChancesParamedic = Парамедик
 
-rmc-job-name-colonist-chances-paramedic = Chance's Claim Paramedic
-CMSurvivorChancesParamedic = Chance's Claim Paramedic
+rmc-job-name-colonist-environmental-researcher = Еколог-Дослідник
+CMSurvivorChancesEnvironmentalResearcher = Еколог-Дослідник
 
-rmc-job-name-colonist-environmental-researcher = Environmental Researcher
-CMSurvivorChancesEnvironmentalResearcher= Environmental Researcher
+rmc-job-name-colonist-terraforming-specialist = Спеціаліст з Тераформування
+CMSurvivorChancesTerraformingSpecialist = Спеціаліст з Тераформування
 
-rmc-job-name-colonist-terraforming-specialist = Terraforming Specialist
-CMSurvivorChancesTerraformingSpecialist = Terraforming Specialist
+rmc-job-name-colonist-atmos-process-tech = Технік Атмосферного Реактора
+CMSurvivorChancesAtmosProcessTech = Технік Атмосферного Реактора
 
-rmc-job-name-colonist-atmos-process-tech = Atmospheric Processing Reactor Technician
-CMSurvivorChancesAtmosProcessTech = Atmospheric Processing Reactor Technician
+rmc-job-name-colonist-vehicle-repairman = Механік Транспорту
+CMSurvivorChancesVehicleRepairman = Механік Транспорту
 
-rmc-job-name-colonist-vehicle-repairman = Vehicle Repairman
-CMSurvivorChancesVehicleRepairman = Vehicle Repairman
+rmc-job-name-colonist-colony-maint-tech = Обслуговуючий Технік
+CMSurvivorChancesColonyMaintTech = Обслуговуючий Технік
 
-rmc-job-name-colonist-colony-maint-tech = Colony Maintenance Technician
-CMSurvivorChancesColonyMaintTech = Colony Maintenance Technician
+rmc-job-name-colonist-cargo-tech = Працівник Складу
+CMSurvivorChancesCargoTech = Працівник Складу
 
-rmc-job-name-colonist-cargo-tech = Warehouse Worker
-CMSurvivorChancesCargoTech = Warehouse Worker
-
-rmc-job-name-colonist-chances-goon = Chance's Claim Corporate Security
-CMSurvivorChancesGoon = Chance's Claim Corporate Security
+rmc-job-name-colonist-chances-goon = Корпоративний Охоронець
+CMSurvivorChancesGoon = Корпоративний Охоронець
 

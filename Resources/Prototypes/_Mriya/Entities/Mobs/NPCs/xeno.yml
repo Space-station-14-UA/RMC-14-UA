@@ -1,0 +1,26 @@
+- type: entity
+  parent: CMXenoDrone
+  id: MRMobHostileXenoDrone
+  suffix: Мрія, ШІ, Ворожий
+  components:
+  - type: NpcFactionMember
+    factions:
+      - RMCXeno
+  - type: AutoAssignHive
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: MobMover
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 22.5
+  - type: RemoveComponents
+    components:
+    - type: ActiveInputMover
+    - type: SSDIndicator
+  - type: HTN
+    rootTask:
+      task: MRXenonidHostileCompound
+    blackboard:
+        NavSmash: !type:Bool
+          true

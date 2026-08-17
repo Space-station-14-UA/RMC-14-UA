@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: [ CMBaseWeaponRifle, RMCBaseWeaponMagazineVisuals ]
-  name: Type 77 assault rifle
+  name: Тип 77 штурмова гвинтівка
   id: RMCWeaponRifleType77
-  description: The SPP equivalent to the M54C Rifle, the Type 77 is a cheap and reliable substitute. As such, the weapon often winds up in the hands of mercenaries and insurgents. While not as accurate as the M54, the Type 77 is sturdier than the UNMC weapon. A Type 77 still works after being thrown off a cliff and left underwater for a month.
+  description: Еквівалент гвинтівки М54С, але від СП. Як така, зброя часто потрапляє до рук найманців та повстанців. Має гіршу за М54 точність, але надійніша в екстремальних умовах. "Гвинтівка Тип 77 все ще буде працювати після того, як її скинули зі скелі та залишили під водою на місяць", – пишуть на пропагандистських постерах СПН. Комуняцьке лайно...
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Rifles/Type77.rsi
@@ -172,7 +172,7 @@
 - type: entity
   parent: CMMagazineRifleBase
   id: RMCMagazineRifleType77
-  name: "Type 77 magazine (10x24mm)"
+  name: Тип 77 магазин (10х24 мм)
   components:
   - type: Tag
     tags:
@@ -206,7 +206,7 @@
 - type: entity
   parent: RMCMagazineRifleType77
   id: RMCMagazineRifleType77AP
-  name: "Type 77 AP magazine (10x24mm)"
+  name: Тип 77 ББ магазин (10х24 мм)
   suffix: AP
   components:
   - type: Tag
@@ -233,7 +233,7 @@
 - type: entity
   parent: RMCMagazineRifleType77
   id: RMCMagazineRifleType77Incendiary
-  name: "Type 77 Incendiary magazine (10x24mm)"
+  name: Тип 77 запальний магазин (10х24 мм)
   suffix: Incendiary
   components:
   - type: Tag
@@ -260,7 +260,7 @@
 - type: entity
   parent: RMCMagazineRifleType77
   id: RMCMagazineRifleType77HEAP
-  name: "Type 77 HEAP magazine (10x24mm)"
+  name: Тип 77 ВБ магазин (10х24 мм)
   suffix: HEAP
   components:
   - type: Tag
@@ -287,7 +287,7 @@
 - type: entity
   parent: RMCMagazineRifleType77
   id: RMCMagazineRifleType77Rubber
-  name: "Type 77 rubber magazine (10x24mm)"
+  name: Тип 77 гумовий магазин (10х24 мм)
   components:
   - type: Tag
     tags:

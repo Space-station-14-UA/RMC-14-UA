@@ -53,6 +53,7 @@
       tags:
       - Plastic
       - RMCGlass
+      - RMCSheetMetal # Mriya. Для власних рецептів
   - type: Destructible
     thresholds:
     - trigger:
@@ -160,3 +161,4 @@
   - RMCVialBox
   - RMCPouchReagentCanister
   - RMCPressurizedCanister
+  - MRMiniTank # Mriya

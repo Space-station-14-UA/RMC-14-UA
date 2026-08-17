@@ -39,12 +39,12 @@
 
 - type: entity
   parent: [RMCMarineUniformBase, RMCAlternateFoldableUniformBase]
-  id: RMCJumpsuitSPPPaP
+  id: RMCJumpsuitSPPPCG
   name: службові лахи НоП # PaP - People's armed Police
   description: Пара блакитно-сірих брюк поєднана з блакитною сорочкою, оснащена вставками з венлару у критичних зонах для захисту від колючо-ріжучої зброї та куль малого калібру.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Uniforms/SPP/pap.rsi
+    sprite: _RMC14/Objects/Clothing/Uniforms/SPP/pcg.rsi
   - type: UniformAccessoryHolder
     startingAccessories:
     - RMCPatchSPP
@@ -53,7 +53,7 @@
     - RMCUniformSPP
 
 - type: entity
-  parent: RMCJumpsuitSPPPaP
+  parent: RMCJumpsuitSPPPCG
   id: RMCJumpsuitSPPArmy
   name: лахи армії СПН
   description: Комплект одягу СПН, у масовому виробницстві для Озброєнних Колективів Соціалістичних Прогресивних Народів. Рідкість, особливо в зонах 3WE. Цей набір демонструє стандартну камуфляжну схему 202-го піхотного полку армії СПН.

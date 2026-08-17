@@ -8,7 +8,8 @@ rmc-construction-melted = Ви не можете підійти близько -
 rmc-construction-upgrade-explosive = Ви звели вибухостійке покращення.
 rmc-construction-upgrade-burn = Ви звели антикислотне покращення.
 rmc-construction-upgrade-brute = Ви додали кілька металевих пластин до барикади.
-rmc-construction-downgrade = Ви прибрати покращення з {$ent}, повернувши її назад до базового варіанту.
+rmc-construction-downgrade = Ви прибрали покращення з {$ent}, повернувши її назад до базового варіанту.
+rmc-construction-require-anchored = Вам треба спочатку прикрутити {$ent}!
 
 rmc-construction-untrained-build = Ви не навчені щоб будувати це...
 rmc-construction-more-material = Вам потрібно більше {$material} щоб збудувати {$object}!

@@ -1,8 +1,8 @@
 - type: entity
   parent: [MobObserver, InventoryBase]
   id: RMCImaginaryFriend
-  name: Imaginary Friend
-  description: A wonderful yet fake friend.
+  name: уявний друг
+  description: Прекрасний але, на жаль, несправжній друг.
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -73,7 +73,7 @@
   parent: RMCImaginaryFriend
   id: RMCImaginaryFriendXeno
   categories: [ HideSpawnMenu ]
-  name: Xippy
+  name: ксіппі
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/LesserDrone/lesser_drone.rsi
@@ -83,6 +83,14 @@
       shader: ""
   - type: Speech
     speechSounds: Xenonid
+  - type: Language
+    spokenLanguages:
+      - English
+      - Xeno
+    understoodLanguages:
+      - Xeno
+    currentLanguage: Xeno
+    defaultLanguage: Xeno
 
 - type: startingGear
   id: RMCMobXippyGear

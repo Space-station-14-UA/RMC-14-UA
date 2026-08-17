@@ -21,8 +21,8 @@
 - type: entity
   parent: CMBaseStructureCorrodible
   id: RMCUtilityAttachmentPoint
-  name: utility attach point
-  description: An attachment point for utility systems
+  name: точка кріплення допоміжного обладнання
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   components:
   - type: GuideHelp
     guides:
@@ -53,8 +53,8 @@
 - type: entity
   parent: CMBaseStructureCorrodible
   id: RMCEngineAttachmentPoint
-  name: engine system attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: точка кріплення паливних систем
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   components:
   - type: GuideHelp
     guides:
@@ -94,8 +94,8 @@
   parent: CMBaseStructureCorrodible
   id: RMCElectronicSystemAttachPoint
   categories: [ HideSpawnMenu ]
-  name: electronic system attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: точка кріплення електронних систем
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   components:
   - type: InteractionOutline
   - type: Clickable

@@ -76,6 +76,7 @@ rmc-xeno-evolution-failed-early-weeds = Вулик ще недостатньо �
 rmc-xeno-evolution-failed-bad-location = Ви не можете еволюціонувати тут.
 rmc-xeno-evolution-failed-marines-dropped = Небесені інкубатори вже приземлилися, ми більше не можемо еволюціонувати в цю форму.
 rmc-xeno-evolution-failed-queen-exists = Вулик вже має королеву!
+rmc-xeno-evolution-failed-not-enough-points = Нам треба більше матеріалу для еволюції.
 rmc-xeno-evolution-start-self = Ми починаємо викручуватись і корчитись.
 rmc-xeno-evolution-start-others = {$xeno} починає викручуватись і корчитись.
 

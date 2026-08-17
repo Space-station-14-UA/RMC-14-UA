@@ -3,7 +3,7 @@
   - CMBaseDoor
   - CMBaseDoorConstructible
   id: CMAirlock
-  name: airlock
+  name: шлюз
   placement:
     mode: SnapgridCenter
   components:

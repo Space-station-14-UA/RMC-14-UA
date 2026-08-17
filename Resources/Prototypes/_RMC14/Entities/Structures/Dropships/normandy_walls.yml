@@ -2,7 +2,7 @@
   abstract: true
   parent: CMBaseWallInvincible
   id: CMBaseNormandyWall
-  name: normandy wall
+  name: корпус Нормандії
   components:
   - type: Corrodible
     isCorrodible: false
@@ -696,8 +696,8 @@
 - type: entity
   parent: [CMBaseNormandyWall, CMAlamoWall61]
   id: CMNormandyWall61
-  name: port wing weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: точка кріплення зброї на лівому крилі
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 61
   components:
   - type: Sprite
@@ -748,8 +748,8 @@
 - type: entity
   parent: [CMBaseNormandyWall, CMAlamoWall65]
   id: CMNormandyWall65
-  name: starboard wing weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: точка кріплення зброї на правому крилі
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 65
   components:
   - type: Sprite
@@ -965,8 +965,8 @@
 - type: entity
   parent: [CMBaseNormandyWall, CMAlamoWall84]
   id: CMNormandyWall84
-  name: port fore weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: передня точка кріплення зброї лівого борту
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 84
   components:
   - type: Sprite
@@ -984,8 +984,8 @@
 - type: entity
   parent: [CMNormandyWall84, CMAlamoWall84Flipped]
   id: CMNormandyWall84Flipped
-  name: starboard fore weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: передня точка кріплення зброї правого борту
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 84, Flipped
   components:
   - type: Sprite

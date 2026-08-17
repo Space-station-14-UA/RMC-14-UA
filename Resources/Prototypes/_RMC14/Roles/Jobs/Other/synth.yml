@@ -83,8 +83,12 @@
         types:
           Blunt: 35
     - type: Synth
-    - type: RMCTrackable # Mriya
-#  hidden: true – MR
+    # Mriya start. qol
+    - type: SeeNewPlayers
+    - type: ViewIntelObjectives
+    - type: RMCPointing
+    - type: RMCTrackable # Для трекера
+    # Mriya end
 
 - type: startingGear
   id: RMCGearSyntheticEquipped
