@@ -1,0 +1,10 @@
+﻿- type: department
+  parent: CMDepartmentBase
+  id: MRweyaPMCCommand
+  name: department-MRweyaPMCCommand
+  description: mriya-department-weyapmc-command-description
+  color: "#58bdb3"
+  roles:
+  - CMPMCForceCommandPVE
+  departmentRadio: null
+  headOfDepartment: CMPMCForceCommandPVE
