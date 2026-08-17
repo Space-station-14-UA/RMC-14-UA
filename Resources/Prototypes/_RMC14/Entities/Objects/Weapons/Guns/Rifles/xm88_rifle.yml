@@ -55,8 +55,6 @@
   - type: GunDamageModifier
     multiplier: 1
   - type: GunStacks
-    increaseAP: 20 # Mriya. 10 в оригіналі. Баф ТМГ by France
-    maxAP: 60 # Mriya. 50 в оригіналі
   - type: AttachableHolder
     slots:
       rmc-aslot-barrel:

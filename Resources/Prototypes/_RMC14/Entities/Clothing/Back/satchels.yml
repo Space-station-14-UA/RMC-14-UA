@@ -907,7 +907,7 @@
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Back/Backpacks/RCM/rto.rsi
   - type: RotaryPhone
-    category: Three Suns Empire
+    category: Імперія Трьох Сонць
   - type: ItemCamouflage
     camouflageVariations: {}
 

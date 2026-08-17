@@ -220,6 +220,14 @@
         points: 6
     - name: Medical Supplies
       entries:
+      # Mriya start
+      - id: CMUpgradedBurnKit10
+        points: 8
+        recommended: true
+      - id: CMUpgradedTraumaKit10
+        points: 8
+        recommended: true
+      # Mriya end
       - id: CMBurnKit1
         points: 2
       - id: CMTraumaKit1
@@ -248,9 +256,17 @@
         points: 5
       - id: CMPillCanisterKelotane
         points: 5
-      - id: RMCPillCanisterIron # Mriya. Залізо Синтам
+      # Mriya start
+      - id: RMCPillCanisterIron
         points: 5
         recommended: true
+      - id: RMCPillCanisterMeralyneBicaridine
+        points: 10
+        recommended: true
+      - id: CMPillCanisterKelotaneDermaline
+        points: 10
+        recommended: true
+      # Mriya end
       # /obj/item/storage/pill_bottle/peridaxon - 5 Points
       # /obj/item/storage/pill_bottle/tramadol - 5 Points
       - id: CMBicaridineAutoInjector
@@ -277,8 +293,6 @@
         points: 4
       - id: CMSynthGraft
         points: 4
-      - id: CMMiniTank # Mriya. Каністри синтам
-        points: 5
     - name: Other Supplies
       entries:
       - id: RMCBinoculars

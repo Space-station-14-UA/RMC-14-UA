@@ -99,7 +99,9 @@ namespace Content.IntegrationTests.Tests
             //"Rover"
             "MRSavannah", // Mriya
             "MRAdminFax",
-            "MRTundraPVE"
+            "MRTundraPVE",
+            "MRTundraNOJOBS",
+            "MRGladiusPVE"
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";

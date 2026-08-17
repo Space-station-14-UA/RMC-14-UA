@@ -69,6 +69,10 @@ public sealed class GunStacksSystem : EntitySystem
 
         if (ent.Comp.Hits > 0)
             args.Multiplier += gunStacks.DamageIncrease;
+        // Mriya start. Баф ТМГ by France
+        if (ent.Comp.Hits > 1)
+            args.Multiplier += gunStacks.DamageIncreaseFull;
+        // Mriya end
     }
 
     private void OnStacksActiveGetGunFireRate(Entity<GunStacksActiveComponent> ent, ref GunGetFireRateEvent args)

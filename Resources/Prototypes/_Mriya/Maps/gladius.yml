@@ -1,0 +1,28 @@
+- type: gameMap
+  id: MRGladiusPVE
+  mapName: Гладіус
+  mapPath: /Maps/_Mriya/gladius.yml
+  minPlayers: 0
+  maxRandomOffset: 0
+  randomRotation: false
+  stations:
+    Gladius:
+      stationProto: StandardUNMCWarship
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ПКР-Гладіус "Королева Єлизавета"' #Патрульний Корабель Реагування
+        - type: StationJobs
+          availableJobs:
+            # Командування
+            CMRoyalMarinesTroopCommanderPVE: [1, 1]
+
+            # Морпіхи
+          # CMRoyalMarinesTroopSargePVE: [1, 1] в оригіналі додаткова ланка між командером та лідерами, нам таке поки не треба.
+            CMRoyalMarinesSectionLeaderPVE: [1, 1]
+            CMRoyalMarinesTeamLeaderPVE: [2, 2]
+            CMRoyalMarinesAssaultEngineerPVE: [2, 2]
+            CMRoyalMarinesSmartgunnerPVE: [1, 1]
+            CMRoyalMarinesBombSpecPVE: [1, 1]
+            CMRoyalMarinesScoutSniperPVE: [1, 1]
+            CMRoyalMarinesMedicPVE: [2, 2]
+            CMRoyalMarinesRiflemanPVE: [10, 10]

@@ -19,7 +19,7 @@ public sealed partial class MarineCommunicationsComputerComponent : Component
     public EntProtoId<SkillDefinitionComponent> AnnounceSkill = "RMCSkillLeadership";
 
     [DataField, AutoNetworkedField]
-    public int AnnounceSkillLevel = 1;
+    public int AnnounceSkillLevel = 0; // Mriya. 1 в оригіналі
 
     [DataField, AutoNetworkedField]
     public EntProtoId<SkillDefinitionComponent> OverwatchSkill = "RMCSkillOverwatch";

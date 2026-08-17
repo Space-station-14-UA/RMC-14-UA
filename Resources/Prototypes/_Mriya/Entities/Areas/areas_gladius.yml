@@ -1,0 +1,126 @@
+
+- type: entity
+  parent: RMCAreaPRTHypersleep
+  id: MMCAreaGladiusHypersleep
+  name: Гіперсон
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTGalley
+  id: MMCAreaGladiusGalley
+  name: Камбуз
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTCanteen
+  id: MMCAreaGladiusCanteen
+  name: Їдальня
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTLounge
+  id: MMCAreaGladiusLounge
+  name: Кімната відпочинку
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTMedbay
+  id: MMCAreaGladiusMedbay
+  name: Медичний відділ
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTOffice
+  id: MMCAreaGladiusOffice
+  name: Офіс Командувача Сил
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTCargoBayUpper
+  id: MMCAreaGladiusCargoBayUpper
+  name: Верхній вантажний відсік
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTCargoBayLower
+  id: MMCAreaGladiusCargoBayLower
+  name: Нижній вантажний відсік
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTMaintenaceLower
+  id: MMCAreaGladiusMaintenaceLower
+  name: Нижній технічний відсік
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTMaintenanceUpper
+  id: MMCAreaGladiusMaintenanceUpper
+  name: Верхній технічний відсік
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTEngineering
+  id: MMCAreaGladiusEngineering
+  name: Інженерний відсік
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTHangar
+  id: MMCAreaGladiusHangar
+  name: Ангар
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTHangarCargo
+  id: MMCAreaGladiusHangarCargo
+  name: Вантажний відсік ангара
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTHallways
+  id: MMCAreaGladiusHallways
+  name: Коридори
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTSurgicalBay
+  id: MMCAreaGladiusSurgicalBay
+  name: Хірургічна палата
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTArmory
+  id: MMCAreaGladiusArmory
+  name: Зброярня
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTSynth
+  id: MMCAreaGladiusSynth
+  name: Кімната синтетиків
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTAICoreInner
+  id: MMCAreaGladiusAICoreInner
+  name: Ядро ШИВА
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTBunks
+  id: MMCAreaGladiusBunks
+  name: Каюти
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTBriefing
+  id: MMCAreaGladiusBriefing
+  name: Брифінг зала
+  suffix: Мрія, Гладіус
+
+- type: entity
+  parent: RMCAreaPRTCraneTunnel
+  id: MMCAreaGladiusCraneTunnel
+  name: Тунель вантажного крана
+  suffix: Мрія, Гладіус

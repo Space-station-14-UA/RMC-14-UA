@@ -9,13 +9,16 @@ namespace Content.Shared._RMC14.Weapons.Ranged.Stacks;
 public sealed partial class GunStacksComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public int IncreaseAP = 10;
+    public int IncreaseAP = 20; // Mriya. 10 в оригіналі. Баф ТМГ by France
 
     [DataField, AutoNetworkedField]
-    public int MaxAP = 50;
+    public int MaxAP = 60; // Mriya. 50 в оригіналі.
 
     [DataField, AutoNetworkedField]
     public FixedPoint2 DamageIncrease = FixedPoint2.New(0.2);
+
+    [DataField, AutoNetworkedField] // Mriya. Воно сумується з DamageIncrease
+    public FixedPoint2 DamageIncreaseFull = FixedPoint2.New(0.1125);
 
     [DataField, AutoNetworkedField]
     public float SetFireRate = 1.4285f;
