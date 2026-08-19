@@ -1,6 +1,6 @@
 ﻿- type: department
   parent: CMDepartmentBase
-  id: MRweyaPMCCommand
+  id: MRWeyaPMCCommand
   name: mriya-department-weya-pmc-command 
   description: mriya-department-weya-pmc-command-description
   color: "#58bdb3"

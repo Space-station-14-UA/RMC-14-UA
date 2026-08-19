@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.2
   forkId: ""
   forkVersion: ""
-  time: 08/16/2026 13:15:20
-  entityCount: 2775
+  time: 08/19/2026 12:44:51
+  entityCount: 2799
 maps:
 - 1
 grids:
@@ -4276,6 +4276,11 @@ entities:
     - type: Transform
       pos: 24.53092,2.6793964
       parent: 1
+  - uid: 2797
+    components:
+    - type: Transform
+      pos: 26.339115,-8.180178
+      parent: 1
 - proto: CMAirlock
   entities:
   - uid: 262
@@ -5751,15 +5756,6 @@ entities:
     - type: Transform
       pos: 20.22575,3.355138
       parent: 1
-- proto: MMCDropshipDestinationWEYAPMCPVE
-  entities:
-  - uid: 1655
-    components:
-    - type: MetaData
-      name: Епсилон Ангар
-    - type: Transform
-      pos: 29.5,43.5
-      parent: 1
 - proto: CMEpinephrineAutoInjector
   entities:
   - uid: 2773
@@ -5773,6 +5769,34 @@ entities:
     components:
     - type: Transform
       pos: 32.45378,7.000871
+      parent: 1
+- proto: CMHeadBandDelta
+  entities:
+  - uid: 2782
+    components:
+    - type: Transform
+      pos: 33.332825,10.597198
+      parent: 1
+- proto: CMHeadBandEcho
+  entities:
+  - uid: 2790
+    components:
+    - type: Transform
+      pos: -4.1929073,4.697238
+      parent: 1
+- proto: CMHeadBandGreen
+  entities:
+  - uid: 1209
+    components:
+    - type: Transform
+      pos: 22.63672,10.666996
+      parent: 1
+- proto: CMHeadBandIntel
+  entities:
+  - uid: 1148
+    components:
+    - type: Transform
+      pos: 33.8172,10.284698
       parent: 1
 - proto: CMIV
   entities:
@@ -8682,6 +8706,15 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 29.5,1.5
       parent: 1
+- proto: MMCDropshipDestinationWEYAPMCPVE
+  entities:
+  - uid: 1655
+    components:
+    - type: MetaData
+      name: Епсилон Ангар
+    - type: Transform
+      pos: 29.5,43.5
+      parent: 1
 - proto: RMCActionCycleVisor
   entities:
   - uid: 2588
@@ -8824,10 +8857,10 @@ entities:
       parent: 1
 - proto: RMCBoxAGMI
   entities:
-  - uid: 1209
+  - uid: 1146
     components:
     - type: Transform
-      pos: 22.453896,10.587713
+      pos: 19.419516,19.550865
       parent: 1
 - proto: RMCBoxFlashlights
   entities:
@@ -8843,25 +8876,10 @@ entities:
       parent: 1
 - proto: RMCBoxHEDP
   entities:
-  - uid: 1145
-    components:
-    - type: Transform
-      pos: 19.438896,19.64622
-      parent: 1
-  - uid: 1146
-    components:
-    - type: Transform
-      pos: 19.563896,19.36844
-      parent: 1
   - uid: 1147
     components:
     - type: Transform
       pos: 39.544167,19.70872
-      parent: 1
-  - uid: 1148
-    components:
-    - type: Transform
-      pos: 39.46083,19.417053
       parent: 1
 - proto: RMCBoxHEFA
   entities:
@@ -12324,6 +12342,27 @@ entities:
     - type: Transform
       pos: -9.5,12.5
       parent: 1
+- proto: RMCGlassesTriMaxBlackFake
+  entities:
+  - uid: 2796
+    components:
+    - type: Transform
+      pos: 22.684101,10.533478
+      parent: 1
+- proto: RMCGlassesTriMaxBronzeFake
+  entities:
+  - uid: 2791
+    components:
+    - type: Transform
+      pos: -4.3908243,4.853488
+      parent: 1
+- proto: RMCGogglesBallisticBlue
+  entities:
+  - uid: 2794
+    components:
+    - type: Transform
+      pos: 19.569517,15.429312
+      parent: 1
 - proto: RMCGroundsideOperationsConsole
   entities:
   - uid: 1526
@@ -12378,12 +12417,26 @@ entities:
     - type: Transform
       pos: 19.450024,15.553835
       parent: 1
+- proto: RMCHelmetGarbNightVision
+  entities:
+  - uid: 2795
+    components:
+    - type: Transform
+      pos: 22.361183,10.470978
+      parent: 1
 - proto: RMCHelmetGarbPrescription
   entities:
   - uid: 1156
     components:
     - type: Transform
       pos: 19.658356,15.751751
+      parent: 1
+- proto: RMCHippieGlassesGreen
+  entities:
+  - uid: 2792
+    components:
+    - type: Transform
+      pos: 20.066893,4.588365
       parent: 1
 - proto: RMCHybrisaStairs
   entities:
@@ -13512,6 +13565,51 @@ entities:
     - type: Transform
       pos: -15.518791,-0.69230926
       parent: 1
+- proto: RMCMaskScarfBlack
+  entities:
+  - uid: 2787
+    components:
+    - type: Transform
+      pos: -4.504058,-3.6625104
+      parent: 1
+- proto: RMCMaskScarfEcho
+  entities:
+  - uid: 2788
+    components:
+    - type: Transform
+      pos: -4.372113,-3.5375104
+      parent: 1
+- proto: RMCMaskScarfGray
+  entities:
+  - uid: 2785
+    components:
+    - type: Transform
+      pos: 23.400164,-5.721151
+      parent: 1
+  - uid: 2786
+    components:
+    - type: Transform
+      pos: -4.677669,-3.4888995
+      parent: 1
+- proto: RMCMaskScarfGreen
+  entities:
+  - uid: 2789
+    components:
+    - type: Transform
+      pos: -4.557491,4.790988
+      parent: 1
+- proto: RMCMaskScarfTan
+  entities:
+  - uid: 2783
+    components:
+    - type: Transform
+      pos: 36.69452,10.519073
+      parent: 1
+  - uid: 2784
+    components:
+    - type: Transform
+      pos: 18.440733,4.3114476
+      parent: 1
 - proto: RMCMechPowerLoader
   entities:
   - uid: 2295
@@ -13529,6 +13627,18 @@ entities:
     components:
     - type: Transform
       pos: 46.5,44.5
+      parent: 1
+- proto: RMCMegaphone
+  entities:
+  - uid: 2798
+    components:
+    - type: Transform
+      pos: -3.6031463,-18.242842
+      parent: 1
+  - uid: 2799
+    components:
+    - type: Transform
+      pos: 19.523108,11.925469
       parent: 1
 - proto: RMCMREWeYaPMC
   entities:
@@ -14929,7 +15039,6 @@ entities:
     - type: Transform
       pos: 37.5,5.5
       parent: 1
-      id: WEYA_EQUIPMENT
   - uid: 2493
     components:
     - type: Transform
@@ -15216,6 +15325,13 @@ entities:
     components:
     - type: Transform
       pos: 26.5,-2.5
+      parent: 1
+- proto: RMCSunglassesBigFake
+  entities:
+  - uid: 2793
+    components:
+    - type: Transform
+      pos: 30.46982,-15.522066
       parent: 1
 - proto: RMCTacticalMapTable
   entities:
@@ -19227,5 +19343,56 @@ entities:
     components:
     - type: Transform
       pos: -20.5,-2.5
+      parent: 1
+- proto: SpawnPointObserver
+  entities:
+  - uid: 2780
+    components:
+    - type: Transform
+      pos: 22.5,0.5
+      parent: 1
+- proto: WarpPoint
+  entities:
+  - uid: 1145
+    components:
+    - type: MetaData
+      name: Епсилон - Ангар
+    - type: Transform
+      pos: 29.5,42.5
+      parent: 1
+  - uid: 2776
+    components:
+    - type: MetaData
+      name: Епсилон - Гіперсон
+    - type: Transform
+      pos: -4.5,0.5
+      parent: 1
+  - uid: 2777
+    components:
+    - type: MetaData
+      name: Епсилон - Їдальня
+    - type: Transform
+      pos: 21.5,0.5
+      parent: 1
+  - uid: 2778
+    components:
+    - type: MetaData
+      name: Епсилон - Брифінг Зала
+    - type: Transform
+      pos: 29.5,-12.5
+      parent: 1
+  - uid: 2779
+    components:
+    - type: MetaData
+      name: Епсилон - Місток
+    - type: Transform
+      pos: -0.5,-20.5
+      parent: 1
+  - uid: 2781
+    components:
+    - type: MetaData
+      name: Епсилон - Зброярні
+    - type: Transform
+      pos: 29.5,17.5
       parent: 1
 ...
