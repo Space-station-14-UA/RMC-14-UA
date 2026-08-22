@@ -101,7 +101,7 @@ namespace Content.IntegrationTests.Tests
             "MRSavannah", // Mriya
             "MRAdminFax",
             "MRTundraPVE",
-            "MriyaHunterLeviathan"
+            "MriyaHunterLeviathan",
             "MRTundraNOJOBS",
             "MRGladiusPVE",
             "MREpsilonPVE"
