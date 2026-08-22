@@ -32,6 +32,12 @@ public sealed partial class AutodocComponent : Component
     [DataField]
     public Vector2 ConsoleSpawnOffset = new(-1, 0);
 
+    /// <summary>
+    /// If true, force the spawned console to face East direction.
+    /// </summary>
+    [DataField]
+    public bool ForceConsoleEast = false;
+
     [DataField, AutoNetworkedField]
     public EntityUid? LinkedConsole;
 

@@ -1,0 +1,292 @@
+- type: entity
+  id: MRHuntMicrowave
+  parent: KitchenMicrowave
+  name: мікрохвильова піч
+  description: Пристрій для швидкого приготування їжі за допомогою мікрохвильових хвиль.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/microwave.rsi
+    layers:
+    - state: mw
+      map: [ "enum.MicrowaveVisualizerLayers.Base" ]
+    - state: mwactiv
+      shader: unshaded
+      map: [ "enum.MicrowaveVisualizerLayers.BaseUnlit" ]
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.VisualState:
+        enum.MicrowaveVisualizerLayers.Base:
+          Idle: { state: "mw" }
+          Cooking: { state: "mw" }
+          Broken: { state: "mw" }
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          Idle: { visible: false }
+          Cooking: { state: "mwactiv", visible: true }
+          Broken: { visible: false }
+  - type: Appearance
+  - type: Construction
+  - type: ApcPowerReceiver
+    needsPower: false
+
+- type: entity
+  id: MRHuntSoda
+  parent: CMDispenserSoda
+  name: хант-сода
+  description: Автомат для видачі безалкогольних напоїв людей.
+  components:
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/hunt_dispenser.rsi
+    snapCardinals: false
+    layers:
+    - state: soda
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: soda
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+
+- type: entity
+  id: MRHuntBooze
+  parent: CMDispenserBooze
+  name: алко-хант
+  description: Автомат для видачі алкогольних напоїв людей.
+  components:
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/hunt_dispenser.rsi
+    snapCardinals: false
+    layers:
+    - state: booze
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: booze
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+
+- type: entity
+  parent: RMCCrateFreezer
+  id: HunterFridgeEmpty
+  name: холодильник
+  description: Холодильник для зберігання м'яса
+  suffix: Пустий
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/fridge.rsi
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/fridge.rsi
+    state: closed
+  - type: AntiRottingContainer
+
+- type: entity
+  parent: HunterFridgeEmpty
+  id: HunterFridgeMeat
+  name: холодильник
+  suffix: (М'ясо)
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodMeat
+      amount: 14
+
+- type: entity
+  parent: HunterFridgeEmpty
+  id: HunterFridgeXeno
+  name: холодильник
+  suffix: (Ксено)
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodMeatXeno
+      amount: 14
+
+- type: entity
+  parent: HunterFridgeEmpty
+  id: HunterFridgeFilled
+  name: холодильник
+  suffix: (Ксено + М'ясо)
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodMeat
+      amount: 14
+    - id: FoodMeatXeno
+      amount: 14
+
+- type: entity
+  parent: SMESAdvanced
+  id: HunterSMES
+  name: СМЕС
+  description: Високотехнологічний накопичувач енергії для масивних кораблів
+  suffix: Infinite
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/smes.rsi
+    layers:
+    - state: smes
+    - map: [ "enum.SmesVisualLayers.Charge" ]
+      sprite: Structures/Power/smes.rsi
+      state: "smes-og1"
+      shader: unshaded
+      visible: false
+    - map: [ "enum.SmesVisualLayers.Input" ]
+      sprite: Structures/Power/smes.rsi
+      state: "smes-oc0"
+      shader: unshaded
+    - map: [ "enum.SmesVisualLayers.Output" ]
+      sprite: Structures/Power/smes.rsi
+      state: "smes-op1"
+      shader: unshaded
+  - type: GenericVisualizer
+    visuals: {}
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/smes.rsi
+    state: smes
+  - type: Battery
+    maxCharge: 1000000000
+    startingCharge: 1000000000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 1000000000
+  - type: PowerNetworkBattery
+    maxChargeRate: 1000000000
+
+- type: entity
+  parent: CMCatwalk
+  id: MRHunterGrate
+  name: решітка
+  description: Решітка... Просто решітка
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: catwalk
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: catwalk
+
+- type: entity
+  parent: SpaceHeaterEnabled
+  id: MRHunterFreezer
+  name: охолоджувач
+  description: Пасивний охолоджувач, що генерує холод у зоні навколо.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/freezer.rsi
+    layers:
+    - state: freezer
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Machines/freezer.rsi
+    state: freezer
+  - type: GenericVisualizer
+    _deleted: true
+  - type: WiresVisuals
+    _deleted: true
+  - type: SpaceHeater
+    minTemperature: 233.15
+    maxTemperature: 293.15
+    heatingCoefficientOfPerformance: -0.9
+    coolingCoefficientOfPerformance: -0.9
+    mode: Cool
+  - type: GasThermoMachine
+    minTemperature: 233.15
+    maxTemperature: 293.15
+    targetTemperature: 263.15
+
+- type: entity
+  parent: CMVendorDinnerware
+  id: MRHunterDinnerware
+  name: роздавач посуду
+  description: Автомат для видачі столових приборів та кухонного приладдя.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/dinnerware.rsi
+    layers:
+    - state: dinnerware
+      map: ["enum.VendingMachineVisualLayers.Base"]
+  - type: CMAutomatedVendor
+    baseSprite:
+      sprite: _Mriya/Hunter/Structures/Machines/dinnerware.rsi
+      state: dinnerware
+    animationSprite:
+      sprite: _Mriya/Hunter/Structures/Machines/dinnerware.rsi
+      state: dinnerware-vend
+  - type: ApcPowerReceiver
+    needsPower: false
+
+- type: entity
+  parent: RMCKitchenReagentGrinder
+  id: MRHunterMixer
+  name: міксер
+  description: Хімічний маніпулятор промислового класу.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/mixer.rsi
+    layers:
+    - state: mixer0_nopower
+    - state: mixer0
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Machines/mixer.rsi
+    state: mixer0
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ApcPowerReceiver
+    needsPower: false
+
+- type: entity
+  id: HunterAmbientLight
+  name: джерело світла
+  description: Невидиме джерело червоного освітлення.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Marker
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Markers/cross.rsi
+    layers:
+    - state: red
+  - type: PointLight
+    enabled: true
+    radius: 10.0
+    energy: 1.0
+    color: "#B8371C"
+    softness: 1.0
+    offset: "0, 0"
+
+- type: entity
+  id: HunterAmbientLight_Alt
+  name: джерело світла
+  description: Невидиме джерело освітлення.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Marker
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Markers/cross.rsi
+    layers:
+    - state: pink
+  - type: PointLight
+    enabled: true
+    radius: 14.0
+    energy: 1.5
+    color: "#8A5030"
+    softness: 1.0
+    offset: "0, 0"

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "wall",
+      "directions": 4
+    },
+    {
+      "name": "wall_alt",
+      "directions": 4
+    },
+    {
+      "name": "outerhull"
+    }
+  ]
+}

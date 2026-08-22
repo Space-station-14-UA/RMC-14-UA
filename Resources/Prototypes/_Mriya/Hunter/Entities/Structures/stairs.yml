@@ -1,0 +1,35 @@
+- type: entity
+  id: SichStair
+  parent: Stairs
+  name: сходи
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/stairs.rsi
+    state: stair
+
+- type: entity
+  id: SichStairSmall
+  parent: Stairs
+  name: сходи
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/stairs.rsi
+    state: small_stair
+
+- type: entity
+  id: SichStairEdge
+  parent: Stairs
+  name: сходи
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/stairs.rsi
+    state: staire
+
+- type: entity
+  id: SichStairEdgeAlt
+  parent: Stairs
+  name: сходи
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/stairs.rsi
+    state: staire_alt

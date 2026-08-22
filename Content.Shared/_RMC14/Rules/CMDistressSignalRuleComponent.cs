@@ -337,8 +337,10 @@ public sealed partial class CMDistressSignalRuleComponent : Component
     [DataField]
     public ResPath Thunderdome = new("/Maps/_RMC14/thunderdome.yml");
 
+    [DataField]
     public List<string> AuxiliaryMaps = new() {
-        "/Maps/_Mriya/admin_fax_old.yml" // Mriya, наша версія факсів
+        "/Maps/_Mriya/admin_fax_old.yml", // Mriya, наша версія факсів
+        "/Maps/_Mriya/Hunter/Leviathan_of_the_Shadows.yml" // Mriya, Leviathan
     };
 
     [DataField]

@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/master/icons/obj/structures/props/hunter/32x32_hunter_props.dmi. rune_ne, rune_en, rune_es, rune_se, rune_angle_ne, rune_angle_ws, rune_angle_es, rune_angle_nw - Created by Roct for the Sich build.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "rune_s"
+    },
+    {
+      "name": "rune_w"
+    },
+    {
+      "name": "rune_n"
+    },
+    {
+      "name": "rune_e"
+    },
+    {
+      "name": "rune_ne"
+    },
+    {
+      "name": "rune_en"
+    },
+    {
+      "name": "rune_es"
+    },
+    {
+      "name": "rune_se"
+    },
+    {
+      "name": "rune_angle_ne"
+    },
+    {
+      "name": "rune_angle_ws"
+    },
+    {
+      "name": "rune_angle_es"
+    },
+    {
+      "name": "rune_angle_nw"
+    }
+  ]
+}

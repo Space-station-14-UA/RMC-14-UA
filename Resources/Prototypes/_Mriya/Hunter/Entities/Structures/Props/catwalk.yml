@@ -1,0 +1,38 @@
+- type: entity
+  parent: CMCatwalk
+  id: HunterCatwalk
+  name: решітка
+  description: решітка для захисту електроники корабля.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: hunter_catwalk
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: hunter_catwalk
+
+- type: entity
+  parent: CMCatwalk
+  id: HunterCatwalkAlt
+  name: решітка
+  description: решітка для захисту електроники корабля.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: hunter_catwalk_alt
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: hunter_catwalk_alt
+
+- type: entity
+  parent: CMCatwalk
+  id: HunterCatwalkAlt2
+  name: решітка
+  description: решітка для захисту електроники корабля.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: floor
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/catwalk.rsi
+    state: floor

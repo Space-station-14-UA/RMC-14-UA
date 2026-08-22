@@ -6,7 +6,7 @@ gun-selected-mode = Selected {$mode}
 gun-disabled = You can't use guns!
 gun-set-fire-mode = Set to {$mode}
 gun-magazine-whitelist-fail = That won't fit into the gun!
-gun-magazine-fired-empty = No ammo left!
+gun-battery-empty = Немає енергії для пострілу
 
 # SelectiveFire
 gun-SemiAuto = semi-auto

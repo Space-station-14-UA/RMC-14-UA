@@ -1,0 +1,22 @@
+<controls:HunterTranslatorWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Mriya.Hunter.Language.UI"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    Title="{Loc 'hunter-translator-window-title'}"
+    MinWidth="380"
+    MinHeight="120">
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#300303" BorderColor="#880000" BorderThickness="2" />
+        </PanelContainer.PanelOverride>
+        <BoxContainer Orientation="Vertical" Margin="8">
+            <LineEdit Name="MessageLineEdit" PlaceHolder="{Loc 'hunter-translator-placeholder'}" HorizontalExpand="True" Margin="0,0,0,6" />
+            <cc:HSeparator Color="#700303" />
+            <BoxContainer Orientation="Horizontal" Margin="0,6,0,0">
+                <OptionButton Name="TargetOption" HorizontalExpand="True" Margin="0,0,6,0" />
+                <Button Name="SendButton" Text="{Loc 'hunter-translator-send'}" />
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</controls:HunterTranslatorWindow>
