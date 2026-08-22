@@ -4,8 +4,8 @@
 - type: entity
   parent: AlwaysPoweredWallLight
   id: RMCLightFixtureAlwaysPowered
-  name: light fixture
-  description: A lighting fixture that is fitted with a bright fluorescent light tube. Looking at it for too long makes your eyes go watery.
+  name: настінний світильник
+  description: Настінний світильник, оснащений яскравою флуоресцентною трубкою. Задивіться на нього й в вас підуть сльози.
   suffix: Always powered, DO NOT MAP
   components:
   - type: Transform
@@ -83,7 +83,7 @@
 - type: entity
   parent: RMCLightFixtureAlwaysPowered
   id: RMCLightFixtureDoubleAlwaysPowered
-  description: A lighting fixture that can be fitted with two bright fluorescent light tubes for that extra eye-watering goodness.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками, щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -201,7 +201,7 @@
 - type: entity
   parent: RMCLightFixtureEmpty
   id: RMCLightFixtureDoubleEmpty
-  description: A lighting fixture that can be fitted with two bright fluorescent light tubes for that extra eye-watering goodness.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками, щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -316,7 +316,7 @@
 - type: entity
   parent: RMCLightFixture
   id: RMCLightFixtureDouble
-  description: A lighting fixture that can be fitted with two bright fluorescent light tubes for that extra eye-watering goodness.
+  description: Настінний світильник, обладнаний двома яскравими флуоресцентними трубками, щоб викликати в вас ще більше сліз.
   components:
   - type: Sprite
     state: ptube1
@@ -400,13 +400,34 @@
   - type: Sprite
     sprite: _RMC14/Structures/Wallmounts/LightingOffset/light_tube.rsi
 
+- type: entity
+  parent: RMCLightFixtureDouble
+  id: RMCLightFixtureBlueSpotlight
+  suffix: Blue spotlight, No Offset, Draws below entities
+  components:
+  - type: Sprite
+    drawdepth: HighFloorObjects
+    state: bslight1
+    layers:
+    - state: bslight1
+      map: ["enum.PoweredLightLayers.Base"]
+  - type: PoweredLight
+    hasLampOnSpawn: RMCLightTubeBlue
+  - type: PoweredLightVisuals
+    spriteStateMap:
+      Empty: bslight-empty
+      Off: bslight0
+      On: bslight1
+      Broken: bslight-broken
+      Burned: bslight-burned
+
 # Light Bulbs
 
 # Light Bulb, Always powered
 - type: entity
   parent: RMCLightFixtureAlwaysPowered
   id: RMCLightFixtureSmallAlwaysPowered
-  description: A small lighting fixture that is fitted with a bright fluorescent light bulb. Looking at it for too long makes your eyes go watery.
+  description: Маленький настінний світильник, обладнаний яскравою флуоресцентною лампочкою. Задивіться на нього й в вас підуть сльози.
   suffix: Always powered, DO NOT MAP
   components:
   - type: Sprite

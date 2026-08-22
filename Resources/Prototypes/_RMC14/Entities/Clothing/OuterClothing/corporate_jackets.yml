@@ -144,8 +144,8 @@
 - type: entity
   parent: RMCBaseJacket
   id: RMCCorporateLogisticsJacket
-  name: куртрка корпоративного логістика
-  description: Біла куртка з коричневими акцентами. Популярний вибір серед Менедженрів Логістики Ве-Я.
+  name: куртка корпоративного логістика
+  description: Біла куртка з коричневими акцентами. Популярний вибір серед Менеджерів Логістики Ве-Я. Ззаду гордо красується логотип корпорації Вестон-Ямада.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/OuterClothing/Coats/Corporate/logistics_jacket.rsi
@@ -153,9 +153,9 @@
     sprite: _RMC14/Objects/Clothing/OuterClothing/Coats/Corporate/logistics_jacket.rsi
 
 - type: entity
-  parent: RMCBaseJacket
+  parent: RMCJacketWindbreaker
   id: RMCCorporateDutyJacket
-  name: службова корпоративна куртрка
+  name: службова корпоративна куртка
   description: Коричневе пальто, створене для виживання в умовах віддалених колоній, на орбітальних станціях, кораблях та колоніях. Дивовижно зручне та тепле.
   components:
   - type: Sprite

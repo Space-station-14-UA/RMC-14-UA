@@ -2,8 +2,8 @@
   abstract: true
   parent: BaseItem
   id: CMBasePaper
-  name: бумага
-  description: Простий аркуш паперу.
+  name: папірець
+  description: Простий аркуш паперу. Білий, як твоя совість, чи не так?
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Misc/paper.rsi
@@ -93,6 +93,20 @@
     quickEquip: false
     slots:
     - suitstorage
+  # Mriya start. Дайте жерти папір
+  - type: Food
+    solution: food
+    delay: 7
+    forceFeedDelay: 7
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 1
+  # Mriya end
 
 - type: entity
   abstract: true
@@ -104,7 +118,7 @@
 - type: entity
   parent: CMBasePaperFaxable
   id: CMPaper
-  name: папір
+  name: папірець
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Misc/paper.rsi

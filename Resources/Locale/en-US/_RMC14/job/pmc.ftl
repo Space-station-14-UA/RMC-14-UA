@@ -127,6 +127,8 @@ rmc-job-name-corp-dep-director = Заступник Директора ВЕ-Я
 rmc-ghost-name-corp-director = Директор ВЕ-Я (Нейтральний)
 rmc-job-name-corp-director = Директор ВЕ-Я
 
+rmc-job-name-corp-admin = Colony Administrator
+
 # CL Bodyguard
 rmc-job-name-executive-bodyguard = Корпоративний Охоронець
 rmc-job-description-executive-bodyguard = Захищайте Представника Корпорації та його офіс. Пам'ятайте, що ви лише доповнення до Представника. Не полишайте його та не створюйте зайвих проблем.

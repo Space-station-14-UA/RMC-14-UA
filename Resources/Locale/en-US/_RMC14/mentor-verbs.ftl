@@ -1,9 +1,9 @@
-rmc-mentor-imaginary-friend-verb = Become imaginary friend
-rmc-mentor-imaginary-friend-confirmation-title = Become Imaginary Friend
-rmc-mentor-imaginary-friend-confirmation-text = You are about to become an imaginary friend. You will only be visible to the player controlling the targeted entity.
-                                                If the target is not a Xenonid, the custom appearance and name will be based on your character with their SEA preference set to high.
-rmc-mentor-imaginary-friend-confirmation-confirm = Use Custom Appearance
-rmc-mentor-imaginary-friend-confirmation-confirm-default = Use Default Appearance
-rmc-mentor-imaginary-friend-confirmation-cancel = Cancel
+rmc-mentor-imaginary-friend-verb = Стати Уявним Другом
+rmc-mentor-imaginary-friend-confirmation-title = Стати Уявним Другом
+rmc-mentor-imaginary-friend-confirmation-text = Ви станете Уявним Другом цієї істоти. Вас буде бачити тільки гравець що контролює цю істоту.
+                                                Якщо ціль не є ксеноїдом, Використання Власного Вигляду змінить ім'я та вигляд вашого уявного друга на той що має ваш персонаж з роллю Інструктора на найвищому пріоритеті.
+rmc-mentor-imaginary-friend-confirmation-confirm = Власний Вигляд
+rmc-mentor-imaginary-friend-confirmation-confirm-default = Звичайний Вигляд
+rmc-mentor-imaginary-friend-confirmation-cancel = Відмінити
 
-rmc-mentor-imaginary-friend-became = You are now an imaginary friend of {$target}.
+rmc-mentor-imaginary-friend-became = Ви стали уявним другом для {$target}.

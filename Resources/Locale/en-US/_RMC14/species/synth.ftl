@@ -5,6 +5,9 @@ rmc-species-synth-programming-prevents-use = Ваше програмування
 rmc-species-synth-defib-attempt = Ви не можете дефібрилювати {$target}. Вам потрібен ключ перезавантаження синтетика!
 rmc-species-synth-reset-key-invalid = Ви не можете використовувати ключ перезавантаження на цьому, це не синтетик!
 
+rmc-species-synth-reset-key-needed = [color=ForestGreen]Використайте ключ перезавантаження на {OBJECT($victim)}, щоб відновити роботу.[/color]
+rmc-species-synth-reset-key-too-damaged = [color=FireBrick]{CAPITALIZE(SUBJECT($victim))} занадто пошкоджений для використання ключа перезавантаження.[/color]
+
 rmc-synth-repair-brute-start-others = {$user} починає відновлювати пошкоджений корпус {$target} в районі {$limb}.
 rmc-synth-repair-brute-start-self = Ви починаєте обережно відновлювати пошкоджений корпус в районі {$limb}, щоб не анулювати вашу гарантію.
 rmc-synth-repair-brute-start-target-self = Ви починаєте відновлювати пошкоджений корпус {$target} в районі {$limb}.

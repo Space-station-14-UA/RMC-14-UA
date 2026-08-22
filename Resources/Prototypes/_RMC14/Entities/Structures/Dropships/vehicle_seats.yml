@@ -1,8 +1,8 @@
 - type: entity
   parent: CMSeatBase
   id: CMSeatPassenger
-  name: passenger seat
-  description: A sturdy chair with a brace that lowers over your body. Prevents being flung around in vehicle during crash being injured as a result. Fasten your seatbelts, kids! Fix with welding tool in case of damage.
+  name: сидіння для пасажира
+  description: Міцне сидіння з фіксатором, що опускається поверх вашого тіла. Запобігає тому, щоб вас кидало по салону транспортного засобу під час аварії, зменшуючи ризик отримання травм. Пристебніться, дітлахи!
   placement:
     mode: PlaceFree
   components:
@@ -15,8 +15,8 @@
 - type: entity
   parent: CMSeatBase
   id: CMSeatPilot
-  name: pilot's chair
-  description: A specially designed chair for pilots to sit in.
+  name: сидіння пілота
+  description: Спеціально розроблене зручне крісло для пілотів.
   placement:
     mode: PlaceFree
   components:

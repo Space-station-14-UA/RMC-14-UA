@@ -10,3 +10,13 @@
     - tasks:
         - !type:HTNCompoundTask
           task: IdleCompound
+
+- type: htnCompound
+  id: MRXenonidHostileCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MRXenonidMeleeCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound

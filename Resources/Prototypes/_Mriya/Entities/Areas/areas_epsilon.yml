@@ -1,0 +1,59 @@
+﻿- type: entity
+  parent: RMCAreaHF
+  id: MMCAreaEpsilon
+  name: Коридор
+
+- type: entity
+  parent: RMCAreaHFDisposals
+  id: MMCAreaEpsilonDisposals
+  name: Смітник
+
+- type: entity
+  parent: RMCAreaHFHypersleepStorageA
+  id: MMCAreaEpsilonHypersleepStorageA
+  name: Капсули Гіперсну
+
+- type: entity
+  parent: RMCAreaHFHypersleepGearLockers
+  id: MMCAreaEpsilonHypersleepGearLockers
+  name: Перевдягальна
+
+- type: entity
+  parent: RMCAreaHFMessHall
+  id: MMCAreaEpsilonMessHall
+  name: Їдальня
+
+- type: entity
+  parent: RMCAreaHFMedical
+  id: MMCAreaEpsilonMedical
+  name: Медичний Відділ
+
+- type: entity
+  parent: RMCAreaHFBriefRoom
+  id: MMCAreaEpsilonBriefRoom
+  name: Брифінг Зала
+
+- type: entity
+  parent: RMCAreaHFCommandDeck
+  id: MMCAreaEpsilonCommandDeck
+  name: Місток
+
+- type: entity
+  parent: RMCAreaHFPrep
+  id: MMCAreaEpsilonPrep
+  name: Кімната Спорядження
+
+- type: entity
+  parent: RMCAreaHFArmoury
+  id: MMCAreaEpsilonArmoury
+  name: Зброярня
+
+- type: entity
+  parent: RMCAreaHFHangar
+  id: MMCAreaEpsilonHangar
+  name: Ангар
+
+- type: entity
+  parent: RMCAreaHFOOB
+  id: MMCAreaEpsilonOOB
+  name: Поза Межами

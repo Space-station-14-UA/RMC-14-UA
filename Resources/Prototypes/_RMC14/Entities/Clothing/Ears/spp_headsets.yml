@@ -184,7 +184,7 @@
 
 - type: entity
   parent: RMCHeadsetDistressSPP
-  id: RMCHeadsetSPPPaP
+  id: RMCHeadsetSPPPCG
   name: гарнітура НоП СПН
   description: Спеціальна гарнітура, яку використовує персонал Народної озброєної Поліції СПН.
   components:

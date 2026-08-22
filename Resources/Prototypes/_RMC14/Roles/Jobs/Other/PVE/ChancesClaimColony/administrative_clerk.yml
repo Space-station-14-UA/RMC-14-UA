@@ -22,7 +22,7 @@
       time: 90000 # 25 hours
     RMCRankWeYaJuniorExecutive: []
   startingGear: RMCGearSurvivorAdministrativeClerk
-  spawnMenuRoleName: Administrative Clerk (Chances Colonist)
+  spawnMenuRoleName: Адміністративний Представник (ПВЕ Фортуна)
   accessGroups:
   - ColonistCorporate
   special:

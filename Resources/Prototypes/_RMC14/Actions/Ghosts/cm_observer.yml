@@ -6,10 +6,10 @@
   - type: Action
     checkCanInteract: false
     icon:
-      sprite: _RMC14/Interface/cm_job_icons.rsi
+      sprite: _RMC14/Interface/job_icons/UNMC/command.rsi
       state: hudsquad_co
     iconOn:
-      sprite: _RMC14/Interface/cm_job_icons.rsi
+      sprite: _RMC14/Interface/job_icons/UNMC/command.rsi
       state: hudsquad_co
   - type: InstantAction
     event: !type:ToggleMarineHudActionEvent
@@ -75,8 +75,8 @@
 
 - type: entity
   id: ActionStopBeingFriends
-  name: Leave Friend
-  description: Stop being an imaginary friend.
+  name: Покинути друга
+  description: Більше не бути уявним другом цієї істоти.
   components:
   - type: Action
     checkCanInteract: false

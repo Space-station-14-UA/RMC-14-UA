@@ -103,7 +103,7 @@
   abstract: true
   parent: RMCBaseDoorInvincible
   id: CMBaseDoor
-  name: door
+  name: двері
   placement:
     mode: SnapgridCenter
   components:

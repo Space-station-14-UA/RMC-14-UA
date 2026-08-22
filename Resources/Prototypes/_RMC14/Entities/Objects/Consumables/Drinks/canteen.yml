@@ -53,8 +53,8 @@
 - type: entity
   parent: CMCanteenBase
   id: CMCanteen
-  name: canteen
-  description: You take a sip from your trusty Marine canteen...
+  name: військова фляга
+  description: "Ви робите ковток зі своєї вірної фляги морпіха...\nНа дні ви помічаєте вирізане ножем число 13."
   components:
   - type: Sprite
     state: canteen
@@ -62,8 +62,8 @@
 - type: entity
   parent: CMCanteenBase
   id: CMMetalFlask
-  name: metal flask
-  description: A metal flask with a decent liquid capacity.
+  name: металева фляга
+  description: Металева фляга з високою місткістю.
   suffix: Empty
   components:
   - type: Sprite
@@ -76,8 +76,8 @@
 - type: entity
   parent: CMCanteenBase
   id: CMMarineFlask
-  name: Marine flask
-  description: A metal flask embossed with the Marine logo and probably filled with a slurry of water, motor oil, and medicinal alcohol.
+  name: фляга морпіха
+  description: Металева фляга з логотипом КМПОН. Ймовірно заповнена сумішшю води, моторної оливи та медичного спирту.
   components:
   - type: Sprite
     state: flask_marine
@@ -85,8 +85,8 @@
 - type: entity
   parent: CMCanteenBase
   id: CMWEYAFlask
-  name: We-Ya flask
-  description: A metal flask embossed with We-Ya's signature logo that some corporate bootlicker probably ordered to be stocked in military vessels' canteen vendors.
+  name: фляга Ве-Я
+  description: Металева фляга з логотипом Ве-Я, яку, ймовірно, замовили лише заради додаткової реклами.
   components:
   - type: Sprite
     state: flask_we_ya
@@ -94,8 +94,8 @@
 - type: entity
   parent: [CMCanteenBase, DrinkFlaskVisualsOpenable]
   id: RMCWeYaThermos
-  name: We-Ya thermos
-  description: A sleek metal thermos, decorated with the colours of the Weston-Yamada Corporation. The marketing claims it can withstands equivalent to a nuclear blast, though that's probably just PR talking.
+  name: термос Ве-Я
+  description: Елегантний металевий термос, оформлений у кольорах корпорації «Вестон-Ямада». У маркетингових матеріалах заявляється, що він здатен витримати еквівалент ядерного вибуху, хоча це, мабуть, лише піар-кампанія.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Consumable/Drinks/weya_thermos.rsi

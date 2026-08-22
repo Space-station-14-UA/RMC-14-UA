@@ -11,7 +11,7 @@
 - type: entity
   parent: RMCCrateExplosives
   id: RMCCrateGrenadesIncendiary
-  name: Ящик запалювальних гранат М40 ВІРЗ (6 шт)
+  name: Ящик запалювальних гранат М40 ЗПП (6 шт)
   components:
   - type: StorageFill
     contents:
@@ -31,7 +31,7 @@
 - type: entity
   parent: RMCCrateExplosives
   id: RMCCrateGrenadesSmoke
-  name: Ящик димових гранат М40 ВДР (6 шт)
+  name: Ящик димових гранат М40 ДПП (6 шт)
   components:
   - type: StorageFill
     contents:
@@ -177,7 +177,7 @@
 - type: entity
   parent: RMCCrateExplosives
   id: RMCCrateExplosivesSurplus
-  name: Ящик з надлишками вибухівки (міна 'Клеймор' 5 шт, М40 ФПП 2 шт, М40 ВІРЗ 2 шт, осколкова М15 2 шт, вибухова М12 2 шт)
+  name: Ящик з надлишками вибухівки (міна 'Клеймор' 5 шт, М40 ФПП 2 шт, М40 ЗПП 2 шт, осколкова М15 2 шт, вибухова М12 2 шт)
   components:
   - type: StorageFill
     contents:
@@ -197,7 +197,7 @@
 - type: entity
   parent: RMCCrateExplosives
   id: RMCCrateExplosiveWhitePhosphorus
-  name: 30mm WPDP White Phosphorus grenade crate (x25)
+  name: Ящик біло-фосфорних гранат М30 БФПП (25 шт)
   components:
   - type: StorageFill
     contents:
@@ -207,7 +207,7 @@
 - type: entity
   parent: RMCCrateExplosives
   id: RMCCrateExplosiveWhitePhosphorusCompound
-  name: 30mm CCDP Chemical Compound grenade crate (x6)
+  name: Ящик хімічних гранат М30 ХПП (6 шт)
   components:
   - type: StorageFill
     contents:
@@ -217,7 +217,7 @@
 - type: entity
   parent: RMCCrateExplosives
   id: RMCCrateExplosiveWhitePhosphorusCompoundBox
-  name: 30mm CCDP Chemical Compound grenade crate (x25)
+  name: Ящик хімічних гранат М30 ХПП (25 шт)
   components:
   - type: StorageFill
     contents:

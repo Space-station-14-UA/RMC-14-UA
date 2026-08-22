@@ -5,7 +5,7 @@
   description: cm-job-description-survivor
   playTimeTracker: CMJobSurvivorChancesMiner
   startingGear: RMCGearSurvivorChancesMiner
-  spawnMenuRoleName: Mining Surveyor (Chances Colonist)
+  spawnMenuRoleName: Шахтар (ПВЕ Фортуна)
   greeting: rmc-job-greeting-chances-colonist
   special:
   - !type:AddComponentSpecial

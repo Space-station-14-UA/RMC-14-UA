@@ -13,9 +13,11 @@ public sealed partial class XenoRankNamesComponent : Component
         {3, "rmc-xeno-elder"},
         {4, "rmc-xeno-ancient"},
         {5, "rmc-xeno-prime"},
-        {6, "rmc-xeno-apex"}, // Mriya. Розширені назви
-        {7, "rmc-xeno-royal"}, // Mriya. Розширені назви
-        {8, "rmc-xeno-legendary"}, // Mriya. Розширені назви
-        {9, "rmc-xeno-forever"} // Mriya. Розширені назви
+        {6, "rmc-xeno-apex"},
+        // Mriya start. Розширені назви
+        {7, "rmc-xeno-royal"},
+        {8, "rmc-xeno-legendary"},
+        {9, "rmc-xeno-forever"}
+        // Mriya end
     };
 }

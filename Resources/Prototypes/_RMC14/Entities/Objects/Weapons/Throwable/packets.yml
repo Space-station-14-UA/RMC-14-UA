@@ -120,8 +120,8 @@
 - type: entity
   parent: CMPacketBase
   id: RMCPacketGrenadeSmoke
-  name: упаковка гранат М40 ВДР
-  description: Містить три димові гранати М40 ВДР.
+  name: упаковка гранат М40 ДПП
+  description: Містить три димові гранати М40 ДПП.
   components:
   - type: Sprite
     layers:
@@ -281,8 +281,8 @@
 - type: entity
   parent: CMPacketBase
   id: RMCPacketGrenadeIncendiary
-  name: упаковка гранат М40 ВІРЗ
-  description: Містить три запалювальні гранати М40 ВІРЗ.
+  name: упаковка гранат М40 ЗПП
+  description: Містить три запалювальні гранати М40 ЗПП.
   components:
   - type: Sprite
     layers:
@@ -304,8 +304,8 @@
 - type: entity
   parent: CMPacketBase
   id: RMCPacketGrenadeWhitePhosphorus
-  name: WPDP grenade packet
-  description: It contains three WPDP white phosphorus grenades.
+  name: упаковка гранат М30 БФПП
+  description: Містить три біло-фосфорні гранати М30 БФПП.
   components:
   - type: Sprite
     layers:
@@ -327,8 +327,8 @@
 - type: entity
   parent: CMPacketBase
   id: RMCPacketGrenadeWhitePhosphorusCompound
-  name: CCDP grenade packet
-  description: It contains three CCDP chemical compound grenades.
+  name: упаковка гранат М30 ХПП
+  description: Містить три хімічні гранати М30 ХПП.
   components:
   - type: Sprite
     layers:
@@ -473,7 +473,7 @@
   parent: RMCBoxBase
   id: RMCBoxAGMI
   name: коробка гранат M74 ПВГ-З
-  description: Надійна коробка, яка зберігає 25 гранатометних запалювальних гранат М74 ПВГ-З. Легкозаймисто! Не зберігати поблизу пального для вогнемета.
+  description: Надійна коробка, яка зберігає 25 гранатометних запалювальних гранат М74 ПВГ-З. Легкозаймисто! Не зберігати поблизу вибухівки.
   components:
   - type: Sprite
     layers:
@@ -495,8 +495,8 @@
 - type: entity
   parent: RMCBoxBase
   id: RMCBoxWPDP
-  name: 30mm WPDP grenade box
-  description: A secure box holding 25 30mm WPDP White Phosphorus grenades. Highly flammable, don't store near the flamer fuel.
+  name: коробка гранат М30 БФПП
+  description: Надійна коробка, яка зберігає 25 біло-фосфорових гранат М30 БФПП. Легкозаймисто! Не зберігати поблизу вибухівки.
   components:
   - type: Sprite
     layers:
@@ -518,8 +518,8 @@
 - type: entity
   parent: RMCBoxBase
   id: RMCBoxCCDP
-  name: 30mm CCDP grenade box
-  description: A secure box holding 25 30mm CCDP Chemical Compound grenades. Highly flammable, don't store near the flamer fuel.
+  name: коробка гранат М30 ХПП
+  description: Надійна коробка, яка зберігає 25 хімічних гранат М30 ХПП. Легкозаймисто! Не зберігати поблизу вибухівки.
   components:
   - type: Sprite
     layers:
@@ -541,9 +541,9 @@
 - type: entity
   parent: CMPacketBase
   id: RMCPacketGrenade20mmHE
-  name: L109A1 HE grenade packet
+  name: упаковка фугасних гранат Л109А1 20мм
   suffix: PVE
-  description: It contains eight L109A1 20mm HE grenades.
+  description: Містить вісім осколково-фугасних гранат Л109А1 20мм.
   components:
   - type: Tag
     tags:
@@ -575,9 +575,9 @@
 - type: entity
   parent: CMPacketBase
   id: RMCPacketGrenade20mmIncendiary
-  name: L109A2 Incendiary grenade packet
+  name: упаковка запалювальних гранат Л109А1 20мм
   suffix: PVE
-  description: It contains eight L109A2 20mm incendiary grenades.
+  description: Містить вісім запалюваних гранат Л109А1 20мм.
   components:
   - type: Tag
     tags:

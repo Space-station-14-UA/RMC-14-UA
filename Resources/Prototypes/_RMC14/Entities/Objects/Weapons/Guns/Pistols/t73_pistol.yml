@@ -1,8 +1,8 @@
 - type: entity
   parent: [RMCBaseSlideMagazineVisuals, CMWeaponPistolBase]
   id: RMCWeaponPistolT73
-  name: Type 73 pistol
-  description: The Type 73 is the once-standard issue sidearm of the SPP. Replaced by the NP92 in SPP use, it remains popular with veteran SPP troops due to familiarity and extra power. Due to an extremely large amount being produced, they tend to end up in the hands of forces attempting to arm themselves on a budget. Users include the Socialist Progressive Peoples, Colonial Liberation Front, and just about any mercenary or pirate group out there.
+  name: Тип 73 пістолет
+  description: Тип 73 колись був стандартною зброєю СПН. Хоч й був вже успішно замінений на НП92, але успішно залишається популярним серед ветеранів. Також часто зустрічається у різних озброїних нелегальних груп, через велику кількість вироблених одиниць та дешевизну. Серед користувачів – деякі підрозділи СПН, ФВК, а також купа малих піратських та рейдерських банд. Комуняцьке лайно...
   components:
   - type: Tag
     tags:
@@ -79,8 +79,8 @@
 - type: entity
   parent: CMWeaponPistolBase
   id: RMCWeaponPistolT74
-  name: Type 74 pistol
-  description: The Type 74 is the designation for a specially modified Type 73 with an integrated laser sight system, multiple lightning cuts to reduce weight in order to allow a higher pressure round to be used with the same recoil sping, and a more comfortable grip. Due to the adoption of the NP92, the Type 74 was produced in limited numbers, because of this it is typically only issued on request to high-ranking officers
+  name: Тип 74 пістолет
+  description: Тип 74 – це модифікація пістолету Тип 73 з інтегрованою системою лазерного прицілу та зміненою рукояткою задля покращення ергономіки та зменшення ваги. Через перехід на НП92 цю модель виробляють у дуже обмежених кількостях та зазвичай видають високопоставленим офіцерам. Офіцерське комуняцьке лайно...
   components:
   - type: Tag
     tags:
@@ -160,7 +160,7 @@
 - type: entity
   parent: CMBaseMagazinePistol
   id: RMCMagazinePistolT73
-  name: Type 73 magazine (7.62x25mm)
+  name: Тип 73 магазин (7.62х25 мм)
   components:
   - type: Tag
     tags:
@@ -186,7 +186,7 @@
 - type: entity
   parent: CMBaseMagazinePistol
   id: RMCMagazinePistolT74Impact
-  name: Type 74 impact magazine (7.62x25mm)
+  name: Тип 74 ВШ магазин (7.62х25 мм)
   components:
   - type: Tag
     tags:
@@ -212,7 +212,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletPistolT73
-  name: bullet (7.62x25mm)
+#  name: bullet (7.62x25mm) – Mriya. Проджектайлу назва не треба
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -222,7 +222,7 @@
 
 - type: entity
   id: RMCCartridgePistolT73
-  name: cartridge (7.62x25mm)
+  name: набій (7.62х25 мм)
   parent: CMCartridgePistolBase
   components:
   - type: Tag
@@ -235,7 +235,7 @@
 - type: entity
   parent: CMBulletBase
   id: RMCBulletPistolT74Impact
-  name: bullet (7.62x25mm impact)
+#  name: bullet (7.62x25mm impact) – Mriya
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -253,7 +253,7 @@
 
 - type: entity
   id: RMCCartridgePistolT74Impact
-  name: cartridge (7.62x25mm impact)
+  name: ВШ набій (7.62х25 мм)
   parent: CMCartridgePistolBase
   components:
   - type: Tag

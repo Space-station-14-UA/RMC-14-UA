@@ -1,8 +1,14 @@
-rmc-new-to-job-popup-title = RMC14 New to Job Popup
-rmc-new-to-job-popup-job-name = Welcome to {$name}!
-rmc-new-to-job-additional = If you are ever confused on what to do, you can ask your seniors for help or press F1 > Mentor Help to get in contact with dedicated mentors who can help you.
-rmc-new-to-job-popup-close-button = All ready!
-rmc-new-to-job-popup-close-button-wait = The close button will be enabled after {$time} seconds.
+rmc-new-to-job-popup-title = Пам'ятка новачка
+rmc-new-to-job-popup-job-name = Вітаємо на ролі {$name}!
+rmc-new-to-job-additional = Якщо ви раптом заплуталися і не знаєте, що робити, можете попросити допомоги у побратимів, корабельного [color=orange][bold]Інструктора[/bold][/color] або натиснути [color=white][bold]F1[/bold][/color] та обрати «Допомога Менторів», щоб зв’язатися з [color=orange][bold]Менторами[/bold][/color], які допоможуть вам і дадуть відповідь на всі запитання.
+rmc-new-to-job-popup-close-button = Готово!
+rmc-new-to-job-popup-close-button-wait = Ви зможете закрити це вікно за { $time ->
+  [1] {$time} секунду
+  [2] {$time} секунди
+  [3] {$time} секунди
+  [4] {$time} секунди
+  *[other] {$time} секунд
+}.
 
 rmc-new-to-job-req-tech = As a requisitions technician, your job is to dispense supplies to the UNMC marines through either working the main lines or helping the logistics officer with supply drops.
 
@@ -18,19 +24,21 @@ rmc-new-to-job-nurse = As a nurse, your job is to assist doctors and learn the b
 
                                              You can use a Health Analyzer on a person to check their damage types, health and some suggestions for treatment. When a person is in critical state (Having taken 100+ damge), they will be lying on the floor unconscious, and after taking 200+ damage, they are dead. You can revive them with a defibrillator if their HP returns to over 0 through applying your topical supplies, and you can slow down their rotting (and reducing airloss damage when in crit) by performing CPR, clicking on them in 4 second intervals with nothing in-hand.
 
-rmc-new-to-job-rifleman = As a rifleman, you are the main fighting force of your squad, having numbers to bolster. You have strength and less likelihood of being captured by the enemy force in numbers and proximity.
+rmc-new-to-job-rifleman = Як Cтрілець, ви є основною бойовою силою свого загону та створюєте необхідну чисельність. Завдяки кількості та згуртованості зменшується ймовірність того, що вас захоплять ворожі сили.
 
-                                             As you wake up from cryo, you will be hungry. Get some food from the food vendors at the top or bottom of the room you woke up in. You can interact with left click and inspect with Shift + Left Click. Grab some food, and press E with the food in your hand to eat it.
+                                            Прокинувшись від гіперсну, ви будете голодними. Візьміть трохи їжі зі стійок з їжею, що розташовані по ліву чи праву руку від місця де ви прокинулися. Ви можете взаємодіяти з ними лівою кнопкою миші та оглядати за допомогою Shift + ліва кнопка миші. Візьміть трохи їжі та натисніть англійську літеру Е, тримаючи їжу в руці, щоб з'їсти її.
 
-                                             After you've eaten, walk left; you will see a large line of vendors – these are where you will get your clothing and other utility items, such as belts and pouches. Anything in orange is important, and green is mandatory. After getting your gear, continue left into the next room. You will find shared vendors for weapons, attachments, and surplus tools. The weapon racks are on the far left top and bottom of the shared room – grab a weapon and a magazine. You can load weapons by placing a magazine in your hand and clicking on the gun in your other hand. You can switch your main hand with X.
+                                            Після того як ви поїсте, йдіть за наступні двері, тут ви побачите декілька стійок зі спорядженням стрільця. Саме тут ви зможете отримати свій одяг та інші корисні речі, такі як пояси та підсумки. Усе, що позначено помаранчевим кольором — обов'язково, а зеленим — рекомендовано. Отримавши спорядження, рушайте далі по коридору, перед наступними дверима ви побачите біля себе білу стійку з назвою «Медісейв», візьміть звідти марлі та покладіть в сумку або в шолома та прямуйте до наступної кімнати. Тут ви знайдете ряди стійок зі зброєю а також стійки з оснащеннями для зброї, особливою амуніцією, додатковим обладнанням та додатковим спорядженням. Стійки зі зброєю розташовані в центрі кімнати – візьміть зброю та магазини (Гвинтівка М4СПГ в поєднанні з розумним прицілом Б8, який можна знайти в стійці з оснащеннями для зброї, є найкращим варіантом для новачка через те що дозволяє стріляти крізь союзників не потрапляючи по ним). Ви можете заряджати зброю, поклавши магазин у руку та натиснувши на зброю в іншій руці. Ви можете змінити активну руку за допомогою англійської клавіші X. Щоб взяти зброю в обидві руки для точної стрільби натисніть англійську клавішу Z маючи зброю в активній руці(підсвіченій жовтим обрамленням). Також щоб стріляти вам необхідно увімкнути Режим Бою (в лівій частині екрану ви можете знайти дію з написом «Атака», натиснувши на неї ви перемкнете режим бою), зрозуміти що Режим Бою увімкнено можна по червоному обрамленню навколо відповідної дії та перехрестю прицілу навколо вашого курсору.
 
-                                             Once you are supplied, head out into the hallway, and enter the room that is either south or north of you – it'll be a large room with lots of coloured chairs surrounding a podium. You will be briefed here if you joined at the start of the round – if you have missed the brief, do not worry; proceed to the next section.
+                                            Отримавши спорядження, виходьте в коридор та прямуйте на Захід (ліво) поки не дійдете до просторої кімнати де ви побачите щось схоже на шатл. В центрі цієї кімнати ви знайдете декілька стільців – це місце для брифінгу в Ангарі й тут частіше всього буде проходити ваш брифінг, уважно слухайте оголошення про початок брифінгу та будьте тут вчас щоб його не пропустити. Якщо ви приєднались до раунду пізніше або ж ви просто не встигли на брифінг – не хвилюйтеся, переходьте до наступного розділу.
 
-                                             Now, head left, past medical (white walls) and into the hangar. A yellow dropship will land on the right landing pad, near to the white walls, eventually. Enter that dropship, buckle yourself to a seat by clicking on a chair, and eventually you will be taken groundside.
+                                            Знаходячись в Ангарі на Південь від вас (внизу) знаходиться зона приземлення траспортного шатлу Аламо що має характерний пісочний колір. Зайдіть всередину через бокові двері, пристебніться до сидіння, натиснувши на стілець (щоб відстебнутись натисніть на іконку стільця з написом «Прикуто» в правій частині екрану), згодом вас доправлять на поверхню планети для виконання вашого бойового завдання. (Також вас можуть скинути з парашутом, у цьому випадку уважно слухайте вказівки пілота).
 
-                                             On the right of your screen, you will see a grey and black rectangle with a coloured arrow, with 'SL' underneath – this is a pointer for your squad leader. Follow it to find your squad. You can speak to your squad by pressing T and then putting a ';h' at the start of your message. This will only work if the communications relay tower is fixed and powered, which you don't need to worry about, but it will mean that sometimes this won't work. You can speak to those around you by simply pressing T and typing.
+                                            Праворуч на екрані ви побачите сіро-чорний прямокутник із кольоровою стрілкою та написом «ЛЗ» знизу, це вказівник на вашого Лідера Загону. Слідуйте за ним, щоб знайти свій загін. Ви можете говорити зі своїм загоном, натиснувши на англійську клавішу Т, а потім додавши двокрапку та першу літеру загону в якому ви знаходитесь на початку повідомлення (наприклад якщо ви в загоні Дельта – пишіть :д перед повідомленням щоб вас почули побратими ). Це працює лише тоді, коли вежа зв'язку на планеті працює (про це вам не потрібно турбуватися, але майте на увазі, що іноді зв'язок може не працювати). Ви можете спілкуватися з тими, хто навколо вас, просто натиснувши на англійську клавішу Т і вводячи текст.
 
-                                             You can do a left curly bracket at the start of your message to type in 'LOOC', which will let you talk about things outside of your character, which is helpful for telling people you are new or need help.
+                                            Ви можете поставити відкриту дужку ( на початку свого повідомлення, щоб писати в чат «ЛООС». Цей чат дозволить вам говорити про речі поза вашим персонажем, що корисно, аби повідомити людям, що ви новачок або потребуєте допомоги.
+
+                                            В бою тримайтесь поруч з побратимати та слідкуйте куди стріляєте якщо ви не дослухались поради про М4СПГ та розумний приціл Б8. В випадку якщо в вас почнеться кровотеча (в правій частині екрану ви побачите характерну червону краплю крові) дістаньте свою марлю та перев'яжіть себе натиснувши англійську Z маючи марлю в активній руці. Дослухайтесь до наказів старших за званнями чи посадою та насолоджуйтесь грою!
 
 rmc-new-to-job-staff-officer = As a staff officer, your job is to “overwatch”, monitor and support the squad under your tasking, and relay orders from the operation Commander.
 

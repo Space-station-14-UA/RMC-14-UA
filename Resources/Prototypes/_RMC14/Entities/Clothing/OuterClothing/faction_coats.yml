@@ -177,18 +177,18 @@
   - type: Clothing
     sprite: _RMC14/Objects/Clothing/OuterClothing/TSE/TSEPA/highvis_vest.rsi
 
-# SPP PaP
+# SPP PCG
 
 - type: entity
   parent: RMCCoatBureauDeputy
-  id: RMCCoatPaP
+  id: RMCCoatPCG
   name: куртка НоП
   description: Службова куртка Народної Озброєної Поліції з дрібними розосередженими вставками з пара-арамідного волокна, що забезпечують мінімальний рівень захисту, а також із кріпленням для персонального світлового модуля.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/OuterClothing/SPP/pap.rsi
+    sprite: _RMC14/Objects/Clothing/OuterClothing/SPP/pcg.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/OuterClothing/SPP/pap.rsi
+    sprite: _RMC14/Objects/Clothing/OuterClothing/SPP/pcg.rsi
 
 # WeYa pilot
 - type: entity

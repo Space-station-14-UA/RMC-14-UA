@@ -2,7 +2,7 @@
   abstract: true
   parent: CMBaseWallInvincible
   id: CMBaseAlamoWall
-  name: alamo wall
+  name: корпус Аламо
   components:
   - type: Corrodible
     isCorrodible: false
@@ -674,8 +674,8 @@
 - type: entity
   parent: CMBaseAlamoWall
   id: CMAlamoWall61
-  name: port wing weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: точка кріплення зброї на лівому крилі
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 61
   components:
   - type: Sprite
@@ -732,8 +732,8 @@
 - type: entity
   parent: CMBaseAlamoWall
   id: CMAlamoWall65
-  name: starboard wing weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: точка кріплення зброї на правому крилі
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 65
   components:
   - type: Sprite
@@ -952,8 +952,8 @@
 - type: entity
   parent: CMBaseAlamoWall
   id: CMAlamoWall84
-  name: port fore weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: передня точка кріплення зброї лівого борту
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 84
   components:
   - type: Sprite
@@ -978,8 +978,8 @@
 - type: entity
   parent: CMAlamoWall84
   id: CMAlamoWall84Flipped
-  name: starboard fore weapon attach point
-  description: A place where heavy equipment can be installed with a powerloader.
+  name: передня точка кріплення зброї правого борту
+  description: Місце, куди можна встановити важке обладнання за допомогою завантажувача.
   suffix: 84, Flipped
   components:
   - type: Sprite
