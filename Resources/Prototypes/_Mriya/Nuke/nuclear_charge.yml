@@ -1,0 +1,93 @@
+- type: explosion
+  id: MRNuke
+  damagePerIntensity:
+    types:
+      Blunt: 500
+      Heat: 500
+      Structural: 1000
+  tileBreakChance: [0, 0.5, 1]
+  tileBreakIntensity: [0, 10, 30]
+  tileBreakRerollReduction: 20
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireColor: Transparent
+  sound:
+    path: /Audio/_Mriya/Nuke/Nuke_explosion_map_sound.ogg
+    params:
+      maxDistance: 300
+      volume: 2
+  smallSound:
+    path: /Audio/_Mriya/Nuke/Nuke_explosion_map_sound.ogg
+    params:
+      maxDistance: 300
+      volume: 2
+
+- type: entity
+  parent: RMCNukeDisk
+  id: MRNukeDisk
+  name: диск ядерної автентифікації
+  description: Диск авторизації стратегічного ядерного заряду.
+  suffix: Mriya
+  components:
+  - type: IntelDetectorTracked
+  - type: Tag
+    tags:
+    - MRNukeDisk
+
+- type: entity
+  parent: [BaseStructureDynamic, StructureWheeled]
+  id: MRNuclearCharge
+  suffix: Mriya
+  name: стратегічний ядерний заряд
+  description: Ядерний фугасний заряд лінії Франко-Вестон. Після авторизації закріпіть заряд, вставте диск ядерної автентифікації та запустіть протокол офіцером.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Machines/Nuke.rsi
+    state: nuke
+    noRot: true
+    offset: 0,0.35
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: null
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MaxDamage
+    max: 350
+  - type: InteractionOutline
+  - type: PowerLoaderGrabbable
+    virtualRight: RMCVirtualWarheadRight
+    virtualLeft: RMCVirtualWarheadLeft
+  - type: Item
+  - type: AccessReader
+    access: [["RMCAccessCommand"]]
+  - type: ItemSlots
+    slots:
+      mriya-rmc-nuke-disk:
+        name: диск ядерної автентифікації
+        swap: false
+        insertSound:
+          path: /Audio/Machines/terminal_insert_disc.ogg
+        ejectSound:
+          path: /Audio/Machines/terminal_insert_disc.ogg
+        whitelistFailPopup: mriya-nuke-popup-wrong-disk
+        whitelist:
+          tags:
+          - MRNukeDisk
+  - type: ContainerContainer
+    containers:
+      mriya-rmc-nuke-disk: !type:ContainerSlot
+  - type: UserInterface
+    interfaces:
+      enum.MriyaRMCNuclearChargeUiKey.Key:
+        type: MriyaRMCNuclearChargeBoundUserInterface
+  - type: MriyaRMCNuclearChargeMarker
+  - type: MriyaRMCNuclearCharge

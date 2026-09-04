@@ -462,6 +462,23 @@
           icon:
             sprite: _RMC14/Interface/map_blips.rsi # Mriya. Іконка мапи, бо прикольна
             state: aegisob
+        # Mriya start. Adds the late-round strategic nuclear charge as a special tech asset.
+        - name: mriya-intel-tech-nuclear-charge-name
+          description: mriya-intel-tech-nuclear-charge-description
+          cost: 5
+          timeLock: 90m
+          events:
+          - !type:TechLogisticsDeliveryEvent
+            object: MRNuclearCharge
+          - !type:TechAnnounceEvent
+            author: rmc-intel-tech-announcement-special-assets-author
+            message: mriya-intel-tech-announcement-nuclear-charge
+          icon:
+            sprite: _RMC14/Interface/tech_tree.rsi
+            state: nuke
+        # Mriya end
+  - type: VehicleSupplyTech
+
 - type: Tag
   id: RMCIntelItem
 

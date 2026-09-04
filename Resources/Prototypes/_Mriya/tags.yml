@@ -8,3 +8,7 @@
 # Для шерпи
 - type: Tag
   id: MRFlareBox
+
+# Mriya. Nuclear authentication disk tag.
+- type: Tag
+  id: MRNukeDisk

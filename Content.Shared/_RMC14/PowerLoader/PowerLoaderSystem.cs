@@ -283,6 +283,10 @@ public sealed class PowerLoaderSystem : EntitySystem
         var grab = new PowerLoaderGrabEvent(ent, args.Target, strap.BuckledEntities);
         RaiseLocalEvent(args.Target, ref grab);
 
+        // Mriya. Special cargo, such as an armed nuclear charge, can reject power loader pickup.
+        if (grab.Handled)
+            return;
+
         if (grab.ToGrab != null)
         {
             PickUp(ent, grab.ToGrab.Value);
