@@ -41,6 +41,12 @@
   description: Консоль керування Автоматичною Транспортно-Складською Системою.
   suffix: Requisitions
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Sprite
     sprite: _RMC14/Structures/Machines/asrs_console.rsi
     layers:

@@ -1,7 +1,7 @@
 - type: language # Mriya. Заміняється на українську, бо ми спілкуємося українською
   id: English
   name: "Українська"
-  description: "Солов'їна Українська! Думаю, її повинні знати всі."
+  description: "Солов'їна Українська! Думаю, ви це й так знаєте."
   isVisibleLanguage: true
   typefaceId: Default
   textSize: null

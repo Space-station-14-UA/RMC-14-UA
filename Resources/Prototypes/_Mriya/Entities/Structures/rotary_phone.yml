@@ -1,4 +1,5 @@
 # Для оновлених палаток
+## Настінні
 - type: entity
   parent: RMCRotaryPhoneWallmount
   id: MMCRotaryPhoneWallmountMedicalTent
@@ -19,6 +20,15 @@
   parent: RMCRotaryPhoneWallmount
   id: MMCRotaryPhoneWallmountMessTent
   name: Польова Кухня
+  components:
+  - type: RotaryPhone
+    category: Земля
+
+## Звичайні
+- type: entity
+  parent: RMCRotaryPhone
+  id: MMCRotaryPhoneCorrespondentTent
+  name: Намет Кореспондента
   components:
   - type: RotaryPhone
     category: Земля

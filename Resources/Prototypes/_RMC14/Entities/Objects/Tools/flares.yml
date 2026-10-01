@@ -329,6 +329,9 @@
   name: коробка з упаковками фаєрів М89-С (х10)
   description: Коробка з упаковками сигнальних фаєрів М89-С.
   components:
+  - type: Tag # Mriya
+    tags:
+    - MRFlareBox
   - type: Construction
     graph: RMCBoxMagazine
     node: RMCBoxPackFlareCASEmpty

@@ -4,6 +4,12 @@
   name: кулер для води
   description: Автомат, який видає воду для пиття. Він має важелі для гарячої та холодної води, але видає лише воду кімнатної температури.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Sprite
     sprite: _RMC14/Structures/Furniture/water_cooler.rsi
     state: water_cooler

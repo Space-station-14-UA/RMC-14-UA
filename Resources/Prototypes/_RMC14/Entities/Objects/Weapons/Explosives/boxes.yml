@@ -25,7 +25,7 @@
 - type: entity
   parent: RMCBoxSmallBase
   id: RMCBoxClaymoreMineFilled
-  name: М20 коробка з мінами
+  name: коробка з мінами М20
   suffix: Filled
   description: Скринька, в якій зберігається п'ять протипіхотних мін близького радіуса дії М20 'Клеймор'. Будь ласка, обережно з цим...
   components:

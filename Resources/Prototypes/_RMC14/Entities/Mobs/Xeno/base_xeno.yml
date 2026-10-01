@@ -527,7 +527,7 @@
   id: Xeno
   name: chat-speech-verb-name-default
   speechVerbStrings:
-  - шипить # В оригіналі лише hisses. Інше - додавання білду Січі
+  - шипить # Mriya. В оригіналі лише hisses
   - гарчить
   - ричить
   - скреготить

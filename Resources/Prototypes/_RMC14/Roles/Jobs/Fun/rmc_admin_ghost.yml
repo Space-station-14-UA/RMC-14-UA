@@ -3,11 +3,15 @@
   id: RMCAdminObserver
   categories: [ HideSpawnMenu ]
   components:
-  - type: PropCaller
+#  - type: PropCaller – Mriya. Зайві кнопки
   - type: Loadout
     prototypes: [ RMCMobAghostGear ]
   - type: IntrinsicUI
-    uis: { }
+    uis:
+    # Mriya start. Для мапінгу
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+    # Mriya end
   - type: Inventory
     templateId: human
   - type: RMCAdminGhost

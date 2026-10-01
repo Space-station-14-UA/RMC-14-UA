@@ -1,4 +1,4 @@
-verb-categories-antag = Antag ctrl
+verb-categories-antag = Антагоністи
 admin-verb-make-traitor = Make the target into a traitor.
 admin-verb-make-initial-infected = Make the target into an Initial Infected.
 admin-verb-make-zombie = Zombifies the target immediately.
@@ -17,4 +17,4 @@ admin-verb-text-make-head-rev = Make Head Rev
 admin-verb-text-make-thief = Make Thief
 admin-verb-text-make-paradox-clone = Create Paradox Clone
 
-admin-overlay-antag-classic = ANTAG
+admin-overlay-antag-classic = АНТАГ

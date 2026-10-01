@@ -18,6 +18,9 @@ using Content.Shared._RMC14.Xenonids.Parasite;
 using Content.Shared._RMC14.Xenonids.Plasma;
 using Content.Shared._RMC14.Xenonids.Spray;
 using Content.Shared._RMC14.Xenonids.Weeds;
+// Mriya start
+using Content.Shared._Mriya.Xenonids.Leap;
+// Mriya end
 using Content.Shared.ActionBlocker;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage;
@@ -188,6 +191,10 @@ public sealed class XenoLeapSystem : EntitySystem
         leaping.DestroyObjects = xeno.Comp.DestroyObjects;
         leaping.MoveDelayTime = xeno.Comp.MoveDelayTime;
         leaping.Damage = xeno.Comp.Damage;
+        // Mriya start
+        leaping.WindowDamage = xeno.Comp.WindowDamage;
+        leaping.WindowHitSound = xeno.Comp.WindowHitSound;
+        // Mriya end
         leaping.HitEffect = xeno.Comp.HitEffect;
         leaping.TargetJitterTime = xeno.Comp.TargetJitterTime;
         leaping.TargetCameraShakeStrength = xeno.Comp.TargetCameraShakeStrength;
@@ -522,8 +529,40 @@ public sealed class XenoLeapSystem : EntitySystem
         return true;
     }
 
+    // Mriya start
+    private bool TryLeapDamageWindow(Entity<XenoLeapingComponent> xeno, EntityUid target)
+    {
+        if (xeno.Comp.WindowDamage.GetTotal() <= FixedPoint2.Zero)
+            return false;
+
+        if (!HasComp<XenoLeapWindowDamageableComponent>(target))
+            return false;
+
+        if (!HasComp<DamageableComponent>(target))
+            return false;
+
+        var damage = _damagable.TryChangeDamage(target, xeno.Comp.WindowDamage, origin: xeno, tool: xeno, shouldIgnoreClawLogic: true);
+        if (damage?.GetTotal() > FixedPoint2.Zero)
+        {
+            var filter = Filter.Pvs(target, entityManager: EntityManager).RemoveWhereAttachedEntity(o => o == xeno.Owner);
+            _colorFlash.RaiseEffect(Color.Red, new List<EntityUid> { target }, filter);
+        }
+
+        if (xeno.Comp.WindowHitSound != null)
+            _audio.PlayPredicted(xeno.Comp.WindowHitSound, target, xeno);
+
+        StopLeap(xeno);
+        return true;
+    }
+    // Mriya end
+
     private bool ApplyLeapingHitEffects(Entity<XenoLeapingComponent> xeno, EntityUid target)
     {
+        // Mriya start
+        if (TryLeapDamageWindow(xeno, target))
+            return true;
+        // Mriya end
+
         if (!IsValidLeapHit(xeno, target))
             return false;
 

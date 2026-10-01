@@ -1,4 +1,4 @@
-charger-examine = Charges at [color={$color}]{$chargeRate}W[/color].
-charger-component-charge-rate = Charge rate
-charger-content = Current charge is at [color=#5E7C16]{$chargePercentage}[/color]%.
-charger-empty = There is nothing in the charger.
+charger-examine = Має потужність заряджання [color={$color}]{$chargeRate}Вт[/color].
+charger-component-charge-rate = Швидкість заряджання
+charger-content = Поточний рівень заряду [color=#5E7C16]{$chargePercentage}[/color]%.
+charger-empty = У зарядному пристрої нічого немає.

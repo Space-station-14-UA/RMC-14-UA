@@ -1,7 +1,7 @@
 cm-gun-unskilled = Ви не знаєте як використовувати {$gun}
 cm-gun-no-ammo-message = Скінчилися набої!
 cm-gun-use-delay = Зачекайте {$seconds} секунд перед тим як знову вистрілити!
-cm-gun-pump-examine = [bold]Натисніть вашу [color=cyan]унікальну[/color] клавішу (Spacebar за замовчуванням) щоб прокачати перед пострілом.[/bold]
+cm-gun-pump-examine = [bold]Натисніть вашу [color=cyan]унікальну[/color] клавішу (Пробіл за замовчуванням), щоб прокачати перед пострілом.[/bold]
 cm-gun-pump-first-with = Вам спершу потрібно прокачати зброю за допомогою {$key}!
 cm-gun-pump-first = Спочатку потрібно прокачати зброю!
 
@@ -37,10 +37,10 @@ rmc-iff-toggle-on = увімкнули
 
 rmc-revolver-spin = Ви крутите барабан.
 
-rmc-examine-text-weapon-accuracy = Поточний множник точності [color={$colour}]{TOSTRING($accuracy, "F2")}[/color].
+rmc-examine-text-weapon-accuracy = Поточний множник точності: [color={$colour}]{TOSTRING($accuracy, "F2")}[/color].
 
-rmc-examine-text-scatter-max = Поточний максимальний розкид [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусів.
-rmc-examine-text-scatter-min = Поточний мінімальний розкид [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусів.
+rmc-examine-text-scatter-max = Поточний максимальний розкид: [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусів.
+rmc-examine-text-scatter-min = Поточний мінімальний розкид: [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусів.
 rmc-examine-text-shots-to-max-scatter = Треба ще [color={$colour}]{$shots}[/color] пострілів до максимального розкиду.
 rmc-examine-text-iff = [color=cyan]Ця зброя стріляє повз союзників, ігноруючи їх![/color]
 rmc-examine-text-id-lock-no-user = [color=chartreuse]Незареєстровано. Візьміть в руки щоб зареєструватись як власник.[/color]
@@ -65,12 +65,12 @@ rmc-gun-stacks-reset = {$weapon} втрачає дані про ціль, і п�
 rmc-gun-shoot-air-self = ВИ СТРІЛЯЄТЕ З { CAPITALIZE($weapon) } У ПОВІТРЯ!
 rmc-gun-shoot-air-other = { CAPITALIZE($user) } СТРІЛЯЄ { CAPITALIZE($weapon) } В ПОВІТРЯ!
 rmc-gun-shoot-air-blocked = Дах над вами занадто щільний.
-rmc-gun-shoot-air-examine = [bold]Натисність вашу [color=cyan]унікальну[/color] клавішу (Spacebar за замовчуванням){$harm ->
-    [true] {" доки в бойовому режимі"}
+rmc-gun-shoot-air-examine = [bold]Натисність вашу [color=cyan]унікальну[/color] клавішу (Пробіл за замовчуванням) {$harm ->
+    [true] {"в бойовому режимі"}
     *[false] {""}
-    } щоб вистрілити в повітря.[/bold]
+    }, щоб вистрілити в повітря.[/bold]
 
 rmc-flare-gun-examine = Останній вистрілений сигнальний фаєр має розташування: [color=#ad3b98][bold]{$id}[/bold][/color]
 
 expendable-light-starshell-ash-empty-name = перегорівший попіл зіркового снаряду
-expendable-light-starshell-ash-empty-desc = Вигорівші залишки зіркового снаряду
+expendable-light-starshell-ash-empty-desc = Вигорівші залишки зіркового снаряду.

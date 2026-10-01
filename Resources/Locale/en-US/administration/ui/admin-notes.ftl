@@ -75,7 +75,7 @@ admin-note-button-centuries = Centuries
 
 
 # Verb
-admin-notes-verb-text = Open Admin Notes
+admin-notes-verb-text = Відкрити Нотатки
 
 # Watchlist and message login
 admin-notes-watchlist = Watchlist for {$player}: {$message}

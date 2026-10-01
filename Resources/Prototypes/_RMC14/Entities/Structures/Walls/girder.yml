@@ -137,6 +137,12 @@
   name: displaced
   suffix: Girder
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Transform
     anchored: false
   - type: Sprite

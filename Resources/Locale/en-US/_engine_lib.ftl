@@ -35,10 +35,10 @@ zzzz-dat-object = { GENDER($ent) ->
 # Not used in en-US. Created to support other languages.
 # e.g., "у него" (Russian), "seines Vaters" (German).
 zzzz-genitive = { GENDER($ent) ->
-    [male] his
-    [female] her
-    [epicene] their
-   *[neuter] its
+    [male] у нього
+    [female] у неї
+    [epicene] у них
+   *[neuter] у цього
    }
 
 # Used internally by the POSS-PRONOUN() function.

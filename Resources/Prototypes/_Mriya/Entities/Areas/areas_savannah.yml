@@ -196,6 +196,11 @@
   name: Склад Представника
 
 - type: entity
+  parent: MMCAreaSavannahLiaison
+  id: MMCAreaSavannahLiaisonBodyGuardCabinet
+  name: Кабінет Корпоративного Охоронця
+
+- type: entity
   parent: MMCAreaSavannahCommand
   id: MMCAreaSavannahPilotBunks
   name: Койки Пілотів

@@ -11,6 +11,11 @@
         c: 1
         min: 1
         max: 2
+      CMSquadLeader:
+        factor: 7 # Як у спеців та ОСГ, але під ЛЗ
+        c: 1
+        min: 2
+        max: 4
       CMWeaponsSpecialist:
         factor: 7 # 13-20 готовий для 3 спеців
         c: 1

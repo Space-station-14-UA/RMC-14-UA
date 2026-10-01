@@ -1,3 +1,3 @@
-dump-verb-name = Dump out on ground
-dump-disposal-verb-name = Dump out into {$unit}
-dump-placeable-verb-name = Dump out onto {$surface}
+dump-verb-name = Висипати на землю
+dump-disposal-verb-name = Висипати в {$unit}
+dump-placeable-verb-name = Висипати на {$surface}

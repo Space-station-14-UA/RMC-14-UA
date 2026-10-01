@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: [ BaseMachinePowered, RMCConstructibleMachine ]
   id: RMCSmartFridge
   name: розумна система зберігання хімікатів
@@ -6,6 +6,12 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Sprite
     sprite: _RMC14/Structures/Machines/smart_fridge.rsi # TODO RMC14 deny, vend states
     layers:

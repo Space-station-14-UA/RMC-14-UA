@@ -1,1 +1,1 @@
-shutter-rattle = *rattle rattle*
+shutter-rattle = *Бр-р-р-р...*

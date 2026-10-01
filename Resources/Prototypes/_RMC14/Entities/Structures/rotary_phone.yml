@@ -92,8 +92,8 @@
 - type: entity
   parent: RMCTelephone
   id: RMCTelephoneScout
-  name: helmet microphone
-  description: A small microphone attached to the helmet, used to communicate with the internal radio transmitter.
+  name: мікрофон в шоломі
+  description: Невеликий мікрофон, прикріплений до шолома, який використовується для зв'язку з іншими подібними пристроями чи радіостанціями.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/phone.rsi
@@ -109,38 +109,51 @@
   parent: RMCRotaryPhone
   id: RMCRotaryPhoneCommandTent
   name: Намет Командування
-  components: #Ця та 2 строки нижче - додавання білду Січі
+  # Mriya start
+  components:
   - type: RotaryPhone
     category: Земля
+  # Mriya end
 
 - type: entity
   parent: RMCRotaryPhone
   id: RMCRotaryPhoneReqTent
   name: Намет Постачань
-  components: #Ця та 2 строки нижче - додавання білду Січі
+  # Mriya start
+  components:
   - type: RotaryPhone
     category: Земля
+  # Mriya end
 
 - type: entity
   parent: RMCRotaryPhone
   id: RMCRotaryPhoneMessTent
   name: Польова Кухня
-  components: #Ця та 2 строки нижче - додавання білду Січі
+  # Mriya start
+  components:
   - type: RotaryPhone
     category: Земля
+  # Mriya end
 
 - type: entity
   parent: RMCRotaryPhone
   id: RMCRotaryPhoneMPTent
   name: Намет ВСП
-  components: #Ця та 2 строки нижче - додавання білду Січі
+  # Mriya start
+  components:
   - type: RotaryPhone
     category: Земля
+  # Mriya end
 
 - type: entity
   parent: RMCRotaryPhone
   id: RMCRotaryPhoneCorrespondentTent
-  name: Correspondent Tent
+  name: Намет Кореспондента
+  # Mriya start
+  components:
+  - type: RotaryPhone
+    category: Земля
+  # Mriya end
 
 # Admin
 - type: entity
@@ -150,7 +163,7 @@
   components:
   - type: RotaryPhone
     canDnd: true
-    category: Ретранслятори
+    category: Ретранслятори # Mriya. Переклад
     notifyAdmins: true
 
 - type: entity
@@ -160,5 +173,5 @@
   components:
   - type: RotaryPhone
     canDnd: true
-    category: Ретранслятори
+    category: Ретранслятори # Mriya. Переклад
     notifyAdmins: true

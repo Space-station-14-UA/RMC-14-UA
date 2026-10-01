@@ -131,13 +131,15 @@
     ventCrawlIcon: lesser
   - type: RMCActionOrder
     id: CMXenoLesserDrone
-#  - type: ExcludedFromKingVote – MR
+#  - type: ExcludedFromKingVote – Mriya
   - type: MindTakeoverBehavior
     ejectFromLarvaQueues: false
   - type: RemoveComponents
     components:
     - type: CanBeLarvaQueued
-  - type: XenoEvolution # Mriya
+  # Mriya start
+  - type: XenoEvolution # Стрейни нашого виробництва (не важкі наркотики, траст мі)
     strains:
     - RMCXenoLesserCarrier
     - MRXenoLesserRunner
+  # Mriya end

@@ -186,10 +186,10 @@
       entries:
       - id: RMCTankFlamer
         points: 3
-        name: incinerator tank (UT-Napthal)
+        name: М34 паливний бак (УТ-Нафтал)
       - id: RMCTankFlamerBGel
         points: 3
-        name: incinerator tank (B-Gel)
+        name: М34 паливний бак (Бі-Гель)
     - name: Додаткова Зброя
       entries:
       - id: RMCCaseFlamer
@@ -277,7 +277,7 @@
       - id: RMCPouchAutoinjectorFill
         recommended: true
       - id: RMCPouchFirstAidInjectors
-        name: підсумок першої допомоги (багаторазові автоінжектори)
+        name: підсумок першої допомоги (багаторазові автоін'єктори)
       - id: RMCPouchFirstAidSplintsGauzeOintment
         name: підсумок першої допомоги (марля, мазь) # TODO RMC14 splints comma
       - id: RMCPouchFirstAidPills

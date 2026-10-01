@@ -81,7 +81,7 @@ namespace Content.Shared.Lathe
 
         // RMC14
         [DataField, AutoNetworkedField]
-        public int MaxQueue = 6;
+        public int MaxQueue = 18; // Mriya. 6 в оригіналі. Ну, а бо чому ні?
     }
 
     public sealed class LatheGetRecipesEvent : EntityEventArgs

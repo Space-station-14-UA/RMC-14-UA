@@ -1,8 +1,8 @@
 - type: entity
   parent: Handcuffs
   id: RMCHandcuffs
-  name: handcuffs
-  description: Use this to keep prisoners in line.
+  name: кайданки
+  description: Використовується, щоб тримати особу на одному місці та при цьому живою.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Misc/handcuffs.rsi
@@ -28,8 +28,8 @@
 - type: entity
   parent: RMCHandcuffs
   id: RMCZipties
-  name: zipties
-  description: Tough single-use plastic zipties, ideal for restraining rowdy prisoners.
+  name: стяжки
+  description: Міцні одноразові пластикові стяжки, ідеально підходять, щоб тримати особу на одному місці та при цьому живою. Єдина різниця з кайданками – це одноразовість.
   suffix: RMC
   components:
   - type: UseDelay

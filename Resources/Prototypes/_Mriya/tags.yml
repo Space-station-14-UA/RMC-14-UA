@@ -12,3 +12,7 @@
 # Mriya. Nuclear authentication disk tag.
 - type: Tag
   id: MRNukeDisk
+
+# Білий список будівництва ксено
+- type: Tag
+  id: AllowXenoConstruction

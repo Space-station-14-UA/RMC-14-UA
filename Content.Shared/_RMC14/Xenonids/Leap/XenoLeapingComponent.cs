@@ -42,6 +42,14 @@ public sealed partial class XenoLeapingComponent : Component
     [DataField, AutoNetworkedField]
     public DamageSpecifier Damage = new();
 
+    // Mriya start
+    [DataField, AutoNetworkedField]
+    public DamageSpecifier WindowDamage = new();
+
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? WindowHitSound;
+    // Mriya end
+
     [DataField, AutoNetworkedField]
     public EntProtoId? HitEffect;
 

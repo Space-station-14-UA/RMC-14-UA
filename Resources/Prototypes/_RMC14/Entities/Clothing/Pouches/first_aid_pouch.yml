@@ -2,7 +2,7 @@
   parent: [RMCPouchOpenClosed, RMCPouchStorage]
   id: RMCPouchFirstAid
   name: підсумок першої допомоги
-  description: За стандартом містить автоінжектори. Але також може містити мазь, марлю, і упаковки з пігулками.
+  description: За стандартом містить автоін'єктори. Але також може містити мазь, марлю, і упаковки з пігулками.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Pouches/firstaid.rsi
@@ -26,7 +26,7 @@
   parent: RMCPouchFirstAid
   id: RMCPouchFirstAidInjectors
   suffix: Injectors
-  description: Містить різноманітні автоінжектори для швидкого лікування травм.
+  description: Містить різноманітні автоін'єктори для швидкого лікування травм.
   components:
   - type: StorageFill
     contents:
@@ -82,7 +82,7 @@
 - type: entity
   parent: RMCPouchFirstAid
   id: RMCPouchFirstAidERT
-  description: Може містити автоінжектори, мазь, і марлю. Саме ця використовується ГШРівцями.
+  description: Може містити автоін'єктори, мазь, і марлю. Саме ця використовується ГШРівцями.
   suffix: ГШР
   components:
   - type: Storage
@@ -107,7 +107,7 @@
   parent: RMCPouchFirstAid
   id: RMCPouchFirstAidPMC
   name: підсумок першої допомоги Ве-Я
-  description: Містить різноманітні автоінжектори для швидкого лікування травм.
+  description: Містить різноманітні автоін'єктори для швидкого лікування травм.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Pouches/wy_firstaid.rsi

@@ -3,6 +3,7 @@
   id: MRWeyaPMC
   name: mriya-department-weya-pmc
   description: mriya-department-weya-pmc-description
+  editorHidden: true
   color: "#83b5b0"
   roles:
   - CMPMCForceLeadPVE

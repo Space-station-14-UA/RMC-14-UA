@@ -51,7 +51,7 @@
             CMCargoTech: [2, 2]
 
             # Морпіхи. 26-28 загалом (плюс нескінченні стрільці)
-            CMSquadLeader: [4, 4]
+            CMSquadLeader: [2, 2] # До 4
             CMFireteamLeader: [4, 4]
             CMSmartGunOperator: [2, 2] # 3 від 12-20 готових
             CMWeaponsSpecialist: [2, 2] # 3 від 12-20 готових

@@ -164,6 +164,11 @@
     delay: 0
     knockdownTime: 2
     leapSound: /Audio/_RMC14/Xeno/alien_pounce.ogg
+    #Mriya start
+    windowDamage:
+      types:
+        Blunt: 15
+    #Mriya end
   - type: MovementSpeedModifier
     baseWalkSpeed: 5.55
     baseSprintSpeed: 10

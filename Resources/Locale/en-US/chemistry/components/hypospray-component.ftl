@@ -1,20 +1,20 @@
 ## UI
 
-hypospray-all-mode-text = Only Injects
-hypospray-mobs-only-mode-text = Draws and Injects
-hypospray-invalid-text = Invalid
-hypospray-volume-label = Volume: [color=white]{$currentVolume}/{$totalVolume}u[/color]
-    Mode: [color=white]{$modeString}[/color]
+hypospray-all-mode-text = Тільки введення
+hypospray-mobs-only-mode-text = Забирання та Введеення
+hypospray-invalid-text = Невідомо
+hypospray-volume-label = Ємність: [color=white]{$currentVolume}/{$totalVolume}од[/color]
+    Режим: [color=white]{$modeString}[/color]
 
 ## Entity
 
-hypospray-component-inject-other-message = You inject {$other}.
-hypospray-component-inject-self-message = You inject yourself.
-hypospray-component-empty-message = Nothing to inject.
-hypospray-component-feel-prick-message = You feel a tiny prick!
-hypospray-component-transfer-already-full-message = {$owner} is already full!
-hypospray-cant-inject = Can't inject into {$target}!
+hypospray-component-inject-other-message = Ви вводите {$other}.
+hypospray-component-inject-self-message = Ви вводите самому собі.
+hypospray-component-empty-message = Нічого вводити.
+hypospray-component-feel-prick-message = Ви відчуваєте укольчик!
+hypospray-component-transfer-already-full-message = {$owner} вже повний!
+hypospray-cant-inject = Ви не можете ввести рідину в {$target}!
 
-hypospray-verb-mode-label = Toggle Container Draw
-hypospray-verb-mode-inject-all = You cannot draw from containers anymore.
-hypospray-verb-mode-inject-mobs-only = You can now draw from containers.
+hypospray-verb-mode-label = Перемкнути забирання рідини
+hypospray-verb-mode-inject-all = Ви не можете більше забирати рідину з ємностей.
+hypospray-verb-mode-inject-mobs-only = Тепер ви можете забирати рідину з ємностей.

@@ -6,6 +6,12 @@
   description: It's a basic storage unit.
   suffix: Unanchored
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Physics
     bodyType: Static
   - type: Sprite

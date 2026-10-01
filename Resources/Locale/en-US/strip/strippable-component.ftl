@@ -15,8 +15,8 @@ strippable-component-alert-owner-insert-hand = {CAPITALIZE(THE($user))} is putti
 strippable-component-alert-owner-interact = {CAPITALIZE(THE($user))} is fumbling around with your {$item}!
 
 # StripVerb
-strip-verb-get-data-text = Strip
-strip-all-verb-get-data-text = Strip All
+strip-verb-get-data-text = Спорядження
+strip-all-verb-get-data-text = Роздягти
 
 ## UI
 

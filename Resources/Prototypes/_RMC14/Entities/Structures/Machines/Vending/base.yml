@@ -29,6 +29,9 @@
   - type: Tag
     tags:
     - Structure
+    # Mriya start. Можливість будувати на ньому
+    - AllowXenoConstruction
+    # Mriya end
   #    offState: off
   #    brokenState: broken
   - type: Sprite

@@ -5,18 +5,21 @@
   description: Used for growing plants.
   components:
   - type: VehicleSmashable
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.1"
-        density: 190
-        hard: true
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
+  # Mriya start. Прибирання колізії
+  #  - type: Fixtures
+  #    fixtures:
+  #      fix1:
+  #        shape:
+  #          !type:PhysShapeAabb
+  #          bounds: "-0.45,-0.45,0.45,0.1"
+  #        density: 190
+  #        hard: true
+  #        mask:
+  #        - MachineMask
+  #        layer:
+  #        - MachineLayer
+  # Mriya end
+
   # - type: ApcPowerReceiver  TODO RMC14 power figure out the unpowered visuals
   #   powerLoad: 250
   #   needsPower: true
@@ -37,6 +40,7 @@
           collection: MetalGlassBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: Corrodible # Mriya. Додано компонент для плавлення. Додано можливість плавити
   - type: Sprite
     sprite: _RMC14/Structures/hydroponics.rsi
     layers:

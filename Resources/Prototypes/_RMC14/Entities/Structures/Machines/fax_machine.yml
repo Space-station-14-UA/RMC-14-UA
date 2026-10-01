@@ -4,6 +4,12 @@
   name: факс-апарат
   description: Єдиний та найкращий друг Корпората.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: ApcPowerReceiver
     powerLoad: 250
     needsPower: true

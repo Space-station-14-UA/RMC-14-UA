@@ -23,7 +23,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, CMXenoDroneGardener ]
   id: MRXenoDroneGardenerOld
-  suffix: Садівниця, Січ, Стара
+  suffix: Садівниця, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Drone/gardener_drone.rsi
@@ -46,7 +46,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, CMXenoDroneHealer ]
   id: MRXenoDroneHealerOld
-  suffix: Цілителька, Січ, Стара
+  suffix: Цілителька, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Drone/healer_drone.rsi

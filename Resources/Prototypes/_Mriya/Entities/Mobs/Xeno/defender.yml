@@ -20,7 +20,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, CMXenoDefenderSteelcrest ]
   id: MRXenoDefenderSteelcrestOld
-  suffix: Сталева, Січ, Стара
+  suffix: Сталева, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Defender/steelcrest_defender.rsi

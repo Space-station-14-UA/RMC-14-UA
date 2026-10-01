@@ -67,6 +67,9 @@
         Blunt: 40 # TODO RMC14 reduce window health to 100, check per window
   - type: XenoCrusherChargable
     instantDestroy: True
+  #Mriya start
+  - type: XenoLeapWindowDamageable
+  #Mriya end
 
 - type: entity
   parent: CMBaseWindowIndestructible

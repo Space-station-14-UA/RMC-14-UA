@@ -466,6 +466,8 @@
         amount: 13
       - id: RMCTankFlamer
         amount: 3
+      - id: RMCTankFlamerBGel # Mriya. Додаванні бі-гелю
+        amount: 2
       - id: CMMagazineRifleM54CE2
         amount: 3
       - id: CMMagazineRifleM54CMK1

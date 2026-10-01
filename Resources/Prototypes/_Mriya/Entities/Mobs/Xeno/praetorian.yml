@@ -3,7 +3,7 @@
   parent: CMXenoPraetorianBase
   id: MRXenoPraetorianWarden
   description: Велика й небезпечна чужопланетна істота, у якої на шиї велика кислотна почка та при цьому характерний синій гребінь й потужний хвіст.
-  suffix: Наглядач, Січ
+  suffix: Наглядач, Мрія
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Praetorian/warden_praetorian.rsi
@@ -100,7 +100,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoPraetorianValkyrie ]
   id: MRXenoPraetorianValkyrieOld
-  suffix: Валькірія, Січ, Стара
+  suffix: Валькірія, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Praetorian/warden_praetorian.rsi # valkyrie_praetorian.rsi. Бо саме Валькірія заміна Вардена
@@ -114,7 +114,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, MRXenoPraetorianWarden ]
   id: MRXenoPraetorianWardenOld
-  suffix: Наглядач, Січ, Стара
+  suffix: Наглядач, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Praetorian/warden_praetorian.rsi
@@ -128,7 +128,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoPraetorianDancer ]
   id: MRXenoPraetorianDancerOld
-  suffix: Танцівниця, Січ, Стара
+  suffix: Танцівниця, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Praetorian/dancer_praetorian.rsi
@@ -142,7 +142,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoPraetorianVanguard ]
   id: MRXenoPraetorianVanguardOld
-  suffix: Вангард, Січ, Стара
+  suffix: Вангард, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Praetorian/vanguard_praetorian.rsi
@@ -156,7 +156,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoPraetorianOppressor ]
   id: MRXenoPraetorianOppressorOld
-  suffix: Гнобителька, Січ, Стара
+  suffix: Гнобителька, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Praetorian/oppressor_praetorian.rsi

@@ -1,9 +1,9 @@
-mopping-system-target-container-empty = { CAPITALIZE(THE($target)) } is empty!
-mopping-system-target-container-empty-water = { CAPITALIZE(THE($target)) } has no water!
-mopping-system-puddle-space = { CAPITALIZE(THE($used)) } is full of water.
-mopping-system-puddle-already-mopped = { CAPITALIZE(THE($target)) } is already mopped.
-mopping-system-no-water = { CAPITALIZE(THE($used)) } has no water!
-mopping-system-no-hands = You have no hands!
+mopping-system-target-container-empty = {CAPITALIZE($target)} порожнє!
+mopping-system-target-container-empty-water = {CAPITALIZE($target)} не має води!
+mopping-system-puddle-space = {CAPITALIZE($used)} повне води.
+mopping-system-puddle-already-mopped = {CAPITALIZE($target)} вже витерто.
+mopping-system-no-water = {CAPITALIZE($used)} не має води!
+mopping-system-no-hands = У вас нема рук!
 
-mopping-system-full = { CAPITALIZE(THE($used)) } is full!
-mopping-system-empty = { CAPITALIZE(THE($used)) } is empty!
+mopping-system-full = {CAPITALIZE($used)} повне!
+mopping-system-empty = {CAPITALIZE($used)} порожнє!

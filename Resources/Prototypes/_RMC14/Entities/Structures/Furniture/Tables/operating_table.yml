@@ -1,9 +1,15 @@
-﻿- type: entity
+- type: entity
   parent: BaseStructure
   id: CMOperatingTable
   name: операційний стіл
   description: Використовується для складних медичних процедур.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Transform
     anchored: true
     noRot: true

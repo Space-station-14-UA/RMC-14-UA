@@ -1,7 +1,7 @@
 - type: entity
   id: ActionToggleMarineHud
-  name: Перемкнути ПД морпіхів
-  description: Перемикає піктограми морпіхів.
+  name: Перемкнути Інтерфейс Морпіхів
+  description: Перемикає відображення інформацію про роль, стан здоров'я та інші штуки морпіхів.
   components:
   - type: Action
     checkCanInteract: false
@@ -16,8 +16,8 @@
 
 - type: entity
   id: ActionToggleXenoHud
-  name: Перемкнути ПД ксеноїдів
-  description: Перемикайте показ здоров'я ксеноїдів, та їх плазмових індикаторів.
+  name: Перемкнути Інтерфейс Ксеноїдів
+  description: Перемикає відображення інформації про здоров'я, плазму, феромони та інші штуки ксено.
   components:
   - type: Action
     checkCanInteract: false
@@ -33,7 +33,7 @@
 - type: entity
   id: ActionFindParasite
   name: Знайти Паразита
-  description: Знайдіть паразитів, що мають ролі привидів.
+  description: Знаходить вам паразита, за якого можна почати грати.
   components:
   - type: Action
     checkCanInteract: false
@@ -46,7 +46,7 @@
 - type: entity
   id: ActionJoinXeno
   name: Приєднатися як Ксеноїд
-  description: Знайдіть зариту личинку, щоб приєднатися за неї.
+  description: Встаньте в "чергу" за вашим майбутнім ксено.
   components:
   - type: Action
     checkCanInteract: false
@@ -59,8 +59,8 @@
 
 - type: entity
   id: ActionToggleVisibility
-  name: Toggle Visibility
-  description: Toggles your visibility, while you're invisible your friend can still hear what you say.
+  name: Перемкнути Видимість
+  description: Перемикає видимість вас для вашого друга.
   components:
   - type: Action
     checkCanInteract: false
@@ -75,8 +75,8 @@
 
 - type: entity
   id: ActionStopBeingFriends
-  name: Покинути друга
-  description: Більше не бути уявним другом цієї істоти.
+  name: Покинути Друга
+  description: Можливість покинути вашого друга. Ти монстр.
   components:
   - type: Action
     checkCanInteract: false

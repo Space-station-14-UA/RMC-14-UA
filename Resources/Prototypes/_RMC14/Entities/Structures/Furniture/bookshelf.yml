@@ -3,6 +3,13 @@
   id: RMCBookcase
   name: книжкова шафа
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - Metal
+    - AllowXenoConstruction
+  # Mriya end
   - type: Sprite
     sprite: _RMC14/Structures/Furniture/bookshelf.rsi
     snapCardinals: true

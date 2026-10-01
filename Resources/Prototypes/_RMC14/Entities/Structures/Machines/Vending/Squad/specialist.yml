@@ -218,7 +218,7 @@
       choices: { RMCPouch: 2 }
       entries:
       - id: RMCPouchFirstAidInjectors
-        name: підсумок першої допомоги (багаторазові автоінжектори)
+        name: підсумок першої допомоги (багаторазові автоін'єктори)
         recommended: true
       - id: RMCPouchFirstAidSplintsGauzeOintment
         name: підсумок першої допомоги (марля, мазь) # TODO RMC14 splints comma
@@ -297,7 +297,7 @@
       - id: CMBeltUtilityCombat
         points: 15
       - id: RMCPouchAutoinjectorFill
-        name: автоінжекторний підсумок (Повний)
+        name: автоін'єкторний підсумок (Повний)
         points: 15
     - name: Додаткове Обладнання
       entries:

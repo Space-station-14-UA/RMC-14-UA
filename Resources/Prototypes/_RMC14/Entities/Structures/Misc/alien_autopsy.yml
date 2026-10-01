@@ -13,6 +13,28 @@
     sprite: _RMC14/Structures/alien_autopsy.rsi
     state: jarshelf_9
   - type: Appearance
+  # Mriya start. Додано можливість ламати
+  - type: Damageable
+    damageContainer: StructuralMarine
+    damageModifierSet: StructuralMarine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CMSheetMetal1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Corrodible
+  # Mriya end
   - type: Fixtures
     fixtures:
       fix1:
@@ -41,6 +63,7 @@
   - type: Damageable
     damageContainer: StructuralMarine
     damageModifierSet: StructuralMarine
+  - type: Corrodible # Mriya. Додано можливість плавити
   - type: InteractionOutline
 
 - type: entity

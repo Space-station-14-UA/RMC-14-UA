@@ -1,6 +1,7 @@
 ﻿- type: entity
   id: RMCGeneratorFusionFake
-  name: остаточно зруйнований термоядерний реактор S-52
+  name: остаточно зруйнований термоядерний реактор С-52
+  description: Якщо в тебе нема запасу термоядерного палива, команди професійних інженерів та освіти у сфері ядерної енергетики, то ти наврядч щось з ним зробиш... # Mriya
   placement:
     mode: SnapgridCenter
   components:
@@ -30,7 +31,8 @@
 - type: entity
   parent: RMCGeneratorFusionFake
   id: RMCGeneratorFusion
-  name: термоядерний реактор S-52
+  name: термоядерний реактор С-52
+  description: Високоефективний реактор, який використовує стабільний термоядерний синтез задля вироблення енергії. Має ряд захисних протоколів, що не дадуть йому вибухнути, якщо їх перед цим не вимкнути. Зазвичай використовується на космічних суднах та шатлах, через свої малі розміри та зручність у обслуговуванні. # Mriya
   placement:
     mode: SnapgridCenter
   components:
@@ -67,8 +69,8 @@
 - type: entity
   parent: RMCGeneratorFusion
   id: RMCGeneratorFusionColony
-  name: геотермальний генератор G-11
-  description: Термоелектричний генератор, розташований на вершині заповненої плазмою свердловини.
+  name: геотермальний генератор Г-11
+  description: Термоелектричний генератор розташований на свердловині з фороном. Нескінченна енергія, без зайвих викидів, прямо з під землі, юху!
   components:
   - type: RMCFusionReactor
     watts: 100000
@@ -116,8 +118,8 @@
 - type: entity
   parent: BaseItem
   id: RMCGeneratorFusionCell
-  name: універсальний паливний елемент WL-6
-  description: Перезаряджуваний паливний елемент.
+  name: універсальний паливний елемент ВЛ-6
+  description: Перезаряджуваний паливний елемент з термоядерним паливом для ядерних реакторів моделі С-52 та її модифікацій.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Power/fusion_fuel_cell.rsi
@@ -176,8 +178,8 @@
 - type: entity
   parent: RMCPortableGeneratorBase
   id: RMCPortableGenerator
-  name: "P.A.C.M.A.N.-type Portable Generator"
-  description: A portable generator for emergency backup power.
+  name: переносний генератор моделі P.A.C.M.A.N.
+  description: Портативний генератор для аварійного резервного живлення. Потужно.
   components:
     - type: Sprite
       state: portgen0
@@ -187,8 +189,8 @@
 - type: entity
   parent: RMCPortableGeneratorBase
   id: RMCPortableGenerator2
-  name: "S.U.P.E.R.P.A.C.M.A.N.-type Portable Generator"
-  description: A portable generator for emergency backup power.
+  name: переносний генератор моделі S.U.P.E.R.P.A.C.M.A.N.
+  description: Портативний генератор для аварійного резервного живлення. Дуже потужно.
   components:
     - type: Sprite
       state: portgen1

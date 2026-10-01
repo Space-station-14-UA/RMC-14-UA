@@ -40,6 +40,7 @@
   description: Медичний дозатор лікарських засобів. Постачається Фармацевтичним відділом корпорації Ве-Я.
   suffix: All Access
   components:
+  - type: Corrodible # Mriya. Додано можливість плавити
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/med.rsi
     layers:
@@ -88,7 +89,7 @@
         amount: 10
 #      - id: CMSplints10 # TODO RMC14
 #        amount: 10
-    - name: Автоінжектори
+    - name: Автоін'єктори
       entries:
       - id: CMBicaridineAutoInjector
         amount: 5
@@ -375,7 +376,7 @@
   - type: CMAutomatedVendor
     canManualRestock: true
     sections:
-    - name: Автоінжектори
+    - name: Автоін'єктори
       entries:
       - id: CMTricordrazineAutoInjectorNoSkill
         amount: 5

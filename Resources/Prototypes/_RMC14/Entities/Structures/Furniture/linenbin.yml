@@ -6,6 +6,12 @@
   description: кошик для білизни. Виглядає досить затишним.
   components:
   - type: Anchorable
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Transform
     anchored: true
   - type: Physics

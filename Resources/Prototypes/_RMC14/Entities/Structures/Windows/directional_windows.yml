@@ -4,6 +4,12 @@
   name: вікно
   description: Скляне вікно. Воно виглядає тонким і крихким. Кілька ударів чим-небудь розіб'ють його.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Window
+    - AllowXenoConstruction
+  # Mriya end
   - type: Transform
     anchored: true
   - type: Fixtures
@@ -56,6 +62,9 @@
   - type: Construction
     graph: RMCWindowDirectional
     node: windowDirectional
+  #Mriya start
+  - type: XenoLeapWindowDamageable
+  #Mriya end
 
 - type: entity
   parent: CMWindowDirectional

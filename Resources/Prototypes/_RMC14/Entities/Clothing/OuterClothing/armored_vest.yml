@@ -23,8 +23,8 @@
 - type: entity
   parent: RMCArmorVest
   id: RMCArmorVestFlak
-  name: M70 flak jacket
-  description: A flak jacket used by dropship pilots to protect themselves while flying in the cockpit. Excels in protecting the wearer against high-velocity solid projectiles.
+  name: бронежилет зразка М70
+  description: Бронежилет, який використовують пілоти шатлів для базового захисту під час пілотування. Гарний для захисту від куль, але від кислоти та вибухів слабо допоможе.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/OuterClothing/Armor/pilot/jungle.rsi

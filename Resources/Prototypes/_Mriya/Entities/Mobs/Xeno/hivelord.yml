@@ -17,7 +17,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, CMXenoHivelordResinWhisperer ]
   id: MRXenoHivelordResinWhispererOld
-  suffix: Трав'яна, Січ, Стара
+  suffix: Трав'яна, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Hivelord/resin_whisperer_hivelord.rsi
@@ -30,7 +30,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, CMXenoHivelordDesigner ]
   id: MRXenoHivelordDesignerOld
-  suffix: Дизайнерка, Січ, Стара
+  suffix: Дизайнерка, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Hivelord/hivelord.rsi # designer_hivelord.rsi, спрайти відсутні

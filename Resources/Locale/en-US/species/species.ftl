@@ -13,4 +13,4 @@ species-name-gingerbread = смачна випічка
 
 ## Misc species things
 
-snail-hurt-by-salt-popup = Солоний розчин пече як кислота!
+snail-hurt-by-salt-popup = Сіль пече ніби кислота!

@@ -285,6 +285,7 @@
   - type: TacticalMapUser
     actionId: RMCActionOpenTacticalMapMarine
     marines: true
+  - type: EmoteCooldown
   - type: FiremanCarriable
   - type: CanFiremanCarry
   - type: RMCSuicide

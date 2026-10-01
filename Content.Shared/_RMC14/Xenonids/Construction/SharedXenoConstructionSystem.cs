@@ -92,6 +92,9 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
     private static readonly ProtoId<TagPrototype> AirlockTag = "Airlock";
     private static readonly ProtoId<TagPrototype> StructureTag = "Structure";
     private static readonly ProtoId<TagPrototype> PlatformTag = "Platform";
+    // Mriya start. Тег-вайтлист AllowXenoConstruction для дозволу будівництва на об'єктах.
+    private static readonly ProtoId<TagPrototype> AllowXenoConstructionTag = "AllowXenoConstruction";
+    // Mriya end
 
     private static readonly ImmutableArray<Direction> Directions = Enum.GetValues<Direction>()
         .Where(d => d != Direction.Invalid)
@@ -1449,6 +1452,9 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
             {
                 if ((_tags.HasAnyTag(uid.Value, StructureTag) || HasComp<StrapComponent>(uid) || HasComp<ClimbableComponent>(uid)) &&
                     !_tags.HasTag(uid.Value, PlatformTag) &&
+                    // Mriya start. Для будівництва на об'єктах з вайтлистом.
+                    !_tags.HasTag(uid.Value, AllowXenoConstructionTag) &&
+                    // Mriya end
                     !HasComp<DoorComponent>(uid) ||
                     TryComp(uid, out DoorComponent? door) &&
                     door.State != DoorState.Open)
@@ -1787,12 +1793,15 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
                 return false;
             }
 
-            if (HasComp<XenoConstructComponent>(uid) ||
+            // Mriya start. Додано `(!_tags.HasTag(uid.Value, AllowXenoConstructionTag) &&` для будівництва на об'єктах з вайтлистом.
+            if (!_tags.HasTag(uid.Value, AllowXenoConstructionTag) &&
+                (HasComp<XenoConstructComponent>(uid) ||
                 _tags.HasAnyTag(uid.Value, StructureTag, AirlockTag) ||
                 HasComp<StrapComponent>(uid) ||
                 _xenoTunnelQuery.HasComp(uid) ||
                 _sentryQuery.HasComp(uid) ||
-                _blockXenoConstructionQuery.HasComp(uid))
+                _blockXenoConstructionQuery.HasComp(uid)))
+            // Mriya end
             {
                 popupType = "rmc-xeno-construction-blocked";
                 return false;

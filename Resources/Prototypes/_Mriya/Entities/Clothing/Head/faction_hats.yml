@@ -2,7 +2,7 @@
 - type: entity
   id: MRHeadMilitiaBase
   abstract: true
-  prefix: Січ
+  prefix: Мрія
   components:
   - type: CMArmor
     melee: 15

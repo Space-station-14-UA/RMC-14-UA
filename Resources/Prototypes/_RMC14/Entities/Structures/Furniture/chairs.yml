@@ -153,6 +153,12 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - RMCSeat
+    - AllowXenoConstruction
+  # Mriya end
   - type: Sprite
     state: comfychair
   - type: Transform

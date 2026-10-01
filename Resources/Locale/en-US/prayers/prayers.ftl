@@ -1,4 +1,4 @@
-﻿prayer-verbs-subtle-message = Subtle Message
+﻿prayer-verbs-subtle-message = Тонкий Натяк
 prayer-verbs-pray = Pray
 prayer-verbs-call = Call
 prayer-verbs-rub = Rub
@@ -10,7 +10,7 @@ prayer-chat-notify-syndicate = SYNDICATE
 prayer-chat-notify-lamp = LAMP
 prayer-chat-notify-monolith = MONOLITH
 
-prayer-popup-subtle-default = You hear a voice in your head...
+prayer-popup-subtle-default = Ви чуєте голос у своїй голові...
 
 prayer-popup-notify-honkmother-sent = You left a voicemail message for the Honkmother...
 prayer-popup-notify-centcom-sent = You left a voicemail message for Central Command...

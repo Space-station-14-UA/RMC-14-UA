@@ -8,7 +8,7 @@ rmc-bslot-barrel = Ствол Матеби
 rmc-aslot-rail = Рейка
 rmc-aslot-stock = Приклад
 rmc-aslot-underbarrel = Підствольна частина
-rmc-aslot-harness = Harness
+rmc-aslot-harness = Кріплення
 
 rmc-attachable-activation-fail-not-wielded = {CAPITALIZE($holder)} треба тримати в двох руках, щоб активувати {$attachable}!
 rmc-attachable-activation-fail-not-held = {CAPITALIZE($holder)} потрібно тримати, щоб активувати {$attachable}!
@@ -74,9 +74,9 @@ rmc-attachable-examine-speed-sprint = [color={$colour}]{$sign}{TOSTRING($speed, 
 
 rmc-attachable-examine-wield-delay = [color={$colour}]{$sign}{$delay}[/color] секунд затримки.
 
-rmc-attachable-examine-verb-text = View Compatible Attachments
-rmc-attachable-examine-window-title = Compatible Attachments
-rmc-attachable-examine-no-slots = This weapon has no attachment slots.
-rmc-attachable-examine-header = [bold]Attachment slots:[/bold]
+rmc-attachable-examine-verb-text = Подивитися Сумісні Обвіси
+rmc-attachable-examine-window-title = Сумісні Обвіси
+rmc-attachable-examine-no-slots = Ця зброя не має слотів для обвісів.
+rmc-attachable-examine-header = [bold]Слоти для Обвісів:[/bold]
 rmc-attachable-examine-slot-filled = • [bold]{$slot}:[/bold] {$attachment}
-rmc-attachable-examine-slot-empty = • [bold]{$slot}:[/bold] [color=gray]empty[/color]
+rmc-attachable-examine-slot-empty = • [bold]{$slot}:[/bold] [color=gray]порожнє[/color]

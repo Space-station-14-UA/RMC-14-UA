@@ -23,7 +23,7 @@ public sealed partial class DropshipFabricatorComponent : Component
     public List<DropshipFabricatorQueueEntry> Queue = new();
 
     [DataField, AutoNetworkedField]
-    public int MaxQueue = 6;
+    public int MaxQueue = 12; // Mriya. 6 в оригіналі. Ну, а бо чому ні?
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
     public TimeSpan PrintAt;

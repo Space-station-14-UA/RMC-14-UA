@@ -1,23 +1,23 @@
 ### Locale for wielding items; i.e. two-handing them
 
-wieldable-verb-text-wield = Wield
-wieldable-verb-text-unwield = Unwield
+wieldable-verb-text-wield = В двох руках
+wieldable-verb-text-unwield = В одній руці
 
-wieldable-component-successful-wield = You wield { THE($item) }.
-wieldable-component-failed-wield = You unwield { THE($item) }.
-wieldable-component-successful-wield-other = { CAPITALIZE(THE($user)) } wields { THE($item) }.
-wieldable-component-failed-wield-other = { CAPITALIZE(THE($user)) } unwields { THE($item) }.
-wieldable-component-blocked-wield = { CAPITALIZE(THE($blocker)) } blocks you from wielding { THE($item) }.
+wieldable-component-successful-wield = Ви взяли {$item} в 2 руки.
+wieldable-component-failed-wield = Ви взяли {$item} в 1 руку.
+wieldable-component-successful-wield-other = {CAPITALIZE($user)} взяв {$item} в 2 руки.
+wieldable-component-failed-wield-other = {CAPITALIZE($user)} взяв {$item} в 1 руку.
+wieldable-component-blocked-wield = {CAPITALIZE($blocker)} заважає взяти {$item} в 2 руки.
 
-wieldable-component-no-hands = You don't have enough hands!
+wieldable-component-no-hands = У вас недостатньо рук!
 wieldable-component-not-enough-free-hands = {$number ->
-    [one] You need a free hand to wield { THE($item) }.
-    *[other] You need { $number } free hands to wield { THE($item) }.
+    [one] Вам треба вільна рука, щоб взяти {$item}.
+    *[other] You need { $number } Вам треба вільні руки, щоб взяти {$item}.
 }
-wieldable-component-not-in-hands = { CAPITALIZE(THE($item)) } isn't in your hands!
+wieldable-component-not-in-hands = {CAPITALIZE($item)} не в ваших руках!
 
-wieldable-component-requires = { CAPITALIZE(THE($item))} must be wielded!
+wieldable-component-requires = {CAPITALIZE($item)} повинно бути в 2 руках!
 
-gunwieldbonus-component-examine = This weapon has improved accuracy when wielded.
+gunwieldbonus-component-examine = Ця зброя має покращену точність у двох руках.
 
-gunrequireswield-component-examine = This weapon can only be fired when wielded.
+gunrequireswield-component-examine = З цієї зброї можна стріляти тільки з двох рук.

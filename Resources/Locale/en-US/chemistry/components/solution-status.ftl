@@ -1,2 +1,2 @@
-﻿solution-status-volume = Volume: [color=white]{$currentVolume}/{$maxVolume}u[/color]
-solution-status-transfer = Transfer: [color=white]{$volume}u[/color]
+﻿solution-status-volume = Об'єм: [color=white]{$currentVolume}/{$maxVolume}од[/color]
+solution-status-transfer = Перелити: [color=white]{$volume}од[/color]

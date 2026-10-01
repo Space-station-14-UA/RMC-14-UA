@@ -244,6 +244,12 @@
   name: suit storage unit
   description: A fancy hi-tech storage unit made for storing space suits.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: AccessReader
   - type: Lock
   - type: Anchorable

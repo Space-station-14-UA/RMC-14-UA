@@ -1,5 +1,5 @@
-lore-examinable-verb-text = Lore
-lore-examinable-verb-disabled = Recall further detail about this object.
+lore-examinable-verb-text = Лор
+lore-examinable-verb-disabled = Час пригадати більше деталей про цю річ.
 
 rmc-lore-examinable-trimax-polarized-shades = TriMax's latest 'TactOptix' line comes with advanced polarization and lightweight ballistic lenses capable of shrugging off small shrapnel impacts. A favorite among frontline operators and deep-space scouts, these shades are marketed as 'combat-tested and action-approved.' Rumors abound of lucky users surviving close-range laser shots thanks to the multi-reflective lens coating, though TriMax's official stance is to 'Stop standing in front of lasers'.
 rmc-lore-examinable-trimex-personal-shades = Marketed as 'TriMex,' with an 'E' to sidestep copyright, these knockoffs are popular with penny-pinching spacers and wannabe badasses. While the real deal boasts patented mirror refraction for atomic flash, solar radiation, and targeting laser protection, these cut-rate imitations barely keep UV rays at bay. As for that famous story of a laser pistol reflecting off the originals? Good luck finding anyone who believes these could pull it off. But hey, they’re cheap, and their 'Save the Budget and Look Cool Doing It' slogan really sells it.

@@ -327,6 +327,12 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - RMCSeat
+    - AllowXenoConstruction
+  # Mriya end
   - type: Transform
     anchored: true
     rot: 90

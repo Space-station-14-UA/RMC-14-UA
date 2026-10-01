@@ -18,9 +18,9 @@ language-SignLanguage-name = Мова Жестів
 language-Primitive-name = Примітивна
 
 # Language descr
-language-English-description = Солов'їна Українська! Думаю, її повинні знати всі.
+language-English-description = Солов'їна Українська! Думаю, ви це й так знаєте.
 language-Xeno-description = Мова прибульців, Ксеноїдів! Звучить жахливо та нагадує суміш скрежетань, шипіння та гарчання.
-language-Xeno-first-contact = The sounds follow an alien hive pattern.
+language-Xeno-first-contact = Звуки нагадують патерни далекого вулику інопланетян.
 language-Spanish-description = Стара мова планети Земля. Хола, Сеньйорито!
 language-French-description = Стара мова планети Земля. Бонжур, Мадам!
 language-Japanese-description = Стара мова планети Земля. Конічіва, Онанако!

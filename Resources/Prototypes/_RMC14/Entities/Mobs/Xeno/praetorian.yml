@@ -139,6 +139,11 @@
     knockdownTime: 0
     range: 6
     moveDelayTime: 0
+    #Mriya start
+    windowDamage:
+      types:
+        Blunt: 50
+    #Mriya end
   - type: XenoShield
     shield: Praetorian
   - type: XenoAcidBall
@@ -322,6 +327,11 @@
     knockdownTime: 0
     range: 6
     moveDelayTime: 0
+    #Mriya start
+    windowDamage:
+      types:
+        Blunt: 50
+    #Mriya end
   - type: XenoBlitz
     damage:
       groups:

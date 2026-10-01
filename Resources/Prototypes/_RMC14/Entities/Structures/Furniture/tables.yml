@@ -5,6 +5,12 @@
   name: стіл
   description: Квадратна металева поверхня, що стоїть на чотирьох ніжках. Зручно класти на неї речі.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - ForceFixRotations
+    - AllowXenoConstruction
+  # Mriya end
   - type: VehicleSmashable
   - type: Corrodible
     timeToApply: 4
@@ -116,6 +122,9 @@
   - type: Tag
     tags:
     - ForceFixRotations
+    # Mriya start
+    - AllowXenoConstruction
+    # Mriya end
 
 # Reinforced
 - type: entity

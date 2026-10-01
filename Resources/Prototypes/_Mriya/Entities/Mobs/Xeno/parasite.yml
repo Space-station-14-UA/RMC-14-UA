@@ -13,7 +13,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoParasiteWatcher ]
   id: MRXenoParasiteWatcherOld
-  suffix: Спостерігач, Січ, Стара
+  suffix: Спостерігач, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Parasite/parasite.rsi # watcher_parasite.rsi, але вони фактично однакові та вотчера якийсь багнутий

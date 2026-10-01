@@ -275,7 +275,10 @@
     contents:
     - id: RMCWeaponFlamer
     - id: RMCTankFlamer
-      amount: 2
+    # Mriya start. Додавання бі-гелю
+    #  amount: 2
+    - id: RMCTankFlamerBGel
+    # Mriya end
     - id: RMCAttachmentUnderbarrelExtinguisher
 
 - type: entity

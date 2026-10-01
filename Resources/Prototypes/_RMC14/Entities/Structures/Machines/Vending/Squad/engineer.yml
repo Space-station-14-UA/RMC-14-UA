@@ -117,6 +117,16 @@
         points: 3
       - id: RMCMagazinePistolSU6
         points: 6
+    # Mriya start. Додавання бі-гелю та звичайного теж
+    - name: Обмежені Боєприпаси
+      entries:
+      - id: RMCTankFlamer
+        points: 10
+        name: М34 паливний бак (УТ-Нафтал)
+      - id: RMCTankFlamerBGel
+        points: 10
+        name: М34 паливний бак (Бі-Гель)
+    # Mriya end
     - name: Особлива Броня
       entries:
       - id: CMArmorB12
@@ -279,7 +289,7 @@
       - id: RMCPouchConstruction
         recommended: true
       - id: RMCPouchFirstAidInjectors
-        name: підсумок першої допомоги (багаторазові автоінжектори)
+        name: підсумок першої допомоги (багаторазові автоін'єктори)
         recommended: true
       - id: RMCPouchFirstAidSplintsGauzeOintment
         name: підсумок першої допомоги (марля, мазь) # TODO RMC14 splints comma

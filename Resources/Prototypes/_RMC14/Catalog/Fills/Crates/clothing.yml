@@ -15,7 +15,7 @@
 - type: entity
   id: RMCCrateClothingMedicalPouches
   parent: RMCCrateBase
-  name: Ящик медичних підсумків (по 1 шт першої допомоги, автоінжекторний, для шприців, медичний, великий медичний)
+  name: Ящик медичних підсумків (по 1 шт першої допомоги, автоін'єкторний, для шприців, медичний, великий медичний)
   components:
   - type: StorageFill
     contents:

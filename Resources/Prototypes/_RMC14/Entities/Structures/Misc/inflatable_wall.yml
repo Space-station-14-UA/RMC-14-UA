@@ -94,6 +94,12 @@
   name: popped inflatable wall
   description: This used to be an inflatable wall, now it's just a mess of plastic.
   components:
+  # Mriya start
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite

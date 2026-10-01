@@ -90,6 +90,7 @@
     actionId: RMCActionOpenTacticalMapGhost
     marines: true
     xenos: true
+    liveUpdate: true # Mriya. Чому ні?
   - type: ViewIntelObjectives
   - type: VentSight
   - type: IgnoreInteractionRange
@@ -112,7 +113,7 @@
   parent: BaseMentalAction
   id: ActionGhostBoo
   name: Буу!
-  description: Налякайте членів екіпажу, через вашу нудьгу!
+  description: Налякайте морпіхів або ксено, бо вам нудно!
   components:
   - type: Action
     icon: Interface/Actions/scream.png
@@ -125,8 +126,8 @@
 - type: entity
   parent: BaseMentalAction
   id: ActionToggleLighting
-  name: Перемкнути все освітлення
-  description: Перемикає рендерінг всього освітлення, щоб краще бачити темні ділянки.
+  name: Перемкнути Освітлення
+  description: Вмикає, додає локальку підсвітку чи вимикає відображення світла. Оберіть те, що зробить досвід вашого спостереження зручнішим.
   components:
   - type: Action
     icon: Interface/VerbIcons/light.svg.192dpi.png
@@ -138,7 +139,7 @@
   parent: BaseMentalAction
   id: ActionToggleFov
   name: Перемкнути Поле Зору
-  description: Перемикає поле зору, щоб бачити те, що бачать гравці.
+  description: Перемикає поле зору, щоб бачити так само, як бачать живі істоти.
   components:
   - type: Action
     icon: Interface/VerbIcons/vv.svg.192dpi.png
@@ -149,8 +150,8 @@
 - type: entity
   parent: BaseMentalAction
   id: ActionToggleGhosts
-  name: Перемкнути привидів
-  description: Перемикає видимість привидів
+  name: Перемкнути Привидів
+  description: Вмикає чи вимикає відображення інших привидів.
   components:
   - type: Action
     icon: { sprite: Mobs/Ghosts/ghost_human.rsi, state: icon }
@@ -161,8 +162,8 @@
 - type: entity
   parent: BaseMentalAction
   id: ActionToggleGhostHearing
-  name: Перемкнути слух привидів
-  description: Перемикайтеся між прослуховуванням усіх повідомлень і прослуховуванням лише радіо та повідомлень поблизу.
+  name: Перемкнути Слух Привидів
+  description: Чи будете ви чути всі повідомлення, чи лише від тих, хто знаходиться поряд з вами (ви перестанете чути ксено також).
   components:
   - type: Action
     icon:

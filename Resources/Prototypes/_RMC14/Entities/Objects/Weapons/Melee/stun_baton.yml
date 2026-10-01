@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: RMCStunBatonDamaged
-  name: damaged stun baton
-  description: A stun baton for incapacitating people with. This one seems pretty broken and beat up, especially around the on/off switch..
+  name: пошкоджений електрошоковий кийок # Кийок, бо у це більш офіційний термін для подібних штук (поліцейський/гумовий/складний кийок у поліції)
+  description: Електрошоковий кийок для "знешкодження" більшості живих істот. Зазвичай використовується правоохоронними службами, як нелетальний метод затримання. Цей виглядає так, ніби їм пробували забивати цвяхи, особливо в місці кнопки увімкнення/вимкнення...
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Melee/stun_baton.rsi
@@ -28,8 +28,8 @@
 - type: entity
   parent: RMCStunBatonDamaged
   id: CMStunbaton
-  name: stun baton
-  description: A stun baton for incapacitating people with.
+  name: електрошоковий кийок
+  description: Електрошоковий кийок для "знешкодження" більшості живих істот. Зазвичай використовується правоохоронними службами, як нелетальний метод затримання.
   components:
   - type: Stunbaton
     energyPerUse: 50
@@ -95,8 +95,8 @@
 - type: entity
   parent: CMStunbaton
   id: RMCTelescopicBaton
-  name: telescopic baton
-  description: A compact yet rebalanced personal defense weapon. Can be concealed when folded.
+  name: телескопічний кийок
+  description: Компактна, але ефективна зброя особистого захисту. У складеному вигляді може бути легко покладена в кишеню.
   components:
   - type: Item
     size: Small

@@ -102,7 +102,7 @@
 - type: entity
   parent: [RMCPouchOpenClosed, RMCPouchStorage]
   id: RMCPouchFirstResponder
-  name: допоміжний медичний підсумок 
+  name: допоміжний медичний підсумок
   description: Підсумок призначений для перенесення різних додаткових медичних матеріалів, таких як стазисні мішки, пересувні ліжка і аналізатори здоров'я.
   components:
   - type: Sprite
@@ -208,8 +208,8 @@
 - type: entity
   parent: [RMCPouchOpenClosed, RMCPouchStorage]
   id: RMCPouchAutoinjector
-  name: автоінжекторний підсумок
-  description: Підсумок створенний спеціально для автоінжекторів.
+  name: автоін'єкторний підсумок
+  description: Підсумок створенний спеціально для автоін'єкторів.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Pouches/injectors.rsi

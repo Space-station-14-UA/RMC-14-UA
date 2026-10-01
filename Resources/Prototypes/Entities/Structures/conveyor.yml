@@ -72,6 +72,9 @@
   - type: Tag
     tags:
     - Structure
+    # Mriya start. Можливість будувати на ньому
+    - AllowXenoConstruction
+    # Mriya end
 
 - type: entity
   id: ConveyorBeltAssembly

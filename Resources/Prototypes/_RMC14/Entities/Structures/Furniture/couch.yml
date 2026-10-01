@@ -17,7 +17,12 @@
     sprite: _RMC14/Structures/Furniture/Couches/couch.rsi
     state: couch_mid
   - type: RMCMesonsNonviewable
-  - type: BlockXenoConstruction
+  # Mriya start. Можливість будувати на ньому
+  #- type: BlockXenoConstruction
+  - type: Tag
+    tags:
+    - AllowXenoConstruction
+  # Mriya end
   - type: Damageable
     damageContainer: StructuralMarine
     damageModifierSet: StructuralMarine

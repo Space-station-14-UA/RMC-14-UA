@@ -405,10 +405,10 @@
 
 # Pilot Officer
 - type: entity
-  parent: RMCBaseJacketButtonable
+  parent: [ RMCBaseJacketButtonable, RMCAllowSuitStorageClothingExternalWebbing ] # Mriya. Додано RMCAllowSuitStorageClothingExternalWebbing. Щоб можна було вішати зброю
   id: RMCCoatPilot
-  name: M70B1 light flak jacket
-  description: A light flak jacket used by dropship pilots to protect themselves while flying in the cockpit. This specific flak jacket has been designed for style and comfort over protection, and it shows. Don't get hit by any stray bullets!
+  name: легкий бронежилет зразка М70Б1
+  description: Надлегкий бронежилет, який використовують пілоти шатлів для базового захисту та, певно, стилю під час пілотування. Його проєктувальники явно більше думали про друге, тож захист у нього майже відсутній. Будьте обережні та не попадіть під кулі!
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/OuterClothing/Coats/pilot.rsi

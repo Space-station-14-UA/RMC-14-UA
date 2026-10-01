@@ -4,7 +4,7 @@
   id: MMCSpawnerLifeboat
   name: спавнер евакуаційного човника
   description: Поставити в нижній лівий край місця під човник.
-  suffix: Січ, Власна версія
+  suffix: Мрія, Власна версія
   components:
   - type: Sprite
     state: green
@@ -16,7 +16,7 @@
 - type: entity
   parent: RMCSpawnerEvacuationPodSouth
   id: MMCSpawnerEvacuationPodWestLiaison
-  suffix: Січ, Захід, Представник
+  suffix: Мрія, Захід, Представник
   components:
   - type: GridSpawner
     spawn: "/Maps/_Mriya/Shuttles/escape_pod_west_liaison.yml"

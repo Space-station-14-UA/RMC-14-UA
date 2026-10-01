@@ -17,7 +17,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoRavagerBerserker ]
   id: MRXenoRavagerBerserkerOld
-  suffix: Берсерк, Січ, Стара
+  suffix: Берсерк, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Ravager/berserker_ravager.rsi
@@ -30,7 +30,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoRavagerHedgehog ]
   id: MRXenoRavagerHedgehogOld
-  suffix: Їжак, Січ, Стара
+  suffix: Їжак, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Ravager/hedgehog_ravager.rsi

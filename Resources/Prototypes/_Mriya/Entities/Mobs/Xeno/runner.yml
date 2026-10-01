@@ -20,7 +20,7 @@
 - type: entity
   parent: [ MRXenoBaseOld, RMCXenoRunnerAcider ]
   id: MRXenoRunnerAciderOld
-  suffix: Кислотна, Січ, Стара
+  suffix: Кислотна, Мрія, Стара
   components:
   - type: Sprite
     sprite: _RMC14/Mobs/OldXenonids/Runner/acider_runner.rsi

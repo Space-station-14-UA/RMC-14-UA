@@ -3,6 +3,7 @@
   parent: RMCBookcase
   id: MRBookcasePhilology
   name: книжкова шафа з мовними посібниками
+  suffix: Мрія
   components:
   - type: Storage
     whitelist:

@@ -1,3 +1,3 @@
 ﻿## Loc strings for generic "on/off button" control.
-ui-button-off = Off
-ui-button-on = On
+ui-button-off = Вимк.
+ui-button-on = Увімк.

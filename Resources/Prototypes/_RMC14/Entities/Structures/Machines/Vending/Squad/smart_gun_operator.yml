@@ -156,7 +156,7 @@
         name: підсумок для фаєрів (Повний)
       - id: RMCPouchElectronics
       - id: RMCPouchFirstAidInjectors
-        name: підсумок першої допомоги (багаторазові автоінжектори)
+        name: підсумок першої допомоги (багаторазові автоін'єктори)
         recommended: true
       - id: RMCPouchFirstAidSplintsGauzeOintment
         name: підсумок першої допомоги (марля, мазь) # TODO RMC14 splints comma

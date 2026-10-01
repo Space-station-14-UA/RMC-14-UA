@@ -35,7 +35,7 @@ rmc-chem-master-buffer-to-beaker = До буферу
 rmc-chem-master-buffer-to-disposal = На утилізацію
 rmc-chem-master-buffer-empty = Буфер порожній.
 
-c-chem-master-pills = [bold]Пігулки[/bold]
+rmc-chem-master-pills = [bold]Пігулки[/bold]
 rmc-chem-master-pills-create = Створити пігулки
 rmc-chem-master-pills-not-enough-space = У вибраних пляшечках для пігулок недостатньо місця!
 rmc-chem-master-pills-type-window-title = Типи Пігулок

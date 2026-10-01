@@ -1,8 +1,8 @@
 - type: entity
   parent: Flash
   id: CMFlash
-  name: flash
-  description: Used for blinding and being an asshole. Recharges one flash every 15 seconds. You must wait 1 second between uses for the capacitor to recharge.
+  name: спалах
+  description: Використовується для того, щоб сліпити мудаків або бути мудаком. Потребує 15 секунд на перезарядку кожного заряду. Має затримку в 1 секунду між використаннями.
   components:
   - type: Flash
     slowTo: 0.25

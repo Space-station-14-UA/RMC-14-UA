@@ -6,7 +6,7 @@
   - type: Sprite
     sprite: _Mriya/Objects/Devices/cassette_player.rsi
 
-# Січ
+# Мрія
 - type: entity
   parent: MRCassetteTapeBase
   id: MRCassetteTapeFire

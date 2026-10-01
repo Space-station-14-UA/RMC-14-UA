@@ -30,6 +30,13 @@
           components:
           - IdCard
           - Pda
+  - type: ApcPowerReceiver
+    powerLoad: 250
+    needsPower: true
+  - type: RMCPowerReceiver
+    idleLoad: 300
+    activeLoad: 300
+    channel: Equipment
   - type: Destructible
     thresholds:
     - trigger:
@@ -48,7 +55,6 @@
         acts: ["Destruction"]
   - type: RemoveComponents
     components:
-    - type: ApcPowerReceiver
     - type: Anchorable
 
 - type: entity
@@ -84,7 +90,6 @@
   - type: RemoveComponents
     components:
     - type: ItemSlots
-    - type: ApcPowerReceiver
     - type: Anchorable
 
 - type: entity
@@ -148,7 +153,6 @@
   - type: RemoveComponents
     components:
     - type: ItemSlots
-    - type: ApcPowerReceiver
     - type: Anchorable
 
 - type: entity

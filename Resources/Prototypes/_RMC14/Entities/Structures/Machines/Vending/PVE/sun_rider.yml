@@ -207,7 +207,7 @@
       - id: CMOintment10
         amount: 15
       - id: CMEmergencyAutoInjector
-        name: екстренний автоінжектор
+        name: екстренний автоін'єктор
         amount: 15
       - id: CMBicaridineAutoInjector
         amount: 15

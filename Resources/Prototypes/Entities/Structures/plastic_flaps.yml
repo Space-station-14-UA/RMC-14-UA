@@ -45,6 +45,12 @@
   suffix: Clear
   description: Heavy duty, plastic flaps. Definitely can't get past those. No way.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Construction
     graph: PlasticFlapsGraph
     node: plasticFlaps
