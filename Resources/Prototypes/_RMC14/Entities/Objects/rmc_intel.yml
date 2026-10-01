@@ -477,7 +477,6 @@
             sprite: _RMC14/Interface/tech_tree.rsi
             state: nuke
         # Mriya end
-  - type: VehicleSupplyTech
 
 - type: Tag
   id: RMCIntelItem
