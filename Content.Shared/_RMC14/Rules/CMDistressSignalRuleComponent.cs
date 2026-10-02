@@ -226,6 +226,9 @@ public sealed partial class CMDistressSignalRuleComponent : Component
     [DataField]
     public DistressSignalRuleResult? Result;
 
+    [DataField]
+    public bool MriyaNuclearDetonationStarted; // Mriya. Blocks normal marine victory from overriding the strategic nuke stalemate.
+
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan? NextCheck;
 

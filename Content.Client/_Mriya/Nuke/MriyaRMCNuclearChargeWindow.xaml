@@ -1,0 +1,23 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               Title="{Loc 'mriya-nuke-ui-title'}"
+               MinWidth="430"
+               MinHeight="220">
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#120607"
+                                   BorderColor="#B22222"
+                                   BorderThickness="2" />
+        </PanelContainer.PanelOverride>
+        <BoxContainer Orientation="Vertical" Margin="10" HorizontalExpand="True" VerticalExpand="True">
+            <RichTextLabel Name="StatusLabel" MinHeight="42" HorizontalExpand="True" />
+            <RichTextLabel Name="CountdownLabel" MinHeight="64" HorizontalExpand="True" Margin="0 8 0 0" />
+            <Control Name="StatusSpacer" VerticalExpand="True" />
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 8 0 0">
+                <Button Name="StartButton" Text="{Loc 'mriya-nuke-ui-start'}" HorizontalExpand="True" Margin="0 0 4 0" />
+                <Button Name="AbortButton" Text="{Loc 'mriya-nuke-ui-abort'}" HorizontalExpand="True" Margin="4 0 0 0" />
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</DefaultWindow>

@@ -8,6 +8,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.Utility;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Client._RMC14.Intel;
@@ -19,6 +20,9 @@ public sealed class TechControlConsoleBui : BoundUserInterface
 
     private TechControlConsoleWindow? _window;
     private TechControlConsoleOptionWindow? _optionWindow;
+
+    // Mriya. The nuclear charge should stay visible in the tech tree while its round-time lock is active.
+    private static readonly EntProtoId MriyaNuclearChargePrototype = "MRNuclearCharge";
 
     private readonly SharedGameTicker _ticker;
     public TechControlConsoleBui(EntityUid owner, Enum uiKey) : base(owner, uiKey)
@@ -68,7 +72,7 @@ public sealed class TechControlConsoleBui : BoundUserInterface
             for (var j = 0; j < options.Count; j++)
             {
                 var option = options[j];
-                if (option.Disabled)
+                if (option.Disabled && !ShouldShowDisabledOption(option))
                     continue;
 
                 var optionControl = new Control();
@@ -173,5 +177,19 @@ public sealed class TechControlConsoleBui : BoundUserInterface
     private static string Localize(string text)
     {
         return Loc.TryGetString(text, out var localized) ? localized : text;
+    }
+
+    private static bool ShouldShowDisabledOption(TechOption option)
+    {
+        foreach (var ev in option.Events)
+        {
+            if (ev is TechLogisticsDeliveryEvent delivery &&
+                delivery.Object == MriyaNuclearChargePrototype)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
