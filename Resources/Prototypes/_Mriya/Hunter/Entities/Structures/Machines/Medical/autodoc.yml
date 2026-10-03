@@ -1,0 +1,54 @@
+- type: entity
+  parent: RMCAutodoc
+  id: AutodocHunter
+  name: авто-лікар мисливців
+  description: Просунута технологія що здатна проводити хірургічні операцію на паціенті.
+  suffix: Мисливці, Просунутий
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/Medical/autodoc.rsi
+    drawdepth: Mobs
+    noRot: true
+    layers:
+    - state: open
+      map: ["enum.AutodocVisualLayers.Base"]
+  - type: Autodoc
+    spawnConsolePrototype: AutodocHunterConsole
+    skillRequired: {}
+    consoleSpawnOffset: 1, 0
+    forceConsoleEast: true
+  - type: GenericVisualizer
+    visuals:
+      enum.AutodocVisuals.State:
+        enum.AutodocVisualLayers.Base:
+          Empty: { state: open }
+          Occupied: { state: closed }
+          Operating: { state: operate }
+  - type: ApcPowerReceiver
+    needsPower: false
+
+- type: entity
+  parent: RMCAutodocConsole
+  id: AutodocHunterConsole
+  name: консоль авто-лікаря мисливців
+  description: Інтерфейс керування, який використовується для керування суміжним авто-лікарем. Налаштовано на автоматичний режим.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/Medical/autodock console.rsi
+    noRot: true
+    layers:
+    - state: sleeperconsole-p
+    - state: sleeperconsole
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: AutodocConsole
+    installedUpgrades:
+    - InternalBleeding
+    - BrokenBone
+    - OrganDamage
+    - LarvaExtraction
+  - type: UserInterface
+    interfaces:
+      enum.AutodocUIKey.Key:
+        type: AutodocHunterConsoleBui
+  - type: ApcPowerReceiver
+    needsPower: false

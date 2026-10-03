@@ -7,6 +7,7 @@ gun-disabled = Ви не можете використовувати зброю!
 gun-set-fire-mode = Встановити {$mode} режим
 gun-magazine-whitelist-fail = Це не можна зарядити в зброю!
 gun-magazine-fired-empty = Амуніції не залишилось!
+gun-battery-empty = Немає енергії для пострілу
 
 # SelectiveFire
 gun-SemiAuto = напівавтоматичний

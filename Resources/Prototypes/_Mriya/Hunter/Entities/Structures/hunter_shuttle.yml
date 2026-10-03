@@ -1,0 +1,1181 @@
+- type: entity
+  parent: BaseStructure
+  id: HunterShuttleBase
+  abstract: true
+  suffix: Hunter
+  components:
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StrongMetallic
+  - type: RMCMesonsNonviewable
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine
+  name: yautja shuttle leftengine
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "stan_leftengine"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "stan_leftengine"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine1
+  name: yautja shuttle leftengine 1
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine2
+  name: yautja shuttle leftengine 2
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_2"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_2"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine3
+  name: yautja shuttle leftengine 3
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_3"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_3"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine4
+  name: yautja shuttle leftengine 4
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_4"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_4"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine5
+  name: yautja shuttle leftengine 5
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_5"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_5"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine6
+  name: yautja shuttle leftengine 6
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_6"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_6"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine7
+  name: yautja shuttle leftengine 7
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_7"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_7"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine8
+  name: yautja shuttle leftengine 8
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_8"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_8"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftengine9
+  name: yautja shuttle leftengine 9
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "leftengine_9"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "leftengine_9"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleStanLeftengine
+  name: yautja shuttle stan leftengine
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "stan_leftengine"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "stan_leftengine"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine
+  name: yautja shuttle rightengine
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "stan_rightengine"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "stan_rightengine"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine1
+  name: yautja shuttle rightengine 1
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine2
+  name: yautja shuttle rightengine 2
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_2"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_2"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine3
+  name: yautja shuttle rightengine 3
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_3"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_3"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine4
+  name: yautja shuttle rightengine 4
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_4"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_4"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine5
+  name: yautja shuttle rightengine 5
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_5"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_5"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine6
+  name: yautja shuttle rightengine 6
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_6"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_6"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine7
+  name: yautja shuttle rightengine 7
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_7"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_7"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine8
+  name: yautja shuttle rightengine 8
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_8"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_8"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightengine9
+  name: yautja shuttle rightengine 9
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "rightengine_9"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "rightengine_9"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleStanRightengine
+  name: yautja shuttle stan rightengine
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "stan_rightengine"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "stan_rightengine"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleMiddle
+  name: yautja shuttle middle
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter1
+  name: yautja shuttle hunter1
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter2
+  name: yautja shuttle hunter2
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter2"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter2"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter3
+  name: yautja shuttle hunter3
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter3"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter3"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterLW
+  name: yautja shuttle hunter l w
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter_l_w"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter_l_w"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterRW
+  name: yautja shuttle hunter r w
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter_r_w"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter_r_w"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter4
+  name: yautja shuttle hunter4
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter4"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter4"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterInnerW2
+  name: yautja shuttle hunter inner w 2
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter_inner_w_2"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter_inner_w_2"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter5
+  name: yautja shuttle hunter5
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter5"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter5"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleInside
+  name: yautja shuttle inside
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter6
+  name: yautja shuttle hunter6
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter6"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter6"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter7
+  name: yautja shuttle hunter7
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter7"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter7"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter8
+  name: yautja shuttle hunter8
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter8"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter8"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter9
+  name: yautja shuttle hunter9
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter9"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter9"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter10
+  name: yautja shuttle hunter10
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter10"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter10"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter11
+  name: yautja shuttle hunter11
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter11"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter11"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter12
+  name: yautja shuttle hunter12
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter12"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter12"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter13
+  name: yautja shuttle hunter13
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter13"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter13"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter14
+  name: yautja shuttle hunter14
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter14"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter14"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter15
+  name: yautja shuttle hunter15
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter15"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter15"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter16
+  name: yautja shuttle hunter16
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter16"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter16"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftFront
+  name: yautja shuttle left front
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter17
+  name: yautja shuttle hunter17
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter17"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter17"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter18
+  name: yautja shuttle hunter18
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter18"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter18"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter19
+  name: yautja shuttle hunter19
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter19"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter19"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter20
+  name: yautja shuttle hunter20
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter20"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter20"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter21
+  name: yautja shuttle hunter21
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter21"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter21"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter22
+  name: yautja shuttle hunter22
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter22"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter22"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightFront
+  name: yautja shuttle right front
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter23
+  name: yautja shuttle hunter23
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter23"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter23"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter24
+  name: yautja shuttle hunter24
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter24"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter24"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter25
+  name: yautja shuttle hunter25
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter25"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter25"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter26
+  name: yautja shuttle hunter26
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter26"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter26"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter27
+  name: yautja shuttle hunter27
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter27"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter27"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunter28
+  name: yautja shuttle hunter28
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter28"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter28"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleFrontMiddleWindow
+  name: yautja shuttle front middle window
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw1
+  name: yautja shuttle hunterw 1
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw2
+  name: yautja shuttle hunterw 2
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_2"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_2"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw3
+  name: yautja shuttle hunterw 3
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_3"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_3"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw4
+  name: yautja shuttle hunterw 4
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_4"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_4"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw5
+  name: yautja shuttle hunterw 5
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_5"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_5"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw6
+  name: yautja shuttle hunterw 6
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_6"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_6"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw7
+  name: yautja shuttle hunterw 7
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_7"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_7"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw8
+  name: yautja shuttle hunterw 8
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_8"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_8"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleLeftWindow
+  name: yautja shuttle left window
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw9
+  name: yautja shuttle hunterw 9
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_9"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_9"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw10
+  name: yautja shuttle hunterw 10
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_10"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_10"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw11
+  name: yautja shuttle hunterw 11
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_11"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_11"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleRightWindow
+  name: yautja shuttle right window
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw12
+  name: yautja shuttle hunterw 12
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_12"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_12"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw13
+  name: yautja shuttle hunterw 13
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_13"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_13"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw14
+  name: yautja shuttle hunterw 14
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_14"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_14"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleBottomWindow
+  name: yautja shuttle bottom window
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunter1"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunter1"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw15
+  name: yautja shuttle hunterw 15
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_15"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_15"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw16
+  name: yautja shuttle hunterw 16
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_16"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_16"
+
+- type: entity
+  parent: HunterShuttleBase
+  id: SichHunterShuttleHunterw17
+  name: yautja shuttle hunterw 17
+  description: An ancient Yautja hunting-ground structure.
+  components:
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      drawdepth: Walls
+      layers:
+        - state: "hunterw_17"
+    - type: Icon
+      sprite: _Mriya/Hunter/Structures/hunter_shuttle.rsi
+      state: "hunterw_17"
+

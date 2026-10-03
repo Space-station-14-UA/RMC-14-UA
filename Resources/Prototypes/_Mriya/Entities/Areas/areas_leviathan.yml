@@ -1,0 +1,11 @@
+- type: entity
+  parent: RMCAreaAlmayer
+  id: SMCAreaLeviathan
+  name: Левіафан Тіней
+  suffix: Зона Левіафану Тіней
+  components:
+  - type: Sprite
+    sprite: _RMC14/Areas/areas_interiors.rsi
+    state: interior
+  - type: Area
+    powerNet: leviathan

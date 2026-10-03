@@ -1,0 +1,35 @@
+- type: entity
+  id: SichWallOuterHull
+  parent: BaseWall
+  name: зовнішня стіна
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Walls/outer_wall.rsi
+    state: outerhull
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Walls/outer_wall.rsi
+    state: outerhull
+
+- type: entity
+  id: SichWallOuter
+  parent: BaseWall
+  name: зовнішня стіна
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Walls/outer_wall.rsi
+    state: wall
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Walls/outer_wall.rsi
+    state: wall
+
+- type: entity
+  id: SichWallOuterAlt
+  parent: BaseWall
+  name: зовнішня стіна
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Walls/outer_wall.rsi
+    state: wall_alt
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Walls/outer_wall.rsi
+    state: wall_alt

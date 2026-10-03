@@ -1,0 +1,265 @@
+- type: entity
+  parent: MuzzleFlashEffect
+  id: PlasmaMuzzleFlash
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.25, 0
+    scale: 1.45, 1.45
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Mriya/Hunter/Objects/Weapons/Caster/plasma_projectiles.rsi
+      state: muzzle_flash_blue
+  - type: PointLight
+    enabled: true
+    color: "#4fdcff"
+    radius: 3.25
+    energy: 2.2
+
+- type: entity
+  id: PlasmaImpactEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.55
+  - type: Sprite
+    drawdepth: Effects
+    scale: 1.45, 1.45
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Mriya/Hunter/Objects/Weapons/Caster/plasma_projectiles.rsi
+      state: muzzle_energy
+  - type: PointLight
+    enabled: true
+    color: "#4fdcff"
+    radius: 4.25
+    energy: 2.8
+  - type: RMCExplosionShockWave
+    falloffPower: 48
+    sharpness: 8
+    width: 0.45
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: PlasmaHeavyImpactEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.75
+  - type: Sprite
+    drawdepth: Effects
+    scale: 1.9, 1.9
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Mriya/Hunter/Objects/Weapons/Caster/plasma_projectiles.rsi
+      state: muzzle_energy
+  - type: PointLight
+    enabled: true
+    color: "#55c7ff"
+    radius: 5.5
+    energy: 3.6
+  - type: RMCExplosionShockWave
+    falloffPower: 34
+    sharpness: 12
+    width: 0.8
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: PlasmaSmallShockWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.45
+  - type: RMCExplosionShockWave
+    falloffPower: 38
+    sharpness: 10
+    width: 0.65
+
+- type: entity
+  id: PlasmaHeavyShockWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.6
+  - type: RMCExplosionShockWave
+    falloffPower: 28
+    sharpness: 14
+    width: 0.95
+
+- type: entity
+  parent: BaseBullet
+  id: PlasmaBoltBase
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: YautjaTechItem
+    blockPickup: false
+    blockUse: false
+    blockMelee: false
+    blockThrow: false
+    blockShoot: false
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    noRot: false
+    sprite: _Mriya/Hunter/Objects/Weapons/Caster/plasma_projectiles.rsi
+    scale: 1.15, 1.15
+    layers:
+    - state: ion
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: PlasmaMuzzleFlash
+  - type: Projectile
+    impactEffect: PlasmaImpactEffect
+    soundHit:
+      collection: WeakHit
+    forceSound: true
+    damage:
+      types:
+        Heat: 50
+  - type: PointLight
+    enabled: true
+    color: "#50d9ff"
+    radius: 3.25
+    energy: 2.1
+  - type: RMCProjectileDamageFalloff
+    thresholds:
+    - range: 20
+      falloff: 0.1
+      ignoreModifiers: true
+    minRemainingDamageMult: 0.85
+  - type: TimedDespawn
+    lifetime: 4
+
+- type: entity
+  parent: PlasmaBoltBase
+  id: PlasmaPistolBolt
+  name: plasma pistol bolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    impactEffect: PlasmaImpactEffect
+    damage:
+      types:
+        Heat: 40
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: RMC
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 24
+    maxTileBreak: 0
+  - type: CMExplosionEffect
+    explosion: PlasmaImpactEffect
+    shockWave: PlasmaSmallShockWave
+    minShrapnel: 0
+    maxShrapnel: 0
+  - type: RMCScorchEffect
+    count: 1
+    scatterRadius: 0.5
+    radius: 0
+
+- type: entity
+  parent: PlasmaBoltBase
+  id: PlasmaRifleBolt
+  name: plasma rifle bolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    impactEffect: PlasmaHeavyImpactEffect
+    damage:
+      types:
+        Heat: 45
+        Structural: 30
+  - type: IgniteOnCollide
+    fireStacks: 0.35
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: RMC
+    maxIntensity: 18
+    intensitySlope: 6
+    totalIntensity: 70
+    maxTileBreak: 1
+  - type: CMExplosionEffect
+    explosion: PlasmaHeavyImpactEffect
+    shockWave: PlasmaHeavyShockWave
+    minShrapnel: 3
+    maxShrapnel: 6
+    shrapnelSpeed: 5
+  - type: RMCScorchEffect
+    count: 2
+    scatterRadius: 1
+    radius: 1
+  - type: PointLight
+    color: "#55c7ff"
+    radius: 4.25
+    energy: 2.9
+
+- type: entity
+  parent: BaseBullet
+  id: SpikeProjectile
+  name: alloy spike
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: YautjaTechItem
+    blockPickup: false
+    blockUse: false
+    blockMelee: false
+    blockThrow: false
+    blockShoot: false
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/bullet_projectiles.rsi
+    layers:
+    - state: bullet
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffect
+    damage:
+      types:
+        Piercing: 24
+        Slash: 6
+
+- type: entity
+  id: ProjectileHunterStun
+  parent: BaseBullet
+  name: stun bolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/stun_projectiles.rsi
+    layers:
+    - state: stun
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 0
+  - type: StaminaDamageOnHit
+    damage: 50
+  - type: RMCStunOnHit
+    stuns:
+    - stunTime: 5
+      stunArea: 0.1
+  - type: StunOnCollide
+    stunAmount: 5
+    knockdownAmount: 5

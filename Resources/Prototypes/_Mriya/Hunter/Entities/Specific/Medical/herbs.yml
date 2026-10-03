@@ -1,0 +1,37 @@
+- type: entity
+  parent: Ointment
+  id: BurnHerbs
+  name: мазь
+  description: Це суміш трав для лікування від опіків.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Specific/Medical/herbs.rsi
+    state: burn
+  - type: Item
+    sprite: _Mriya/Hunter/Objects/Specific/Medical/herbs.rsi
+  - type: WoundTreater
+    wound: Burn
+    treats: true
+    consumable: true
+    group: Burn
+    damage: -25
+    skills:
+      RMCSkillMedical: 1
+
+- type: entity
+  parent: Brutepack
+  id: BruteHerbs
+  name: лікувальні трави
+  description: Це суміш трав для лікування синців та інших механічних травм.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Specific/Medical/herbs.rsi
+    state: brute
+  - type: Item
+    sprite: _Mriya/Hunter/Objects/Specific/Medical/herbs.rsi
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Brute: -35

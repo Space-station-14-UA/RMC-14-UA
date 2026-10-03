@@ -1,0 +1,131 @@
+- type: decal
+  id: HunterRune_s
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_s
+
+- type: decal
+  id: HunterRune_w
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_w
+
+- type: decal
+  id: HunterRune_n
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_n
+
+- type: decal
+  id: HunterRune_e
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_e
+
+- type: decal
+  id: HunterRune_es
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_es
+
+- type: decal
+  id: HunterRune_se
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_se
+
+- type: decal
+  id: HunterRune_en
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_en
+
+- type: decal
+  id: HunterRune_ne
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_ne
+
+- type: decal
+  id: HunterRuneAngle_ne
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_angle_ne
+
+- type: decal
+  id: HunterRuneAngle_ws
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_angle_ws
+
+- type: decal
+  id: HunterRuneAngle_es
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_angle_es
+
+- type: decal
+  id: HunterRuneAngle_nw
+  tags: ["hunter-runes"]
+  isCM: true
+  defaultCleanable: false
+  defaultCustomColor: false
+  defaultSnap: true
+  sprite:
+    sprite: _Mriya/Hunter/Decals/yautja_ship.rsi
+    state: rune_angle_nw

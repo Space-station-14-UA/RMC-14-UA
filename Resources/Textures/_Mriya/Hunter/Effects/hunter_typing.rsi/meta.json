@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "CMSS13 contributors https://github.com/cmss13-devs/cmss13/blob/master/icons/mob/effects/talk.dmi",
+    "states": [
+      {
+         "name": "typing",
+         "delays": [
+           [
+             0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 
+             0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 
+             0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 
+             0.1, 0.1, 0.1
+           ]
+         ]
+      },
+      {
+         "name": "typing_translate",
+         "delays": [
+           [
+             0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
+           ]
+         ]
+      }
+   ]
+}

@@ -1,0 +1,146 @@
+- type: entity
+  parent: BaseAction
+  id: ActionToggleHunterCloak
+  name: Голографічне маскування
+  description: Перемкнути роботу голографічних проєкторів що влаштовані в броню.
+  components:
+  - type: Action
+    useDelay: 5
+    priority: -9
+    icon:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: cloak
+    itemIconStyle: NoItem
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+    backgroundOn:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template_on
+  - type: InstantAction
+    event: !type:HunterCloakToggleActionEvent {}
+
+- type: entity
+  parent: BaseAction
+  id: ActionHunterJump
+  name: Зробити стрибок
+  description: Завдяки еволюційним перевагам та надзвичайно потужним м'язам, мисливець здатний здійснювати стрибки довжиною майже чотири метри.
+  components:
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: jump
+    itemIconStyle: NoItem
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+  - type: InstantAction
+    event: !type:GravityJumpEvent {}
+
+- type: entity
+  parent: BaseAction
+  id: ActionHunterClawsToggle
+  name: Висунути кігті
+  description: Висунути або заховати бойові кігті з браслетів.
+  components:
+  - type: Action
+    useDelay: 2
+    priority: -10
+    icon:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: claws
+    itemIconStyle: NoItem
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+    backgroundOn:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template_on
+  - type: InstantAction
+    event: !type:HunterClawsToggleActionEvent {}
+
+- type: entity
+  parent: BaseAction
+  id: HunterRecallAction
+  name: Повернути зброю
+  description: Активувати вбудовані в браслети лебідки, для повернення зброї до рук.
+  components:
+  - type: Action
+    useDelay: 1
+    priority: -5
+    icon:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: recall
+    itemIconStyle: NoItem
+    checkCanInteract: false
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+  - type: InstantAction
+    event: !type:HunterRecallActionEvent {}
+- type: entity
+  parent: RMCActionCycleVisor
+  id: RMCActionCycleVisorHunter
+  components:
+  - type: Action
+    icon:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: visor
+    itemIconStyle: NoItem
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+    backgroundOn:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template_on
+
+- type: entity
+  parent: BaseAction
+  id: ActionHunterZoom
+  name: Зір мисливця
+  description: Перемкнути режим збільшення огляду маски. При активації значно збільшує дальність зору.
+  components:
+  - type: Action
+    useDelay: 0.2
+    priority: -8
+    icon:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: zoom
+    itemIconStyle: NoItem
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+    backgroundOn:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template_on
+  - type: InstantAction
+    event: !type:HunterZoomActionEvent {}
+
+- type: entity
+  id: HunterActionTranslator
+  parent: BaseAction
+  name: hunter-action-translator-name
+  description: hunter-action-translator-desc
+  components:
+  - type: Action
+    useDelay: 0
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Mriya/Hunter/Actions/translator.rsi
+      state: icon
+  - type: RMCActionBackground
+    background:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template
+    backgroundOn:
+      sprite: _Mriya/Hunter/Actions/hunter_action.rsi
+      state: hunter_template_on
+  - type: InstantAction
+    event: !type:HunterTranslatorActionEvent

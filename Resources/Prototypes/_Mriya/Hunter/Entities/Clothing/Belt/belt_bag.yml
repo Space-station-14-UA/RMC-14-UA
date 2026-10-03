@@ -1,0 +1,14 @@
+- type: entity
+  parent: CMBeltBaseStorage
+  id: RMCBeltBag
+  name: поясна сумка
+  description: Маленька, але містка сумка, що кріпиться до поясу.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/belt_bag.rsi
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/belt_bag.rsi
+  - type: Storage
+    grid:
+    - 0,0,11,1
+  - type: FixedItemSizeStorage

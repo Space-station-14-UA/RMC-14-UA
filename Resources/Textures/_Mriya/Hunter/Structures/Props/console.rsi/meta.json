@@ -1,0 +1,32 @@
+﻿{
+    "version":  1,
+    "size":  {
+                 "x":  32,
+                 "y":  32
+             },
+    "states":  [
+                   {
+                       "name":  "smallmonitor",
+                       "direction":  "4"
+                   },
+                   {
+                       "name":  "overwatch",
+                       "delays":  [
+                                      [
+                                          0.2,
+                                          0.2,
+                                          0.2,
+                                          0.2,
+                                          0.2,
+                                          0.2,
+                                          0.2,
+                                          0.2,
+                                          0.2,
+                                          0.2
+                                      ]
+                                  ]
+                   }
+               ],
+    "license":  "CC-BY-SA-3.0",
+    "copyright":  "Taken from CMSS13"
+}
