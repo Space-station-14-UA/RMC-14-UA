@@ -126,6 +126,6 @@ public abstract class SharedXenoAnnounceSystem : EntitySystem
 
     public string FormatQueenMother(string message)
     {
-        return $"\n[bold][color=#7575F3][font size=24]Queen Mother Psychic Directive[/font][/color][/bold]\n\n[color=red][font size=14]{message}[/font][/color]\n\n";
+        return $"\n[bold][color=#7575F3][font size=24]Психічна Директива Королеви-Матері[/font][/color][/bold]\n\n[color=red][font size=14]{message}[/font][/color]\n\n";
     }
 }

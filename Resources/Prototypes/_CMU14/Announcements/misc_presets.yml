@@ -1,0 +1,54 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+# Mriya. Заголовок українською. В оригіналі ">> PRIORITY NOTICE <<".
+# Mriya. Шрифт DefaultBold. В оригіналі "CozetteBold", якого нема в репозиторії.
+- type: announcementPreset
+  id: MiscCenterScreen
+  name: "Інше оголошення"
+  target: All
+  visibleInSettings: false
+  showSprite: false
+  style:
+    animation:
+      animation: Fade
+      printSpeed: 0.018
+      holdDuration: 9
+      flickerChance: 0
+      glitchChance: 0
+      animationEnhancements:
+        enableCRT: false
+    layout:
+      position: MiddleCenter
+      spritePosition: Left
+      spriteDisplayMode: FullSprite
+      uIScale: 2.8
+      titlePosition: Above
+    background:
+      showBackground: false
+      backgroundAlpha: 0.55
+      backgroundColor: "#101820"
+    text:
+      primaryColor: "#ffe1dc"
+      font: "DefaultBold"
+      fontSize: 24
+      lineHeight: 44
+      showSpeakerName: false
+    sprite:
+      showSpriteBox: false
+      spriteScale: 1
+    title:
+      showTitle: true
+      title: ">> ТЕРМІНОВЕ ПОВІДОМЛЕННЯ <<"
+      titleColor: "#ff5a4f"
+      titleFontSize: 90
+      titleFont: "DefaultBold"
+      titleUnderline: true
+      titleUnderlineThickness: 3
+      effect:
+        type: AssaultScroll
+        speed: 140
+        gap: 22
+    scaling:
+      responsiveScaleFactor: 1.15
+  priority: 8
+  canInterrupt: true
+  canBeInterrupted: true

@@ -1,0 +1,51 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+# Mriya. Заголовок українською. В оригіналі ">> QUEEN <<".
+# Mriya. Шрифти Default/DefaultBold. В оригіналі "Cozette" та "CozetteBold", яких нема в репозиторії.
+- type: announcementPreset
+  id: XenoQueen
+  name: "Королева ксено"
+  description: "Психічні директиви Королеви для вулика"
+  target: Xenos
+  showSprite: false
+  style:
+    animation:
+      animation: Typewriter
+      printSpeed: 0.018
+      holdDuration: 10
+      flickerChance: 0
+      glitchChance: 0.012
+      animationEnhancements:
+        enableCRT: false
+    layout:
+      position: TopCenter
+      speakerNamePosition: Below
+      spritePosition: Left
+      spriteSpacing: 4
+      spriteDisplayMode: TopHalf
+      uIScale: 2.6
+      titlePosition: Above
+    background:
+      showBackground: false
+      backgroundAlpha: 0.6
+      backgroundColor: "#11061a"
+    text:
+      primaryColor: "#f1e6ff"
+      font: "Default"
+      fontSize: 20
+      lineHeight: 48
+      showSpeakerName: true
+      speakerNameColor: "#d5b8ff"
+      speakerNameFontSize: 13
+    title:
+      showTitle: true
+      title: ">> КОРОЛЕВА <<"
+      titleColor: "#9d67ff"
+      titleFontSize: 34
+      titleFont: "DefaultBold"
+      titleUnderline: true
+      titleUnderlineThickness: 2
+    scaling:
+      responsiveScaleFactor: 1.1
+  priority: 8
+  canInterrupt: true
+  canBeInterrupted: false

@@ -1,4 +1,6 @@
-﻿using Content.Shared._RMC14.ARES;
+﻿using Content.Shared._RMC14.AlertLevel; // Mriya. Типи екранних оголошень
+using Content.Shared._CMU14.Announce; // Mriya. Типи екранних оголошень
+using Content.Shared._RMC14.ARES; // Mriya. Типи екранних оголошень
 using Content.Shared._RMC14.ARES.Logs;
 using Content.Shared._RMC14.Dialog;
 using Content.Shared._RMC14.Marines.ControlComputer;
@@ -213,6 +215,22 @@ public abstract class SharedMarineAnnounceSystem : EntitySystem
     {
     }
 
+    // Mriya start. Віртуальні методи екранних оголошень (овервотч загону, рівень тривоги), портовано з CMU.
+    public virtual void AnnounceOverwatchSquad(
+        EntityUid sender,
+        string message,
+        EntityUid squad,
+        Color squadColor,
+        string squadName,
+        SoundSpecifier? sound = null)
+    {
+    }
+
+    public virtual void AnnounceAlertLevel(RMCAlertLevels level, string message, Filter? filter = null)
+    {
+    }
+    // Mriya end
+
     /// <summary>
     ///     Dispatches already wrapped announcement to Marines.
     /// </summary>
@@ -264,6 +282,7 @@ public abstract class SharedMarineAnnounceSystem : EntitySystem
         var wrappedMessage = Loc.GetString("rmc-announcement-message-signed", ("author", author), ("message", message), ("name", name));
 
         AnnounceToMarines(wrappedMessage, sound, filter);
+        AnnounceSignedUi(sender, message, author, name, sound, filter);  // Mriya. Додано виклик екранного оголошення: чат лишається, віджет домальовує AnnounceSignedUi.
         _adminLog.Add(LogType.RMCMarineAnnounce, $"{ToPrettyString(sender):source} marine announced message: {message}");
 
         if (_idCard.TryFindIdCard(sender, out var idCard) && TryComp(idCard, out ItemIFFComponent? idCardIFF))
@@ -272,6 +291,18 @@ public abstract class SharedMarineAnnounceSystem : EntitySystem
                 _core.CreateARESLog(faction, LogCat, (string)$"{Name(sender)} sent an announcement: {message}");
             }
     }
+
+    // Mriya start. Точка розширення для екранного віджета підписаних оголошень.
+    protected virtual void AnnounceSignedUi(
+        EntityUid sender,
+        string message,
+        string author,
+        string name,
+        SoundSpecifier? sound,
+        Filter? filter)
+    {
+    }
+    // Mriya end
 
     public string FormatHighCommand(string? author, string message)
     {
