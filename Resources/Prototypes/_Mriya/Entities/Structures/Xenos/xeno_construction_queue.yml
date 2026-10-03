@@ -1,0 +1,17 @@
+- type: entity
+  id: XenoConstructionQueuedMark
+  name: запланована конструкція
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _Mriya/Structures/Xenos/mark_build.rsi
+    noRot: true
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Tag
+    tags:
+    - HideContextMenu

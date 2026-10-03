@@ -112,6 +112,7 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
     private EntityQuery<QueenBuildingBoostComponent> _queenBoostQuery;
 
     private const string XenoStructuresAnimation = "RMCEffect";
+    private static readonly EntProtoId QueueMarkPrototype = "XenoConstructionQueuedMark";     // Mriya. Прототип маркера запланованої будівлі з черги
     private const string XenoHiveCoreNodeId = "HiveCoreXenoConstructionNode";
     private const float VehicleConstructionBlockRange = 3f;
 
@@ -184,6 +185,10 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
         SubscribeLocalEvent<XenoSecretionListComponent, ComponentRemove>(OnListRemove);
         SubscribeLocalEvent<XenoSecretionListComponent, EntityTerminatingEvent>(OnListRemove);
 
+        // // Mriya start. Підписки чистки черги планування при виході з кладки та видаленні сутності
+        SubscribeLocalEvent<XenoConstructionQueueComponent, XenoOvipositorChangedEvent>(OnQueueOvipositorChanged);
+        SubscribeLocalEvent<XenoConstructionQueueComponent, EntityTerminatingEvent>(OnQueueTerminating);
+        // Mriya end
         Subs.BuiEvents<XenoConstructionComponent>(XenoChooseStructureUI.Key,
             subs =>
             {
@@ -541,14 +546,51 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
         if (attempt.Cancelled)
             return;
 
+        // Mriya start. Черга планування: королева в кладці першу стіну будує як завжди, а кожна наступна стає у чергу замість паралельного DoAfter
+        if (HasComp<XenoAttachedOvipositorComponent>(xeno.Owner) &&
+            HasRunningSecreteDoAfter(xeno.Owner))
+        {
+            var queue = EnsureComp<XenoConstructionQueueComponent>(xeno.Owner);
+            if (queue.Queue.Count >= queue.MaxQueued)
+            {
+                _popup.PopupClient(Loc.GetString("rmc-xeno-construction-queue-full"), xeno.Owner, xeno.Owner);
+                return;
+            }
+
+            NetEntity? mark = null;
+            if (_net.IsServer && _prototype.HasIndex(QueueMarkPrototype))
+            {
+                var markUid = Spawn(QueueMarkPrototype, snapped);
+                _hive.SetSameHive(xeno.Owner, markUid);
+                mark = GetNetEntity(markUid);
+            }
+
+            queue.Queue.Add(new QueuedXenoConstruction(GetNetCoordinates(args.Target), choice, mark));
+            Dirty(xeno.Owner, queue);
+
+            _popup.PopupClient(
+                Loc.GetString("rmc-xeno-construction-queued", ("count", queue.Queue.Count)),
+                args.Target,
+                xeno.Owner);
+            args.Handled = true;
+            return;
+        }
+
+        args.Handled = true;
+        StartSecreteDoAfter(xeno, args.Target, choice); 
+    }
+
+    private bool StartSecreteDoAfter(Entity<XenoConstructionComponent> xeno, EntityCoordinates target, EntProtoId choice)
+        var hasBoost = _queenBoostQuery.HasComp(xeno.Owner); 
+    // Mriya end
         var animationChoice = hasBoost ? GetResinUpgradeTarget(choice) : choice;
         var effectId = XenoStructuresAnimation + animationChoice;
-        var coordinates = GetNetCoordinates(args.Target);
+        var coordinates = GetNetCoordinates(target); // Mriya. Було args.Target
         var entityCoords = GetCoordinates(coordinates);
         EntityUid? effect = null;
 
         var buildMult = GetBuildSpeed(choice) ?? 1;
-        buildMult *= GetDesignNodeBuildTimeMultiplier(xeno.Owner, args.Target, choice);
+        buildMult *= GetDesignNodeBuildTimeMultiplier(xeno.Owner, target, choice); // Mriya. Було xeno.Owner, args.Target, choice
 
         if (hasBoost && _queenBoostQuery.TryComp(xeno.Owner, out var boostComp))
             buildMult *= boostComp.BuildSpeedMultiplier;
@@ -562,7 +604,7 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
         }
 
         var ev = new XenoSecreteStructureDoAfterEvent(coordinates, choice, GetNetEntity(effect));
-        args.Handled = true;
+        //args.Handled = true;
         var doAfter = new DoAfterArgs(EntityManager, xeno, finalBuildTime, ev, xeno)
         {
             BreakOnMove = true,
@@ -574,8 +616,148 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
         {
             if (effect != null && _net.IsServer)
                 QueueDel(effect);
+    // Mriya start.
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool HasRunningSecreteDoAfter(EntityUid user)
+    {
+        if (!TryComp(user, out DoAfterComponent? doAfter))
+            return false;
+
+        foreach (var running in doAfter.DoAfters.Values)
+        {
+            if (running.Cancelled || running.Completed)
+                continue;
+
+            if (running.Args.Event is XenoSecreteStructureDoAfterEvent)
+                return true;
+        }
+
+        return false;
+    }
+
+    private void TryStartNextQueued(Entity<XenoConstructionComponent> xeno)
+    {
+        if (!TryComp(xeno.Owner, out XenoConstructionQueueComponent? queue) ||
+            queue.Queue.Count == 0)
+        {
+            return;
+        }
+
+        if (!HasComp<XenoAttachedOvipositorComponent>(xeno.Owner))
+        {
+            DeleteAllQueueMarks(queue);
+            if (_net.IsServer)
+                RemCompDeferred<XenoConstructionQueueComponent>(xeno.Owner);
+            return;
+        }
+
+        if (HasRunningSecreteDoAfter(xeno.Owner))
+            return;
+
+        while (queue.Queue.Count > 0)
+        {
+            var next = queue.Queue[0];
+            queue.Queue.RemoveAt(0);
+            Dirty(xeno.Owner, queue);
+
+            var coords = GetCoordinates(next.Coordinates);
+            if (!coords.IsValid(EntityManager))
+            {
+                DeleteQueueMark(next.Marker);
+                continue;
+            }
+
+            if (!xeno.Comp.CanBuild.Contains(next.StructureId))
+            {
+                DeleteQueueMark(next.Marker);
+                continue;
+            }
+
+            if (!CanSecreteOnTilePopup(xeno, next.StructureId, coords, true, true, popup: false))
+            {
+                DeleteQueueMark(next.Marker);
+                _popup.PopupClient(
+                    Loc.GetString("rmc-xeno-construction-queue-failed"),
+                    coords,
+                    xeno.Owner);
+                continue;
+            }
+
+            var attempt = new XenoSecreteStructureAttemptEvent(coords);
+            RaiseLocalEvent(xeno, ref attempt);
+            if (attempt.Cancelled)
+            {
+                DeleteQueueMark(next.Marker);
+                continue;
+            }
+
+            if (StartSecreteDoAfter(xeno, coords, next.StructureId))
+            {
+                DeleteQueueMark(next.Marker);
+                _popup.PopupClient(
+                    Loc.GetString("rmc-xeno-construction-queue-next", ("remaining", queue.Queue.Count)),
+                    coords,
+                    xeno.Owner);
+                break;
+            }
+
+            queue.Queue.Insert(0, next);
+            Dirty(xeno.Owner, queue);
+            break;
+        }
+
+        if (queue.Queue.Count == 0 && _net.IsServer)
+            RemCompDeferred<XenoConstructionQueueComponent>(xeno.Owner);
+    }
+
+    private void DeleteQueueMark(NetEntity? marker)
+    {
+        if (!_net.IsServer || marker == null)
+            return;
+
+        if (GetEntity(marker.Value) is not { Valid: true } uid ||
+            TerminatingOrDeleted(uid))
+        {
+            return;
+        }
+
+        QueueDel(uid);
+    }
+
+    private void DeleteAllQueueMarks(XenoConstructionQueueComponent queue)
+    {
+        if (!_net.IsServer)
+            return;
+
+        foreach (var entry in queue.Queue)
+        {
+            DeleteQueueMark(entry.Marker);
         }
     }
+
+    private void OnQueueOvipositorChanged(Entity<XenoConstructionQueueComponent> ent, ref XenoOvipositorChangedEvent args)
+    {
+        if (args.Attached)
+            return;
+
+        _popup.PopupClient(
+            Loc.GetString("rmc-xeno-construction-queue-cleared"),
+            ent.Owner,
+            ent.Owner);
+        DeleteAllQueueMarks(ent.Comp);
+        RemCompDeferred<XenoConstructionQueueComponent>(ent.Owner);
+    }
+
+    private void OnQueueTerminating(Entity<XenoConstructionQueueComponent> ent, ref EntityTerminatingEvent args)
+    {
+        DeleteAllQueueMarks(ent.Comp);
+    }
+    // Mriya end
 
     private void CancelOrderConstructionTargeting(Entity<XenoConstructionComponent> xeno)
     {
@@ -597,13 +779,17 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
             QueueDel(GetEntity(args.Effect));
 
         if (args.Handled || args.Cancelled)
+        {
+            TryStartNextQueued(xeno);     // Mriya. Додано запуск наступної запланованої будівлі
             return;
+        }
 
         var coordinates = GetCoordinates(args.Coordinates);
         if (!coordinates.IsValid(EntityManager) ||
             !xeno.Comp.CanBuild.Contains(args.StructureId) ||
             !CanSecreteOnTilePopup(xeno, args.StructureId, GetCoordinates(args.Coordinates), true, true))
         {
+            TryStartNextQueued(xeno);    // Mriya. Додано запуск наступної запланованої будівлі
             return;
         }
 
@@ -626,7 +812,10 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
                 cost = Math.Ceiling(cost.Float() * plasmaMult);
 
             if (!hasBoost && !_xenoPlasma.TryRemovePlasmaPopup(xeno.Owner, cost))
+            {
+                TryStartNextQueued(xeno);         // Mriya. Додано запуск наступної запланованої будівлі
                 return;
+            }
         }
 
         args.Handled = true;
@@ -738,6 +927,7 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
         }
 
         _audio.PlayPredicted(xeno.Comp.BuildSound, coordinates, xeno);
+        TryStartNextQueued(xeno);         // Mriya. Додано запуск наступної запланованої будівлі після добудови
     }
 
     private void OnXenoOrderConstructionAction(Entity<XenoConstructionComponent> xeno, ref XenoOrderConstructionActionEvent args)
