@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared._RMC14.Actions;
+using Content.Shared._RMC14.TacticalMap; // Mriya. Для оновлення стелі по оку королеви
 using Content.Shared._RMC14.Xenonids.Construction.Events;
 using Content.Shared._RMC14.Xenonids.Egg;
 using Content.Shared._RMC14.Xenonids.Watch;
@@ -30,6 +31,7 @@ public sealed class QueenEyeSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedXenoWatchSystem _xenoWatch = default!;
+    [Dependency] private readonly AreaInfoSystem _areaInfo = default!; // Mriya. Для оновлення стелі по оку королеви
 
     private SeedJob _seedJob;
     private ViewJob _job;
@@ -113,6 +115,11 @@ public sealed class QueenEyeSystem : EntitySystem
         _eye.SetTarget(ent, ent.Comp.Eye, eye);
         _eye.SetDrawFov(ent, false);
         _mover.SetRelay(ent, ent.Comp.Eye.Value);
+
+        // Mriya start. Оновити стелю на позиції ока при вході в око
+        if (TryComp(ent.Owner, out AreaInfoComponent? areaInfo))
+            _areaInfo.RefreshAreaInfo((ent.Owner, areaInfo), false);
+        // Mriya end
     }
 
     private void OnQueenEyeActionGetVisMask(Entity<QueenEyeActionComponent> ent, ref GetVisMaskEvent args)
@@ -186,6 +193,7 @@ public sealed class QueenEyeSystem : EntitySystem
             if (anchorCoords.TryDistance(EntityManager, _transform, newCoords, out var distance) &&
                 distance <= soft)
             {
+                RefreshQueenAreaInfo(ent); // Mriya. Оновити стелю по оку
                 return;
             }
         }
@@ -196,6 +204,7 @@ public sealed class QueenEyeSystem : EntitySystem
         if (_nearbyWeeds.Count != 0)
         {
             ent.Comp.AnchorWeed = GetClosestWeed(newCoords, _nearbyWeeds);
+            RefreshQueenAreaInfo(ent); // Mriya. Оновити стелю по оку
             return;
         }
 
@@ -250,7 +259,26 @@ public sealed class QueenEyeSystem : EntitySystem
                 _isRevertingMove = false;
             }
         }
+
+        RefreshQueenAreaInfo(ent); // Mriya. Оновити стелю по оку
     }
+
+    // Mriya start. Оновлення стелі королеви по позиції ока при його русі
+    private void RefreshQueenAreaInfo(Entity<QueenEyeComponent> ent)
+    {
+        if (_timing.ApplyingState)
+            return;
+
+        if (ent.Comp.Queen is not { } queen ||
+            TerminatingOrDeleted(queen) ||
+            !TryComp(queen, out AreaInfoComponent? areaInfo))
+        {
+            return;
+        }
+
+        _areaInfo.RefreshAreaInfo((queen, areaInfo), true);
+    }
+    // Mriya end
 
     private EntityUid? GetClosestWeed(EntityCoordinates origin, HashSet<Entity<XenoWeedsComponent>> weeds)
     {
@@ -349,6 +377,14 @@ public sealed class QueenEyeSystem : EntitySystem
 
         var ev = new QueenEyeActionUpdated(ent);
         RaiseLocalEvent(ent, ref ev);
+
+        // Mriya start. Повернути стелю на позицію тіла при виході з ока
+        if (!TerminatingOrDeleted(ent.Owner) &&
+            TryComp(ent.Owner, out AreaInfoComponent? areaInfo))
+        {
+            _areaInfo.RefreshAreaInfo((ent.Owner, areaInfo), false);
+        }
+        // Mriya end
 
         return true;
     }
