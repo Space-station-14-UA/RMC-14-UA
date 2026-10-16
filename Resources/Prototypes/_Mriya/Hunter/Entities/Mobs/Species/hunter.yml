@@ -1,0 +1,100 @@
+- type: entity
+  save: false
+  parent: BaseMobSpeciesHunter
+  id: CMMobHunter
+  suffix: Базовий
+  components:
+  - type: GuideHelp
+    guides:
+    - RMCGuideHunter
+  - type: NpcFactionMember
+    factions:
+      - Hunters
+  - type: HumanoidAppearance
+    species: Hunter
+    hideLayersOnEquip:
+      - Hair
+      - HeadTop
+      - HeadSide
+      - Snout
+  - type: Sprite
+    drawdepth: Mobs
+    scale: 1.0, 1.1
+  - type: Icon
+    sprite: _Mriya/Hunter/Mobs/Hunter/parts.rsi
+    state: preview_shorthair
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#00A86B"
+  - type: Inventory
+    templateId: Hunter
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.0
+    baseSprintSpeed: 4.8
+  - type: Bloodstream
+    bloodReagent: HunterBlood
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      400: Critical
+      450: Dead
+  - type: CMArmor
+    xenoArmor: 15
+  - type: Temperature
+    heatDamageThreshold: 360
+    coldDamageThreshold: -150
+    currentTemperature: 310.15
+  - type: Stamina
+    critThreshold: 400
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    animation: WeaponArcClaw
+  - type: Vocal
+    sounds:
+      Male: HunterEmoteSounds
+      Female: HunterEmoteSounds
+      Unsexed: HunterEmoteSounds
+  - type: TypingIndicator
+    proto: hunter
+  - type: Speech
+    speechSounds: Hunter
+    allowedEmotes:
+     - Hiss
+  - type: SoundOnDeath
+    sound:
+      path: /Audio/Effects/demon_dies.ogg
+      params:
+        volume: -3
+  - type: Unrevivable
+  - type: JumpAbility
+    jumpDistance: 4
+    jumpSound: /Audio/_RMC14/Bullets/impact_flesh_1.ogg
+  - type: ActionGrant
+    actions:
+      - ActionHunterJump
+      - HunterRecallAction
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - FootstepSound
+  - type: HunterLanguage
+  - type: HunterPainSound
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.85
+      80: 0.75
+
+- type: entity
+  save: false
+  name: Hunter Dummy
+  parent: BaseSpeciesDummy
+  id: MobHunterDummy
+  categories: [HideSpawnMenu]
+  description: Мисливець для меню і інших речей
+  components:
+  - type: HumanoidAppearance
+    species: Hunter

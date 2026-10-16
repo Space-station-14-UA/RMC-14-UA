@@ -70,7 +70,8 @@ public abstract class SharedAutodocSystem : EntitySystem
             var consoleId = Spawn(autodoc.Comp.SpawnConsolePrototype.Value, consoleCoords);
 
             // Set the console's rotation to match the autodoc + 180 degrees because sprites are opposite
-            _transform.SetLocalRotation(consoleId, rotation + Math.PI);
+            var consoleRotation = autodoc.Comp.ForceConsoleEast ? Direction.East.ToAngle() : (rotation + Math.PI);
+            _transform.SetLocalRotation(consoleId, consoleRotation);
 
             if (TryComp(consoleId, out AutodocConsoleComponent? console))
             {

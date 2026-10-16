@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: HunterSpeech
+  files:
+  - /Audio/_Mriya/Hunter/pred_click1.ogg
+  - /Audio/_Mriya/Hunter/pred_click2.ogg

@@ -1,0 +1,75 @@
+- type: job
+  parent: CMJobBase
+  id: MRHunter
+  name: Мисливець
+  description: Мисливець, чий час полювання настав.
+  accessGroups:
+    - Colony
+  hasIcon: false
+  playTimeTracker: JobMRHunter
+  whitelisted: true
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: NpcFactionMember
+      factions:
+      - Hunters
+    - type: Skills
+      skills:
+        RMCSkillConstruction: 2
+        RMCSkillCqc: 2
+        RMCSkillEndurance: 2
+        RMCSkillEngineer: 2
+        RMCSkillFirearms: 1
+        RMCSkillJtac: 3
+        RMCSkillMedical: 2
+  # Ранги відображаються від найвищого до найнижчого.
+  # Командир, Голова та Старійшини — не досяжні через час.
+  # Мисливець — 10 годин. Юна кров — за замовчуванням.
+  ranks:
+    MRRankHunter:
+    - !type:RoleTimeRequirement
+      role: JobMRHunter
+      time: 36000 # 10 годин
+    MRRankYoungBlood: []
+
+
+- type: playTimeTracker
+  id: JobMRHunter
+  name: playtime-tracking-job-mrhunter
+  isHumanoid: true
+
+- type: entity
+  parent: CMMobHunter
+  id: CMMobHunterGhostRole
+  components:
+  - type: GhostRole
+    name: Мисливець
+    description: Мисливець, чий час полювання настав.
+    rules: Дотримуйтесь кодексу мисливця.
+    job: MRHunter
+    raffle:
+      settings: default
+  - type: RMCJobSpawner
+    job: MRHunter
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - RMCNamesHunterFirst
+    - RMCNamesHunterLast
+    nameFormat: name-format-ert
+
+- type: entity
+  parent: CMSpawnPointJobBase
+  id: RMCSpawnPointHunter
+  name: спавн мисливця
+  components:
+  - type: HumanoidAppearance
+    species: Hunter
+  - type: SpawnPoint
+    job_id: MRHunter
+  - type: Sprite
+    layers:
+    - sprite: _RMC14/Markers/landmarks.rsi
+      state: surv

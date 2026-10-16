@@ -1,0 +1,109 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: RMCHunterCape
+  name: плащ
+  description: Масивний плащ, виготовлений з невідомого матеріалу.
+  suffix: Sich, Hunter
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    state: icon_full
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    slots:
+    - Neck
+    clothingVisuals:
+      neck:
+      - state: cape_full
+
+- type: entity
+  parent: RMCHunterCape
+  id: RMCHunterCapeCeremonial
+  name: церемоніальний плащ
+  description: Розкішний плащ з візерунками.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    state: icon_ceremonial
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    slots:
+    - Neck
+    clothingVisuals:
+      neck:
+      - state: cape_ceremonial
+
+- type: entity
+  parent: RMCHunterCape
+  id: RMCHunterCapeThird
+  name: плащ
+  description: Третинний плащ, виготовлений з невідомого матеріалу.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    state: icon_third
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    clothingVisuals:
+      neck:
+      - state: cape_third
+
+- type: entity
+  parent: RMCHunterCape
+  id: RMCHunterCapeHalf
+  name: плащ
+  description: Половинний плащ, виготовлений з невідомого матеріалу.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    state: icon_half
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    clothingVisuals:
+      neck:
+      - state: cape_half
+
+- type: entity
+  parent: RMCHunterCape
+  id: RMCHunterCapeQuarter
+  name: плащ
+  description: Четвертинний плащ, виготовлений з невідомого матеріалу.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    state: icon_quarter
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    clothingVisuals:
+      neck:
+      - state: cape_quarter
+
+- type: entity
+  parent: RMCHunterCape
+  id: RMCHunterCapePoncho
+  name: пончо
+  description: Пончо, виготовлене з невідомого матеріалу.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    state: icon_poncho
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    clothingVisuals:
+      neck:
+      - state: cape_poncho
+
+- type: entity
+  parent: RMCHunterCape
+  id: RMCHunterCapeDamaged
+  name: пошкоджений плащ
+  description: Цей плащ сильно пошкоджений... Схоже він пройшов через чимало боїв.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    state: icon_damaged
+  - type: Clothing
+    sprite: _Mriya/Hunter/Objects/Clothing/cape.rsi
+    clothingVisuals:
+      neck:
+      - state: cape_damaged

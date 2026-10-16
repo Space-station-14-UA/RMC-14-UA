@@ -1,0 +1,484 @@
+- type: entity
+  parent: CMBaseStructure
+  id: HuggerTank
+  name: капсула зберігання
+  description: Використовується для зберігання різних зразків біологічних форм.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 200
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/hugger_tank.rsi
+    state: tank
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralMarine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          HuggerTankBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: CMBaseStructure
+  id: HuggerTankBroken
+  name: розбита капсула зберігання
+  description: Використовується для зберігання різних зразків біологічних форм. Вона розбита.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/hugger_tank.rsi
+    state: broken
+
+# Інше
+
+- type: entity
+  parent: CMBaseStructure
+  id: GlobeMap
+  name: глобус
+  description: Масивна платформа з голографічною проекцією планети.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/globe.rsi
+    state: globe
+  - type: Clickable
+  - type: InteractionOutline
+  - type: TacticalMapComputer
+    skillLevel: 20
+  - type: ActivatableUI
+    key: enum.TacticalMapComputerUi.Key
+  - type: UserInterface
+    interfaces:
+      enum.TacticalMapComputerUi.Key:
+        type: TacticalMapComputerBui
+
+- type: entity
+  parent: RMCPropBase
+  id: RMCPropFeed
+  name: лінія живлення
+  description: Лінія живлення що забезпечує енергопостачання корабля.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/feed.rsi
+    state: feed
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/feed.rsi
+    state: feed
+
+# Броня
+
+- type: entity
+  parent: RMCPropBase
+  id: RMCPropArmor
+  name: старовинна броня
+  description: Старовинна броня, що колись належала іншим мисливцям. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop
+
+- type: entity
+  parent: RMCPropBase
+  id: RMCPropArmor2
+  name: старовинна броня
+  description: Старовинна броня, що колись належала іншим мисливцям. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop_2
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop_2
+
+- type: entity
+  parent: RMCPropBase
+  id: RMCPropArmor3
+  name: старовинна броня
+  description: Старовинна броня, що колись належала іншим мисливцям. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop_3
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop_3
+
+- type: entity
+  parent: RMCPropBase
+  id: RMCPropArmor4
+  name: старовинна броня
+  description: Старовинна броня, що колись належала іншим мисливцям. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop_4
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/armor_prop.rsi
+    state: hunter_armor_prop_4
+
+# Черепи
+
+- type: entity
+  parent: RMCPropBase
+  id: SkullBurrower
+  name: череп
+  description: Череп старшого родича ксеноїда. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: burrower
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: burrower
+
+- type: entity
+  parent: RMCPropBase
+  id: SkullDrone
+  name: череп
+  description: Череп старшого родича ксеноїда. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: drone
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: drone
+
+- type: entity
+  parent: RMCPropBase
+  id: SkullHunter
+  name: череп
+  description: Череп старшого родича ксеноїда. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: hunter
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: hunter
+
+- type: entity
+  parent: RMCPropBase
+  id: SkullKing
+  name: череп
+  description: Череп старшого родича ксеноїда. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: king
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: king
+
+- type: entity
+  parent: RMCPropBase
+  id: SkullPretorian
+  name: череп
+  description: Череп старшого родича ксеноїда. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: pretorian
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: pretorian
+
+- type: entity
+  parent: RMCPropBase
+  id: SkullQueen
+  name: череп
+  description: Череп старшого родича ксеноїда. 
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: queen
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/skull.rsi
+    state: queen
+
+# Статуї
+
+- type: entity
+  parent: BaseStructure
+  id: HunterStatueGrey
+  name: статуя
+  description: "Кам'яна статуя що зображує давню расу яутджа."
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Furniture/hunter_statues.rsi
+    state: statue_grey
+    drawdepth: Mobs
+    noRot: true
+    offset: "0.0,0.2"
+
+- type: entity
+  parent: BaseStructure
+  id: HunterStatueAncient
+  name: статуя
+  description: "Кам'яна статуя що зображує давню расу яутджа."
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Furniture/hunter_statues.rsi
+    state: statue_ancient
+    drawdepth: Mobs
+    noRot: true
+    offset: "0.0,0.2"
+
+- type: entity
+  parent: BaseStructure
+  id: HunterStatueSandstone
+  name: статуя
+  description: Статуя з пісковику що зображує давню расу яутджа.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Furniture/hunter_statues.rsi
+    state: statue_sandstone
+    drawdepth: Mobs
+    noRot: true
+    offset: "0.0,0.2"
+
+- type: entity
+  parent: RMCPropBase
+  id: StatueBaseColorable
+  name: "п'єдестал"
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Furniture/hunter_statues.rsi
+    state: small_statue_base_colorable
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Furniture/hunter_statues.rsi
+    state: small_statue_base_colorable
+
+- type: entity
+  parent: RMCPropBase
+  id: StatueBase
+  name: "п'єдестал"
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Furniture/hunter_statues.rsi
+    state: small_statue_base
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Furniture/hunter_statues.rsi
+    state: small_statue_base
+
+# Столи
+
+- type: entity
+  parent: BaseStructure
+  id: HunterTable
+  name: стіл
+  components:
+  - type: PlaceableSurface
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Sprite
+    noRot: true
+    sprite: _Mriya/Hunter/Structures/Furniture/table.rsi
+    state: table
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Furniture/table.rsi
+    state: table
+
+- type: entity
+  parent: BaseStructure
+  id: HunterTableLeft
+  name: стіл
+  components:
+  - type: PlaceableSurface
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Sprite
+    noRot: true
+    sprite: _Mriya/Hunter/Structures/Furniture/table.rsi
+    state: left
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Furniture/table.rsi
+    state: left
+
+- type: entity
+  parent: BaseStructure
+  id: HunterTableRight
+  name: стіл
+  components:
+  - type: PlaceableSurface
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Sprite
+    noRot: true
+    sprite: _Mriya/Hunter/Structures/Furniture/table.rsi
+    state: right
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Furniture/table.rsi
+    state: right
+
+# Консолі
+
+- type: entity
+  parent: CMBaseStructure
+  id: HunterSmallMonitor
+  name: монітор
+  description: Невеликий монітор, вбудований у стіну корабля.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 60
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Props/console.rsi
+    state: smallmonitor
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/console.rsi
+    state: smallmonitor
+
+- type: entity
+  parent: CMBaseStructure
+  id: HunterOverwatchConsole
+  name: консоль спостереження
+  description: Консоль для стеження за полем бою.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 60
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Sprite
+    noRot: true
+    sprite: _Mriya/Hunter/Structures/Props/console.rsi
+    state: overwatch
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Props/console.rsi
+    state: overwatch
+
+
+# Яутджа-руни (пропи без взаємодії)
+
+- type: entity
+  id: HunterBigRed
+  name: яутджа-руна (велика)
+  description: Давній символ мисливців, намальований на поверхні.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: FloorObjects
+    noRot: false
+    sprite: _Mriya/Hunter/Structures/Props/yautja_red_decals.rsi
+    state: big_red
+
+- type: entity
+  id: HunterMedRedBottom
+  name: яутджа-руна (середня)
+  description: Давній символ мисливців, намальований на поверхні.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: FloorObjects
+    noRot: false
+    sprite: _Mriya/Hunter/Structures/Props/yautja_red_decals.rsi
+    state: med_red_bottom
+
+- type: entity
+  id: HunterSmallRed
+  name: яутджа-руна (мала)
+  description: Давній символ мисливців, намальований на поверхні.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: FloorObjects
+    noRot: false
+    sprite: _Mriya/Hunter/Structures/Props/yautja_red_decals.rsi
+    state: smal_red

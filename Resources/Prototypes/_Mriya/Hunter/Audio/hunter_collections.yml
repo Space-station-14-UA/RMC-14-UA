@@ -1,0 +1,30 @@
+- type: soundCollection
+  id: HunterScream
+  files:
+    - /Audio/_Mriya/Hunter/Hunter_roar1.ogg
+    - /Audio/_Mriya/Hunter/Hunter_roar2.ogg
+    - /Audio/_Mriya/Hunter/Hunter_roar3.ogg
+
+- type: soundCollection
+  id: HunterLaugh
+  files:
+    - /Audio/_Mriya/Hunter/Hunter_laugh1.ogg
+    - /Audio/_Mriya/Hunter/Hunter_laugh2.ogg
+
+- type: soundCollection
+  id: HunterClick
+  files:
+    - /Audio/_Mriya/Hunter/Hunter_click1.ogg
+    - /Audio/_Mriya/Hunter/Hunter_click2.ogg
+    - /Audio/_Mriya/Hunter/Hunter_click3.ogg
+    - /Audio/_Mriya/Hunter/Hunter_click4.ogg
+
+- type: soundCollection
+  id: HunterPain
+  files:
+    - /Audio/_Mriya/Hunter/pred_pain1.ogg
+    - /Audio/_Mriya/Hunter/pred_pain2.ogg
+    - /Audio/_Mriya/Hunter/pred_pain3.ogg
+    - /Audio/_Mriya/Hunter/pred_pain4.ogg
+    - /Audio/_Mriya/Hunter/pred_pain5.ogg
+    - /Audio/_Mriya/Hunter/pred_pain_rare1.ogg

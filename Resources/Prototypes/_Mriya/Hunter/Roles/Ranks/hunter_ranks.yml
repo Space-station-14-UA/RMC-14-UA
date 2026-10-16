@@ -1,0 +1,31 @@
+# Ранги Мисливців
+# Юна кров — дефолт (без вимог)
+# Мисливець — 10 годин за MRHunter
+# Командир клану — не можна отримати автоматично (тільки адмін)
+# Голова клану — тільки адмін особисто
+# Старійшини — адміністрація
+
+- type: rank
+  id: MRRankYoungBlood
+  name: Юна кров
+  prefix: Ю.К.
+
+- type: rank
+  id: MRRankHunter
+  name: Мисливець
+  prefix: Мисл.
+
+- type: rank
+  id: MRRankClanCommander
+  name: Командир клану
+  prefix: К.К.
+
+- type: rank
+  id: MRRankClanHead
+  name: Голова клану
+  prefix: Г.К.
+
+- type: rank
+  id: MRRankElders
+  name: Старійшина
+  prefix: Стар.

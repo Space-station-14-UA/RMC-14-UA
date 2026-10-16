@@ -1,0 +1,143 @@
+- type: entity
+  parent: BaseItem
+  id: SpikeLauncher
+  name: шипостріл
+  description: Компактна зброя Яутжа у формі півмісяця, що миттєво формує та вистрілює шипи.
+  components:
+  - type: YautjaTechItem
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Weapons/guns.rsi
+    layers:
+    - state: spike_launcher
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Item
+    sprite: _Mriya/Hunter/Objects/Weapons/gun_inhands.rsi
+    heldPrefix: spike_launcher
+    size: Huge
+  - type: AmmoCounter
+  - type: Gun
+    projectileSpeed: 28
+    fireRate: 1.2
+    minAngle: 10
+    maxAngle: 18
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/harpoon.ogg
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 10
+  - type: BasicEntityAmmoProvider
+    proto: SpikeProjectile
+    capacity: 12
+    count: 12
+  - type: Wieldable
+    wieldedInhandPrefix: spike_launcher
+  - type: WieldDelay
+    baseDelay: 0.45
+    preventFiring: true
+  - type: WieldableSpeedModifiers
+    base: 0.75
+    light: 0.9
+    medium: 0.85
+    heavy: 0.85
+  - type: GunWieldBonus
+    minAngle: -8
+    maxAngle: -14
+  - type: GunRequiresWield
+  - type: WieldedCrosshair
+    rsi:
+      sprite: _RMC14/Interface/MousePointer/rifle_mouse.rsi
+      state: all
+  - type: Appearance
+
+- type: entity
+  parent: BaseItem
+  id: PlasmaRifle
+  name: плазмова гвинтівка
+  description: Рідка плазмовий гвинтівка Яутджа, має внутрішній акумулятор, який самостійно перезаряджається.
+  components:
+  - type: YautjaTechItem
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Weapons/guns.rsi
+    layers:
+    - state: plasma_rifle
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Item
+    sprite: _Mriya/Hunter/Objects/Weapons/gun_inhands.rsi
+    heldPrefix: plasma_rifle
+    size: Huge
+  - type: AmmoCounter
+  - type: Gun
+    projectileSpeed: 30
+    fireRate: 0.75
+    minAngle: 8
+    maxAngle: 16
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Mriya/Hunter/pred_plasma_shot.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: PlasmaRifleBolt
+    fireCost: 175
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 35
+  - type: Wieldable
+    wieldedInhandPrefix: plasma_rifle
+  - type: WieldDelay
+    baseDelay: 0.6
+  - type: WieldableSpeedModifiers
+    base: 0.72
+    light: 0.9
+    medium: 0.84
+    heavy: 0.84
+  - type: GunWieldBonus
+    minAngle: -7
+    maxAngle: -13
+  - type: GunRequiresWield
+  - type: WieldedCrosshair
+    rsi:
+      sprite: _RMC14/Interface/MousePointer/rifle_mouse.rsi
+      state: all
+  - type: Appearance
+
+- type: entity
+  parent: BaseItem
+  id: PlasmaPistol
+  name: плазмовий пістолет
+  description: Компактний плазмовий пістолет Яутджа, має внутрішній акумулятор, який самостійно перезаряджається.
+  components:
+  - type: YautjaTechItem
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Weapons/guns.rsi
+    layers:
+    - state: plasma_pistol
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Item
+    sprite: _Mriya/Hunter/Objects/Weapons/gun_inhands.rsi
+    heldPrefix: plasma_pistol
+    size: Normal
+  - type: AmmoCounter
+  - type: Gun
+    projectileSpeed: 25
+    fireRate: 1.4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Mriya/Hunter/pulse3.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: PlasmaPistolBolt
+    fireCost: 125
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 25
+  - type: Appearance

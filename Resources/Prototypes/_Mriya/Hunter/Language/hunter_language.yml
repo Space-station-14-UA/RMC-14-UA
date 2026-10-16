@@ -1,0 +1,24 @@
+- type: language
+  id: Hunter
+  name: "Мова Яутжа"
+  description: "Давня мова міжгалактичних мисливців Яутжа."
+  isVisibleLanguage: true
+  typefaceId: DefaultBold
+  textSize: null
+  showLanguageName: true
+  languageIcon:
+    sprite: _Mriya/Hunter/Interface/flags.rsi
+    state: YJ
+  canUseRadio: true
+  needsSpeech: true
+  expectedVocabularySize: 120
+  obfuscationMethod:
+    !type:SyllableObfuscation
+    replacement: ["agaj", "amedha", "aseig", "awu", "bhu", "ch'hkt", "dhik", "dhir", "dto", "gahn", "gkei", "guan", "h'ch", "h'dl", "h'ka", "hult", "halk", "ikth", "jehd", "jkiu", "jud", "kain", "kehr", "kju", "kwei", "lar", "luar", "nan", "nok", "nra", "oom", "pauk", "pyo", "r'ka", "sain", "setg", "tar", "te'd", "than", "thar", "thei", "thwei", "uist", "vay", "yey", "yin", "z'sk", "zab", "cjt", "djos", "paya"]
+    minSyllables: 1
+    maxSyllables: 2
+  speechOverride:
+    speechSoundsOverride: Hunter
+    chatTypeOverride: null
+    speechVerbOverrides: null
+    messageWrapOverrides: {}

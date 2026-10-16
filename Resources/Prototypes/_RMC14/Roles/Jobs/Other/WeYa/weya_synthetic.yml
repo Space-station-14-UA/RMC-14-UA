@@ -41,8 +41,14 @@
     - type: LanguageLearning
       learnableLanguages:
       - Xeno
+      - Hunter # Mriya.
       firstContactLanguages:
       - Xeno
+      - Hunter # Mriya.
+      languages:
+        Hunter: # Mriya.
+          initialBoostedWordCount: 25
+          initialBoostedWordComprehension: 0.3
       comprehensionThreshold: 0.8
       learningRange: 8.0
       baseWordLearningRate: 0.05

@@ -1,4 +1,5 @@
-﻿using Content.Shared._RMC14.Stealth;
+using System.Collections.Generic;
+using Content.Shared._RMC14.Stealth;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
@@ -8,6 +9,8 @@ namespace Content.Client._RMC14.Stealth;
 public sealed class EntityInvisibilityVisualsSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+
+    private readonly Dictionary<EntityUid, ShaderInstance> _shaders = new();
 
     public override void Initialize()
     {
@@ -22,18 +25,22 @@ public sealed class EntityInvisibilityVisualsSystem : EntitySystem
         if (!TryComp(ent, out SpriteComponent? sprite))
             return;
 
-        sprite.PostShader = _prototypes.Index<ShaderPrototype>("RMCInvisible").InstanceUnique();
+        var shader = _prototypes.Index<ShaderPrototype>("RMCInvisible").InstanceUnique();
+        _shaders[ent.Owner] = shader;
+        sprite.PostShader = shader;
     }
 
     private void OnShutdown(Entity<EntityTurnInvisibleComponent> ent, ref ComponentShutdown args)
     {
-        if (TerminatingOrDeleted(ent))
-            return;
-
-        if (!TryComp(ent, out SpriteComponent? sprite))
-            return;
-
-        sprite.PostShader = null;
+        if (_shaders.Remove(ent.Owner, out var shader))
+        {
+            if (!TerminatingOrDeleted(ent) && TryComp(ent, out SpriteComponent? sprite))
+            {
+                if (sprite.PostShader == shader)
+                    sprite.PostShader = null;
+            }
+            shader.Dispose();
+        }
     }
 
     public override void Update(float frameTime)
@@ -41,8 +48,19 @@ public sealed class EntityInvisibilityVisualsSystem : EntitySystem
         var invisible = EntityQueryEnumerator<EntityTurnInvisibleComponent, SpriteComponent>();
         while (invisible.MoveNext(out var uid, out var comp, out var sprite))
         {
-            var opacity =  TryComp<EntityActiveInvisibleComponent>(uid, out var activeInvisible) ? activeInvisible.Opacity : 1;
-            sprite.PostShader?.SetParameter("visibility", opacity);
+            if (!_shaders.TryGetValue(uid, out var shader))
+                continue;
+
+            if (sprite.PostShader == null)
+            {
+                sprite.PostShader = shader;
+            }
+
+            if (sprite.PostShader == shader)
+            {
+                var opacity = TryComp<EntityActiveInvisibleComponent>(uid, out var activeInvisible) ? activeInvisible.Opacity : 1;
+                shader.SetParameter("visibility", opacity);
+            }
         }
     }
 }

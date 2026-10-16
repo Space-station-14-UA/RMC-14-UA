@@ -1,6 +1,7 @@
 using Content.Shared._RMC14.Attachable.Components;
 using Content.Shared._RMC14.Emplacements;
 using Content.Shared.Wieldable.Components;
+using Content.Shared._Sich.Hunter.Caster;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._RMC14.CombatMode;
@@ -16,6 +17,9 @@ public sealed class RMCCombatModeSystem : EntitySystem
         if (!Resolve(crosshair, ref crosshair.Comp2, false))
         {
             if (TryComp(crosshair.Owner, out MountableWeaponComponent? mountable) && mountable.MountedTo != null)
+                return crosshair.Comp1?.Rsi;
+
+            if (HasComp<HunterCasterComponent>(crosshair.Owner))
                 return crosshair.Comp1?.Rsi;
 
             return null;

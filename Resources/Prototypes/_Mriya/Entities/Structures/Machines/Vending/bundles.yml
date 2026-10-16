@@ -1,0 +1,30 @@
+- type: entity
+  id: VendorBundleHunterArmor
+  name: набір броні мисливця
+  description: Містить броню для полювання
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/Armor/hunter.rsi
+    state: icon
+  - type: CMVendorBundle
+    bundle:
+    - RMCHunterMask
+    - RMCArmorHunter
+    - RMCBootsHunter
+
+- type: entity
+  id: VendorBundleHunterClothing
+  name: основний набір 
+  description: Містить одяг та основне спорядження
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Objects/Clothing/uniform_hunter.rsi
+    state: icon
+  - type: CMVendorBundle
+    bundle:
+    - RMCHunterUniform
+    - RMCMediComp
+    - HunterTeleporter
+    - RMCBeltBag

@@ -1,0 +1,131 @@
+- type: entity
+  parent: CMBaseStructure
+  id: PredTrophyVend1
+  name: трофейний стелаж
+  description: Автоматичний стелаж для збрегінання трофеїв.
+  components:
+    - type: VehicleSmashable
+    - type: Transform
+      anchored: false
+    - type: Physics
+      bodyType: Static
+    - type: MeleeSound
+      soundGroups:
+       Brute:
+        path:
+          "/Audio/Weapons/dodgeball.ogg"
+    - type: InteractionOutline
+    - type: PlaceableSurface
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/Props/pred_trophy_vend.rsi
+      state: pred_trophy_vendor_bottom_left
+
+- type: entity
+  parent: CMBaseStructure
+  id: PredTrophyVend2
+  name: трофейний стелаж
+  description: Автоматичний стелаж для збрегінання трофеїв.
+  components:
+    - type: VehicleSmashable
+    - type: Transform
+      anchored: false
+    - type: Physics
+      bodyType: Static
+    - type: MeleeSound
+      soundGroups:
+       Brute:
+        path:
+          "/Audio/Weapons/dodgeball.ogg"
+    - type: InteractionOutline
+    - type: PlaceableSurface
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/Props/pred_trophy_vend.rsi
+      state: pred_trophy_vendor_bottom_right
+
+- type: entity
+  parent: CMBaseStructure
+  id: PredTrophyVend3
+  name: трофейний стелаж
+  description: Автоматичний стелаж для збрегінання трофеїв.
+  components:
+    - type: VehicleSmashable
+    - type: Transform
+      anchored: false
+    - type: Physics
+      bodyType: Static
+    - type: MeleeSound
+      soundGroups:
+       Brute:
+        path:
+          "/Audio/Weapons/dodgeball.ogg"
+    - type: InteractionOutline
+    - type: PlaceableSurface
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/Props/pred_trophy_vend.rsi
+      state: pred_trophy_vendor_center
+
+- type: entity
+  parent: CMBaseStructure
+  id: PredTrophyVend4
+  name: трофейний стелаж
+  description: Автоматичний стелаж для збрегінання трофеїв.
+  components:
+    - type: VehicleSmashable
+    - type: Transform
+      anchored: false
+    - type: Physics
+      bodyType: Static
+    - type: MeleeSound
+      soundGroups:
+       Brute:
+        path:
+          "/Audio/Weapons/dodgeball.ogg"
+    - type: InteractionOutline
+    - type: PlaceableSurface
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/Props/pred_trophy_vend.rsi
+      state: pred_trophy_vendor_top_center
+
+- type: entity
+  parent: CMBaseStructure
+  id: PredTrophyVend5
+  name: трофейний стелаж
+  description: Автоматичний стелаж для збрегінання трофеїв.
+  components:
+    - type: VehicleSmashable
+    - type: Transform
+      anchored: false
+    - type: Physics
+      bodyType: Static
+    - type: MeleeSound
+      soundGroups:
+       Brute:
+        path:
+          "/Audio/Weapons/dodgeball.ogg"
+    - type: InteractionOutline
+    - type: PlaceableSurface
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/Props/pred_trophy_vend.rsi
+      state: pred_trophy_vendor_top_left
+
+- type: entity
+  parent: CMBaseStructure
+  id: PredTrophyVend6
+  name: трофейний стелаж
+  description: Автоматичний стелаж для збрегінання трофеїв.
+  components:
+    - type: VehicleSmashable
+    - type: Transform
+      anchored: false
+    - type: Physics
+      bodyType: Static
+    - type: MeleeSound
+      soundGroups:
+       Brute:
+        path:
+          "/Audio/Weapons/dodgeball.ogg"
+    - type: InteractionOutline
+    - type: PlaceableSurface
+    - type: Sprite
+      sprite: _Mriya/Hunter/Structures/Props/pred_trophy_vend.rsi
+      state: pred_trophy_vendor_top_right

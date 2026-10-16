@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: CMOperatingTable
+  id: HunterOperatingTable
+  name: операційний стіл
+  description: Використовується для складних медичних процедур.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Hunter/Structures/Machines/Medical/table.rsi
+    state: table
+    noRot: true
+  - type: Icon
+    sprite: _Mriya/Hunter/Structures/Machines/Medical/table.rsi
+    state: idle

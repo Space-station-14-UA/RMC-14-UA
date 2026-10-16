@@ -53,6 +53,8 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
         if (EntMan.TryGetComponent(Owner, out CMAutomatedVendorComponent? vendor))
             RebuildSections(vendor, EntMan.GetComponentOrNull<CMVendorUserComponent>(_player.LocalEntity));
 
+
+
         _window.Search.OnTextChanged += OnSearchChanged;
         Refresh();
     }

@@ -1,0 +1,17 @@
+- type: gameMap
+  id: MriyaHunterLeviathan
+  mapName: Левіафан Тіней
+  mapPath: /Maps/_Mriya/Hunter/Leviathan_of_the_Shadows.yml
+  minPlayers: 0
+  maxPlayers: 2
+  maxRandomOffset: 0
+  randomRotation: false
+  stations:
+    Leviathan:
+      stationProto: StandardUNMCWarship
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Левіафан Тіней'
+        - type: StationJobs
+          availableJobs:
+            MRHunter: [1, 1] # Наразі лише один тестовий мисливець 
