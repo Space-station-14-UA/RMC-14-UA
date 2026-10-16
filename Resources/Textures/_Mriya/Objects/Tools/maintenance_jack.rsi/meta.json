@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/master/icons/obj/items/tools.dmi, https://github.com/cmss13-devs/cmss13/blob/678d63ad96b75b1ac639436b2a9fdd7bd8009b70/icons/mob/humans/onmob/inhands/equipment/tools_lefthand.dmi, https://github.com/cmss13-devs/cmss13/blob/678d63ad96b75b1ac639436b2a9fdd7bd8009b70/icons/mob/humans/onmob/inhands/equipment/tools_righthand.dmi, https://github.com/cmss13-devs/cmss13/blob/c4bd5fb6834149adf299a152a0c838c723c102b9/icons/mob/humans/onmob/clothing/back/melee_weapons.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+},
+"states": [
+  {
+    "name": "maintenance_jack"
+  },
+{
+    "name": "maintenance_jack_flip"
+  },
+  {
+    "name": "maintenance_jack_left",
+    "directions": 4
+  },
+  {
+    "name": "maintenance_jack_right",
+    "directions": 4
+  },
+  {
+    "name": "maintenance_jack_equipped",
+    "directions": 4
+  }
+]
+}
