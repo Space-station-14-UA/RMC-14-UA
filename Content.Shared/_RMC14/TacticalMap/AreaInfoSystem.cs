@@ -1,5 +1,6 @@
 using Content.Shared._RMC14.Areas;
 using Content.Shared._RMC14.CCVar;
+using Content.Shared._RMC14.Xenonids.Eye; // Mriya. Для перевірки положення ока королеви
 using Content.Shared.Alert;
 using Content.Shared.Coordinates;
 using Content.Shared.Inventory;
@@ -85,7 +86,14 @@ public sealed class AreaInfoSystem : EntitySystem
 
         // TODO RMC14 make this client only?
         // update the alert when they move to a new area
-        if (GetAreaInfo(ent, true) is not { areaName: var areaName, ceilingLevel: var ceilingLevel, restrictions: var restrictions })
+        RefreshAreaInfo(ent, true); // Mriya. Була перевірка if (GetAreaInfo(ent, true) is not { areaName: var areaName, ceilingLevel: var ceilingLevel, restrictions: var restrictions })
+    }
+
+    // Mriya start. Публічний рефреш для виклику з QueenEyeSystem
+    public void RefreshAreaInfo(Entity<AreaInfoComponent> ent, bool checkMove)
+    {
+        if (GetAreaInfo(ent, checkMove) is not { areaName: var areaName, ceilingLevel: var ceilingLevel, restrictions: var restrictions })     
+    // Mriya end
             return;
 
         _alerts.ShowAlert(ent, ent.Comp.Alert,
@@ -96,9 +104,23 @@ public sealed class AreaInfoSystem : EntitySystem
                 ("restrictions", restrictions)));
     }
 
+    // Mriya start. Стеля по оку королеви, а не по нерухомому тілу
+    private EntityCoordinates GetEffectiveCoordinates(Entity<AreaInfoComponent> ent)
+    {
+        if (TryComp(ent.Owner, out QueenEyeActionComponent? queenEye) &&
+            queenEye.Eye is { } eye &&
+            !TerminatingOrDeleted(eye))
+        {
+            return eye.ToCoordinates();
+        }
+
+        return ent.Owner.ToCoordinates();
+    }
+    // Mriya end
+
     private (string areaName, short ceilingLevel, string restrictions)? GetAreaInfo(Entity<AreaInfoComponent> ent, bool checkMove)
     {
-        var coordinates = ent.Owner.ToCoordinates();
+        var coordinates = GetEffectiveCoordinates(ent); // Mriya. ent.Owner.ToCoordinates() в оригіналі
         if (!_area.TryGetArea(coordinates, out var area, out var areaProto))
             return (Loc.GetString("rmc-tacmap-alert-no-area"), 0, string.Empty);
 
