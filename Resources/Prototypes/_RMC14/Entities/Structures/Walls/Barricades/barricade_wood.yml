@@ -48,3 +48,15 @@
   - type: XenoCrusherChargable
     instantDestroy: true
   - type: Climbable
+  # Mriya start. Оновлення вогню.
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 3
+  - type: Flammability
+    flammability: 0.8
+    burnSupport: 0.85
+    burnDurationBonus: 25
+  # Mriya end

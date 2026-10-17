@@ -14,6 +14,12 @@
     damage:
       types:
         Heat: 1
+  # Mriya start. Оновлення вогню.
+  - type: Flammability
+    flammability: 0.95
+    burnSupport: 0.7
+    burnDurationBonus: 6
+  # Mriya end
   - type: FireVisuals
     sprite: Effects/fire.rsi
     normalState: fire
