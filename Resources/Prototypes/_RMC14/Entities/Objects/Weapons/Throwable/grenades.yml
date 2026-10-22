@@ -26,6 +26,23 @@
     thresholds: []
   - type: ChangeItemSizeOnTimerTrigger
   - type: CancelUseWithCloak
+  # Mriya start. Оновлення вогню.
+  - type: Flammable
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 2
+  - type: Flammability
+    flammability: 0.4
+    burnSupport: 0.3
+    burnDurationBonus: 4
+  - type: CookOff
+    minCookTime: 4
+    maxCookTime: 8
+    spawnFireAfter: false
+    extinguishFireAfter: true
+    extinguishRange: 2
+  # Mriya end
 
 - type: entity
   abstract: true
