@@ -1,0 +1,91 @@
+- type: entity
+  parent: BaseStructure
+  id: RMCATM
+  name: банкомат
+  description: Красива коробка з екраном, яка передбачає, що ви маєте гроші.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Mriya/Structures/Machines/atm.rsi
+    layers:
+    - state: icon
+    - state: unshaded
+      shader: unshaded
+      offset: "0,0.125"
+  - type: Icon
+    sprite: _Mriya/Structures/Machines/atm.rsi
+    state: icon
+  - type: ATM
+  - type: Clickable
+  - type: WallMount
+    arc: 360
+  - type: InteractionOutline
+  - type: ActivatableUI
+    key: enum.Content.Shared._Mriya.ATM.ATMUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.Content.Shared._Mriya.ATM.ATMUIKey.Key:
+        type: ATMBoundUserInterface
+
+- type: entity
+  parent: RMCGunCaseBase
+  id: RMCGunCase
+  name: кейс
+  description: Портативний кейс для перевезення замовлення.
+  components:
+  - type: RemoveOnlyStorage
+
+- type: entity
+  parent: RMCGunCase
+  id: RMCGunCaseMachete
+  name: кейс з мачете
+  description: Кейс із замовленим мачете та підсумком.
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCPouchMacheteFilled
+
+- type: entity
+  parent: RMCGunCase
+  id: RMCGunCaseFlamer
+  name: кейс з вогнеметом
+  description: Кейс із замовленим вогнеметом.
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCWeaponFlamer
+
+- type: entity
+  parent: RMCGunCase
+  id: RMCATMCaseM63
+  name: кейс ПК М63
+  description: Кейс із пістолетом-кулеметом М63 та трьома магазинами.
+  components:
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,10,1
+  - type: StorageFill
+    contents:
+    - id: WeaponSMGM63
+    - id: CMMagazineSMGM63
+      amount: 3
+
+- type: entity
+  parent: RMCGunCase
+  id: RMCATMCaseM4SPR
+  name: кейс гвинтівки М4СПГ
+  description: Кейс із бойовою гвинтівкою М4СПГ та чотирма магазинами.
+  components:
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,10,1
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleM4SPR
+    - id: CMMagazineRifleM4SPR
+      amount: 4
+
+
