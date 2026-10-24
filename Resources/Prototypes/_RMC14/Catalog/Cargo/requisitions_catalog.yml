@@ -283,6 +283,8 @@
         crate: RMCCrateMedicalFilled
       - cost: 1500
         crate: RMCCrateMedicalPill
+      - cost: 6000 # Mriya
+        crate: MRCrateMedicalDefibrillatorCivilian
     - name: Міномет
       entries:
       - cost: 6000

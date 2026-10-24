@@ -2,7 +2,7 @@
   parent: BaseItem
   id: XenoFruitBase
   abstract: true
-  name: смоляний плід
+  name: смоляний фрукт
   description: Плід, який не має існувати, але.
   placement:
     mode: SnapgridCenter
@@ -73,8 +73,8 @@
 - type: entity
   parent: XenoFruitBase
   id: XenoFruitLesser
-  name: lesser resin fruit
-  description: A strange green-ish fruit-looking thing.
+  name: малий смоляний фрукт
+  description: Дивна штука з смоли, яка схожа на зеленуватий фрукт.
   components:
   - type: XenoFruit
     itemState: fruit_lesser_item
@@ -91,7 +91,7 @@
 - type: entity
   parent: XenoFruitLesser
   id: XenoFruitGreater
-  name: greater resin fruit
+  name: великий смоляний фрукт
   components:
   - type: XenoFruit
     itemState: fruit_greater_item
@@ -112,8 +112,8 @@
 - type: entity
   parent: XenoFruitBase
   id: XenoFruitUnstable
-  name: unstable resin fruit
-  description: A strange turquoise fruit-looking thing.
+  name: нестабільний смоляний фрукт
+  description: Дивна штука з смоли, яка схожа на бірюзовий фрукт.
   components:
   - type: XenoFruit
     itemState: fruit_unstable_item
@@ -137,8 +137,8 @@
 - type: entity
   parent: XenoFruitBase
   id: XenoFruitSpore
-  name: spore resin fruit
-  description: A strange mushroom-looking thing, with small orange glowing sacs, bobbing on the weird stalks.
+  name: споровий смоляний фрукт
+  description: Дивна штука з смоли, яка схожа на гриб, з маленькими помаранчевими світяться мішечками, що погойдуються на дивних ніжках.
   components:
   - type: XenoFruit
     itemState: fruit_spore_item
@@ -160,8 +160,8 @@
 - type: entity
   parent: XenoFruitBase
   id: XenoFruitSpeed
-  name: alacrit resin fruit
-  description: A strange purple-ish fruit-looking thing.
+  name: алакрітовий смоляний фрукт
+  description: Дивна штука з смоли, яка схожа на фіолетовий фрукт.
   components:
   - type: XenoFruit
     itemState: fruit_speed_item
@@ -178,8 +178,8 @@
 - type: entity
   parent: XenoFruitBase
   id: XenoFruitPlasma
-  name: cruor resin fruit
-  description: A strange blue-ish fruit-looking thing.
+  name: круоровий смоляний фрукт
+  description: Дивна штука з смоли, яка схожа на синій фрукт.
   components:
   - type: XenoFruit
     itemState: fruit_plasma_item

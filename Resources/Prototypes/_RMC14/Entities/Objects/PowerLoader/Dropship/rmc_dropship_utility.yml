@@ -15,11 +15,11 @@
       all:
         RMCSkillPilot: 2
   - type: PowerLoaderAttachable
-    attachDelay: 7
+    attachDelay: 3.5 # Mriya. 7 в оригіналі
     attachableTypes:
     - RMCDropshipUtilityPoint
   - type: PowerLoaderDetachable
-    detachDelay: 7
+    detachDelay: 3.5 # Mriya. 7 в оригіналі
 
 - type: entity
   parent: RMCDropshipAttachmentUtility

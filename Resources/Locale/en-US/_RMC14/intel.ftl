@@ -140,7 +140,7 @@ rmc-intel-tech-ob-cluster-description = Кластерний боєприпас 
 rmc-intel-tech-wake-troops-name = Пробудження додаткових Бійців
 rmc-intel-tech-wake-troops-description = Пробуджує додатковий загін бійців для боротьби з будь-якими загрозами.
 rmc-intel-tech-wake-specialist-name = Пробудження додаткового Спеціаліста
-rmc-intel-tech-wake-specialist-description = Пробуджує додаткового спеціаліста для боротьби з будь-якими загрозами.
+rmc-intel-tech-wake-specialist-description = Пробуджує додаткового Спеціаліста для боротьби з будь-якими загрозами.
 rmc-intel-tech-nuclear-device-name = Nuclear Device
 rmc-intel-tech-nuclear-device-description = Purchase a nuclear device. Only purchasable 116 minutes into the operation. It's the only way to be sure.
 
@@ -156,6 +156,6 @@ rmc-intel-tech-announcement-ob-incendiary = Додаткова запальна 
 rmc-intel-tech-announcement-ob-cluster = Додаткова кластерна боєголовка для орбітального бомбардування була передана логістиці через АТСС.
 rmc-intel-tech-announcement-tier-3 = РІВЕНЬ ОЦІНКИ ЗАГРОЗИ ПІДВИЩЕНО ДО ТРЕТЬОГО РІВНЯ. Активи ТРЕТЬОГО РІВНЯ були авторизовані для врегулювання ситуації.
 rmc-intel-tech-announcement-wake-troops = З кріогенного сну виводяться додаткові бійці.
-rmc-intel-tech-announcement-wake-specialist = З кріогенного сну виводиться додатковий спеціаліст.
+rmc-intel-tech-announcement-wake-specialist = З кріогенного сну виводиться додатковий Спеціаліст.
 rmc-intel-tech-announcement-tier-4 = РІВЕНЬ ОЦІНКИ ЗАГРОЗИ ПІДВИЩЕНО ДО ЧЕТВЕРТОГО РІВНЯ. Активи ЧЕТВЕРТОГО РІВНЯ були авторизовані для врегулювання ситуації.
 rmc-intel-tech-announcement-nuclear-device = The deployment of Nuclear Ordnance has been authorized and will be delivered to the Requisitions Department via ASRS.

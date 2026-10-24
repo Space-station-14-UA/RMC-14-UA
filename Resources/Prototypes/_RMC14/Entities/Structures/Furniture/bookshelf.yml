@@ -2,6 +2,7 @@
   parent: Bookshelf
   id: RMCBookcase
   name: книжкова шафа
+  description: Як виходить з її назви – зазвичай наповнена книжками. Як давно ти тримав подібні штуки у руках? # Mriya
   components:
   # Mriya start. Можливість будувати на ньому
   - type: Tag
@@ -57,7 +58,7 @@
 - type: entity
   parent: RMCBookcase
   id: RMCBookcaseEngineering
-  name: книжкова шафа p інженерними посібниками
+  name: книжкова шафа з інженерними посібниками
 #  components:
 #  - type: StorageFill
 #    contents:

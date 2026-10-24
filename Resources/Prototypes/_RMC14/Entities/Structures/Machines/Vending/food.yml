@@ -6,6 +6,7 @@
   name: Стійка їжі КолМорТех
   description: Стійка з приготованою їжею та флягами. Призначена для харчування морпіхів.
   components:
+  - type: Corrodible # Mriya. Додано можливість плавити
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/food.rsi
   - type: CMAutomatedVendor

@@ -1,9 +1,15 @@
 - type: entity
   parent: BaseStructureDynamic
   id: RMCCanisterBase
-  name: canister
-  description: A gas canister.
+  name: газова каністра
+  description: Каністра з газом. Створена, щоб зберігати газ під високим тиском та вона це успішно робить!
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Sprite
     sprite: _RMC14/Structures/atmos.rsi
     state: yellow
@@ -27,7 +33,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 100 # Mriya. 150 в оригіналі
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -44,35 +50,35 @@
 - type: entity
   parent: RMCCanisterBase
   id: RMCCanisterGrey
-  name: canister (Air)
-  description: A gas canister.
+  name: газова каністра (Повітря)
+#  description: A gas canister. – Mriya
   components:
   - type: Sprite
-    state: grey 
+    state: grey
 
 - type: entity
   parent: RMCCanisterBase
   id: RMCCanisterBlack
-  name: canister (CO2)
-  description: A gas canister.
+  name: газова каністра (Вуглекислий Газ)
+#  description: A gas canister. – Mriya
   components:
   - type: Sprite
-    state: black 
-    
+    state: black
+
 - type: entity
   parent: RMCCanisterBase
   id: RMCCanisterBlue
-  name: canister (O2)
-  description: A gas canister.
+  name: газова каністра (Кисень)
+#  description: A gas canister. – Mriya
   components:
   - type: Sprite
     state: blue
-    
+
 - type: entity
   parent: RMCCanisterBase
   id: RMCCanisterRed
-  name: canister (N2)
-  description: A gas canister.
+  name: газова каністра (Азот)
+#  description: A gas canister. – Mriya
   components:
   - type: Sprite
     state: red
@@ -80,28 +86,28 @@
 - type: entity
   parent: RMCCanisterBase
   id: RMCCanisterOrange
-  name: canister (Phoron)
-  description: A gas canister.
+  name: газова каністра (Форон)
+#  description: A gas canister. – Mriya
   components:
   - type: Sprite
-    state: orange 
-    
+    state: orange
+
 - type: entity
   parent: RMCCanisterBase
   id: RMCCanisterRedWhite
-  name: canister (N2O)
-  description: A gas canister.
+  name: газова каністра (Закис Азоту)
+#  description: A gas canister. – Mriya
   components:
   - type: Sprite
     state: redws
-    
+
 # Broken
 - type: entity
   parent: RMCCanisterBase
   id: RMCCanisterBrokenBase
-  name: broken canister
-  description: A broken gas canister. Completely useless.
-  components:  
+  name: зламана газова каністра
+  description: Зламана каністра, яка колись могла зберігати газ. Абсолютно марна штука тепер...
+  components:
   - type: Sprite
     sprite: _RMC14/Structures/atmos.rsi
     state: yellow-1
@@ -110,7 +116,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 50 # Mriya. 100 в оригіналі
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]

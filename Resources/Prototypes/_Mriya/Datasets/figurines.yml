@@ -20,7 +20,7 @@
   id: MRFigurinesNich
   values:
     prefix: mriya-figurines-nich-
-    count: 6
+    count: 5
 
 - type: localizedDataset
   id: MRFigurinesShepit

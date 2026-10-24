@@ -18,9 +18,11 @@
     rounds: 400
     maxRounds: 400
   - type: PowerLoaderAttachable
+    attachDelay: 2.5 # Mriya. 5 в оригіналі
     attachableTypes:
     - RMCDropshipWeaponPoint
   - type: PowerLoaderDetachable
+    detachDelay: 2.5 # Mriya. 5 в оригіналі
   - type: PowerLoaderGrabbable
     virtualRight: RMCVirtualDropshipAmmoRight
     virtualLeft: RMCVirtualDropshipAmmoLeft

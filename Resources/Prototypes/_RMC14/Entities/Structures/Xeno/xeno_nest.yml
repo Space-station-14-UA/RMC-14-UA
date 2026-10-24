@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: XenoNest
   name: смоляний згусток
-  description: Це огидний, мерзенний, згусток липкої смоли що приклеяний до стіни.
+  description: Це огидний, мерзенний, згусток липкої смоли, який створений, щоб тримати когось на стіні.
   placement:
     mode: SnapgridCenter
     snap:

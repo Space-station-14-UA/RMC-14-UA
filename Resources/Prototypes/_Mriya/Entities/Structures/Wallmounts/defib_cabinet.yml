@@ -1,7 +1,7 @@
 # Ліниво взято з СМУ
 - type: entity
   parent: BaseItemCabinet
-  id: MRDefibrillatorCabinet
+  id: MMCDefibrillatorCabinet
   name: шафа для дефібрилятора
   description: "Настінна шафа для зберігання екстреного дефібрилятора для цивільних. Має напис: \"Тільки для екстреного використання немедичним персоналом.\""
   suffix: Мрія
@@ -54,8 +54,8 @@
     access: [["CMAccessMedical"]]
 
 - type: entity
-  parent: MRDefibrillatorCabinet
-  id: MRDefibrillatorCabinetFilled
+  parent: MMCDefibrillatorCabinet
+  id: MMCDefibrillatorCabinetFilled
   suffix: Мрія. Заповнено
   components:
   - type: ContainerFill
@@ -64,8 +64,8 @@
       - MRDefibrillatorCivilian
 
 - type: entity
-  parent: MRDefibrillatorCabinetFilled
-  id: MRDefibrillatorCabinetFilledUnlocked
+  parent: MMCDefibrillatorCabinetFilled
+  id: MMCDefibrillatorCabinetFilledUnlocked
   suffix: Мрія. Заповнено, Без Доступа
   components:
   - type: RemoveComponents
@@ -74,8 +74,8 @@
       access: [["CMAccessMedical"]]
 
 - type: entity
-  parent: MRDefibrillatorCabinet
-  id: MRDefibrillatorCabinetOpen
+  parent: MMCDefibrillatorCabinet
+  id: MMCDefibrillatorCabinetOpen
   suffix: Мрія. Відчинено
   components:
   - type: Openable

@@ -20,16 +20,3 @@
     contents:
     - id: MRSuitBioUNMC
     - id: MRHoodBioUNMC
-
-- type: entity
-  id: MRCrateRestrictedEquipmentResearchUpgrades
-  parent: CMCrateSecureSurgery
-  name: Ящик з модифікаціями для автодоків
-  description: За планом це повинен був бути комплект з відразу 4 різних покращень для систем автодоків, але 3 з них все ще у розробці, тож ви утримуєте 1 та обіцянку отримати інші 3, коли вони будуть готові! Можливість видаляти невідомі ембріони з тіла ваших бійців - це теж дуже корисно, чи не так?
-  components:
-  - type: StorageFill
-    contents:
-    #- id: RMCResearchUpgradeAutodocInternalBleeding – Soontm
-    #- id: RMCResearchUpgradeAutodocBrokenBone – Soontm
-    #- id: RMCResearchUpgradeAutodocOrganDamage – Soontm
-    - id: RMCResearchUpgradeAutodocLarvaExtraction

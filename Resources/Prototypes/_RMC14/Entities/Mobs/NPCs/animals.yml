@@ -177,14 +177,26 @@
 - type: entity
   parent: RMCMobRat
   id: RMCMobRatMilkyHybrisa
-  name: Milky
-  description: An escaped test rat from the Weston-Yamada Research Facility. Hope it doesn't have some sort of genetically engineered disease or something...
+  name: Мілкі
+  description: "Підослідний щур, який втік з дослідницького центру Вестон-Ямада. Сподівайтеся, що у нього немає якоїсь генетично модифікованої хвороби чи чогось такого... Має бірку: \"Якщо ви знайшли його не в лабораторії Ве-Я, то прохання передати його до найближчого представництва Вестон-Ямада за винагороду.\""
+  # Mriya, бо тваринки - це важливо
+  components:
+  - type: IntelRetrieveItemObjective
+    state: Active
+    value: 0.5 # але тваринка мала
+  # Mriya end
 
 - type: entity
   parent: RMCMobRatBrown
   id: RMCMobRatTimmyHybrisa
-  name: Old Timmy
-  description: An ancient looking rat from the old days of the colony.
+  name: Старий Тіммі
+  description: "Стародавній на вигляд пацюк з давніх часів колонії. Справжній символ, має бірку: \"Якщо ви знайшли його не в лабораторії Ве-Я, то прохання передати його до найближчого представництва Вестон-Ямада за винагороду.\""
+  # Mriya, бо тваринки - це важливо
+  components:
+  - type: IntelRetrieveItemObjective
+    state: Active
+    value: 0.5 # але тваринка мала
+  # Mriya end
 
 
 #-- Pets --
@@ -232,7 +244,7 @@
   parent: RMCMobCorgi
   id: CMMobWiggles
   name: Містер Віґґлз
-  description: Це цуценя коргі. О БОЖЕ, МІСТЕР ВІГГЛЗ! ВІН НАЙКРАЩИЙ!!!
+  description: "Це цуценя коргі. О БОЖЕ, МІСТЕР ВІГГЛЗ! ВІН НАЙКРАЩИЙ!!! Справжній символ, має бірку: \"Якщо ви знайшли його без супроводжуючого представника Вестон-Ямада, то прохання передати його до найближчого представництва Вестон-Ямада за винагороду.\""
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -261,6 +273,9 @@
   - type: WarpPoint
     follow: true
     location: Містер Віґґлз # Mriya, бо це назва
+  - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
+    state: Active
+    value: 1
 
 
 - type: entity
@@ -384,17 +399,20 @@
   parent: RMCMobCatCalico
   id: RMCMobOrion
   name: Оріон
-  description: Одомашнений звичайний кіт. На нашийнику написано «Оріон».
+  description: "Одомашнений звичайний кіт. На нашийнику написано «Оріон». Має бірку: \"Якщо ви знайшли його задалеко від дому, то прохання передати його до найближчого посту охорони колонії за винагороду.\""
   components:
   - type: WarpPoint
     follow: true
     location: Оріон # Mriya, бо це назва
+  - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
+    state: Active
+    value: 1
 
 - type: entity
   parent: RMCMobCat
   id: RMCMobGarry
   name: Ґаррі
-  description: Її хутро на вигляд й дотик схоже на оксамит, а хвіст час від часу сіпається.
+  description: "Її хутро на вигляд й дотик схоже на оксамит, а хвіст час від часу сіпається. Справжній символ, має бірку: \"Якщо ви знайшли його задалеко від медичного відділу, то прохання передати його назад за винагороду.\""
   components:
   - type: Grammar
     attributes:
@@ -403,30 +421,39 @@
   - type: WarpPoint
     follow: true
     location: Ґаррі # Mriya, бо це назва
+  - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
+    state: Active
+    value: 1
 
 - type: entity
   parent: RMCMobCat
   id: RMCMobBernard
-  name: Bernard
-  description: Also known as Bernie. Fond of potted plants and Space Carp flavored treats.
+  name: Бернард
+  description: "Також відомий як Берні. Любить рослини в горщиках та ласощі зі смаком космічного коропа. Справжній символ, має бірку: \"Якщо ви знайшли його задалеко від дому, то прохання повернути його туди за винагороду.\"" # Mriya. ТОДО: дізнатися, де він там
   components:
   - type: WarpPoint
     follow: true
-    location: Bernard
+    location: Бернард # Mriya, бо це назва
   - type: Grammar
     attributes:
       proper: true
       gender: male
+  - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
+    state: Active
+    value: 1
 
 - type: entity
   parent: RMCMobCat
   id: RMCMobButtons
-  name: Buttons
-  description: It's a cat, now in black!
+  name: Кнопочка # Mriya. Buttons в оригіналі, дослівний переклад, бо у нас так називають тварин
+  description: "Це кіт, тепер чорний! Справжній символ, має бірку: \"Якщо ви знайшли його задалеко від дому, то прохання повернути його туди за винагороду.\"" # Mriya. ТОДО: дізнатися, де він там
   components:
   - type: WarpPoint
     follow: true
-    location: Buttons
+    location: Кнопочка
+  - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
+    state: Active
+    value: 1
 
 # Spawners
 - type: entity

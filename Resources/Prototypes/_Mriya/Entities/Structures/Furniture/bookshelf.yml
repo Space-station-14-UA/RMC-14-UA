@@ -1,7 +1,7 @@
 # Для Саванни в кабінет КО
 - type: entity
   parent: RMCBookcase
-  id: MRBookcasePhilology
+  id: MMCBookcasePhilology
   name: книжкова шафа з мовними посібниками
   suffix: Мрія
   components:

@@ -2,7 +2,7 @@
   parent: CMBaseXenoStructure
   id: DoorXenoResin
   name: смоляні двері
-  description: Дивна чорна смола, що застигла у дуже дивній формі.
+  description: Дивний чорний слиз, що застиг у дуже дивній формі.
   placement:
     mode: SnapgridCenter
   components:
@@ -103,7 +103,7 @@
   parent: DoorXenoResin
   id: DoorXenoResinThick
   name: густі смоляні двері
-  description: Згущена смоля, що застигла у дивній формі.
+  description: Дивний згущений чорний слиз, що застиг у дуже дивній формі.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_resin_door.rsi
@@ -150,8 +150,8 @@
 - type: entity
   parent: DoorXenoResin
   id: DoorXenoResinWeedbound
-  name: weedbound resin door
-  description: That's a resin door, bound to weeds.
+  name: трав'яні смоляні двері
+  description: Дивний чорний слиз, який сильно пов'язаний з травою під ним, що застиг у дуже дивній формі.
   components:
   - type: GuideHelp
     guides:
@@ -178,8 +178,8 @@
 - type: entity
   parent: DoorXenoResinThick
   id: DoorXenoResinThickWeedbound
-  name: thick weedbound resin door
-  description: A thick resin door, bound to weeds.
+  name: густі трав'яні смоляні двері
+  description: Дивний згущений чорний слиз, який сильно пов'язаний з травою під ним, що застиг у дуже дивній формі.
   components:
   - type: GuideHelp
     guides:

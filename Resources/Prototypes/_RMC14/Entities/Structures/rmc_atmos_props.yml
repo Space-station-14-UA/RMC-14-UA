@@ -5,6 +5,12 @@
   name: portable air scrubber
   description: It scrubs, portably!
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Transform
   - type: Physics
     bodyType: Dynamic
@@ -35,7 +41,7 @@
         mask:
         - MachineMask
         layer:
-        - MobMask
+        - MachineLayer # Mriya. MobMask в оригіналі. Фікс колізії для будівництва на ньому
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Ambience/Objects/portable_scrubber.ogg
@@ -49,7 +55,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100 # Mriya. 300 в оригіналі
+        damage: 75 # Mriya. 300 в оригіналі, фактично тут 50% ксено
       behaviors:
         - !type:PlaySoundBehavior
           sound:
@@ -162,7 +168,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100 # Mriya. 300 в оригіналі
+        damage: 75 # Mriya. 300 в оригіналі, фактично тут 50% ксено
       behaviors:
         - !type:PlaySoundBehavior
           sound:
@@ -187,6 +193,12 @@
   name: space heater
   description: It's an electric space heater. It heats the room through radiation with electricity.
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: VehicleSmashable
   - type: Transform
   - type: Physics
@@ -215,7 +227,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100 # Mriya. 300 в оригіналі
+        damage: 75 # Mriya. 300 в оригіналі, фактично тут 50% ксено
       behaviors:
         - !type:PlaySoundBehavior
           sound:

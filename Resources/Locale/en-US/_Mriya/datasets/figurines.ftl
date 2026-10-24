@@ -8,8 +8,7 @@ mriya-figurines-nich-1 = ХАААРД Пуш.
 mriya-figurines-nich-2 = Де ти тут Бабу побачив?
 mriya-figurines-nich-3 = ВСІ НА МЕНЕ!
 mriya-figurines-nich-4 = ПУШ В ВЕРХ, НЄ-НЄ В НИЗ!
-mriya-figurines-nich-5 = Інваліди!
-mriya-figurines-nich-6 = Шість ящиків Бронебійних Ракєт.
+mriya-figurines-nich-5 = Шість ящиків Бронебійних Ракєт.
 
 mriya-figurines-shepit-1 = 3 магазини на смарт.
 mriya-figurines-shepit-2 = Ви чули приказку про ліхтарик на СмартГані?

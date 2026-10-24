@@ -310,3 +310,6 @@
   - type: WarpPoint # Mriya
     follow: true
     location: Малий Інкубатор
+  - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
+    state: Active
+    value: 1

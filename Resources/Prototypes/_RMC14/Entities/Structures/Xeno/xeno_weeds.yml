@@ -138,7 +138,7 @@
   parent: XenoWeeds
   id: XenoWeedsSource
   name: чорний вузол
-  description: Дивний, пульсуючий наріст
+  description: Дивний, пульсуючий наріст.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi
@@ -435,8 +435,8 @@
 - type: entity # TODO RMC14 sound
   parent: XenoHardyWeeds
   id: XenoHardyWeedsSource
-  name: hardy weed node
-  description: A weird, pulsating node
+  name: міцний чорний вузол вулика
+  description: Дивний, пульсуючий наріст.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_weeds.rsi

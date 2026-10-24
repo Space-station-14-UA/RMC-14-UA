@@ -108,8 +108,8 @@
 - type: entity
   parent: XenoStickyResin
   id: XenoStickyResinWeakWeedbound
-  name: weak sticky resin
-  description: A thin and weak layer of disgusting sticky slime.
+  name: слабка клейка смола
+  description: Тонкий і крихкий шар огидного липкого слизу
   components:
   - type: Sprite
     state: sticky_weak
@@ -120,8 +120,8 @@
 - type: entity
   parent: XenoBaseFloorResin
   id: XenoResinSpikes
-  name: resin spikes
-  description: A small cluster of bone spikes. Ouch.
+  name: кістяні шипи
+  description: Невелике скупчення гострих кістяних шипів. Ауч!
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_resin_spikes.rsi
