@@ -314,6 +314,25 @@ public sealed partial class CMDistressSignalRuleSystem
         if (rule.Result != null)
             return;
 
+        // Mriya. A strategic nuclear detonation can end in a stalemate or xeno victory, but never in a normal marine victory.
+        if (rule.MriyaNuclearDetonationStarted &&
+            result is DistressSignalRuleResult.MajorMarineVictory or DistressSignalRuleResult.MinorMarineVictory or DistressSignalRuleResult.AllDied)
+        {
+            if (result is DistressSignalRuleResult.MajorMarineVictory or DistressSignalRuleResult.MinorMarineVictory)
+            {
+                RefreshAlmayerMaps();
+                if (CheckAliveXenos(rule, Timing.CurTime))
+                    return;
+            }
+
+            rule.Result = DistressSignalRuleResult.AllDied;
+            rule.CustomRoundEndMessage = "mriya-nuke-round-end-stalemate";
+            if (!_roundEnd.IsRoundEndRequested())
+                _roundEnd.EndRound();
+
+            return;
+        }
+
         rule.Result = result;
         rule.CustomRoundEndMessage = customMessage;
 
