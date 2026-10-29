@@ -227,7 +227,7 @@
   components:
   - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
     normalSprite: _RMC14/Mobs/Xenonids/Hivelord/designer_hivelord.rsi
-    oldSprite: _Mriya/Mobs/OldXenonids/Hivelord/hivelord.rsi # Поки не маємо
+    oldSprite: _Mriya/Mobs/OldXenonids/Hivelord/designer_hivelord.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleDesigner

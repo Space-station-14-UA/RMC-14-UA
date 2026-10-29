@@ -62,7 +62,7 @@
     - ActionXenoDevolve
     tier: 3
     hudOffset: -0.15,0.05
-    oldHudOffset: 0,0.35 # Mriya. Старі/наші версії спрайтів
+    oldHudOffset: -0.2,0.35 # Mriya. Старі/наші версії спрайтів
     unlockAt: 1200 # Mriya. 20 хвилин. 15 (900) в оригіналі
   - type: XenoHeavy
   - type: XenoDevolve

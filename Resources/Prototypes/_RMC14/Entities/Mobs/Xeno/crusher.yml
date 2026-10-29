@@ -150,8 +150,8 @@
   suffix: Charger
   components:
   - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
-    normalSprite: _RMC14/Mobs/Xenonids/Crusher/crusher.rsi
-    oldSprite: _Mriya/Mobs/OldXenonids/Crusher/crusher.rsi # Поки не маємо
+    normalSprite: _RMC14/Mobs/Xenonids/Crusher/charger_crusher.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Crusher/charger_crusher.rsi
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Crusher/charger_crusher.rsi
   - type: MobThresholds
