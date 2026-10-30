@@ -184,7 +184,7 @@ public sealed partial class CMDistressSignalRuleSystem
 
     private void ApplyLastMarineEffects(TimeSpan time)
     {
-        if (_marineList.Count != 1)
+        if (_marineList.Count != 1 || !distress.LastMarineEffects) // Mriya. Contact
             return;
 
         var lastMarine = _marineList.Last();

@@ -1,0 +1,10 @@
+- type: entity
+  id: MRContactTerminal
+  parent: BaseStructure
+  name: anchor terminal
+  description: Stabilizes the field when activated.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Structures/Machines/console.rsi
+    state: console
+  - type: ContactTerminal
