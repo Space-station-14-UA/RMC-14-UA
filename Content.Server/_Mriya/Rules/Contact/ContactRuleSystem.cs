@@ -13,6 +13,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Random;
+using Content.Server._RMC14.Marines;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -27,6 +28,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
 
     public override void Initialize()
     {
@@ -69,7 +71,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         rule.Phase = ContactPhase.Deployed;
         rule.FieldEndsAt = time + rule.FieldStart;
         rule.NextWaveAt = time + rule.WaveInterval;
-        _marineAnnounce.AnnounceARESStaging(default, announcement, announcement: Loc.GetString("mriya-contact-deployed",
+        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-deployed",
             ("seconds", (int) rule.FieldStart.TotalSeconds)));
     }
 
@@ -146,7 +148,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             // TODO Mriya: NPC/HTN so they actually hunt marines
         }
 
-        _marineAnnounce.AnnounceARESStaging(default, announcement, announcement: (Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave))));
+        _marineAnnounce.AnnounceARESStaging(default, (Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave))));
     }
 
     private void EndContact(ContactRuleComponent comp, ContactResult result)
