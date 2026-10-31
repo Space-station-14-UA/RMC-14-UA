@@ -106,15 +106,15 @@
     - name: Додаткові Гранати
       entries:
       - id: CMGrenadeHighExplosive
-        name: М40 ФПП фугасні гранати (x6)
+        name: М40 ФПП фугасні гранати (х6)
         points: 40
         spawn: 6
       - id: RMCGrenadeIncendiary
-        name: М40 ВІРЗ запалювальні гранати (x6)
+        name: М40 ЗПП запалювальні гранати (х6)
         points: 40
         spawn: 6
       - id: RMCGrenadeWhitePhosphorusCompound
-        name: M40 CCDP Chemical Compound Grenades (x6)
+        name: М30 ХПП хімічні гранати (х6)
         points: 40
         spawn: 6
       - id: RMC40MMGrenadeM74AGMF
@@ -126,6 +126,16 @@
       - id: RMC40MMGrenadeM74AGMS
         points: 20
         spawn: 6
+      # Mriya start. ПВЕшні гранати для спеців
+      - id: RMCGrenade20mmHE
+        name: Л109А1 20мм фугасні граната (НЕ КИДАТИ) (х6)
+        points: 60
+        spawn: 6
+      - id: RMCGrenade20mmIncendiary
+        name: Л109А1 20мм запалювальні граната (НЕ КИДАТИ) (х6)
+        points: 60
+        spawn: 6
+      # Mriya end
       # -id: RMCElectroshockGrenadex6
       # points: 40
     - name: Додаткові Баки Для Вогнемету

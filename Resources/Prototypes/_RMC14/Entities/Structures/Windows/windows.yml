@@ -1,7 +1,12 @@
+# Mriya. Це звісно трохи анархія, але як є:
+# Корпусні (hull) мають власний базовий прототип, тож у них текст залишився лише в нього
+# Звичайні та армовані - ні, тому у них залишаються у кожної своя
 - type: entity
   abstract: true
   parent: CMBaseStructureCorrodible
   id: CMBaseWindowIndestructible
+  name: корпусне вікно # Mriya
+  description: Скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Воно було створене з екзотичних матеріалів, щоб запобігти пробоїнам корпусу. Тут не пройти. # Mriya
   placement:
     mode: SnapgridCenter
     snap:
@@ -74,8 +79,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: CMWindowReinforcedAlmayerHull
-  name: корпусне вікно
-  description: Скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Воно було створене з екзотичних матеріалів, щоб запобігти пробоїнам корпусу. Тут не пройти.
+#  name: корпусне вікно – Mriya
+#  description: Скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Воно було створене з екзотичних матеріалів, щоб запобігти пробоїнам корпусу. Тут не пройти. – Mriya
   components:
   - type: Corrodible
     isCorrodible: false
@@ -95,8 +100,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: RMCWindowReinforcedAIHull
-  name: hull window
-  description: A glass window with a special rod matrix inside a wall frame. This one was made out of exotic materials to prevent hull breaches. No way to get through here.
+#  name: hull window – Mriya
+#  description: A glass window with a special rod matrix inside a wall frame. This one was made out of exotic materials to prevent hull breaches. No way to get through here. – Mriya
   components:
   - type: Corrodible
     isCorrodible: false
@@ -114,8 +119,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: RMCWindowReinforcedAIHullBlack
-  name: hull window
-  description: A glass window with a special rod matrix inside a wall frame. This one was made out of exotic materials to prevent hull breaches. No way to get through here.
+#  name: hull window – Mriya
+#  description: A glass window with a special rod matrix inside a wall frame. This one was made out of exotic materials to prevent hull breaches. No way to get through here. – Mriya
   components:
   - type: Corrodible
     isCorrodible: false
@@ -204,8 +209,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: CMWindowReinforcedWhiteHull
-  name: корпусне вікно
-  description: Надміцне вікно, призначене для забезпечення безпеки досліджень. Воно було створене з екзотичних матеріалів, щоб запобігти пробоїнам корпусу. Тут не пройти.
+#  name: корпусне вікно – Mriya
+#  description: Надміцне вікно, призначене для забезпечення безпеки досліджень. Воно було створене з екзотичних матеріалів, щоб запобігти пробоїнам корпусу. Тут не пройти. – Mriya
   components:
   - type: Corrodible
     isCorrodible: false
@@ -401,8 +406,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: CMWindowWhiteColonyHull
-  name: hull window
-  description: A glass window. Light refracts incorrectly when looking through. It looks rather strong. No way to get through here.
+#  name: hull window – Mriya
+#  description: A glass window. Light refracts incorrectly when looking through. It looks rather strong. No way to get through here. – Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/colony_rwindow.rsi

@@ -36,7 +36,7 @@
         RMCSkillCqc: 2
         RMCSkillEndurance: 2
         RMCSkillFirearms: 1
-        RMCSkillFireman: 2
+        RMCSkillFireman: 3 # Mriya. 2 в оригіналі
         RMCSkillMedical: 1 # Mriya. 0 в оригіналі
         RMCSkillPolice: 2
     - type: JobPrefix

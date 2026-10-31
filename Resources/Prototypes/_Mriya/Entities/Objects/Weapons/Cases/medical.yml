@@ -1,0 +1,32 @@
+- type: entity
+  parent: RMCKitBase
+  id: MRKitMedical
+  name: набір сержанта-медика
+  description: Набір всього необхідного для ставання медиком, якщо ви раніше якось докотилися до посади лідера загону.
+  components:
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,9,1
+  - type: Sprite
+    sprite: _RMC14/Objects/Storage/procase_mini.rsi
+    layers:
+    - map: [ base ]
+      state: closed
+    - map: [ label ]
+      state: medic
+  - type: Icon
+    sprite: _RMC14/Objects/Storage/procase_mini.rsi
+    layers:
+    - map: [ base ]
+      state: closed
+    - map: [ label ]
+      state: medic
+  - type: StorageFill
+    contents:
+    - id: MRPamphletMedical
+    - id: RMCStethoscope
+    - id: CMDefibrillator
+    - id: RMCMedevacStretcherFolded
+    - id: CMSurgicalCaseFilled
+    - id: CMAdvFirstAidKitFilled

@@ -46,6 +46,11 @@
         points: 15
     - name: Додаткове Обладнання
       entries:
+      # Mriya start. ЛЗ-Медик вже тут
+      - id: MRKitMedical
+        points: 25
+        recommended: true
+      # Mria end
       - id: RMCWhistle
         points: 3
       - id: CMFireExtinguisherPortable
@@ -276,12 +281,16 @@
       entries:
       - id: RMCPouchAutoinjectorFill
         recommended: true
+      - id: RMCPouchReagentCanister # Mriya
+        recommended: true
       - id: RMCPouchFirstAidInjectors
         name: підсумок першої допомоги (багаторазові автоін'єктори)
       - id: RMCPouchFirstAidSplintsGauzeOintment
         name: підсумок першої допомоги (марля, мазь) # TODO RMC14 splints comma
       - id: RMCPouchFirstAidPills
         name: підсумок першої допомоги (пігулки)
+        recommended: true
+      - id: RMCPouchMedkit # Mriya
         recommended: true
       - id: RMCPouchFlareFilled
         name: підсумок для фаєрів (Повний)

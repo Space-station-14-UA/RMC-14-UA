@@ -41,7 +41,7 @@
         RMCSkillEndurance: 2
         RMCSkillEngineer: 1
         RMCSkillFirearms: 1
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillJtac: 2 # Mriya. 1 в оригіналі
         RMCSkillMedical: 1 # Mriya. 0 в оригіналі
         RMCSkillMeleeWeapons: 1

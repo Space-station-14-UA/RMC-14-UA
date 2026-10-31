@@ -1,0 +1,9 @@
+# Для приватності ксестер на Саванні
+- type: entity
+  parent: CMWindowUltraDirectional
+  id: MMCWindowUltraDirectionalUnmeltable
+  suffix: Мрія. Неплавибильне
+  components:
+  - type: RemoveComponents
+    components:
+    - type: Corrodible

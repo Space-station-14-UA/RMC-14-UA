@@ -57,8 +57,11 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                 {
                     Text = name,
                     TextAlign = Label.AlignMode.Right,
-                    HorizontalAlignment = HAlignment.Center,
-                    VerticalAlignment = VAlignment.Center,
+                    // Mriya start. Можливість, щоб кнопки розтягувалися разом з меню
+                    //HorizontalAlignment = HAlignment.Center,
+                    //VerticalAlignment = VAlignment.Center,
+                    HorizontalExpand = true,
+                    // Mria end
                     SizeFlagsStretchRatio = 1,
                     MinSize = new Vector2(340, 20),
                     ClipText = true,

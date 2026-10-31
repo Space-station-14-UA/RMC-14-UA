@@ -37,7 +37,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 600
+          damage: 150 # Mriya. 600 в оригіналі
         behaviors:
           - !type:DoActsBehavior
             acts: ["Destruction"]
@@ -56,8 +56,9 @@
   - type: MinimapColor
     color: "#8d2294ad"
   - type: ReceiverXenoClaws
-    maxHealth: 600
+    maxHealth: 150 # Mriya. 600 в оригіналі
     hitsToDestroy: 3
+    minimumClawStrength: Normal # Mriya. Sharp в компоненті
   - type: XenoLeapDestroyOnPass
     spawnPrototype: CMSheetMetal1
     amount: 2

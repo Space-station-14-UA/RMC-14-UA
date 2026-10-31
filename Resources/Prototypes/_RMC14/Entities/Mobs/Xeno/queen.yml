@@ -386,3 +386,6 @@
     isQueenEye: true
   - type: Visibility
     layer: 32770
+  - type: WarpPoint # Mriya. Відповідна назва
+    follow: true
+    location: Ксено – Око Королеви

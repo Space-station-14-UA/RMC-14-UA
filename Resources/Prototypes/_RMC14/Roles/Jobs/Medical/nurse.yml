@@ -31,7 +31,7 @@
         RMCSkillFirearms: 0
         RMCSkillMedical: 3
         RMCSkillSurgery: 2 # Mriya. 1 в оригіналі
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
     - type: RMCUserBulkyArmorIncapable
     - type: JobPrefix
       prefix: rmc-job-prefix-nurse

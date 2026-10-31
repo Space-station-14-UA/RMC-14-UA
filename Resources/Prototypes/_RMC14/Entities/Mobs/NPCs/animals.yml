@@ -272,7 +272,7 @@
     - HEAD
   - type: WarpPoint
     follow: true
-    location: Містер Віґґлз # Mriya, бо це назва
+    location: Тварина – Містер Віґґлз # Mriya, бо це назва
   - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
     state: Active
     value: 1
@@ -390,7 +390,7 @@
       gender: male
   - type: WarpPoint
     follow: true
-    location: Василь # Mriya, бо це назва
+    location: Тварина – Василь # Mriya, бо це назва
   - type: UserIFF # Mriya. Захист від власних турелей
     factions:
     - FactionMarine
@@ -403,7 +403,7 @@
   components:
   - type: WarpPoint
     follow: true
-    location: Оріон # Mriya, бо це назва
+    location: Тварина – Оріон # Mriya, бо це назва
   - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
     state: Active
     value: 1
@@ -420,7 +420,7 @@
       gender: female
   - type: WarpPoint
     follow: true
-    location: Ґаррі # Mriya, бо це назва
+    location: Тварина – Ґаррі # Mriya, бо це назва
   - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
     state: Active
     value: 1
@@ -433,7 +433,7 @@
   components:
   - type: WarpPoint
     follow: true
-    location: Бернард # Mriya, бо це назва
+    location: Тварина – Бернард # Mriya, бо це назва
   - type: Grammar
     attributes:
       proper: true
@@ -450,7 +450,7 @@
   components:
   - type: WarpPoint
     follow: true
-    location: Кнопочка
+    location: Тварина – Кнопочка
   - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
     state: Active
     value: 1
