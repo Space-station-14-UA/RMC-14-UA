@@ -1605,5 +1605,5 @@ entities:
       pos: 0.5,3.5
       parent: 1
     - type: WarpPoint
-      location: Аламо
+      location: Шатл – Аламо
 ...

@@ -33,7 +33,7 @@
         RMCSkillEndurance: 1
         RMCSkillEngineer: 3
         RMCSkillFirearms: 1
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillIntel: 1
         RMCSkillJtac: 4
         RMCSkillLeadership: 3

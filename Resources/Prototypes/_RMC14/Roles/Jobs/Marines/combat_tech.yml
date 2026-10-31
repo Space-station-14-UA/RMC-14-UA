@@ -40,10 +40,10 @@
         RMCSkillEndurance: 1
         RMCSkillEngineer: 3
         RMCSkillFirearms: 1
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillJtac: 1
         RMCSkillMedical: 1 # Mriya
-        RMCSkillVehicles: 1
+        RMCSkillVehicles: 2 # Mriya. 1 в оригіналі
     - type: CMVendorUser
       id: CMCombatTech
       points: 45

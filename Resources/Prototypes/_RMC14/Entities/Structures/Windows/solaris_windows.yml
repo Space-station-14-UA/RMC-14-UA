@@ -42,7 +42,7 @@
   parent: CMBaseWindow
   id: CMWindowSolaris
   name: вікно
-  description: Скляне вікно всередині стінної рами.
+  description: Скляне вікно. Воно виглядає тонким і крихким. Кілька ударів чим-небудь мають розбити його вщент.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/solaris_window.rsi
@@ -96,7 +96,7 @@
   parent: CMBaseWindow
   id: CMWindowSolarisReinforced
   name: армоване вікно
-  description: Скляне вікно. Внутрішня частина армована кількома загартованими матричними стрижнями вздовж основи. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
+  description: Скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/solaris_rwindow.rsi
@@ -152,8 +152,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: CMWindowSolarisHull
-  name: корпусне вікно
-  description: Скляне вікно. Щось підказує вам, що воно незнищенне. 
+#  name: корпусне вікно – Mriya
+  description: Скляне вікно. Щось підказує вам, що воно незнищенне.
   components:
   - type: Corrodible
     isCorrodible: false

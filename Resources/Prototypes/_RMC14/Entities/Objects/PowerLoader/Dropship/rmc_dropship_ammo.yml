@@ -336,9 +336,11 @@
   - type: DropshipFabricatorPrintable
     cost: 200
   - type: PowerLoaderAttachable
+    attachDelay: 2.5 # Mriya. 5 в оригіналі
     attachableTypes:
     - RMCDropshipUtilityPoint
   - type: PowerLoaderDetachable
+    detachDelay: 2.5 # Mriya. 5 в оригіналі
   - type: Appearance
   - type: RMCOrbitalDeployable
     deployPrototype: RMCSentryDropship

@@ -69,10 +69,7 @@
       - Marine
   - type: StaminaDamageOnHit
     damage: 100
-  - type: MeleeRequiresSkill # Щоб не могли бити нею
-    skills:
-      RMCSkillPolice: 3
-  - type: Skills
+  - type: MeleeRequiresSkill # Нею можуть бити лише синти 3-го покоління. ТОДО: зробити якось окреме приховане покоління для цієї істоти
     skills:
       RMCSkillPolice: 3
   - type: TacticalMapIcon
@@ -194,7 +191,7 @@
     - Synth
   - type: WarpPoint
     follow: true
-    location: Люнет
+    location: Тварина – Люнет
   - type: RemoveComponents
     components:
     - type: Destructible # Щоб не розривало на шмаття
@@ -232,7 +229,7 @@
       45: Critical
       50: Dead
   - type: WarpPoint
-    location: Нокс
+    location: Тварина – Нокс
   - type: UserIFF # Кішка мусить жити
     factions:
     - FactionMarine
@@ -260,7 +257,7 @@
   - type: Clothing
     equippedPrefix: item-cat2
   - type: WarpPoint
-    location: Люкс
+    location: Тварина – Люкс
 
 # Спавнера
 - type: entity

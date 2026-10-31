@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.2-fix-physics
   forkId: ""
   forkVersion: ""
-  time: 10/16/2026 23:48:27
+  time: 10/31/2026 04:31:03
   entityCount: 15611
 maps:
 - 1
@@ -55274,6 +55274,7 @@ entities:
     components:
     - type: MetaData
       desc: Тут наче описуються усілякі інженерні практики, по типу будування барикад... Але він виглядає так, ніби хтось пробував жувати його парою хеліцер. Нечитаємо...
+      name: пожований інженерний довідник
     - type: Transform
       pos: 117.75634,-9.595326
       parent: 1
@@ -82787,51 +82788,6 @@ entities:
       parent: 1
 - proto: CMWindowReinforcedAlmayerHull
   entities:
-  - uid: 7536
-    components:
-    - type: Transform
-      pos: -51.5,-15.5
-      parent: 1
-  - uid: 7537
-    components:
-    - type: Transform
-      pos: -50.5,-16.5
-      parent: 1
-  - uid: 7538
-    components:
-    - type: Transform
-      pos: -52.5,-10.5
-      parent: 1
-  - uid: 7539
-    components:
-    - type: Transform
-      pos: -55.5,-10.5
-      parent: 1
-  - uid: 7540
-    components:
-    - type: Transform
-      pos: -58.5,-10.5
-      parent: 1
-  - uid: 7541
-    components:
-    - type: Transform
-      pos: -61.5,-10.5
-      parent: 1
-  - uid: 7542
-    components:
-    - type: Transform
-      pos: -64.5,-17.5
-      parent: 1
-  - uid: 7543
-    components:
-    - type: Transform
-      pos: -65.5,-17.5
-      parent: 1
-  - uid: 7544
-    components:
-    - type: Transform
-      pos: -66.5,-17.5
-      parent: 1
   - uid: 7545
     components:
     - type: Transform
@@ -83011,26 +82967,6 @@ entities:
     components:
     - type: Transform
       pos: -26.5,20.5
-      parent: 1
-  - uid: 7581
-    components:
-    - type: Transform
-      pos: -55.5,-21.5
-      parent: 1
-  - uid: 7582
-    components:
-    - type: Transform
-      pos: -54.5,-21.5
-      parent: 1
-  - uid: 7583
-    components:
-    - type: Transform
-      pos: -57.5,-21.5
-      parent: 1
-  - uid: 7584
-    components:
-    - type: Transform
-      pos: -58.5,-21.5
       parent: 1
   - uid: 7585
     components:
@@ -83883,11 +83819,6 @@ entities:
     - type: Transform
       pos: -35.5,-8.5
       parent: 1
-  - uid: 7748
-    components:
-    - type: Transform
-      pos: 95.5,-29.5
-      parent: 1
   - uid: 7749
     components:
     - type: Transform
@@ -83961,16 +83892,6 @@ entities:
     components:
     - type: Transform
       pos: -11.5,-8.5
-      parent: 1
-  - uid: 7762
-    components:
-    - type: Transform
-      pos: 96.5,-29.5
-      parent: 1
-  - uid: 7763
-    components:
-    - type: Transform
-      pos: 94.5,-29.5
       parent: 1
   - uid: 7764
     components:
@@ -91400,6 +91321,67 @@ entities:
     - type: Transform
       pos: -60.5,14.5
       parent: 1
+- proto: MMCBookcasePhilology
+  entities:
+  - uid: 9071
+    components:
+    - type: Transform
+      pos: -25.5,-2.5
+      parent: 1
+    - type: StorageFill
+      contents:
+      - maxAmount: 1
+        amount: 1
+        orGroup: null
+        prob: 1
+        id: CMPamphletLanguageJapanese
+      - maxAmount: 1
+        amount: 1
+        orGroup: null
+        prob: 1
+        id: CMPamphletLanguageChinese
+      - maxAmount: 1
+        amount: 1
+        orGroup: null
+        prob: 1
+        id: CMPamphletLanguageGerman
+      - maxAmount: 1
+        amount: 1
+        orGroup: null
+        prob: 1
+        id: CMPamphletLanguageSpanish
+      - maxAmount: 1
+        amount: 1
+        orGroup: null
+        prob: 1
+        id: CMPamphletLanguageFrench
+      - maxAmount: 1
+        amount: 1
+        orGroup: null
+        prob: 1
+        id: CMPamphletLanguageSign
+      - maxAmount: 1
+        amount: 1
+        orGroup: null
+        prob: 1
+        id: MRPamphletLanguageEnglish
+- proto: MMCDefibrillatorCabinetFilled
+  entities:
+  - uid: 9072
+    components:
+    - type: Transform
+      pos: 36.5,7.5
+      parent: 1
+- proto: MMCDefibrillatorCabinetFilledUnlocked
+  entities:
+  - uid: 9073
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -62.5,11.5
+      parent: 1
+    missingComponents:
+    - AccessReader
 - proto: MMCDoubleDoorBlackLiaisonLocked
   entities:
   - uid: 9040
@@ -91598,6 +91580,29 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.5,78.5
       parent: 1
+- proto: MMCWindowUltraDirectionalUnmeltable
+  entities:
+  - uid: 7748
+    components:
+    - type: Transform
+      pos: 95.5,-29.5
+      parent: 1
+    missingComponents:
+    - Corrodible
+  - uid: 7762
+    components:
+    - type: Transform
+      pos: 96.5,-29.5
+      parent: 1
+    missingComponents:
+    - Corrodible
+  - uid: 7763
+    components:
+    - type: Transform
+      pos: 94.5,-29.5
+      parent: 1
+    missingComponents:
+    - Corrodible
 - proto: MMI
   entities:
   - uid: 9068
@@ -91618,65 +91623,6 @@ entities:
     components:
     - type: Transform
       pos: -18.5,136.5
-      parent: 1
-- proto: MRBookcasePhilology
-  entities:
-  - uid: 9071
-    components:
-    - type: Transform
-      pos: -25.5,-2.5
-      parent: 1
-    - type: StorageFill
-      contents:
-      - maxAmount: 1
-        amount: 1
-        orGroup: null
-        prob: 1
-        id: CMPamphletLanguageJapanese
-      - maxAmount: 1
-        amount: 1
-        orGroup: null
-        prob: 1
-        id: CMPamphletLanguageChinese
-      - maxAmount: 1
-        amount: 1
-        orGroup: null
-        prob: 1
-        id: CMPamphletLanguageGerman
-      - maxAmount: 1
-        amount: 1
-        orGroup: null
-        prob: 1
-        id: CMPamphletLanguageSpanish
-      - maxAmount: 1
-        amount: 1
-        orGroup: null
-        prob: 1
-        id: CMPamphletLanguageFrench
-      - maxAmount: 1
-        amount: 1
-        orGroup: null
-        prob: 1
-        id: CMPamphletLanguageSign
-      - maxAmount: 1
-        amount: 1
-        orGroup: null
-        prob: 1
-        id: MRPamphletLanguageEnglish
-- proto: MRDefibrillatorCabinetFilled
-  entities:
-  - uid: 9072
-    components:
-    - type: Transform
-      pos: 36.5,7.5
-      parent: 1
-- proto: MRDefibrillatorCabinetFilledUnlocked
-  entities:
-  - uid: 9073
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -62.5,11.5
       parent: 1
 - proto: MRFigurineAltra
   entities:
@@ -136059,6 +136005,73 @@ entities:
     - type: Transform
       pos: -31.5,127.5
       parent: 1
+- proto: RMCWindowReinforcedAlmayerHullHijackBustable
+  entities:
+  - uid: 7536
+    components:
+    - type: Transform
+      pos: -51.5,-15.5
+      parent: 1
+  - uid: 7537
+    components:
+    - type: Transform
+      pos: -50.5,-16.5
+      parent: 1
+  - uid: 7538
+    components:
+    - type: Transform
+      pos: -52.5,-10.5
+      parent: 1
+  - uid: 7539
+    components:
+    - type: Transform
+      pos: -55.5,-10.5
+      parent: 1
+  - uid: 7540
+    components:
+    - type: Transform
+      pos: -58.5,-10.5
+      parent: 1
+  - uid: 7541
+    components:
+    - type: Transform
+      pos: -61.5,-10.5
+      parent: 1
+  - uid: 7542
+    components:
+    - type: Transform
+      pos: -64.5,-17.5
+      parent: 1
+  - uid: 7543
+    components:
+    - type: Transform
+      pos: -65.5,-17.5
+      parent: 1
+  - uid: 7544
+    components:
+    - type: Transform
+      pos: -66.5,-17.5
+      parent: 1
+  - uid: 7581
+    components:
+    - type: Transform
+      pos: -55.5,-21.5
+      parent: 1
+  - uid: 7582
+    components:
+    - type: Transform
+      pos: -54.5,-21.5
+      parent: 1
+  - uid: 7583
+    components:
+    - type: Transform
+      pos: -57.5,-21.5
+      parent: 1
+  - uid: 7584
+    components:
+    - type: Transform
+      pos: -58.5,-21.5
+      parent: 1
 - proto: RMCWindowSPPHullWhite
   entities:
   - uid: 15551
@@ -136351,7 +136364,7 @@ entities:
       pos: 60.5,-18.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Казарми Чарлі-Дельта
+      location: Саванна – Казарми Чарлі-Дельта
   - uid: 15597
     components:
     - type: Transform
@@ -136359,7 +136372,7 @@ entities:
       pos: 60.5,3.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Казарми Альфа-Браво
+      location: Саванна – Казарми Альфа-Браво
   - uid: 15598
     components:
     - type: Transform
@@ -136367,7 +136380,7 @@ entities:
       pos: 89.5,-18.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Інженерний
+      location: Саванна – Інженерний
   - uid: 15599
     components:
     - type: Transform
@@ -136375,7 +136388,7 @@ entities:
       pos: 113.5,-7.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Евакуація
+      location: Саванна – Евакуація
   - uid: 15600
     components:
     - type: Transform
@@ -136383,35 +136396,35 @@ entities:
       pos: 89.5,6.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Генераторна
+      location: Саванна – Реакторна
   - uid: 15601
     components:
     - type: Transform
       pos: -6.5,-7.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Брифінг зала
+      location: Саванна – Брифінг зала
   - uid: 15602
     components:
     - type: Transform
       pos: 14.5,-8.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Ангар
+      location: Саванна – Ангар
   - uid: 15603
     components:
     - type: Transform
       pos: 33.5,2.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Медичний
+      location: Саванна – Медичний
   - uid: 15604
     components:
     - type: Transform
       pos: 46.5,116.5
       parent: 1
     - type: WarpPoint
-      location: Саванна - Лабораторії
+      location: Саванна – Лабораторія
 - proto: WarpPointBeacon
   entities:
   - uid: 15605
@@ -136423,7 +136436,7 @@ entities:
     - type: NavMapBeacon
       text: bridge
     - type: WarpPoint
-      location: Саванна - БІЦ
+      location: Саванна – БІЦ
   - uid: 15606
     components:
     - type: Transform
@@ -136433,7 +136446,7 @@ entities:
     - type: NavMapBeacon
       text: requisition
     - type: WarpPoint
-      location: Саванна - Постачання
+      location: Саванна – Постачання
   - uid: 15607
     components:
     - type: Transform
@@ -136443,7 +136456,7 @@ entities:
     - type: NavMapBeacon
       text: brig
     - type: WarpPoint
-      location: Саванна - Бріг
+      location: Саванна – Бріг
 - proto: WatermelonSeeds
   entities:
   - uid: 15608

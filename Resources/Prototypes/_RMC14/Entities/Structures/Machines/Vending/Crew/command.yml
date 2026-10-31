@@ -20,7 +20,7 @@
       takeAll: CMStandard
       entries:
       - id: CMBootsBlackFilled
-      - id: RMCHeadsetMarineCommand
+      - id: CMHeadsetSeniorCommand # Mriya. RMCHeadsetMarineCommand в оригіналі
       - id: CMMRE
     - name: Standard Equipment
       takeAll: CMUniform

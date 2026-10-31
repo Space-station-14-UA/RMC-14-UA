@@ -3,6 +3,7 @@
   id: CMSurvivor
   name: department-CMSurvivor
   description: cm-department-Survivor-description
+  editorHidden: true # Mriya. До повернення сурвів
   color: "#C38312"
   roles:
   - RMCSyntheticColony

@@ -39,7 +39,7 @@
         RMCSkillEndurance: 1
         RMCSkillEngineer: 2
         RMCSkillFirearms: 1
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillJtac: 3
         RMCSkillMedical: 1 # Mriya. 0 в оригіналі
     - type: CMVendorUser

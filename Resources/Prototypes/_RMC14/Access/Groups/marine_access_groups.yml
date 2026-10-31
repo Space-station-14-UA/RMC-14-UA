@@ -8,6 +8,7 @@
   - CMAccessMarinePrep
   - CMAccessSquadLeaderPrep
   - CMAccessDropship
+  - CMAccessMedical # Mriya. ЛЗ-Медик вже тут
 
 - type: accessGroup
   id: FTL

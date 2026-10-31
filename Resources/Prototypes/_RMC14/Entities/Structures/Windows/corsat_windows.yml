@@ -22,7 +22,7 @@
   parent: CMBaseWindow
   id: RMCWindowCorsatReinforced
   name: армоване вікно
-  description: Вікно зі скла, оснащене спеціальною стрижневою матрицею у стінній рамі. Виглядає доволі міцним. Можливо, знадобиться декілька сильних ударів, щоб розбити його.
+  description: Скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/corsat_rwindow.rsi
@@ -78,7 +78,7 @@
 - type: entity
   parent: RMCWindowCorsatReinforced
   id: RMCWindowCorsatReinforcedSecurity
-  description: A red tinted glass window with a special rod matrix inside a wall frame. It looks very strong.
+  description: Червоне скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/corsat_rwindow_sec.rsi
@@ -96,7 +96,7 @@
 - type: entity
   parent: RMCWindowCorsatReinforced
   id: RMCWindowCorsatReinforcedResearch
-  description: A purple tinted glass window with a special rod matrix inside a wall frame. It looks quite strong. Might take some good hits to shatter it.
+  description: Фіолетове скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/corsat_rwindow_sci.rsi
@@ -114,8 +114,8 @@
 - type: entity
   parent: CMBaseWindow
   id: RMCWindowCorsatHull
-  name: hull window
-  description: A glass window with a special rod matrix inside a wall frame. This one has an automatic shutter system to prevent any atmospheric breach.
+  name: корпусне вікно
+  description: Скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Воно було створене з екзотичних матеріалів, щоб запобігти пробоїнам корпусу. Тут не пройти.
   components:
   - type: Corrodible
     isCorrodible: false
