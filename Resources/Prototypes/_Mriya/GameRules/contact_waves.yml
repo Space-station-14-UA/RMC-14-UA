@@ -1,0 +1,36 @@
+- type: contactWaves
+  id: MRContactWavesDefault
+  spawns:
+  - proto: CMXenoDrone
+    startWave: 1
+    rate: 2
+    ratePerWave: 0.2
+    maxAlive: 15
+  - proto: CMXenoRunner
+    startWave: 5
+    rate: 0.5
+    ratePerWave: 0.1
+    maxAlive: 8
+  - proto: CMXenoDefender
+    startWave: 15
+    rate: 0.34
+    ratePerWave: 0.05
+    maxAlive: 4
+  - proto: CMXenoWarrior
+    startWave: 30
+    rate: 0.25
+    ratePerWave: 0.05
+    maxAlive: 3
+  buffs:
+  - wave: 20
+    health: 1.25
+    damage: 1.1
+  - wave: 40
+    health: 1.5
+    damage: 1.25
+  - wave: 60
+    health: 2
+    damage: 1.5
+  - wave: 80
+    health: 2.5
+    damage: 1.75

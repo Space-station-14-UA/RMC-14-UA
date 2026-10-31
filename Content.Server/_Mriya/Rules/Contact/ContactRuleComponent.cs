@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Content.Shared._Mriya.Rules.Contact;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -20,15 +21,12 @@ public sealed partial class ContactRuleComponent : Component
     [DataField]
     public int FinalWave = 100;
 
-    // TODO Mriya: replace with a wave prototype (wave range -> spawn table, hp/armor multipliers)
     [DataField]
-    public List<EntProtoId> WaveSpawns = new() { "CMXenoDrone" };
+    public ProtoId<ContactWavesPrototype> Waves = "MRContactWavesDefault";
 
+    /// <summary>Fractional spawn carry-over per Spawns entry index.</summary>
     [DataField]
-    public int BaseWaveSize = 2;
-
-    [DataField]
-    public float WaveSizePerWave = 0.5f;
+    public Dictionary<int, float> SpawnAccumulators = new();
 
     [DataField]
     public ContactPhase Phase = ContactPhase.Staging;
@@ -53,6 +51,18 @@ public sealed partial class ContactRuleComponent : Component
 
     [DataField]
     public float DropshipPreflightMinutes = 2;
+
+    [DataField]
+    public float DespawnRange = 100f;
+
+    [DataField]
+    public TimeSpan DespawnDelay = TimeSpan.FromSeconds(30);
+
+    [DataField]
+    public TimeSpan DespawnCheckEvery = TimeSpan.FromSeconds(5);
+
+    [DataField]
+    public TimeSpan? NextDespawnCheck;
 }
 
 [RegisterComponent, Access(typeof(ContactRuleSystem))]
