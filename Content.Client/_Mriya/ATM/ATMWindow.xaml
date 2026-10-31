@@ -1,0 +1,50 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                Title="Банкомат Вестон-Ямада"
+                Resizable="False"
+                MinWidth="640"
+                MinHeight="500">
+    <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#05130A" BorderColor="#0F3F22" BorderThickness="2"/>
+        </PanelContainer.PanelOverride>
+        <BoxContainer Orientation="Vertical" Margin="14" HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                <TextureRect Name="Logo" Stretch="KeepAspectCentered" MinSize="48 48" HorizontalAlignment="Center"/>
+                <Label Name="SloganLabel" Text="БУДУЄМО КРАЩІ СВІТИ" HorizontalAlignment="Center"/>
+                <Label Name="TerminalLabel" Text="АВТОМАТИЧНИЙ ТЕРМІНАЛ ПОСТАЧАННЯ" HorizontalAlignment="Center" Margin="0 16 0 0"/>
+                <Label Name="LinkLabel" Text="" HorizontalAlignment="Center"/>
+            </BoxContainer>
+            <PanelContainer Margin="0 8 0 0">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#0A2415" BorderColor="#0F3F22" BorderThickness="1"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Horizontal" Margin="8 4" HorizontalExpand="True">
+                    <Label Name="OperativeLabel" VerticalAlignment="Center"/>
+                    <Label Name="OperativeNameLabel" HorizontalExpand="True" VerticalAlignment="Center" Margin="6 0 0 0"/>
+                    <LineEdit Name="WithdrawAmount" Text="50" MinWidth="70" Margin="0 0 6 0"/>
+                    <Button Name="WithdrawButton" Text="ЗНЯТИ" Margin="0 0 6 0"/>
+                    <Label Name="BalanceLabel" MinWidth="90" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </BoxContainer>
+            </PanelContainer>
+            <BoxContainer Name="CategoryTabs" Orientation="Horizontal" Margin="0 12 0 0"/>
+            <BoxContainer Orientation="Horizontal" Margin="0 18 0 0" HorizontalExpand="True">
+                <Label Name="ItemNameLabel" HorizontalExpand="True" VerticalAlignment="Center" ClipText="True"/>
+                <Label Name="ItemPriceLabel" VerticalAlignment="Center" Margin="0 0 8 0"/>
+                <Button Name="BuyButton" Text="+ КУПИТИ"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" VerticalExpand="True" Margin="0 6 0 0">
+                <Button Name="PrevButton" Text="&lt;" VerticalAlignment="Center" MinWidth="30"/>
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" Margin="6 0">
+                    <PanelContainer.PanelOverride>
+                        <graphics:StyleBoxFlat BackgroundColor="#06180D" BorderColor="#0F3F22" BorderThickness="1"/>
+                    </PanelContainer.PanelOverride>
+                    <LayeredTextureRect Name="Preview" Stretch="KeepAspectCentered" Margin="8"/>
+                </PanelContainer>
+                <Button Name="NextButton" Text="&gt;" VerticalAlignment="Center" MinWidth="30"/>
+            </BoxContainer>
+            <Label Name="StatusLabel" Margin="0 6 0 0"/>
+        </BoxContainer>
+    </PanelContainer>
+</DefaultWindow>
