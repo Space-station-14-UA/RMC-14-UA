@@ -138,6 +138,18 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             }
         }
 
+        if (!component.AresPreflightDone && announcementTime >= _dropshipPreflight)
+        {
+            component.AresPreflightDone = true;
+
+            if (_aresCore.TryGetARES(component.MarineFaction, out var ares))
+            {
+                _marineAnnounce.AnnounceRadio(ares.Value,
+                    Loc.GetString("rmc-distress-signal-preflight-complete"),
+                    component.AllClearChannel);
+            }
+        }
+
         if (comp.Phase != ContactPhase.Deployed)
             return;
 
