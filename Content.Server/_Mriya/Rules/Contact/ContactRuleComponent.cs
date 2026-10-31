@@ -63,6 +63,9 @@ public sealed partial class ContactRuleComponent : Component
 
     [DataField]
     public TimeSpan? NextDespawnCheck;
+
+    [DataField]
+    public float SpawnRange = 150f;
 }
 
 [RegisterComponent, Access(typeof(ContactRuleSystem))]

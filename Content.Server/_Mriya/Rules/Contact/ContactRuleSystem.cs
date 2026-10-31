@@ -6,8 +6,6 @@ using Content.Server.RoundEnd;
 using Content.Shared._RMC14.Dropship;
 using Content.Shared._RMC14.Rules;
 using Content.Shared._RMC14.Spawners;
-using Content.Shared._RMC14.Xenonids;
-using Content.Shared._RMC14.Xenonids.Hive;
 using Content.Shared.Coordinates;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Interaction;
@@ -16,13 +14,11 @@ using Robust.Shared.Random;
 using Content.Server._RMC14.Marines;
 using Content.Shared._RMC14.Marines;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared._RMC14.CCVar;
 using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
 using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Prototypes;
@@ -39,7 +35,6 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
 {
     [Dependency] private readonly XenoHiveSystem _hive = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
@@ -48,8 +43,11 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private float? _savedPreflight;
+
+    private readonly List<MapCoordinates> _playerPositions = new();
 
     public override void Initialize()
     {
@@ -128,38 +126,6 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     {
         base.ActiveTick(uid, comp, gameRule, frameTime);
 
-        if (!component.AresGreetingDone && announcementTime >= component.AresGreetingDelay)
-        {
-            component.AresGreetingDone = true;
-
-            if (component.StartARESAnnouncements)
-                _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("rmc-distress-signal-ares-online"), component.AresGreetingAudio,"rmc-announcement-ares-online");
-        }
-
-        if (!component.AresMapDone && announcementTime >= component.AresMapDelay)
-        {
-            component.AresMapDone = true;
-
-            if (SelectedPlanetMap != null &&
-                component.StartARESAnnouncements &&
-                SelectedPlanetMap.Value.Comp.Announcement is { } announcement)
-            {
-                _marineAnnounce.AnnounceARESStaging(default, announcement, announcement: "rmc-announcement-ares-map");
-            }
-        }
-
-        if (!component.AresPreflightDone && announcementTime >= _dropshipPreflight)
-        {
-            component.AresPreflightDone = true;
-
-            if (_aresCore.TryGetARES(component.MarineFaction, out var ares))
-            {
-                _marineAnnounce.AnnounceRadio(ares.Value,
-                    Loc.GetString("rmc-distress-signal-preflight-complete"),
-                    component.AllClearChannel);
-            }
-        }
-
         if (comp.Phase != ContactPhase.Deployed)
             return;
 
@@ -201,17 +167,19 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             return;
         }
 
+        CollectPlayerPositions();
         // TODO Mriya: own spawn markers; reusing planet xeno spawn points for now
         var points = new List<EntityUid>();
-        var pointQuery = AllEntityQuery<XenoSpawnPointComponent>();
-        while (pointQuery.MoveNext(out var point, out _))
+        var pointQuery = AllEntityQuery<XenoSpawnPointComponent, TransformComponent>();
+        while (pointQuery.MoveNext(out var point, out _, out var xform))
         {
-            points.Add(point);
+            if (IsNearPlayer(_transform.GetMapCoordinates(point, xform), comp.SpawnRange))
+                points.Add(point);
         }
 
         if (points.Count == 0)
         {
-            Log.Error($"Contact wave {comp.Wave}: no spawn points");
+            Log.Warning($"Contact wave {comp.Wave}: no spawn points within {comp.SpawnRange} tiles of players");
             return;
         }
 
@@ -354,33 +322,12 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
 
     private void UpdateWaveMobDespawn(ContactRuleComponent comp, TimeSpan time)
     {
-        _playerPositions.Clear();
-        var players = EntityQueryEnumerator<ActorComponent, MobStateComponent, TransformComponent>();
-        while (players.MoveNext(out var uid, out _, out var mobState, out var xform))
-        {
-            if (_mobState.IsDead(uid, mobState) || HasComp<ContactWaveMobComponent>(uid))
-                continue;
+        CollectPlayerPositions();
 
-            _playerPositions.Add(_transform.GetMapCoordinates(uid, xform));
-        }
-
-        var rangeSq = comp.DespawnRange * comp.DespawnRange;
         var mobs = EntityQueryEnumerator<ContactWaveMobComponent, TransformComponent>();
         while (mobs.MoveNext(out var uid, out var mob, out var xform))
         {
-            var pos = _transform.GetMapCoordinates(uid, xform);
-            var near = false;
-            foreach (var player in _playerPositions)
-            {
-                if (player.MapId == pos.MapId &&
-                    (player.Position - pos.Position).LengthSquared() <= rangeSq)
-                {
-                    near = true;
-                    break;
-                }
-            }
-
-            if (near)
+            if (IsNearPlayer(_transform.GetMapCoordinates(uid, xform), comp.DespawnRange))
             {
                 mob.LonelySince = null;
                 continue;
@@ -390,5 +337,33 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             if (time - mob.LonelySince >= comp.DespawnDelay)
                 QueueDel(uid);
         }
+    }
+
+    private void CollectPlayerPositions()
+    {
+        _playerPositions.Clear();
+        var players = EntityQueryEnumerator<ActorComponent, MobStateComponent, TransformComponent>();
+        while (players.MoveNext(out var uid, out _, out var mobState, out var xform))
+        {
+            if (_mobState.IsDead(uid, mobState) || HasComp<ContactWaveMobComponent>(uid))
+                continue;
+
+            _playerPositions.Add(_transform.GetMapCoordinates(uid, xform));
+        }
+    }
+
+    private bool IsNearPlayer(MapCoordinates pos, float range)
+    {
+        var rangeSq = range * range;
+        foreach (var player in _playerPositions)
+        {
+            if (player.MapId == pos.MapId &&
+                (player.Position - pos.Position).LengthSquared() <= rangeSq)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
