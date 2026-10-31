@@ -21,4 +21,5 @@ mriya-contact-terminal-used = Цей термінал вже активован�
 mriya-contact-result-none = Раунд завершено.
 mriya-contact-result-fieldcollapsed = Поле колапсувало. Оперативники втрачені.
 mriya-contact-result-evacuated = Оперативники успішно евакуйовані!
+mriya-contact-result-marineslost = Усі оперативники на колонії загинули.
 mriya-contact-round-end-wave = Досягнута хвиля: {$wave}

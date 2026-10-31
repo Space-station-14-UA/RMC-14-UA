@@ -44,6 +44,12 @@ public sealed partial class ContactRuleComponent : Component
 
     [DataField]
     public int Wave;
+
+    [DataField]
+    public TimeSpan MarineCheckEvery = TimeSpan.FromSeconds(2);
+
+    [DataField]
+    public TimeSpan? NextMarineCheck;
 }
 
 [RegisterComponent, Access(typeof(ContactRuleSystem))]
@@ -64,5 +70,6 @@ public enum ContactResult : byte
 {
     None,
     FieldCollapsed,
+    MarinesLost,
     Evacuated,
 }

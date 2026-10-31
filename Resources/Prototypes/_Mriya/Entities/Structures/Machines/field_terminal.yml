@@ -1,7 +1,7 @@
 - type: entity
   id: MRContactTerminal
-  parent: BaseStructure
-  name: anchor terminal
+  parent: [ BaseMachinePowered, RMCConstructibleMachine ]
+  name: field terminal
   description: Stabilizes the field when activated.
   components:
   - type: Sprite

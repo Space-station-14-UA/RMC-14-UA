@@ -14,6 +14,9 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Random;
 using Content.Server._RMC14.Marines;
+using Content.Shared._RMC14.Marines;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -29,6 +32,8 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly RMCPlanetSystem _rmcPlanet = default!;
 
     public override void Initialize()
     {
@@ -71,6 +76,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         rule.Phase = ContactPhase.Deployed;
         rule.FieldEndsAt = time + rule.FieldStart;
         rule.NextWaveAt = time + rule.WaveInterval;
+        rule.NextMarineCheck = time + rule.MarineCheckEvery;
         _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-deployed",
             ("seconds", (int) rule.FieldStart.TotalSeconds)));
     }
@@ -112,6 +118,16 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         {
             EndContact(comp, ContactResult.FieldCollapsed);
             return;
+        }
+
+        if (time >= comp.NextMarineCheck)
+        {
+            comp.NextMarineCheck = time + comp.MarineCheckEvery;
+            if (!AnyMarineAliveOnPlanet())
+            {
+                EndContact(comp, ContactResult.MarinesLost);
+                return;
+            }
         }
 
         if (time >= comp.NextWaveAt)
@@ -171,5 +187,20 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         args.AddLine(Loc.GetString($"mriya-contact-result-{component.Result.ToString().ToLower()}"));
         args.AddLine(Loc.GetString("mriya-contact-round-end-wave", ("wave", component.Wave)));
         args.AddLine(string.Empty);
+    }
+
+    private bool AnyMarineAliveOnPlanet()
+    {
+        var marines = EntityQueryEnumerator<MarineComponent, MobStateComponent, TransformComponent>();
+        while (marines.MoveNext(out var uid, out _, out var mobState, out var xform))
+        {
+            if (_mobState.IsDead(uid, mobState))
+                continue;
+
+            if (_rmcPlanet.IsOnPlanet(xform.Coordinates))
+                return true;
+        }
+
+        return false;
     }
 }
