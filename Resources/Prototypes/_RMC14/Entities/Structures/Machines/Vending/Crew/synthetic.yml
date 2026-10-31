@@ -340,10 +340,19 @@
     - RMCJobSynthetic
     pointsType: ExperimentalTools
     sections:
-    - name: Experimental Tools
+    # Mriya start. Окрема категорія для технаря та кувалди, або можна було обрати лише 1. 
+    - name: Важкі інструменти
+      choices: { RMCSynthBreachingChoice: 1 }
       entries:
       - id: RMCSynthBreachingHammer
         points: 15
+      - id: CMMaintenanceJack
+        points: 15
+    - name: Експериментальні інструменти
+      entries:
+      - id: RMCWelderIndustrial
+        points: 15
+    # Mriya end
       - id: RMCDefibrillatorCompact
         points: 15
       - id: RMCVendorBundleCompactNailgunKit
