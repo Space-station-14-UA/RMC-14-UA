@@ -17,6 +17,10 @@ using Content.Server._RMC14.Marines;
 using Content.Shared._RMC14.Marines;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared._RMC14.CCVar;
+using Content.Shared.GameTicking;
+using Robust.Shared.Configuration;
+
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -34,6 +38,9 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly RMCPlanetSystem _rmcPlanet = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
+
+    private float? _savedPreflight;
 
     public override void Initialize()
     {
@@ -41,6 +48,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
 
         SubscribeLocalEvent<DropshipLandedOnPlanetEvent>(OnDropshipLanded);
         SubscribeLocalEvent<ContactTerminalComponent, ActivateInWorldEvent>(OnTerminalActivate);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
 
     private ContactRuleComponent? GetActiveRule()
@@ -109,6 +117,26 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     protected override void ActiveTick(EntityUid uid, ContactRuleComponent comp, GameRuleComponent gameRule, float frameTime)
     {
         base.ActiveTick(uid, comp, gameRule, frameTime);
+
+        if (!component.AresGreetingDone && announcementTime >= component.AresGreetingDelay)
+        {
+            component.AresGreetingDone = true;
+
+            if (component.StartARESAnnouncements)
+                _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("rmc-distress-signal-ares-online"), component.AresGreetingAudio,"rmc-announcement-ares-online");
+        }
+
+        if (!component.AresMapDone && announcementTime >= component.AresMapDelay)
+        {
+            component.AresMapDone = true;
+
+            if (SelectedPlanetMap != null &&
+                component.StartARESAnnouncements &&
+                SelectedPlanetMap.Value.Comp.Announcement is { } announcement)
+            {
+                _marineAnnounce.AnnounceARESStaging(default, announcement, announcement: "rmc-announcement-ares-map");
+            }
+        }
 
         if (comp.Phase != ContactPhase.Deployed)
             return;
@@ -202,5 +230,22 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         }
 
         return false;
+    }
+
+    protected override void Started(EntityUid uid, ContactRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        base.Started(uid, comp, gameRule, args);
+
+        _savedPreflight ??= _config.GetCVar(RMCCVars.RMCDropshipInitialDelayMinutes);
+        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, comp.DropshipPreflightMinutes);
+    }
+
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
+    {
+        if (_savedPreflight is not { } saved)
+            return;
+
+        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, saved);
+        _savedPreflight = null;
     }
 }

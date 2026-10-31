@@ -50,6 +50,9 @@ public sealed partial class ContactRuleComponent : Component
 
     [DataField]
     public TimeSpan? NextMarineCheck;
+
+    [DataField]
+    public float DropshipPreflightMinutes = 2;
 }
 
 [RegisterComponent, Access(typeof(ContactRuleSystem))]
