@@ -54,7 +54,6 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         base.Initialize();
 
         SubscribeLocalEvent<DropshipLandedOnPlanetEvent>(OnDropshipLanded);
-        SubscribeLocalEvent<ContactTerminalComponent, ActivateInWorldEvent>(OnTerminalActivate);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<ContactWaveMobComponent, GetMeleeDamageEvent>(OnWaveMobMeleeDamage);
     }
@@ -97,29 +96,17 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             ("seconds", (int) rule.FieldStart.TotalSeconds)));
     }
 
-    private void OnTerminalActivate(Entity<ContactTerminalComponent> ent, ref ActivateInWorldEvent args)
+    public bool TryActivateTerminal(out TimeSpan bonus)
     {
-        if (args.Handled)
-            return;
-
+        bonus = default;
         var rule = GetActiveRule();
         if (rule == null || rule.Phase != ContactPhase.Deployed)
-            return;
+            return false;
 
-        args.Handled = true;
-
-        if (ent.Comp.Activated)
-        {
-            _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-used"), ent, args.User);
-            return;
-        }
-
-        ent.Comp.Activated = true;
         rule.FieldEndsAt += rule.TerminalFieldBonus;
         rule.NextWaveAt -= rule.TerminalWaveReduction;
-
-        _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-activated",
-            ("seconds", (int) rule.TerminalFieldBonus.TotalSeconds)), ent, args.User);
+        bonus = rule.TerminalFieldBonus;
+        return true;
     }
 
     protected override void ActiveTick(EntityUid uid, ContactRuleComponent comp, GameRuleComponent gameRule, float frameTime)

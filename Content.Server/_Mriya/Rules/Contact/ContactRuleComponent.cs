@@ -68,13 +68,6 @@ public sealed partial class ContactRuleComponent : Component
     public float SpawnRange = 150f;
 }
 
-[RegisterComponent, Access(typeof(ContactRuleSystem))]
-public sealed partial class ContactTerminalComponent : Component
-{
-    [DataField]
-    public bool Activated;
-}
-
 public enum ContactPhase : byte
 {
     Staging,
