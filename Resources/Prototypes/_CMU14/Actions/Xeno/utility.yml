@@ -1,0 +1,88 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+# Utility xeno caste actions: Heatshield and Reaper.
+
+- type: entity
+  id: ActionXenoVomitBile
+  parent: ActionXenoBase
+  name: Кислотний плювок (40)
+  description: Загасіть союзника, палаючу землю або розсійте кислоту перед собою, і, якщо ви горите, ви створите завісу з вогню.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 8
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: xeno_spit
+  - type: TargetAction
+    range: 1.8
+    checkCanAccess: false
+  - type: EntityTargetAction
+    targetCheckCanInteract: false
+  - type: WorldTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Heatshield.XenoVomitBileActionEvent
+  - type: XenoActionPlasma
+    cost: 40
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoFleshHarvest
+  parent: ActionXenoBase
+  name: Збір плоті
+  description: Розірвіть тіло остаточно мертвого інкубатора, щоб зібрати плоть.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 5
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: reaper_flesh_harvest
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Reaper.XenoFleshHarvestActionEvent
+  - type: XenoActionPlasma
+    cost: 50
+  - type: ActionBlockIfResting
+  - type: ActionInRangeUnobstructed
+    range: 1.5
+
+- type: entity
+  id: ActionXenoFleshBloom
+  parent: ActionXenoBase
+  name: Цвітіння плоті
+  description: Витративши плоть, виростіть цвітіння, що сповільнює й отруює ворогів, а сестрам вулика відновлює здоров'я.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 25
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: reaper_flesh_bloom
+  - type: TargetAction
+    range: 7
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Reaper.XenoFleshBloomActionEvent
+  - type: ActionBlockIfResting
+  - type: ActionInRangeUnobstructed
+    range: 7
+
+- type: entity
+  id: CMUActionReaperRevive
+  parent: ActionXenoBase
+  name: Оживити ксеноса
+  description: Оживіть загиблу сестру вулика за 500 плоті. Почніть протягом трьох хвилин після смерті й утримуйте зв'язок дві хвилини. Плоть і перезарядка витрачаються одразу, навіть якщо ритуал перервано.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 600
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: reaper_carrion_mantle
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Reaper.CMUReaperReviveActionEvent
+  - type: ActionBlockIfResting
+  - type: ActionInRangeUnobstructed
+    range: 1.5

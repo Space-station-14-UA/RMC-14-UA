@@ -1,0 +1,37 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+- type: entity
+  parent: CMXenoDefender
+  id: CMUXenoDefenderHeatshield
+  description: ТОДО разом з спрайтами. # Mriya
+  suffix: CMU. Теплощитова
+  components:
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenonids/Defender/heatshield_defender.rsi
+  - type: Xeno
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoRegurgitate
+    - ActionXenoWatch
+    - ActionXenoTailSlam
+    - ActionXenoToggleCrest
+    - ActionXenoVomitBile
+    - ActionXenoSelfImmolate
+    - ActionXenoThermoregulation
+    - ActionXenoDevolve
+  - type: XenoStrain
+    name: cmu-xeno-heatshield-name
+    description: cmu-xeno-heatshield-description
+    popup: cmu-xeno-heatshield-popup
+  - type: XenoHeatshield
+  - type: CMArmor
+    xenoArmor: 25
+    explosionArmor: 50
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.75
+    baseSprintSpeed: 3.1
+  - type: XenoHidden
+  - type: RMCActionOrder
+    id: CMUXenoDefenderHeatshield
+  - type: RemoveComponents
+    components:
+    - type: XenoEvolution

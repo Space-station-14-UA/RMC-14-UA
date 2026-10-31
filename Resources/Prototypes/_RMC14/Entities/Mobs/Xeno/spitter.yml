@@ -60,6 +60,10 @@
     evolvesTo:
     - RMCXenoBoiler
     - CMXenoPraetorian
+    # Mriya start. Страйн СМУ: Ловчиця.
+    strains:
+    - CMUXenoSpitterVenator
+    # Mriya end
   - type: XenoSpit
   - type: XenoChargeSpit
   - type: XenoScatteredSpit

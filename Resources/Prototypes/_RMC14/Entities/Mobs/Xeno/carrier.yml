@@ -12,8 +12,10 @@
   abstract: true
   components:
   - type: CanBuildThickFromConstructNode
-  - type: GhostRole
-    name: cm-job-name-xeno-carrier
+  # Mriya start. Ксени роздаються через чергу ларв, тому ґост-роль не потрібна. Апстрім прибрав цей блок у 1eedffbd06, але саме тут його пропустив.
+  # - type: GhostRole
+  #   name: cm-job-name-xeno-carrier
+  # Mriya end
   - type: MobState
     allowedStates:
     - Alive
@@ -153,6 +155,11 @@
     - ActionXenoDevolve
   - type: XenoParasiteThrower
   - type: XenoEvolution
+    # Mriya start. Еволюція у Могильницю, касту третього рівня зі СМУ.
+    max: 500
+    evolvesTo:
+    - CMUXenoReaper
+    # Mriya end
     strains:
     - RMCXenoCarrierEggsac
   - type: RMCActionOrder

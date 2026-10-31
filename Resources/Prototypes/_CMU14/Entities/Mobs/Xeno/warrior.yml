@@ -1,0 +1,46 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+- type: entity
+  parent: CMXenoWarrior
+  id: CMUXenoWarriorBulwark
+  description: ТОДО разом з спрайтами. # Mriya
+  suffix: CMU. Бастіон
+  components:
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenonids/Warrior/bulwark_warrior.rsi
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.RMCDamageVisualLayers.Base" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Left" ]
+      visible: false
+    - map: [ "enum.XenoInhandVisualLayers.Right" ]
+      visible: false
+    - map: [ "enum.XenoBulwarkVisualLayers.Shield" ]
+      state: shield
+      visible: false
+  - type: Xeno
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoRegurgitate
+    - ActionXenoWatch
+    - ActionXenoTailStab
+    - ActionXenoEncasedPlates
+    - ActionXenoPlateBash
+    - ActionXenoBulwarkTailSwing
+    - ActionXenoReflectiveShield
+    - ActionXenoDevolve
+  - type: XenoStrain
+    name: cmu-xeno-bulwark-name
+    description: cmu-xeno-bulwark-description
+    popup: cmu-xeno-bulwark-popup
+  - type: XenoBulwark
+  - type: Tackle
+    min: 4
+    max: 5
+  - type: XenoHidden
+  - type: RMCActionOrder
+    id: CMUXenoWarriorBulwark
+  - type: RemoveComponents
+    components:
+    - type: XenoEvolution
