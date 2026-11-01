@@ -161,6 +161,18 @@
         type: RMCConstructionBui
   - type: CampfireFuel
     fuelAmount: 1
+  # Mriya start. Оновлення вогню.
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 2
+  - type: Flammability
+    flammability: 0.85
+    burnSupport: 0.9
+    burnDurationBonus: 20
+  # Mriya end
 
 - type: entity
   parent: RMCPlankWood
