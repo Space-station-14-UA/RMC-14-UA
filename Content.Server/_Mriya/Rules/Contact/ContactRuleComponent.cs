@@ -66,6 +66,9 @@ public sealed partial class ContactRuleComponent : Component
 
     [DataField]
     public float SpawnRange = 150f;
+
+    [DataField]
+    public int LastBuffWave;
 }
 
 public enum ContactPhase : byte

@@ -155,6 +155,13 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             return;
         }
 
+        var buff = GetBuff(waves, comp.Wave);
+        if (buff != null && buff.Wave != comp.LastBuffWave)
+        {
+            comp.LastBuffWave = buff.Wave;
+            AnnounceBuff(buff);
+        }
+
         CollectPlayerPositions();
         // TODO Mriya: own spawn markers; reusing planet xeno spawn points for now
         var points = new List<EntityUid>();
@@ -172,7 +179,6 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         }
 
         var hive = GetDistressHive();
-        var buff = GetBuff(waves, comp.Wave);
 
         for (var i = 0; i < waves.Spawns.Count; i++)
         {
@@ -195,6 +201,17 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         }
 
         _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
+    }
+
+    private void AnnounceBuff(ContactWaveBuffEntry buff)
+    {
+        var msg = buff.Announcement is { } custom
+            ? Loc.GetString(custom)
+            : Loc.GetString("mriya-contact-buff",
+                ("health", (int) MathF.Round((buff.Health - 1f) * 100)),
+                ("damage", (int) MathF.Round((buff.Damage - 1f) * 100)));
+
+        _marineAnnounce.AnnounceARESStaging(default, msg);
     }
 
     private static ContactWaveBuffEntry? GetBuff(ContactWavesPrototype waves, int wave)

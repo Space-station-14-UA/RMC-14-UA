@@ -50,6 +50,12 @@ public sealed partial class ContactWaveSpawnEntry
     /// </summary>
     [DataField]
     public int MaxAlive = -1;
+
+    /// <summary>
+    /// Custom announcement for this tier. Null = generic message with percentages.
+    /// </summary>
+    [DataField]
+    public LocId? Announcement;
 }
 
 [DataDefinition]

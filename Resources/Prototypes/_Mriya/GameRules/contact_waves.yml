@@ -23,10 +23,11 @@
     maxAlive: 3
   buffs:
   - wave: 20
-    health: 1.25
+    health: 1.25 # + 25% from BASE
     damage: 1.1
+    # announcement: pruvit
   - wave: 40
-    health: 1.5
+    health: 1.5 # + 50% from BASE, not from 125%
     damage: 1.25
   - wave: 60
     health: 2

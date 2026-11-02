@@ -3,6 +3,7 @@ mriya-contact-description = Утримуйте поле, активуйте як
 
 mriya-contact-deployed = Висадка завершена. Поле стабільне ще {$seconds} секунд - активуйте термінали!
 mriya-contact-wave-started = Хвиля {$wave}!
+mriya-contact-buff = Увага! Біосигнатури противника посилюються: живучість +{$health}%, шкода +{$damage}%.
 mriya-contact-terminal-activated = Термінал активовано: +{$seconds} с до поля.
 mriya-contact-terminal-used = Цей термінал вже активовано.
 
