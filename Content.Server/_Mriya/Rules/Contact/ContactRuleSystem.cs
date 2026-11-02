@@ -24,6 +24,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using System.Linq;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -352,5 +353,10 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         }
 
         return false;
+    }
+
+    public bool CanActivateTerminal()
+    {
+        return GetActiveRule() is { Phase: ContactPhase.Deployed };
     }
 }

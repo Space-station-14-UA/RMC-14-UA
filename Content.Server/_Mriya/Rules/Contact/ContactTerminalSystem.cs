@@ -5,6 +5,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 using Content.Shared._RMC14.Areas;
+using Content.Shared._Mriya.Rules.Contact;
+using Content.Shared.DoAfter;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -21,7 +23,7 @@ public sealed class ContactTerminalSystem : EntitySystem
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
     [Dependency] private readonly ContactRuleSystem _contact = default!;
     [Dependency] private readonly AreaSystem _area = default!;
-
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     private static readonly LocId[] Phonetic =
     {
         "mriya-contact-phonetic-alpha", "mriya-contact-phonetic-bravo", "mriya-contact-phonetic-charlie",
@@ -43,6 +45,7 @@ public sealed class ContactTerminalSystem : EntitySystem
         SubscribeLocalEvent<ContactTerminalComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ContactTerminalComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeLocalEvent<ContactTerminalComponent, ContactTerminalDoAfterEvent>(OnDoAfter);
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -89,6 +92,38 @@ public sealed class ContactTerminalSystem : EntitySystem
 
         args.Handled = true;
 
+        if (ent.Comp.Activated)
+        {
+            _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-used"), ent, args.User);
+            return;
+        }
+
+        if (!_contact.CanActivateTerminal())
+        {
+            _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-offline"), ent, args.User);
+            return;
+        }
+
+        var doAfter = new DoAfterArgs(EntityManager, args.User, ent.Comp.ActivateDelay, new ContactTerminalDoAfterEvent(), ent, ent)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            NeedHand = true,
+            DuplicateCondition = DuplicateConditions.SameEvent,
+        };
+
+        if (_doAfter.TryStartDoAfter(doAfter))
+            _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-start"), ent, args.User);
+    }
+
+    private void OnDoAfter(Entity<ContactTerminalComponent> ent, ref ContactTerminalDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        args.Handled = true;
+
+        // someone else may have finished first
         if (ent.Comp.Activated)
         {
             _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-used"), ent, args.User);

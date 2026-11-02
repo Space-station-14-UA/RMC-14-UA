@@ -22,8 +22,11 @@ public sealed partial class ContactTerminalComponent : Component
     /// Time until the terminal can be activated again. Null = one-shot.
     /// </summary>
     [DataField]
-    public TimeSpan? Cooldown = 120;
+    public TimeSpan? Cooldown = TimeSpan.FromSeconds(120);
 
     [DataField]
     public TimeSpan? ReactivateAt;
+
+    [DataField]
+    public TimeSpan ActivateDelay = TimeSpan.FromSeconds(5);
 }
