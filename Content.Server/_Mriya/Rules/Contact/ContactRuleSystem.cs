@@ -196,7 +196,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
 
             for (var j = 0; j < count; j++)
             {
-                SpawnWaveMob(entry.Proto, _random.Pick(points), hive, buff);
+                SpawnWaveMob(entry, _random.Pick(points), hive, buff);
             }
         }
 
@@ -239,14 +239,15 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         return count;
     }
 
-    private void SpawnWaveMob(EntProtoId proto, EntityUid point, EntityUid? hive, ContactWaveBuffEntry? buff)
+    private void SpawnWaveMob(ContactWaveSpawnEntry entry, EntityUid point, EntityUid? hive, ContactWaveBuffEntry? buff)
     {
-        var mob = SpawnAtPosition(proto, point.ToCoordinates());
+        var mob = SpawnAtPosition(entry.Proto, point.ToCoordinates());
         if (hive != null)
             _hive.SetHive(mob, hive.Value);
 
         var waveMob = EnsureComp<ContactWaveMobComponent>(mob);
-        waveMob.Proto = proto;
+        waveMob.Proto = entry.Proto;
+        waveMob.Reward = entry.Reward;
 
         if (buff == null)
             return;

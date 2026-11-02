@@ -1,0 +1,111 @@
+# default
+
+- type: contactStoreEntry
+  id: MRContactStoreMK80
+  proto: RMCMK80
+  category: MRContactStoreShortArms
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreM1984
+  proto: CMWeaponPistolM1984
+  category: MRContactStoreShortArms
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreM63
+  proto: RMCWeaponSMGM63ExtendedFilled
+  category: MRContactStoreShortArms
+  price: 200
+
+- type: contactStoreEntry
+  id: MRContactStoreType64
+  proto: RMCWeaponSMGType64
+  category: MRContactStoreShortArms
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreHandcannonWinterWyvern
+  proto: RMCWeaponPistolHandcannonWinterWyvern
+  category: MRContactStoreShortArms
+  price: 200
+
+- type: contactStoreEntry
+  id: MRContactStoreM13
+  proto: RMCWeaponPistolM13
+  category: MRContactStoreShortArms
+  price: 200
+
+# bad 
+
+- type: contactStoreEntry
+  id: MRContactStoreFP9000
+  proto: RMCWeaponSMGFP9000
+  category: MRContactStoreShortArms
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreMAC15
+  proto: WeaponSMGMAC15
+  category: MRContactStoreShortArms
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreMP5
+  proto: WeaponSMGMP5
+  category: MRContactStoreShortArms
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreMP5Alt
+  proto: RMCWeaponSMGMP5Alt
+  category: MRContactStoreShortArms
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreMP27
+  proto: RMCWeaponSMGMP27
+  category: MRContactStoreShortArms
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreNailgun
+  proto: WeaponNailgun
+  category: MRContactStoreShortArms
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreType19
+  proto: RMCWeaponSMGType19
+  category: MRContactStoreShortArms
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreUzi
+  proto: RMCWeaponSMGUZI
+  category: MRContactStoreShortArms
+  price: 50
+
+# better t1
+
+# better t2
+
+- type: contactStoreEntry
+  id: MRContactStoreL7A3
+  proto: RMCWeaponSMGL7A3
+  category: MRContactStoreShortArms
+  price: 400
+
+- type: contactStoreEntry
+  id: MRContactStoreM63B2
+  proto: RMCWeaponSMGM63B2
+  category: MRContactStoreShortArms
+  price: 400
+
+- type: contactStoreEntry
+  id: MRContactStorePDW90
+  proto: RMCWeaponSMGPDW90TSE
+  category: MRContactStoreShortArms
+  price: 400
+
+# better t3

@@ -48,3 +48,49 @@ mriya-contact-phonetic-whiskey = Віскі
 mriya-contact-phonetic-xray = Ікс-рей
 mriya-contact-phonetic-yankee = Янкі
 mriya-contact-phonetic-zulu = Зулу
+
+mriya-contact-points-gain = +{$amount} є-балів
+mriya-contact-points-gain-reason = +{$amount} є-балів ({$reason})
+mriya-contact-points-reason-kill = вбивство
+mriya-contact-points-reason-heal = лікування
+mriya-contact-points-reason-revive = реанімація
+mriya-contact-points-reason-terminal = якір
+
+mriya-contact-store-title = Термінал постачання
+mriya-contact-store-balance = Баланс: {$balance} є-балів
+mriya-contact-store-price = {$price} є-бал
+mriya-contact-store-not-enough = Недостатньо є-балів.
+mriya-contact-store-none = -
+mriya-contact-store-resupply = Поповнити
+mriya-contact-store-kit-full = Набір повний
+
+mriya-contact-store-tab-for-you = Для вас
+mriya-contact-store-tab-ammo = Набої
+mriya-contact-store-tab-long = Довгоствольна
+mriya-contact-store-tab-short = Короткоствольна
+mriya-contact-store-tab-melee = Холодна
+mriya-contact-store-tab-special = Спецспорядження
+mriya-contact-store-tab-medicine = Медицина
+mriya-contact-store-tab-armor = Броня
+mriya-contact-store-tab-clothing = Одяг
+mriya-contact-store-tab-accessories = Аксесуари
+mriya-contact-store-tab-engineering = Інженерія
+
+mriya-contact-store-section-ammo = Набої до вашої зброї
+mriya-contact-store-section-quick = Швидка медицина
+mriya-contact-store-section-kits = Поповнення наборів
+
+mriya-contact-store-left-equipment = Спорядження
+mriya-contact-store-left-hands = У руках
+mriya-contact-store-left-ammo = Магазини
+mriya-contact-store-left-mags = x{$count} ({$rounds} наб.)
+mriya-contact-store-left-wounds = Статус
+mriya-contact-store-left-no-wounds = Без поранень
+
+mriya-contact-store-left-title = Оперативник
+mriya-contact-store-folders = Папки
+mriya-contact-store-footer = ЛКМ  ВИБРАТИ  .....  х1/х5/х10  КУПИТИ  .....  ESC  НАЗАД
+mriya-contact-store-tab-accessories = Модулі
+mriya-contact-store-filter-all = Усі
+mriya-contact-store-filter-compatible = Сумісні
+mriya-contact-store-filter-empty = Немає сумісного з вашою зброєю.

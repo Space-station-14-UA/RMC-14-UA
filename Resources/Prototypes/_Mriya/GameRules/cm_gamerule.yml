@@ -55,6 +55,12 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ContactRule
+  - type: ContactEconomy
+    killReward: 5
+    healReward: 3
+    healStep: 20
+    reviveReward: 25
+    terminalReward: 15
  
 - type: gamePreset
   id: MRContact

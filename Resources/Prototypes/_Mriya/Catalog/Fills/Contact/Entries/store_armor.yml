@@ -1,0 +1,14 @@
+
+- type: contactStoreEntry
+  id: MRContactStoreArmorM4
+  proto: CMArmorM4
+  category: MRContactStoreArmor
+  price: 16
+  maxPerPurchase: 1
+
+- type: contactStoreEntry
+  id: MRContactStoreArmorB12
+  proto: CMArmorB12
+  category: MRContactStoreArmor
+  price: 24
+  maxPerPurchase: 1

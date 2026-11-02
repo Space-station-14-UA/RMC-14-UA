@@ -16,4 +16,7 @@ public sealed partial class ContactWaveMobComponent : Component
 
     [DataField]
     public TimeSpan? LonelySince;
+
+    [DataField]
+    public int? Reward;
 }

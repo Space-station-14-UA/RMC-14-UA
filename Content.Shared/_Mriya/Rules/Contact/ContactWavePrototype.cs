@@ -51,11 +51,9 @@ public sealed partial class ContactWaveSpawnEntry
     [DataField]
     public int MaxAlive = -1;
 
-    /// <summary>
-    /// Custom announcement for this tier. Null = generic message with percentages.
-    /// </summary>
+    /// <summary>muhney for killing this mob. Null = ContactEconomy KillReward.</summary>
     [DataField]
-    public LocId? Announcement;
+    public int? Reward;
 }
 
 [DataDefinition]
@@ -69,4 +67,10 @@ public sealed partial class ContactWaveBuffEntry
 
     [DataField]
     public float Damage = 1f;
+
+    /// <summary>
+    /// Custom announcement for this tier. Null = generic message with percentages.
+    /// </summary>
+    [DataField]
+    public LocId? Announcement;
 }

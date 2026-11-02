@@ -21,6 +21,11 @@
     rate: 0.25
     ratePerWave: 0.05
     maxAlive: 3
+  # - proto: CMXenoQueen # boss example, spawns only at wave 20
+  #   startWave: 20
+  #   rate: 1
+  #   ratePerWave: -1
+  #   maxAlive: 1
   buffs:
   - wave: 20
     health: 1.25 # + 25% from BASE

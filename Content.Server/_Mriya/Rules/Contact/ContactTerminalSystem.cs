@@ -24,6 +24,8 @@ public sealed class ContactTerminalSystem : EntitySystem
     [Dependency] private readonly ContactRuleSystem _contact = default!;
     [Dependency] private readonly AreaSystem _area = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly ContactEconomySystem _economy = default!;
+
     private static readonly LocId[] Phonetic =
     {
         "mriya-contact-phonetic-alpha", "mriya-contact-phonetic-bravo", "mriya-contact-phonetic-charlie",
@@ -147,6 +149,7 @@ public sealed class ContactTerminalSystem : EntitySystem
         _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-terminal-announce-active",
             ("name", ent.Comp.TerminalName),
             ("seconds", seconds)));
+        _economy.RewardTerminal(args.User);
     }
 
     public override void Update(float frameTime)

@@ -1,0 +1,11 @@
+- type: contactStoreEntry
+  id: MRContactStoreHEPacket
+  proto: CMPacketGrenadeHighExplosiveFilled
+  category: MRContactStoreSpecial
+  price: 18
+
+- type: contactStoreEntry
+  id: MRContactStoreClaymores
+  proto: RMCBoxClaymoreMineFilled
+  category: MRContactStoreSpecial
+  price: 20
