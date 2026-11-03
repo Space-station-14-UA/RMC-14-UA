@@ -55,6 +55,7 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
             return;
 
         component.AuthorizedName = null;
+        component.AuthorizedJob = null;
         Dirty(uid, component);
         UpdateUI(uid, component);
     }
@@ -62,25 +63,33 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
     private void UpdateAuthorization(EntityUid uid, MriyaTerminalComponent component)
     {
         component.AuthorizedName = null;
+        component.AuthorizedJob = null;
 
         if (_itemSlots.TryGetSlot(uid, component.IdCardSlotId, out var slot) && slot.Item != null)
         {
             var item = slot.Item.Value;
             if (TryComp<IdCardComponent>(item, out var idCard))
             {
-                component.AuthorizedName = idCard.LocalizedJobTitle;
+                SetAuthorizedOperator(component, idCard);
             }
             else if (TryComp<PdaComponent>(item, out var pda) && pda.ContainedId != null)
             {
                 if (TryComp<IdCardComponent>(pda.ContainedId, out var pdaId))
                 {
-                    component.AuthorizedName = pdaId.LocalizedJobTitle;
+                    SetAuthorizedOperator(component, pdaId);
                 }
             }
         }
 
         Dirty(uid, component);
         UpdateUI(uid, component);
+    }
+
+    private static void SetAuthorizedOperator(MriyaTerminalComponent component, IdCardComponent idCard)
+    {
+        var job = idCard.LocalizedJobTitle;
+        component.AuthorizedJob = job;
+        component.AuthorizedName = string.IsNullOrWhiteSpace(idCard.FullName) ? job : idCard.FullName;
     }
 
     public void BroadcastMessage(string message)
@@ -168,7 +177,7 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
             message = message[..500];
 
         var name = Name(uid);
-        var sender = component.AuthorizedName ?? "НЕВІДОМИЙ";
+        var sender = component.AuthorizedName ?? component.AuthorizedJob ?? "НЕВІДОМИЙ";
         
         var ckey = "НЕВІДОМИЙ";
         if (TryComp<ActorComponent>(args.Actor, out var actor))
@@ -182,7 +191,11 @@ public sealed class MriyaTerminalSystem : SharedMriyaTerminalSystem
 
     private void UpdateUI(EntityUid uid, MriyaTerminalComponent component)
     {
-        _ui.SetUiState(uid, MriyaTerminalUiKey.Key, new MriyaTerminalState(component.IsInput, component.Messages, component.AuthorizedName));
+        _ui.SetUiState(uid, MriyaTerminalUiKey.Key, new MriyaTerminalState(
+            component.IsInput,
+            component.Messages,
+            component.AuthorizedName,
+            component.AuthorizedJob));
     }
 
     public void SendCorporateMessage(string message)
