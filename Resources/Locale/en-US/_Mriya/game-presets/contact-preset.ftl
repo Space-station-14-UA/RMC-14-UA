@@ -73,7 +73,6 @@ mriya-contact-store-tab-special = Спецспорядження
 mriya-contact-store-tab-medicine = Медицина
 mriya-contact-store-tab-armor = Броня
 mriya-contact-store-tab-clothing = Одяг
-mriya-contact-store-tab-accessories = Аксесуари
 mriya-contact-store-tab-engineering = Інженерія
 
 mriya-contact-store-section-ammo = Набої до вашої зброї
