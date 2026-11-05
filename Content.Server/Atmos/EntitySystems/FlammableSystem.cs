@@ -211,6 +211,11 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void OnCollide(EntityUid uid, FlammableComponent flammable, ref StartCollideEvent args)
         {
+            // Mriya start. Перевірка на воду.
+            if (flammable.OnFire && TryExtinguishWithWater(uid, flammable)) 
+                return;
+            // Mriya end
+
             var otherUid = args.OtherEntity;
 
             // Collisions cause events to get raised directed at both entities. We only want to handle this collision
@@ -295,7 +300,7 @@ namespace Content.Server.Atmos.EntitySystems
         }
 
         // RMC14 water extinguishing helper. Active water reuses RMCWaterSystem.CanCollide so catwalk-covered
-        // water does not count.
+        // water does not count. | Mriya. Тепер це трохи ІПСО.
         private bool TryExtinguishWithWater(EntityUid uid, FlammableComponent flammable)
         {
             if (!CanWaterExtinguish(uid, flammable) || !_rmcWater.IsInWater(uid))
@@ -365,6 +370,8 @@ namespace Content.Server.Atmos.EntitySystems
                 {
                     var ev = new IgnitedEvent();
                     RaiseLocalEvent(uid, ref ev);
+
+                    TryExtinguishWithWater(uid, flammable); // Mraiya. Тушіння у воді.
                 }
                 else
                 {
@@ -421,6 +428,11 @@ namespace Content.Server.Atmos.EntitySystems
 
                 var extinguished = new IgnitedEvent();
                 RaiseLocalEvent(uid, ref extinguished);
+
+                // Mriya start. Тушіння.
+                if (TryExtinguishWithWater(uid, flammable))
+                    return;
+                // Mriya end
             }
 
             Dirty(uid, flammable);
