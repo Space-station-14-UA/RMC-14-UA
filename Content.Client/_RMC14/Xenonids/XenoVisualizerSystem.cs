@@ -170,23 +170,43 @@ public sealed class XenoVisualizerSystem : VisualizerSystem<XenoComponent>
                 break;
         }
         // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        // Воно таке ускладнене, щоб впихнути оновлення спрайту від зміни налаштування на ходу (ну а ще ШІ слоп)
+        var hasOldOvipositor = sprite.LayerMapTryGet(
+            XenoVisualLayers.OldOvipositor,
+            out var oldOvipositorLayer);
+
+        var hasNewOvipositor = sprite.LayerMapTryGet(
+            XenoVisualLayers.Ovipositor,
+            out var newOvipositorLayer);
+
+        // Завжди вимикаємо обидва шари, щоб вони не накладалися
+        if (hasOldOvipositor)
+            sprite.LayerSetVisible(oldOvipositorLayer, false);
+
+        if (hasNewOvipositor)
+            sprite.LayerSetVisible(newOvipositorLayer, false);
+
         var ovipositorLayer = _onOldSpriteChange
-            ? XenoVisualLayers.OldOvipositor
-            : XenoVisualLayers.Ovipositor;
+            ? oldOvipositorLayer
+            : newOvipositorLayer;
+
+        var hasOvipositorLayer = _onOldSpriteChange
+            ? hasOldOvipositor
+            : hasNewOvipositor;
         // Mriya end
 
-        if (!sprite.LayerMapTryGet(ovipositorLayer, out var oviLayer)) // Mriya. XenoVisualLayers.Ovipositor в оригіналі
+        if (!hasOvipositorLayer) // Mriya. `(!sprite.LayerMapTryGet(XenoVisualLayers.Ovipositor, out var oviLayer)` в оригіналі
             return;
 
         if (oviState == null)
         {
-            sprite.LayerSetVisible(oviLayer, false);
+            //sprite.LayerSetVisible(oviLayer, false); – Mriya
             sprite.LayerSetVisible(layer, true);
             return;
         }
 
-        sprite.LayerSetState(oviLayer, oviState);
-        sprite.LayerSetVisible(oviLayer, true);
+        sprite.LayerSetState(ovipositorLayer, oviState); // Mriya. `oviLayer` в оригіналі
+        sprite.LayerSetVisible(ovipositorLayer, true); // Mriya. `oviLayer` в оригіналі
         sprite.LayerSetVisible(layer, false);
     }
 
