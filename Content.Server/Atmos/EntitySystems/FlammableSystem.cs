@@ -212,7 +212,7 @@ namespace Content.Server.Atmos.EntitySystems
         private void OnCollide(EntityUid uid, FlammableComponent flammable, ref StartCollideEvent args)
         {
             // Mriya start. Перевірка на воду.
-            if (flammable.OnFire && TryExtinguishWithWater(uid, flammable)) 
+            if (flammable.OnFire && TryExtinguishWithWater(uid, flammable))
                 return;
             // Mriya end
 
@@ -371,7 +371,7 @@ namespace Content.Server.Atmos.EntitySystems
                     var ev = new IgnitedEvent();
                     RaiseLocalEvent(uid, ref ev);
 
-                    TryExtinguishWithWater(uid, flammable); // Mraiya. Тушіння у воді.
+                    TryExtinguishWithWater(uid, flammable); // Mriya. Тушіння у воді.
                 }
                 else
                 {
