@@ -164,7 +164,7 @@
 
 - type: guideEntry # Створив Strol20
   parent: MR
-  id: RMCGuideShortZL
+  id: MRGuideShortGC
   name: "Короткий рецепт ЗЛ"
   priority: 11
   text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideShortZL.xml" 
