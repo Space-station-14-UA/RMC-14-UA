@@ -155,7 +155,7 @@
 
 - type: guideEntry # Створив Strol20
   parent: MR
-  id: RMCGuideZL
+  id: MRGuideGC
   name: "Загальні Ліки"
   priority: 10
   text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideZL.xml"
