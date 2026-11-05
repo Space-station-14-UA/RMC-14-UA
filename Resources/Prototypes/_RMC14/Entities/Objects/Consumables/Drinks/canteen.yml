@@ -33,6 +33,7 @@
     - 25
     - 30
     - 40
+    - 50 # Mriya. Додано переливання по 50 унцій
     - 60
   - type: Damageable
     damageContainer: Inorganic
