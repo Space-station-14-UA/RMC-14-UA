@@ -1,0 +1,92 @@
+# Marines in sight. Faction-independent: anything with Marine.
+- type: utilityQuery
+  id: MRContactNearbyMarines
+  query:
+  - !type:ComponentQuery
+    components:
+    - type: Marine
+  considerations:
+  - !type:TargetIsAliveCon
+    curve: !type:BoolCurve
+  - !type:TargetDistanceCon
+    curve: !type:PresetCurve
+      preset: TargetDistance
+  - !type:TargetInLOSOrCurrentCon
+    curve: !type:BoolCurve
+ 
+# Branch order = priority (HTN preempts lower branches when a higher one becomes valid):
+# 1. Hold position (ranged castes, wind-up abilities)
+# 2. Smash what's blocking the way
+# 3. Fight what you see
+# 4. Investigate gunshots
+# 5. Drift toward the nearest marine
+# 6. Idle
+- type: htnCompound
+  id: MRContactXenoCompound
+  branches:
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: MRContactHold
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:WaitOperator
+        key: MRContactHold
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: MRContactSmashTarget
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        pathfindInPlanning: false
+        removeKeyOnFinish: false
+        targetKey: MRContactSmashCoordinates
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:MeleeOperator
+        targetKey: MRContactSmashTarget
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: MRContactNearbyMarines
+    - !type:HTNCompoundTask
+      task: MeleeAttackTargetCompound
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: MRContactNoise
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        pathfindInPlanning: false
+        targetKey: MRContactNoise
+        removeKeyOnFinish: true
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: MRContactHunt
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        pathfindInPlanning: false
+        targetKey: MRContactHunt
+        removeKeyOnFinish: true
+  - tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+- type: entity
+  abstract: true
+  id: MRContactXenoAIBase
+  components:
+  - type: MobMover
+  - type: RemoveComponents
+    components:
+    - type: ActiveInputMover
+    - type: SSDIndicator
+  - type: HTN
+    rootTask:
+      task: MRContactXenoCompound
+    blackboard:
+      NavSmash: !type:Bool true # attack obstacles the pathfinder knows about
+      NavPry: !type:Bool true # pry doors
+      VisionRadius: !type:Single 12
+      AggroVisionRadius: !type:Single 14
+  - type: ContactXenoAI

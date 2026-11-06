@@ -1,0 +1,26 @@
+- type: entity
+  parent: [ CMXenoDefender, MRContactXenoAIBase ]
+  id: MRContactXenoDefender
+  suffix: Контакт ШІ
+  components:
+  - type: ContactXenoAI
+    abilities:
+    - action: ActionXenoToggleCrest # lower crest vs shotguns
+      minRange: 3
+      maxRange: 12
+      toggled: false
+      targetHolding:
+        tags:
+        - RMCWeaponShotgun
+    - action: ActionXenoToggleCrest # raise crest once in melee
+      maxRange: 2
+      toggled: true
+    - action: ActionXenoHeadbutt
+      maxRange: 3.5
+    - action: ActionXenoTailSweep
+      maxRange: 1.5
+    - action: ActionXenoTailSlam
+      maxRange: 2.5
+
+# first tries to close in. If enemy has a shotgun will lower crest.
+# when is close enough, will headbutt, sweep and slam

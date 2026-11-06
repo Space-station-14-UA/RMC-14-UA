@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ RMCXenoBoiler, MRContactXenoAIBase ]
+  id: MRContactXenoBoiler
+  suffix: Контакт ШІ
+  components:
+  - type: ContactXenoAI
+    visionRange: 15
+    holdRange: 14
+    holdMinRange: 3
+    abilities:
+    - action: ActionXenoAcidShroud
+      maxRange: 3
+    - action: ActionXenoBombard
+      minRange: 4
+      maxRange: 14
+      hold: 3
+
+# tries to bombard at range
+# if marines get close, tries to acid shroud and rush them

@@ -1,0 +1,35 @@
+- type: entity
+  parent: [ RMCXenoCrusher, MRContactXenoAIBase ]
+  id: MRContactXenoCrusher
+  suffix: Контакт ШІ
+  components:
+  - type: ContactXenoAI
+    abilities:
+    - action: ActionXenoStomp
+      maxRange: 1.5
+    - action: ActionXenoTailStab
+      minRange: 1.5
+      maxRange: 2.5
+
+# crooosh
+
+- type: entity
+  parent: [ RMCXenoCrusherCharger, MRContactXenoAIBase ]
+  id: MRContactXenoCharger
+  suffix: Контакт ШІ
+  components:
+  - type: ContactXenoAI
+    abilities:
+    - action: ActionXenoToggleCharging # start charging from distance
+      minRange: 4
+      maxRange: 14
+      toggled: false
+    - action: ActionXenoToggleCharging # stop charging to brawl
+      maxRange: 1.5
+      toggled: true
+    - action: ActionXenoStomp
+      maxRange: 2.5
+    - action: ActionXenoRam
+      maxRange: 1.5
+
+# choooorge
