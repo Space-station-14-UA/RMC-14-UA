@@ -56,8 +56,10 @@
     - type: SkillPamphlet
       addSkills:
         RMCSkillMedical: 2
+        RMCSkillSurgery: 1
       skillCap:
         RMCSkillMedical: 2
+        RMCSkillSurgery: 1
       jobWhitelists:
         - popup: mriya-pamphlets-squad-leader-warning
           jobProto: CMSquadLeader

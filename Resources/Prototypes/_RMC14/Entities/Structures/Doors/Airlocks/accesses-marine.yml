@@ -10,7 +10,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepSL
-  name: Підготовка Лідера Загону
+  name: Казарми Лідера Загону
   suffix: Locked
   components:
   - type: AccessReader
@@ -19,7 +19,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepSpec
-  name: Підготовка Збройного Спеціаліста
+  name: Казарми Збройного Спеціаліста
   suffix: Locked
   components:
   - type: AccessReader
@@ -28,7 +28,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepEngineer
-  name: Підготовка Бойового Техніка
+  name: Казарми Бойового Техніка
   suffix: Locked
   components:
   - type: AccessReader
@@ -37,7 +37,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepMedical
-  name: Підготовка Бойового Медика
+  name: Казарми Бойового Медика
   suffix: Locked
   components:
   - type: AccessReader
@@ -46,7 +46,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepSmart
-  name: Підготовка Оператора СмартГана
+  name: Казарми Оператора СмартГана
   suffix: Locked
   components:
   - type: AccessReader
@@ -55,7 +55,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepFTL
-  name: Підготовка Лідера Вогневої Групи
+  name: Казарми Лідера Вогневої Групи
   suffix: Locked
   components:
   - type: AccessReader
@@ -81,7 +81,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaSL
-  name: Альфа підготовка Лідера Загону
+  name: Казарми Лідера Загону Альфи
   suffix: Locked
   components:
   - type: AccessReader
@@ -90,7 +90,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaSpec
-  name: Альфа підготовка Збройного Спеціаліста
+  name: Казарми Збройного Спеціаліста Альфи
   suffix: Locked
   components:
   - type: AccessReader
@@ -99,7 +99,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaEngineer
-  name: Альфа підготовка Бойового Техніка
+  name: Казарми Бойового Техніка Альфи
   suffix: Locked
   components:
   - type: AccessReader
@@ -108,7 +108,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaMedical
-  name: Альфа підготовка Бойового Медика
+  name: Казарми Бойового Медика Альфи
   suffix: Locked
   components:
   - type: AccessReader
@@ -117,7 +117,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaSmart
-  name: Альфа підготовка Оператора СмартГана
+  name: Казарми Оператора СмартГана Альфи
   suffix: Locked
   components:
   - type: AccessReader
@@ -126,7 +126,7 @@
 - type: entity
   parent: CMAirlockPrepAlpha
   id: CMAirlockPrepAlphaFTL
-  name: Альфа підготовка Лідера Вогневої Групи
+  name: Казарми Лідера Вогневої Групи Альфи
   suffix: Locked
   components:
   - type: AccessReader
@@ -152,7 +152,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoSL
-  name: Браво підготовка Лідера Загону
+  name: Казарми Лідера Загону Браво
   suffix: Locked
   components:
   - type: AccessReader
@@ -161,7 +161,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoSpec
-  name: Браво підготовка Збройного Спеціаліста
+  name: Казарми Збройного Спеціаліста Браво
   suffix: Locked
   components:
   - type: AccessReader
@@ -170,7 +170,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoEngineer
-  name: Браво підготовка Бойового Техніка
+  name: Казарми Бойового Техніка Браво
   suffix: Locked
   components:
   - type: AccessReader
@@ -179,7 +179,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoMedical
-  name: Браво підготовка Бойового Медика
+  name: Казарми Бойового Медика Браво
   suffix: Locked
   components:
   - type: AccessReader
@@ -188,7 +188,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoSmart
-  name: Браво підготовка Оператора СмартГана
+  name: Казарми Оператора СмартГана Браво
   suffix: Locked
   components:
   - type: AccessReader
@@ -197,7 +197,7 @@
 - type: entity
   parent: CMAirlockPrepBravo
   id: CMAirlockPrepBravoFTL
-  name: Браво підготовка Лідера Вогневої Групи
+  name: Казарми Лідера Вогневої Групи Браво
   suffix: Locked
   components:
   - type: AccessReader
@@ -223,7 +223,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieSL
-  name: Чарлі підготовка Лідера Загону
+  name: Казарми Лідера Загону Чарлі
   suffix: Locked
   components:
   - type: AccessReader
@@ -232,7 +232,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieSpec
-  name: Чарлі підготовка Збройного Спеціаліста
+  name: Казарми Збройного Спеціаліста Чарлі
   suffix: Locked
   components:
   - type: AccessReader
@@ -241,7 +241,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieEngineer
-  name: Чарлі підготовка Бойового Техніка
+  name: Казарми Бойового Техніка Чарлі
   suffix: Locked
   components:
   - type: AccessReader
@@ -250,7 +250,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieMedical
-  name: Чарлі підготовка Бойового Медика
+  name: Казарми Бойового Медика Чарлі
   suffix: Locked
   components:
   - type: AccessReader
@@ -259,7 +259,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieSmart
-  name: Чарлі підготовка Оператора СмартГана
+  name: Казарми Оператора СмартГана Чарлі
   suffix: Locked
   components:
   - type: AccessReader
@@ -268,7 +268,7 @@
 - type: entity
   parent: CMAirlockPrepCharlie
   id: CMAirlockPrepCharlieFTL
-  name: Чарлі підготовка Лідера Вогневої Групи
+  name: Казарми Лідера Вогневої Групи Чарлі
   suffix: Locked
   components:
   - type: AccessReader
@@ -294,7 +294,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaSL
-  name: Дельта підготовка Лідера Загону
+  name: Казарми Лідера Загону Дельти
   suffix: Locked
   components:
   - type: AccessReader
@@ -303,7 +303,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaSpec
-  name: Дельта підготовка Збройного Спеціаліста
+  name: Казарми Збройного Спеціаліста Дельти
   suffix: Locked
   components:
   - type: AccessReader
@@ -312,7 +312,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaEngineer
-  name: Дельта підготовка Бойового Техніка
+  name: Казарми Бойового Техніка Дельти
   suffix: Locked
   components:
   - type: AccessReader
@@ -321,7 +321,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaMedical
-  name: Дельта підготовка Бойового Медика
+  name: Казарми Бойового Медика Дельти
   suffix: Locked
   components:
   - type: AccessReader
@@ -330,7 +330,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaSmart
-  name: Дельта підготовка Оператора СмартГана
+  name: Казарми Оператора СмартГана Дельти
   suffix: Locked
   components:
   - type: AccessReader
@@ -339,7 +339,7 @@
 - type: entity
   parent: CMAirlockPrepDelta
   id: CMAirlockPrepDeltaFTL
-  name: Дельта підготовка Лідера Вогневої Групи
+  name: Казарми Лідера Вогневої Групи Дельти
   suffix: Locked
   components:
   - type: AccessReader

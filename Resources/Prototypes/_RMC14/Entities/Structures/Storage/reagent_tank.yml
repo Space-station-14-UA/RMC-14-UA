@@ -127,7 +127,7 @@
       types:
         Heat: 100
   - type: Label
-    currentLabel: reagent-name-welding-fuel
+    currentLabel: зварювальне паливо # Mriya. reagent-name-welding-fuel в оригіналі, ванільна назва речовини, не зручно
   - type: Tag
     tags:
     - RMCTankFuel

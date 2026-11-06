@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: RMCBaseDoorInvincible
   id: RMCAirlockEvacuation
-  name: Evacuation Airlock PL-6
-  description: It opens and closes.
+  name: евакуаційний шлюз ПЛ-6
+  description: Спеціальна версія шлюзу з доведеною до ідеала системою блокування та захисту, здатною забезпечувати ізоляцію від будь-чого, що залишилося по ту сторону від вас.
   placement:
     mode: SnapgridCenter
   components:
@@ -62,8 +62,8 @@
 - type: entity
   parent: RMCBaseDoorInvincible
   id: RMCAirlockLifeboat
-  name: lifeboat docking hatch
-  description: A heavyset bulkhead for a lifeboat.
+  name: стикувальний шлюз евакуаційного шатла
+  description: Величезний гермозатвор з функцією стикування до космічних портів. Використовується космічними шатлами задля швидкого відстикування та забезпечення безпеки від всього космічного для його пасажирів.
   placement:
     mode: SnapgridCenter
   components:

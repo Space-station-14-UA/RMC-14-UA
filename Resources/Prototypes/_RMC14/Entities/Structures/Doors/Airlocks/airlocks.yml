@@ -4,6 +4,7 @@
   - CMBaseDoorConstructible
   id: CMAirlock
   name: шлюз
+  description: Привітайте, шлюз! Еволюція класичних дверей з додаванням системи доступу, автоматичного відкриття та закриття, а також герметичністю для використання на об'єктах у відкритому космосі. Мають досить сильний пневмопривід та зроблений з товстих сталеві пластини, будьте з ними обережні. # Mriya
   placement:
     mode: SnapgridCenter
   components:
@@ -39,7 +40,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockCommand
-  name: command airlock
+  name: шлюз командування
   suffix: Command
   components:
   - type: Sprite
@@ -50,7 +51,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockEngineer
-  name: engineering airlock
+  name: шлюз інженерів
   suffix: Engineering
   components:
   - type: Sprite
@@ -61,7 +62,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockMedical
-  name: medical airlock
+  name: шлюз медиків
   suffix: Medical
   components:
   - type: Sprite
@@ -72,7 +73,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockSecurity
-  name: security airlock
+  name: шлюз служби безпеки
   suffix: Security
   components:
   - type: Sprite
@@ -83,7 +84,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockMaint
-  name: maintenance hatch
+  name: шлюз технічних приміщень
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/maint_door.rsi
@@ -91,7 +92,7 @@
 - type: entity
   parent: CMAirlockMaint
   id: CMAirlockMaintReinforced
-  name: reinforced maintenance hatch
+  name: укріплений шлюз технічних приміщень
   suffix: Reinforced
   components:
   - type: AirlockReceiverXenoClaws
@@ -108,7 +109,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockSecure
-  name: secure airlock
+  name: безпечний шлюз
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/secure_door.rsi
@@ -116,7 +117,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockCell
-  name: cell door
+  name: двері камери
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/cell_door.rsi
@@ -124,7 +125,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockPrison
-  name: maintenance hatch
+  name: шлюз технічних приміщень
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/prison_door.rsi
@@ -132,7 +133,7 @@
 - type: entity
   parent: CMAirlock
   id: RMCAirlockHybrisa
-  name: airlock
+  #name: шлюз – Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/hybrisa_door.rsi
@@ -140,7 +141,7 @@
 - type: entity
   parent: CMAirlock
   id: RMCAirlockHybrisaPersonal
-  name: airlock
+  #name: шлюз – Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/hybrisa_personal_door.rsi
@@ -148,7 +149,7 @@
 - type: entity
   parent: CMAirlock
   id: RMCAirlockRusted
-  name: airlock
+  #name: шлюз – Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/rusted_door.rsi
@@ -156,7 +157,7 @@
 - type: entity
   parent: CMAirlock
   id: RMCAirlockRustedWhite
-  name: airlock
+  #name: шлюз – Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/rusted_white_door.rsi
@@ -165,7 +166,8 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockGlass
-  name: glass airlock
+  name: скляний шлюз
+  description: Привітайте, шлюз! Еволюція класичних дверей з додаванням системи доступу, автоматичного відкриття та закриття, а також герметичністю для використання на об'єктах у відкритому космосі. Мають досить сильний пневмопривід та зроблений з товстих сталеві пластини, будьте з ними обережні. Має віконечка, щоб бачити, що знаходиться по іншу його сторону. # Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/personal_door_glass.rsi
@@ -197,7 +199,7 @@
 - type: entity
   parent: CMAirlockGlass
   id: CMAirlockGlassEngineer
-  name: engineering airlock
+  name: скляний шлюз інженерів
   suffix: Engineer
   components:
   - type: Sprite
@@ -208,7 +210,7 @@
 - type: entity
   parent: CMAirlockGlass
   id: CMAirlockGlassMedical
-  name: medical airlock
+  name: скляний шлюз медиків
   suffix: Medical
   components:
   - type: Sprite
@@ -219,7 +221,7 @@
 - type: entity
   parent: CMAirlockGlass
   id: CMAirlockGlassSecurity
-  name: security airlock
+  name: скляний шлюз служби безпеки
   suffix: Security
   components:
   - type: Sprite
@@ -245,7 +247,7 @@
 - type: entity
   parent: CMAirlockGlass
   id: CMAirlockPrep
-  name: preparations airlock
+  name: шлюз казарм
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/prep_door.rsi
@@ -253,7 +255,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepAlpha
-  name: alpha squad preparations
+  name: Казарми Загону Альфа
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/prep_door_alpha.rsi
@@ -261,7 +263,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepBravo
-  name: bravo squad preparations
+  name: Казарми Загону Браво
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/prep_door_bravo.rsi
@@ -269,7 +271,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepCharlie
-  name: charlie squad preparations
+  name: Казарми Загону Чарлі
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/prep_door_charlie.rsi
@@ -277,7 +279,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockPrepDelta
-  name: delta squad preparations
+  name: Казарми Загону Дельта
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/prep_door_delta.rsi

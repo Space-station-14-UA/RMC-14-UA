@@ -43,7 +43,7 @@
 - type: entity
   parent: RMCScabbardBase
   id: RMCScabbardMachete
-  name: піхви Н5 для мачете моделі М2132 
+  name: піхви Х5 для мачете М2132
   description: Великі шкіряні піхви, створені для безпечного носіння мачете М2132. Можна носити на спині, поясі або броні.
   components:
   - type: Sprite
@@ -75,7 +75,7 @@
 - type: entity
   parent: RMCScabbardBase
   id: RMCScabbardMacheteM2100
-  name: піхви для індивідуального мачете М2100 зразка КН20
+  name: піхви КХ20 для індивідуального мачете М2100
   description: Великі шкіряні піхви, які використовуються для носіння мачете М2100 'Нґайхе'. Можна носити на спині, поясі або броні.
   components:
   - type: Sprite
@@ -173,7 +173,7 @@
 - type: entity
   parent: RMCScabbardBase
   id: RMCScabbardMacheteSG
-  name: піхви МЛ66А для мачете
+  name: піхви МЛ66А для мачете М2132
   description: "Піхви для мачете моделі М2132, що під'єднується до бойового кріплення МЛ66A."
   components:
   - type: Sprite
@@ -203,7 +203,7 @@
 - type: entity
   parent: RMCScabbardBase
   id: RMCScabbardShotgun
-  name: піхви Л44 для дробовика М42A2 
+  name: піхви Л44 для дробовика М42A2
   description: Велика шкіряна кобура для дробовиків на озброєні КМПОН. Може бути закріплена на спині, щоб було зручніше носити цей тягар.
   components:
   - type: Sprite

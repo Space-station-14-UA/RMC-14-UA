@@ -136,7 +136,7 @@
 - type: entity
   parent: RMCAirlockGlassSecurityLockedTSEPA
   id: RMCAirlockGlassSecurityLockedTSEPAAlt
-  name: airlock
+  #name: airlock – Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/hybrisa_personal_door_glass.rsi

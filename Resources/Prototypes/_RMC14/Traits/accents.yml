@@ -14,7 +14,7 @@
   name: rmc-trait-french-accent-name
   description: rmc-trait-french-accent-desc
   category: SpeechTraits
-  cost: 1
+  cost: 2 # Mriya. 1 в оригіналі, у нас він страшний
   components:
     - type: FrenchAccent
 

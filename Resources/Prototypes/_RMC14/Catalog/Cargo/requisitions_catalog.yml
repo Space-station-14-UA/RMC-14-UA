@@ -317,6 +317,8 @@
         crate: MRCrateRestrictedEquipmentBiosuitUNMC
       - cost: 2000
         crate: RMCCrateRestrictedEquipmentIntelSupportKit
+      - cost: 8000 # Mriya
+        crate: MRCrateRestrictedEquipmentVanWheel
       - cost: 10000 # Mriya
         crate: MRCrateRestrictedEquipmentChairSupplyDrop
     - name: Витратники

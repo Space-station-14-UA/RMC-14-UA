@@ -2,7 +2,8 @@
   abstract: true
   parent: BaseMaterialDoor
   id: RMCBaseMaterialDoor
-  name: door
+  name: двері
+  description: Вони можуть бути як зачиненими, так й відчиненими! # Mriya
   placement:
     mode: SnapgridCenter
   components:
@@ -42,9 +43,9 @@
 
 - type: entity
   id: RMCSandstoneDoor
-  name: sandstone door
+  name: двері з пісковику
   parent: RMCBaseMaterialDoor
-  description: It opens and closes.
+  description: Вкрай важкі, але працюючі двері з гірської породи. Вони можуть бути як зачиненими, так й відчиненими! # Mriya. Опис розширено
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Airlocks/doorrunedsand.rsi
