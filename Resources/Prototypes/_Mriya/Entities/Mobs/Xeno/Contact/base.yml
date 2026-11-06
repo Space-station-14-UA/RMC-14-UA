@@ -33,7 +33,7 @@
         key: MRContactHold
   - preconditions:
     - !type:KeyExistsPrecondition
-      key: MRContactSmashTarget
+      key: MRContactSmashActive
     tasks:
     - !type:HTNPrimitiveTask
       operator: !type:MoveToOperator
@@ -42,7 +42,7 @@
         targetKey: MRContactSmashCoordinates
         rangeKey: MeleeRange
     - !type:HTNPrimitiveTask
-      operator: !type:MeleeOperator
+      operator: !type:ContactSmashOperator
         targetKey: MRContactSmashTarget
   - tasks:
     - !type:HTNPrimitiveTask

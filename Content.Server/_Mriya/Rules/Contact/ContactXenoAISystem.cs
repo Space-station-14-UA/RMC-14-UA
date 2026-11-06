@@ -49,6 +49,7 @@ public sealed class ContactXenoAISystem : EntitySystem
     public const string SmashCoordinatesKey = "MRContactSmashCoordinates";
     public const string NoiseKey = "MRContactNoise";
     public const string HuntKey = "MRContactHunt";
+    public const string SmashActiveKey = "MRContactSmashActive";
 
     private static readonly TimeSpan UpdateEvery = TimeSpan.FromSeconds(0.5);
 
@@ -287,6 +288,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         ai.SmashUntil = now + ai.SmashTimeout;
         blackboard.SetValue(SmashTargetKey, obstacle);
         blackboard.SetValue(SmashCoordinatesKey, Transform(obstacle).Coordinates);
+        blackboard.SetValue(SmashActiveKey, true);
 
         // drop the current move so HTN replans into the smash branch right away
         _steering.Unregister(uid);
@@ -301,8 +303,7 @@ public sealed class ContactXenoAISystem : EntitySystem
     private void ClearSmash(ContactXenoAIComponent ai, NPCBlackboard blackboard)
     {
         ai.SmashTarget = null;
-        blackboard.Remove<EntityUid>(SmashTargetKey);
-        blackboard.Remove<EntityCoordinates>(SmashCoordinatesKey);
+        blackboard.Remove<bool>(SmashActiveKey);
     }
 
     /// <summary>
