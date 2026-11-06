@@ -313,7 +313,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         var toDest = (dest.Position - pos.Position).Normalized();
 
         _obstacles.Clear();
-        _lookup.GetEntitiesInRange(pos, SmashSearchRange, _obstacles, LookupFlags.Static);
+        _lookup.GetEntitiesInRange(uid, SmashSearchRange, _obstacles, LookupFlags.Static);
 
         EntityUid? best = null;
         var bestDist = float.MaxValue;
