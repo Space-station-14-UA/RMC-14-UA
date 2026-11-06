@@ -69,6 +69,12 @@ public sealed partial class ContactRuleComponent : Component
 
     [DataField]
     public int LastBuffWave;
+
+    [DataField]
+    public TimeSpan HudSyncEvery = TimeSpan.FromSeconds(5);
+
+    [DataField]
+    public TimeSpan NextHudSync;
 }
 
 public enum ContactPhase : byte

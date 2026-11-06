@@ -25,6 +25,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using System.Linq;
+using Content.Shared._Mriya.Rules.Contact;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -45,6 +46,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly ContactEconomySystem _economy = default!;
 
     private float? _savedPreflight;
 
@@ -114,10 +116,17 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     {
         base.ActiveTick(uid, comp, gameRule, frameTime);
 
+        var time = Timing.CurTime;
+        if (time >= comp.NextHudSync)
+        {
+            comp.NextHudSync = time + comp.HudSyncEvery;
+            SendHud(comp);
+            _economy.SendAllBalances();
+        }
+
         if (comp.Phase != ContactPhase.Deployed)
             return;
-
-        var time = Timing.CurTime;
+            
         if (time >= comp.FieldEndsAt)
         {
             EndContact(comp, ContactResult.FieldCollapsed);
@@ -376,5 +385,17 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
     public bool CanActivateTerminal()
     {
         return GetActiveRule() is { Phase: ContactPhase.Deployed };
+    }
+
+    private void SendHud(ContactRuleComponent comp)
+    {
+        var phase = comp.Phase switch
+        {
+            ContactPhase.Staging => ContactHudPhase.Staging,
+            ContactPhase.Deployed => ContactHudPhase.Deployed,
+            _ => ContactHudPhase.Ended,
+        };
+
+        RaiseNetworkEvent(new ContactHudStateEvent(phase, comp.FieldEndsAt, comp.NextWaveAt, comp.Wave));
     }
 }

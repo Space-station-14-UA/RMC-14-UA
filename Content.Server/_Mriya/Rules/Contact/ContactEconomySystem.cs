@@ -6,6 +6,8 @@ using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Content.Shared._Mriya.Rules.Contact;
+using Robust.Server.Player;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -16,6 +18,7 @@ namespace Content.Server._Mriya.Rules.Contact;
 public sealed class ContactEconomySystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IPlayerManager _player = default!;
 
     private readonly Dictionary<NetUserId, int> _balances = new();
 
@@ -52,6 +55,7 @@ public sealed class ContactEconomySystem : EntitySystem
 
         EnsureComp<ContactPlayerComponent>(ev.Mob);
         _balances.TryAdd(ev.Player.UserId, config.StartingPoints);
+        SendBalance(ev.Player);
     }
 
     #region Public API
@@ -165,5 +169,27 @@ public sealed class ContactEconomySystem : EntitySystem
         }
 
         AddPoints(reviver, config.ReviveReward, "mriya-contact-points-reason-revive");
+    }
+
+    private void SendBalance(EntityUid player)
+    {
+        if (TryComp(player, out ActorComponent? actor))
+            SendBalance(actor.PlayerSession);
+    }
+
+    private void SendBalance(ICommonSession session)
+    {
+        RaiseNetworkEvent(new ContactBalanceEvent(GetBalance(session.UserId)), session);
+    }
+
+    /// <summary>
+    /// Called with the HUD sync: everyone gets their current balance (0 if they haven't earned any).
+    /// </summary>
+    public void SendAllBalances()
+    {
+        foreach (var session in _player.Sessions)
+        {
+            SendBalance(session);
+        }
     }
 }

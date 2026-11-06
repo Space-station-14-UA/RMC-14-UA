@@ -93,3 +93,10 @@ mriya-contact-store-tab-accessories = Модулі
 mriya-contact-store-filter-all = Усі
 mriya-contact-store-filter-compatible = Сумісні
 mriya-contact-store-filter-empty = Немає сумісного з вашою зброєю.
+
+mriya-contact-hud-title = Контакт
+mriya-contact-hud-staging = Очікування висадки
+mriya-contact-hud-field = Поле
+mriya-contact-hud-wave = Хвиля
+mriya-contact-hud-next-wave = Наступна
+mriya-contact-hud-balance = ₴
