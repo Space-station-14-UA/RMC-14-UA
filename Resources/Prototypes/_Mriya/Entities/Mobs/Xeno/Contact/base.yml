@@ -52,22 +52,22 @@
       task: MeleeAttackTargetCompound
   - preconditions:
     - !type:KeyExistsPrecondition
-      key: MRContactNoise
+      key: MRContactNoiseActive
     tasks:
     - !type:HTNPrimitiveTask
       operator: !type:MoveToOperator
         pathfindInPlanning: false
+        removeKeyOnFinish: false
         targetKey: MRContactNoise
-        removeKeyOnFinish: true
   - preconditions:
     - !type:KeyExistsPrecondition
-      key: MRContactHunt
+      key: MRContactHuntActive
     tasks:
     - !type:HTNPrimitiveTask
       operator: !type:MoveToOperator
         pathfindInPlanning: false
+        removeKeyOnFinish: false
         targetKey: MRContactHunt
-        removeKeyOnFinish: true
   - tasks:
     - !type:HTNCompoundTask
       task: IdleCompound
@@ -90,3 +90,4 @@
       VisionRadius: !type:Single 12
       AggroVisionRadius: !type:Single 14
   - type: ContactXenoAI
+    smashTimeout: 1

@@ -42,6 +42,8 @@ public sealed class ContactXenoAISystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly NPCSteeringSystem _steering = default!;
+    public const string NoiseActiveKey = "MRContactNoiseActive";
+    public const string HuntActiveKey = "MRContactHuntActive";
 
     // Blackboard keys read by MRContactXenoCompound
     public const string HoldKey = "MRContactHold";
@@ -176,16 +178,28 @@ public sealed class ContactXenoAISystem : EntitySystem
         ai.Target = seen;
         ai.TargetDistance = seenDist;
 
+        // Coordinates are only ever SET (MoveToOperator reads them at startup);
+        // the branches are switched with the *Active flags, which only preconditions read.
         var blackboard = htn.Blackboard;
         if (heard is { } noise)
+        {
             blackboard.SetValue(NoiseKey, noise.Coords);
+            blackboard.SetValue(NoiseActiveKey, true);
+        }
         else
-            blackboard.Remove<EntityCoordinates>(NoiseKey);
+        {
+            blackboard.Remove<bool>(NoiseActiveKey);
+        }
 
         if (hunt is { } huntTarget)
+        {
             blackboard.SetValue(HuntKey, huntTarget.Coords);
+            blackboard.SetValue(HuntActiveKey, true);
+        }
         else
-            blackboard.Remove<EntityCoordinates>(HuntKey);
+        {
+            blackboard.Remove<bool>(HuntActiveKey);
+        }
 
         if (seen is { } seenUid)
             return _transform.GetMapCoordinates(seenUid);
