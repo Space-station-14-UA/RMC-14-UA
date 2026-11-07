@@ -1,0 +1,161 @@
+- type: atmShop
+  id: RMCATMShop
+  categories:
+  - name: ЗБРОЯ
+    entries:
+    - name: Мачете M2132
+      cost: 200
+      case: RMCGunCaseMachete
+      preview: RMCPouchMacheteFilled
+    - name: ПК М63
+      cost: 300
+      case: RMCATMCaseM63
+      preview: WeaponSMGM63
+    - name: Рушниця М42А2
+      cost: 350
+      case: RMCM42A2ShotgunCase
+      preview: WeaponShotgunM42A2
+    - name: Гвинтівка М4СПГ
+      cost: 400
+      case: RMCATMCaseM4SPR
+      preview: WeaponRifleM4SPR
+    - name: Вогнемет M34
+      cost: 500
+      case: RMCGunCaseFlamer
+      preview: RMCWeaponFlamer
+    - name: Важка гвинтівка ТМГ-88
+      cost: 700
+      case: RMCCaseXM88
+      preview: WeaponRifleXM88
+  - name: НАБОЇ
+    entries:
+    - name: Магазин М63
+      cost: 30
+      case: CMMagazineSMGM63
+    - name: Магазин М4СПГ
+      cost: 40
+      case: CMMagazineRifleM4SPR
+    - name: Коробка набоїв .458
+      cost: 150
+      case: RMCBox458SOCOM
+    - name: Коробка набоїв до рушниці
+      cost: 100
+      case: RMCBoxShotgunBuckshot
+  - name: ГУРТ
+    entries:
+    - name: Коробка магазинів М63
+      cost: 150
+      case: RMCBoxMagazineSMGM63
+    - name: Коробка магазинів М4СПГ
+      cost: 150
+      case: RMCBoxMagazineRifleM4SPR
+    - name: Ящик набоїв до рушниці
+      cost: 150
+      case: RMCBoxShellsBuckshot
+    - name: Коробка ОФ-гранат
+      cost: 250
+      case: CMPacketGrenadeHighExplosiveFilled
+    - name: Коробка осколкових гранат
+      cost: 250
+      case: CMPacketGrenadeFragFilled
+    - name: Коробка запалювальних гранат
+      cost: 250
+      case: RMCPacketGrenadeIncendiaryFilled
+    - name: Коробка димових гранат
+      cost: 200
+      case: RMCPacketGrenadeSmokeFilled
+  - name: МЕДИЧНЕ
+    entries:
+    - name: Аптечка
+      cost: 100
+      case: CMFirstAidKitFilled
+    - name: Покращена аптечка
+      cost: 250
+      case: CMAdvFirstAidKitFilled
+    - name: Біоклеєвий набір
+      cost: 80
+      case: CMTraumaKit10
+    - name: Опіковий набір
+      cost: 80
+      case: CMBurnKit10
+    - name: Бинт
+      cost: 30
+      case: CMGauze10
+    - name: Пакет крові
+      cost: 150
+      case: CMBloodPackFull
+    - name: Автоін'єктор бікаридину
+      cost: 60
+      case: CMBicaridineAutoInjector
+    - name: Автоін'єктор келотану
+      cost: 60
+      case: CMKelotaneAutoInjector
+    - name: Автоін'єктор дексаліну+
+      cost: 60
+      case: CMDexalinPlusAutoInjector
+    - name: Набір шприців
+      cost: 150
+      case: RMCSyringeCaseFilled
+    - name: Киснева аптечка
+      cost: 120
+      case: CMFirstAidO2KitFilled
+    - name: Дефібрилятор
+      cost: 400
+      case: CMDefibrillator
+  - name: ПОСТАЧАННЯ
+    entries:
+    - name: Дерев'яні дошки
+      cost: 100
+      case: RMCPlankWood25
+    - name: Метал
+      cost: 100
+      case: CMSheetMetal30
+    - name: Пласталь
+      cost: 150
+      case: CMSheetPlasteel30
+  - name: ОСОБЛИВЕ
+    entries:
+    - name: Візор нічного бачення
+      cost: 600
+      case: RMCVisorNightVision
+    - name: С5 приціл з червоною крапкою
+      cost: 200
+      case: RMCAttachmentS5RedDotSight
+    - name: Лазерний цілевказник
+      cost: 250
+      case: RMCAttachmentLaserSight
+    - name: Глушник
+      cost: 300
+      case: RMCAttachmentSuppressor
+    - name: Подовжений ствол
+      cost: 250
+      case: RMCAttachmentExtendedBarrel
+    - name: Вертикальна рукоятка
+      cost: 150
+      case: RMCAttachmentVerticalGrip
+    - name: С8 4х телескопічний приціл
+      cost: 300
+      case: RMCAttachmentS84xTelescopicScope
+  - name: ОДЯГ
+    entries:
+    - name: Бронежилет M3 (легкий)
+      cost: 400
+      case: CMArmorM3Light
+    - name: Бронежилет M3 (середній)
+      cost: 600
+      case: CMArmorM3Medium
+    - name: Бронежилет M3 (важкий)
+      cost: 900
+      case: CMArmorM3Heavy
+    - name: Шолом M10
+      cost: 150
+      case: ArmorHelmetM10
+    - name: Розвантажка (магазини)
+      cost: 120
+      case: RMCArmorWebbingMag
+    - name: Розвантажка (гранати)
+      cost: 120
+      case: RMCArmorWebbingGrenade
+    - name: Розвантажка (набої)
+      cost: 120
+      case: RMCArmorWebbingShell
