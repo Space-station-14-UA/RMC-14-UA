@@ -17,6 +17,9 @@ public sealed class ContactHudSystem : EntitySystem
     public int Wave { get; private set; }
     public int? Balance { get; private set; }
 
+    public ContactShuttleState? ShuttleState { get; private set; }
+    public TimeSpan? ShuttleEndsAt { get; private set; }
+
     private ContactHudOverlay? _overlay;
 
     public override void Initialize()
@@ -24,6 +27,7 @@ public sealed class ContactHudSystem : EntitySystem
         SubscribeNetworkEvent<ContactHudStateEvent>(OnState);
         SubscribeNetworkEvent<ContactBalanceEvent>(OnBalance);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeNetworkEvent<ContactShuttleHudEvent>(OnShuttle);
     }
 
     public override void Shutdown()
@@ -58,6 +62,12 @@ public sealed class ContactHudSystem : EntitySystem
         Wave = 0;
         Balance = null;
         HideOverlay();
+    }
+
+    private void OnShuttle(ContactShuttleHudEvent ev)
+    {
+        ShuttleState = ev.State;
+        ShuttleEndsAt = ev.EndsAt;
     }
 
     private void ShowOverlay()

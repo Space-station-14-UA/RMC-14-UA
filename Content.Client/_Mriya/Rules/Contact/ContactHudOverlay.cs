@@ -124,6 +124,22 @@ public sealed class ContactHudOverlay : Overlay
                 _lines.Add((Loc.GetString("mriya-contact-hud-next-wave"), FormatTime(nextWaveAt - now), Phosphor));
         }
 
+        if (_hud.ShuttleState is { } shuttle)
+        {
+            var state = Loc.GetString(shuttle switch
+            {
+                ContactShuttleState.WaitingForBoarding => "mriya-contact-hud-shuttle-waiting",
+                ContactShuttleState.Countdown => "mriya-contact-hud-shuttle-countdown",
+                ContactShuttleState.FlyingDown or ContactShuttleState.Returning => "mriya-contact-hud-shuttle-flying",
+                ContactShuttleState.Unloading => "mriya-contact-hud-shuttle-unloading",
+                ContactShuttleState.Refueling => "mriya-contact-hud-shuttle-refueling",
+                _ => "mriya-contact-hud-shuttle-ready",
+            }).ToUpperInvariant();
+
+            var value = _hud.ShuttleEndsAt is { } endsAt ? $"{state} {FormatTime(endsAt - now)}" : state;
+            _lines.Add((Loc.GetString("mriya-contact-hud-shuttle"), value, Phosphor));
+        }
+
         if (_hud.Balance is { } balance)
             _lines.Add((Loc.GetString("mriya-contact-hud-balance"), balance.ToString(), White));
     }
