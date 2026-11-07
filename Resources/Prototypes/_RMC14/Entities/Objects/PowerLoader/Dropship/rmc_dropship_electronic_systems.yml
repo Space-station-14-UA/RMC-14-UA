@@ -9,14 +9,14 @@
     category: Equipment
     cost: 800
   - type: PowerLoaderGrabbable
-    delay: 1
+    delay: 0.5 # Mriya. 1 в оригіналі
   - type: DropshipElectronicSystem
   - type: PowerLoaderAttachable
-    attachDelay: 7
+    attachDelay: 3.5 # Mriya. 7 в оригіналі
     attachableTypes:
     - RMCDropshipElectronicSystemPoint
   - type: PowerLoaderDetachable
-    detachDelay: 7
+    detachDelay: 3.5 # Mriya. 7 в оригіналі
 
 - type: entity
   parent: RMCDropshipAttachmentElectronicSystem

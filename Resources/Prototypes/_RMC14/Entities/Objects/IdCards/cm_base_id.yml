@@ -2,8 +2,8 @@
 - type: entity
   parent: [Clothing, CMIDCardBase]
   id: CMIDCardStandardDogtag
-  name: жетон
-  description: Жетон морпіхотинця.
+  name: пара жетонів
+  description: "Пара жетонів морського піхотинця на яких написані особисті дані, група крові, розмір протигазу та релігія власника. Чому пара? Один забирається у випадку, якщо власник помер на полі бою, а інший залишається на тілі. Його оригінальна назва дослівно перекладається: \"Жетон для собак\", щоб це могло означати?"
   categories: [ HideSpawnMenu ]
   components:
   - type: Item
@@ -74,8 +74,8 @@
 - type: entity
   parent: BaseItem
   id: RMCInformationDogtagProp
-  name: faded information dog tag
-  description: A fallen marine's information dog tag. It looks battered and the name is worn out.
+  name: бляклий жетон
+  description: Одинокий жетон морського піхотинця. На ньому вже важко розібрати якісь символи. Один забирається у випадку, якщо власник помер на полі бою, а інший залишається на тілі...
   components:
   - type: Item
     size: Tiny
@@ -85,12 +85,15 @@
   - type: Corrodible
     isCorrodible: false
   - type: Appearance
+  - type: IntelRetrieveItemObjective # Mriya, бо морпіхи - це важливо
+    state: Active
+    value: 0.2 # х1 від трупу колоніста
 
 - type: entity
   parent: BaseItem
   id: RMCInformationDogtag
-  name: information dog tag
-  description: A fallen marine's information dog tag.
+  name: жетон
+  description: Одинокий жетон морського піхотинця на ньому написано особисті дані, група крові, розмір протигазу та релігія власника. Один забирається у випадку, якщо власник помер на полі бою, а інший залишається на тілі...
   components:
   - type: Item
     size: Tiny
@@ -135,11 +138,14 @@
   - type: Clothing
     slots:
     - neck
+  - type: IntelRetrieveItemObjective # Mriya, бо морпіхи - це важливо
+    state: Active
+    value: 0.5 # х2.5 від трупу колоніста або як миша
 
 - type: entity
   id: RMCDogtagProp
-  name: dog tag
-  description: A fallen marine's dog tag, no body in sight.
+  name: жетон
+  description: Одинокий жетон морського піхотинця на ньому написано особисті дані, група крові, розмір протигазу та релігія власника. Один забирається у випадку, якщо власник помер на полі бою, а інший залишається на тілі... Але для цього схоже й тіла не залишилось.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/CMIDs/dogtags.rsi

@@ -548,6 +548,7 @@
   name: Дозатор Крові Авант Біомедікал
   description: Диспенсер крові від Авант Біомедікал – це найсучасніший диспенсер для крові! Придбайте свій сьогодні (вам він точно потрібен)! Виготовлено Авант Біомедікал.
   components:
+  - type: Corrodible # Mriya. Додано можливість плавити
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/blood.rsi
     snapCardinals: true

@@ -1,10 +1,17 @@
 # Наш власний аналог migration.yml. Працює так само, призначений для наших міграцій
 
-# 2026-06-18
+# 2026-06-18. Наша власна їжа з ксено
 FoodMeatXeno: MRFoodMeatXeno
 FoodBurgerXeno: MRFoodBurgerXeno
 FoodMeatXenoCutlet: MRFoodMeatXenoCutlet
 FoodMeatXenoCutletCooked: MRFoodMeatXenoCutletCooked
 
-# 2026-06-19
+# 2026-06-19. ІдІ нахуй
 CMPamphletLanguageRussian: null
+
+# 2026-10-23. Пігріха забувайка
+MRBookcasePhilology: MMCBookcasePhilology
+MRDefibrillatorCabinet: MMCDefibrillatorCabinet
+MRDefibrillatorCabinetFilled: MMCDefibrillatorCabinetFilled
+MRDefibrillatorCabinetFilledUnlocked: MMCDefibrillatorCabinetFilledUnlocked
+MRDefibrillatorCabinetOpen: MMCDefibrillatorCabinetOpen

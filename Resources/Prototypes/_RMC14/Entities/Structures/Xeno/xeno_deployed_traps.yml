@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: XenoTrapperTrap
-  name: xeno trap
-  description: A resin trap laid by a Sapper.
+  name: пастка ксено
+  description: Смоляна пастка, встановлена Бойлером ​Саперкою.
   components:
   - type: DeployTrapsBlocker
   - type: Transform
@@ -71,8 +71,8 @@
 - type: entity
   id: XenoTrapperEmpoweredTrap
   parent: XenoTrapperTrap
-  name: xeno empowered trap
-  description: A strengthened resin trap laid by a Sapper.
+  name: посилена пастка ксено
+  description: Посилена смоляна пастка, встановлена Бойлером ​Саперкою.
   components:
   - type: XenoDeployedTraps
     stunDuration: 3

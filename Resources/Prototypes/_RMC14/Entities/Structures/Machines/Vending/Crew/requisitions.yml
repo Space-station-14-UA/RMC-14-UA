@@ -321,7 +321,7 @@
         boxAmount: 3
         boxSlots: 3
       - id: RMCPacketGrenadeIncendiaryFilled
-        name: упаковка гранат М40 ВІРЗ
+        name: упаковка гранат М40 ЗПП
         box: RMCGrenadeIncendiary
         boxAmount: 3
         boxSlots: 3

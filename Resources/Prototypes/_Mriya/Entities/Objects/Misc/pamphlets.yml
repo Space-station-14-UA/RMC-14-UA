@@ -1,8 +1,10 @@
+# Ролі/Підролі
 - type: entity
   parent: CMPamphlet
   id: MRPamphletSherpa
   name: довідник шерпи
-  description: Тут описується, як правильно переносити важкі речі.
+  description: Тут описується, як правильно переносити важкі речі. Такі важкі матерії зможе обробити лише мозок справжнього стрільця.
+  suffix: Мрія. Лише для Стрільців
   components:
     - type: Sprite
       sprite: _Mriya/Objects/Misc/pamphlets.rsi
@@ -11,7 +13,7 @@
       addComps:
         - type: MRSherpaRifleman
       addSkills:
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2
       giveJobTitle: mriya-rmc-job-name-sherpa
       givePrefix: mriya-rmc-job-prefix-sherpa
       isAppendPrefix: false
@@ -26,23 +28,41 @@
         - popup: rmc-pamphlets-rifleman-warning
           jobProto: CMRifleman
 
-# Я тільки зараз зрозумів, як воно схоже на шерпу, тому це фактично буде те саме, але на мінімалках. . .
+# Навички
+## Я тільки зараз зрозумів, як воно схоже на шерпу, тому це фактично буде те саме, але на мінімалках. . .
 - type: entity
   parent: CMPamphlet
   id: MRPamphletFireman
   name: довідник перенесення на плечах
   description: Тут описується, як правильно переносити людей на собі.
+  suffix: Мрія
   components:
     - type: Sprite
       sprite: _Mriya/Objects/Misc/pamphlets.rsi
       state: pamphlet_sherpa
     - type: SkillPamphlet
       addSkills:
-        RMCSkillFireman: 1
-      jobWhitelists:
-        - popup: rmc-pamphlets-rifleman-warning
-          jobProto: CMRifleman
+        RMCSkillFireman: 2
 
+- type: entity
+  parent: CMPamphlet
+  id: MRPamphletMedical
+  name: медичний довідник для сержантів
+  description: Тут описується те, як не витратити кілька років свого життя навчаючися на медичному. Настільки розумне, що це зможуть зрозуміти лише Лідери Загонів.
+  suffix: Мрія. Лише для ЛЗ
+  components:
+    - type: Sprite
+      state: pamphlet_medical
+    - type: SkillPamphlet
+      addSkills:
+        RMCSkillMedical: 2
+      skillCap:
+        RMCSkillMedical: 2
+      jobWhitelists:
+        - popup: mriya-pamphlets-squad-leader-warning
+          jobProto: CMSquadLeader
+
+# Мови
 - type: entity
   parent: CMPamphletLanguage
   id: MRPamphletLanguageEnglish

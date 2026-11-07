@@ -33,6 +33,7 @@ public sealed class ServerTechSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<TechCryoMarinesEvent>(OnTechCryoMarines);
         SubscribeLocalEvent<TechCryoSpecEvent>(OnTechCryoSpec);
+        SubscribeLocalEvent<TechCryoSGOEvent>(OnTechCryoSGO); // Mriya. ОСГ для фоксів
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<RespawnOnCryoComponent, EnteredCryostorageEvent>(OnEnteredCryostorageEvent);
     }
@@ -57,6 +58,13 @@ public sealed class ServerTechSystem : EntitySystem
     {
         SpawnCryo(WeaponsSpecialistProto, 1);
     }
+
+    // Mriya start. ОСГ для фоксів
+    private void OnTechCryoSGO(TechCryoSGOEvent ev)
+    {
+        SpawnCryo(SmartGunOperatorProto, 1);
+    }
+    // Mriya end
 
     private void SpawnCryo(EntProtoId spawnerId, uint amount)
     {

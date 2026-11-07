@@ -71,7 +71,7 @@
         sound:
           collection: MetalBreak
   - type: ReceiverXenoClaws
-    minimumClawStrength: VerySharp
+    minimumClawStrength: Normal # Mriya. VerySharp в в оригіналі
     maxHealth: 125
     minimumXenoTier: 2
   - type: RMCDropshipBlocked
@@ -188,7 +188,7 @@
     isCorrodible: true
     structure: true
   - type: ReceiverXenoClaws
-    minimumClawStrength: Sharp
+    minimumClawStrength: Normal # Mriya. Sharp в в оригіналі
     maxHealth: 100
   - type: RMCRepairable
     delay: 3

@@ -1,7 +1,7 @@
 - type: entity
   id: XenoResinHole
   name: смоляна пастка
-  description: Це виглядає як глибока діра.
+  description: Це виглядає, як глибока яма.
   placement:
     mode: SnapgridCenter
     snap:

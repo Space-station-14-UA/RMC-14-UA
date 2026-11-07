@@ -31,6 +31,12 @@ namespace Content.Client.GameTicking.Managers
         [ViewVariables] public string? LobbyBackground { get; private set; }
         [ViewVariables] public bool DisallowedLateJoin { get; private set; }
         [ViewVariables] public string? ServerInfoBlob { get; private set; }
+        // Mriya start
+        [ViewVariables] public int PlayerCount { get; private set; }
+        [ViewVariables] public string MapName { get; private set; } = string.Empty;
+        [ViewVariables] public string PlanetName { get; private set; } = string.Empty;
+        [ViewVariables] public string GamemodeTitle { get; private set; } = string.Empty;
+        // Mriya end
         [ViewVariables] public TimeSpan StartTime { get; private set; }
         [ViewVariables] public new bool Paused { get; private set; }
 
@@ -114,6 +120,7 @@ namespace Content.Client.GameTicking.Managers
         private void ConnectionStatus(TickerConnectionStatusEvent message)
         {
             RoundStartTimeSpan = message.RoundStartTimeSpan;
+            IsGameStarted = message.IsRoundStarted; // Mriya
         }
 
         private void LobbyStatus(TickerLobbyStatusEvent message)
@@ -131,6 +138,13 @@ namespace Content.Client.GameTicking.Managers
         private void LobbyInfo(TickerLobbyInfoEvent message)
         {
             ServerInfoBlob = message.TextBlob;
+            // Mriya start
+            RoundId = message.RoundId;
+            PlayerCount = message.PlayerCount;
+            MapName = message.MapName;
+            PlanetName = message.PlanetName;
+            GamemodeTitle = message.GamemodeTitle;
+            // Mriya end
 
             InfoBlobUpdated?.Invoke();
         }

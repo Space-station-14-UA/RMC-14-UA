@@ -22,7 +22,7 @@
     state: heart_t1
   - type: IntelRetrieveItemObjective # Mriya
     state: Active
-    value: 0.1
+    value: 0.2
 
 - type: entity
   parent: RMCOrganXenoHeart
@@ -34,7 +34,7 @@
     state: heart_t2
   - type: IntelRetrieveItemObjective # Mriya
     state: Active
-    value: 0.2
+    value: 0.4
 
 - type: entity
   parent: RMCOrganXenoHeart
@@ -46,7 +46,7 @@
     state: heart_t3
   - type: IntelRetrieveItemObjective # Mriya
     state: Active
-    value: 0.4
+    value: 0.8
 
 - type: entity
   parent: RMCOrganXenoHeart
@@ -59,4 +59,4 @@
     scale: 1.25, 1.25
   - type: IntelRetrieveItemObjective # Mriya
     state: Active
-    value: 0.8
+    value: 1.2

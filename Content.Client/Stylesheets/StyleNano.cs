@@ -97,6 +97,11 @@ namespace Content.Client.Stylesheets
 
         public static readonly Color PanelDark = Color.FromHex("#1E1E22");
 
+        // Mriya start. Кольори для інфо панелі. 
+        public static readonly Color EscapeInfoPanelBg = Color.FromHex("#151a22");
+        public static readonly Color EscapeInfoPanelBorder = Color.FromHex("#4972a1");
+        // Mriya end
+
         public static readonly Color NanoGold = Color.FromHex("#A88B5E");
         public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
         public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
@@ -153,6 +158,9 @@ namespace Content.Client.Stylesheets
         //Background
         public const string StyleClassBackgroundBaseDark = "PanelBackgroundBaseDark";
 
+        public const string StyleClassEscapeInfoPanel = "EscapeInfoPanel";        // Mriya. Інфо панель у EscapeMenu.
+        public const string StyleClassMriyaTerminalLineEdit = "MriyaTerminalLineEdit"; // Mriya. Поле вводу терміналу.
+
         //Buttons
         public const string StyleClassCrossButtonRed = "CrossButtonRed";
         public const string StyleClassButtonColorRed = "ButtonColorRed";
@@ -186,6 +194,7 @@ namespace Content.Client.Stylesheets
             var notoSansBold18 = resCache.NotoStack(variation: "Bold", size: 18);
             var notoSansBold20 = resCache.NotoStack(variation: "Bold", size: 20);
             var notoSansMono = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 12);
+            var robotoMono12 = resCache.GetFont("/Fonts/RobotoMono/RobotoMono-Regular.ttf", size: 12);
             var robotoMonoBold11 = resCache.GetFont("/Fonts/RobotoMono/RobotoMono-Bold.ttf", size: 11);
             var robotoMonoBold12 = resCache.GetFont("/Fonts/RobotoMono/RobotoMono-Bold.ttf", size: 12);
             var robotoMonoBold14 = resCache.GetFont("/Fonts/RobotoMono/RobotoMono-Bold.ttf", size: 14);
@@ -972,6 +981,13 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(LineEdit.StylePropertyStyleBox, actionSearchBox),
+                    }),
+
+                // Mriya terminal lineedit
+                new StyleRule(new SelectorElement(typeof(LineEdit), new[] {StyleClassMriyaTerminalLineEdit}, null, null),
+                    new[]
+                    {
+                        new StyleProperty("font", robotoMono12),
                     }),
 
                 // TabContainer
@@ -1886,6 +1902,22 @@ namespace Content.Client.Stylesheets
                 {
                     new StyleProperty(Label.StylePropertyAlignMode, Label.AlignMode.Left),
                 }),
+
+                // Mriya start. Інфо панель у EscapeMenu.
+                new StyleRule(new SelectorElement(typeof(PanelContainer), new[] { StyleClassEscapeInfoPanel }, null, null), new[]
+                {
+                    new StyleProperty(PanelContainer.StylePropertyPanel, new StyleBoxFlat
+                    {
+                        BackgroundColor = EscapeInfoPanelBg,
+                        BorderColor = EscapeInfoPanelBorder,
+                        BorderThickness = new Thickness(1),
+                        ContentMarginLeftOverride = 8,
+                        ContentMarginRightOverride = 8,
+                        ContentMarginTopOverride = 6,
+                        ContentMarginBottomOverride = 6,
+                    }),
+                }),
+                // Mriya end.
             }).ToList());
         }
     }
