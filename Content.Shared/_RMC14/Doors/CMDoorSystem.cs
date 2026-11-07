@@ -7,6 +7,7 @@ using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.GameTicking;
+using Content.Shared.Hands.EntitySystems; // Mriya. Потрібно для роботи технаря
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Prying.Components;
@@ -21,6 +22,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.GameObjects; // Mriya. Потрібно для роботи технаря
 
 namespace Content.Shared._RMC14.Doors;
 
@@ -31,6 +33,7 @@ public sealed class CMDoorSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoorSystem _doors = default!;
     [Dependency] private readonly SharedGameTicker _gameTicker = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!; // Mriya. Потрібно для роботи технаря
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -233,10 +236,23 @@ public sealed class CMDoorSystem : EntitySystem
         if (HasComp<XenoComponent>(args.User) && HasComp<AirlockComponent>(ent))
             return;
 
+        if (_rmcPower.IsPowered(ent) && UserHoldsMaintenanceJack(args.User)) // Mriya
+            return;  // Mriya. 
+
         if (_rmcPower.IsPowered(ent))
             args.Cancelled = true;
     }
 
+    // Mriya start
+    private bool UserHoldsMaintenanceJack(EntityUid user)
+    {
+        if (!_hands.TryGetActiveItem(user, out var held) || held == null)
+            return false;
+
+        return TryComp(held.Value, out MetaDataComponent? meta) &&
+            meta.EntityPrototype?.ID == "CMMaintenanceJack";
+    }
+    // Mriya end
     private void OnDoorPry(Entity<DoorComponent> ent, ref RMCDoorPryEvent args)
     {
         if (args.Cancelled)

@@ -1,0 +1,85 @@
+- type: entity
+  parent: [BaseItem, RMCBaseMeleeWeapon]
+  id: CMMaintenanceJack
+  name: К92 технар
+  description: Потужний і водночас суворий брендовий інструмент Ве-Я, який серед інженерів отримав лаконічну назву "технар". Ідеальний інструмент для техніків та злочинців.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Tools/maintenance_jack.rsi
+    state: maintenance_jack
+  - type: Item
+    size: Large
+    sprite: _Mriya/Objects/Tools/maintenance_jack.rsi
+    inhandVisuals:
+      left:
+      - state: maintenance_jack_left
+      right:
+      - state: maintenance_jack_right
+  - type: Clothing
+    sprite: _Mriya/Objects/Tools/maintenance_jack.rsi
+    quickEquip: false
+    slots:
+    - Back
+    clothingVisuals:
+      back:
+      - state: maintenance_jack_equipped
+  - type: MeleeWeapon
+    attackRate: 0.5
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Blunt: 35
+        Structural: 35
+    soundHit:
+      collection: GenericHit
+  - type: Tool
+    qualities:
+    - Anchoring
+    useSound:
+      path: /Audio/Items/ratchet.ogg
+  - type: ToolTileCompatible
+    delay: 0.5
+  - type: Prying
+    speedModifier: 3
+    pryPowered: true
+    useSound: /Audio/Items/crowbar.ogg
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+    - behavior: Anchoring
+      sprite:
+        sprite: _Mriya/Objects/Tools/maintenance_jack.rsi
+        state: maintenance_jack
+      useSound:
+        path: /Audio/Items/ratchet.ogg
+      changeSound:
+        collection: RMCThrowing
+    - behavior: Prying
+      sprite:
+        sprite: _Mriya/Objects/Tools/maintenance_jack.rsi
+        state: maintenance_jack_flip
+      useSound: /Audio/Items/crowbar.ogg
+      changeSound:
+        collection: RMCThrowing
+  - type: WhitelistPickupBy
+    whitelist:
+      components:
+      - Synth
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_RMC14/Handling/wrench_pickup.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/wrench_drop.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/wrench_drop.ogg
+      params:
+        volume: -4
+  - type: PhysicalComposition
+    materialComposition:
+      CMSteel: 150
