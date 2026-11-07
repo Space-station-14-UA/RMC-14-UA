@@ -133,7 +133,7 @@
         spawn: 6
       - id: RMCGrenade20mmIncendiary
         name: Л109А1 20мм запалювальні граната (НЕ КИДАТИ) (х6)
-        points: 60
+        points: 40
         spawn: 6
       # Mriya end
       # -id: RMCElectroshockGrenadex6

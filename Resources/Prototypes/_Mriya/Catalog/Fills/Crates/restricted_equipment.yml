@@ -24,7 +24,7 @@
 - type: entity
   id: MRCrateRestrictedEquipmentVanWheel
   parent: RMCCrateSecureGear
-  name: Ящик коліс для вантажівки
+  name: Ящик з комплектом коліс для вантажівки
   components:
   - type: StorageFill
     contents:

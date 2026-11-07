@@ -131,7 +131,7 @@ public abstract class SharedRMCPowerSystem : EntitySystem
             return;
 
         if (_area.TryGetArea(ent, out _, out var areaProto))
-            _metaData.SetEntityName(ent, $"{areaProto.Name} APC");
+            _metaData.SetEntityName(ent, $"ЗКЖ зони {areaProto.Name}"); // Mriya. Переклад
 
         _container.EnsureContainer<ContainerSlot>(ent, ent.Comp.CellContainerSlot);
         if (ent.Comp.StartingCell is { } startingCell)
@@ -298,13 +298,13 @@ public abstract class SharedRMCPowerSystem : EntitySystem
         {
             var markup = ent.Comp.State switch
             {
-                RMCApcState.Working => "Use:\n" +
-                                       "- An [color=cyan]engineering ID[/color] to lock or unlock the interface.\n" +
-                                       "- A [color=cyan]crowbar[/color] to open the cover.\n" +
-                                       "- A [color=cyan]screwdriver[/color] to expose the wires.",
-                RMCApcState.WiresExposed => "Use a [color=cyan]screwdriver[/color] to unexpose the wires or a [color=cyan]crowbar[/color] to open the cover!",
-                RMCApcState.CoverOpenBattery => "Use an [color=cyan]empty hand[/color] to remove the battery or a [color=cyan]crowbar[/color] to close the cover!",
-                RMCApcState.CoverOpenNoBattery => "Use a [color=cyan]battery[/color] to put in a battery!",
+                RMCApcState.Working => "Використовуйте:\n" + // Mriya. Переклад
+                                       "- [color=cyan]Пристрій з доступом інженера[/color], щоб розблокувати чи заблокувати інтерфейс.\n" + // Mriya. Переклад
+                                       "- [color=cyan]Лом[/color], щоб відкрити тех. панель.\n" + // Mriya. Переклад
+                                       "- [color=cyan]Викрутку[/color], щоб оголити дроти.", // Mriya. Переклад
+                RMCApcState.WiresExposed => "Використовуйте [color=cyan]викрутку[/color], щоб сховати дроти або [color=cyan]лом[/color], щоб відкрити тех. панель!", // Mriya. Переклад
+                RMCApcState.CoverOpenBattery => "Використовуйте [color=cyan]порожню руку[/color], щоб дістати акумулятор або [color=cyan]лом[/color], щоб закрити тех. панель!", // Mriya. Переклад
+                RMCApcState.CoverOpenNoBattery => "Використовуйте [color=cyan]акумулятор[/color], щоб вставити акумулятор!", // Mriya. Переклад
                 _ => null,
             };
 
@@ -642,20 +642,20 @@ public abstract class SharedRMCPowerSystem : EntitySystem
                 // TODO: localize
                 var tool = ent.Comp.State switch
                 {
-                    RMCFusionReactorState.Wrench => "a [color=cyan]Wrench[/color]",
-                    RMCFusionReactorState.Wire => "[color=cyan]Wirecutters[/color]",
-                    RMCFusionReactorState.Weld => "a [color=cyan]Welder[/color]",
+                    RMCFusionReactorState.Wrench => "[color=cyan]Ключ[/color]", // Mriya. Переклад
+                    RMCFusionReactorState.Wire => "[color=cyan]Кусачки[/color]", // Mriya. Переклад
+                    RMCFusionReactorState.Weld => "[color=cyan]Зварювальник[/color]", // Mriya. Переклад
                     _ => throw new ArgumentOutOfRangeException(),
                 };
 
-                args.PushMarkup($"Use {tool} to repair it!");
+                args.PushMarkup($"Використовуйте {tool}, щоб полагодити це!"); // Mriya. Переклад
             }
 
             if (!_container.TryGetContainer(ent, ent.Comp.CellContainerSlot, out var container) ||
                 container.ContainedEntities.Count == 0)
             {
                 // TODO: localize
-                args.PushMarkup("It needs a [color=cyan]fuel cell[/color]!");
+                args.PushMarkup("Тут відсутній [color=cyan]паливний елемент[/color]!"); // Mriya. Переклад
             }
 
             var overload = new RMCFusionReactorOverloadStatusEvent(ent, args.Examiner);
