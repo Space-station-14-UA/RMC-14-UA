@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Mriya.CCVar; // Mriya
 using Content.Client._RMC14.Medical.HUD;
 using Content.Client._RMC14.NightVision;
 using Content.Shared._RMC14.Mobs;
@@ -22,6 +23,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
+using Robust.Shared.Configuration; // Mriya
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -43,6 +45,9 @@ public sealed class XenoHudOverlay : Overlay
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!; // Mriya
+
+    private bool _onOldSpriteChange = true; // Mriya
 
     private readonly ContainerSystem _container;
     private readonly CMHealthIconsSystem _healthIcons;
@@ -78,6 +83,13 @@ public sealed class XenoHudOverlay : Overlay
     public XenoHudOverlay()
     {
         IoCManager.InjectDependencies(this);
+
+        // Mriya start
+        _config.OnValueChanged(
+        MriyaCVars.MRUseOldSprites,
+        value => _onOldSpriteChange = value,
+        invokeImmediately: true);
+        // Mriya end
 
         _container = _entity.System<ContainerSystem>();
         _healthIcons = _entity.System<CMHealthIconsSystem>();
@@ -548,6 +560,11 @@ public sealed class XenoHudOverlay : Overlay
     private void UpdateHealth(Entity<XenoComponent, SpriteComponent, MobStateComponent?> ent, DrawingHandleWorld handle)
     {
         var (uid, xeno, sprite, mobState) = ent;
+        // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        var hudOffset = _onOldSpriteChange
+            ? xeno.OldHudOffset
+            : xeno.HudOffset;
+        // Mriya end
         if (!_damageableQuery.TryComp(uid, out var damageable))
             return;
 
@@ -595,8 +612,8 @@ public sealed class XenoHudOverlay : Overlay
         var texture = _sprite.GetFrame(icon, _timing.CurTime);
 
         var bounds = sprite.Bounds;
-        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) texture.Height / EyeManager.PixelsPerMeter * bounds.Height + xeno.HudOffset.Y;
-        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter * bounds.Width + xeno.HudOffset.X;
+        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) texture.Height / EyeManager.PixelsPerMeter * bounds.Height + hudOffset.Y; // Mriya. xeno.HudOffset в оригіналі
+        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter * bounds.Width + hudOffset.X; // Mriya. xeno.HudOffset в оригіналі
 
         var position = new Vector2(xOffset, yOffset);
         handle.DrawTexture(texture, position);
@@ -605,6 +622,11 @@ public sealed class XenoHudOverlay : Overlay
     private void UpdatePlasma(Entity<XenoComponent, SpriteComponent> ent, DrawingHandleWorld handle)
     {
         var (uid, xeno, sprite) = ent;
+        // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        var hudOffset = _onOldSpriteChange
+            ? xeno.OldHudOffset
+            : xeno.HudOffset;
+        // Mriya end
         if (!_xenoPlasmaQuery.TryComp(uid, out var comp) ||
             comp.MaxPlasma == 0)
         {
@@ -620,8 +642,8 @@ public sealed class XenoHudOverlay : Overlay
         var texture = _sprite.GetFrame(icon, _timing.CurTime);
 
         var bounds = sprite.Bounds;
-        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) texture.Height / EyeManager.PixelsPerMeter * bounds.Height + xeno.HudOffset.Y;
-        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter * bounds.Width + xeno.HudOffset.X;
+        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) texture.Height / EyeManager.PixelsPerMeter * bounds.Height + hudOffset.Y; // Mriya. xeno.HudOffset в оригіналі
+        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter * bounds.Width + hudOffset.X; // Mriya. xeno.HudOffset в оригіналі
 
         var position = new Vector2(xOffset, yOffset);
         handle.DrawTexture(texture, position);
@@ -630,6 +652,11 @@ public sealed class XenoHudOverlay : Overlay
     private void UpdateShields(Entity<XenoComponent, SpriteComponent> ent, DrawingHandleWorld handle)
     {
         var (uid, xeno, sprite) = ent;
+        // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        var hudOffset = _onOldSpriteChange
+            ? xeno.OldHudOffset
+            : xeno.HudOffset;
+        // Mriya end
 
         FixedPoint2 shieldAmount = 0;
 
@@ -658,8 +685,8 @@ public sealed class XenoHudOverlay : Overlay
         var texture = _sprite.GetFrame(icon, _timing.CurTime);
 
         var bounds = sprite.Bounds;
-        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float)texture.Height / EyeManager.PixelsPerMeter * bounds.Height + xeno.HudOffset.Y;
-        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float)texture.Width / EyeManager.PixelsPerMeter * bounds.Width + xeno.HudOffset.X;
+        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float)texture.Height / EyeManager.PixelsPerMeter * bounds.Height + hudOffset.Y; // Mriya. xeno.HudOffset в оригіналі
+        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float)texture.Width / EyeManager.PixelsPerMeter * bounds.Width + hudOffset.X; // Mriya. xeno.HudOffset в оригіналі
 
         var position = new Vector2(xOffset, yOffset);
         handle.DrawTexture(texture, position);
@@ -679,6 +706,11 @@ public sealed class XenoHudOverlay : Overlay
     private void UpdatePurpleBar(Entity<XenoComponent, SpriteComponent> ent, DrawingHandleWorld handle, double energy, double max, int? generationCap)
     {
         var (_, xeno, sprite) = ent;
+        // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        var hudOffset = _onOldSpriteChange
+            ? xeno.OldHudOffset
+            : xeno.HudOffset;
+        // Mriya end
         var level = ContentHelpers.RoundToLevels(energy, max, 11);
         var name = level > 0 ? $"{level * 10}" : "0";
         var state = $"xenoenergy{name}";
@@ -686,8 +718,8 @@ public sealed class XenoHudOverlay : Overlay
         var texture = _sprite.GetFrame(icon, _timing.CurTime);
 
         var bounds = sprite.Bounds;
-        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) texture.Height / EyeManager.PixelsPerMeter * bounds.Height + xeno.HudOffset.Y;
-        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter * bounds.Width + xeno.HudOffset.X;
+        var yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) texture.Height / EyeManager.PixelsPerMeter * bounds.Height + hudOffset.Y; // Mriya. xeno.HudOffset в оригіналі
+        var xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter * bounds.Width + hudOffset.X; // Mriya. xeno.HudOffset в оригіналі
 
         var position = new Vector2(xOffset, yOffset);
         handle.DrawTexture(texture, position);

@@ -1,3 +1,4 @@
+using Content.Shared._Mriya.CCVar; // Mriya
 using Content.Client._RMC14.Sprite;
 using Content.Shared._RMC14.Sprite;
 using Content.Shared._RMC14.Xenonids;
@@ -16,6 +17,7 @@ using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Robust.Client.GameObjects;
+using Robust.Shared.Configuration; // Mriya
 using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
 namespace Content.Client._RMC14.Xenonids;
@@ -24,6 +26,9 @@ public sealed class XenoVisualizerSystem : VisualizerSystem<XenoComponent>
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly RMCSpriteSystem _rmcSprite = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!; // Mriya
+
+    private bool _onOldSpriteChange; // Mriya
 
     private EntityQuery<XenoAnimateMovementComponent> _animateQuery;
 
@@ -36,6 +41,8 @@ public sealed class XenoVisualizerSystem : VisualizerSystem<XenoComponent>
         SubscribeLocalEvent<XenoComponent, GetDrawDepthEvent>(OnXenoGetDrawDepth);
 
         _animateQuery = GetEntityQuery<XenoAnimateMovementComponent>();
+
+        Subs.CVar(_config, MriyaCVars.MRUseOldSprites, v => _onOldSpriteChange = v, true); // Mriya
     }
 
     private void OnXenoKnockedDown(Entity<XenoComponent> xeno, ref KnockedDownEvent args)
@@ -162,19 +169,44 @@ public sealed class XenoVisualizerSystem : VisualizerSystem<XenoComponent>
 
                 break;
         }
+        // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        // Воно таке ускладнене, щоб впихнути оновлення спрайту від зміни налаштування на ходу (ну а ще ШІ слоп)
+        var hasOldOvipositor = sprite.LayerMapTryGet(
+            XenoVisualLayers.OldOvipositor,
+            out var oldOvipositorLayer);
 
-        if (!sprite.LayerMapTryGet(XenoVisualLayers.Ovipositor, out var oviLayer))
+        var hasNewOvipositor = sprite.LayerMapTryGet(
+            XenoVisualLayers.Ovipositor,
+            out var newOvipositorLayer);
+
+        // Завжди вимикаємо обидва шари, щоб вони не накладалися
+        if (hasOldOvipositor)
+            sprite.LayerSetVisible(oldOvipositorLayer, false);
+
+        if (hasNewOvipositor)
+            sprite.LayerSetVisible(newOvipositorLayer, false);
+
+        var ovipositorLayer = _onOldSpriteChange
+            ? oldOvipositorLayer
+            : newOvipositorLayer;
+
+        var hasOvipositorLayer = _onOldSpriteChange
+            ? hasOldOvipositor
+            : hasNewOvipositor;
+        // Mriya end
+
+        if (!hasOvipositorLayer) // Mriya. `(!sprite.LayerMapTryGet(XenoVisualLayers.Ovipositor, out var oviLayer)` в оригіналі
             return;
 
         if (oviState == null)
         {
-            sprite.LayerSetVisible(oviLayer, false);
+            //sprite.LayerSetVisible(oviLayer, false); – Mriya
             sprite.LayerSetVisible(layer, true);
             return;
         }
 
-        sprite.LayerSetState(oviLayer, oviState);
-        sprite.LayerSetVisible(oviLayer, true);
+        sprite.LayerSetState(ovipositorLayer, oviState); // Mriya. `oviLayer` в оригіналі
+        sprite.LayerSetVisible(ovipositorLayer, true); // Mriya. `oviLayer` в оригіналі
         sprite.LayerSetVisible(layer, false);
     }
 

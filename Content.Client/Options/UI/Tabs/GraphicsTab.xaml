@@ -4,6 +4,10 @@
     <BoxContainer Orientation="Vertical">
         <ScrollContainer VerticalExpand="True">
             <BoxContainer Orientation="Vertical" Margin="8 8 8 8">
+                <!-- Mriya. Наше та на найвиднішому місці -->
+                <Label Text="{Loc 'mriya-ui-options-mriya-label'}" StyleClasses="LabelKeyText"/>
+                <CheckBox Name="OldSpritesCheckBox" Text="{Loc 'mriya-ui-options-old-sprites'}" />
+
                 <!-- Display -->
                 <Label Text="{Loc 'ui-options-display-label'}" StyleClasses="LabelKeyText"/>
                 <CheckBox Name="VSyncCheckBox" Text="{Loc 'ui-options-vsync'}" />

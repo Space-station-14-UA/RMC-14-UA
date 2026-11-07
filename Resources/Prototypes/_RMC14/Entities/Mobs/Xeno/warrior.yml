@@ -10,6 +10,9 @@
   name: Воїтелька
   description: Кремезна чужопланетна істота з броньованим панцирем, потужними лапами та великими іклами.
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Warrior/warrior.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Warrior/warrior.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleWarrior
@@ -38,6 +41,7 @@
     - ActionXenoDevolve
     tier: 2
     hudOffset: -0.15,0.25
+    oldHudOffset: -0.15,0.4 # Mriya. Старі/наші версії спрайтів
     unlockAt: 540 # 9 minutes
   - type: XenoRegen
     restHealMultiplier:  1.4

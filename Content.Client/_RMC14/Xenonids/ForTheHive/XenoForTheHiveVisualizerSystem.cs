@@ -1,21 +1,36 @@
+using Content.Shared._Mriya.CCVar; // Mriya
 using Content.Shared._RMC14.Xenonids.ForTheHive;
 using Robust.Client.GameObjects;
+using Robust.Shared.Configuration; // Mriya
 
 namespace Content.Client._RMC14.Xenonids.ForTheHive;
 
 public sealed class XenoForTheHiveVisualizerSystem : VisualizerSystem<ForTheHiveComponent>
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
+
+    [Dependency] private readonly IConfigurationManager _config = default!; // Mriya
+
+    private bool _onOldSpriteChange; // Mriya
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<ForTheHiveComponent, ForTheHiveActivatedEvent>(OnForTheHiveAdded);
         SubscribeLocalEvent<ForTheHiveComponent, ForTheHiveCancelledEvent>(OnForTheHiveRemoved);
+
+        Subs.CVar(_config, MriyaCVars.MRUseOldSprites, v => _onOldSpriteChange = v, true); // Mriya
     }
+
 
     private void OnForTheHiveAdded(Entity<ForTheHiveComponent> xeno, ref ForTheHiveActivatedEvent args)
     {
+        // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        var forTheHiveSprite = _onOldSpriteChange
+            ? xeno.Comp.ActiveOldSprite
+            : xeno.Comp.ActiveSprite;
+        // Mriya end
+
         if (!TryComp<SpriteComponent>(xeno, out var sprite))
             return;
 
@@ -23,15 +38,21 @@ public sealed class XenoForTheHiveVisualizerSystem : VisualizerSystem<ForTheHive
             !_sprite.TryGetLayer((xeno, sprite), layer, out var spriteLayer, false))
             return;
 
-        if (xeno.Comp.ActiveSprite != null)
+        if (forTheHiveSprite != null) // Mriya. xeno.Comp.ActiveSprite в оригіналі
         {
             _sprite.SetAutoAnimateSync(sprite, spriteLayer, 0);
-            sprite.LayerSetRSI(layer, xeno.Comp.ActiveSprite);
+            sprite.LayerSetRSI(layer, forTheHiveSprite); // Mriya. xeno.Comp.ActiveSprite в оригіналі
         }
     }
 
     private void OnForTheHiveRemoved(Entity<ForTheHiveComponent> xeno, ref ForTheHiveCancelledEvent args)
     {
+        // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+        var BaseSprite = _onOldSpriteChange
+            ? xeno.Comp.BaseOldSprite
+            : xeno.Comp.BaseSprite;
+        // Mriya end
+
         if (!TryComp<SpriteComponent>(xeno, out var sprite))
             return;
 
@@ -39,10 +60,10 @@ public sealed class XenoForTheHiveVisualizerSystem : VisualizerSystem<ForTheHive
             !_sprite.TryGetLayer((xeno, sprite), layer, out var spriteLayer, false))
             return;
 
-        if (xeno.Comp.BaseSprite != null)
+        if (BaseSprite != null) // Mriya. xeno.Comp.BaseSprite
         {
             _sprite.SetAutoAnimateSync(sprite, spriteLayer, 0);
-            sprite.LayerSetRSI(layer, xeno.Comp.BaseSprite);
+            sprite.LayerSetRSI(layer, BaseSprite); // Mriya. xeno.Comp.BaseSprite
         }
     }
 

@@ -10,8 +10,14 @@ public sealed partial class ForTheHiveComponent : Component
     [DataField, AutoNetworkedField]
     public string? BaseSprite;
 
+    [DataField, AutoNetworkedField] // Mriya. Старі/наші версії спрайтів
+    public string? BaseOldSprite;
+
     [DataField, AutoNetworkedField]
     public string? ActiveSprite;
+
+    [DataField, AutoNetworkedField] // Mriya. Старі/наші версії спрайтів
+    public string? ActiveOldSprite;
 
     [DataField, AutoNetworkedField]
     public TimeSpan AnimationTimeBase = TimeSpan.FromSeconds(1.6);
