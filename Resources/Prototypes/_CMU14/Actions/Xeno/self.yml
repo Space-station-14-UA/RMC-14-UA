@@ -1,0 +1,112 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+# Self-targeted xeno caste actions: Heatshield, Venator, Bulwark and Reaper.
+
+- type: entity
+  id: ActionXenoSelfImmolate
+  parent: ActionXenoBase
+  name: Самоспалення (50)
+  description: Підпаліть себе, щоб накопичувати тепло для здібностей Теплощита.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 24
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: screech
+  - type: InstantAction
+    event: !type:Content.Shared._CMU14.Xenonids.Heatshield.XenoSelfImmolateActionEvent
+  - type: XenoActionPlasma
+    cost: 50
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoThermoregulation
+  parent: ActionXenoBase
+  name: Терморегуляція (40)
+  description: Перетворіть полум'я на короткий ривок швидкості, а потім загасіть себе.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 16
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: fortify
+  - type: InstantAction
+    event: !type:Content.Shared._CMU14.Xenonids.Heatshield.XenoThermoregulationActionEvent
+  - type: XenoActionPlasma
+    cost: 40
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoStoreAcid
+  parent: ActionXenoBase
+  name: Зберегти кислоту (150)
+  description: Збережіть заряд кислоти. Поки він не витрачений, ваша броня слабша і ви отримуєте більше шкоди, зате наступна кислотна атака відновлюється швидше.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 5
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: venator_store_acid
+  - type: InstantAction
+    event: !type:Content.Shared._CMU14.Xenonids.Venator.XenoStoreAcidActionEvent
+  - type: XenoActionPlasma
+    cost: 150
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoEncasedPlates
+  parent: ActionXenoBase
+  name: Стулити пластини
+  description: Перемикайте стійку. Стулені пластини дають більший лобовий захист і захист від збивання з ніг, але сповільнюють вас і слабше тримають удари з боків.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: bulwark_encased_plates
+  - type: InstantAction
+    event: !type:Content.Shared._CMU14.Xenonids.Bulwark.XenoEncasedPlatesActionEvent
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoReflectiveShield
+  parent: ActionXenoBase
+  name: Відбивний щит
+  description: Напружте пластини, щоб короткий час відбивати ворожі кулі.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: bulwark_reflective_shield
+  - type: InstantAction
+    event: !type:Content.Shared._CMU14.Xenonids.Bulwark.XenoReflectiveShieldActionEvent
+  - type: XenoReflectiveShieldAction
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoCarrionMantle
+  parent: ActionXenoBase
+  name: Падальний плащ
+  description: Витратьте плоть, щоб укрити себе або сестру вулика бронею із затверділої падлини.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 30
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: reaper_carrion_mantle
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Reaper.XenoCarrionMantleActionEvent
+    whitelist:
+      components:
+      - Xeno
+  - type: ActionBlockIfResting
+  - type: ActionInRangeUnobstructed
+    range: 5

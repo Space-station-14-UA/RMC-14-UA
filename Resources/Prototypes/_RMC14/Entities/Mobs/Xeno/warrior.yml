@@ -61,6 +61,10 @@
     evolvesTo:
     - RMCXenoCrusher
     - CMXenoPraetorian
+    # Mriya start. Страйн СМУ: Бастіон.
+    strains:
+    - CMUXenoWarriorBulwark
+    # Mriya end
   - type: CMArmor
     xenoArmor: 20
     explosionArmor: 40

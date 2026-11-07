@@ -386,12 +386,12 @@ public sealed class XenoSpitSystem : EntitySystem
         if (args.Handled)
             return;
 
-        ApplyAcidStacks(args.Target, ent.Comp.Amount, ent.Comp.Max, ent.Comp.Damage, ent.Comp.Whitelist);
+        ApplyAcidStacks(args.Target, ent.Comp.Amount, ent.Comp.Max, ent.Comp.Damage, ent.Comp.Whitelist, ent.Comp.RequireExisting); // Mriya. Підтримка RequireExisting зі СМУ.
     }
 
     private void OnApplyAcidStacksDamageCollide(Entity<ApplyAcidStacksComponent> ent, ref DamageCollideEvent args)
     {
-        ApplyAcidStacks(args.Target, ent.Comp.Amount, ent.Comp.Max, ent.Comp.Damage, ent.Comp.Whitelist);
+        ApplyAcidStacks(args.Target, ent.Comp.Amount, ent.Comp.Max, ent.Comp.Damage, ent.Comp.Whitelist, ent.Comp.RequireExisting); // Mriya. Підтримка RequireExisting зі СМУ.
     }
 
     private void OnShieldOnHit(Entity<XenoProjectileShieldOnHitComponent> ent, ref ProjectileHitEvent args)
@@ -535,7 +535,7 @@ public sealed class XenoSpitSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("rmc-acid-resist-partial"), player, player);
     }
 
-    private void ApplyAcidStacks(EntityUid target, int amount, int max, DamageSpecifier? damage, EntityWhitelist? whitelist)
+    private void ApplyAcidStacks(EntityUid target, int amount, int max, DamageSpecifier? damage, EntityWhitelist? whitelist, bool requireExisting) // Mriya. Параметр requireExisting зі СМУ.
     {
         if (!_entityWhitelist.IsWhitelistPassOrNull(whitelist, target))
             return;
@@ -543,7 +543,20 @@ public sealed class XenoSpitSystem : EntitySystem
         if (_mobState.IsDead(target))
             return;
 
-        var victim = EnsureComp<VictimXenoAcidStacksComponent>(target);
+        // Mriya start. Накладати заряди лише на вже інтоксиковану ціль, якщо цього вимагає прототип СМУ.
+        if (!TryComp(target, out VictimXenoAcidStacksComponent? victim))
+        {
+            if (requireExisting)
+                return;
+
+            victim = EnsureComp<VictimXenoAcidStacksComponent>(target);
+        }
+        else if (requireExisting && victim.Current <= 0)
+        {
+            return;
+        }
+        // Mriya end
+
         victim.Current = Math.Min(max, victim.Current + amount);
         victim.LastIncrement = _timing.CurTime;
         Dirty(target, victim);

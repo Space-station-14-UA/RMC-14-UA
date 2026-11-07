@@ -70,6 +70,10 @@
     - CMXenoSpitter
     evolvesToWithoutPoints:
     - CMXenoQueen
+    # Mriya start. Страйн СМУ: Мантикора.
+    strains:
+    - CMUXenoSentinelToxic
+    # Mriya end
   - type: XenoAcid
   - type: XenoParalyzingSlash
   - type: XenoSlowingSpit
