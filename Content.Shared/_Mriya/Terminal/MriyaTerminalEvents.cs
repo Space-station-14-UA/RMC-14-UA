@@ -15,12 +15,14 @@ public sealed class MriyaTerminalState : BoundUserInterfaceState
     public readonly bool IsInput;
     public readonly List<string> Messages;
     public readonly string? AuthorizedName;
+    public readonly string? AuthorizedJob;
 
-    public MriyaTerminalState(bool isInput, List<string> messages, string? authorizedName)
+    public MriyaTerminalState(bool isInput, List<string> messages, string? authorizedName, string? authorizedJob)
     {
         IsInput = isInput;
         Messages = messages;
         AuthorizedName = authorizedName;
+        AuthorizedJob = authorizedJob;
     }
 }
 
