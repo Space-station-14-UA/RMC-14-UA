@@ -709,8 +709,8 @@ namespace Content.Client.Lobby.UI
                         .Select(selector => selector.Selector)
                         .ToList();
 
-                    AddTraitSelectors(languageSelectors, selectionCount, category, "rmc-trait-group-languages");
-                    AddTraitSelectors(otherSelectors, selectionCount, category, "rmc-trait-group-other-speech");
+                    AddTraitSelectors(languageSelectors, selectionCount, category); // Mriya. Прибрано текст
+                    AddTraitSelectors(otherSelectors, selectionCount, category); // Mriya
                 }
                 else
                 {

@@ -219,7 +219,7 @@ public abstract class SharedRMCFlammableSystem : EntitySystem
 
         using (args.PushGroup(nameof(CraftsIntoMolotovComponent)))
         {
-            args.PushMarkup("[color=cyan]You can turn this into a molotov with a piece of paper![/color]");
+            args.PushMarkup("[color=cyan]Ви можете перетворити це на коктейль для Молотова за допомогою аркуша паперу![/color]"); // Mriya. Переклад
         }
     }
 

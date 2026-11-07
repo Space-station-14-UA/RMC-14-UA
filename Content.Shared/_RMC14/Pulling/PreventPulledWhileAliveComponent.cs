@@ -14,4 +14,9 @@ public sealed partial class PreventPulledWhileAliveComponent : Component
 
     [DataField, AutoNetworkedField]
     public HashSet<ProtoId<StatusEffectPrototype>> ExceptEffects = new();
+
+    // Mriya start. Можливість тягати ССДшних
+    [DataField, AutoNetworkedField]
+    public bool AllowPullWhileSsd = true;
+    // Mriya end
 }

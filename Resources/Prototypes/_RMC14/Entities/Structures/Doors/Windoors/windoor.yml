@@ -124,8 +124,8 @@
 - type: entity
   parent: CMBaseWindoor
   id: CMWindoor
-  name: glass door
-  description: A window, that is also a door. A windoor if you will.
+  name: віконні двері
+  description: Вікно, яке також є дверима. Якщо хочете бути унікальним, то це вікнодвері.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Windoors/windoor.rsi
@@ -176,8 +176,8 @@
 - type: entity
   parent: CMBaseWindoor
   id: CMWindoorSecure
-  name: надійні скляні двері
-  description: Товстий шматок загартованого скла на металевій рамі. Певно, міцніший ніж ти.
+  name: надійні віконні двері
+  description: Товстий шматок загартованого скла на металевій рамі. Певно, міцніший, ніж ти.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Windoors/secure.rsi

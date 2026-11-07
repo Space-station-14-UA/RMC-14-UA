@@ -1,4 +1,5 @@
 using Content.Shared.CCVar;
+using Content.Shared.Movement.Systems; // Mriya
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -17,6 +18,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedStatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!; // Mriya
 
     private bool _icSsdSleep;
     private float _icSsdSleepTime;
@@ -43,6 +45,8 @@ public sealed class SSDIndicatorSystem : EntitySystem
         }
 
         Dirty(uid, component);
+
+        _movementSpeed.RefreshMovementSpeedModifiers(uid); // Mriya. Можливість швидко тягати ССДшних
     }
 
     private void OnPlayerDetached(EntityUid uid, SSDIndicatorComponent component, PlayerDetachedEvent args)
@@ -56,6 +60,8 @@ public sealed class SSDIndicatorSystem : EntitySystem
         }
 
         Dirty(uid, component);
+
+        _movementSpeed.RefreshMovementSpeedModifiers(uid); // Mriya. Можливість швидко тягати ССДшних
     }
 
     // Prevents mapped mobs to go to sleep immediately

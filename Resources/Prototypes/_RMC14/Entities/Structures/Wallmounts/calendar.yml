@@ -1,7 +1,7 @@
 - type: entity
   id: RMCCalendarBase
-  name: wall calendar
-  description: Classic office decoration and a place to stare at maniacally.
+  name: настінний календар
+  description: Класичний елемент гарного офісу, кухні чи то вашої особистої кімнати. Прекрасна штуковина, на яку можна маніакально дивитися, думаючи про те, скільки вам ще залишилося.
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -26,10 +26,29 @@
     whitelist:
       components:
       - Xeno
+  # Mriya start. Бо чому ні?
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25 # 1/4 від прапора
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_RMC14/Effects/laser_cannon.ogg # Схоже ж
+          params:
+            volume: -5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # Mriya end
 
 - type: entity
   parent: RMCCalendarBase
   id: RMCCalendarColonist
+  description: Відчувається... Нейтрально. Класичний елемент гарного офісу, кухні чи то вашої особистої кімнати. Прекрасна штуковина, на яку можна маніакально дивитися, думаючи про те, скільки вам ще залишилося. # Mriya
   suffix: Colony
   components:
   - type: Sprite
@@ -38,6 +57,7 @@
 - type: entity
   parent: RMCCalendarBase
   id: RMCCalendarWeYa
+  description: Відчувається... Ніби вашу роботу, ваші статки та вас самих хочуть продати. Класичний елемент гарного офісу, кухні чи то вашої особистої кімнати. Прекрасна штуковина, на яку можна маніакально дивитися, думаючи про те, скільки вам ще залишилося. # Mriya
   suffix: WeYa
   components:
   - type: Sprite
@@ -46,6 +66,7 @@
 - type: entity
   parent: RMCCalendarBase
   id: RMCCalendarUNMC
+  description: Відчувається... Патріотично та демократично. Класичний елемент гарного офісу, кухні чи то вашої особистої кімнати. Прекрасна штуковина, на яку можна маніакально дивитися, думаючи про те, скільки вам ще залишилося. # Mriya
   suffix: UNMC
   components:
   - type: Sprite
@@ -54,6 +75,7 @@
 - type: entity
   parent: RMCCalendarBase
   id: RMCCalendarTWE
+  description: Відчувається... Екзотично та з сумішшю сирої раби й чаю. Класичний елемент гарного офісу, кухні чи то вашої особистої кімнати. Прекрасна штуковина, на яку можна маніакально дивитися, думаючи про те, скільки вам ще залишилося. # Mriya
   suffix: TWE
   components:
   - type: Sprite
@@ -62,6 +84,7 @@
 - type: entity
   parent: RMCCalendarBase
   id: RMCCalendarSPP
+  description: Відчувається... Як лайно. Класичний елемент гарного офісу, кухні чи то вашої особистої кімнати. Прекрасна штуковина, на яку можна маніакально дивитися, думаючи про те, скільки вам ще залишилося. # Mriya
   suffix: SPP
   components:
   - type: Sprite

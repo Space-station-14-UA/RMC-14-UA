@@ -1,4 +1,4 @@
-<DefaultWindow xmlns="https://spacestation14.io" Title="{Loc 'ghost-target-window-title'}" MinSize="450 450" SetSize="600 450"> <!-- Mriya. `SetSize="600 450" в оригіналі`. Для розтягування кнопок -->
+<DefaultWindow xmlns="https://spacestation14.io" Title="{Loc 'ghost-target-window-title'}" MinSize="450 450" SetSize="500 450"> <!-- Mriya. `SetSize="450 450" в оригіналі`. Для розтягування кнопок -->
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" SizeFlagsStretchRatio="0.4">
         <Button Name="GhostnadoButton" Text="{Loc 'ghost-target-window-warp-to-most-followed'}" HorizontalAlignment="Center" Margin="0 4" />
         <LineEdit Name="SearchBar" PlaceHolder="Search" HorizontalExpand="True" Margin="0 4" />

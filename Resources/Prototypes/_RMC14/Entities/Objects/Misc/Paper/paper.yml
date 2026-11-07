@@ -2,8 +2,8 @@
   abstract: true
   parent: BaseItem
   id: CMBasePaper
-  name: папірець
-  description: Простий аркуш паперу. Білий, як твоя совість, чи не так?
+  name: аркуш паперу
+  description: Простий аркуш паперу. "Папірці" ти знайдеш лише у кімнаті для перебування на самоті. Білий, як твоя совість, чи не так?
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Misc/paper.rsi

@@ -235,8 +235,8 @@
 - type: entity
   parent: [ Clothing, ClothingSlotBase ]
   id: RMCPouchMachete
-  name: підсумок для мачете H6B моделі M2132 
-  description: Великий шкіряний чохол призначений для зберігання мачете моделі M2132. Може бути одягнений, як будь-який інший підсумок.
+  name: підсумок Х6Б для мачете М2132
+  description: Великий шкіряний чохол призначений для зберігання мачете моделі М2132. Може бути одягнений, як будь-який інший підсумок.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Pouches/machete.rsi

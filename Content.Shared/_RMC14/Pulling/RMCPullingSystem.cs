@@ -19,6 +19,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
+using Content.Shared.SSDIndicator; // Mriya
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
@@ -278,6 +279,14 @@ public sealed class RMCPullingSystem : EntitySystem
         if (ev.Cancelled)
             return;
 
+        // Mriya start. Можливість швидко тягати ССДшних
+        if (TryComp<SSDIndicatorComponent>(ent, out var ssd))
+        {
+            args.ModifySpeed(slow.SsdMultiplier, slow.SsdMultiplier);
+            return;
+        }
+        // Mriya end
+
         foreach (var slowdown in slow.Slowdowns)
         {
             if (_whitelist.IsWhitelistPass(slowdown.Whitelist, puller.Pulling.Value))
@@ -397,6 +406,13 @@ public sealed class RMCPullingSystem : EntitySystem
 
         if (!_whitelist.IsWhitelistPassOrNull(pulled.Comp.Whitelist, user))
             return true;
+
+        // Mriya start. Можливість тягати ССДшних
+        if (pulled.Comp.AllowPullWhileSsd && TryComp<SSDIndicatorComponent>(pulled, out var ssd) && ssd.IsSSD)
+        {
+            return true;
+        }
+        // Mriya end
 
         foreach (var effect in pulled.Comp.ExceptEffects)
         {
