@@ -140,6 +140,21 @@
   - type: CMExplosionEffect
   - type: RMCScorchEffect
   - type: MortarShell
+  # Mriya start.
+  - type: Flammable
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 2
+  - type: Flammability
+    flammability: 0.7
+    burnSupport: 0.6
+    burnDurationBonus: 8
+  - type: CookOff
+    minCookTime: 4
+    maxCookTime: 8
+    spawnFireAfter: false
+  # Mriya end.
 
 - type: entity
   parent: RMCMortarShellBase
@@ -163,6 +178,21 @@
   - type: TileFireOnTrigger
     spawn: RMCTileFireGreen
     range: 5
+  # Mriya start.
+  - type: Flammable
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 2
+  - type: Flammability
+    flammability: 0.8
+    burnSupport: 0.8
+    burnDurationBonus: 12
+  - type: CookOff
+    minCookTime: 4
+    maxCookTime: 8
+    spawnFireAfter: false
+  # Mriya end.
 
 - type: entity
   parent: RMCMortarShellBase

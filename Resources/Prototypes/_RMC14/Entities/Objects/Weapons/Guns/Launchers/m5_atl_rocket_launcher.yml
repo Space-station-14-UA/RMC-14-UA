@@ -118,6 +118,32 @@
     suffix: false
   - type: IgnorePredictionHide
   - type: AssistedReloadAmmo
+  # Mriya start. Оновлення вогню.
+  - type: Explosive
+    explosionType: RMC
+    maxIntensity: 30
+    intensitySlope: 10
+    totalIntensity: 290
+    maxTileBreak: 0
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger
+  - type: Flammable
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 2
+  - type: Flammability
+    flammability: 0.6
+    burnSupport: 0.5
+    burnDurationBonus: 6
+  - type: CookOff
+    minCookTime: 3
+    maxCookTime: 6
+    spawnFireAfter: true
+    fireProto: RMCTileFire
+    fireRange: 2
+    fireDuration: 15
+  # Mriya end
 
 - type: entity
   id: RMCBaseProjectileRocket84mm
