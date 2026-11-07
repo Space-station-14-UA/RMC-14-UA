@@ -45,7 +45,7 @@
     countedInSlots: false
     unlockAt: 0
     hudOffset: -0.1,0
-    oldHudOffset: -0.1,0.25 # Mriya. Старі/наші версії спрайтів
+    oldHudOffset: -0.15,0.25 # Mriya. Старі/наші версії спрайтів
   - type: XenoHeavy
   - type: XenoDevour
   - type: XenoPheromones

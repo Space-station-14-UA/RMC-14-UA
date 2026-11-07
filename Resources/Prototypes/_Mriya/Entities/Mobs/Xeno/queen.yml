@@ -7,20 +7,17 @@
   suffix: Мрія
   components:
   - type: MriyaOldSprite # Старі/наші версії спрайтів
-    normalSprite: _RMC14/Mobs/Xenonids/Queen/queen.rsi
-    oldSprite: _Mriya/Mobs/OldXenonids/Queen/queen.rsi
+    normalSprite: _Mriya/Mobs/Xenonids/Queen/bloody_queen.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Queen/bloody_queen.rsi
   # Час ставати червоною
   - type: Sprite
     layers:
     - map: [ "enum.XenoVisualLayers.Base" ]
       state: alive
-      color: "#BB0A1E"
     - map: [ "enum.XenoVisualLayers.Ovipositor" ]
-      sprite: _RMC14/Mobs/Xenonids/Queen/ovipositor.rsi
-      color: "#BB0A1E"
+      sprite: _Mriya/Mobs/Xenonids/Queen/bloody_ovipositor.rsi
     - map: [ "enum.XenoVisualLayers.OldOvipositor" ]
-      sprite: _Mriya/Mobs/OldXenonids/Queen/ovipositor.rsi
-      color: "#BB0A1E"
+      sprite: _Mriya/Mobs/OldXenonids/Queen/bloody_ovipositor.rsi
     - map: [ "enum.RMCDamageVisualLayers.Base" ]
       visible: false
     - map: [ "enum.XenoInhandVisualLayers.Left" ]

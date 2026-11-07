@@ -87,7 +87,7 @@
     - ActionXenoParasiteReserve
     tier: 0
     hudOffset: -0.15,-0.03
-    oldHudOffset: -0.15,-0.03 # Mriya. Старі/наші версії спрайтів
+    oldHudOffset: -0.2,-0.03 # Mriya. Старі/наші версії спрайтів
     contributesToVictory: false
     countedInSlots: false
     unlockAt: 0
@@ -213,5 +213,5 @@
       - Synth
   - type: MriyaOldSprite # Старі/наші версії спрайтів
     normalSprite: _RMC14/Mobs/Xenonids/Extras/lesser_carrier.rsi
-    oldSprite: _RMC14/Mobs/Xenonids/Extras/lesser_carrier.rsi # Поки не маємо
+    oldSprite: _Mriya/Mobs/OldXenonids/LesserDrone/lesser_carrier.rsi
   # Mriya end

@@ -12,7 +12,7 @@
   components:
   - type: MriyaOldSprite # Старі/наші версії спрайтів
     normalSprite: _Mriya/Mobs/Xenonids/LesserDrone/lesser_runner.rsi
-    oldSprite: _Mriya/Mobs/Xenonids/LesserDrone/lesser_runner.rsi # Поки не маємо
+    oldSprite: _Mriya/Mobs/OldXenonids/LesserDrone/lesser_runner.rsi
   - type: GhostRole
     name: roles-lesser-runner-name
     description: roles-lesser-runner-description

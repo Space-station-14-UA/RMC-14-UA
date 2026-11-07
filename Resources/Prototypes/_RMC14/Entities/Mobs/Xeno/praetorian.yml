@@ -177,6 +177,7 @@
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Praetorian/valkyrie_praetorian.rsi
   - type: Xeno
+    oldHudOffset: -0.275,0.25 # Mriya. Старі/наші версії спрайтів. У Валькірії більший хвіст
     actionIds:
     - ActionXenoRest
     - ActionXenoRegurgitate

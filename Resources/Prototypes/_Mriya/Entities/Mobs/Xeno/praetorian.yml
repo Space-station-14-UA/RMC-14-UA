@@ -11,6 +11,7 @@
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Praetorian/warden_praetorian.rsi
   - type: Xeno
+    oldHudOffset: -0.275,0.25 # Mriya. Старі/наші версії спрайтів. У Наглядачки більший хвіст
     actionIds:
     - ActionXenoRest
     - ActionXenoRegurgitate
