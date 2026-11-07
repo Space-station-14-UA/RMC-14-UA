@@ -48,6 +48,9 @@
             "name": "crit"
         },
         {
+            "name": "dead"
+        },
+        {
             "name": "sleeping"
         },
         {

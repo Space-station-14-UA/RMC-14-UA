@@ -25,6 +25,9 @@
       "name": "crit"
     },
     {
+      "name": "burrower_dissection"
+    },
+    {
       "name": "burrower_walk_3",
       "directions": 4
     },
