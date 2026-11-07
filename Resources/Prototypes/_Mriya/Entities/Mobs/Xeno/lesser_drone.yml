@@ -165,11 +165,3 @@
   - type: RemoveComponents
     components:
     - type: CanBeLarvaQueued
-
-# Прототип з старою версією спрайтів
-- type: entity
-  parent: [ MRXenoBaseOld, CMXenoLesserDrone ]
-  id: MRXenoLesserDroneOld
-  components:
-  - type: Sprite
-    sprite: _RMC14/Mobs/OldXenonids/LesserDrone/lesser_drone.rsi
