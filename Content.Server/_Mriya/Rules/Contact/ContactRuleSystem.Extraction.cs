@@ -2,6 +2,7 @@ using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared._RMC14.Dropship;
 using Content.Shared._RMC14.Marines;
 using Robust.Shared.Map;
+using Robust.Shared.Random;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -38,7 +39,7 @@ public sealed partial class ContactRuleSystem
         rule.FieldUnavailable = true;
         rule.FieldEndsAt = null;
 
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString(
+        AnnounceBig(rule, Loc.GetString(
             forced ? "mriya-contact-extraction-final" : "mriya-contact-extraction-available",
             ("seconds", (int) ex.BreakTime.TotalSeconds)));
 
@@ -126,7 +127,7 @@ public sealed partial class ContactRuleSystem
                 {
                     ex.State = ContactExtractionState.ShuttleInbound;
                     ex.StateEndsAt = null;
-                    _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-extraction-inbound"));
+                    AnnounceScreen(rule, Loc.GetString("mriya-contact-extraction-inbound"));
                 }
 
                 break;
@@ -136,7 +137,7 @@ public sealed partial class ContactRuleSystem
                 {
                     ex.State = ContactExtractionState.Boarding;
                     ex.StateEndsAt = now + ex.BoardTime;
-                    _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-extraction-boarding",
+                    AnnounceScreen(rule, Loc.GetString("mriya-contact-extraction-boarding",
                         ("seconds", (int) ex.BoardTime.TotalSeconds)));
                 }
 
@@ -147,7 +148,7 @@ public sealed partial class ContactRuleSystem
                 {
                     ex.State = ContactExtractionState.Departing;
                     ex.StateEndsAt = null;
-                    _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-extraction-departing"));
+                    AnnounceScreen(rule, Loc.GetString("mriya-contact-extraction-departing"));
                 }
 
                 break;
@@ -189,7 +190,7 @@ public sealed partial class ContactRuleSystem
         rule.FieldUnavailable = false;
         rule.FieldEndsAt = now + rule.FieldStart;
 
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-extraction-skipped",
+        AnnounceBig(rule, Loc.GetString("mriya-contact-extraction-skipped",
             ("seconds", (int) rule.FieldStart.TotalSeconds)));
 
         SendHud(rule);
@@ -204,7 +205,7 @@ public sealed partial class ContactRuleSystem
         rule.NextWaveAt = now + ex.HoldWaveInterval;
         _shuttle.ReserveForExtraction();
 
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-extraction-started",
+        AnnounceBig(rule, Loc.GetString("mriya-contact-extraction-started",
             ("seconds", (int) ex.HoldTime.TotalSeconds)));
 
         SendHud(rule);

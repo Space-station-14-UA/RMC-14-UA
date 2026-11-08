@@ -14,6 +14,12 @@ public sealed partial class ContactRuleComponent : Component
     [DataField]
     public TimeSpan TerminalFieldBonus = TimeSpan.FromSeconds(30);
 
+    /// <summary>
+    /// CMU announcement preset for Contact's big on-screen announcements.
+    /// </summary>
+    [DataField]
+    public string AnnouncementPreset = "MRContactTerminal";
+
     #endregion
 
     #region Waves

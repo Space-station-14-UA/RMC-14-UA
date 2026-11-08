@@ -146,7 +146,7 @@ public sealed class ContactTerminalSystem : EntitySystem
 
         var seconds = (int) bonus.TotalSeconds;
         _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-activated", ("seconds", seconds)), ent, args.User);
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-terminal-announce-active",
+        _contact.Announce(Loc.GetString("mriya-contact-terminal-announce-active",
             ("name", ent.Comp.TerminalName),
             ("seconds", seconds)));
         _economy.RewardTerminal(args.User);
@@ -164,8 +164,7 @@ public sealed class ContactTerminalSystem : EntitySystem
             terminal.Activated = false;
             terminal.ReactivateAt = null;
             UpdateAppearance((uid, terminal));
-
-            _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-terminal-announce-available",
+            _contact.Announce(Loc.GetString("mriya-contact-terminal-announce-available",
                 ("name", terminal.TerminalName)));
         }
     }

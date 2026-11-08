@@ -31,6 +31,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
+    [Dependency] private readonly ContactRuleSystem _rule = default!;
 
     public override void Initialize()
     {
@@ -460,7 +461,7 @@ public sealed class ContactShuttleSystem : EntitySystem
 
     private void Announce(string key, params (string, object)[] args)
     {
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString(key, args));
+        _rule.Announce(Loc.GetString(key, args));
     }
 
     #endregion

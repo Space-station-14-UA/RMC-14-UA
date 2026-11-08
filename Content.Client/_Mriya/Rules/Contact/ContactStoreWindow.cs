@@ -12,6 +12,8 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
+using Content.Client._CMU14.Announce;
+using Content.Shared._CMU14.Announce;
 
 namespace Content.Client._Mriya.Rules.Contact;
 
@@ -178,7 +180,29 @@ public sealed class ContactStoreWindow : FancyWindow
         root.AddChild(Text(Loc.GetString("mriya-contact-store-footer").ToUpperInvariant(), Teal, _fontSmall));
 
         screen.AddChild(root);
-        ContentsContainer.AddChild(screen);
+        var crtStack = new Control { HorizontalExpand = true, VerticalExpand = true };
+        crtStack.AddChild(screen);
+        crtStack.AddChild(new CRTOverlay
+        {
+            HorizontalExpand = true,
+            VerticalExpand = true,
+            Settings = new CRTSettings
+            {
+                Enabled = true,
+                ShowScanlines = true,
+                ScanlineSpacing = 3f,
+                ScanlineThickness = 1f,
+                ScanlineAlpha = 0.18f,
+                ScanlineColor = Color.FromHex("#000000"),
+                ShowNoise = true,
+                NoiseIntensity = 0.08f,
+                ShowVignette = true,
+                VignetteIntensity = 0.25f,
+                ShowChromaticAberration = false,
+                GlowColor = Phosphor,
+            },
+        });
+        ContentsContainer.AddChild(crtStack);
 
         // Folders
         _forYou = VBox();

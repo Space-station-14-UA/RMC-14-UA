@@ -22,6 +22,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Server._CMU14.Announce;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -43,6 +44,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ContactEconomySystem _economy = default!;
+    [Dependency] private readonly GeneralAnnounceSystem _announce = default!;
 
     private float? _savedPreflight;
     private readonly List<MapCoordinates> _playerPositions = new();
@@ -113,7 +115,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         comp.NextWaveAt = time + comp.WaveInterval;
         comp.NextMarineCheck = time + comp.MarineCheckEvery;
 
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-deployed",
+        AnnounceBig(comp, Loc.GetString("mriya-contact-deployed",
             ("seconds", (int) comp.FieldStart.TotalSeconds)));
 
         SendHud(comp);
@@ -259,7 +261,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         if (buff != null && buff.Wave != comp.LastBuffWave)
         {
             comp.LastBuffWave = buff.Wave;
-            AnnounceBuff(buff);
+            AnnounceBuff(comp, buff);
         }
 
         CollectPlayerPositions();
@@ -302,7 +304,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         }
 
         if (counting)
-            _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
+            AnnounceScreen(comp, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
 
         SendHud(comp);
         if (counting)
@@ -321,7 +323,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         return best;
     }
 
-    private void AnnounceBuff(ContactWaveBuffEntry buff)
+    private void AnnounceBuff(ContactRuleComponent comp, ContactWaveBuffEntry buff)
     {
         var msg = buff.Announcement is { } custom
             ? Loc.GetString(custom)
@@ -329,7 +331,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
                 ("health", (int) MathF.Round((buff.Health - 1f) * 100)),
                 ("damage", (int) MathF.Round((buff.Damage - 1f) * 100)));
 
-        _marineAnnounce.AnnounceARESStaging(default, msg);
+        AnnounceBig(comp, msg);
     }
 
     private int CountAliveWaveMobs(EntProtoId proto)
@@ -468,6 +470,32 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
         _shuttle.SendHudTo(ev.Player);
         _economy.SendBalanceTo(ev.Player);
+    }
+
+    /// <summary>
+    /// For other Contact systems (shuttle): big announcement with the active rule's preset.
+    /// </summary>
+    public void Announce(string message)
+    {
+        if (GetActiveRule() is { } rule)
+            AnnounceScreen(rule.Comp, message);
+    }
+
+    /// <summary>
+    /// Important big on-screen announcement + the usual ARES chat line (so it stays in the log).
+    /// </summary>
+    private void AnnounceBig(ContactRuleComponent comp, string message)
+    {
+        _marineAnnounce.AnnounceARESStaging(default, message);
+        _announce.Announce(comp.AnnouncementPreset, message);
+    }
+
+    /// <summary>
+    /// On-screen only, nothing in chat.
+    /// </summary>
+    private void AnnounceScreen(ContactRuleComponent comp, string message)
+    {
+        _announce.Announce(comp.AnnouncementPreset, message);
     }
 
     #endregion

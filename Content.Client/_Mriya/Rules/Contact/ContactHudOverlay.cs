@@ -1,19 +1,24 @@
 using System.Numerics;
+using Content.Client._CMU14.Announce;
 using Content.Client.Resources;
+using Content.Client.UserInterface.Controls;
+using Content.Shared._CMU14.Announce;
 using Content.Shared._Mriya.Rules.Contact;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
-using Robust.Shared.Enums;
+using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
 namespace Content.Client._Mriya.Rules.Contact;
 
 /// <summary>
-/// Retro (Sevastopol) style panel in the bottom right: field, wave, next wave, shuttle, evacuation, є-бали.
-/// Turns blue while the local player stands in an evacuation zone.
+/// Retro (Sevastopol) style panel in the bottom right of the game viewport:
+/// field, wave, next wave, evacuation, shuttle, є-бали. Blue while the local player stands in an evacuation zone.
+/// A CMU CRTOverlay child draws scanlines/noise on top.
 /// </summary>
-public sealed class ContactHudOverlay : Overlay
+public sealed class ContactHudControl : Control
 {
     private static readonly Color Bg = Color.FromHex("#0D0D0DD9");
     private static readonly Color Phosphor = Color.FromHex("#0AFE60");
@@ -27,12 +32,12 @@ public sealed class ContactHudOverlay : Overlay
 
     private const string FontPath = "/EngineFonts/NotoSans/NotoSansMono-Regular.ttf";
 
-    private const float Width = 300f;
+    private const float PanelWidth = 300f;
     private const float Padding = 8f;
     private const float HeaderHeight = 20f;
     private const float LineHeight = 22f;
-    private const float MarginRight = 2f;
-    private const float MarginBottom = 45f;
+    private const float MarginRight = 12f;
+    private const float MarginBottom = 12f;
 
     /// <summary>
     /// Field time below this is shown blinking red.
@@ -48,10 +53,9 @@ public sealed class ContactHudOverlay : Overlay
     private readonly Font _fontValue;
 
     private readonly List<(string Label, string Value, Color Color)> _lines = new();
+    private bool _inZone;
 
-    public override OverlaySpace Space => OverlaySpace.ScreenSpace;
-
-    public ContactHudOverlay(ContactHudSystem hud)
+    public ContactHudControl(ContactHudSystem hud)
     {
         _hud = hud;
         _ents = IoCManager.Resolve<IEntityManager>();
@@ -62,48 +66,84 @@ public sealed class ContactHudOverlay : Overlay
         var cache = IoCManager.Resolve<IResourceCache>();
         _font = cache.GetFont(FontPath, 11);
         _fontValue = cache.GetFont(FontPath, 14);
+
+        MouseFilter = MouseFilterMode.Ignore;
+
+        // drawn after Draw(), so it sits on top of the panel
+        AddChild(new CRTOverlay
+        {
+            HorizontalExpand = true,
+            VerticalExpand = true,
+            Settings = new CRTSettings
+            {
+                Enabled = true,
+                ShowScanlines = true,
+                ScanlineSpacing = 3f,
+                ScanlineThickness = 1f,
+                ScanlineAlpha = 0.18f,
+                ScanlineColor = Black,
+                ShowNoise = true,
+                NoiseIntensity = 0.08f,
+                ShowVignette = true,
+                VignetteIntensity = 0.2f,
+                ShowChromaticAberration = false,
+                GlowColor = Phosphor,
+            },
+        });
     }
 
-    protected override void Draw(in OverlayDrawArgs args)
+    protected override void FrameUpdate(FrameEventArgs args)
     {
-        if (_hud.Phase is not (ContactHudPhase.Staging or ContactHudPhase.Deployed))
-            return;
+        base.FrameUpdate(args);
 
         var now = _timing.CurTime;
-        var inZone = IsLocalPlayerInZone();
-        var accent = inZone ? Blue : Phosphor;
-        var border = inZone ? BlueDark : Green;
-
-        BuildLines(now, inZone, accent);
-
-        var handle = args.ScreenHandle;
-        var bounds = args.ViewportBounds;
+        _inZone = IsLocalPlayerInZone();
+        BuildLines(now, _inZone ? Blue : Phosphor);
 
         var height = HeaderHeight + Padding * 2 + LineHeight * _lines.Count;
-        var left = bounds.Right - Width - MarginRight;
-        var top = bounds.Bottom - height - MarginBottom;
-        var box = new UIBox2(left, top, left + Width, top + height);
+        SetSize = new Vector2(PanelWidth, height);
+
+        // bottom right of the game viewport (falls back to the whole screen)
+        var right = Parent?.Size.X ?? 0f;
+        var bottom = Parent?.Size.Y ?? 0f;
+        if (UserInterfaceManager.ActiveScreen?.GetWidget<MainViewport>() is { } viewport)
+        {
+            right = viewport.GlobalPosition.X + viewport.Size.X;
+            bottom = viewport.GlobalPosition.Y + viewport.Size.Y;
+        }
+
+        LayoutContainer.SetPosition(this, new Vector2(right - PanelWidth - MarginRight, bottom - height - MarginBottom));
+    }
+
+    protected override void Draw(DrawingHandleScreen handle)
+    {
+        base.Draw(handle);
+
+        var s = UIScale;
+        var accent = _inZone ? Blue : Phosphor;
+        var border = _inZone ? BlueDark : Green;
+        var width = PanelWidth * s;
+        var box = PixelSizeBox;
 
         handle.DrawRect(box, Bg);
         handle.DrawRect(box, border, filled: false);
 
-        var header = new UIBox2(left, top, left + Width, top + HeaderHeight);
-        handle.DrawRect(header, accent);
-        var title = inZone ? "mriya-contact-hud-title-extraction" : "mriya-contact-hud-title";
-        handle.DrawString(_font, new Vector2(left + Padding, top + 3f), Loc.GetString(title).ToUpperInvariant(), Black);
+        handle.DrawRect(new UIBox2(0, 0, width, HeaderHeight * s), accent);
+        var title = _inZone ? "mriya-contact-hud-title-extraction" : "mriya-contact-hud-title";
+        handle.DrawString(_font, new Vector2(Padding * s, 3f * s), Loc.GetString(title).ToUpperInvariant(), s, Black);
 
-        var y = top + HeaderHeight + Padding;
+        var y = (HeaderHeight + Padding) * s;
         foreach (var (label, value, color) in _lines)
         {
-            handle.DrawString(_font, new Vector2(left + Padding, y + 4f), $">{label.ToUpperInvariant()}", inZone ? BlueDark : Teal);
+            handle.DrawString(_font, new Vector2(Padding * s, y + 4f * s), $">{label.ToUpperInvariant()}", s, _inZone ? BlueDark : Teal);
 
             if (value.Length > 0)
             {
-                var size = handle.GetDimensions(_fontValue, value, 1f);
-                handle.DrawString(_fontValue, new Vector2(left + Width - Padding - size.X, y), value, color);
+                var size = handle.GetDimensions(_fontValue, value, s);
+                handle.DrawString(_fontValue, new Vector2(width - Padding * s - size.X, y), value, s, color);
             }
 
-            y += LineHeight;
+            y += LineHeight * s;
         }
     }
 
@@ -126,7 +166,7 @@ public sealed class ContactHudOverlay : Overlay
         return false;
     }
 
-    private void BuildLines(TimeSpan now, bool inZone, Color accent)
+    private void BuildLines(TimeSpan now, Color accent)
     {
         _lines.Clear();
 
@@ -157,7 +197,7 @@ public sealed class ContactHudOverlay : Overlay
             if (_hud.NextWaveAt is { } nextWaveAt)
                 _lines.Add((Loc.GetString("mriya-contact-hud-next-wave"), FormatTime(nextWaveAt - now), accent));
 
-            AddExtractionLines(now, inZone);
+            AddExtractionLines(now);
         }
 
         // Shuttle
@@ -181,15 +221,15 @@ public sealed class ContactHudOverlay : Overlay
             _lines.Add((Loc.GetString("mriya-contact-hud-balance"), balance.ToString(), White));
     }
 
-    private void AddExtractionLines(TimeSpan now, bool inZone)
+    private void AddExtractionLines(TimeSpan now)
     {
         var endsAt = _hud.ExtractionEndsAt;
         var time = endsAt is { } e ? FormatTime(e - now) : string.Empty;
-        var label = Loc.GetString(inZone ? "mriya-contact-hud-extraction-zone" : "mriya-contact-hud-extraction");
+        var label = Loc.GetString(_inZone ? "mriya-contact-hud-extraction-zone" : "mriya-contact-hud-extraction");
 
         string? value = _hud.ExtractionState switch
         {
-            ContactExtractionState.Available when inZone =>
+            ContactExtractionState.Available when _inZone =>
                 Loc.GetString("mriya-contact-hud-extraction-people",
                     ("inZone", _hud.ExtractionInZone), ("needed", _hud.ExtractionNeeded)),
             ContactExtractionState.Available =>
@@ -210,7 +250,7 @@ public sealed class ContactHudOverlay : Overlay
         };
 
         if (value != null)
-            _lines.Add((label, value.ToUpperInvariant(), inZone ? Blue : White));
+            _lines.Add((label, value.ToUpperInvariant(), _inZone ? Blue : White));
     }
 
     private static string FormatTime(TimeSpan time)

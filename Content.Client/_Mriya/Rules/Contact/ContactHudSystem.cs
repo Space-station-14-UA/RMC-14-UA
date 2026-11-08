@@ -1,16 +1,16 @@
 using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared.GameTicking;
-using Robust.Client.Graphics;
+using Robust.Client.UserInterface;
 using Robust.Shared.Map;
 
 namespace Content.Client._Mriya.Rules.Contact;
 
 /// <summary>
-/// Keeps the latest Contact HUD state from the server and shows the overlay while a round is on.
+/// Keeps the latest Contact HUD state from the server and shows the HUD control while a round is on.
 /// </summary>
 public sealed class ContactHudSystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlays = default!;
+    [Dependency] private readonly IUserInterfaceManager _ui = default!;
 
     public ContactHudPhase Phase { get; private set; }
     public TimeSpan? FieldEndsAt { get; private set; }
@@ -29,7 +29,7 @@ public sealed class ContactHudSystem : EntitySystem
     public int ExtractionInZone { get; private set; }
     public int ExtractionNeeded { get; private set; }
 
-    private ContactHudOverlay? _overlay;
+    private ContactHudControl? _control;
 
     public override void Initialize()
     {
@@ -43,7 +43,23 @@ public sealed class ContactHudSystem : EntitySystem
     public override void Shutdown()
     {
         base.Shutdown();
-        HideOverlay();
+        HideHud();
+    }
+
+    /// <summary>
+    /// Keeps the control on the current screen (the screen changes on layout switches / state changes).
+    /// </summary>
+    public override void FrameUpdate(float frameTime)
+    {
+        if (_control == null)
+            return;
+
+        var screen = _ui.ActiveScreen;
+        if (_control.Parent == screen)
+            return;
+
+        _control.Orphan();
+        screen?.AddChild(_control);
     }
 
     private void OnState(ContactHudStateEvent ev)
@@ -55,9 +71,9 @@ public sealed class ContactHudSystem : EntitySystem
         Wave = ev.Wave;
 
         if (Phase is ContactHudPhase.Staging or ContactHudPhase.Deployed)
-            ShowOverlay();
+            ShowHud();
         else
-            HideOverlay();
+            HideHud();
     }
 
     private void OnBalance(ContactBalanceEvent ev)
@@ -94,24 +110,17 @@ public sealed class ContactHudSystem : EntitySystem
         ExtractionState = ContactExtractionState.None;
         ExtractionZones = new List<NetCoordinates>();
         ExtractionEndsAt = null;
-        HideOverlay();
+        HideHud();
     }
 
-    private void ShowOverlay()
+    private void ShowHud()
     {
-        if (_overlay != null)
-            return;
-
-        _overlay = new ContactHudOverlay(this);
-        _overlays.AddOverlay(_overlay);
+        _control ??= new ContactHudControl(this);
     }
 
-    private void HideOverlay()
+    private void HideHud()
     {
-        if (_overlay == null)
-            return;
-
-        _overlays.RemoveOverlay(_overlay);
-        _overlay = null;
+        _control?.Orphan();
+        _control = null;
     }
 }

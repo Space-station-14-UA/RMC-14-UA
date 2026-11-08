@@ -12,7 +12,7 @@
     spawnSurvivors: false
     autoEnd: false
     bioscan: false
-    startARESAnnouncements: false
+    startARESAnnouncements: true
     doJobSlotScaling: false
     lastMarineEffects: false
  
@@ -22,6 +22,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ContactRule
+    announcementPreset: MRARES
   - type: ContactEconomy
     killReward: 5
     healReward: 3
