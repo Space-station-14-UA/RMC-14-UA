@@ -21,14 +21,12 @@
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
-  - type: ContactRule
-    announcementPreset: MRARES
   - type: ContactEconomy
-    killReward: 5
+    killReward: 15
     healReward: 3
     healStep: 20
-    reviveReward: 25
-    terminalReward: 15
+    reviveReward: 100
+    terminalReward: 25
   - type: ContactShuttle
     boardingCountdown: 120
     fullBoardCountdown: 30
@@ -42,41 +40,49 @@
     holdTime: 150
     holdWaveInterval: 20
     boardTime: 30
- 
-- type: gamePreset
-  id: MRContact
-  alias: [ contact ]
-  name: mriya-contact-title
-  description: mriya-contact-description
-  showInVote: false
-  rules:
-  - MRContactDistress
-  - MRContactRule
-  - MRRespawnRule
-  - MRRotRuleContact
+  - type: ContactRule
+    announcementPreset: MRARES
+    planets:
+    - MRPlanetChancesContact
+    - MRPlanetFiorinaContact
 
 - type: contactWaves
   id: MRContactWavesDefault
   spawns:
-  - proto: CMXenoDrone
+  - proto: MRContactXenoDrone
     startWave: 1
     rate: 2
-    ratePerWave: 0.2
+    ratePerWave: 0.25
+    maxAlive: 20
+  - proto: MRContactXenoDefender
+    startWave: 2
+    rate: 1
+    ratePerWave: 0.25
     maxAlive: 15
-  - proto: CMXenoRunner
+  - proto: MRContactXenoLurker
     startWave: 5
-    rate: 0.5
-    ratePerWave: 0.1
-    maxAlive: 8
-  - proto: CMXenoDefender
+    rate: 1
+    ratePerWave: 0.25
+    maxAlive: 2
+  - proto: MRContactXenoCrusher
+    startWave: 9
+    rate: 1
+    ratePerWave: 0.3
+    maxAlive: 5
+  - proto: MRContactXenoCharger
+    startWave: 20
+    rate: 1
+    ratePerWave: 0.05
+    maxAlive: 2
+  - proto: MRContactXenoRavagerBerserker
+    startWave: 40
+    rate: 0.05
+    ratePerWave: 0
+    maxAlive: 1
+  - proto: MRContactXenoBoiler
     startWave: 15
-    rate: 0.34
-    ratePerWave: 0.05
-    maxAlive: 4
-  - proto: CMXenoWarrior
-    startWave: 30
-    rate: 0.25
-    ratePerWave: 0.05
+    rate: 1
+    ratePerWave: 0.3
     maxAlive: 3
   # - proto: CMXenoQueen # boss example, spawns only at wave 20
   #   startWave: 20

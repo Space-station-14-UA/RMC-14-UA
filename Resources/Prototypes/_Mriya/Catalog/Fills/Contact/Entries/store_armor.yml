@@ -1,4 +1,76 @@
-
+# Light
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3VLBallistics
+  proto: CMArmorM3VLBallistics
+  category: MRContactStoreArmor
+  price: 6
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3Light
+  proto: CMArmorM3Light
+  category: MRContactStoreArmor
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3Scout
+  proto: RMCArmorM3Scout
+  category: MRContactStoreArmor
+  price: 18
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3TDemo
+  proto: RMCArmorM3TDemo
+  category: MRContactStoreArmor
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM45
+  proto: CMArmorM45
+  category: MRContactStoreArmor
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorUDEPForecon
+  proto: RMCArmorUDEPForecon
+  category: MRContactStoreArmor
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorSmartGunHarness
+  proto: CMArmorSmartGunCombatHarness
+  category: MRContactStoreArmor
+  price: 22
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorXM4
+  proto: RMCArmorXM4
+  category: MRContactStoreArmor
+  price: 35
+  maxPerPurchase: 1
+ 
+# Medium
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3Medium
+  proto: CMArmorM3Medium
+  category: MRContactStoreArmor
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3Tanker
+  proto: RMCArmorM3MediumTanker
+  category: MRContactStoreArmor
+  price: 12
+  maxPerPurchase: 1
+ 
 - type: contactStoreEntry
   id: MRContactStoreArmorM4
   proto: CMArmorM4
@@ -7,8 +79,30 @@
   maxPerPurchase: 1
 
 - type: contactStoreEntry
+  id: MRContactStoreArmorM35
+  proto: CMArmorM35
+  category: MRContactStoreArmor
+  price: 22
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
   id: MRContactStoreArmorB12
   proto: CMArmorB12
   category: MRContactStoreArmor
   price: 24
+  maxPerPurchase: 1
+ 
+# Heavy
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3Heavy
+  proto: CMArmorM3Heavy
+  category: MRContactStoreArmor
+  price: 26
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3G4
+  proto: RMCArmorM3G4
+  category: MRContactStoreArmor
+  price: 30
   maxPerPurchase: 1

@@ -44,3 +44,15 @@
   rules:
   - MRCalmed
   - Sandbox
+
+- type: gamePreset
+  id: MRContact
+  alias: [ contact ]
+  name: mriya-contact-title
+  description: mriya-contact-description
+  showInVote: true
+  rules:
+  - MRContactRule
+  - MRContactDistress
+  - MRRespawnRule
+  - MRRotRuleContact

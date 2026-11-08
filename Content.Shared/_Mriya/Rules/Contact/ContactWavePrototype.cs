@@ -51,6 +51,18 @@ public sealed partial class ContactWaveSpawnEntry
     [DataField]
     public int MaxAlive = -1;
 
+    /// <summary>
+    /// Only spawn on every Nth wave from StartWave (0 = every wave). Skipped waves add nothing to the accumulator.
+    /// </summary>
+    [DataField]
+    public int Every;
+
+    /// <summary>
+    /// Last wave this entry spawns on (0 = no end).
+    /// </summary>
+    [DataField]
+    public int EndWave;
+
     /// <summary>muhney for killing this mob. Null = ContactEconomy KillReward.</summary>
     [DataField]
     public int? Reward;

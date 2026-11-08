@@ -12,13 +12,19 @@ public sealed partial class ContactRuleComponent : Component
     public TimeSpan FieldStart = TimeSpan.FromSeconds(150);
 
     [DataField]
-    public TimeSpan TerminalFieldBonus = TimeSpan.FromSeconds(30);
+    public TimeSpan TerminalFieldBonus = TimeSpan.FromSeconds(45);
 
     /// <summary>
     /// CMU announcement preset for Contact's big on-screen announcements.
     /// </summary>
     [DataField]
     public string AnnouncementPreset = "MRContactTerminal";
+
+    /// <summary>
+    /// Contact planet pool, forced onto Distress at round start. Empty = normal Distress selection.
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> Planets = new();
 
     #endregion
 
@@ -34,16 +40,28 @@ public sealed partial class ContactRuleComponent : Component
     public TimeSpan WaveInterval = TimeSpan.FromSeconds(50);
 
     [DataField]
-    public TimeSpan TerminalWaveReduction = TimeSpan.FromSeconds(20);
+    public TimeSpan TerminalWaveReduction = TimeSpan.FromSeconds(15);
 
     [DataField]
     public ProtoId<ContactWavesPrototype> Waves = "MRContactWavesDefault";
 
     /// <summary>
-    /// Only spawn points within this range of a living player are used.
+    /// Wave mobs spawn on a free planet tile at least this far from every living marine on the colony...
     /// </summary>
     [DataField]
-    public float SpawnRange = 150f;
+    public float SpawnMinRange = 7f;
+
+    /// <summary>
+    /// ...and at most this far from one of them.
+    /// </summary>
+    [DataField]
+    public float SpawnMaxRange = 20f;
+
+    /// <summary>
+    /// Random tiles tried per mob before giving up.
+    /// </summary>
+    [DataField]
+    public int SpawnAttempts = 20;
 
     /// <summary>
     /// Wave mobs with no player within this range for DespawnDelay are deleted.

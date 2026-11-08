@@ -31,3 +31,45 @@
   proto: CMFirstAidKitFilled
   category: MRContactStoreMedicine
   price: 5
+
+- type: contactStoreEntry
+  id: MRContactStoreSynthGraft
+  proto: CMSynthGraft
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePillCanisterMeralyneBicaridineNoSkill
+  proto: RMCPillCanisterMeralyneBicaridineNoSkill
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePillCanisterKelotaneDermalineNoSkill
+  proto: RMCPillCanisterKelotaneDermalineNoSkill
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePillCanisterTricordrazineNoSkill
+  proto: RMCPillCanisterTricordrazineNoSkill
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePillCanisterDyloveneNoSkill
+  proto: RMCPillCanisterDyloveneNoSkill
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePillCanisterIronNoSkill
+  proto: RMCPillCanisterIronNoSkill
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreDefibrillator
+  proto: MRDefibrillatorCivilian
+  category: MRContactStoreMedicine
+  price: 20

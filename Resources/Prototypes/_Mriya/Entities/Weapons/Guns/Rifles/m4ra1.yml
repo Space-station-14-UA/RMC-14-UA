@@ -1,0 +1,243 @@
+- type: entity
+  parent: [ CMBaseWeaponRifle, RMCBaseWeaponMagazineVisuals ]
+  name: ХМ4СПГ карабін
+  id: MRWeaponRifleXM4RA
+  description: Карабін ХМ4СПГ розробляється для потреб Корпуса Морської Піхоти Об'єднаних Націй як частина програми СОПКАР. Початково, він планувався для Морських Рейдерів, проте став прототипом нової зброї самооборони для екіпажів техніки та морських гвардійців.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Weapons/Guns/xm4ra1_32x64.rsi
+    layers:
+    - state: bolt-open
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-0
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Item
+    sprite: _Mriya/Objects/Weapons/Guns/xm4ra1_32x32.rsi
+    size: Large
+  - type: Clothing
+    sprite: _Mriya/Objects/Weapons/Guns/xm4ra1_32x32.rsi
+  - type: Gun
+    shotsPerBurst: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_m4spr.ogg
+  - type: RMCSelectiveFire
+    baseFireModes:
+    - SemiAuto
+    - Burst
+    recoilUnwielded: 2
+    scatterWielded: 6
+    baseFireRate: 2.86
+    burstFireRateMultiplier: 2
+    modifiers:
+      Burst:
+        fireDelay: 0.1
+        maxScatterModifier: 2
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 1
+  - type: RMCWeaponAccuracy
+    accuracyMultiplier: 1.25
+    accuracyMultiplierUnwielded: 0.6
+  - type: RMCWeaponDamageFalloff
+    falloffMultiplier: 0
+  - type: WieldDelay
+    baseDelay: 0.1
+  - type: WieldableSpeedModifiers
+    base: 0.725
+    light: 0.9
+    medium: 0.9
+    heavy: 0.9
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/l42_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/l42_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - CMMagazineRifleM4SPR
+          - CMMagazineRifleM4SPRAP
+          - CMMagazineRifleM4SPRExt
+          - RMCMagazineRifleM4SPRWP
+          - RMCMagazineRifleM4SPRIncendiary
+          - RMCMagazineRifleM4SPRHEAP
+  - type: GunDamageModifier
+    multiplier: 1.1
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentExtendedCompensator
+          - RMCAttachmentSuppressor
+          - RMCM5Bayonet
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentB8SmartScope
+          - RMCAttachmentMagneticHarness
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentS42xTelescopicMiniscope
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+          - RMCAttachmentS84xTelescopicScope
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentU1GrenadeLauncher
+          - RMCAttachmentAngledGrip
+          - RMCAttachmentBipod
+          - RMCAttachmentFlashlightGrip
+          - RMCAttachmentLaserSight
+          - RMCAttachmentVerticalGrip
+          - RMCAttachmentExtinguisher
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 1, 0.0
+      rmc-aslot-rail: 0.15, 0.225
+      rmc-aslot-underbarrel: 0.4, -0.31
+  - type: ItemCamouflage
+    camouflageVariations: { }
+  - type: Tag
+    tags:
+    - MRWeaponRifleXM4RA
+
+- type: entity
+  parent: MRWeaponRifleXM4RA
+  name: ХМ4СПГ1 карабін
+  id: MRWeaponRifleXM4RA1
+  description: Карабін ХМ4СПГ розробляється для потреб Корпуса Морської Піхоти Об'єднаних Націй як частина програми СОПКАР. Початково, він планувався для Морських Рейдерів, проте став прототипом нової зброї самооборони для екіпажів техніки та морських гвардійців. Ця модифікація має повністю автоматичний вогонь.
+  components:
+  - type: Gun
+    shotsPerBurst: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_m4spr.ogg
+  - type: RMCSelectiveFire
+    baseFireModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    recoilUnwielded: 2
+    scatterWielded: 6
+    baseFireRate: 2.86
+    burstFireRateMultiplier: 2
+    modifiers:
+      Burst:
+        fireDelay: 0.1
+        maxScatterModifier: 2
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 1
+  - type: ItemCamouflage
+    camouflageVariations: { }
+  - type: Tag
+    tags:
+    - MRWeaponRifleXM4RA1
+
+- type: entity
+  parent: MRWeaponRifleXM4RA1
+  name: ХМ4СПГ1 СОПМОД карабін
+  id: MRWeaponRifleXM4RA1SOPMOD
+  description: Карабін ХМ4СПГ розробляється для потреб Корпуса Морської Піхоти Об'єднаних Націй як частина програми СОПКАР. Початково, він планувався для Морських Рейдерів, проте став прототипом нової зброї самооборони для екіпажів техніки та морських гвардійців. Ця модифікація розробляється спеціально для Морських Рейдерів.  
+  components:
+  - type: RMCSelectiveFire
+    baseFireModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    recoilUnwielded: 2
+    scatterWielded: 6
+    baseFireRate: 2.86
+    burstFireRateMultiplier: 2
+    modifiers:
+      Burst:
+        fireDelay: 0.1
+        maxScatterModifier: 0.3
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 1
+  - type: GunDamageModifier
+    multiplier: 1.4
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        startingAttachable: RMCAttachmentSuppressor 
+        whitelist:
+          tags:
+          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentExtendedCompensator
+          - RMCAttachmentSuppressor
+          - RMCM5Bayonet
+      rmc-aslot-rail:
+        locked: true
+        whitelist:
+          tags:
+          - RMCAttachmentB8SmartScope
+          - RMCAttachmentMagneticHarness
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentS42xTelescopicMiniscope
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+          - RMCAttachmentS84xTelescopicScope
+        random:
+          - RMCAttachmentB8SmartScope
+          - RMCAttachmentS42xTelescopicMiniscope
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+      rmc-aslot-underbarrel:
+        startingAttachable: RMCAttachmentU1GrenadeLauncher
+        whitelist:
+          tags:
+          - RMCAttachmentU1GrenadeLauncher
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 1, 0.0
+      rmc-aslot-rail: 0.15, 0.225
+      rmc-aslot-underbarrel: 0.4, -0.31
+  - type: ItemCamouflage
+    camouflageVariations: { }
+  - type: Tag
+    tags:
+    - MRWeaponRifleXM4RA1SOPMOD
+
+- type: entity
+  parent: MRWeaponRifleXM4RA1SOPMOD
+  id: MRWeaponRifleXM4RA1SOPMODFilled
+  suffix: Filled, AP
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/l42_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/l42_unload.ogg
+        priority: 2
+        startingItem: CMMagazineRifleM4SPRAP
+        whitelist:
+          tags:
+          - CMMagazineRifleM4SPR
+          - CMMagazineRifleM4SPRAP
+          - CMMagazineRifleM4SPRExt
+          - RMCMagazineRifleM4SPRWP
+          - RMCMagazineRifleM4SPRIncendiary
+          - RMCMagazineRifleM4SPRHEAP
+
+- type: Tag
+  id: MRWeaponRifleXM4RA1
+
+- type: Tag
+  id: MRWeaponRifleXM4RA
+
+- type: Tag
+  id: MRWeaponRifleXM4RA1SOPMOD

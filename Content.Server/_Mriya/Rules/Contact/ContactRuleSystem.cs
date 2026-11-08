@@ -1,5 +1,7 @@
 using System.Linq;
+using Content.Server._CMU14.Announce;
 using Content.Server._RMC14.Marines;
+using Content.Server._RMC14.Rules.DistressSignal;
 using Content.Server._RMC14.Xenonids.Hive;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
@@ -9,20 +11,19 @@ using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Dropship;
 using Content.Shared._RMC14.Marines;
 using Content.Shared._RMC14.Rules;
-using Content.Shared._RMC14.Spawners;
-using Content.Shared.Coordinates;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Maps;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Physics;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Server._CMU14.Announce;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -45,9 +46,14 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ContactEconomySystem _economy = default!;
     [Dependency] private readonly GeneralAnnounceSystem _announce = default!;
+    [Dependency] private readonly CMDistressSignalRuleSystem _distress = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     private float? _savedPreflight;
     private readonly List<MapCoordinates> _playerPositions = new();
+    private readonly List<MapCoordinates> _anchors = new();
 
     public override void Initialize()
     {
@@ -82,11 +88,34 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         return null;
     }
 
+    /// <summary>
+    /// Picks a Contact planet and forces it onto Distress (same as ForcePlanetMapCommand).
+    /// Overrides the lobby vote, which only knows rotation maps.
+    /// </summary>
+    private void ForcePlanet(ContactRuleComponent comp)
+    {
+        if (comp.Planets.Count == 0)
+            return;
+
+        var pool = _rmcPlanet.GetAllPlanets()
+            .Where(p => comp.Planets.Contains(p.Proto.ID))
+            .ToList();
+
+        if (pool.Count == 0)
+        {
+            Log.Error("Contact: none of the configured planets exist");
+            return;
+        }
+
+        _distress.SetPlanet(_random.Pick(pool));
+    }
+
     #region Round flow
 
     protected override void Started(EntityUid uid, ContactRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, comp, gameRule, args);
+        ForcePlanet(comp);
 
         _savedPreflight ??= _config.GetCVar(RMCCVars.RMCDropshipInitialDelayMinutes);
         _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, comp.DropshipPreflightMinutes);
@@ -242,6 +271,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
     private void StartWave(EntityUid uid, ContactRuleComponent comp, TimeSpan time)
     {
+        // evacuation: waves keep coming (faster) but don't count, so exfil at wave 10 stays wave 10
         var counting = !IsEvacuating(uid, out _);
         if (counting)
             comp.Wave++;
@@ -264,20 +294,10 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             AnnounceBuff(comp, buff);
         }
 
-        CollectPlayerPositions();
-
-        // TODO Mriya: own spawn markers; reusing planet xeno spawn points for now
-        var points = new List<EntityUid>();
-        var pointQuery = AllEntityQuery<XenoSpawnPointComponent, TransformComponent>();
-        while (pointQuery.MoveNext(out var point, out _, out var xform))
+        CollectSpawnAnchors();
+        if (_anchors.Count == 0)
         {
-            if (IsNearPlayer(_transform.GetMapCoordinates(point, xform), comp.SpawnRange))
-                points.Add(point);
-        }
-
-        if (points.Count == 0)
-        {
-            Log.Warning($"Contact wave {comp.Wave}: no spawn points within {comp.SpawnRange} tiles of players");
+            Log.Warning($"Contact wave {comp.Wave}: no living marines on the planet to spawn around");
         }
         else
         {
@@ -286,6 +306,12 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             {
                 var entry = waves.Spawns[i];
                 if (comp.Wave < entry.StartWave)
+                    continue;
+
+                if (entry.EndWave > 0 && comp.Wave > entry.EndWave)
+                    continue;
+
+                if (entry.Every > 0 && (comp.Wave - entry.StartWave) % entry.Every != 0)
                     continue;
 
                 var rate = entry.Rate + entry.RatePerWave * (comp.Wave - entry.StartWave);
@@ -298,7 +324,8 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
                 for (var j = 0; j < count; j++)
                 {
-                    SpawnWaveMob(entry, _random.Pick(points), hive, buff);
+                    if (TryFindSpawnTile(comp, out var coords))
+                        SpawnWaveMob(entry, coords, hive, buff);
                 }
             }
         }
@@ -347,9 +374,77 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         return count;
     }
 
-    private void SpawnWaveMob(ContactWaveSpawnEntry entry, EntityUid point, EntityUid? hive, ContactWaveBuffEntry? buff)
+    /// <summary>
+    /// Living marines on the colony; waves spawn around them.
+    /// </summary>
+    private void CollectSpawnAnchors()
     {
-        var mob = SpawnAtPosition(entry.Proto, point.ToCoordinates());
+        _anchors.Clear();
+        var query = EntityQueryEnumerator<MarineComponent, MobStateComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out var mobState, out var xform))
+        {
+            if (_mobState.IsDead(uid, mobState) || !_rmcPlanet.IsOnPlanet(xform))
+                continue;
+
+            _anchors.Add(_transform.GetMapCoordinates(uid, xform));
+        }
+    }
+
+    /// <summary>
+    /// Random free planet tile SpawnMinRange..SpawnMaxRange from a random marine and at least SpawnMinRange from all of them.
+    /// </summary>
+    private bool TryFindSpawnTile(ContactRuleComponent comp, out EntityCoordinates coords)
+    {
+        coords = default;
+        var minSq = comp.SpawnMinRange * comp.SpawnMinRange;
+
+        for (var attempt = 0; attempt < comp.SpawnAttempts; attempt++)
+        {
+            var anchor = _random.Pick(_anchors);
+            var distance = _random.NextFloat(comp.SpawnMinRange, comp.SpawnMaxRange);
+            var pos = anchor.Position + _random.NextAngle().ToVec() * distance;
+            var map = new MapCoordinates(pos, anchor.MapId);
+
+            if (!_mapManager.TryFindGridAt(map, out var gridUid, out var grid))
+                continue;
+
+            var indices = _mapSystem.WorldToTile(gridUid, grid, pos);
+            if (!_mapSystem.TryGetTileRef(gridUid, grid, indices, out var tile) || tile.Tile.IsEmpty)
+                continue;
+
+            if (_turf.IsTileBlocked(gridUid, indices, CollisionGroup.Impassable, grid))
+                continue;
+
+            var candidate = _mapSystem.GridTileToLocal(gridUid, grid, indices);
+
+            // planet only (not the dropship), and not on top of any marine
+            if (!_rmcPlanet.IsOnPlanet(candidate))
+                continue;
+
+            var candidatePos = _transform.ToMapCoordinates(candidate).Position;
+            var tooClose = false;
+            foreach (var marine in _anchors)
+            {
+                if (marine.MapId == anchor.MapId && (marine.Position - candidatePos).LengthSquared() < minSq)
+                {
+                    tooClose = true;
+                    break;
+                }
+            }
+
+            if (tooClose)
+                continue;
+
+            coords = candidate;
+            return true;
+        }
+
+        return false;
+    }
+
+    private void SpawnWaveMob(ContactWaveSpawnEntry entry, EntityCoordinates coords, EntityUid? hive, ContactWaveBuffEntry? buff)
+    {
+        var mob = SpawnAtPosition(entry.Proto, coords);
         if (hive != null)
             _hive.SetHive(mob, hive.Value);
 
@@ -472,8 +567,12 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         _economy.SendBalanceTo(ev.Player);
     }
 
+    #endregion
+
+    #region Announcements
+
     /// <summary>
-    /// For other Contact systems (shuttle): big announcement with the active rule's preset.
+    /// For other Contact systems (terminals, shuttle): on-screen announcement with the active rule's preset, no chat line.
     /// </summary>
     public void Announce(string message)
     {
@@ -482,7 +581,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     }
 
     /// <summary>
-    /// Important big on-screen announcement + the usual ARES chat line (so it stays in the log).
+    /// Important moments: big on-screen announcement + the usual ARES chat line (so it stays in the log).
     /// </summary>
     private void AnnounceBig(ContactRuleComponent comp, string message)
     {

@@ -3,127 +3,139 @@
   id: MRContactStoreM4SPR
   proto: WeaponRifleM4SPRFilled
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreM54C
   proto: RMCWeaponRifleM54CFilled
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreM3717
   proto: RMCWeaponShotgunM3717
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreM42A2
   proto: WeaponShotgunM42A2
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreM41A1
   proto: WeaponShotgunM42A1
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreM12
   proto: RMCWeaponShotgunM12
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL24
   proto: RMCWeaponRifleL24
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL24B
   proto: RMCWeaponRifleL24B
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL42A
   proto: RMCWeaponRifleL42A
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL83A3F
   proto: WeaponRifleL83A3F
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL88A1
   proto: RMCWeaponRifleL88A1Filled
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL89A2
   proto: RMCWeaponRifleL88A2Filled
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL90A1
   proto: RMCWeaponRifleL90A1Filled
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL90A2
   proto: RMCWeaponRifleL90A2Filled
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreL90SWS
   proto: RMCWeaponRifleL91SWSFilled
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreM54CE2
   proto: RMCWeaponRifleM54CE2
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreM54CMK1
   proto: RMCWeaponRifleM54CMK1AP
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreSSG45
   proto: RMCWeaponRifleSSG45NoLock
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreType71F
   proto: RMCWeaponRifleType71Flamer
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreType71C
   proto: RMCWeaponRifleType71C
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
 
 - type: contactStoreEntry
   id: MRContactStoreType77
   proto: RMCWeaponRifleType77
   category: MRContactStoreLongArms
-  price: 200
+  price: 150
+
+- type: contactStoreEntry
+  id: MRContactStoreXM4RA1
+  proto: MRWeaponRifleXM4RA1
+  category: MRContactStoreLongArms
+  price: 150
+
+- type: contactStoreEntry
+  id: MRContactStoreXM4RA
+  proto: MRWeaponRifleXM4RA
+  category: MRContactStoreLongArms
+  price: 150
 
 # Worse guns
 
@@ -196,6 +208,12 @@
   price: 300
 
 # Better guns T2
+
+- type: contactStoreEntry
+  id: MRContactStoreXM4RASOPMOD
+  proto: MRWeaponRifleXM4RA1SOPMODFilled
+  category: MRContactStoreLongArms
+  price: 400
 
 - type: contactStoreEntry
   id: MRContactStoreL49
