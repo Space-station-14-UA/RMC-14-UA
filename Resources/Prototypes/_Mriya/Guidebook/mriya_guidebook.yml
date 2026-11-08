@@ -99,7 +99,7 @@
   text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideMedical.xml"
   children:
   - RMCChemicals
-  - RMCGuideZL
+  - RMCGuidetGC
 
 - type: guideEntry # Перекладав Dmytr0-Translate
   parent: MR
@@ -155,19 +155,19 @@
 
 - type: guideEntry # Створив Strol20
   parent: MR
-  id: RMCGuideZL
+  id: RMCGuidetGC
   name: "Загальні Ліки"
   priority: 10
-  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideZL.xml"
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideGC.xml"
   children:
-  - RMCGuideShortZL
+  - RMCGuideShortGC
 
 - type: guideEntry # Створив Strol20
   parent: MR
-  id: RMCGuideShortZL
+  id: RMCGuideShortGC
   name: "Короткий рецепт ЗЛ"
   priority: 11
-  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideShortZL.xml" 
+  text: "/ServerInfo/Guidebook/_Mriya/Guides/Marines/RMCGuideShortGC.xml"
 
 # Ролі морпіхів – Спеціалісти
 - type: guideEntry # Перекладали Dmytr0-Translate
