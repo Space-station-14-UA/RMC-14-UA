@@ -18,7 +18,7 @@ public sealed partial class ContactRuleComponent : Component
     /// CMU announcement preset for Contact's big on-screen announcements.
     /// </summary>
     [DataField]
-    public string AnnouncementPreset = "MRContactTerminal";
+    public string AnnouncementPreset = "MRARES";
 
     /// <summary>
     /// Contact planet pool, forced onto Distress at round start. Empty = normal Distress selection.
