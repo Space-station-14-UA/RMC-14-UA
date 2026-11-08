@@ -12,6 +12,7 @@ mriya-contact-result-fieldcollapsed = Поле колапсувало. Опер�
 mriya-contact-result-evacuated = Оперативники успішно евакуйовані!
 mriya-contact-result-marineslost = Усі оперативники на колонії загинули.
 mriya-contact-round-end-wave = Досягнута хвиля: {$wave}
+mriya-contact-result-extractionfailed = Шатл відлетів без живих оперативників на борту.
 
 mriya-contact-terminal-start = Ви починаєте активацію якоря...
 mriya-contact-terminal-offline = Термінал не відповідає.
@@ -103,7 +104,7 @@ mriya-contact-hud-balance = ₴
 
 mriya-contact-shuttle-boarding = Шатл готується до зльоту. Виліт через {$seconds} секунд.
 mriya-contact-shuttle-full-board = Усі на борту. Виліт через {$seconds} секунд.
-mriya-contact-shuttle-launch = Шатл вилетів на колонію.
+mriya-contact-shuttle-launch = Шатл вилетів до ЗО.
 mriya-contact-shuttle-landed = Шатл приземлився. Висадка - {$seconds} секунд до відльоту.
 mriya-contact-shuttle-refueling = Шатл на кораблі. Заправка: {$seconds} секунд.
 mriya-contact-shuttle-ready = Шатл заправлений. Підкріплення можуть займати місця - виклик з терміналу у ЗО.
@@ -122,3 +123,25 @@ mriya-contact-hud-shuttle-flying = У транзиті
 mriya-contact-hud-shuttle-unloading = Висадка
 mriya-contact-hud-shuttle-refueling = Заправка
 mriya-contact-hud-shuttle-ready = Готовий
+
+mriya-contact-extraction-available = Евакуація доступна! {$seconds} секунд до наступної хвилі. Зберіться біля зони висадки, щоб почати евакуацію. Якорі неактивні.
+mriya-contact-extraction-skipped = Евакуацію пропущено. Поле відновлено: {$seconds} секунд.
+mriya-contact-extraction-started = Евакуацію розпочато! Утримуйте зону висадки {$seconds} секунд до виклику шатла.
+mriya-contact-extraction-inbound = Шатл евакуації в транзиті.
+mriya-contact-extraction-boarding = Шатл на зоні висадки! {$seconds} секунд до відльоту.
+mriya-contact-extraction-departing = Шатл евакуації злетів. Перевірка складу...
+mriya-contact-reinforcements-evac = Ексфільтрація у процесі.
+
+mriya-contact-hud-title-extraction = Ексфільтрація
+mriya-contact-hud-unavailable = Недоступно
+mriya-contact-hud-extraction = Евакуація
+mriya-contact-hud-extraction-zone = ЕВАК
+mriya-contact-hud-extraction-people = Загін {$inZone}/{$needed}
+mriya-contact-hud-extraction-available = Доступна
+mriya-contact-hud-extraction-countdown = Старт
+mriya-contact-hud-extraction-holding = Шатл через
+mriya-contact-hud-extraction-waiting = Очікування шатла
+mriya-contact-hud-extraction-inbound = Шатл у транзиті
+mriya-contact-hud-extraction-boarding = На ПЗ
+mriya-contact-hud-extraction-departing = Відліт
+mriya-contact-extraction-final = Фінальна хвиля! Евакуація через {$seconds} секунд — зберіться біля зони висадки. Якорі неактивні.

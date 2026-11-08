@@ -1,55 +1,50 @@
+using System.Linq;
+using Content.Server._RMC14.Marines;
 using Content.Server._RMC14.Xenonids.Hive;
-using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.RoundEnd;
+using Content.Shared._Mriya.Rules.Contact;
+using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Dropship;
+using Content.Shared._RMC14.Marines;
 using Content.Shared._RMC14.Rules;
 using Content.Shared._RMC14.Spawners;
 using Content.Shared.Coordinates;
-using Content.Shared.GameTicking.Components;
-using Content.Shared.Interaction;
-using Content.Shared.Popups;
-using Robust.Shared.Random;
-using Content.Server._RMC14.Marines;
-using Content.Shared._RMC14.Marines;
-using Content.Shared.Mobs.Components;
-using Content.Shared._RMC14.CCVar;
 using Content.Shared.GameTicking;
-using Robust.Shared.Configuration;
-using Content.Shared._Mriya.Rules.Contact;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
-using System.Linq;
-using Content.Shared._Mriya.Rules.Contact;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
 /// <summary>
 /// Contact: low-pop PvE mode. Runs alongside MRContactDistress, which handles planet, ship spawning and dropships.
-/// This system owns the field timer, terminals and waves.
+/// This system owns the field timer, anchors, waves and (in the .Extraction partial) evacuation.
+/// HUD state is sent on every change, plus a snapshot to each player when they get attached to an entity.
 /// </summary>
-public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
+public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
 {
     [Dependency] private readonly XenoHiveSystem _hive = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly RMCPlanetSystem _rmcPlanet = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ContactEconomySystem _economy = default!;
 
     private float? _savedPreflight;
-
     private readonly List<MapCoordinates> _playerPositions = new();
 
     public override void Initialize()
@@ -58,15 +53,16 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
 
         SubscribeLocalEvent<DropshipLandedOnPlanetEvent>(OnDropshipLanded);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<ContactWaveMobComponent, GetMeleeDamageEvent>(OnWaveMobMeleeDamage);
     }
 
-    private ContactRuleComponent? GetActiveRule()
+    private Entity<ContactRuleComponent>? GetActiveRule()
     {
         var query = QueryActiveRules();
-        while (query.MoveNext(out _, out _, out var comp, out _))
+        while (query.MoveNext(out var uid, out _, out var comp, out _))
         {
-            return comp;
+            return (uid, comp);
         }
 
         return null;
@@ -84,50 +80,56 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         return null;
     }
 
-    private void OnDropshipLanded(ref DropshipLandedOnPlanetEvent ev)
-    {
-        var rule = GetActiveRule();
-        if (rule == null || rule.Phase != ContactPhase.Staging)
-            return;
+    #region Round flow
 
-        var time = Timing.CurTime;
-        rule.Phase = ContactPhase.Deployed;
-        rule.FieldEndsAt = time + rule.FieldStart;
-        rule.NextWaveAt = time + rule.WaveInterval;
-        rule.NextMarineCheck = time + rule.MarineCheckEvery;
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-deployed",
-            ("seconds", (int) rule.FieldStart.TotalSeconds)));
+    protected override void Started(EntityUid uid, ContactRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        base.Started(uid, comp, gameRule, args);
+
+        _savedPreflight ??= _config.GetCVar(RMCCVars.RMCDropshipInitialDelayMinutes);
+        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, comp.DropshipPreflightMinutes);
+
+        SendHud(comp);
     }
 
-    public bool TryActivateTerminal(out TimeSpan bonus)
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
-        bonus = default;
-        var rule = GetActiveRule();
-        if (rule == null || rule.Phase != ContactPhase.Deployed)
-            return false;
+        if (_savedPreflight is not { } saved)
+            return;
 
-        rule.FieldEndsAt += rule.TerminalFieldBonus;
-        rule.NextWaveAt -= rule.TerminalWaveReduction;
-        bonus = rule.TerminalFieldBonus;
-        return true;
+        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, saved);
+        _savedPreflight = null;
+    }
+
+    private void OnDropshipLanded(ref DropshipLandedOnPlanetEvent ev)
+    {
+        if (GetActiveRule() is not { } rule || rule.Comp.Phase != ContactPhase.Staging)
+            return;
+
+        var comp = rule.Comp;
+        var time = Timing.CurTime;
+        comp.Phase = ContactPhase.Deployed;
+        comp.FieldEndsAt = time + comp.FieldStart;
+        comp.NextWaveAt = time + comp.WaveInterval;
+        comp.NextMarineCheck = time + comp.MarineCheckEvery;
+
+        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-deployed",
+            ("seconds", (int) comp.FieldStart.TotalSeconds)));
+
+        SendHud(comp);
     }
 
     protected override void ActiveTick(EntityUid uid, ContactRuleComponent comp, GameRuleComponent gameRule, float frameTime)
     {
         base.ActiveTick(uid, comp, gameRule, frameTime);
 
-        var time = Timing.CurTime;
-        if (time >= comp.NextHudSync)
-        {
-            comp.NextHudSync = time + comp.HudSyncEvery;
-            SendHud(comp);
-            _economy.SendAllBalances();
-        }
-
         if (comp.Phase != ContactPhase.Deployed)
             return;
-            
-        if (time >= comp.FieldEndsAt)
+
+        var time = Timing.CurTime;
+
+        // frozen (FieldEndsAt null) during an extraction offer / evacuation
+        if (!comp.FieldUnavailable && time >= comp.FieldEndsAt)
         {
             EndContact(comp, ContactResult.FieldCollapsed);
             return;
@@ -136,7 +138,10 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         if (time >= comp.NextMarineCheck)
         {
             comp.NextMarineCheck = time + comp.MarineCheckEvery;
-            if (!AnyMarineAliveOnPlanet())
+
+            // departing: everyone aboard just left the colony on purpose; the extraction decides the result
+            var departing = IsEvacuating(uid, out var exState) && exState == ContactExtractionState.Departing;
+            if (!departing && !AnyMarineAliveOnPlanet())
             {
                 EndContact(comp, ContactResult.MarinesLost);
                 return;
@@ -149,18 +154,104 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             UpdateWaveMobDespawn(comp, time);
         }
 
+        UpdateExtraction(uid, comp, time);
+        if (comp.Phase != ContactPhase.Deployed)
+            return;
+
         if (time >= comp.NextWaveAt)
-            StartWave(comp, time);
+            StartWave(uid, comp, time);
     }
 
-    private void StartWave(ContactRuleComponent comp, TimeSpan time)
+    private void EndContact(ContactRuleComponent comp, ContactResult result)
     {
-        comp.Wave++;
-        comp.NextWaveAt = time + comp.WaveInterval;
+        if (comp.Phase == ContactPhase.Ended)
+            return;
+
+        comp.Phase = ContactPhase.Ended;
+        comp.Result = result;
+        SendHud(comp);
+        _roundEnd.EndRound();
+    }
+
+    protected override void AppendRoundEndText(EntityUid uid,
+        ContactRuleComponent component,
+        GameRuleComponent gameRule,
+        ref RoundEndTextAppendEvent args)
+    {
+        base.AppendRoundEndText(uid, component, gameRule, ref args);
+
+        args.AddLine(Loc.GetString($"mriya-contact-result-{component.Result.ToString().ToLower()}"));
+        args.AddLine(Loc.GetString("mriya-contact-round-end-wave", ("wave", component.Wave)));
+        args.AddLine(string.Empty);
+    }
+
+    private bool AnyMarineAliveOnPlanet()
+    {
+        var marines = EntityQueryEnumerator<MarineComponent, MobStateComponent, TransformComponent>();
+        while (marines.MoveNext(out var uid, out _, out var mobState, out var xform))
+        {
+            if (_mobState.IsDead(uid, mobState))
+                continue;
+
+            if (_rmcPlanet.IsOnPlanet(xform.Coordinates))
+                return true;
+        }
+
+        return false;
+    }
+
+    #endregion
+
+    #region Anchors
+
+    /// <summary>
+    /// Called by ContactTerminalSystem when a player finishes activating an anchor.
+    /// Fails before landing, after the round, and while the field is unavailable (extraction offer / evacuation).
+    /// </summary>
+    public bool TryActivateTerminal(out TimeSpan bonus)
+    {
+        bonus = default;
+        if (GetActiveRule() is not { } rule)
+            return false;
+
+        var comp = rule.Comp;
+        if (comp.Phase != ContactPhase.Deployed || comp.FieldUnavailable)
+            return false;
+
+        comp.FieldEndsAt += comp.TerminalFieldBonus;
+        comp.NextWaveAt -= comp.TerminalWaveReduction;
+        bonus = comp.TerminalFieldBonus;
+
+        SendHud(comp);
+        return true;
+    }
+
+    /// <summary>
+    /// Read-only check so the anchor do-after doesn't start when it can't succeed.
+    /// </summary>
+    public bool CanActivateTerminal()
+    {
+        return GetActiveRule() is { Comp: { Phase: ContactPhase.Deployed, FieldUnavailable: false } };
+    }
+
+    #endregion
+
+    #region Waves
+
+    private void StartWave(EntityUid uid, ContactRuleComponent comp, TimeSpan time)
+    {
+        var counting = !IsEvacuating(uid, out _);
+        if (counting)
+            comp.Wave++;
+
+        comp.NextWaveAt = time + GetWaveInterval(uid, comp);
 
         if (!_prototypes.TryIndex(comp.Waves, out var waves))
         {
             Log.Error($"Contact: no waves prototype {comp.Waves}");
+            SendHud(comp);
+            if (counting)
+                TryOfferExtraction(uid, comp, time);
             return;
         }
 
@@ -172,6 +263,7 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         }
 
         CollectPlayerPositions();
+
         // TODO Mriya: own spawn markers; reusing planet xeno spawn points for now
         var points = new List<EntityUid>();
         var pointQuery = AllEntityQuery<XenoSpawnPointComponent, TransformComponent>();
@@ -184,43 +276,37 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         if (points.Count == 0)
         {
             Log.Warning($"Contact wave {comp.Wave}: no spawn points within {comp.SpawnRange} tiles of players");
-            return;
         }
-
-        var hive = GetDistressHive();
-
-        for (var i = 0; i < waves.Spawns.Count; i++)
+        else
         {
-            var entry = waves.Spawns[i];
-            if (comp.Wave < entry.StartWave)
-                continue;
-
-            var rate = entry.Rate + entry.RatePerWave * (comp.Wave - entry.StartWave);
-            var acc = comp.SpawnAccumulators.GetValueOrDefault(i) + rate;
-            var count = (int) acc;
-            comp.SpawnAccumulators[i] = acc - count;
-
-            if (entry.MaxAlive >= 0)
-                count = Math.Min(count, entry.MaxAlive - CountAliveWaveMobs(entry.Proto));
-
-            for (var j = 0; j < count; j++)
+            var hive = GetDistressHive();
+            for (var i = 0; i < waves.Spawns.Count; i++)
             {
-                SpawnWaveMob(entry, _random.Pick(points), hive, buff);
+                var entry = waves.Spawns[i];
+                if (comp.Wave < entry.StartWave)
+                    continue;
+
+                var rate = entry.Rate + entry.RatePerWave * (comp.Wave - entry.StartWave);
+                var acc = comp.SpawnAccumulators.GetValueOrDefault(i) + rate;
+                var count = (int) acc;
+                comp.SpawnAccumulators[i] = acc - count;
+
+                if (entry.MaxAlive >= 0)
+                    count = Math.Min(count, entry.MaxAlive - CountAliveWaveMobs(entry.Proto));
+
+                for (var j = 0; j < count; j++)
+                {
+                    SpawnWaveMob(entry, _random.Pick(points), hive, buff);
+                }
             }
         }
 
-        _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
-    }
+        if (counting)
+            _marineAnnounce.AnnounceARESStaging(default, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
 
-    private void AnnounceBuff(ContactWaveBuffEntry buff)
-    {
-        var msg = buff.Announcement is { } custom
-            ? Loc.GetString(custom)
-            : Loc.GetString("mriya-contact-buff",
-                ("health", (int) MathF.Round((buff.Health - 1f) * 100)),
-                ("damage", (int) MathF.Round((buff.Damage - 1f) * 100)));
-
-        _marineAnnounce.AnnounceARESStaging(default, msg);
+        SendHud(comp);
+        if (counting)
+            TryOfferExtraction(uid, comp, time);
     }
 
     private static ContactWaveBuffEntry? GetBuff(ContactWavesPrototype waves, int wave)
@@ -233,6 +319,17 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         }
 
         return best;
+    }
+
+    private void AnnounceBuff(ContactWaveBuffEntry buff)
+    {
+        var msg = buff.Announcement is { } custom
+            ? Loc.GetString(custom)
+            : Loc.GetString("mriya-contact-buff",
+                ("health", (int) MathF.Round((buff.Health - 1f) * 100)),
+                ("damage", (int) MathF.Round((buff.Damage - 1f) * 100)));
+
+        _marineAnnounce.AnnounceARESStaging(default, msg);
     }
 
     private int CountAliveWaveMobs(EntProtoId proto)
@@ -281,59 +378,9 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             args.Damage *= ent.Comp.DamageMultiplier;
     }
 
-    private void EndContact(ContactRuleComponent comp, ContactResult result)
-    {
-        if (comp.Phase == ContactPhase.Ended)
-            return;
+    #endregion
 
-        comp.Phase = ContactPhase.Ended;
-        comp.Result = result;
-        _roundEnd.EndRound();
-    }
-
-    protected override void AppendRoundEndText(EntityUid uid,
-        ContactRuleComponent component,
-        GameRuleComponent gameRule,
-        ref RoundEndTextAppendEvent args)
-    {
-        base.AppendRoundEndText(uid, component, gameRule, ref args);
-
-        args.AddLine(Loc.GetString($"mriya-contact-result-{component.Result.ToString().ToLower()}"));
-        args.AddLine(Loc.GetString("mriya-contact-round-end-wave", ("wave", component.Wave)));
-        args.AddLine(string.Empty);
-    }
-
-    private bool AnyMarineAliveOnPlanet()
-    {
-        var marines = EntityQueryEnumerator<MarineComponent, MobStateComponent, TransformComponent>();
-        while (marines.MoveNext(out var uid, out _, out var mobState, out var xform))
-        {
-            if (_mobState.IsDead(uid, mobState))
-                continue;
-
-            if (_rmcPlanet.IsOnPlanet(xform.Coordinates))
-                return true;
-        }
-
-        return false;
-    }
-
-    protected override void Started(EntityUid uid, ContactRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
-    {
-        base.Started(uid, comp, gameRule, args);
-
-        _savedPreflight ??= _config.GetCVar(RMCCVars.RMCDropshipInitialDelayMinutes);
-        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, comp.DropshipPreflightMinutes);
-    }
-
-    private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
-    {
-        if (_savedPreflight is not { } saved)
-            return;
-
-        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, saved);
-        _savedPreflight = null;
-    }
+    #region Despawn
 
     private void UpdateWaveMobDespawn(ContactRuleComponent comp, TimeSpan time)
     {
@@ -382,12 +429,11 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
         return false;
     }
 
-    public bool CanActivateTerminal()
-    {
-        return GetActiveRule() is { Phase: ContactPhase.Deployed };
-    }
+    #endregion
 
-    private void SendHud(ContactRuleComponent comp)
+    #region HUD
+
+    private ContactHudStateEvent MakeHudEvent(ContactRuleComponent comp)
     {
         var phase = comp.Phase switch
         {
@@ -396,6 +442,33 @@ public sealed class ContactRuleSystem : GameRuleSystem<ContactRuleComponent>
             _ => ContactHudPhase.Ended,
         };
 
-        RaiseNetworkEvent(new ContactHudStateEvent(phase, comp.FieldEndsAt, comp.NextWaveAt, comp.Wave));
+        return new ContactHudStateEvent(phase, comp.FieldEndsAt, comp.NextWaveAt, comp.Wave, comp.FieldUnavailable);
     }
+
+    private void SendHud(ContactRuleComponent comp)
+    {
+        RaiseNetworkEvent(MakeHudEvent(comp));
+    }
+
+    /// <summary>
+    /// Joining, ghosting or reconnecting: send this player the current HUD state once.
+    /// </summary>
+    private void OnPlayerAttached(PlayerAttachedEvent ev)
+    {
+        if (GetActiveRule() is not { } rule)
+            return;
+
+        RaiseNetworkEvent(MakeHudEvent(rule.Comp), ev.Player);
+
+        if (TryComp(rule, out ContactExtractionComponent? ex) &&
+            ex.State is not (ContactExtractionState.None or ContactExtractionState.Done))
+        {
+            RaiseNetworkEvent(MakeExtractionHudEvent(ex), ev.Player);
+        }
+
+        _shuttle.SendHudTo(ev.Player);
+        _economy.SendBalanceTo(ev.Player);
+    }
+
+    #endregion
 }

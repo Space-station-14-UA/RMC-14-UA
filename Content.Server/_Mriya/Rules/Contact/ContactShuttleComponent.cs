@@ -6,6 +6,7 @@ namespace Content.Server._Mriya.Rules.Contact;
 /// Contact shuttle cycle. Lives on the MRContactRule entity.
 /// First drop: boarding starts a countdown, then automatic launch.
 /// After that: land, unload, return, refuel, wait for the reinforcement terminal.
+/// Evacuation reserves it: no reinforcements, and it stays on the LZ until the rule calls takeoff.
 /// </summary>
 [RegisterComponent, Access(typeof(ContactShuttleSystem))]
 public sealed partial class ContactShuttleComponent : Component
@@ -34,9 +35,6 @@ public sealed partial class ContactShuttleComponent : Component
     [DataField]
     public TimeSpan CheckEvery = TimeSpan.FromSeconds(1);
 
-    [DataField]
-    public TimeSpan HudSyncEvery = TimeSpan.FromSeconds(5);
-
     #region Runtime
 
     [ViewVariables]
@@ -48,8 +46,11 @@ public sealed partial class ContactShuttleComponent : Component
     [ViewVariables]
     public TimeSpan NextCheck;
 
+    /// <summary>
+    /// Reserved for evacuation: no reinforcement calls, and no auto-return after landing.
+    /// </summary>
     [ViewVariables]
-    public TimeSpan NextHudSync;
+    public bool Extraction;
 
     /// <summary>
     /// The dropship grid.
@@ -64,7 +65,7 @@ public sealed partial class ContactShuttleComponent : Component
     public EntityUid? ShipDock;
 
     /// <summary>
-    /// Where it lands on the colony (picked on the first launch, reused after).
+    /// Where it lands on the colony (picked on the first launch, reused after; set to the evac LZ for evacuation).
     /// </summary>
     [ViewVariables]
     public EntityUid? LandingZone;

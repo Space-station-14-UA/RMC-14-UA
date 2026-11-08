@@ -1,16 +1,28 @@
-using Robust.Shared.Prototypes;
 using Content.Shared._Mriya.Rules.Contact;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
 [RegisterComponent, Access(typeof(ContactRuleSystem))]
 public sealed partial class ContactRuleComponent : Component
 {
+    #region Field
+
     [DataField]
     public TimeSpan FieldStart = TimeSpan.FromSeconds(150);
 
     [DataField]
     public TimeSpan TerminalFieldBonus = TimeSpan.FromSeconds(30);
+
+    #endregion
+
+    #region Waves
+
+    /// <summary>
+    /// From this wave on, the extraction offer can't be skipped. 0 = never.
+    /// </summary>
+    [DataField]
+    public int FinalWave = 100;
 
     [DataField]
     public TimeSpan WaveInterval = TimeSpan.FromSeconds(50);
@@ -19,14 +31,35 @@ public sealed partial class ContactRuleComponent : Component
     public TimeSpan TerminalWaveReduction = TimeSpan.FromSeconds(20);
 
     [DataField]
-    public int FinalWave = 100;
-
-    [DataField]
     public ProtoId<ContactWavesPrototype> Waves = "MRContactWavesDefault";
 
-    /// <summary>Fractional spawn carry-over per Spawns entry index.</summary>
+    /// <summary>
+    /// Only spawn points within this range of a living player are used.
+    /// </summary>
     [DataField]
-    public Dictionary<int, float> SpawnAccumulators = new();
+    public float SpawnRange = 150f;
+
+    /// <summary>
+    /// Wave mobs with no player within this range for DespawnDelay are deleted.
+    /// </summary>
+    [DataField]
+    public float DespawnRange = 100f;
+
+    [DataField]
+    public TimeSpan DespawnDelay = TimeSpan.FromSeconds(30);
+
+    [DataField]
+    public TimeSpan DespawnCheckEvery = TimeSpan.FromSeconds(5);
+
+    #endregion
+
+    [DataField]
+    public TimeSpan MarineCheckEvery = TimeSpan.FromSeconds(2);
+
+    [DataField]
+    public float DropshipPreflightMinutes = 2;
+
+    #region Runtime
 
     [DataField]
     public ContactPhase Phase = ContactPhase.Staging;
@@ -37,6 +70,12 @@ public sealed partial class ContactRuleComponent : Component
     [DataField]
     public TimeSpan? FieldEndsAt;
 
+    /// <summary>
+    /// Extraction offer / evacuation: anchors offline, field timer frozen.
+    /// </summary>
+    [DataField]
+    public bool FieldUnavailable;
+
     [DataField]
     public TimeSpan? NextWaveAt;
 
@@ -44,37 +83,21 @@ public sealed partial class ContactRuleComponent : Component
     public int Wave;
 
     [DataField]
-    public TimeSpan MarineCheckEvery = TimeSpan.FromSeconds(2);
+    public int LastBuffWave;
+
+    /// <summary>
+    /// Fractional spawn carry-over per Spawns entry index.
+    /// </summary>
+    [DataField]
+    public Dictionary<int, float> SpawnAccumulators = new();
 
     [DataField]
     public TimeSpan? NextMarineCheck;
 
     [DataField]
-    public float DropshipPreflightMinutes = 2;
-
-    [DataField]
-    public float DespawnRange = 100f;
-
-    [DataField]
-    public TimeSpan DespawnDelay = TimeSpan.FromSeconds(30);
-
-    [DataField]
-    public TimeSpan DespawnCheckEvery = TimeSpan.FromSeconds(5);
-
-    [DataField]
     public TimeSpan? NextDespawnCheck;
 
-    [DataField]
-    public float SpawnRange = 150f;
-
-    [DataField]
-    public int LastBuffWave;
-
-    [DataField]
-    public TimeSpan HudSyncEvery = TimeSpan.FromSeconds(5);
-
-    [DataField]
-    public TimeSpan NextHudSync;
+    #endregion
 }
 
 public enum ContactPhase : byte
@@ -90,4 +113,5 @@ public enum ContactResult : byte
     FieldCollapsed,
     MarinesLost,
     Evacuated,
+    ExtractionFailed,
 }

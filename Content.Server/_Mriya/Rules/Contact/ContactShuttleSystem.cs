@@ -8,6 +8,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -16,7 +17,9 @@ namespace Content.Server._Mriya.Rules.Contact;
 /// <summary>
 /// Contact shuttle cycle on top of RMC's DropshipSystem.FlyTo:
 /// WaitingForBoarding -> Countdown -> FlyingDown -> Unloading -> Returning -> Refueling -> Ready
-/// -> (reinforcement terminal) -> FlyingDown -> loop
+/// -> (reinforcement terminal) -> FlyingDown -> ...
+/// Evacuation: ReserveForExtraction -> TryCallExtraction (when Ready) -> lands and waits -> ExtractionTakeoff.
+/// HUD is sent on every state change, plus a snapshot to a player when they get attached (via ContactRuleSystem).
 /// </summary>
 public sealed class ContactShuttleSystem : EntitySystem
 {
@@ -51,12 +54,6 @@ public sealed class ContactShuttleSystem : EntitySystem
         var query = EntityQueryEnumerator<ContactShuttleComponent, ActiveGameRuleComponent>();
         while (query.MoveNext(out var comp, out _))
         {
-            if (now >= comp.NextHudSync)
-            {
-                comp.NextHudSync = now + comp.HudSyncEvery;
-                SendHud(comp);
-            }
-
             if (now < comp.NextCheck)
                 continue;
 
@@ -95,16 +92,22 @@ public sealed class ContactShuttleSystem : EntitySystem
                 break;
 
             case ContactShuttleState.FlyingDown:
-                if (OnPlanet(dropship))
+                if (!OnPlanet(dropship))
+                    break;
+
+                if (comp.Extraction)
                 {
-                    SetState(comp, ContactShuttleState.Unloading, now + comp.UnloadTime);
-                    Announce("mriya-contact-shuttle-landed", ("seconds", (int) comp.UnloadTime.TotalSeconds));
+                    // evacuation: stay until the rule calls ExtractionTakeoff
+                    SetState(comp, ContactShuttleState.Unloading, null);
+                    break;
                 }
 
+                SetState(comp, ContactShuttleState.Unloading, now + comp.UnloadTime);
+                Announce("mriya-contact-shuttle-landed", ("seconds", (int) comp.UnloadTime.TotalSeconds));
                 break;
 
             case ContactShuttleState.Unloading:
-                if (now < comp.StateEndsAt)
+                if (comp.Extraction || now < comp.StateEndsAt)
                     break;
 
                 EjectStragglers(dropship);
@@ -132,10 +135,72 @@ public sealed class ContactShuttleSystem : EntitySystem
                 break;
 
             case ContactShuttleState.Ready:
-                // waits for the reinforcement terminal
+                // waits for the reinforcement terminal or an evacuation call
                 break;
         }
     }
+
+    #region Evacuation
+
+    public void ReserveForExtraction()
+    {
+        if (GetActive() is { } comp)
+            comp.Extraction = true;
+    }
+
+    /// <summary>
+    /// Sends the shuttle to the evacuation LZ. Only works once it's refueled (Ready).
+    /// </summary>
+    public bool TryCallExtraction(EntityUid landingZone)
+    {
+        if (GetActive() is not { } comp ||
+            !TryGetDropship(comp, out var dropship) ||
+            comp.State != ContactShuttleState.Ready)
+        {
+            return false;
+        }
+
+        comp.LandingZone = landingZone;
+        LaunchDown(comp, dropship);
+        return comp.State == ContactShuttleState.FlyingDown;
+    }
+
+    public bool IsExtractionLanded()
+    {
+        return GetActive() is { Extraction: true, State: ContactShuttleState.Unloading };
+    }
+
+    /// <summary>
+    /// Starts the takeoff for the ship. False if it couldn't launch (retry next check).
+    /// </summary>
+    public bool ExtractionTakeoff()
+    {
+        if (GetActive() is not { } comp ||
+            !TryGetDropship(comp, out var dropship) ||
+            comp.ShipDock is not { } dock ||
+            !Launch(dropship, dock))
+        {
+            return false;
+        }
+
+        SetState(comp, ContactShuttleState.Returning, null);
+        return true;
+    }
+
+    public bool HasLeftPlanet()
+    {
+        return GetActive() is { } comp && TryGetDropship(comp, out var dropship) && !OnPlanet(dropship);
+    }
+
+    /// <summary>
+    /// Living marines aboard right now.
+    /// </summary>
+    public int CountExtracted()
+    {
+        return GetActive() is { } comp && TryGetDropship(comp, out var dropship) ? CountAboard(dropship) : 0;
+    }
+
+    #endregion
 
     #region Flights
 
@@ -213,6 +278,12 @@ public sealed class ContactShuttleSystem : EntitySystem
         if (GetActive() is not { } comp || !TryGetDropship(comp, out var dropship))
         {
             _popup.PopupEntity(Loc.GetString("mriya-contact-reinforcements-offline"), ent, args.User);
+            return;
+        }
+
+        if (comp.Extraction)
+        {
+            _popup.PopupEntity(Loc.GetString("mriya-contact-reinforcements-evac"), ent, args.User);
             return;
         }
 
@@ -375,12 +446,16 @@ public sealed class ContactShuttleSystem : EntitySystem
     {
         comp.State = state;
         comp.StateEndsAt = endsAt;
-        SendHud(comp);
+        RaiseNetworkEvent(new ContactShuttleHudEvent(comp.State, comp.StateEndsAt));
     }
 
-    private void SendHud(ContactShuttleComponent comp)
+    /// <summary>
+    /// Snapshot for one player (joining, ghosting, reconnecting).
+    /// </summary>
+    public void SendHudTo(ICommonSession session)
     {
-        RaiseNetworkEvent(new ContactShuttleHudEvent(comp.State, comp.StateEndsAt));
+        if (GetActive() is { } comp)
+            RaiseNetworkEvent(new ContactShuttleHudEvent(comp.State, comp.StateEndsAt), session);
     }
 
     private void Announce(string key, params (string, object)[] args)

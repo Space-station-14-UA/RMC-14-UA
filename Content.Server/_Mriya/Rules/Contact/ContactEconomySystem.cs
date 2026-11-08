@@ -1,3 +1,4 @@
+using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared._RMC14.Marines;
 using Content.Shared.Damage;
 using Content.Shared.GameTicking;
@@ -6,19 +7,17 @@ using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Content.Shared._Mriya.Rules.Contact;
-using Robust.Server.Player;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
 /// <summary>
-/// Є-бали гравців, balance for the Contact store.
+/// Є-бали: per-player balance for the Contact store.
 /// Keyed by NetUserId so it survives death and respawn on the ship.
+/// The client gets its balance on every change, plus a snapshot when attached (via ContactRuleSystem).
 /// </summary>
 public sealed class ContactEconomySystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
 
     private readonly Dictionary<NetUserId, int> _balances = new();
 
@@ -55,7 +54,7 @@ public sealed class ContactEconomySystem : EntitySystem
 
         EnsureComp<ContactPlayerComponent>(ev.Mob);
         _balances.TryAdd(ev.Player.UserId, config.StartingPoints);
-        SendBalance(ev.Player);
+        SendBalanceTo(ev.Player);
     }
 
     #region Public API
@@ -86,6 +85,7 @@ public sealed class ContactEconomySystem : EntitySystem
             return;
 
         _balances[user] = GetBalance(user) + amount;
+        SendBalance(player);
 
         var msg = reason is { } r
             ? Loc.GetString("mriya-contact-points-gain-reason", ("amount", amount), ("reason", Loc.GetString(r)))
@@ -103,6 +103,7 @@ public sealed class ContactEconomySystem : EntitySystem
             return false;
 
         _balances[user] = balance - amount;
+        SendBalance(player);
         return true;
     }
 
@@ -115,7 +116,21 @@ public sealed class ContactEconomySystem : EntitySystem
             AddPoints(player, config.TerminalReward, "mriya-contact-points-reason-terminal");
     }
 
+    /// <summary>
+    /// Snapshot for one player (spawning, ghosting, reconnecting).
+    /// </summary>
+    public void SendBalanceTo(ICommonSession session)
+    {
+        RaiseNetworkEvent(new ContactBalanceEvent(GetBalance(session.UserId)), session);
+    }
+
     #endregion
+
+    private void SendBalance(EntityUid player)
+    {
+        if (TryComp(player, out ActorComponent? actor))
+            SendBalanceTo(actor.PlayerSession);
+    }
 
     private void OnWaveMobStateChanged(Entity<ContactWaveMobComponent> ent, ref MobStateChangedEvent args)
     {
@@ -169,27 +184,5 @@ public sealed class ContactEconomySystem : EntitySystem
         }
 
         AddPoints(reviver, config.ReviveReward, "mriya-contact-points-reason-revive");
-    }
-
-    private void SendBalance(EntityUid player)
-    {
-        if (TryComp(player, out ActorComponent? actor))
-            SendBalance(actor.PlayerSession);
-    }
-
-    private void SendBalance(ICommonSession session)
-    {
-        RaiseNetworkEvent(new ContactBalanceEvent(GetBalance(session.UserId)), session);
-    }
-
-    /// <summary>
-    /// Called with the HUD sync: everyone gets their current balance (0 if they haven't earned any).
-    /// </summary>
-    public void SendAllBalances()
-    {
-        foreach (var session in _player.Sessions)
-        {
-            SendBalance(session);
-        }
     }
 }

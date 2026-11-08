@@ -33,6 +33,14 @@
     fullBoardCountdown: 30
     unloadTime: 15
     refuelTime: 150
+  - type: ContactExtraction
+    everyWaves: 10
+    breakTime: 45
+    zoneRadius: 10
+    startCountdown: 10
+    holdTime: 150
+    holdWaveInterval: 20
+    boardTime: 30
  
 - type: gamePreset
   id: MRContact
