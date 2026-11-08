@@ -12,6 +12,9 @@
     roundEndCheckDelay: 108000    # перша перевірка чи виконано умови для завершення раунду відбудеться 30 години після старту раунду  (адміністрація розбереться)
     bioscan: false                # без біоскану (адміністрація розбереться х2)
     startARESAnnouncements: false # АРЕС не вітає морпіхів. ТОДО: зробити кастомні оголошення
+  - type: MRRespawnRule           # respawn to lobby
+    maxRespawns: -1               # -1 = unlimited
+    delay: 0                      # s before respawn available
 
 - type: entity
   id: MREventSunRiders
@@ -31,3 +34,10 @@
     startARESAnnouncements: true
     bioscan: true
 #    spawnSurvivors: true – ТОДО
+
+- type: entity
+  parent: BaseGameRule
+  id: MRRespawnRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MRRespawnRule

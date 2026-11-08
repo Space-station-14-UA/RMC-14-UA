@@ -43,6 +43,8 @@
   rules:
   - MRContactDistress
   - MRContactRule
+  - MRRespawnRule
+  - MRRotRuleContact
 
 - type: contactWaves
   id: MRContactWavesDefault
@@ -86,3 +88,11 @@
   - wave: 80
     health: 2.5
     damage: 1.75
+
+- type: entity
+  parent: BaseGameRule
+  id: MRRotRuleContact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MRRotRule
+    rotTime: 10
