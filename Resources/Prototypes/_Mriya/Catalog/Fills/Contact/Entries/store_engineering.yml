@@ -1,0 +1,35 @@
+- type: contactStoreEntry
+  id: MRContactStoreEngineeringUpgrade
+  proto: RMCEngineeringUpgrade
+  category: MRContactStoreEngineering
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreSentryConstruct
+  proto: RMCSentryConstruct
+  category: MRContactStoreEngineering
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreSentryFire
+  proto: RMCSentryFire
+  category: MRContactStoreEngineering
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreSentryTesla
+  proto: RMCTesla
+  category: MRContactStoreEngineering
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreKitEngineering
+  proto: RMCKitEngineering
+  category: MRContactStoreEngineering
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreToolboxMechanical
+  proto: RMCToolboxMechanicalGreenFilled
+  category: MRContactStoreEngineering
+  price: 15

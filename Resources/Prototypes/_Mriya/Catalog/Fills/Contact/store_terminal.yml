@@ -1,0 +1,34 @@
+# Store terminal
+- type: entity
+  id: MRContactStoreTerminal
+  parent: BaseStructure
+  name: термінал постачання
+  description: Обмінює є-бали на спорядження.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        layer:
+        - MobMask
+  - type: Sprite # TODO Mriya: proper sprite
+    sprite: Structures/Machines/computers.rsi
+    state: computer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: ContactStore
+  - type: ActivatableUI
+    key: enum.ContactStoreUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ContactStoreUiKey.Key:
+        type: ContactStoreBoundUserInterface

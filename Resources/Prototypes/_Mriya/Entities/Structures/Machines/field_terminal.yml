@@ -1,0 +1,43 @@
+- type: entity
+  id: MRContactTerminal
+  name: якір
+  description: Термінал стабілізації поля. Активуйте, щоб продовжити існування поля.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        layer:
+        - MobMask
+  - type: Sprite
+    sprite: _RMC14/Structures/Machines/sensor_tower.rsi
+    layers:
+    - state: sensor_off
+      map: [ "base" ]
+    state: sensor_off
+    offset: 0.5,2
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.SensorTowerLayers.Layer:
+        base:
+          Off: { state: sensor_off }
+          On: { state: sensor_ }
+  - type: ContactTerminal
+  - type: MarineMapTracked
+  - type: TacticalMapTracked
+  - type: TacticalMapIcon
+    icon:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: sensor_tower # TODO Mriya: own blip

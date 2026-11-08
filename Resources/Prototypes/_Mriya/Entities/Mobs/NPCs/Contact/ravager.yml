@@ -1,0 +1,17 @@
+- type: entity
+  parent: [ RMCXenoRavagerBerserker, MRContactXenoAIBase ]
+  id: MRContactXenoRavagerBerserker
+  suffix: Контакт ШІ, Бос
+  components:
+  - type: ContactXenoAI
+    abilities:
+    - action: ActionXenoClothesline # heal when hurt
+      maxRange: 1.5
+      maxHealth: 0.75
+    - action: ActionXenoEviscerate
+      maxRange: 2.5
+    - action: ActionXenoApprehend
+      minRange: 2
+      maxRange: 7
+
+# berserker does berserking :godo:

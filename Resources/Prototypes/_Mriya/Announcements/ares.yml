@@ -1,0 +1,57 @@
+- type: announcementPreset
+  id: MRARES
+  name: "АРЕС"
+  description: "Прості АРЕСу"
+  target: Marines
+  showSprite: false
+  style:
+    animation:
+      animation: Glitch
+      printSpeed: 0.018
+      holdDuration: 4
+      flickerChance: 0
+      glitchChance: 0
+      animationEnhancements:
+        enableCRT: true
+    layout:
+      position: TopCenter
+      spritePosition: Left
+      spriteDisplayMode: FullSprite
+      uIScale: 2
+      titlePosition: Above
+    background:
+      showBackground: false
+      backgroundAlpha: 0.35
+      backgroundColor: "#0AFE60"
+    text:
+      primaryColor: "#0AFE60"
+      font: "Default"
+      fontSize: 18
+      lineHeight: 42
+      showSpeakerName: false
+    sprite:
+      showSpriteBox: false
+      spriteScale: 0.85
+    title:
+      showTitle: true
+      title: ">> АРЕС v3.2 <<"
+      titleColor: "#0AFE60"
+      titleFontSize: 30
+      titleFont: "DefaultBold"
+      titleUnderline: true
+      titleUnderlineThickness: 2
+    scaling:
+      responsiveScaleFactor: 1.15
+  sound:
+    path: "/Audio/_RMC14/Announcements/Marine/notice2.ogg"
+  soundVolume: 0.8
+  priority: 8
+  canInterrupt: true
+  canBeInterrupted: false
+  # decalRsi: "/Textures/_RMC14/Structures/Wallmounts/banners.rsi"
+  # decalState: "unmcflag"
+  # decalPlacement: Above
+  # decalScale: 3.0
+  # decalAlpha: 0.5
+  # decalOffset: "150,0"
+  # textOffset: "-75,0"

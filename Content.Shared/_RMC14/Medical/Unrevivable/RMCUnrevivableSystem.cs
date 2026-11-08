@@ -99,4 +99,18 @@ public sealed class RMCUnrevivableSystem : EntitySystem
             MakeUnrevivable((uid, revivable));
         }
     }
+
+    // Mriya. Rot rules (MRRotRule) shorten/lengthen the delay per gamemode
+    public void SetUnrevivableDelay(Entity<RMCRevivableComponent?> ent, TimeSpan delay)
+    {
+        if (!Resolve(ent.Owner, ref ent.Comp, false) || ent.Comp.UnrevivableDelay == delay)
+            return;
+
+        // already dead: shift the running timer so the HUD stages stay consistent
+        if (ent.Comp.UnrevivableAt != TimeSpan.Zero)
+            ent.Comp.UnrevivableAt += delay - ent.Comp.UnrevivableDelay;
+
+        ent.Comp.UnrevivableDelay = delay;
+        Dirty(ent);
+    }
 }

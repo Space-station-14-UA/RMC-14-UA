@@ -1,0 +1,439 @@
+- type: contactStoreEntry
+  id: MRContactStoreModExtendedBarrel
+  proto: RMCAttachmentExtendedBarrel
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModExtendedCompensator
+  proto: RMCAttachmentExtendedCompensator
+  category: MRContactStoreAccessories
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModRecoilCompensator
+  proto: RMCAttachmentRecoilCompensator
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModBarrelCharger
+  proto: RMCAttachmentBarrelCharger
+  category: MRContactStoreAccessories
+  price: 25
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModShotgunChoke
+  proto: RMCAttachmentShotgunChoke
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModSuppressor
+  proto: RMCAttachmentSuppressor
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModSuppressorCompact
+  proto: RMCAttachmentSuppressorCompact
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModSuppressorXM40
+  proto: RMCAttachmentSuppressorXM40
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModRecoilCompensatorM13
+  proto: RMCAttachmentRecoilCompensatorM13
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModRecoilCompensatorM13Spiked
+  proto: RMCAttachmentRecoilCompensatorM13Spiked
+  category: MRContactStoreAccessories
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMatebaStandard
+  proto: RMCAttachmentMatebaStandard
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMatebaMarksman
+  proto: RMCAttachmentMatebaMarksman
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMatebaSnubNose
+  proto: RMCAttachmentMatebaSnubNose
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+# ── Rail ──
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModRailFlashlight
+  proto: RMCAttachmentRailFlashlight
+  category: MRContactStoreAccessories
+  price: 5
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMagneticHarness
+  proto: RMCAttachmentMagneticHarness
+  category: MRContactStoreAccessories
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModTwoPointSling
+  proto: RMCAttachmentTwoPointSling
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModS5RedDot
+  proto: RMCAttachmentS5RedDotSight
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModS5MicroRedDot
+  proto: RMCAttachmentS5MicroRedDotSight
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModS6Reflex
+  proto: RMCAttachmentS6ReflexSight
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModS42xMiniscope
+  proto: RMCAttachmentS42xTelescopicMiniscope
+  category: MRContactStoreAccessories
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModS42xAdvancedMiniscope
+  proto: RMCAttachmentS42xAdvancedTelescopicMiniscope
+  category: MRContactStoreAccessories
+  price: 25
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModHuntingScope
+  proto: RMCAttachmentHuntingScope
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModFP9000Scope
+  proto: RMCAttachmentFP9000Scope
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModS84xScope
+  proto: RMCAttachmentS84xTelescopicScope
+  category: MRContactStoreAccessories
+  price: 30
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModXS9
+  proto: RMCAttachmentXS-9
+  category: MRContactStoreAccessories
+  price: 30
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModB8SmartScope
+  proto: RMCAttachmentB8SmartScope
+  category: MRContactStoreAccessories
+  price: 45
+  maxPerPurchase: 1
+ 
+# ── Stock ──
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM890Stock
+  proto: RMCAttachmentM890Stock
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMK221Stock
+  proto: RMCAttachmentMK221Stock
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM42A1WoodenStock
+  proto: RMCAttachmentM42A1WoodenStock
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM42A2CollapsibleStock
+  proto: RMCAttachmentM42A2CollapsibleStock
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMOU53Stock
+  proto: RMCAttachmentMOU53Stock
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModXM51Stock
+  proto: RMCAttachmentXM51Stock
+  category: MRContactStoreAccessories
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM54CStockCollapsible
+  proto: RMCAttachmentM54CStockCollapsible
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM54CStockSolid
+  proto: RMCAttachmentM54CStockSolid
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM54CStockSolidMarksman
+  proto: RMCAttachmentM54CStockSolidMarksman
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM63StockCollapsible
+  proto: RMCAttachmentM63StockCollapsible
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM63Stock
+  proto: RMCAttachmentM63Stock
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM63ArmBrace
+  proto: RMCAttachmentM63ArmBrace
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMP5AltStock
+  proto: RMCAttachmentMP5AltStockCollapsible
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM13StockCollapsible
+  proto: RMCAttachmentM13StockCollapsible
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM13StockSolid
+  proto: RMCAttachmentM13StockSolid
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM16StockCollapsible
+  proto: RMCAttachmentM16StockCollapsible
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM44SharpshooterStock
+  proto: RMCAttachmentM44MagnumSharpshooterStock
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModXM88Stock
+  proto: RMCAttachmentXM88Stock
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+# ── Underbarrel ──
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModAngledGrip
+  proto: RMCAttachmentAngledGrip
+  category: MRContactStoreAccessories
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModVerticalGrip
+  proto: RMCAttachmentVerticalGrip
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModFlashlightGrip
+  proto: RMCAttachmentFlashlightGrip
+  category: MRContactStoreAccessories
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModLaserSight
+  proto: RMCAttachmentLaserSight
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMicroLaserSight
+  proto: RMCAttachmentMicroLaserSight
+  category: MRContactStoreAccessories
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModGyroStabilizer
+  proto: RMCAttachmentGyroscopicStabilizer
+  category: MRContactStoreAccessories
+  price: 12
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModBipod
+  proto: RMCAttachmentBipod
+  category: MRContactStoreAccessories
+  price: 15
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModBurstFire
+  proto: RMCAttachmentBurstFireAssembly
+  category: MRContactStoreAccessories
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModExtinguisher
+  proto: RMCAttachmentUnderbarrelExtinguisher
+  category: MRContactStoreAccessories
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModExtinguisherSpec
+  proto: RMCAttachmentUnderbarrelExtinguisherSpec
+  category: MRContactStoreAccessories
+  price: 20
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModM203
+  proto: RMCAttachmentM203GrenadeLauncher
+  category: MRContactStoreAccessories
+  price: 25
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModU7Shotgun
+  proto: RMCAttachmentU7UnderbarrelShotgun
+  category: MRContactStoreAccessories
+  price: 35
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModL90UBS
+  proto: RMCAttachmentL90UBS
+  category: MRContactStoreAccessories
+  price: 35
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMiniFlamethrower
+  proto: RMCAttachmentMiniFlamethrower
+  category: MRContactStoreAccessories
+  price: 40
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModL90UBF
+  proto: RMCAttachmentL90UBF
+  category: MRContactStoreAccessories
+  price: 40
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModU1GrenadeLauncher
+  proto: RMCAttachmentU1GrenadeLauncher
+  category: MRContactStoreAccessories
+  price: 40
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModL90GL
+  proto: RMCAttachmentL90GL
+  category: MRContactStoreAccessories
+  price: 40
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreModMK1GrenadeLauncher
+  proto: RMCAttachmentMK1GrenadeLauncher
+  category: MRContactStoreAccessories
+  price: 45
+  maxPerPurchase: 1

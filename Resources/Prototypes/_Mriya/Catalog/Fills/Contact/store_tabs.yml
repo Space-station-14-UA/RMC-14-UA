@@ -1,0 +1,51 @@
+- type: contactStoreCategory
+  id: MRContactStoreAmmo
+  name: mriya-contact-store-tab-ammo
+  priority: 0
+  compatibilityFilter: true
+
+- type: contactStoreCategory
+  id: MRContactStoreLongArms
+  name: mriya-contact-store-tab-long
+  priority: 1
+
+- type: contactStoreCategory
+  id: MRContactStoreShortArms
+  name: mriya-contact-store-tab-short
+  priority: 2
+
+- type: contactStoreCategory
+  id: MRContactStoreMelee
+  name: mriya-contact-store-tab-melee
+  priority: 3
+
+- type: contactStoreCategory
+  id: MRContactStoreSpecial
+  name: mriya-contact-store-tab-special
+  priority: 4
+
+- type: contactStoreCategory
+  id: MRContactStoreMedicine
+  name: mriya-contact-store-tab-medicine
+  priority: 5
+
+- type: contactStoreCategory
+  id: MRContactStoreArmor
+  name: mriya-contact-store-tab-armor
+  priority: 6
+
+- type: contactStoreCategory
+  id: MRContactStoreClothing
+  name: mriya-contact-store-tab-clothing
+  priority: 7
+
+- type: contactStoreCategory
+  id: MRContactStoreAccessories
+  name: mriya-contact-store-tab-accessories
+  priority: 8
+  compatibilityFilter: true
+
+- type: contactStoreCategory
+  id: MRContactStoreEngineering
+  name: mriya-contact-store-tab-engineering
+  priority: 9
