@@ -3,7 +3,6 @@
   name: mriya-contact-store-tab-ammo
   priority: 0
   compatibilityFilter: true
-  forYou: true
 
 - type: contactStoreCategory
   id: MRContactStoreLongArms
