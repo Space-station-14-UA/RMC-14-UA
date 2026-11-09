@@ -58,6 +58,13 @@ public sealed partial class ContactRuleComponent : Component
     public float SpawnMaxRange = 20f;
 
     /// <summary>
+    /// Waves prefer tiles no marine can see within this range (walls/occluders in between).
+    /// Falls back to a visible tile if no hidden one is found.
+    /// </summary>
+    [DataField]
+    public float SpawnSightRange = 15f;
+
+    /// <summary>
     /// Random tiles tried per mob before giving up.
     /// </summary>
     [DataField]
