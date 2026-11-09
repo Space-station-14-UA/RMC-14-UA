@@ -99,3 +99,15 @@
   proto: CMFireExtinguisher
   category: MRContactStoreSpecial
   price: 5
+
+- type: contactStoreEntry
+  id: MRContactVisorNightVision
+  proto: RMCVisorNightVision
+  category: MRContactStoreSpecial
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactMotionDetector
+  proto: RMCMotionDetector
+  category: MRContactStoreSpecial
+  price: 15

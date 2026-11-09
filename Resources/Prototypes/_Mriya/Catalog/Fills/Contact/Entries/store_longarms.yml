@@ -276,3 +276,9 @@
   proto: RMCWeaponLMGM60
   category: MRContactStoreLongArms
   price: 750
+
+- type: contactStoreEntry
+  id: MRContactStoreM4SPRCustom
+  proto: WeaponRifleM4SPRCustom
+  category: MRContactStoreLongArms
+  price: 750

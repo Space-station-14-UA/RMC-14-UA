@@ -427,3 +427,36 @@
   proto: RMCMagazinePistolM13DrumAP
   category: MRContactStoreAmmo
   price: 4
+
+# m4sprcustom
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM4SPRA19
+  proto: RMCMagazineRifleM4SPRA19
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM4SPRA19Impact
+  proto: RMCMagazineRifleM4SPRA19Impact
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM4SPRA19Incendiary
+  proto: RMCMagazineRifleM4SPRA19Incendiary
+  category: MRContactStoreAmmo
+  price: 10
+
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSmartGun
+  proto: RMCMagazineSmartGun
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSmartGunirradiated
+  proto: RMCMagazineSmartGunirradiated
+  category: MRContactStoreAmmo
+  price: 15

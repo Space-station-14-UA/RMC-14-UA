@@ -37,10 +37,10 @@ public sealed partial class ContactRuleComponent : Component
     public int FinalWave = 100;
 
     [DataField]
-    public TimeSpan WaveInterval = TimeSpan.FromSeconds(50);
+    public TimeSpan WaveInterval = TimeSpan.FromSeconds(75);
 
     [DataField]
-    public TimeSpan TerminalWaveReduction = TimeSpan.FromSeconds(15);
+    public TimeSpan TerminalWaveReduction = TimeSpan.FromSeconds(10);
 
     [DataField]
     public ProtoId<ContactWavesPrototype> Waves = "MRContactWavesDefault";

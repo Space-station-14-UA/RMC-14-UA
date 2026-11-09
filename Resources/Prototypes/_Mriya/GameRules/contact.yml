@@ -23,10 +23,10 @@
   components:
   - type: ContactEconomy
     killReward: 15
-    healReward: 3
+    healReward: 15
     healStep: 20
     reviveReward: 100
-    terminalReward: 25
+    terminalReward: 50
   - type: ContactShuttle
     boardingCountdown: 120
     fullBoardCountdown: 30
@@ -52,22 +52,22 @@
   - proto: MRContactXenoDrone
     startWave: 1
     rate: 2
-    ratePerWave: 0.25
+    ratePerWave: 0.15
     maxAlive: 20
   - proto: MRContactXenoDefender
     startWave: 2
     rate: 1
-    ratePerWave: 0.25
+    ratePerWave: 0.15
     maxAlive: 15
   - proto: MRContactXenoLurker
     startWave: 5
     rate: 1
-    ratePerWave: 0.25
+    ratePerWave: 0.15
     maxAlive: 2
   - proto: MRContactXenoCrusher
     startWave: 9
     rate: 1
-    ratePerWave: 0.3
+    ratePerWave: 0.15
     maxAlive: 5
   - proto: MRContactXenoCharger
     startWave: 20
@@ -82,7 +82,7 @@
   - proto: MRContactXenoBoiler
     startWave: 15
     rate: 1
-    ratePerWave: 0.3
+    ratePerWave: 0.05
     maxAlive: 3
   # - proto: CMXenoQueen # boss example, spawns only at wave 20
   #   startWave: 20
@@ -110,4 +110,4 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: MRRotRule
-    rotTime: 10
+    rotTime: 60
