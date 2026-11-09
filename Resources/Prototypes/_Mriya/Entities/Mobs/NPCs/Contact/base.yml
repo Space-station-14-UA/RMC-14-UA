@@ -44,7 +44,11 @@
     - !type:HTNPrimitiveTask
       operator: !type:ContactSmashOperator
         targetKey: MRContactSmashTarget
-  - tasks:
+        activeKey: MRContactSmashActive
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: MRContactMeleeActive
+    tasks:
     - !type:HTNPrimitiveTask
       operator: !type:UtilityOperator
         proto: MRContactNearbyMarines
@@ -87,6 +91,7 @@
     blackboard:
       NavSmash: !type:Bool true # attack obstacles the pathfinder knows about
       NavPry: !type:Bool true # pry doors
+      NavClimb: !type:Bool true
       VisionRadius: !type:Single 12
       AggroVisionRadius: !type:Single 14
   - type: ContactXenoAI

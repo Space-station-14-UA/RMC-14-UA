@@ -19,6 +19,11 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Doors.Components;
+using Robust.Shared.Physics.Components;
+using Content.Shared.DoAfter;
+using Content.Shared._RMC14.Doors;
+using Content.Shared.Power.EntitySystems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -42,6 +47,8 @@ public sealed class ContactXenoAISystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly NPCSteeringSystem _steering = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
+
     public const string NoiseActiveKey = "MRContactNoiseActive";
     public const string HuntActiveKey = "MRContactHuntActive";
 
@@ -61,9 +68,14 @@ public sealed class ContactXenoAISystem : EntitySystem
     /// <summary>How far around itself a blocked xeno looks for something to smash.</summary>
     private const float SmashSearchRange = 2f;
 
-    private readonly List<(EntityUid Uid, MapCoordinates Pos, EntityCoordinates Coords, bool Loud)> _marines = new();
     private readonly HashSet<EntityUid> _obstacles = new();
     private TimeSpan _nextUpdate;
+
+    public const string MeleeActiveKey = "MRContactMeleeActive";
+
+    private readonly record struct MarineInfo(EntityUid Uid, MapCoordinates Pos, EntityCoordinates Coords, EntityUid? Grid, bool Loud);
+
+    private readonly List<MarineInfo> _marines = new();
 
     public override void Initialize()
     {
@@ -93,8 +105,18 @@ public sealed class ContactXenoAISystem : EntitySystem
             if (_mobState.IsIncapacitated(uid))
                 continue;
 
+            // doing a do-after (prying a door / winding up an ability): don't touch the plan
+            if (HasComp<ActiveDoAfterComponent>(uid))
+            {
+                // wind-ups start from a hold: keep standing until it's done, or the move cancels it
+                if (htn.Blackboard.TryGetValue<float>(HoldKey, out _, EntityManager))
+                    htn.Blackboard.SetValue(HoldKey, 1f);
+
+                continue;
+            }
+
             var pos = _transform.GetMapCoordinates(uid, xform);
-            var destination = UpdatePerception(uid, ai, htn, pos);
+            var destination = UpdatePerception(uid, ai, htn, pos, xform);
 
             UpdateHoldRange(uid, ai, htn);
             UpdateSmash(uid, ai, htn, pos, destination, now);
@@ -113,7 +135,7 @@ public sealed class ContactXenoAISystem : EntitySystem
             if (_mobState.IsDead(uid, mobState))
                 continue;
 
-            _marines.Add((uid, _transform.GetMapCoordinates(uid, xform), xform.Coordinates, IsLoud(uid, now)));
+            _marines.Add(new MarineInfo(uid, _transform.GetMapCoordinates(uid, xform), xform.Coordinates, xform.GridUid, IsLoud(uid, now)));
         }
     }
 
@@ -139,13 +161,13 @@ public sealed class ContactXenoAISystem : EntitySystem
     /// Updates the seen target and the noise/hunt blackboard keys.
     /// Returns where the xeno is currently trying to go (seen > heard > hunt).
     /// </summary>
-    private MapCoordinates? UpdatePerception(EntityUid uid, ContactXenoAIComponent ai, HTNComponent htn, MapCoordinates pos)
+    private MapCoordinates? UpdatePerception(EntityUid uid, ContactXenoAIComponent ai, HTNComponent htn, MapCoordinates pos, TransformComponent xform)
     {
-        EntityUid? seen = null;
+        MarineInfo? seen = null;
         var seenDist = float.MaxValue;
-        (EntityCoordinates Coords, MapCoordinates Pos)? heard = null;
+        MarineInfo? heard = null;
         var heardDist = float.MaxValue;
-        (EntityCoordinates Coords, MapCoordinates Pos)? hunt = null;
+        MarineInfo? hunt = null;
         var huntDist = float.MaxValue;
 
         foreach (var marine in _marines)
@@ -158,32 +180,40 @@ public sealed class ContactXenoAISystem : EntitySystem
             if (dist <= ai.VisionRange && dist < seenDist &&
                 _interaction.InRangeUnobstructed(uid, marine.Uid, ai.VisionRange))
             {
-                seen = marine.Uid;
+                seen = marine;
                 seenDist = dist;
             }
 
             if (marine.Loud && dist <= ai.HearingRange && dist < heardDist)
             {
-                heard = (marine.Coords, marine.Pos);
+                heard = marine;
                 heardDist = dist;
             }
 
             if (ai.HuntRange > 0 && dist <= ai.HuntRange && dist < huntDist)
             {
-                hunt = (marine.Coords, marine.Pos);
+                hunt = marine;
                 huntDist = dist;
             }
         }
 
-        ai.Target = seen;
+        ai.Target = seen?.Uid;
         ai.TargetDistance = seenDist;
 
         // Coordinates are only ever SET (MoveToOperator reads them at startup);
         // the branches are switched with the *Active flags, which only preconditions read.
         var blackboard = htn.Blackboard;
+
+        // pathfinding is per grid: melee only targets marines on our grid,
+        // marines inside a dropship are approached through the noise/hunt branches
+        if (seen is { } s && s.Grid == xform.GridUid)
+            blackboard.SetValue(MeleeActiveKey, true);
+        else
+            blackboard.Remove<bool>(MeleeActiveKey);
+
         if (heard is { } noise)
         {
-            blackboard.SetValue(NoiseKey, noise.Coords);
+            blackboard.SetValue(NoiseKey, OnOwnGrid(xform, noise));
             blackboard.SetValue(NoiseActiveKey, true);
         }
         else
@@ -193,7 +223,7 @@ public sealed class ContactXenoAISystem : EntitySystem
 
         if (hunt is { } huntTarget)
         {
-            blackboard.SetValue(HuntKey, huntTarget.Coords);
+            blackboard.SetValue(HuntKey, OnOwnGrid(xform, huntTarget));
             blackboard.SetValue(HuntActiveKey, true);
         }
         else
@@ -201,10 +231,18 @@ public sealed class ContactXenoAISystem : EntitySystem
             blackboard.Remove<bool>(HuntActiveKey);
         }
 
-        if (seen is { } seenUid)
-            return _transform.GetMapCoordinates(seenUid);
+        return seen?.Pos ?? heard?.Pos ?? hunt?.Pos;
+    }
 
-        return heard?.Pos ?? hunt?.Pos;
+    /// <summary>
+    /// Marine on another grid (inside a dropship): the same spot, but on our grid so the pathfinder can route to it.
+    /// </summary>
+    private EntityCoordinates OnOwnGrid(TransformComponent xform, MarineInfo marine)
+    {
+        if (xform.GridUid is not { } grid || marine.Grid == grid)
+            return marine.Coords;
+
+        return _transform.ToCoordinates(grid, marine.Pos);
     }
 
     #endregion
@@ -219,8 +257,28 @@ public sealed class ContactXenoAISystem : EntitySystem
         if (ai.HoldRange is not { } range || ai.Target == null)
             return;
 
-        if (ai.TargetDistance <= range && ai.TargetDistance > ai.HoldMinRange)
-            Hold(uid, htn, 1f);
+        if (ai.TargetDistance > range || ai.TargetDistance <= ai.HoldMinRange)
+            return;
+
+        // nothing to shoot right now: close in instead of standing there
+        if (!HasUsableAbility(uid, ai))
+            return;
+
+        Hold(uid, htn, 1f);
+    }
+
+    private bool HasUsableAbility(EntityUid uid, ContactXenoAIComponent ai)
+    {
+        foreach (var rule in ai.Abilities)
+        {
+            if (ai.TargetDistance < rule.MinRange || ai.TargetDistance > rule.MaxRange)
+                continue;
+
+            if (TryGetAction(uid, ai, rule.Action, out var action) && _actions.ValidAction(action))
+                return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -251,6 +309,13 @@ public sealed class ContactXenoAISystem : EntitySystem
     {
         var blackboard = htn.Blackboard;
 
+        // gave up on a door earlier: prying back on
+        if (ai.NoPryUntil is { } noPry && now >= noPry)
+        {
+            ai.NoPryUntil = null;
+            blackboard.SetValue(NPCBlackboard.NavPry, true);
+        }
+
         // already smashing something
         if (ai.SmashTarget is { } smashing)
         {
@@ -275,6 +340,15 @@ public sealed class ContactXenoAISystem : EntitySystem
             ai.LastDestination = dest;
         }
 
+        // powered pod locks / unpryable doors: don't even try, path around
+        if (ai.NoPryUntil == null && HasClosedDoorAhead(uid, pos, dest, unpryableOnly: true))
+        {
+            ai.NoPryUntil = now + ai.NoPryTime;
+            blackboard.SetValue(NPCBlackboard.NavPry, false);
+            _steering.Unregister(uid);
+            return;
+        }
+
         var dist = (dest.Position - pos.Position).Length();
         if (dist < 1.5f)
         {
@@ -286,6 +360,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         {
             ai.BestDistance = dist;
             ai.NoProgress = TimeSpan.Zero;
+            ai.DoorStuck = 0;
             return;
         }
 
@@ -294,6 +369,23 @@ public sealed class ContactXenoAISystem : EntitySystem
             return;
 
         ResetProgress(ai);
+
+        // a closed door ahead: let it pry first. Only smash around it once prying gave up
+        // (powered shutter, electrified / bolted / welded airlock)
+        if (ai.NoPryUntil == null && HasClosedDoorAhead(uid, pos, dest))
+        {
+            ai.DoorStuck++;
+            if (ai.StuckTime * ai.DoorStuck < ai.DoorGiveUp)
+                return;
+
+            ai.DoorStuck = 0;
+            ai.NoPryUntil = now + ai.NoPryTime;
+            blackboard.SetValue(NPCBlackboard.NavPry, false);
+            _steering.Unregister(uid);
+            return;
+        }
+
+        ai.DoorStuck = 0;
 
         if (FindObstacle(uid, ai, pos, dest) is not { } obstacle)
             return;
@@ -308,20 +400,9 @@ public sealed class ContactXenoAISystem : EntitySystem
         _steering.Unregister(uid);
     }
 
-    private static void ResetProgress(ContactXenoAIComponent ai)
-    {
-        ai.BestDistance = float.MaxValue;
-        ai.NoProgress = TimeSpan.Zero;
-    }
-
-    private void ClearSmash(ContactXenoAIComponent ai, NPCBlackboard blackboard)
-    {
-        ai.SmashTarget = null;
-        blackboard.Remove<bool>(SmashActiveKey);
-    }
-
     /// <summary>
-    /// Nearest whitelisted, damageable, anchored thing near the xeno that lies toward the destination.
+    /// Nearest whitelisted thing that actually blocks movement (hard collision), near the xeno, toward the destination.
+    /// Wall mounts (intercoms, screens, posters) and open doors don't collide, so they're never picked. Doors are pried, not smashed.
     /// </summary>
     private EntityUid? FindObstacle(EntityUid uid, ContactXenoAIComponent ai, MapCoordinates pos, MapCoordinates dest)
     {
@@ -335,6 +416,8 @@ public sealed class ContactXenoAISystem : EntitySystem
         foreach (var ent in _obstacles)
         {
             if (ent == uid ||
+                HasComp<DoorComponent>(ent) ||
+                !TryComp(ent, out PhysicsComponent? body) || !body.CanCollide || !body.Hard ||
                 !HasComp<DamageableComponent>(ent) ||
                 !_whitelist.IsWhitelistPass(ai.SmashWhitelist, ent))
             {
@@ -356,6 +439,44 @@ public sealed class ContactXenoAISystem : EntitySystem
         }
 
         return best;
+    }
+
+    private bool HasClosedDoorAhead(EntityUid uid, MapCoordinates pos, MapCoordinates dest, bool unpryableOnly = false)
+    {
+        var toDest = (dest.Position - pos.Position).Normalized();
+
+        _obstacles.Clear();
+        _lookup.GetEntitiesInRange(uid, SmashSearchRange, _obstacles, LookupFlags.Static);
+
+        foreach (var ent in _obstacles)
+        {
+            if (!TryComp(ent, out DoorComponent? door) || door.State is DoorState.Open or DoorState.Opening)
+                continue;
+
+            if (unpryableOnly && door.CanPry && !(HasComp<RMCPodDoorComponent>(ent) && _power.IsPowered(ent)))
+                continue;
+
+            var offset = _transform.GetMapCoordinates(ent).Position - pos.Position;
+            var dist = offset.Length();
+            if (dist > 0.01f && Vector2Dot(offset / dist, toDest) < 0.2f)
+                continue;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private static void ResetProgress(ContactXenoAIComponent ai)
+    {
+        ai.BestDistance = float.MaxValue;
+        ai.NoProgress = TimeSpan.Zero;
+    }
+
+    private void ClearSmash(ContactXenoAIComponent ai, NPCBlackboard blackboard)
+    {
+        ai.SmashTarget = null;
+        blackboard.Remove<bool>(SmashActiveKey);
     }
 
     private static float Vector2Dot(System.Numerics.Vector2 a, System.Numerics.Vector2 b)
@@ -430,7 +551,9 @@ public sealed class ContactXenoAISystem : EntitySystem
 
             // NPCs are server-side, no prediction
             _actions.PerformAction(uid, action, ev, predicted: false);
-            ai.NextAbility = now + ai.AbilityDelay;
+            // wind-up abilities: no next ability until the hold is over, or it restarts itself
+            var delay = Math.Max(ai.AbilityDelay.TotalSeconds, rule.Hold);
+            ai.NextAbility = now + TimeSpan.FromSeconds(delay);
             return;
         }
     }

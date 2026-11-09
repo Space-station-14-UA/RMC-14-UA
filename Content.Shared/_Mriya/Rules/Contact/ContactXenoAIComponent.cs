@@ -75,6 +75,18 @@ public sealed partial class ContactXenoAIComponent : Component
     [DataField]
     public TimeSpan SmashTimeout = TimeSpan.FromSeconds(15);
 
+    /// <summary>
+    /// Stuck at a closed door this long = can't open it (powered shutter, electrified/bolted/welded): path around instead.
+    /// </summary>
+    [DataField]
+    public TimeSpan DoorGiveUp = TimeSpan.FromSeconds(6);
+
+    /// <summary>
+    /// How long prying stays off after giving up on a door.
+    /// </summary>
+    [DataField]
+    public TimeSpan NoPryTime = TimeSpan.FromSeconds(15);
+
     #region Runtime
 
     [ViewVariables]
@@ -106,6 +118,12 @@ public sealed partial class ContactXenoAIComponent : Component
 
     [ViewVariables]
     public TimeSpan SmashUntil;
+
+    [ViewVariables]
+    public int DoorStuck;
+
+    [ViewVariables]
+    public TimeSpan? NoPryUntil;
 
     #endregion
 }
