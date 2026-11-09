@@ -10,6 +10,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
+using Content.Client.UserInterface.Screens;
 
 namespace Content.Client._Mriya.Rules.Contact;
 
@@ -37,7 +38,8 @@ public sealed class ContactHudControl : Control
     private const float HeaderHeight = 20f;
     private const float LineHeight = 22f;
     private const float MarginRight = 12f;
-    private const float MarginBottom = 12f;
+    private const float MarginTop = 12f;
+    private const float Margin = 12f;
 
     /// <summary>
     /// Field time below this is shown blinking red.
@@ -77,16 +79,27 @@ public sealed class ContactHudControl : Control
             Settings = new CRTSettings
             {
                 Enabled = true,
+
                 ShowScanlines = true,
                 ScanlineSpacing = 3f,
                 ScanlineThickness = 1f,
-                ScanlineAlpha = 0.18f,
+                ScanlineAlpha = 0.08f,
                 ScanlineColor = Black,
-                ShowNoise = true,
-                NoiseIntensity = 0.08f,
+                ScanlineSpeed = 0f,
+                ScanlineWaveAmplitude = 0f,
+                ScanlineFlickerIntensity = 0f,
+                ScanlineGlitchChance = 0f,
+
+                ShowNoise = false,
+
                 ShowVignette = true,
-                VignetteIntensity = 0.2f,
+                VignetteIntensity = 0.12f,
+                VignettePulseAmplitude = 0f,
+
                 ShowChromaticAberration = false,
+
+                FlickerChance = 0f,
+                FlashChance = 0f,
                 GlowColor = Phosphor,
             },
         });
@@ -103,16 +116,30 @@ public sealed class ContactHudControl : Control
         var height = HeaderHeight + Padding * 2 + LineHeight * _lines.Count;
         SetSize = new Vector2(PanelWidth, height);
 
-        // bottom right of the game viewport (falls back to the whole screen)
+        var screen = UserInterfaceManager.ActiveScreen;
+        var separated = screen is SeparatedChatGameScreen;
+
+        var left = 0f;
+        var top = 0f;
         var right = Parent?.Size.X ?? 0f;
-        var bottom = Parent?.Size.Y ?? 0f;
-        if (UserInterfaceManager.ActiveScreen?.GetWidget<MainViewport>() is { } viewport)
+        if (screen?.GetWidget<MainViewport>() is { } viewport)
         {
+            left = viewport.GlobalPosition.X;
+            top = viewport.GlobalPosition.Y;
             right = viewport.GlobalPosition.X + viewport.Size.X;
-            bottom = viewport.GlobalPosition.Y + viewport.Size.Y;
         }
 
-        LayoutContainer.SetPosition(this, new Vector2(right - PanelWidth - MarginRight, bottom - height - MarginBottom));
+        // separated (SS13): top right
+        var sepRight = 12f;
+        var sepTop = 12f;
+
+        // default: top left
+        var defLeft = 75f;
+        var defTop = 95f;
+
+        var x = separated ? right - PanelWidth - sepRight : left + defLeft;
+        var y = top + (separated ? sepTop : defTop);
+        LayoutContainer.SetPosition(this, new Vector2(x, y));
     }
 
     protected override void Draw(DrawingHandleScreen handle)
@@ -200,7 +227,7 @@ public sealed class ContactHudControl : Control
             AddExtractionLines(now);
         }
 
-        // Shuttle
+        // Shuttle: automated transport, boarding numbers, free gunship
         if (_hud.ShuttleState is { } shuttle)
         {
             var state = Loc.GetString(shuttle switch
@@ -214,7 +241,26 @@ public sealed class ContactHudControl : Control
             }).ToUpperInvariant();
 
             var value = _hud.ShuttleEndsAt is { } endsAt ? $"{state} {FormatTime(endsAt - now)}" : state;
-            _lines.Add((Loc.GetString("mriya-contact-hud-shuttle"), value, accent));
+            var label = _hud.ShuttleTransport is { } transport
+                ? Loc.GetString("mriya-contact-hud-shuttle-transport", ("name", transport))
+                : Loc.GetString("mriya-contact-hud-shuttle");
+
+            _lines.Add((label, value, accent));
+
+            if (_hud.ShuttleNeeded > 0)
+            {
+                var aboard = shuttle == ContactShuttleState.Ready
+                    ? _hud.ShuttleAboard.ToString()
+                    : $"{_hud.ShuttleAboard}/{_hud.ShuttleNeeded}";
+
+                var color = shuttle != ContactShuttleState.Ready && _hud.ShuttleAboard >= _hud.ShuttleNeeded ? accent : White;
+                _lines.Add((Loc.GetString("mriya-contact-hud-shuttle-aboard"), aboard, color));
+            }
+
+            if (_hud.ShuttleGunship is { } gunship)
+            {
+                _lines.Add((gunship, Loc.GetString("mriya-contact-hud-shuttle-manual").ToUpperInvariant(), Teal));
+            }
         }
 
         if (_hud.Balance is { } balance)

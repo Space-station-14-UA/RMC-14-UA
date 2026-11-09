@@ -28,8 +28,7 @@
     reviveReward: 100
     terminalReward: 50
   - type: ContactShuttle
-    boardingCountdown: 120
-    fullBoardCountdown: 30
+    boardingCountdown: 30
     unloadTime: 15
     refuelTime: 150
   - type: ContactExtraction

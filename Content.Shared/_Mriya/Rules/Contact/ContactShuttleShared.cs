@@ -5,31 +5,41 @@ namespace Content.Shared._Mriya.Rules.Contact;
 [Serializable, NetSerializable]
 public enum ContactShuttleState : byte
 {
-    /// <summary>First drop: at the ship, nobody aboard yet.</summary>
     WaitingForBoarding,
-
-    /// <summary>First drop: someone boarded, counting down to launch.</summary>
     Countdown,
-
     FlyingDown,
-
-    /// <summary>Landed on the colony, marines getting off.</summary>
     Unloading,
-
     Returning,
-
     Refueling,
-
-    /// <summary>At the ship, refueled; launches when the colony calls reinforcements.</summary>
     Ready,
 }
 
-/// <summary>
-/// Broadcast on every shuttle state change and periodically. EndsAt is server CurTime.
-/// </summary>
 [Serializable, NetSerializable]
-public sealed class ContactShuttleHudEvent(ContactShuttleState state, TimeSpan? endsAt) : EntityEventArgs
+public sealed class ContactShuttleHudEvent(
+    ContactShuttleState state,
+    TimeSpan? endsAt,
+    string? transport,
+    string? gunship,
+    int aboard,
+    int needed) : EntityEventArgs
 {
     public readonly ContactShuttleState State = state;
     public readonly TimeSpan? EndsAt = endsAt;
+
+    /// <summary>
+    /// Automated transport dropship name.
+    /// </summary>
+    public readonly string? Transport = transport;
+
+    /// <summary>
+    /// Free (player-controlled) dropship name, null if the map has none.
+    /// </summary>
+    public readonly string? Gunship = gunship;
+
+    public readonly int Aboard = aboard;
+
+    /// <summary>
+    /// 0 = don't show boarding numbers.
+    /// </summary>
+    public readonly int Needed = needed;
 }

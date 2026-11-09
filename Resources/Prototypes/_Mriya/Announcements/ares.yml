@@ -14,7 +14,7 @@
       animationEnhancements:
         enableCRT: true
     layout:
-      position: TopCenter
+      position: TopLeft
       spritePosition: Left
       spriteDisplayMode: FullSprite
       uIScale: 2

@@ -1,33 +1,40 @@
 using Content.Shared._Mriya.Rules.Contact;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
 /// <summary>
 /// Contact shuttle cycle. Lives on the MRContactRule entity.
-/// First drop: boarding starts a countdown, then automatic launch.
-/// After that: land, unload, return, refuel, wait for the reinforcement terminal.
-/// Evacuation reserves it: no reinforcements, and it stays on the LZ until the rule calls takeoff.
+/// First drop: half of the marines aboard starts a countdown, then automatic launch.
+/// After that: land, unload, return, refuel, wait for the reinforcement terminal (or a manual flight).
+/// Evacuation reserves it: no reinforcements, and the evac flight stays on the LZ until the rule calls takeoff.
 /// </summary>
 [RegisterComponent, Access(typeof(ContactShuttleSystem))]
 public sealed partial class ContactShuttleComponent : Component
 {
     /// <summary>
-    /// First drop: countdown after the first marine boards.
+    /// The automated transport: the dropship grid that has an entity of this prototype on it.
     /// </summary>
     [DataField]
-    public TimeSpan BoardingCountdown = TimeSpan.FromMinutes(2);
+    public EntProtoId TransportMarker = "CMAlamoCockpit";
 
     /// <summary>
-    /// First drop: countdown is cut to this once every living marine is aboard.
+    /// HUD name for the other dropship, left to the players.
     /// </summary>
     [DataField]
-    public TimeSpan FullBoardCountdown = TimeSpan.FromSeconds(30);
+    public EntProtoId GunshipMarker = "CMNormandyCockpit";
+
+    /// <summary>
+    /// First drop: countdown once at least half of the living marines are aboard.
+    /// </summary>
+    [DataField]
+    public TimeSpan BoardingCountdown = TimeSpan.FromSeconds(30);
 
     /// <summary>
     /// Time on the colony before flying back.
     /// </summary>
     [DataField]
-    public TimeSpan UnloadTime = TimeSpan.FromSeconds(15);
+    public TimeSpan UnloadTime = TimeSpan.FromSeconds(30);
 
     [DataField]
     public TimeSpan RefuelTime = TimeSpan.FromSeconds(150);
@@ -47,28 +54,46 @@ public sealed partial class ContactShuttleComponent : Component
     public TimeSpan NextCheck;
 
     /// <summary>
-    /// Reserved for evacuation: no reinforcement calls, and no auto-return after landing.
+    /// Reserved for evacuation: no reinforcement calls.
     /// </summary>
     [ViewVariables]
     public bool Extraction;
 
     /// <summary>
-    /// The dropship grid.
+    /// The current flight is the evacuation: no auto-return after landing.
+    /// </summary>
+    [ViewVariables]
+    public bool ExtractionFlight;
+
+    /// <summary>
+    /// The transport dropship grid.
     /// </summary>
     [ViewVariables]
     public EntityUid? Dropship;
 
     /// <summary>
-    /// Where it docks at the ship (taken on the first launch).
+    /// The other dropship (HUD only).
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? Gunship;
+
+    /// <summary>
+    /// Where it docks at the ship.
     /// </summary>
     [ViewVariables]
     public EntityUid? ShipDock;
 
     /// <summary>
-    /// Where it lands on the colony (picked on the first launch, reused after; set to the evac LZ for evacuation).
+    /// Where reinforcements land: the LZ of the last drop (set to the evac LZ for evacuation).
     /// </summary>
     [ViewVariables]
     public EntityUid? LandingZone;
+
+    [ViewVariables]
+    public int LastAboard = -1;
+
+    [ViewVariables]
+    public int LastNeeded = -1;
 
     #endregion
 }
