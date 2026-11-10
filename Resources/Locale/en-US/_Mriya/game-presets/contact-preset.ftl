@@ -56,6 +56,8 @@ mriya-contact-points-reason-kill = вбивство
 mriya-contact-points-reason-heal = лікування
 mriya-contact-points-reason-revive = реанімація
 mriya-contact-points-reason-terminal = якір
+mriya-contact-points-reason-assist = допомога
+mriya-contact-points-reason-sentry-kill = вбивство турелі
 
 mriya-contact-store-title = Термінал постачання
 mriya-contact-store-balance = Баланс: {$balance} є-балів
@@ -122,7 +124,7 @@ mriya-contact-hud-shuttle = Шатл
 mriya-contact-hud-shuttle-waiting = Очікування
 mriya-contact-hud-shuttle-countdown = Зліт
 mriya-contact-hud-shuttle-flying = У транзиті
-mriya-contact-hud-shuttle-unloading = Висадка
+mriya-contact-hud-shuttle-unloading = ВИС
 mriya-contact-hud-shuttle-refueling = ЗАПР
 mriya-contact-hud-shuttle-ready = Готовий
 mriya-contact-hud-shuttle-transport = {$name}[А]

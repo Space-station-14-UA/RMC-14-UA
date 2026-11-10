@@ -27,6 +27,15 @@
     healStep: 20
     reviveReward: 100
     terminalReward: 50
+    assistFraction: 0.5
+    killRewards:
+      MRContactXenoDrone: 15
+      MRContactXenoDefender: 20
+      MRContactXenoLurker: 20
+      MRContactXenoCrusher: 30
+      MRContactXenoCharger: 30
+      MRContactXenoRavagerBerserker: 150
+      MRContactXenoBoiler: 20
   - type: ContactShuttle
     boardingCountdown: 30
     unloadTime: 15
