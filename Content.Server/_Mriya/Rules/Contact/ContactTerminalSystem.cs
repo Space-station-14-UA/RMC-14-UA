@@ -7,6 +7,7 @@ using Robust.Shared.Timing;
 using Content.Shared._RMC14.Areas;
 using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared.DoAfter;
+using Robust.Shared.Player;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -25,7 +26,8 @@ public sealed class ContactTerminalSystem : EntitySystem
     [Dependency] private readonly AreaSystem _area = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly ContactEconomySystem _economy = default!;
-
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    
     private static readonly LocId[] Phonetic =
     {
         "mriya-contact-phonetic-alpha", "mriya-contact-phonetic-bravo", "mriya-contact-phonetic-charlie",
@@ -48,6 +50,7 @@ public sealed class ContactTerminalSystem : EntitySystem
         SubscribeLocalEvent<ContactTerminalComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<ContactTerminalComponent, ContactTerminalDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -139,6 +142,7 @@ public sealed class ContactTerminalSystem : EntitySystem
         }
 
         ent.Comp.Activated = true;
+        SendAnchors();
         if (ent.Comp.Cooldown is { } cooldown)
             ent.Comp.ReactivateAt = _timing.CurTime + cooldown;
 
@@ -162,6 +166,7 @@ public sealed class ContactTerminalSystem : EntitySystem
                 continue;
 
             terminal.Activated = false;
+            SendAnchors();
             terminal.ReactivateAt = null;
             UpdateAppearance((uid, terminal));
             _contact.Announce(Loc.GetString("mriya-contact-terminal-announce-available",
@@ -173,5 +178,32 @@ public sealed class ContactTerminalSystem : EntitySystem
     private void UpdateAppearance(Entity<ContactTerminalComponent> ent)
     {
         _appearance.SetData(ent, SensorTowerLayers.Layer, ent.Comp.Activated ? SensorTowerState.On : SensorTowerState.Off);
+    }
+
+    private void OnPlayerAttached(PlayerAttachedEvent ev)
+    {
+        SendAnchors(ev.Player);
+    }
+
+    /// <summary>
+    /// HUD arrow data: every anchor that isn't activated right now. Null session = everyone.
+    /// </summary>
+    public void SendAnchors(ICommonSession? session = null)
+    {
+        var anchors = new List<ContactAnchorHudInfo>();
+        var query = EntityQueryEnumerator<ContactTerminalComponent, TransformComponent>();
+        while (query.MoveNext(out _, out var terminal, out var xform))
+        {
+            if (terminal.Activated || xform.MapUid is not { } map)
+                continue;
+
+            anchors.Add(new ContactAnchorHudInfo(GetNetEntity(map), _transform.GetWorldPosition(xform)));
+        }
+
+        var ev = new ContactAnchorsHudEvent(anchors);
+        if (session != null)
+            RaiseNetworkEvent(ev, session);
+        else
+            RaiseNetworkEvent(ev);
     }
 }

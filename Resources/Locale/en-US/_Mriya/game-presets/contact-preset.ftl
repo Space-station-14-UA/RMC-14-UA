@@ -97,12 +97,28 @@ mriya-contact-store-filter-all = Усі
 mriya-contact-store-filter-compatible = Сумісні
 mriya-contact-store-filter-empty = Немає сумісного з вашою зброєю.
 
+# hud
+
 mriya-contact-hud-title = Контакт
 mriya-contact-hud-staging = Очікування висадки
 mriya-contact-hud-field = Поле
 mriya-contact-hud-wave = Хвиля
 mriya-contact-hud-next-wave = Наступна
 mriya-contact-hud-balance = ₴
+
+mriya-contact-hud-anchor = Якір
+mriya-contact-hud-anchor-distance = {$meters} м
+mriya-contact-hud-options-title = HUD Контакту
+mriya-contact-hud-option-field = Поле
+mriya-contact-hud-option-wave = Хвиля
+mriya-contact-hud-option-nextwave = Наступна хвиля
+mriya-contact-hud-option-extraction = Евакуація
+mriya-contact-hud-option-shuttle = Транспорт
+mriya-contact-hud-option-aboard = На борту
+mriya-contact-hud-option-gunship = Ганшип
+mriya-contact-hud-option-balance = Бали
+mriya-contact-hud-option-anchor = Стрілка до якоря
+mriya-contact-hud-option-reset-position = Скинути позицію
 
 mriya-contact-shuttle-boarding = Шатл готується до зльоту через {$seconds} секунд.
 mriya-contact-shuttle-full-board = Усі на борту. Виліт через {$seconds} секунд.

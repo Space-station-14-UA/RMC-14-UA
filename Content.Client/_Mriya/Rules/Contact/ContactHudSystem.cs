@@ -37,6 +37,8 @@ public sealed class ContactHudSystem : EntitySystem
     public int ShuttleAboard { get; private set; }
     public int ShuttleNeeded { get; private set; }
 
+    public List<ContactAnchorHudInfo> Anchors { get; private set; } = new();
+
     private ContactHudControl? _control;
 
     public override void Initialize()
@@ -46,6 +48,7 @@ public sealed class ContactHudSystem : EntitySystem
         SubscribeNetworkEvent<ContactShuttleHudEvent>(OnShuttle);
         SubscribeNetworkEvent<ContactExtractionHudEvent>(OnExtraction);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeNetworkEvent<ContactAnchorsHudEvent>(ev => Anchors = ev.Anchors);
     }
 
     public override void Shutdown()
@@ -127,6 +130,7 @@ public sealed class ContactHudSystem : EntitySystem
         ShuttleGunship = null;
         ShuttleAboard = 0;
         ShuttleNeeded = 0;
+        Anchors = new List<ContactAnchorHudInfo>();
         HideHud();
     }
 
