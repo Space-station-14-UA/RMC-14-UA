@@ -17,6 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared._RMC14.OnCollide;
 using Content.Shared._RMC14.Weapons.Ranged.Flamer;
+using Content.Shared._RMC14.Gibbing;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -64,6 +65,8 @@ public sealed class ContactEconomySystem : EntitySystem
         SubscribeLocalEvent<ContactPlayerComponent, DamageChangedEvent>(OnPlayerDamageChanged);
         SubscribeLocalEvent<ContactPlayerComponent, MobStateChangedEvent>(OnPlayerMobStateChanged);
         SubscribeLocalEvent<ContactPlayerComponent, DidEquipHandEvent>(OnPlayerEquipHand);
+        SubscribeLocalEvent<ContactWaveMobComponent, MobStateChangedEvent>(OnWaveMobStateChanged,
+            before: [typeof(RMCGibSystem)]);
     }
 
     private ContactEconomyComponent? GetConfig()
@@ -402,7 +405,7 @@ public sealed class ContactEconomySystem : EntitySystem
             best = dist;
             credit.Owner = user;
         }
-        Log.Info($"[fire] chain {ToPrettyString(chain)} -> {credit.Owner?.ToString() ?? "nobody"}");
+
         return credit;
     }
 
