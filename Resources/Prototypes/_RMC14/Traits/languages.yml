@@ -2,7 +2,7 @@
   id: SpanishLanguage
   name: rmc-trait-spanish-language-name
   description: rmc-trait-spanish-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits # Mriya. SpeechTraits в оригіналі, щоб були окремі очки
   cost: 1
   components: []
   language: Spanish
@@ -11,7 +11,7 @@
   id: FrenchLanguage
   name: rmc-trait-french-language-name
   description: rmc-trait-french-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits # Mriya. SpeechTraits в оригіналі
   cost: 1
   components: []
   language: French
@@ -20,7 +20,7 @@
   id: JapaneseLanguage
   name: rmc-trait-japanese-language-name
   description: rmc-trait-japanese-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits # Mriya. SpeechTraits в оригіналі
   cost: 1
   components: []
   language: Japanese
@@ -29,7 +29,7 @@
   id: ChineseLanguage
   name: rmc-trait-chinese-language-name
   description: rmc-trait-chinese-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits # Mriya. SpeechTraits в оригіналі
   cost: 1
   components: []
   language: Chinese
@@ -38,7 +38,7 @@
 #  id: RussianLanguage
 #  name: rmc-trait-russian-language-name
 #  description: rmc-trait-russian-language-desc
-#  category: SpeechTraits
+#  category: MRLanguageTraits # Mriya. SpeechTraits в оригіналі
 #  cost: 1
 #  components: []
 #  language: Russian
@@ -47,7 +47,7 @@
   id: GermanLanguage
   name: rmc-trait-german-language-name
   description: rmc-trait-german-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits # Mriya. SpeechTraits в оригіналі
   cost: 1
   components: []
   language: German
@@ -56,7 +56,7 @@
   id: ScandinavianLanguage
   name: rmc-trait-scandinavian-language-name
   description: rmc-trait-scandinavian-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits # Mriya. SpeechTraits в оригіналі
   cost: 1
   components: []
   language: Scandinavian

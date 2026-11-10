@@ -26,7 +26,7 @@
 - type: language
   id: Xeno
   name: "Ксеноїдна"
-  description: "Мова прибульців, Ксеноїдів! Звучить жахливо та нагадує суміш скрежетань, шипіння та гарчання."
+  description: "Мова прибульців, Ксеноїдів! Звучить жахливо та нагадує суміш скреготань, шипіння та гарчання."
   isVisibleLanguage: true
   typefaceId: null
   textSize: null
@@ -223,8 +223,8 @@
 
 - type: language
   id: SignLanguage
-  name: "Мова Жестів"
-  description: "Універсальна мова, яка використовує замість звуків жести."
+  name: "Жестова мова"
+  description: "Універсальна міжгалактична версія мови, яка використовує замість звуків жести."
   isVisibleLanguage: true
   typefaceId: DefaultItalic
   textSize: null
@@ -236,7 +236,7 @@
   expectedVocabularySize: 100
   obfuscationMethod:
     !type:SyllableObfuscation
-    replacement: ["*waves*", "*gestures*", "*points*", "*nods*", "*shakes head*", "*thumbs up*", "*claps*", "*motions*", "*indicates*", "*signals*"]
+    replacement: ["*махає рукою*", "*жестикулює*", "*вказує рукою*", "*тикає пальцем*", "*киває*", "*хитає головою*", "*показує палець вгору*",  "*показує палець вниз*", "*плескає в долоні*", "*рухає руками*", "*показує жест*"] # Mriya. Перекладено/замінено
     minSyllables: 1
     maxSyllables: 1
 

@@ -10,7 +10,7 @@
     category: Equipment
     cost: 800
   - type: PowerLoaderGrabbable
-    delay: 1
+    delay: 0.5 # Mriya. 1 в оригіналі
   - type: DropshipEngine
   - type: PowerLoaderAttachable
     attachDelay: 3.5 # Mriya. 7 в оригіналі

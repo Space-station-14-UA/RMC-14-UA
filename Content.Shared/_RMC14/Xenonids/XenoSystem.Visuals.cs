@@ -68,5 +68,6 @@ public enum RMCXenoStateVisuals
     Downed,
     Fortified,
     Ovipositor,
+    OldOvipositor, // Mriya
     Dead,
 }

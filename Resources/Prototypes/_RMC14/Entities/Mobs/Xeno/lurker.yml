@@ -40,6 +40,7 @@
     - ActionXenoDevolve
     tier: 2
     hudOffset: -0.15,0.05
+    oldHudOffset: -0.05,0.2 # Mriya. Старі/наші версії спрайтів
     unlockAt: 540 # 9 minutes
   - type: XenoRegen
     restHealMultiplier:  1.5
@@ -107,6 +108,9 @@
   description: Лячна червона чужопланетна істота з великими лезами на лапах та дивною пащою. # Mriya
   suffix: Base
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Lurker/lurker.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Lurker/lurker.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleLurker
@@ -146,6 +150,9 @@
   description: Лячна темно-червона чужопланетна істота з великими лезами на лапах та дивною пащою. # Mriya
   suffix: Vampire
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Lurker/vampire_lurker.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Lurker/vampire_lurker.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleVampire

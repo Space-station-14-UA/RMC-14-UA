@@ -42,7 +42,7 @@ public sealed partial class RMCChemMasterComponent : Component
     public ResPath PillCanisterRsi = new("_RMC14/Objects/Chemistry/pill_canister.rsi");
 
     [DataField, AutoNetworkedField]
-    public FixedPoint2[] TransferSettings = new FixedPoint2[] { 1, 5, 10, 30, 60 };
+    public FixedPoint2[] TransferSettings = new FixedPoint2[] { 1, 5, 10, 30, 50, 60 }; // Mriya. Додано переливання по 50 унцій
 
     [DataField, AutoNetworkedField]
     public RMCChemMasterBufferMode BufferTransferMode = RMCChemMasterBufferMode.ToBeaker;

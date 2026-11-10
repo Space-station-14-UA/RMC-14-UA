@@ -111,7 +111,7 @@
 - type: entity
   parent: RMCShutterAlmayerCL
   id: RMCShutterAlmayerCLDoor
-  suffix: Ролети Дверей Офісу
+  suffix: ролети дверей офісу
   components:
   - type: RMCPodDoor
     id: cl_office_door
@@ -119,7 +119,7 @@
 - type: entity
   parent: RMCShutterAlmayerCL
   id: RMCShutterAlmayerCLOfficeWindows
-  suffix: Ролети Вікон Офісу
+  suffix: ролети Вікон офісу
   components:
   - type: RMCPodDoor
     id: cl_office_windows
@@ -127,7 +127,7 @@
 - type: entity
   parent: RMCShutterAlmayerCL
   id: RMCShutterAlmayerCLQuarterMaintenance
-  suffix: Ролети Технічний Дверей Офісу
+  suffix: ролети технічних дверей офісу
   components:
   - type: RMCPodDoor
     id: cl_quarter_maintenance
@@ -135,7 +135,7 @@
 - type: entity
   parent: RMCShutterAlmayerCL
   id: RMCShutterAlmayerCLQuarterDoor
-  suffix: Ролети Дверей Офісу
+  suffix: ролети дверей офісу
   components:
   - type: RMCPodDoor
     id: cl_quarter_door
@@ -143,7 +143,7 @@
 - type: entity
   parent: RMCShutterAlmayerCL
   id: RMCShutterAlmayerCLQuarterWindows
-  suffix: Ролети Вікон Офісу
+  suffix: ролети вікон офісу
   components:
   - type: RMCPodDoor
     id: cl_quarter_windows

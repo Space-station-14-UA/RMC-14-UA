@@ -11,6 +11,9 @@
   name: Копачка
   description: Дужа чужопланетна істота з товстим панцирем, лапами схожі на ковші та дивним ротом-хоботом.
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Burrower/burrower.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Burrower/burrower.rsi
   - type: CanBuildThickFromConstructNode
   - type: GuideHelp
     guides:
@@ -48,6 +51,7 @@
     - ActionXenoDevolve
     tier: 2
     hudOffset: -0.15,0.56
+    oldHudOffset: -0.05,0.45 # Mriya. Старі/наші версії спрайтів
     unlockAt: 420 # 7 minutes
   - type: XenoLight
   - type: XenoDevolve

@@ -80,9 +80,13 @@ namespace Content.Shared.GameTicking
     public sealed class TickerConnectionStatusEvent : EntityEventArgs
     {
         public TimeSpan RoundStartTimeSpan { get; }
-        public TickerConnectionStatusEvent(TimeSpan roundStartTimeSpan)
+        // Mriya start. Для інфо панелі
+        public bool IsRoundStarted { get; } 
+        public TickerConnectionStatusEvent(TimeSpan roundStartTimeSpan, bool isRoundStarted)
+        // Mriya end
         {
             RoundStartTimeSpan = roundStartTimeSpan;
+            IsRoundStarted = isRoundStarted; // Mriya. Для інфо панелі
         }
     }
 
@@ -113,9 +117,34 @@ namespace Content.Shared.GameTicking
     {
         public string TextBlob { get; }
 
-        public TickerLobbyInfoEvent(string textBlob)
+    // Mriya start. Раунд, кількість гравців, карта, планета, режим гри - для інфо панелі.
+        public int RoundId { get; }
+
+        public int PlayerCount { get; }
+
+        public string MapName { get; }
+
+        public string PlanetName { get; }
+
+        public string GamemodeTitle { get; }
+
+        public TickerLobbyInfoEvent(
+            string textBlob,
+            int roundId,
+            int playerCount,
+            string mapName,
+            string planetName,
+            string gamemodeTitle)
+    // Mriya end
         {
             TextBlob = textBlob;
+            // Mriya start
+            RoundId = roundId;
+            PlayerCount = playerCount;
+            MapName = mapName;
+            PlanetName = planetName;
+            GamemodeTitle = gamemodeTitle;
+            // Mriya end
         }
     }
 

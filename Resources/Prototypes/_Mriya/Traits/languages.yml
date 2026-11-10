@@ -2,7 +2,7 @@
   id: MREnglishLanguage
   name: mriya-trait-english-language-name
   description: mriya-trait-english-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits
   cost: 1
   components: []
   language: MREnglish
@@ -11,7 +11,7 @@
   id: MRSignLanguage
   name: mriya-trait-sign-language-name
   description: mriya-trait-sign-language-desc
-  category: SpeechTraits
+  category: MRLanguageTraits
   cost: 1
   components: []
   language: SignLanguage

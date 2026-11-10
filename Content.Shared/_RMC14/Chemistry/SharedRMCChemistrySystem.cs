@@ -79,11 +79,11 @@ public abstract class SharedRMCChemistrySystem : EntitySystem
     {
         using (args.PushGroup(nameof(DetailedExaminableSolutionComponent)))
         {
-            args.PushText("It contains:");
+            args.PushText("Тут зберігається:"); // Mriya. Переклад
             if (!_solution.TryGetSolution(ent.Owner, ent.Comp.Solution, out _, out var solution) ||
                 solution.Volume <= FixedPoint2.Zero)
             {
-                args.PushText("Nothing.");
+                args.PushText("Нічого."); // Mriya. Переклад
             }
             else
             {
@@ -93,18 +93,18 @@ public abstract class SharedRMCChemistrySystem : EntitySystem
                     if (_rmcReagent.TryIndex(reagent.Reagent.Prototype, out var rmcReagentProto))
                         name = rmcReagentProto.LocalizedName;
 
-                    args.PushText($"{reagent.Quantity.Float():F2} units of {name}");
+                    args.PushText($"{reagent.Quantity.Float():F2} одиниць {name}"); // Mriya. Переклад
                 }
 
-                args.PushText($"Total volume: {solution.Volume} / {solution.MaxVolume}.");
+                args.PushText($"Загальний об'єм: {solution.Volume} / {solution.MaxVolume}."); // Mriya. Переклад
             }
 
             if (TryComp<RMCToggleableSolutionTransferComponent>(ent.Owner, out var transferComp))
             {
                 var directionText = transferComp.Direction switch
                 {
-                    SolutionTransferDirection.Input => "Transfer mode: Drawing",
-                    SolutionTransferDirection.Output => "Transfer mode: Dispensing",
+                    SolutionTransferDirection.Input => "Режим клапана: Забирання", // Mriya. Переклад
+                    SolutionTransferDirection.Output => "Режим клапана: Видача", // Mriya. Переклад
                     _ => string.Empty,
                 };
 

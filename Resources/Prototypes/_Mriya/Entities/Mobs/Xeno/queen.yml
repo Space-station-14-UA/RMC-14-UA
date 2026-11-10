@@ -6,15 +6,18 @@
   description: Велетенська чужопланетна істота від кроків якої тремтить земля. Найбільша та найжорстокіша. Вона вкрита якоюсь жахливою червоною смолою, виглядає ще більш загрозливо...
   suffix: Мрія
   components:
+  - type: MriyaOldSprite # Старі/наші версії спрайтів
+    normalSprite: _Mriya/Mobs/Xenonids/Queen/bloody_queen.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Queen/bloody_queen.rsi
   # Час ставати червоною
   - type: Sprite
     layers:
     - map: [ "enum.XenoVisualLayers.Base" ]
       state: alive
-      color: "#BB0A1E"
     - map: [ "enum.XenoVisualLayers.Ovipositor" ]
-      sprite: _RMC14/Mobs/Xenonids/Queen/ovipositor.rsi
-      color: "#BB0A1E"
+      sprite: _Mriya/Mobs/Xenonids/Queen/bloody_ovipositor.rsi
+    - map: [ "enum.XenoVisualLayers.OldOvipositor" ]
+      sprite: _Mriya/Mobs/OldXenonids/Queen/bloody_ovipositor.rsi
     - map: [ "enum.RMCDamageVisualLayers.Base" ]
       visible: false
     - map: [ "enum.XenoInhandVisualLayers.Left" ]
@@ -56,53 +59,3 @@
       7: rmc-xeno-royal
       8: rmc-xeno-legendary
       9: mriya-xeno-forever-bloody-queen
-
-## Версія з старими спрайтами
-- type: entity
-  parent: [ MRXenoBaseOld, CMXenoQueen ]
-  id: MRXenoQueenOld
-  components:
-  - type: Sprite
-    sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi
-    layers:
-    - map: [ "enum.XenoVisualLayers.Base" ]
-      state: alive
-    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
-      sprite: _RMC14/Mobs/OldXenonids/Queen/ovipositor.rsi
-    - map: [ "enum.RMCDamageVisualLayers.Base" ]
-      visible: false
-    - map: [ "enum.XenoInhandVisualLayers.Left" ]
-      visible: false
-    - map: [ "enum.XenoInhandVisualLayers.Right" ]
-      visible: false
-    - map: [ "enum.RMCShieldVisuals.Base" ]
-      sprite: _RMC14/Effects/xeno_shields.rsi
-      visible: false
-  - type: Xeno
-    hudOffset: -0.05,0.15
-
-## Версія кривавої з старими спрайтами
-- type: entity
-  parent: [ MRXenoBaseOld, MRXenoQueenBloody ]
-  id: MRXenoQueenBloodyOld
-  components:
-  - type: Sprite
-    sprite: _RMC14/Mobs/OldXenonids/Queen/queen.rsi
-    layers:
-    - map: [ "enum.XenoVisualLayers.Base" ]
-      state: alive
-      color: "#BB0A1E"
-    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
-      sprite: _RMC14/Mobs/OldXenonids/Queen/ovipositor.rsi
-      color: "#BB0A1E"
-    - map: [ "enum.RMCDamageVisualLayers.Base" ]
-      visible: false
-    - map: [ "enum.XenoInhandVisualLayers.Left" ]
-      visible: false
-    - map: [ "enum.XenoInhandVisualLayers.Right" ]
-      visible: false
-    - map: [ "enum.RMCShieldVisuals.Base" ]
-      sprite: _RMC14/Effects/xeno_shields.rsi
-      visible: false
-  - type: Xeno
-    hudOffset: -0.05,0.15

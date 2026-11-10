@@ -21,8 +21,8 @@
 - type: entity
   parent: CMBaseWindow
   id: CMWindowShiva
-  name: poly-kevlon framed window
-  description: Напівпрозоре (не повністю прозоре) полотно матеріалу, вмонтоване в полікевлонову раму. Дуже легко розбивається.
+  name: вікно з полікевлоновою рамою
+  description: Напівпрозоре (не повністю прозоре) полотно скляного матеріалу, вмонтоване в полікевлонову раму. Дуже легко розбивається.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/shiva_window.rsi

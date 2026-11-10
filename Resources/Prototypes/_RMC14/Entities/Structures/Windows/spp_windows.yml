@@ -45,8 +45,8 @@
 - type: entity
   parent: CMBaseWindow
   id: RMCWindowSPPReinforced
-  name: military grade window
-  description: A glass window. Light refracts incorrectly when looking through. It looks rather strong. Might take a few good hits to shatter it.
+  name: вікно військового класу
+  description: Скляне вікно. При погляді через нього світло заломлюється дивним чином. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/spp_window.rsi
@@ -190,8 +190,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: RMCWindowSPPHull
-  name: hull window
-  description: A glass window. Something tells you this one is somehow indestructible.
+#  name: hull window – Mriya
+  description: Скляне вікно. Щось підказує вам, що воно незнищенне.
   components:
   - type: Corrodible
     isCorrodible: false

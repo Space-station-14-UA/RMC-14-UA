@@ -309,7 +309,7 @@
 # objectively speaking getting killed by an ape is funny but it is not parity. commented out incase this non-parity feature is deemed vital for some reason
   - type: WarpPoint # Mriya
     follow: true
-    location: Малий Інкубатор
+    location: Тварина – Малий Інкубатор
   - type: IntelRetrieveItemObjective # Mriya, бо тваринки - це важливо
     state: Active
     value: 1

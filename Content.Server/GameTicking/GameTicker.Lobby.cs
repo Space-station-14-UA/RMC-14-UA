@@ -91,7 +91,7 @@ namespace Content.Server.GameTicking
 
         private TickerConnectionStatusEvent GetConnectionStatusMsg()
         {
-            return new TickerConnectionStatusEvent(RoundStartTimeSpan);
+            return new TickerConnectionStatusEvent(RoundStartTimeSpan, RunLevel != GameRunLevel.PreRoundLobby); // Mriya. Додано GameRunLevel.PreRoundLobby
         }
 
         private TickerLobbyStatusEvent GetStatusMsg(ICommonSession session)
@@ -110,7 +110,20 @@ namespace Content.Server.GameTicking
 
         private TickerLobbyInfoEvent GetInfoMsg()
         {
-            return new (GetInfoText());
+            // Mriya start
+            var preset = CurrentPreset ?? Preset;
+            var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? string.Empty;
+            var planetName = _distressSignal.SelectedPlanetMapName ?? string.Empty;
+            var gamemodeTitle = preset == null ? string.Empty : Loc.GetString(preset.ModeTitle);
+
+            return new TickerLobbyInfoEvent(
+                GetInfoText(),
+                RoundId,
+                _playerManager.PlayerCount,
+                mapName,
+                planetName,
+                gamemodeTitle);
+            // Mriya end
         }
 
         private void UpdateLateJoinStatus()

@@ -323,7 +323,7 @@
   parent: Shovel
   id: RMCShovel
   name: лопата # Mriya
-  description: Великий інструмент для вскапування та перекидання землі. # Mriya
+  description: Великий інструмент для скопування та перекидання землі. # Mriya
   suffix: RMC
   components:
   - type: Sprite
@@ -345,6 +345,7 @@
   - type: PhysicalComposition
     materialComposition:
       CMSteel: 50
+  - type: EntrenchingTool # Mriya. Можливість копати землю лопатою, так
 
 #PVE Tool
 - type: entity

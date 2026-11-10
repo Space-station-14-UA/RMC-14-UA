@@ -20,3 +20,12 @@
     contents:
     - id: MRSuitBioUNMC
     - id: MRHoodBioUNMC
+
+- type: entity
+  id: MRCrateRestrictedEquipmentVanWheel
+  parent: RMCCrateSecureGear
+  name: Ящик з комплектом коліс для вантажівки
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCVanWheel

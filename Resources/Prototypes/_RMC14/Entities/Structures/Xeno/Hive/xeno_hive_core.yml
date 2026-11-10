@@ -73,7 +73,7 @@
     range: 11.848
   - type: EvolutionBonus
   - type: WarpPoint
-    location: Ядро вулика # Mriya, бо це назва
+    location: Ксено – Ядро вулика # Mriya, бо це назва
   - type: XenoStructureMapTracked
   - type: TacticalMapTracked
   - type: TacticalMapIcon
@@ -181,7 +181,7 @@
   - type: HiveConstructionLimited
     id: HivePylonXeno
   - type: WarpPoint
-    location: Пілон вулика # Mriya, бо це назва
+    location: Ксено – Пілон вулика # Mriya, бо це назва
   - type: RMCAlternateSprite
     normalSprite: _RMC14/Structures/Xenos/hive_structures.rsi
     alternateSprite: _RMC14/Structures/Xenos/hive_structures_old.rsi

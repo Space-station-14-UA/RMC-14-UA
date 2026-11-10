@@ -80,12 +80,12 @@ public sealed class CommunicationsTowerSystem : EntitySystem
     {
         using (args.PushGroup(nameof(CommunicationsTowerComponent)))
         {
-            var msg = $"[color=cyan]If placed {(int) _hiveBoon.CommunicationTowerXenoTakeoverTime.TotalMinutes} minutes into the round, a hive cluster will turn into a hive pylon when its weeds take over this![/color]";
+            var msg = $"[color=cyan]Якщо біля неї після {(int) _hiveBoon.CommunicationTowerXenoTakeoverTime.TotalMinutes} хвилин раунда, буде встановлено кластер, то він перетвориться на пілон![/color]"; // Mriya. Переклад
             args.PushMarkup(msg);
             if (ent.Comp.State != CommunicationsTowerState.Broken)
                 return;
 
-            args.PushMarkup("[color=red]It is damaged and needs a welder for repairs![/color]");
+            args.PushMarkup("[color=red]Це пошкоджено та потребує відновлення за допомогою зварювального апарата![/color]"); // Mriya. Переклад
         }
     }
 

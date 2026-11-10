@@ -1,8 +1,8 @@
 - type: entity
   parent: FenceMetalGate
   id: RMCFenceDoor
-  name: fence door
-  description: A sturdy chainlink door set between two metal poles. A cheap way to section off areas while still allowing visibility through it.
+  name: хвіртка паркану
+  description: Міцна хвіртка з металевої сітки, встановлена між двома металевими стовпами. Дешевий спосіб відокремити щось, водночас забезпечуючи повну видимість.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/fence_doors/fence_door.rsi
@@ -78,8 +78,8 @@
 - type: entity
   parent: CMBaseStructureCorrodible
   id: RMCFenceDoorBroken
-  name: broken fence door
-  description: Someone really didn't want to use the door.
+  name: зламана хвіртка паркану
+  description: Хтось справді дуже не хотів використовувати її за призначенням...
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/fence_doors/fence_door.rsi

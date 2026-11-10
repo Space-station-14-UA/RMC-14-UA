@@ -14,6 +14,11 @@ public sealed partial class SlowOnPullComponent : Component
     [DataField, AutoNetworkedField]
     public List<SlowdownWhitelist> Slowdowns = new();
 
+    // Mriya start. Можливість швидко тягати ССДшних
+    [DataField, AutoNetworkedField]
+    public float SsdMultiplier = 0.75f;
+    // Mriya end
+
     [DataRecord]
     [Serializable, NetSerializable]
     public readonly record struct SlowdownWhitelist(float Multiplier, EntityWhitelist Whitelist);

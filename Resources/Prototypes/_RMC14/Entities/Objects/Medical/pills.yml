@@ -327,7 +327,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 20 # Mriya. 15 в оригіналі
         reagents:
         - ReagentId: RMCIron
           Quantity: 10

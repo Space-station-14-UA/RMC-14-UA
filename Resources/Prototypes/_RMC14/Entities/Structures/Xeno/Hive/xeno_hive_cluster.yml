@@ -46,6 +46,8 @@
   - type: RMCAlternateSprite
     normalSprite: _RMC14/Structures/Xenos/hive_cluster.rsi
     alternateSprite: _RMC14/Structures/Xenos/hive_cluster_old.rsi
+  - type: WarpPoint # Mriya. Qol
+    location: Ксено – Кластер Вулика
 
 
 - type: entity
@@ -79,7 +81,7 @@
   - type: HiveConstructionLimited
     id: HiveClusterXeno
   - type: WarpPoint
-    location: hive cluster
+    location: Ксено – Кластер Вулика # Mriya, бо це назва
   - type: RMCAlternateSprite
     normalSprite: _RMC14/Structures/Xenos/hive_cluster.rsi
     alternateSprite: _RMC14/Structures/Xenos/hive_cluster_old.rsi

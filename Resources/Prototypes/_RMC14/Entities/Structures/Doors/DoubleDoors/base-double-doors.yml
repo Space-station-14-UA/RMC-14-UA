@@ -4,6 +4,8 @@
   - CMBaseDoor
   - CMBaseDoorConstructible
   id: RMCDoubleDoorBase
+  name: подвійний шлюз # Mriya
+  description: Привітайте, подвійний шлюз! Буквальне "розширення" класичних шлюзів. Тепер у нього зможете одночасно пройти Ви, ваш друг, а також якийсь дивак, який чомусь йде в іншу сторону! Все ще має сильні пневмоприводи та зроблений з товстих сталевих пластин, будьте з ним обережні. # Mriya
   components:
   - type: Sprite
     offset: "0.5, 0.5"
@@ -25,6 +27,8 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorAlmayerGlass
+  name: подвійний скляний шлюз # Mriya
+  description: Привітайте, подвійний скляний шлюз! Буквальне "розширення" класичних шлюзів. Тепер у нього зможете одночасно пройти Ви, ваш друг, а також якийсь дивак, який чомусь йде в іншу сторону! Все ще має сильні пневмоприводи та зроблений з товстих сталевих пластин, будьте з ним обережні. Має віконечка, щоб бачити, що знаходиться по іншу його сторону. # Mriya
   suffix: Almayer, Glass
   components:
   - type: Sprite
@@ -33,6 +37,8 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorAlmayerSolid
+  name: подвійний шлюз # Mriya
+  description: Привітайте, подвійний шлюз! Буквальне "розширення" класичних шлюзів. Тепер у нього зможете одночасно пройти Ви, ваш друг, а також якийсь дивак, який чомусь йде в іншу сторону! Все ще має сильні пневмоприводи та зроблений з товстих сталевих пластин, будьте з ним обережні. # Mriya
   suffix: Almayer, Solid
   components:
   - type: Occluder
@@ -43,6 +49,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorCommandGlass
+  name: подвійний скляний шлюз командування # Mriya
   suffix: Almayer, Glass
   components:
   - type: Sprite
@@ -51,6 +58,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorCommandSolid
+  name: подвійний шлюз командування # Mriya
   suffix: Command, Solid
   components:
   - type: Sprite
@@ -61,6 +69,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorEngineerGlass
+  name: подвійний скляний шлюз інженерів # Mriya
   suffix: Engineer, Glass
   components:
   - type: Sprite
@@ -69,6 +78,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorEngineerSolid
+  name: подвійний шлюз інженерів # Mriya
   suffix: Engineer, Solid
   components:
   - type: Sprite
@@ -97,6 +107,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorMedicalGlass
+  name: подвійний скляний шлюз медиків # Mriya
   suffix: Medical, Glass
   components:
   - type: Sprite
@@ -105,6 +116,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorMedicalSolid
+  name: подвійний шлюз медиків # Mriya
   suffix: Medical, Solid
   components:
   - type: Sprite
@@ -115,6 +127,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorPersonalGlass
+  name: подвійний скляний шлюз персоналу # Mriya
   suffix: Personal, Glass
   components:
   - type: Sprite
@@ -123,6 +136,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorPersonalSolid
+  name: подвійний шлюз персоналу # Mriya
   suffix: Personal, Solid
   components:
   - type: Sprite
@@ -133,6 +147,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorPreparations
+  name: подвійний скляний шлюз казарм # Mriya
   suffix: Preparations
   components:
   - type: Sprite
@@ -141,6 +156,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorPreparationsAlpha
+  name: Казарми Альфа # Mriya. Формат назв, як у інших дверей казарм
   suffix: Preparations, Alpha
   components:
   - type: Sprite
@@ -149,6 +165,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorPreparationsBravo
+  name: Казарми Браво # Mriya
   suffix: Preparations, Bravo
   components:
   - type: Sprite
@@ -157,6 +174,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorPreparationsCharlie
+  name: Казарми Чарлі # Mriya
   suffix: Preparations, Charlie
   components:
   - type: Sprite
@@ -165,6 +183,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorPreparationsDelta
+  name: Казарми Дельта # Mriya
   suffix: Preparations, Delta
   components:
   - type: Sprite
@@ -173,6 +192,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorSecurityGlass
+  name: подвійний скляний шлюз служби безпеки # Mriya
   suffix: Security, Glass
   components:
   - type: Sprite
@@ -181,6 +201,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorSecuritySolid
+  name: подвійний шлюз служби безпеки # Mriya
   suffix: Security, Solid
   components:
   - type: Sprite
@@ -192,6 +213,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorSPPShipGlass
+  name: подвійний скляний шлюз СПН # Mriya
   suffix: SPP, Glass
   components:
   - type: Sprite
@@ -200,6 +222,7 @@
 - type: entity
   parent: RMCDoubleDoorSPPShipGlass
   id: RMCDoubleDoorSPPShipSolid
+  name: подвійний шлюз СПН # Mriya
   suffix: SPP, Solid
   components:
   - type: Occluder
@@ -210,6 +233,7 @@
 - type: entity
   parent: RMCDoubleDoorSPPShipSolid
   id: RMCDoubleDoorSPPShipSolidUtility
+  name: подвійний технічний шлюз СПН # Mriya
   suffix: SPP, Solid, Utility
   components:
   - type: Occluder

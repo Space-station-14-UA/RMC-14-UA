@@ -6,6 +6,30 @@
             Resizable="False">
 
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
+        <!-- Mriya start -->
+        <PanelContainer StyleClasses="EscapeInfoPanel" Margin="0 0 0 8" MinWidth="300">
+            <BoxContainer Orientation="Vertical" SeparationOverride="1">
+                <BoxContainer Orientation="Horizontal" SeparationOverride="4" HorizontalExpand="True">
+                    <RichTextLabel Access="Public" Name="EscapeInfoHeader" />
+                    <RichTextLabel Access="Public" Name="EscapeInfoTime" HorizontalExpand="True" HorizontalAlignment="Right" Margin="0 0 4 0" />
+                </BoxContainer>
+                <PanelContainer StyleClasses="LowDivider" Margin="0 2 0 2" />
+                <BoxContainer Orientation="Horizontal" SeparationOverride="4" HorizontalExpand="True" Margin="0 4 0 0">
+                    <RichTextLabel Access="Public" Name="EscapeInfoMapLabel" SetWidth="70" />
+                    <RichTextLabel Access="Public" Name="EscapeInfoMap" HorizontalExpand="True" />
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal" SeparationOverride="4" HorizontalExpand="True" Margin="0 4 0 0">
+                    <RichTextLabel Access="Public" Name="EscapeInfoGamemodeLabel" SetWidth="70" />
+                    <RichTextLabel Access="Public" Name="EscapeInfoGamemode" HorizontalExpand="True" />
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal" SeparationOverride="4" HorizontalExpand="True" Margin="0 4 0 0">
+                    <RichTextLabel Access="Public" Name="EscapeInfoRoundLabel" SetWidth="70" />
+                    <RichTextLabel Access="Public" Name="EscapeInfoRound" HorizontalExpand="True" />
+                    <RichTextLabel Access="Public" Name="EscapeInfoPlayers" />
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
+        <!-- Mriya end -->
         <Button Access="Public" Name="CreditsButton" Text="{Loc 'server-info-credits-button'}" StyleClasses="Caution" />
 <!-- Mriya commented. Зайві кнопки -->
 <!--        <Button Access="Public" Name="PatronPerksButton" Text="{Loc 'rmc-ui-patron-perks'}" StyleClasses="Caution" Visible="False" /> -->

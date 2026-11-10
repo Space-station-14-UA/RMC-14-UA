@@ -35,7 +35,7 @@
       skills:
         RMCSkillEndurance: 1
         RMCSkillFirearms: 1 # Mriya. 0 в оригіналі
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillIntel: 1
         RMCSkillJtac: 3
         RMCSkillLeadership: 2

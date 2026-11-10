@@ -7,6 +7,9 @@
   name: Лярва
   description: Мала чужопланетна червоподібна істота, яка дуже швидко збільшується в розмірах. Схоже скоро з неї з'явиться щось нове. # Mriya
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Larva/larva.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Larva/larva.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleDrone
@@ -34,6 +37,7 @@
     - ActionXenoWatch
     - ActionXenoHide
     hudOffset: -0.1,0.25
+    oldHudOffset: -0.15,0.1 # Mriya. Старі/наші версії спрайтів
     tier: 0
     unlockAt: 0
     emoteSounds: Larva

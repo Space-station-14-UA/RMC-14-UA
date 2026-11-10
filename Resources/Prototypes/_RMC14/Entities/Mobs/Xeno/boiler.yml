@@ -62,6 +62,7 @@
     - ActionXenoDevolve
     tier: 3
     hudOffset: -0.15,0.05
+    oldHudOffset: -0.2,0.35 # Mriya. Старі/наші версії спрайтів
     unlockAt: 1200 # Mriya. 20 хвилин. 15 (900) в оригіналі
   - type: XenoHeavy
   - type: XenoDevolve
@@ -171,6 +172,9 @@
   id: RMCXenoBoiler
   description: Величезна жовта чужопланетна істота, вкрита купою пульсуючих кислотних бруньок. Виглядає, ніби міномет. # Mriya
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Boiler/boiler.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Boiler/boiler.rsi
   - type: Xeno
     actionIds:
     - ActionXenoRest
@@ -199,6 +203,9 @@
   description: Величезна жовта чужопланетна істота, вкрита купою пульсуючих кислотних бруньок. Виглядає, ніби якась дуже підступна зброя. # Mriya
   suffix: Sapper
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Boiler/boiler.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Boiler/boiler_sapper.rsi
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Boiler/boiler_sapper.rsi
   - type: Xeno

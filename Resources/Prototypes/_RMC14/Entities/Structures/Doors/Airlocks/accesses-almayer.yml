@@ -2,7 +2,7 @@
 - type: entity
   parent: CMAirlockPrep
   id: CMAirlockRequisitionsLocked
-  name: requisitions bay
+  name: шлюз постачань
   suffix: Requisitions, Locked
   components:
   - type: AccessReader
@@ -220,7 +220,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockLiaisonLocked
-  name: Corporate Liaison's Quarters
+  name: офіс представника корпорації
   suffix: Liaison, Locked
   components:
   - type: AccessReader
@@ -239,7 +239,7 @@
 - type: entity
   parent: CMAirlock
   id: CMAirlockHC
-  name: High Command Door
+  name: двері вищого командування
   suffix: HighComm, Locked
   components:
   - type: AccessReader

@@ -2,8 +2,8 @@
   parent: RMCDoubleDoorAlmayerGlass
   id: RMCDoubleDoorAlmayerGlassRequisitions
   suffix: Almayer, Glass, Locked, Req & Command
-  name: Requisitions Double Door
-  description: A glass door locked to Requisitions.
+  name: подвійний скляний шлюз постачань
+  #description: A glass door locked to Requisitions. – Mriya
   components:
   - type: AccessReader
     access: [ [ "RMCAccessCommand" ], [ "CMAccessRequisitions" ] ]
@@ -12,8 +12,8 @@
   parent: RMCDoubleDoorAlmayerGlass
   id: RMCDoubleDoorAlmayerGlassCommand
   suffix: Almayer, Glass, Locked, Command
-  name: Command Double Door
-  description: A glass door locked to Command.
+  name: подвійний скляний шлюз командування
+  #description: A glass door locked to Command. – Mriya
   components:
   - type: AccessReader
     access: [ [ "RMCAccessCommand" ] ]
@@ -22,8 +22,8 @@
   parent: RMCDoubleDoorAlmayerGlass
   id: RMCDoubleDoorAlmayerGlassSEA
   suffix: Almayer, Glass, Locked, SEA & Command
-  name: Double Door
-  description: A glass door locked to Senior Enlisted Advisors.
+  name: подвійний скляний шлюз інструкторів
+  #description: A glass door locked to Senior Enlisted Advisors. – Mriya
   components:
   - type: AccessReader
     access: [ [ "CMAccessSEA" ], [ "RMCAccessCommand" ] ]
@@ -32,8 +32,8 @@
   parent: RMCDoubleDoorAlmayerSolid
   id: RMCDoubleDoorAlmayerSolidRequisitions
   suffix: Almayer, Solid, Locked, Req & Command
-  name: Requisitions Double Door
-  description: A door locked to Requisitions.
+  name: подвійний шлюз постачань
+  #description: A door locked to Requisitions. – Mriya
   components:
   - type: AccessReader
     access: [ [ "RMCAccessCommand" ], [ "CMAccessRequisitions" ] ]
@@ -42,8 +42,8 @@
   parent: RMCDoubleDoorAlmayerSolid
   id: RMCDoubleDoorAlmayerSolidCommand
   suffix: Almayer, Solid, Locked, Command
-  name: Command Double Door
-  description: A door locked to Command.
+  name: подвійний шлюз командування
+  #description: A door locked to Command. – Mriya
   components:
   - type: AccessReader
     access: [ [ "RMCAccessCommand" ] ]
@@ -52,8 +52,8 @@
   parent: RMCDoubleDoorAlmayerSolid
   id: RMCDoubleDoorAlmayerSolidSEA
   suffix: Almayer, Solid, Locked, SEA & Command
-  name: Double Door
-  description: A door locked to Senior Enlisted Advisors.
+  name: подвійний шлюз інструкторів
+  #description: A door locked to Senior Enlisted Advisors. – Mriya
   components:
   - type: AccessReader
     access: [ [ "CMAccessSEA" ], [ "RMCAccessCommand" ] ]
@@ -62,8 +62,8 @@
   parent: RMCDoubleDoorAlmayerGlass
   id: RMCDoubleDoorAlmayerGlassCO
   suffix: Almayer, Glass, Locked, CO
-  description: A glass door locked to the Commanding Officer.
-  name: Commanding Officers Double Door
+  #description: A glass door locked to the Commanding Officer. – Mriya
+  name: подвійний шлюз командуючого офіцера
   components:
   - type: AccessReader
     access: [ [ "CMAccessCO" ] ]
@@ -72,8 +72,8 @@
   parent: RMCDoubleDoorAlmayerSolid
   id: RMCDoubleDoorAlmayerSolidCO
   suffix: Almayer, Glass, Locked, CO
-  description: A door locked to the Commanding Officer.
-  name: Commanding Officers Double Door
+  #description: A door locked to the Commanding Officer. – Mriya
+  name: подвійний скляний шлюз командуючого офіцера
   components:
   - type: AccessReader
     access: [ [ "CMAccessCO" ] ]
@@ -82,8 +82,8 @@
   parent: RMCDoubleDoorAlmayerGlass
   id: RMCDoubleDoorAlmayerGlassHC
   suffix: Almayer, Glass, Locked, CO
-  description: A glass door locked to High Command.
-  name: High Command Double Door
+  #description: A glass door locked to High Command. – Mriya
+  name: подвійний скляний шлюз вищого командування
   components:
   - type: AccessReader
     access: [ [ "CMAccessHighCommand" ] ]
@@ -92,8 +92,8 @@
   parent: RMCDoubleDoorAlmayerSolid
   id: RMCDoubleDoorAlmayerSolidHC
   suffix: Almayer, Glass, Locked, HighComm
-  description: A door locked to High Command
-  name: High Command Double Door
+  #description: A door locked to High Command – Mriya
+  name: подвійний шлюз вищого командування
   components:
   - type: AccessReader
     access: [ [ "CMAccessHighCommand" ] ]
@@ -102,8 +102,8 @@
   parent: RMCDoubleDoorAlmayerGlass
   id: RMCDoubleDoorAlmayerGlassSynth
   suffix: Almayer, Glass, Locked, Synth
-  description: A glass door locked to Synths.
-  name: Synthetics Double Door
+  #description: A glass door locked to Synths. – Mriya
+  name: подвійний скляний шлюз синтетиків
   components:
   - type: AccessReader
     access: [ [ "RMCAccessSynth" ] ]
@@ -112,8 +112,8 @@
   parent: RMCDoubleDoorAlmayerSolid
   id: RMCDoubleDoorAlmayerSolidSynth
   suffix: Almayer, Glass, Locked, Synth
-  description: A door locked to the Synths.
-  name: Synthetics Double Door
+  #description: A door locked to the Synths. – Mriya
+  name: подвійний шлюз синтетиків
   components:
   - type: AccessReader
     access: [ [ "RMCAccessSynth" ] ]
@@ -124,8 +124,8 @@
   parent: RMCDoubleDoorCommandGlass
   id: RMCDoubleDoorCommandGlassCommand
   suffix: Almayer, Glass, Locked, Command
-  name: Command Double Door
-  description: A glass door locked to Command.
+  #name: подвійний шлюз командування – Mriya
+  #description: A glass door locked to Command. – Mriya
   components:
   - type: AccessReader
     access: [ [ "RMCAccessCommand" ] ]
@@ -134,7 +134,7 @@
   parent: RMCDoubleDoorCommandSolid
   id: RMCDoubleDoorCommandSolidCommand
   suffix: Almayer, Glass, Locked, Command
-  description: A door locked to Command.
+  #description: A door locked to Command. – Mriya
   components:
   - type: AccessReader
     access: [ [ "RMCAccessCommand" ] ]
@@ -143,8 +143,8 @@
   parent: RMCDoubleDoorCommandGlass
   id: RMCDoubleDoorCommandGlassSeniorCommand
   suffix: Almayer, Glass, Locked, Senior Command
-  description: A glass door locked to Senior Command.
-  name: Command Double Door
+  #description: A glass door locked to Senior Command. – Mriya
+  name: подвійний скляний шлюз старшого командування
   components:
   - type: AccessReader
     access: [ [ "RMCAccessSeniorCommand" ] ]
@@ -153,8 +153,8 @@
   parent: RMCDoubleDoorCommandSolid
   id: RMCDoubleDoorCommandSolidSeniorCommand
   suffix: Almayer, Glass, Locked, Senior Command
-  description: A door locked to Senior Command.
-  name: Double Door
+  #description: A door locked to Senior Command. – Mriya
+  name: подвійний шлюз старшого командування
   components:
   - type: AccessReader
     access: [ [ "RMCAccessSeniorCommand" ] ]
@@ -163,8 +163,8 @@
   parent: RMCDoubleDoorCommandGlass
   id: RMCDoubleDoorCommandGlassCO
   suffix: Almayer, Glass, Locked, CO
-  description: A glass door locked to the Commanding Officer.
-  name: Commanding Officers Double Door
+  #description: A glass door locked to the Commanding Officer. – Mriya
+  name: подвійний скляний шлюз командуючого офіцера
   components:
   - type: AccessReader
     access: [ [ "CMAccessCO" ] ]
@@ -173,8 +173,8 @@
   parent: RMCDoubleDoorCommandSolid
   id: RMCDoubleDoorCommandSolidCO
   suffix: Almayer, Glass, Locked, CO
-  description: A door locked to the Commanding Officer.
-  name: Commanding Officers Double Door
+  #description: A door locked to the Commanding Officer. – Mriya
+  name: подвійний шлюз командуючого офіцера
   components:
   - type: AccessReader
     access: [ [ "CMAccessCO" ] ]
@@ -185,8 +185,8 @@
   parent: RMCDoubleDoorEngineerGlass
   id: RMCDoubleDoorEngineerGlassEngineering
   suffix: Engineer, Glass, Locked, Engineering
-  description: A glass door locked to Engineering.
-  name: Engineering Double Door
+  #description: A glass door locked to Engineering. – Mriya
+  name: подвійний скляний шлюз інженерів
   components:
   - type: AccessReader
     access: [ [ "CMAccessEngineering" ], [ "RMCAccessCommand" ] ]
@@ -195,8 +195,8 @@
   parent: RMCDoubleDoorEngineerSolid
   id: RMCDoubleDoorEngineerSolidEngineering
   suffix: Engineer, Solid
-  description: A door locked to Engineering.
-  name: Engineering Double Door
+  #description: A door locked to Engineering. – Mriya
+  name: подвійний шлюз інженерів
   components:
   - type: AccessReader
     access: [ [ "CMAccessEngineering" ], [ "RMCAccessCommand" ] ]
@@ -205,8 +205,8 @@
   parent: RMCDoubleDoorEngineerGlass
   id: RMCDoubleDoorEngineerGlassSeniorCommand
   suffix: Engineer, Glass, Locked, Senior Command
-  description: A glass door locked to Senior Command.
-  name: Senior Command Double Door
+  #description: A glass door locked to Senior Command. – Mriya
+  name: подвійний скляний шлюз старшого командування
   components:
   - type: AccessReader
     access: [ [ "RMCAccessSeniorCommand" ] ]
@@ -215,8 +215,8 @@
   parent: RMCDoubleDoorEngineerSolid
   id: RMCDoubleDoorEngineerSolidSeniorCommand
   suffix: Engineer, Solid, Senior Command
-  description: A door locked to Senior Command.
-  name: Senior Command Double Door
+  #description: A door locked to Senior Command. – Mriya
+  name: подвійний шлюз старшого командування
   components:
   - type: AccessReader
     access: [ [ "RMCAccessSeniorCommand" ] ]
@@ -227,8 +227,8 @@
   parent: RMCDoubleDoorGenericGlass
   id: RMCDoubleDoorGenericGlassPress
   suffix: Generic, Glass, Locked, Press
-  description: A glass door locked to Press.
-  name: Press Double Door
+  #description: A glass door locked to Press. – Mriya
+  name: подвійний скляний шлюз преси
   components:
   - type: AccessReader
     access: [ [ "CMAccessPress" ], [ "RMCAccessCommand" ] ]
@@ -237,8 +237,8 @@
   parent: RMCDoubleDoorGenericSolid
   id: RMCDoubleDoorGenericSolidPress
   suffix: Generic, Solid, Locked, Press
-  description: A door locked to Press.
-  name: Press Double Door
+  #description: A door locked to Press. – Mriya
+  name: подвійний шлюз преси
   components:
   - type: AccessReader
     access: [ [ "CMAccessPress" ], [ "RMCAccessCommand" ] ]

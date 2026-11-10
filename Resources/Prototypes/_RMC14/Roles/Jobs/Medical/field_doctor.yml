@@ -25,7 +25,7 @@
       skills:
         RMCSkillEndurance: 1
         RMCSkillFirearms: 0
-        RMCSkillFireman: 1
+        RMCSkillFireman: 2 # Mriya. 1 в оригіналі
         RMCSkillMedical: 3
         RMCSkillSurgery: 2
     - type: CMVendorUser # Mriya

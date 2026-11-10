@@ -78,7 +78,7 @@
   id: CMWindowReinforcedDirectional
   parent: CMWindowDirectional
   name: армоване вікно
-  description: Скляне вікно, укріплене прутами. Виглядає досить міцним. Щоб розбити його, знадобиться кілька сильних ударів.
+  description: Скляне вікно, укріплене прутами. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     state: rwindow
@@ -120,8 +120,8 @@
 - type: entity
   id: CMWindowStrongReinforcedDirectional
   parent: CMWindowDirectional
-  name: strong reinforced window
-  description: A glass window reinforced with bracing rods. It looks very strong. You can't break it with your fists.
+  name: міцне армоване вікно
+  description: Скляне вікно, укріплене спеціальними стрижнями. Воно виглядає дуже міцним. Може знадобитися багато хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     state: rwindow
@@ -153,7 +153,7 @@
   id: CMWindowTintedDirectional
   parent: CMWindowDirectional
   name: тоноване вікно
-  description: Вікно з тонованого скла. Виглядає досить міцним і непрозорим. Щоб розбити його, знадобиться кілька сильних ударів.
+  description: Вікно з тонованого скла. Виглядає досить міцним і непрозорим. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     state: twindow
@@ -181,7 +181,7 @@
   id: CMWindowUltraDirectional
   parent: CMWindowDirectional
   name: надміцне вікно
-  description: Надміцне вікно, призначене для того, щоб трибуна для брифінгів була безпечною зоною.
+  description: Надміцне вікно, призначене для того, щоб захистити все, що буде за ним чи перед ним. Тут не пройти, хоча, може є де обійти.
   components:
   - type: Sprite
     state: fwindow
