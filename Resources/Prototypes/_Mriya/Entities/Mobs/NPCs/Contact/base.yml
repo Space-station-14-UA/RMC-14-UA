@@ -76,7 +76,6 @@
     - !type:HTNPrimitiveTask
       operator: !type:ContactSmashOperator
         targetKey: MRContactSmashTarget
-        activeKey: MRContactSmashActive
   - preconditions:
     - !type:KeyExistsPrecondition
       key: MRContactDefenseActive
@@ -90,7 +89,6 @@
     - !type:HTNPrimitiveTask
       operator: !type:ContactSmashOperator
         targetKey: MRContactDefenseTarget
-        activeKey: MRContactDefenseActive
   - preconditions:
     - !type:KeyExistsPrecondition
       key: MRContactMeleeActive
