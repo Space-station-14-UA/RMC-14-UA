@@ -24,6 +24,9 @@ using Robust.Shared.Physics.Components;
 using Content.Shared.DoAfter;
 using Content.Shared._RMC14.Doors;
 using Content.Shared.Power.EntitySystems;
+using Content.Server.Destructible;
+using Content.Server.Destructible.Thresholds.Triggers;
+using Content.Shared.Item;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -59,6 +62,9 @@ public sealed class ContactXenoAISystem : EntitySystem
     public const string NoiseKey = "MRContactNoise";
     public const string HuntKey = "MRContactHunt";
     public const string SmashActiveKey = "MRContactSmashActive";
+    public const string DefenseActiveKey = "MRContactDefenseActive";
+    public const string DefenseTargetKey = "MRContactDefenseTarget";
+    public const string DefenseCoordinatesKey = "MRContactDefenseCoordinates";
 
     private static readonly TimeSpan UpdateEvery = TimeSpan.FromSeconds(0.5);
 
@@ -173,8 +179,8 @@ public sealed class ContactXenoAISystem : EntitySystem
     }
 
     /// <summary>
-    /// Updates the seen target and the noise/hunt blackboard keys.
-    /// Returns where the xeno is currently trying to go (seen > heard > hunt).
+    /// Updates the seen target and the melee/noise/hunt blackboard keys.
+    /// Returns where the xeno is currently trying to go (seen marine > defense > heard > hunt).
     /// </summary>
     private MapCoordinates? UpdatePerception(EntityUid uid, ContactXenoAIComponent ai, HTNComponent htn, MapCoordinates pos, TransformComponent xform)
     {
@@ -220,11 +226,26 @@ public sealed class ContactXenoAISystem : EntitySystem
         var blackboard = htn.Blackboard;
 
         // pathfinding is per grid: melee only targets marines on our grid,
-        // marines inside a dropship are approached through the noise/hunt branches
-        if (seen is { } s && s.Grid == xform.GridUid)
+        // marines inside a dropship are approached through the noise/hunt branches.
+        var meleeMarine = seen is { } s && s.Grid == xform.GridUid;
+        if (meleeMarine)
             blackboard.SetValue(MeleeActiveKey, true);
         else
             blackboard.Remove<bool>(MeleeActiveKey);
+
+        // deployed defenses (sentry, M2C, ML66D, turrets) in sight come first, even over marines
+        MapCoordinates? defensePos = null;
+        if (FindDefense(uid, ai, xform) is { } defense)
+        {
+            defensePos = _transform.GetMapCoordinates(defense);
+            blackboard.SetValue(DefenseTargetKey, defense);
+            blackboard.SetValue(DefenseCoordinatesKey, Transform(defense).Coordinates);
+            blackboard.SetValue(DefenseActiveKey, true);
+        }
+        else
+        {
+            blackboard.Remove<bool>(DefenseActiveKey);
+        }
 
         if (heard is { } noise)
         {
@@ -246,7 +267,7 @@ public sealed class ContactXenoAISystem : EntitySystem
             blackboard.Remove<bool>(HuntActiveKey);
         }
 
-        return seen?.Pos ?? heard?.Pos ?? hunt?.Pos;
+        return defensePos ?? seen?.Pos ?? heard?.Pos ?? hunt?.Pos;
     }
 
     /// <summary>
@@ -258,6 +279,65 @@ public sealed class ContactXenoAISystem : EntitySystem
             return marine.Coords;
 
         return _transform.ToCoordinates(grid, marine.Pos);
+    }
+
+    /// <summary>
+    /// Nearest working defense in sight on our grid.
+    /// Deployed = anchored, or not an item at all (pre-placed turrets); folded / dropped ones are skipped, and so are broken ones.
+    /// </summary>
+    private EntityUid? FindDefense(EntityUid uid, ContactXenoAIComponent ai, TransformComponent xform)
+    {
+        _obstacles.Clear();
+        _lookup.GetEntitiesInRange(uid, ai.VisionRange, _obstacles, LookupFlags.Static | LookupFlags.Dynamic);
+
+        var pos = _transform.GetWorldPosition(xform);
+        EntityUid? best = null;
+        var bestDist = float.MaxValue;
+        foreach (var ent in _obstacles)
+        {
+            if (!_whitelist.IsWhitelistPass(ai.DefenseWhitelist, ent))
+                continue;
+
+            var entXform = Transform(ent);
+            if (entXform.GridUid != xform.GridUid)
+                continue;
+
+            if (!entXform.Anchored && HasComp<ItemComponent>(ent))
+                continue;
+
+            if (IsBroken(ent))
+                continue;
+
+            var dist = (_transform.GetWorldPosition(entXform) - pos).Length();
+            if (dist >= bestDist || !_interaction.InRangeUnobstructed(uid, ent, ai.VisionRange))
+                continue;
+
+            best = ent;
+            bestDist = dist;
+        }
+
+        return best;
+    }
+
+    /// <summary>
+    /// Damage at or past any Destructible threshold = broken (an M2C turns into its broken item instead of being deleted).
+    /// Repairing it below the threshold makes it a target again.
+    /// </summary>
+    private bool IsBroken(EntityUid ent)
+    {
+        if (!TryComp(ent, out DestructibleComponent? destructible) ||
+            !TryComp(ent, out DamageableComponent? damageable))
+        {
+            return false;
+        }
+
+        foreach (var threshold in destructible.Thresholds)
+        {
+            if (threshold.Trigger is DamageTrigger trigger && damageable.TotalDamage >= trigger.Damage)
+                return true;
+        }
+
+        return false;
     }
 
     #endregion

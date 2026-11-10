@@ -87,6 +87,15 @@ public sealed partial class ContactXenoAIComponent : Component
     [DataField]
     public TimeSpan NoPryTime = TimeSpan.FromSeconds(15);
 
+    /// <summary>
+    /// Deployed (anchored) marine defenses the xeno attacks on sight: sentries, tesla coils, M2C / ML66D.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist DefenseWhitelist = new()
+    {
+        Components = new[] { "Sentry", "WeaponMount", "Turret" },
+    };
+
     #region Runtime
 
     [ViewVariables]

@@ -69,7 +69,7 @@
   price: 20
 
 - type: contactStoreEntry
-  id: MRContactStoreDefibrillator
+  id: MRContactStoreDefibrillatorCivilian
   proto: MRDefibrillatorCivilian
   category: MRContactStoreMedicine
   price: 20

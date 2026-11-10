@@ -1,4 +1,4 @@
-# Marines in sight. Faction-independent: anything with Marine.
+# Marines in sight
 - type: utilityQuery
   id: MRContactNearbyMarines
   query:
@@ -21,6 +21,38 @@
 # 4. Investigate gunshots
 # 5. Drift toward the nearest marine
 # 6. Idle
+
+- type: htnCompound
+  id: MRContactMeleeMarineCompound
+  branches:
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: Target
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        shutdownState: PlanFinished
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:MeleeOperator
+        targetKey: Target
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:TargetInRangePrecondition
+        targetKey: Target
+        rangeKey: MeleeRange
+      services:
+      - !type:UtilityService
+        id: MeleeService
+        proto: MRContactNearbyMarines
+        key: Target
+
+
 - type: htnCompound
   id: MRContactXenoCompound
   branches:
@@ -47,22 +79,27 @@
         activeKey: MRContactSmashActive
   - preconditions:
     - !type:KeyExistsPrecondition
+      key: MRContactDefenseActive
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        pathfindInPlanning: false
+        removeKeyOnFinish: false
+        targetKey: MRContactDefenseCoordinates
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:ContactSmashOperator
+        targetKey: MRContactDefenseTarget
+        activeKey: MRContactDefenseActive
+  - preconditions:
+    - !type:KeyExistsPrecondition
       key: MRContactMeleeActive
     tasks:
     - !type:HTNPrimitiveTask
       operator: !type:UtilityOperator
         proto: MRContactNearbyMarines
     - !type:HTNCompoundTask
-      task: MeleeAttackTargetCompound
-  - preconditions:
-    - !type:KeyExistsPrecondition
-      key: MRContactNoiseActive
-    tasks:
-    - !type:HTNPrimitiveTask
-      operator: !type:MoveToOperator
-        pathfindInPlanning: false
-        removeKeyOnFinish: false
-        targetKey: MRContactNoise
+      task: MRContactMeleeMarineCompound
   - preconditions:
     - !type:KeyExistsPrecondition
       key: MRContactHuntActive
