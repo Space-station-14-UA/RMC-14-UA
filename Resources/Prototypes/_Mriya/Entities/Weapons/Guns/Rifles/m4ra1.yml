@@ -180,7 +180,6 @@
           - RMCAttachmentSuppressor
           - RMCM5Bayonet
       rmc-aslot-rail:
-        locked: true
         whitelist:
           tags:
           - RMCAttachmentB8SmartScope

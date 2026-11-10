@@ -2,6 +2,8 @@ using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared.GameTicking;
 using Robust.Client.UserInterface;
 using Robust.Shared.Map;
+using Content.Client.Gameplay;
+using Robust.Client.State;
 
 namespace Content.Client._Mriya.Rules.Contact;
 
@@ -11,6 +13,7 @@ namespace Content.Client._Mriya.Rules.Contact;
 public sealed class ContactHudSystem : EntitySystem
 {
     [Dependency] private readonly IUserInterfaceManager _ui = default!;
+    [Dependency] private readonly IStateManager _state = default!;
 
     public ContactHudPhase Phase { get; private set; }
     public TimeSpan? FieldEndsAt { get; private set; }
@@ -29,6 +32,13 @@ public sealed class ContactHudSystem : EntitySystem
     public int ExtractionInZone { get; private set; }
     public int ExtractionNeeded { get; private set; }
 
+    public string? ShuttleTransport { get; private set; }
+    public string? ShuttleGunship { get; private set; }
+    public int ShuttleAboard { get; private set; }
+    public int ShuttleNeeded { get; private set; }
+
+    public List<ContactAnchorHudInfo> Anchors { get; private set; } = new();
+
     private ContactHudControl? _control;
 
     public override void Initialize()
@@ -38,6 +48,7 @@ public sealed class ContactHudSystem : EntitySystem
         SubscribeNetworkEvent<ContactShuttleHudEvent>(OnShuttle);
         SubscribeNetworkEvent<ContactExtractionHudEvent>(OnExtraction);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeNetworkEvent<ContactAnchorsHudEvent>(ev => Anchors = ev.Anchors);
     }
 
     public override void Shutdown()
@@ -54,7 +65,8 @@ public sealed class ContactHudSystem : EntitySystem
         if (_control == null)
             return;
 
-        var screen = _ui.ActiveScreen;
+        // only on gameplay screens (not the lobby)
+        var screen = _state.CurrentState is GameplayStateBase ? _ui.ActiveScreen : null;
         if (_control.Parent == screen)
             return;
 
@@ -85,6 +97,10 @@ public sealed class ContactHudSystem : EntitySystem
     {
         ShuttleState = ev.State;
         ShuttleEndsAt = ev.EndsAt;
+        ShuttleTransport = ev.Transport;
+        ShuttleGunship = ev.Gunship;
+        ShuttleAboard = ev.Aboard;
+        ShuttleNeeded = ev.Needed;
     }
 
     private void OnExtraction(ContactExtractionHudEvent ev)
@@ -110,6 +126,11 @@ public sealed class ContactHudSystem : EntitySystem
         ExtractionState = ContactExtractionState.None;
         ExtractionZones = new List<NetCoordinates>();
         ExtractionEndsAt = null;
+        ShuttleTransport = null;
+        ShuttleGunship = null;
+        ShuttleAboard = 0;
+        ShuttleNeeded = 0;
+        Anchors = new List<ContactAnchorHudInfo>();
         HideHud();
     }
 

@@ -1,10 +1,38 @@
 # Light
  
 - type: contactStoreEntry
+  id: MRContactStoreOuterClothingExternalWebbing
+  proto: RMCOuterClothingExternalWebbing
+  category: MRContactStoreArmor
+  price: 1
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreOuterClothingExternalWebbingBlack
+  proto: RMCOuterClothingExternalWebbingBlack
+  category: MRContactStoreArmor
+  price: 1
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreOuterClothingExternalWebbingBrown
+  proto: RMCOuterClothingExternalWebbingBrown
+  category: MRContactStoreArmor
+  price: 1
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
   id: MRContactStoreArmorM3VLBallistics
   proto: CMArmorM3VLBallistics
   category: MRContactStoreArmor
   price: 6
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorVestSeniorOfficer
+  proto: RMCArmorVestSeniorOfficer
+  category: MRContactStoreArmor
+  price: 7
   maxPerPurchase: 1
  
 - type: contactStoreEntry
@@ -105,4 +133,11 @@
   proto: RMCArmorM3G4
   category: MRContactStoreArmor
   price: 30
+  maxPerPurchase: 1 
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM3SO
+  proto: RMCArmorM3SO
+  category: MRContactStoreArmor
+  price: 45
   maxPerPurchase: 1

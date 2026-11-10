@@ -1,4 +1,5 @@
 using Robust.Shared.Serialization;
+using System.Numerics;
 
 namespace Content.Shared._Mriya.Rules.Contact;
 
@@ -42,4 +43,20 @@ public sealed class ContactHudStateEvent(
 public sealed class ContactBalanceEvent(int balance) : EntityEventArgs
 {
     public readonly int Balance = balance;
+}
+
+[Serializable, NetSerializable]
+public sealed class ContactAnchorHudInfo(NetEntity map, Vector2 position)
+{
+    public readonly NetEntity Map = map;
+    public readonly Vector2 Position = position;
+}
+
+/// <summary>
+/// Anchors that can still be activated, sent when that changes (and as a snapshot on attach).
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class ContactAnchorsHudEvent(List<ContactAnchorHudInfo> anchors) : EntityEventArgs
+{
+    public readonly List<ContactAnchorHudInfo> Anchors = anchors;
 }

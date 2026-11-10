@@ -56,6 +56,8 @@ mriya-contact-points-reason-kill = вбивство
 mriya-contact-points-reason-heal = лікування
 mriya-contact-points-reason-revive = реанімація
 mriya-contact-points-reason-terminal = якір
+mriya-contact-points-reason-assist = допомога
+mriya-contact-points-reason-sentry-kill = вбивство турелі
 
 mriya-contact-store-title = Термінал постачання
 mriya-contact-store-balance = Баланс: {$balance} є-балів
@@ -95,6 +97,8 @@ mriya-contact-store-filter-all = Усі
 mriya-contact-store-filter-compatible = Сумісні
 mriya-contact-store-filter-empty = Немає сумісного з вашою зброєю.
 
+# hud
+
 mriya-contact-hud-title = Контакт
 mriya-contact-hud-staging = Очікування висадки
 mriya-contact-hud-field = Поле
@@ -102,13 +106,29 @@ mriya-contact-hud-wave = Хвиля
 mriya-contact-hud-next-wave = Наступна
 mriya-contact-hud-balance = ₴
 
-mriya-contact-shuttle-boarding = Шатл готується до зльоту. Виліт через {$seconds} секунд.
+mriya-contact-hud-anchor = Якір
+mriya-contact-hud-anchor-distance = {$meters} м
+mriya-contact-hud-options-title = HUD Контакту
+mriya-contact-hud-option-field = Поле
+mriya-contact-hud-option-wave = Хвиля
+mriya-contact-hud-option-nextwave = Наступна хвиля
+mriya-contact-hud-option-extraction = Евакуація
+mriya-contact-hud-option-shuttle = Транспорт
+mriya-contact-hud-option-aboard = На борту
+mriya-contact-hud-option-gunship = Ганшип
+mriya-contact-hud-option-balance = Бали
+mriya-contact-hud-option-anchor = Стрілка до якоря
+mriya-contact-hud-option-reset-position = Скинути позицію
+
+mriya-contact-shuttle-boarding = Шатл готується до зльоту через {$seconds} секунд.
 mriya-contact-shuttle-full-board = Усі на борту. Виліт через {$seconds} секунд.
 mriya-contact-shuttle-launch = Шатл вилетів до ЗО.
 mriya-contact-shuttle-landed = Шатл приземлився. Висадка - {$seconds} секунд до відльоту.
 mriya-contact-shuttle-refueling = Шатл на кораблі. Заправка: {$seconds} секунд.
 mriya-contact-shuttle-ready = Шатл заправлений. Підкріплення можуть займати місця - виклик з терміналу у ЗО.
 mriya-contact-shuttle-ejected = Шатл відлітає - вас висаджено біля загону.
+mriya-contact-shuttle-boarding-cancelled = На борту замало морпіхів. Зліт скасовано.
+mriya-contact-shuttle-manual-launch = Виявлено мануальний зліт. Операцію розпочато.
 
 mriya-contact-reinforcements-called = Підкріплення викликано.
 mriya-contact-reinforcements-empty = На шатлі немає підкріплень.
@@ -120,9 +140,12 @@ mriya-contact-hud-shuttle = Шатл
 mriya-contact-hud-shuttle-waiting = Очікування
 mriya-contact-hud-shuttle-countdown = Зліт
 mriya-contact-hud-shuttle-flying = У транзиті
-mriya-contact-hud-shuttle-unloading = Висадка
-mriya-contact-hud-shuttle-refueling = Заправка
+mriya-contact-hud-shuttle-unloading = ВИС
+mriya-contact-hud-shuttle-refueling = ЗАПР
 mriya-contact-hud-shuttle-ready = Готовий
+mriya-contact-hud-shuttle-transport = {$name}[А]
+mriya-contact-hud-shuttle-aboard = На борту
+mriya-contact-hud-shuttle-manual = Ручний
 
 mriya-contact-extraction-available = Евакуація доступна! {$seconds} секунд до наступної хвилі. Зберіться біля зони висадки, щоб почати евакуацію. Якорі неактивні.
 mriya-contact-extraction-skipped = Евакуацію пропущено. Поле відновлено: {$seconds} секунд.

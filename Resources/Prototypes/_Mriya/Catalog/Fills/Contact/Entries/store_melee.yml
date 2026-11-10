@@ -27,3 +27,9 @@
   proto: RMCKatana
   category: MRContactStoreMelee
   price: 50
+
+- type: contactStoreEntry
+  id: MRContactStorePamphletAdminMeleeWeapons2
+  proto: RMCPamphletAdminMeleeWeapons2
+  category: MRContactStoreMelee
+  price: 100

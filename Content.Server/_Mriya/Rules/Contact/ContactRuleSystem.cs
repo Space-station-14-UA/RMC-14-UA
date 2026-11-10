@@ -24,6 +24,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.Examine;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -50,6 +51,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly ExamineSystemShared _examine = default!;
 
     private float? _savedPreflight;
     private readonly List<MapCoordinates> _playerPositions = new();
@@ -396,6 +398,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     private bool TryFindSpawnTile(ContactRuleComponent comp, out EntityCoordinates coords)
     {
         coords = default;
+        EntityCoordinates? visibleFallback = null;
         var minSq = comp.SpawnMinRange * comp.SpawnMinRange;
 
         for (var attempt = 0; attempt < comp.SpawnAttempts; attempt++)
@@ -421,21 +424,41 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             if (!_rmcPlanet.IsOnPlanet(candidate))
                 continue;
 
-            var candidatePos = _transform.ToMapCoordinates(candidate).Position;
+            var candidateMap = _transform.ToMapCoordinates(candidate);
             var tooClose = false;
+            var seen = false;
             foreach (var marine in _anchors)
             {
-                if (marine.MapId == anchor.MapId && (marine.Position - candidatePos).LengthSquared() < minSq)
+                if (marine.MapId != candidateMap.MapId)
+                    continue;
+
+                if ((marine.Position - candidateMap.Position).LengthSquared() < minSq)
                 {
                     tooClose = true;
                     break;
                 }
+
+                if (!seen && _examine.InRangeUnOccluded(marine, candidateMap, comp.SpawnSightRange, null))
+                    seen = true;
             }
 
             if (tooClose)
                 continue;
 
+            if (seen)
+            {
+                visibleFallback ??= candidate;
+                continue;
+            }
+
             coords = candidate;
+            return true;
+        }
+
+        // open maps: nothing hidden found, spawn in view rather than not at all
+        if (visibleFallback is { } fallback)
+        {
+            coords = fallback;
             return true;
         }
 

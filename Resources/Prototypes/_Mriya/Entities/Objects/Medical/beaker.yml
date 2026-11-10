@@ -1,0 +1,22 @@
+- type: entity
+  parent: RMCPressurizedCanister
+  id: MRPressurizedCanisterGC
+  suffix: ЗЛ
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 480
+        reagents:
+        - ReagentId: CMKelotane
+          Quantity: 94.08
+        - ReagentId: CMDermaline
+          Quantity: 94.08
+        - ReagentId: CMTricordrazine
+          Quantity: 94.08
+        - ReagentId: CMMeralyne
+          Quantity: 94.08
+        - ReagentId: CMBicaridine
+          Quantity: 94.08
+        - ReagentId: CMDexalinPlus
+          Quantity: 9.6

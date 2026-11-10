@@ -37,10 +37,10 @@ public sealed partial class ContactRuleComponent : Component
     public int FinalWave = 100;
 
     [DataField]
-    public TimeSpan WaveInterval = TimeSpan.FromSeconds(50);
+    public TimeSpan WaveInterval = TimeSpan.FromSeconds(75);
 
     [DataField]
-    public TimeSpan TerminalWaveReduction = TimeSpan.FromSeconds(15);
+    public TimeSpan TerminalWaveReduction = TimeSpan.FromSeconds(10);
 
     [DataField]
     public ProtoId<ContactWavesPrototype> Waves = "MRContactWavesDefault";
@@ -56,6 +56,13 @@ public sealed partial class ContactRuleComponent : Component
     /// </summary>
     [DataField]
     public float SpawnMaxRange = 20f;
+
+    /// <summary>
+    /// Waves prefer tiles no marine can see within this range (walls/occluders in between).
+    /// Falls back to a visible tile if no hidden one is found.
+    /// </summary>
+    [DataField]
+    public float SpawnSightRange = 15f;
 
     /// <summary>
     /// Random tiles tried per mob before giving up.

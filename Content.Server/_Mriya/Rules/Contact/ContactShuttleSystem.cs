@@ -11,15 +11,17 @@ using Content.Shared.Popups;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
 /// <summary>
-/// Contact shuttle cycle on top of RMC's DropshipSystem.FlyTo:
+/// Contact shuttle cycle on top of RMC's DropshipSystem.FlyTo, for the transport dropship (Alamo) only:
 /// WaitingForBoarding -> Countdown -> FlyingDown -> Unloading -> Returning -> Refueling -> Ready
-/// -> (reinforcement terminal) -> FlyingDown -> ...
+/// -> (reinforcement terminal or a manual flight) -> FlyingDown -> ...
+/// The state follows where the dropship actually is, so manual flights count as deployments.
+/// The other dropship (Normandy) is left to the players and only shown on the HUD.
 /// Evacuation: ReserveForExtraction -> TryCallExtraction (when Ready) -> lands and waits -> ExtractionTakeoff.
-/// HUD is sent on every state change, plus a snapshot to a player when they get attached (via ContactRuleSystem).
 /// </summary>
 public sealed class ContactShuttleSystem : EntitySystem
 {
@@ -32,6 +34,13 @@ public sealed class ContactShuttleSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
     [Dependency] private readonly ContactRuleSystem _rule = default!;
+
+    private enum DropshipWhere : byte
+    {
+        Ship,
+        Planet,
+        Flight,
+    }
 
     public override void Initialize()
     {
@@ -67,10 +76,23 @@ public sealed class ContactShuttleSystem : EntitySystem
 
     private void Step(ContactShuttleComponent comp, EntityUid dropship, TimeSpan now)
     {
+        var where = GetWhere(dropship);
+
+        // roundstart: the dropship flies in to the ship, skip until it has docked once
+        if (comp.ShipDock == null)
+        {
+            if (where != DropshipWhere.Ship)
+                return;
+
+            comp.ShipDock = FindNearestDestination(dropship, planet: false);
+        }
+
+        SyncManualFlight(comp, dropship, where, now);
+
         switch (comp.State)
         {
             case ContactShuttleState.WaitingForBoarding:
-                if (OnShip(dropship) && CountAboard(dropship) > 0)
+                if (where == DropshipWhere.Ship && HalfAboard(dropship))
                 {
                     SetState(comp, ContactShuttleState.Countdown, now + comp.BoardingCountdown);
                     Announce("mriya-contact-shuttle-boarding", ("seconds", (int) comp.BoardingCountdown.TotalSeconds));
@@ -79,12 +101,11 @@ public sealed class ContactShuttleSystem : EntitySystem
                 break;
 
             case ContactShuttleState.Countdown:
-                // everyone's aboard: don't make them wait the full countdown
-                var fullBoardAt = now + comp.FullBoardCountdown;
-                if (comp.StateEndsAt > fullBoardAt && AllMarinesAboard(dropship))
+                if (!HalfAboard(dropship))
                 {
-                    SetState(comp, ContactShuttleState.Countdown, fullBoardAt);
-                    Announce("mriya-contact-shuttle-full-board", ("seconds", (int) comp.FullBoardCountdown.TotalSeconds));
+                    SetState(comp, ContactShuttleState.WaitingForBoarding, null);
+                    Announce("mriya-contact-shuttle-boarding-cancelled");
+                    break;
                 }
 
                 if (now >= comp.StateEndsAt)
@@ -93,22 +114,13 @@ public sealed class ContactShuttleSystem : EntitySystem
                 break;
 
             case ContactShuttleState.FlyingDown:
-                if (!OnPlanet(dropship))
-                    break;
+                if (where == DropshipWhere.Planet)
+                    Landed(comp, dropship, now);
 
-                if (comp.Extraction)
-                {
-                    // evacuation: stay until the rule calls ExtractionTakeoff
-                    SetState(comp, ContactShuttleState.Unloading, null);
-                    break;
-                }
-
-                SetState(comp, ContactShuttleState.Unloading, now + comp.UnloadTime);
-                Announce("mriya-contact-shuttle-landed", ("seconds", (int) comp.UnloadTime.TotalSeconds));
                 break;
 
             case ContactShuttleState.Unloading:
-                if (comp.Extraction || now < comp.StateEndsAt)
+                if (comp.ExtractionFlight || now < comp.StateEndsAt)
                     break;
 
                 EjectStragglers(dropship);
@@ -118,8 +130,9 @@ public sealed class ContactShuttleSystem : EntitySystem
                 break;
 
             case ContactShuttleState.Returning:
-                if (OnShip(dropship))
+                if (where == DropshipWhere.Ship)
                 {
+                    comp.ExtractionFlight = false;
                     SetState(comp, ContactShuttleState.Refueling, now + comp.RefuelTime);
                     Announce("mriya-contact-shuttle-refueling", ("seconds", (int) comp.RefuelTime.TotalSeconds));
                 }
@@ -136,9 +149,52 @@ public sealed class ContactShuttleSystem : EntitySystem
                 break;
 
             case ContactShuttleState.Ready:
-                // waits for the reinforcement terminal or an evacuation call
+                // waits for the reinforcement terminal, a manual flight or an evacuation call
                 break;
         }
+
+        UpdateCounts(comp, dropship);
+    }
+
+    /// <summary>
+    /// Players can fly the transport by hand. Whatever they do, the cycle follows where it actually is.
+    /// </summary>
+    private void SyncManualFlight(ContactShuttleComponent comp, EntityUid dropship, DropshipWhere where, TimeSpan now)
+    {
+        switch (comp.State)
+        {
+            // launched by hand from the ship: counts as a deployment
+            case ContactShuttleState.WaitingForBoarding or ContactShuttleState.Countdown
+                or ContactShuttleState.Refueling or ContactShuttleState.Ready when where != DropshipWhere.Ship:
+                Announce("mriya-contact-shuttle-manual-launch");
+                if (where == DropshipWhere.Planet)
+                    Landed(comp, dropship, now);
+                else
+                    SetState(comp, ContactShuttleState.FlyingDown, null);
+
+                break;
+
+            // took off by hand from the colony
+            case ContactShuttleState.Unloading when where != DropshipWhere.Planet:
+                SetState(comp, ContactShuttleState.Returning, null);
+                break;
+        }
+    }
+
+    private void Landed(ContactShuttleComponent comp, EntityUid dropship, TimeSpan now)
+    {
+        if (comp.ExtractionFlight)
+        {
+            // evacuation: stay until the rule calls ExtractionTakeoff
+            SetState(comp, ContactShuttleState.Unloading, null);
+            return;
+        }
+
+        // reinforcements follow wherever the last drop landed (manual drops can pick another LZ)
+        comp.LandingZone = FindNearestDestination(dropship, planet: true) ?? comp.LandingZone;
+
+        SetState(comp, ContactShuttleState.Unloading, now + comp.UnloadTime);
+        Announce("mriya-contact-shuttle-landed", ("seconds", (int) comp.UnloadTime.TotalSeconds));
     }
 
     #region Evacuation
@@ -162,27 +218,35 @@ public sealed class ContactShuttleSystem : EntitySystem
         }
 
         comp.LandingZone = landingZone;
+        comp.ExtractionFlight = true;
         LaunchDown(comp, dropship);
-        return comp.State == ContactShuttleState.FlyingDown;
+
+        if (comp.State == ContactShuttleState.FlyingDown)
+            return true;
+
+        comp.ExtractionFlight = false;
+        return false;
     }
 
     public bool IsExtractionLanded()
     {
-        return GetActive() is { Extraction: true, State: ContactShuttleState.Unloading };
+        return GetActive() is { ExtractionFlight: true, State: ContactShuttleState.Unloading };
     }
 
     /// <summary>
     /// Starts the takeoff for the ship. False if it couldn't launch (retry next check).
+    /// True if players already took off by hand.
     /// </summary>
     public bool ExtractionTakeoff()
     {
-        if (GetActive() is not { } comp ||
-            !TryGetDropship(comp, out var dropship) ||
-            comp.ShipDock is not { } dock ||
-            !Launch(dropship, dock))
-        {
+        if (GetActive() is not { } comp || !TryGetDropship(comp, out var dropship))
             return false;
-        }
+
+        if (comp.State == ContactShuttleState.Returning)
+            return true;
+
+        if (comp.ShipDock is not { } dock || !Launch(dropship, dock))
+            return false;
 
         SetState(comp, ContactShuttleState.Returning, null);
         return true;
@@ -317,6 +381,10 @@ public sealed class ContactShuttleSystem : EntitySystem
 
     #region Helpers
 
+    /// <summary>
+    /// The transport is the dropship with TransportMarker on its grid (Alamo cockpit).
+    /// Any other dropship is the gunship (HUD only).
+    /// </summary>
     private bool TryGetDropship(ContactShuttleComponent comp, out EntityUid dropship)
     {
         if (comp.Dropship is { } cached && Exists(cached))
@@ -325,16 +393,61 @@ public sealed class ContactShuttleSystem : EntitySystem
             return true;
         }
 
-        // TODO Mriya: the Contact map should have a single dropship; pick a specific one if it ever has more
+        EntityUid? transport = null;
+        EntityUid? first = null;
         var query = EntityQueryEnumerator<DropshipComponent>();
         while (query.MoveNext(out var uid, out _))
         {
-            comp.Dropship = uid;
-            dropship = uid;
-            return true;
+            first ??= uid;
+            if (transport == null && HasMarker(uid, comp.TransportMarker))
+                transport = uid;
         }
 
-        dropship = default;
+        if (transport == null && first != null)
+        {
+            Log.Warning($"Contact shuttle: no dropship with {comp.TransportMarker}, using {ToPrettyString(first.Value)}");
+            transport = first;
+        }
+
+        if (transport is not { } found)
+        {
+            dropship = default;
+            return false;
+        }
+
+        comp.Dropship = found;
+        comp.Gunship = null;
+
+        var others = EntityQueryEnumerator<DropshipComponent>();
+        while (others.MoveNext(out var uid, out _))
+        {
+            if (uid == found)
+                continue;
+
+            // prefer the marked gunship, otherwise any other dropship
+            if (HasMarker(uid, comp.GunshipMarker))
+            {
+                comp.Gunship = uid;
+                break;
+            }
+
+            comp.Gunship ??= uid;
+        }
+
+        SendHud(comp);
+        dropship = found;
+        return true;
+    }
+
+    private bool HasMarker(EntityUid grid, EntProtoId marker)
+    {
+        var children = Transform(grid).ChildEnumerator;
+        while (children.MoveNext(out var child))
+        {
+            if (MetaData(child).EntityPrototype?.ID == marker.Id)
+                return true;
+        }
+
         return false;
     }
 
@@ -394,6 +507,14 @@ public sealed class ContactShuttleSystem : EntitySystem
         return best ?? FindDestination(planet);
     }
 
+    private DropshipWhere GetWhere(EntityUid dropship)
+    {
+        if (OnPlanet(dropship))
+            return DropshipWhere.Planet;
+
+        return OnShip(dropship) ? DropshipWhere.Ship : DropshipWhere.Flight;
+    }
+
     private bool OnPlanet(EntityUid dropship)
     {
         return _rmcPlanet.IsOnPlanet(Transform(dropship).Coordinates);
@@ -412,42 +533,91 @@ public sealed class ContactShuttleSystem : EntitySystem
         return false;
     }
 
-    private int CountAboard(EntityUid dropship)
+    private void CountMarines(EntityUid dropship, out int aboard, out int total)
     {
-        var count = 0;
-        var query = EntityQueryEnumerator<MarineComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out _, out var xform))
-        {
-            if (xform.GridUid == dropship && !_mobState.IsDead(uid))
-                count++;
-        }
-
-        return count;
-    }
-
-    private bool AllMarinesAboard(EntityUid dropship)
-    {
-        var aboard = 0;
+        aboard = 0;
+        total = 0;
         var query = EntityQueryEnumerator<MarineComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out _, out var xform))
         {
             if (_mobState.IsDead(uid))
                 continue;
 
-            if (xform.GridUid != dropship)
-                return false;
+            if (xform.GridUid == dropship)
+                aboard++;
 
-            aboard++;
+            // marines already on the colony don't need the transport
+            if (!_rmcPlanet.IsOnPlanet(xform.Coordinates))
+                total++;
+        }
+    }
+
+    private int CountAboard(EntityUid dropship)
+    {
+        CountMarines(dropship, out var aboard, out _);
+        return aboard;
+    }
+
+    /// <summary>
+    /// First drop: at least half of the living marines are aboard.
+    /// </summary>
+    private bool HalfAboard(EntityUid dropship)
+    {
+        CountMarines(dropship, out var aboard, out var total);
+        return aboard > 0 && aboard * 2 >= total;
+    }
+
+    /// <summary>
+    /// Boarding numbers for the HUD: before the first drop (aboard / half) and when reinforcements are ready.
+    /// Only sent when they change.
+    /// </summary>
+    private void UpdateCounts(ContactShuttleComponent comp, EntityUid dropship)
+    {
+        var aboard = 0;
+        var needed = 0;
+
+        switch (comp.State)
+        {
+            case ContactShuttleState.WaitingForBoarding or ContactShuttleState.Countdown:
+                CountMarines(dropship, out aboard, out var total);
+                needed = Math.Max(1, (total + 1) / 2);
+                break;
+
+            case ContactShuttleState.Ready:
+                CountMarines(dropship, out aboard, out _);
+                needed = 1;
+                break;
         }
 
-        return aboard > 0;
+        if (aboard == comp.LastAboard && needed == comp.LastNeeded)
+            return;
+
+        comp.LastAboard = aboard;
+        comp.LastNeeded = needed;
+        SendHud(comp);
     }
 
     private void SetState(ContactShuttleComponent comp, ContactShuttleState state, TimeSpan? endsAt)
     {
         comp.State = state;
         comp.StateEndsAt = endsAt;
-        RaiseNetworkEvent(new ContactShuttleHudEvent(comp.State, comp.StateEndsAt));
+        SendHud(comp);
+    }
+
+    private ContactShuttleHudEvent MakeHud(ContactShuttleComponent comp)
+    {
+        return new ContactShuttleHudEvent(
+            comp.State,
+            comp.StateEndsAt,
+            comp.Dropship is { } transport && Exists(transport) ? Name(transport) : null,
+            comp.Gunship is { } gunship && Exists(gunship) ? Name(gunship) : null,
+            comp.LastAboard,
+            comp.LastNeeded);
+    }
+
+    private void SendHud(ContactShuttleComponent comp)
+    {
+        RaiseNetworkEvent(MakeHud(comp));
     }
 
     /// <summary>
@@ -456,7 +626,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     public void SendHudTo(ICommonSession session)
     {
         if (GetActive() is { } comp)
-            RaiseNetworkEvent(new ContactShuttleHudEvent(comp.State, comp.StateEndsAt), session);
+            RaiseNetworkEvent(MakeHud(comp), session);
     }
 
     private void Announce(string key, params (string, object)[] args)
