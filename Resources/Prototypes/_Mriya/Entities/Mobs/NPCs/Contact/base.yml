@@ -96,3 +96,4 @@
       AggroVisionRadius: !type:Single 14
   - type: ContactXenoAI
     smashTimeout: 1
+    noPryTime: 5
