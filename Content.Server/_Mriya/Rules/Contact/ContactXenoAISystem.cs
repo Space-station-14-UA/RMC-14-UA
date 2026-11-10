@@ -80,6 +80,21 @@ public sealed class ContactXenoAISystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ContactXenoAIComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<ContactXenoAIComponent, EntityTerminatingEvent>(OnTerminating);
+    }
+
+    /// <summary>
+    /// A door crushing this xeno keeps it in CurrentlyCrushing until it opens again;
+    /// if the xeno is deleted meanwhile (despawn, gib), the door networks a dead entity.
+    /// </summary>
+    private void OnTerminating(Entity<ContactXenoAIComponent> ent, ref EntityTerminatingEvent args)
+    {
+        var doors = EntityQueryEnumerator<DoorComponent>();
+        while (doors.MoveNext(out var uid, out var door))
+        {
+            if (door.CurrentlyCrushing.Remove(ent))
+                Dirty(uid, door);
+        }
     }
 
     private void OnMapInit(Entity<ContactXenoAIComponent> ent, ref MapInitEvent args)
@@ -313,7 +328,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         if (ai.NoPryUntil is { } noPry && now >= noPry)
         {
             ai.NoPryUntil = null;
-            blackboard.SetValue(NPCBlackboard.NavPry, true);
+            SetDoorNav(blackboard, true);;
         }
 
         // already smashing something
@@ -340,11 +355,11 @@ public sealed class ContactXenoAISystem : EntitySystem
             ai.LastDestination = dest;
         }
 
-        // powered pod locks / unpryable doors: don't even try, path around
+        // powered pod locks / shutters can't be pried: path around them
         if (ai.NoPryUntil == null && HasClosedDoorAhead(uid, pos, dest, unpryableOnly: true))
         {
             ai.NoPryUntil = now + ai.NoPryTime;
-            blackboard.SetValue(NPCBlackboard.NavPry, false);
+            SetDoorNav(blackboard, false);
             _steering.Unregister(uid);
             return;
         }
@@ -360,7 +375,6 @@ public sealed class ContactXenoAISystem : EntitySystem
         {
             ai.BestDistance = dist;
             ai.NoProgress = TimeSpan.Zero;
-            ai.DoorStuck = 0;
             return;
         }
 
@@ -370,22 +384,9 @@ public sealed class ContactXenoAISystem : EntitySystem
 
         ResetProgress(ai);
 
-        // a closed door ahead: let it pry first. Only smash around it once prying gave up
-        // (powered shutter, electrified / bolted / welded airlock)
-        if (ai.NoPryUntil == null && HasClosedDoorAhead(uid, pos, dest))
-        {
-            ai.DoorStuck++;
-            if (ai.StuckTime * ai.DoorStuck < ai.DoorGiveUp)
-                return;
-
-            ai.DoorStuck = 0;
-            ai.NoPryUntil = now + ai.NoPryTime;
-            blackboard.SetValue(NPCBlackboard.NavPry, false);
-            _steering.Unregister(uid);
+        // a closed door ahead: steering pries it, don't smash windows / frames around it instead
+        if (HasClosedDoorAhead(uid, pos, dest))
             return;
-        }
-
-        ai.DoorStuck = 0;
 
         if (FindObstacle(uid, ai, pos, dest) is not { } obstacle)
             return;
@@ -446,14 +447,13 @@ public sealed class ContactXenoAISystem : EntitySystem
         var toDest = (dest.Position - pos.Position).Normalized();
 
         _obstacles.Clear();
-        _lookup.GetEntitiesInRange(uid, SmashSearchRange, _obstacles, LookupFlags.Static);
+        _lookup.GetEntitiesInRange(uid, unpryableOnly ? 1.5f : SmashSearchRange, _obstacles, LookupFlags.Static);
 
+        EntityUid? nearest = null;
+        var nearestDist = float.MaxValue;
         foreach (var ent in _obstacles)
         {
             if (!TryComp(ent, out DoorComponent? door) || door.State is DoorState.Open or DoorState.Opening)
-                continue;
-
-            if (unpryableOnly && door.CanPry && !(HasComp<RMCPodDoorComponent>(ent) && _power.IsPowered(ent)))
                 continue;
 
             var offset = _transform.GetMapCoordinates(ent).Position - pos.Position;
@@ -461,10 +461,19 @@ public sealed class ContactXenoAISystem : EntitySystem
             if (dist > 0.01f && Vector2Dot(offset / dist, toDest) < 0.2f)
                 continue;
 
-            return true;
+            if (dist < nearestDist)
+            {
+                nearest = ent;
+                nearestDist = dist;
+            }
         }
 
-        return false;
+        if (nearest is not { } found)
+            return false;
+
+        // pod lock check: only if the door it's actually walking into is a powered pod lock / shutter,
+        // not a normal door that happens to be next to one
+        return !unpryableOnly || HasComp<RMCPodDoorComponent>(found) && _power.IsPowered(found);
     }
 
     private static void ResetProgress(ContactXenoAIComponent ai)
@@ -477,6 +486,16 @@ public sealed class ContactXenoAISystem : EntitySystem
     {
         ai.SmashTarget = null;
         blackboard.Remove<bool>(SmashActiveKey);
+    }
+
+    /// <summary>
+    /// With NavPry off but NavSmash on, the pathfinder routes through the door and steering smashes it,
+    /// so both go off together while avoiding a powered pod lock.
+    /// </summary>
+    private void SetDoorNav(NPCBlackboard blackboard, bool enabled)
+    {
+        blackboard.SetValue(NPCBlackboard.NavPry, enabled);
+        blackboard.SetValue(NPCBlackboard.NavSmash, enabled);
     }
 
     private static float Vector2Dot(System.Numerics.Vector2 a, System.Numerics.Vector2 b)
