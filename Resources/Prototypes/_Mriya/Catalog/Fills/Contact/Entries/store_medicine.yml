@@ -73,3 +73,33 @@
   proto: MRDefibrillatorCivilian
   category: MRContactStoreMedicine
   price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePouchReagentCanister15x3
+  proto: MRPouchReagentCanister15x3
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePressurizedCanisterGC
+  proto: MRPressurizedCanisterGC
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreDefibrillator
+  proto: CMDefibrillator
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreDefibrillatorCompact
+  proto: RMCDefibrillatorCompact
+  category: MRContactStoreMedicine
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStorePamphletAdminMedical1
+  proto: RMCPamphletAdminMedical1
+  category: MRContactStoreMedicine
+  price: 100

@@ -282,3 +282,9 @@
   proto: WeaponRifleM4SPRCustom
   category: MRContactStoreLongArms
   price: 750
+
+- type: contactStoreEntry
+  id: MRContactStoreM96CSniperRifle
+  proto: CMM96CSniperRifle
+  category: MRContactStoreLongArms
+  price: 750

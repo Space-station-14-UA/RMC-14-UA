@@ -111,3 +111,69 @@
   proto: RMCMotionDetector
   category: MRContactStoreSpecial
   price: 15
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistDemolitionist
+  proto: RMCPamphletAdminWeaponsSpecialistDemolitionist
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistPyro
+  proto: RMCPamphletAdminWeaponsSpecialistPyro
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminSmartGun1
+  proto: RMCPamphletAdminSmartGun1
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistScout
+  proto: RMCPamphletAdminWeaponsSpecialistScout
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistSniper
+  proto: RMCPamphletAdminWeaponsSpecialistSniper
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistGrenadier
+  proto: RMCPamphletAdminWeaponsSpecialistGrenadier
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreGlassesM42SpotterSight
+  proto: CMGlassesM42SpotterSight
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStorePowerCellSmartgun
+  proto: RMCPowerCellSmartgun
+  category: MRContactStoreSpecial
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreSmartGun
+  proto: RMCSmartGun
+  category: MRContactStoreSpecial
+  price: 200
+
+- type: contactStoreEntry
+  id: MRContactStoreWeaponLauncherM83
+  proto: WeaponLauncherM83
+  category: MRContactStoreSpecial
+  price: 200
+
+- type: contactStoreEntry
+  id: MRContactStoreWeaponFlamerSpec
+  proto: RMCWeaponFlamerSpec
+  category: MRContactStoreSpecial
+  price: 200

@@ -165,3 +165,75 @@
   category: MRContactStoreClothing
   price: 14
   maxPerPurchase: 1
+
+# pouches
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchMagazinePistolLarge
+  proto: RMCPouchMagazinePistolLarge
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchShotgunLarge
+  proto: RMCPouchShotgunLarge
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchToolsSoc
+  proto: RMCPouchToolsSocFilledTactical
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchDrumPMC
+  proto: RMCPouchDrumPMC
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchMagazineLarge
+  proto: RMCPouchMagazineLarge
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltMarine
+  proto: CMBeltMarine
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreShotgunShellLoadingRig
+  proto: RMCM276ShotgunShellLoadingRig
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltSmartGunOperator
+  proto: CMBeltSmartGunOperator
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltGrenadeLarge
+  proto: RMCBeltGrenadeLarge
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltPistol
+  proto: RMCBeltHolsterPistol
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1

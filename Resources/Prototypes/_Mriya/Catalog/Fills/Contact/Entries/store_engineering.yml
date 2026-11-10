@@ -32,4 +32,52 @@
   id: MRContactStoreToolboxMechanical
   proto: RMCToolboxMechanicalGreenFilled
   category: MRContactStoreEngineering
-  price: 15
+  price: 15 
+
+- type: contactStoreEntry
+  id: MRContactStorePamphletEngineer
+  proto: CMPamphletEngineer
+  category: MRContactStoreEngineering
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSentry
+  proto: RMCMagazineSentry
+  category: MRContactStoreEngineering
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSentryShotgun
+  proto: RMCMagazineSentryShotgun
+  category: MRContactStoreEngineering
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSentryFire
+  proto: RMCMagazineSentryFire
+  category: MRContactStoreEngineering
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSentryFireBlue
+  proto: RMCMagazineSentryFireBlue
+  category: MRContactStoreEngineering
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSentryFireSmoke
+  proto: RMCMagazineSentryFireSmoke
+  category: MRContactStoreEngineering
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreM2CCase
+  proto: RMCM2CCase
+  category: MRContactStoreEngineering
+  price: 90
+
+- type: contactStoreEntry
+  id: MRContactStoreML66DCase
+  proto: RMCML66DCase
+  category: MRContactStoreEngineering
+  price: 90

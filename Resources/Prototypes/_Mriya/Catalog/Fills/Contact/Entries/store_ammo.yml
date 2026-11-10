@@ -258,10 +258,28 @@
 
 # RMCWeaponRifleM54CMK1AP
 - type: contactStoreEntry
-  id: MRContactStoreCMMagazineRifleM54CMK1AP
+  id: MRContactStoreMagazineRifleM54CMK1AP
   proto: CMMagazineRifleM54CMK1AP
   category: MRContactStoreAmmo
   price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM54CMK1Incendiary
+  proto: RMCMagazineRifleM54CMK1Incendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM54CMK1WP
+  proto: RMCMagazineRifleM54CMK1WP
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM54CMK1HEAP
+  proto: RMCMagazineRifleM54CMK1HEAP
+  category: MRContactStoreAmmo
+  price: 10
 
 # RMCWeaponRifleSSG45NoLock
 - type: contactStoreEntry
@@ -301,12 +319,6 @@
   category: MRContactStoreAmmo
   price: 10
 
-- type: contactStoreEntry
-  id: MRContactStoreMagazineRifleType71Rubber
-  proto: RMCMagazineRifleType71Rubber
-  category: MRContactStoreAmmo
-  price: 8
-
 # RMCWeaponRifleType77
 - type: contactStoreEntry
   id: MRContactStoreMagazineRifleType77AP
@@ -326,25 +338,12 @@
   category: MRContactStoreAmmo
   price: 8
 
-- type: contactStoreEntry
-  id: MRContactStoreMagazineRifleType77Rubber
-  proto: RMCMagazineRifleType77Rubber
-  category: MRContactStoreAmmo
-  price: 8
-
 # RMCWeaponRifleMAR30
 - type: contactStoreEntry
   id: MRContactStoreMagazineRifleMAR40Ext
   proto: RMCMagazineRifleMAR40Ext
   category: MRContactStoreAmmo
   price: 6
-
-# RMCWeaponRifleM59A
-- type: contactStoreEntry
-  id: MRContactStoreCMMagazineRifleM54CMK1
-  proto: CMMagazineRifleM54CMK1
-  category: MRContactStoreAmmo
-  price: 8
 
 # RMCWeaponSMGM63ExtendedFilled
 - type: contactStoreEntry
@@ -361,8 +360,8 @@
 
 # RMCWeaponSMGType64
 - type: contactStoreEntry
-  id: MRContactStoreMagazineSMGType64Rubber
-  proto: RMCMagazineSMGType64Rubber
+  id: MRContactStoreMagazineSMGType64
+  proto: RMCMagazineSMGType64
   category: MRContactStoreAmmo
   price: 4
 
@@ -448,6 +447,7 @@
   category: MRContactStoreAmmo
   price: 10
 
+# smartgun
 
 - type: contactStoreEntry
   id: MRContactStoreMagazineSmartGun
@@ -460,3 +460,55 @@
   proto: RMCMagazineSmartGunirradiated
   category: MRContactStoreAmmo
   price: 15
+
+# m42c
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96C
+  proto: CMMagazineSniperM96C
+  category: MRContactStoreAmmo
+  price: 15
+
+# m96s
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96S
+  proto: CMMagazineSniperM96S
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96SIncendiary
+  proto: CMMagazineSniperM96SIncendiary
+  category: MRContactStoreAmmo
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96SFlak
+  proto: CMMagazineSniperM96SFlak
+  category: MRContactStoreAmmo
+  price: 15
+
+# xm42
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineXM43E1AntiMateriel
+  proto: RMCMagazineSniperXM43E1AntiMateriel
+  category: MRContactStoreAmmo
+  price: 15
+
+# m2c
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineM2C
+  proto: RMCMagazineM2C
+  category: MRContactStoreAmmo
+  price: 15
+  
+# ml66d
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineML66D
+  proto: RMCMagazineML66D
+  category: MRContactStoreAmmo
+  price: 10
