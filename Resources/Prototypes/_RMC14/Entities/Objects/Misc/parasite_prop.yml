@@ -4,6 +4,9 @@
   name: "????"
   description: Це якась дивна крабоподібна істота з трубкою на хвості. Виглядає давно висохлим. Що це, чорт забирай, таке??
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Parasite/parasite.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Parasite/parasite.rsi
   - type: Transform
     anchored: false
   # Mriya start. Щоб можна було тягати
@@ -11,8 +14,9 @@
   #- type: Physics
   #  bodyType: Static
   #  canCollide: false
+  - type: Pullable
   # Mriya end
   - type: Sprite
     sprite:  _RMC14/Mobs/Xenonids/Parasite/parasite.rsi
     state: impregnated
-  - type: Pullable # Mriya. Тягати
+  - type: RMCNightVisionVisible # Mriya. Це логічно

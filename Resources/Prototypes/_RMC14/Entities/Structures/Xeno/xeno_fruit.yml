@@ -9,6 +9,9 @@
     snap:
     - Wall
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Structures/Xenos/xeno_fruit.rsi
+    oldSprite: _Mriya/Structures/Xenos/old_xeno_fruit.rsi
   - type: Fixtures
     fixtures:
       fix1:

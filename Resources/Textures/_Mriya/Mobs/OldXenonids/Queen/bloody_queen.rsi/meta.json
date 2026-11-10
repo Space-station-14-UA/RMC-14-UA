@@ -21,10 +21,6 @@
       "name": "dead"
     },
     {
-      "name": "thrown",
-      "directions": 4
-    },
-    {
       "name": "queen_walk_3",
       "directions": 4
     },

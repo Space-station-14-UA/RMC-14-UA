@@ -29,10 +29,6 @@
       "directions": 4
     },
     {
-      "name": "thrown",
-      "directions": 4
-    },
-    {
       "name": "defender_walk_3",
       "directions": 4
     },
