@@ -61,12 +61,12 @@ public sealed class ContactEconomySystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
         SubscribeLocalEvent<ContactWaveMobComponent, DamageChangedEvent>(OnWaveMobDamageChanged);
-        SubscribeLocalEvent<ContactWaveMobComponent, MobStateChangedEvent>(OnWaveMobStateChanged);
+        SubscribeLocalEvent<ContactWaveMobComponent, MobStateChangedEvent>(OnWaveMobStateChanged,
+            before: [typeof(RMCGibSystem)]);
         SubscribeLocalEvent<ContactPlayerComponent, DamageChangedEvent>(OnPlayerDamageChanged);
         SubscribeLocalEvent<ContactPlayerComponent, MobStateChangedEvent>(OnPlayerMobStateChanged);
         SubscribeLocalEvent<ContactPlayerComponent, DidEquipHandEvent>(OnPlayerEquipHand);
-        SubscribeLocalEvent<ContactWaveMobComponent, MobStateChangedEvent>(OnWaveMobStateChanged,
-            before: [typeof(RMCGibSystem)]);
+
     }
 
     private ContactEconomyComponent? GetConfig()
