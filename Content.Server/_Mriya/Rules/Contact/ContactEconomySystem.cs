@@ -18,6 +18,7 @@ using Robust.Shared.Timing;
 using Content.Shared._RMC14.OnCollide;
 using Content.Shared._RMC14.Weapons.Ranged.Flamer;
 using Content.Shared._RMC14.Gibbing;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -39,6 +40,7 @@ public sealed class ContactEconomySystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     /// <summary>A fire counts as yours if you fired within this long before it appeared.</summary>
     private static readonly TimeSpan ShotWindow = TimeSpan.FromSeconds(1);
@@ -280,12 +282,15 @@ public sealed class ContactEconomySystem : EntitySystem
 
     private void OnWaveMobDamageChanged(Entity<ContactWaveMobComponent> ent, ref DamageChangedEvent args)
     {
-        if (!args.DamageIncreased)
+        if (!args.DamageIncreased || _mobState.IsDead(ent))
             return;
 
-        // no origin: standing in someone's fire? (burning after leaving it is covered by LastHit)
+        // fire tiles have no origin, burning has the mob itself as origin
+        var noOrigin = args.Origin == null || args.Origin == ent.Owner;
+
+        // standing in someone's fire? (burning after leaving it is covered by LastHit)
         if (!TryGetCredit(args.Origin, out var user, out var bySentry) &&
-            (args.Origin != null || !TryGetFireUnder(ent, out user, out bySentry)))
+            (!noOrigin || !TryGetFireUnder(ent, out user, out bySentry)))
         {
             return;
         }
@@ -303,11 +308,12 @@ public sealed class ContactEconomySystem : EntitySystem
 
         TryComp(ent, out ContactKillCreditComponent? credit);
 
-        // the hit that killed it; no origin: the fire it's standing in, else the last credited hit (burning)
+        // the hit that killed it; no origin / self (fire, burning): the fire it's standing in, else the last credited hit
         NetUserId? killer = null;
         var bySentry = false;
+        var noOrigin = args.Origin == null || args.Origin == ent.Owner;
         if (TryGetCredit(args.Origin, out var user, out var sentry) ||
-            args.Origin == null && TryGetFireUnder(ent, out user, out sentry))
+            noOrigin && TryGetFireUnder(ent, out user, out sentry))
         {
             killer = user;
             bySentry = sentry;
@@ -451,7 +457,7 @@ public sealed class ContactEconomySystem : EntitySystem
         bySentry = false;
 
         _fireTiles.Clear();
-        _lookup.GetEntitiesInRange(Transform(mob).Coordinates, 0.6f, _fireTiles, LookupFlags.Static);
+        _lookup.GetEntitiesInRange(Transform(mob).Coordinates, 0.6f, _fireTiles, LookupFlags.Static | LookupFlags.Sensors);
 
         var now = _timing.CurTime;
         foreach (var fire in _fireTiles)
