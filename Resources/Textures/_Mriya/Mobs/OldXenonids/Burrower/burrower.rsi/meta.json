@@ -12,10 +12,6 @@
       "directions": 4
     },
     {
-      "name": "burrowed",
-      "directions": 4
-    },
-    {
       "name": "dead"
     },
     {

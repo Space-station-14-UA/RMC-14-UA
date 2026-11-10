@@ -12,10 +12,6 @@
       "directions": 4
     },
     {
-      "name": "running",
-      "directions": 4
-    },
-    {
       "name": "sleeping"
     },
     {
@@ -23,10 +19,6 @@
     },
     {
       "name": "dead"
-    },
-    {
-      "name": "invisible",
-      "directions": 4
     },
     {
       "name": "lurker_walk_3",

@@ -21,10 +21,6 @@
       "name": "dead"
     },
     {
-      "name": "agility",
-      "directions": 4
-    },
-    {
       "name": "warrior_walk_3",
       "directions": 4
     },
