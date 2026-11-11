@@ -88,6 +88,12 @@ public sealed partial class ContactXenoAIComponent : Component
     public TimeSpan NoPryTime = TimeSpan.FromSeconds(15);
 
     /// <summary>
+    /// Prying the same door more than this many times without it opening = it can't be pried: path around.
+    /// </summary>
+    [DataField]
+    public int MaxPryAttempts = 3;
+
+    /// <summary>
     /// Deployed (anchored) marine defenses the xeno attacks on sight: sentries, tesla coils, M2C / ML66D.
     /// </summary>
     [DataField]

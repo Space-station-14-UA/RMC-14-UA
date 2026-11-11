@@ -119,3 +119,15 @@
   components:
   - type: MRRotRule
     rotTime: 60
+
+- type: entity
+  id: MRContactPathBlocker
+  categories: [ HideSpawnMenu ]
+  name: path blocker
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+  - type: ContactPathBlocker

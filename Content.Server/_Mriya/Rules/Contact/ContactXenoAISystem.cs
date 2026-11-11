@@ -30,7 +30,7 @@ using Content.Shared.Item;
 using System.Numerics;
 using Content.Server.NPC.Components;
 using Content.Shared.Lock;
-using Content.Shared.Storage.Components;
+using Content.Server.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Physics;
@@ -562,6 +562,12 @@ public sealed class ContactXenoAISystem : EntitySystem
                 var ent = hit.HitEntity;
                 if (!TryComp(ent, out PhysicsComponent? hitBody) || !hitBody.Hard || HasComp<MobStateComponent>(ent))
                     continue;
+
+                if (TryComp<ContactPathBlockerComponent>(ent, out var helper) &&
+                    helper.Source is { } prop && !TerminatingOrDeleted(prop))
+                {
+                    ent = prop;
+                }
 
                 if (!IsActionable(ai, ent))
                 {

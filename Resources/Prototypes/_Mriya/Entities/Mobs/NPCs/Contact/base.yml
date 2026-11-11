@@ -132,3 +132,8 @@
   - type: ContactXenoAI
     smashTimeout: 1
     noPryTime: 5
+    smashWhitelist:
+      components:
+      - Barricade
+      - XenoCrusherChargable
+      - XenoToggleChargingDamage
