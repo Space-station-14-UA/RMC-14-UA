@@ -501,7 +501,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         ResetProgress(ai);
 
         // closed door and no pry running: steering's pries are being refused (that's the sound spam)
-        if (blocker is { } door && HasComp<DoorComponent>(door))
+        if (blocker is { } door && TryComp(door, out DoorComponent? doorComp) && doorComp.CanPry)
         {
             ai.DoorStuck += ai.StuckTime;
             if (ai.NoPryUntil == null && ai.DoorStuck >= ai.DoorGiveUp)
