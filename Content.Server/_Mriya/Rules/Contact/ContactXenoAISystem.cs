@@ -36,6 +36,7 @@ using Content.Shared.Tools.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Systems;
+using Content.Shared._RMC14.Xenonids.Acid;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -141,8 +142,12 @@ public sealed class ContactXenoAISystem : EntitySystem
             // doing a do-after (prying a door / winding up an ability): don't touch the plan
             if (HasComp<ActiveDoAfterComponent>(uid))
             {
+                // Mriya. Breaking an acid hole wider (started by clawing the wall): stand still
+                // until it's done, the move would cancel it.
+                if (HasDoAfter<XenoAcidHoleBreakDoAfterEvent>(uid))
+                    Hold(uid, htn, 1f);
                 // wind-ups start from a hold: keep standing until it's done, or the move cancels it
-                if (htn.Blackboard.TryGetValue<float>(HoldKey, out _, EntityManager))
+                else if (htn.Blackboard.TryGetValue<float>(HoldKey, out _, EntityManager))
                     htn.Blackboard.SetValue(HoldKey, 1f);
                 else
                     CountPryAttempt(uid, ai, htn, _transform.GetMapCoordinates(uid, xform), now);
@@ -733,6 +738,23 @@ public sealed class ContactXenoAISystem : EntitySystem
         }
 
         return found;
+    }
+
+    /// <summary>
+    /// Has a running (not cancelled, not finished) do-after with this event.
+    /// </summary>
+    private bool HasDoAfter<T>(EntityUid uid) where T : DoAfterEvent
+    {
+        if (!TryComp(uid, out DoAfterComponent? comp))
+            return false;
+
+        foreach (var doAfter in comp.DoAfters.Values)
+        {
+            if (!doAfter.Cancelled && !doAfter.Completed && doAfter.Args.Event is T)
+                return true;
+        }
+
+        return false;
     }
 
     /// <summary>
