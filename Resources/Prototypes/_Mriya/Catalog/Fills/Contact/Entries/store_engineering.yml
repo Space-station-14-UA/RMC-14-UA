@@ -6,7 +6,7 @@
 
 - type: contactStoreEntry
   id: MRContactStoreSentryConstruct
-  proto: RMCSentryConstruct
+  proto: RMCSentry
   category: MRContactStoreEngineering
   price: 100
 

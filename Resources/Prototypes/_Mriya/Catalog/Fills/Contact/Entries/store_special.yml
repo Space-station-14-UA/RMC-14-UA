@@ -26,31 +26,31 @@
   id: MRContactStoreLauncherDisposableFolded
   proto: RMCWeaponLauncherDisposableFolded
   category: MRContactStoreSpecial
-  price: 50
+  price: 25
 
 - type: contactStoreEntry
   id: MRContactStoreLauncherM5ATL
   proto: RMCWeaponLauncherM5ATL
   category: MRContactStoreSpecial
-  price: 200
+  price: 100
 
 - type: contactStoreEntry
   id: MRContactStoreRocket84mm
   proto: RMCRocket84mm
   category: MRContactStoreSpecial
-  price: 30
+  price: 15
 
 - type: contactStoreEntry
   id: MRContactStoreRocket84mmAP
   proto: RMCRocket84mmAntiArmor
   category: MRContactStoreSpecial
-  price: 30
+  price: 15
 
 - type: contactStoreEntry
   id: MRContactStoreRocket84mmWP
   proto: RMCRocket84mmWhitePhosphorus
   category: MRContactStoreSpecial
-  price: 30
+  price: 15
 
 - type: contactStoreEntry
   id: MRContactStoreFlamer
@@ -164,16 +164,16 @@
   id: MRContactStoreSmartGun
   proto: RMCSmartGun
   category: MRContactStoreSpecial
-  price: 200
+  price: 100
 
 - type: contactStoreEntry
   id: MRContactStoreWeaponLauncherM83
   proto: WeaponLauncherM83
   category: MRContactStoreSpecial
-  price: 200
+  price: 100
 
 - type: contactStoreEntry
   id: MRContactStoreWeaponFlamerSpec
   proto: RMCWeaponFlamerSpec
   category: MRContactStoreSpecial
-  price: 200
+  price: 100
