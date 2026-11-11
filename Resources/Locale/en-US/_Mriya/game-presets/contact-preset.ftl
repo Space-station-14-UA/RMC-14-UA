@@ -78,6 +78,8 @@ mriya-contact-store-tab-armor = Броня
 mriya-contact-store-tab-clothing = Одяг
 mriya-contact-store-tab-engineering = Інженерія
 
+mriya-contact-store-monitoring = Моніторинг особового складу
+
 mriya-contact-store-section-ammo = Набої до вашої зброї
 mriya-contact-store-section-quick = Швидка медицина
 mriya-contact-store-section-kits = Поповнення наборів
