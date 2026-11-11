@@ -146,6 +146,7 @@ mriya-contact-hud-shuttle-ready = Готовий
 mriya-contact-hud-shuttle-transport = {$name}[А]
 mriya-contact-hud-shuttle-aboard = На борту
 mriya-contact-hud-shuttle-manual = Ручний
+mriya-contact-hud-lz = ПЗ
 
 mriya-contact-extraction-available = Евакуація доступна! {$seconds} секунд до наступної хвилі. Зберіться біля зони висадки, щоб почати евакуацію. Якорі неактивні.
 mriya-contact-extraction-skipped = Евакуацію пропущено. Поле відновлено: {$seconds} секунд.

@@ -426,7 +426,8 @@ public sealed class ContactHudControl : Control
                 Add(ContactHudLines.NextWave, Loc.GetString("mriya-contact-hud-next-wave"), FormatTime(nextWaveAt - now), accent);
 
             AddExtractionLines(now);
-            AddAnchorLine(accent);
+            if (!AddZoneLine(accent))
+                AddAnchorLine(accent);
         }
 
         AddShuttleLines(now, accent);
@@ -512,6 +513,60 @@ public sealed class ContactHudControl : Control
 
         Add(ContactHudLines.Anchor, Loc.GetString("mriya-contact-hud-anchor"),
             Loc.GetString("mriya-contact-hud-anchor-distance", ("meters", (int) MathF.Round(bestLen))), accent, arrow);
+    }
+
+    /// <summary>
+    /// Arrow + distance to the evacuation LZ while an extraction is offered or running:
+    /// the nearest LZ while it's offered, the chosen one after (the server only sends that one).
+    /// False when there's nothing on the player's map, so the anchor line shows instead.
+    /// </summary>
+    private bool AddZoneLine(Color accent)
+    {
+        if (_hud.ExtractionState is ContactExtractionState.None or ContactExtractionState.Done ||
+            _player.LocalEntity is not { } local)
+        {
+            return false;
+        }
+
+        var pos = _transform.GetMapCoordinates(local);
+
+        Vector2? best = null;
+        var bestLen = float.MaxValue;
+        foreach (var net in _hud.ExtractionZones)
+        {
+            var zone = _transform.ToMapCoordinates(_ents.GetCoordinates(net));
+            if (zone.MapId != pos.MapId)
+                continue;
+
+            var delta = zone.Position - pos.Position;
+            var len = delta.Length();
+            if (len >= bestLen)
+                continue;
+
+            best = delta;
+            bestLen = len;
+        }
+
+        if (best is not { } bestDelta)
+            return false;
+
+        Add(ContactHudLines.Anchor, Loc.GetString("mriya-contact-hud-lz"),
+            Loc.GetString("mriya-contact-hud-anchor-distance", ("meters", (int) MathF.Round(bestLen))),
+            accent, ToArrow(bestDelta, bestLen));
+
+        return true;
+    }
+
+    /// <summary>
+    /// World delta -> screen direction, following the camera rotation. No arrow when standing on it.
+    /// </summary>
+    private Vector2? ToArrow(Vector2 delta, float length)
+    {
+        if (length <= 0.5f)
+            return null;
+
+        var rotated = _eye.CurrentEye.Rotation.RotateVec(delta);
+        return Vector2.Normalize(new Vector2(rotated.X, -rotated.Y));
     }
 
     private void AddShuttleLines(TimeSpan now, Color accent)

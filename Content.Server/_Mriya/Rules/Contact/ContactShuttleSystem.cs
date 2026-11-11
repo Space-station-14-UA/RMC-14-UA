@@ -272,7 +272,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     private void LaunchDown(ContactShuttleComponent comp, EntityUid dropship)
     {
         comp.ShipDock ??= FindNearestDestination(dropship, planet: false);
-        comp.LandingZone ??= FindDestination(planet: true);
+        comp.LandingZone = FindPrimaryLz() ?? comp.LandingZone ?? FindDestination(planet: true);
 
         if (comp.LandingZone is not { } lz)
         {
@@ -471,6 +471,8 @@ public sealed class ContactShuttleSystem : EntitySystem
     {
         var found = new List<EntityUid>();
         var query = EntityQueryEnumerator<DropshipDestinationComponent, TransformComponent>();
+        if (planet && FindPrimaryLz() is { } primary)
+            return primary;
         while (query.MoveNext(out var uid, out _, out var xform))
         {
             if (_rmcPlanet.IsOnPlanet(xform.Coordinates) == planet)
@@ -478,6 +480,21 @@ public sealed class ContactShuttleSystem : EntitySystem
         }
 
         return found.Count == 0 ? null : _random.Pick(found);
+    }
+
+    /// <summary>
+    /// he designated primary LZ on the planet, if there is one.
+    /// </summary>
+    private EntityUid? FindPrimaryLz()
+    {
+        var query = EntityQueryEnumerator<PrimaryLandingZoneComponent, DropshipDestinationComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out _, out var xform))
+        {
+            if (_rmcPlanet.IsOnPlanet(xform.Coordinates))
+                return uid;
+        }
+
+        return null;
     }
 
     private EntityUid? FindNearestDestination(EntityUid dropship, bool planet)
