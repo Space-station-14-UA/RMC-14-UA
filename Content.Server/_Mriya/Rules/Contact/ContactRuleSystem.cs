@@ -25,6 +25,10 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.Examine;
+using Content.Server.Chat.Managers;
+using Content.Server.Voting;
+using Content.Server.Voting.Managers;
+using Content.Shared.Chat;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -52,6 +56,16 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly IVoteManager _votes = default!;
+    [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private readonly IComponentFactory _compFactory = default!;
+
+    private static readonly EntProtoId RuleProto = "MRContactRule";
+
+    /// <summary>
+    /// Winner of the lobby planet vote; used by ForcePlanet if it's still a Contact planet.
+    /// </summary>
+    private string? _votedPlanet;
 
     private float? _savedPreflight;
     private readonly List<MapCoordinates> _playerPositions = new();
@@ -65,6 +79,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<ContactWaveMobComponent, GetMeleeDamageEvent>(OnWaveMobMeleeDamage);
+                SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup, after: [typeof(CMDistressSignalRuleSystem)]);
     }
 
     private Entity<ContactRuleComponent>? GetActiveRule()
@@ -91,8 +106,8 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     }
 
     /// <summary>
-    /// Picks a Contact planet and forces it onto Distress (same as ForcePlanetMapCommand).
-    /// Overrides the lobby vote, which only knows rotation maps.
+    /// Forces a Contact planet onto Distress (same as ForcePlanetMapCommand):
+    /// the lobby Contact vote winner, random if there was no vote.
     /// </summary>
     private void ForcePlanet(ContactRuleComponent comp)
     {
@@ -109,7 +124,75 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             return;
         }
 
-        _distress.SetPlanet(_random.Pick(pool));
+        RMCPlanet? voted = null;
+        foreach (var planet in pool)
+        {
+            if (planet.Proto.ID == _votedPlanet)
+                voted = planet;
+        }
+
+        _votedPlanet = null;
+        _distress.SetPlanet(voted ?? _random.Pick(pool));
+    }
+
+    /// <summary>
+    /// Lobby with Contact as the next preset: replace Distress's rotation vote (Contact would override it anyway)
+    /// with a vote between the Contact planets.
+    /// </summary>
+    private void StartPlanetVote()
+    {
+        _votedPlanet = null;
+
+        if (!_config.GetCVar(RMCCVars.RMCPlanetMapVote))
+            return;
+
+        if (GameTicker.Preset is not { } preset || !preset.Rules.Any(r => r.Id == RuleProto.Id))
+            return;
+
+        if (!_prototypes.TryIndex(RuleProto, out var ruleProto) ||
+            !ruleProto.TryGetComponent(out ContactRuleComponent? rule, _compFactory))
+        {
+            return;
+        }
+
+        var planets = _rmcPlanet.GetAllPlanets()
+            .Where(p => rule.Planets.Contains(p.Proto.ID))
+            .ToList();
+
+        // nothing to choose from: keep Distress's vote, ForcePlanet picks anyway
+        if (planets.Count < 2)
+            return;
+
+        _distress.CancelPlanetVote();
+
+        var options = new List<(string text, object data)>();
+        foreach (var planet in planets)
+        {
+            options.Add((planet.Proto.Name, planet.Proto.ID));
+        }
+
+        var vote = new VoteOptions
+        {
+            Title = Loc.GetString("rmc-distress-signal-next-map-title"),
+            Options = options,
+            Duration = TimeSpan.FromMinutes(2),
+        };
+        vote.SetInitiatorOrServer(null);
+
+        var handle = _votes.CreateVote(vote);
+        handle.OnFinished += (_, args) =>
+        {
+            // tie: random between the tied ones
+            var winner = args.Winner ?? (args.Winners.Length > 0 ? _random.Pick(args.Winners) : null);
+            if (winner is not string id)
+                return;
+
+            _votedPlanet = id;
+
+            var name = planets.First(p => p.Proto.ID == id).Proto.Name;
+            var msg = Loc.GetString("rmc-distress-signal-next-map-win", ("winner", name));
+            _chat.ChatMessageToAll(ChatChannel.Server, msg, msg, EntityUid.Invalid, hideChat: false, recordReplay: true);
+        };
     }
 
     #region Round flow
@@ -127,11 +210,13 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
-        if (_savedPreflight is not { } saved)
-            return;
+        if (_savedPreflight is { } saved)
+        {
+            _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, saved);
+            _savedPreflight = null;
+        }
 
-        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, saved);
-        _savedPreflight = null;
+        StartPlanetVote();
     }
 
     private void OnDropshipLanded(ref DropshipLandedOnPlanetEvent ev)
