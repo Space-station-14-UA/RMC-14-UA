@@ -91,5 +91,11 @@ public sealed partial class ContactExtractionComponent : Component
     [ViewVariables]
     public (ContactExtractionState, int, int, TimeSpan?) LastSent;
 
+    /// <summary>
+    /// Wave count when extraction was last offered, so the skipped offer isn't offered again.
+    /// </summary>
+    [ViewVariables]
+    public int OfferedAtWave;
+
     #endregion
 }

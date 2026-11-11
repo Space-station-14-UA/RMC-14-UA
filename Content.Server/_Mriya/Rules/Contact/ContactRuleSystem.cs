@@ -273,8 +273,20 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
     private void StartWave(EntityUid uid, ContactRuleComponent comp, TimeSpan time)
     {
+        // Extraction offered between waves: no next wave until it's taken or skipped.
+        if (TryComp(uid, out ContactExtractionComponent? offer) &&
+            offer.State is ContactExtractionState.Available or ContactExtractionState.Countdown)
+        {
+            return;
+        }
+
         // evacuation: waves keep coming (faster) but don't count, so exfil at wave 10 stays wave 10
         var counting = !IsEvacuating(uid, out _);
+
+        // wave 10 is over and 11 is due: offer extraction instead
+        if (counting && TryOfferExtraction(uid, comp, time))
+            return;
+
         if (counting)
             comp.Wave++;
 
@@ -284,8 +296,6 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         {
             Log.Error($"Contact: no waves prototype {comp.Waves}");
             SendHud(comp);
-            if (counting)
-                TryOfferExtraction(uid, comp, time);
             return;
         }
 
@@ -336,8 +346,6 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             AnnounceScreen(comp, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
 
         SendHud(comp);
-        if (counting)
-            TryOfferExtraction(uid, comp, time);
     }
 
     private static ContactWaveBuffEntry? GetBuff(ContactWavesPrototype waves, int wave)

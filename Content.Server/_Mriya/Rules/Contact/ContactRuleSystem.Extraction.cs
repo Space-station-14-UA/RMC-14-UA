@@ -17,17 +17,24 @@ public sealed partial class ContactRuleSystem
     private readonly List<MapCoordinates> _colony = new();
 
     /// <summary>
-    /// Called from StartWave after the wave counter went up.
+    /// Called from StartWave when the next wave is due: after every EveryWaves waves
+    /// (or the final wave), offer extraction instead of starting the next wave.
     /// </summary>
-    private void TryOfferExtraction(EntityUid uid, ContactRuleComponent rule, TimeSpan now)
+    private bool TryOfferExtraction(EntityUid uid, ContactRuleComponent rule, TimeSpan now)
     {
-        if (!TryComp(uid, out ContactExtractionComponent? ex) || ex.State != ContactExtractionState.None)
-            return;
+        if (!TryComp(uid, out ContactExtractionComponent? ex) ||
+            ex.State != ContactExtractionState.None ||
+            rule.Wave == 0 ||
+            ex.OfferedAtWave == rule.Wave)
+        {
+            return false;
+        }
 
         var forced = rule.FinalWave > 0 && rule.Wave >= rule.FinalWave;
         if (!forced && (ex.EveryWaves <= 0 || rule.Wave % ex.EveryWaves != 0))
-            return;
+            return false;
 
+        ex.OfferedAtWave = rule.Wave;
         ex.Forced = forced;
         ex.State = ContactExtractionState.Available;
         ex.WindowEndsAt = now + ex.BreakTime;
@@ -45,6 +52,7 @@ public sealed partial class ContactRuleSystem
 
         SendHud(rule);
         SendExtractionHud(ex);
+        return true;
     }
 
     /// <summary>
