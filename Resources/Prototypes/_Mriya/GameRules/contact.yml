@@ -113,14 +113,6 @@
     damage: 1.75
 
 - type: entity
-  parent: BaseGameRule
-  id: MRRotRuleContact
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: MRRotRule
-    rotTime: 60
-
-- type: entity
   id: MRContactPathBlocker
   categories: [ HideSpawnMenu ]
   name: path blocker
