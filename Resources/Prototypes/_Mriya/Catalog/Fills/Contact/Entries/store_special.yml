@@ -120,12 +120,6 @@
   name: mriya-contact-store-monitoring
 
 - type: contactStoreEntry
-  id: MRContactStorePowerCellCrap
-  proto: RMCPowerCellCrap
-  category: MRContactStoreSpecial
-  price: 45
-
-- type: contactStoreEntry
   id: MRContactPamphletAdminWeaponsSpecialistDemolitionist
   proto: RMCPamphletAdminWeaponsSpecialistDemolitionist
   category: MRContactStoreSpecial
