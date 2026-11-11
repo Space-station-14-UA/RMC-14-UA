@@ -20,8 +20,25 @@
         layer:
         - MobMask
   - type: Sprite
-    sprite: Structures/Machines/computers.rsi
-    state: computer
+    sprite: _RMC14/Structures/Machines/computer.rsi
+    layers:
+    - state: retro2b
+      map: [ "enum.ContactReinforcementTerminalVisuals.State" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContactReinforcementTerminalVisuals.State:
+        enum.ContactReinforcementTerminalVisuals.State:
+          Blocked: { state: retro2b }
+          Active: { state: retro2 }
+          Evacuation: { state: retro0 }
+    state: retro2b
   - type: Clickable
   - type: InteractionOutline
   - type: ContactReinforcementTerminal
+  - type: MarineMapTracked
+  - type: TacticalMapTracked
+  - type: TacticalMapIcon
+    icon:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: supply

@@ -43,3 +43,22 @@ public sealed class ContactShuttleHudEvent(
     /// </summary>
     public readonly int Needed = needed;
 }
+
+[Serializable, NetSerializable]
+public enum ContactReinforcementTerminalVisuals : byte
+{
+    State,
+}
+
+[Serializable, NetSerializable]
+public enum ContactReinforcementTerminalState : byte
+{
+    /// <summary>Shuttle busy / refueling / nobody aboard.</summary>
+    Blocked,
+
+    /// <summary>Refueled with marines aboard: a call will launch it.</summary>
+    Active,
+
+    /// <summary>Reserved for the evacuation.</summary>
+    Evacuation,
+}

@@ -34,6 +34,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
     [Dependency] private readonly ContactRuleSystem _rule = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     private enum DropshipWhere : byte
     {
@@ -45,6 +46,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ContactReinforcementTerminalComponent, ActivateInWorldEvent>(OnTerminalActivate);
+        SubscribeLocalEvent<ContactReinforcementTerminalComponent, MapInitEvent>(OnTerminalMapInit);
     }
 
     private ContactShuttleComponent? GetActive()
@@ -199,12 +201,6 @@ public sealed class ContactShuttleSystem : EntitySystem
 
     #region Evacuation
 
-    public void ReserveForExtraction()
-    {
-        if (GetActive() is { } comp)
-            comp.Extraction = true;
-    }
-
     /// <summary>
     /// Sends the shuttle to the evacuation LZ. Only works once it's refueled (Ready).
     /// </summary>
@@ -263,6 +259,15 @@ public sealed class ContactShuttleSystem : EntitySystem
     public int CountExtracted()
     {
         return GetActive() is { } comp && TryGetDropship(comp, out var dropship) ? CountAboard(dropship) : 0;
+    }
+
+    public void ReserveForExtraction()
+    {
+        if (GetActive() is not { } comp)
+            return;
+
+        comp.Extraction = true;
+        UpdateTerminals(comp);
     }
 
     #endregion
@@ -332,6 +337,40 @@ public sealed class ContactShuttleSystem : EntitySystem
     #endregion
 
     #region Reinforcement terminal
+
+    private void SetState(ContactShuttleComponent comp, ContactShuttleState state, TimeSpan? endsAt)
+    {
+        comp.State = state;
+        comp.StateEndsAt = endsAt;
+        SendHud(comp);
+        UpdateTerminals(comp);
+    }
+
+    private void OnTerminalMapInit(Entity<ContactReinforcementTerminalComponent> ent, ref MapInitEvent args)
+    {
+        var state = GetActive() is { } comp ? GetTerminalState(comp) : ContactReinforcementTerminalState.Blocked;
+        _appearance.SetData(ent, ContactReinforcementTerminalVisuals.State, state);
+    }
+
+    private ContactReinforcementTerminalState GetTerminalState(ContactShuttleComponent comp)
+    {
+        if (comp.Extraction)
+            return ContactReinforcementTerminalState.Evacuation;
+
+        return comp.State == ContactShuttleState.Ready && comp.LastAboard > 0
+            ? ContactReinforcementTerminalState.Active
+            : ContactReinforcementTerminalState.Blocked;
+    }
+
+    private void UpdateTerminals(ContactShuttleComponent comp)
+    {
+        var state = GetTerminalState(comp);
+        var query = EntityQueryEnumerator<ContactReinforcementTerminalComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            _appearance.SetData(uid, ContactReinforcementTerminalVisuals.State, state);
+        }
+    }
 
     private void OnTerminalActivate(Entity<ContactReinforcementTerminalComponent> ent, ref ActivateInWorldEvent args)
     {
@@ -612,13 +651,7 @@ public sealed class ContactShuttleSystem : EntitySystem
         comp.LastAboard = aboard;
         comp.LastNeeded = needed;
         SendHud(comp);
-    }
-
-    private void SetState(ContactShuttleComponent comp, ContactShuttleState state, TimeSpan? endsAt)
-    {
-        comp.State = state;
-        comp.StateEndsAt = endsAt;
-        SendHud(comp);
+        UpdateTerminals(comp);
     }
 
     private ContactShuttleHudEvent MakeHud(ContactShuttleComponent comp)

@@ -76,10 +76,9 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         base.Initialize();
 
         SubscribeLocalEvent<DropshipLandedOnPlanetEvent>(OnDropshipLanded);
-        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<ContactWaveMobComponent, GetMeleeDamageEvent>(OnWaveMobMeleeDamage);
-                SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup, after: [typeof(CMDistressSignalRuleSystem)]);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup, after: [typeof(CMDistressSignalRuleSystem)]);
     }
 
     private Entity<ContactRuleComponent>? GetActiveRule()
@@ -146,7 +145,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         if (!_config.GetCVar(RMCCVars.RMCPlanetMapVote))
             return;
 
-        if (GameTicker.Preset is not { } preset || !preset.Rules.Any(r => r.Id == RuleProto.Id))
+        if (GameTicker.Preset is not { } preset || !preset.Rules.Contains(RuleProto.Id))
             return;
 
         if (!_prototypes.TryIndex(RuleProto, out var ruleProto) ||

@@ -19,12 +19,11 @@
         layer:
         - MobMask
   - type: Sprite
-    sprite: _RMC14/Structures/Machines/sensor_tower.rsi
+    sprite: _RMC14/Structures/objects.rsi
     layers:
-    - state: sensor_off
+    - state: shieldoffbr
       map: [ "base" ]
-    state: sensor_off
-    offset: 0.5,2
+    state: shieldoffbr
   - type: Clickable
   - type: InteractionOutline
   - type: Appearance
@@ -32,12 +31,12 @@
     visuals:
       enum.SensorTowerLayers.Layer:
         base:
-          Off: { state: sensor_off }
-          On: { state: sensor_ }
+          Off: { state: shieldoffbr }
+          On: { state: shieldonbr }
   - type: ContactTerminal
   - type: MarineMapTracked
   - type: TacticalMapTracked
   - type: TacticalMapIcon
     icon:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
-      state: sensor_tower # TODO Mriya: own blip
+      state: aegisob
