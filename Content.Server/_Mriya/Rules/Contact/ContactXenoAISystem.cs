@@ -27,6 +27,15 @@ using Content.Shared.Power.EntitySystems;
 using Content.Server.Destructible;
 using Content.Server.Destructible.Thresholds.Triggers;
 using Content.Shared.Item;
+using System.Numerics;
+using Content.Server.NPC.Components;
+using Content.Shared.Lock;
+using Content.Shared.Storage.Components;
+using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Tools.Systems;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Collision.Shapes;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -51,6 +60,9 @@ public sealed class ContactXenoAISystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly NPCSteeringSystem _steering = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
+    [Dependency] private readonly WeldableSystem _weldable = default!;
 
     public const string NoiseActiveKey = "MRContactNoiseActive";
     public const string HuntActiveKey = "MRContactHuntActive";
@@ -132,6 +144,8 @@ public sealed class ContactXenoAISystem : EntitySystem
                 // wind-ups start from a hold: keep standing until it's done, or the move cancels it
                 if (htn.Blackboard.TryGetValue<float>(HoldKey, out _, EntityManager))
                     htn.Blackboard.SetValue(HoldKey, 1f);
+                else
+                    CountPryAttempt(uid, ai, htn, _transform.GetMapCoordinates(uid, xform), now);
 
                 continue;
             }
@@ -394,6 +408,9 @@ public sealed class ContactXenoAISystem : EntitySystem
 
     #region Smash
 
+    /// <summary>How far ahead (past the xeno's own edge) something counts as blocking it.</summary>
+    private const float BlockerRange = 1.5f;
+
     private void UpdateSmash(
         EntityUid uid,
         ContactXenoAIComponent ai,
@@ -404,11 +421,11 @@ public sealed class ContactXenoAISystem : EntitySystem
     {
         var blackboard = htn.Blackboard;
 
-        // gave up on a door earlier: prying back on
+        // gave up on a pod lock earlier: prying / smashing back on
         if (ai.NoPryUntil is { } noPry && now >= noPry)
         {
             ai.NoPryUntil = null;
-            SetDoorNav(blackboard, true);;
+            SetDoorNav(blackboard, true);
         }
 
         // already smashing something
@@ -435,13 +452,31 @@ public sealed class ContactXenoAISystem : EntitySystem
             ai.LastDestination = dest;
         }
 
-        // powered pod locks / shutters can't be pried: path around them
-        if (ai.NoPryUntil == null && HasClosedDoorAhead(uid, pos, dest, unpryableOnly: true))
+        // what it would actually run into next along its path
+        var blocker = FindBlocker(uid, ai, pos, dest);
+
+        // a different door ahead (or the old one opened): start counting from zero
+        if (blocker != ai.PryDoor)
         {
-            ai.NoPryUntil = now + ai.NoPryTime;
-            SetDoorNav(blackboard, false);
-            _steering.Unregister(uid);
-            return;
+            ai.PryDoor = null;
+            ai.PryAttempts = 0;
+        }
+
+        if (blocker is { } ahead)
+        {
+            // crates: open and walk through instead of clawing them apart
+            if (TryOpenCrate(ahead))
+            {
+                ResetProgress(ai);
+                return;
+            }
+
+            // powered pod locks / shutters can't be pried: path around them
+            if (ai.NoPryUntil == null && IsPoweredPodLock(ahead))
+            {
+                GiveUpOnDoor(uid, ai, blackboard, now);
+                return;
+            }
         }
 
         var dist = (dest.Position - pos.Position).Length();
@@ -455,6 +490,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         {
             ai.BestDistance = dist;
             ai.NoProgress = TimeSpan.Zero;
+            ai.DoorStuck = TimeSpan.Zero;
             return;
         }
 
@@ -464,11 +500,20 @@ public sealed class ContactXenoAISystem : EntitySystem
 
         ResetProgress(ai);
 
-        // a closed door ahead: steering pries it, don't smash windows / frames around it instead
-        if (HasClosedDoorAhead(uid, pos, dest))
-            return;
+        // closed door and no pry running: steering's pries are being refused (that's the sound spam)
+        if (blocker is { } door && HasComp<DoorComponent>(door))
+        {
+            ai.DoorStuck += ai.StuckTime;
+            if (ai.NoPryUntil == null && ai.DoorStuck >= ai.DoorGiveUp)
+                GiveUpOnDoor(uid, ai, blackboard, now);
 
-        if (FindObstacle(uid, ai, pos, dest) is not { } obstacle)
+            return;
+        }
+
+        ai.DoorStuck = TimeSpan.Zero;
+
+        // anything else only if it's on the smash list
+        if (blocker is not { } obstacle || !CanSmash(ai, obstacle))
             return;
 
         ai.SmashTarget = obstacle;
@@ -482,78 +527,134 @@ public sealed class ContactXenoAISystem : EntitySystem
     }
 
     /// <summary>
-    /// Nearest whitelisted thing that actually blocks movement (hard collision), near the xeno, toward the destination.
-    /// Wall mounts (intercoms, screens, posters) and open doors don't collide, so they're never picked. Doors are pried, not smashed.
+    /// Nearest thing the xeno would run into: rays from its centre and both sides (its own radius)
+    /// toward the next path node, or the destination without a path. Only things it can deal with count
+    /// (crates, doors, smash list); walls stop a ray, mobs and non-hard things (fire) are ignored.
+    /// Following the path means barricades it walks past aren't hit, but an edge it's pressed against is.
     /// </summary>
-    private EntityUid? FindObstacle(EntityUid uid, ContactXenoAIComponent ai, MapCoordinates pos, MapCoordinates dest)
+    private EntityUid? FindBlocker(EntityUid uid, ContactXenoAIComponent ai, MapCoordinates pos, MapCoordinates dest)
     {
-        var toDest = (dest.Position - pos.Position).Normalized();
+        if (!TryComp(uid, out PhysicsComponent? body))
+            return null;
 
-        _obstacles.Clear();
-        _lookup.GetEntitiesInRange(uid, SmashSearchRange, _obstacles, LookupFlags.Static);
+        var target = GetNextWaypoint(uid, pos) ?? dest.Position;
+        var delta = target - pos.Position;
+        var len = delta.Length();
+        if (len < 0.01f)
+            return null;
+
+        var dir = delta / len;
+        var radius = GetRadius(uid);
+        var side = new Vector2(-dir.Y, dir.X) * radius * 0.9f;
+        var length = Math.Min(len, BlockerRange) + radius;
 
         EntityUid? best = null;
         var bestDist = float.MaxValue;
-        foreach (var ent in _obstacles)
+        for (var i = -1; i <= 1; i++)
         {
-            if (ent == uid ||
-                HasComp<DoorComponent>(ent) ||
-                !TryComp(ent, out PhysicsComponent? body) || !body.CanCollide || !body.Hard ||
-                !HasComp<DamageableComponent>(ent) ||
-                !_whitelist.IsWhitelistPass(ai.SmashWhitelist, ent))
+            var ray = new CollisionRay(pos.Position + side * i, dir, body.CollisionMask);
+            EntityUid? rayBest = null;
+            var rayBestDist = float.MaxValue;
+            var wallDist = float.MaxValue;
+
+            foreach (var hit in _physics.IntersectRay(pos.MapId, ray, length, uid, returnOnFirstHit: false))
             {
-                continue;
+                var ent = hit.HitEntity;
+                if (!TryComp(ent, out PhysicsComponent? hitBody) || !hitBody.Hard || HasComp<MobStateComponent>(ent))
+                    continue;
+
+                if (!IsActionable(ai, ent))
+                {
+                    wallDist = Math.Min(wallDist, hit.Distance);
+                    continue;
+                }
+
+                if (hit.Distance < rayBestDist)
+                {
+                    rayBest = ent;
+                    rayBestDist = hit.Distance;
+                }
             }
 
-            var offset = _transform.GetMapCoordinates(ent).Position - pos.Position;
-            var dist = offset.Length();
-
-            // must be roughly between us and where we're going
-            if (dist > 0.01f && Vector2Dot(offset / dist, toDest) < 0.2f)
-                continue;
-
-            if (dist < bestDist)
+            // something it can't deal with (a wall) is in front of it on this ray
+            if (rayBest != null && rayBestDist < wallDist && rayBestDist < bestDist)
             {
-                best = ent;
-                bestDist = dist;
+                best = rayBest;
+                bestDist = rayBestDist;
             }
         }
 
         return best;
     }
 
-    private bool HasClosedDoorAhead(EntityUid uid, MapCoordinates pos, MapCoordinates dest, bool unpryableOnly = false)
+    /// <summary>
+    /// First node of the current path that isn't right under the xeno.
+    /// </summary>
+    private Vector2? GetNextWaypoint(EntityUid uid, MapCoordinates pos)
     {
-        var toDest = (dest.Position - pos.Position).Normalized();
+        if (!TryComp(uid, out NPCSteeringComponent? steering))
+            return null;
 
-        _obstacles.Clear();
-        _lookup.GetEntitiesInRange(uid, unpryableOnly ? 1.5f : SmashSearchRange, _obstacles, LookupFlags.Static);
-
-        EntityUid? nearest = null;
-        var nearestDist = float.MaxValue;
-        foreach (var ent in _obstacles)
+        foreach (var poly in steering.CurrentPath)
         {
-            if (!TryComp(ent, out DoorComponent? door) || door.State is DoorState.Open or DoorState.Opening)
-                continue;
+            var p = _transform.ToMapCoordinates(poly.Coordinates);
+            if (p.MapId == pos.MapId && (p.Position - pos.Position).Length() > 0.6f)
+                return p.Position;
+        }
 
-            var offset = _transform.GetMapCoordinates(ent).Position - pos.Position;
-            var dist = offset.Length();
-            if (dist > 0.01f && Vector2Dot(offset / dist, toDest) < 0.2f)
-                continue;
+        return null;
+    }
 
-            if (dist < nearestDist)
+    /// <summary>
+    /// Body radius from the xeno's hard circle fixtures (bigger castes check a wider path).
+    /// </summary>
+    private float GetRadius(EntityUid uid)
+    {
+        var radius = 0f;
+        if (TryComp(uid, out FixturesComponent? fixtures))
+        {
+            foreach (var fixture in fixtures.Fixtures.Values)
             {
-                nearest = ent;
-                nearestDist = dist;
+                if (fixture.Hard && fixture.Shape is PhysShapeCircle circle)
+                    radius = Math.Max(radius, circle.Radius);
             }
         }
 
-        if (nearest is not { } found)
+        return radius > 0f ? radius : 0.35f;
+    }
+
+    private bool IsActionable(ContactXenoAIComponent ai, EntityUid ent)
+    {
+        return HasComp<EntityStorageComponent>(ent) || HasComp<DoorComponent>(ent) || CanSmash(ai, ent);
+    }
+
+    private bool CanSmash(ContactXenoAIComponent ai, EntityUid ent)
+    {
+        return HasComp<DamageableComponent>(ent) && _whitelist.IsWhitelistPass(ai.SmashWhitelist, ent);
+    }
+
+    /// <summary>
+    /// Closed, not welded, not locked crate: open it (RMC blocks xeno interaction with crates, so do it directly).
+    /// Open crates don't collide, so the xeno walks through.
+    /// </summary>
+    private bool TryOpenCrate(EntityUid ent)
+    {
+        if (!TryComp(ent, out EntityStorageComponent? storage) || storage.Open)
             return false;
 
-        // pod lock check: only if the door it's actually walking into is a powered pod lock / shutter,
-        // not a normal door that happens to be next to one
-        return !unpryableOnly || HasComp<RMCPodDoorComponent>(found) && _power.IsPowered(found);
+        if (_weldable.IsWelded(ent) || TryComp(ent, out LockComponent? lockComp) && lockComp.Locked)
+            return false;
+
+        _entityStorage.OpenStorage(ent, storage);
+        return true;
+    }
+
+    private bool IsPoweredPodLock(EntityUid ent)
+    {
+        return TryComp(ent, out DoorComponent? door) &&
+            door.State is not (DoorState.Open or DoorState.Opening) &&
+            HasComp<RMCPodDoorComponent>(ent) &&
+            _power.IsPowered(ent);
     }
 
     private static void ResetProgress(ContactXenoAIComponent ai)
@@ -578,9 +679,67 @@ public sealed class ContactXenoAISystem : EntitySystem
         blackboard.SetValue(NPCBlackboard.NavSmash, enabled);
     }
 
-    private static float Vector2Dot(System.Numerics.Vector2 a, System.Numerics.Vector2 b)
+    /// <summary>
+    /// Counts each new pry do-after on the same door; too many without it opening = give up on it.
+    /// </summary>
+    private void CountPryAttempt(EntityUid uid, ContactXenoAIComponent ai, HTNComponent htn, MapCoordinates pos, TimeSpan now)
     {
-        return System.Numerics.Vector2.Dot(a, b);
+        if (ai.NoPryUntil != null ||
+            ai.LastDestination is not { } dest ||
+            !TryGetDoAfterStart(uid, out var start) ||
+            start <= ai.LastPryStart)
+        {
+            return;
+        }
+
+        ai.LastPryStart = start;
+        if (FindBlocker(uid, ai, pos, dest) is not { } door || !HasComp<DoorComponent>(door))
+            return;
+
+        if (ai.PryDoor != door)
+        {
+            ai.PryDoor = door;
+            ai.PryAttempts = 0;
+        }
+
+        ai.PryAttempts++;
+        if (ai.PryAttempts > ai.MaxPryAttempts)
+            GiveUpOnDoor(uid, ai, htn.Blackboard, now);
+    }
+
+    private bool TryGetDoAfterStart(EntityUid uid, out TimeSpan start)
+    {
+        start = default;
+        if (!TryComp(uid, out DoAfterComponent? comp))
+            return false;
+
+        var found = false;
+        foreach (var doAfter in comp.DoAfters.Values)
+        {
+            if (doAfter.Cancelled || doAfter.Completed)
+                continue;
+
+            if (!found || doAfter.StartTime > start)
+            {
+                start = doAfter.StartTime;
+                found = true;
+            }
+        }
+
+        return found;
+    }
+
+    /// <summary>
+    /// Stop prying (and smashing doors) for NoPryTime so the pathfinder routes around this door.
+    /// </summary>
+    private void GiveUpOnDoor(EntityUid uid, ContactXenoAIComponent ai, NPCBlackboard blackboard, TimeSpan now)
+    {
+        ai.NoPryUntil = now + ai.NoPryTime;
+        ai.PryDoor = null;
+        ai.PryAttempts = 0;
+        ai.DoorStuck = TimeSpan.Zero;
+        SetDoorNav(blackboard, false);
+        _steering.Unregister(uid);
     }
 
     #endregion

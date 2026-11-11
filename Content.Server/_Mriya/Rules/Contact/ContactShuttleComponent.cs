@@ -34,7 +34,7 @@ public sealed partial class ContactShuttleComponent : Component
     /// Time on the colony before flying back.
     /// </summary>
     [DataField]
-    public TimeSpan UnloadTime = TimeSpan.FromSeconds(30);
+    public TimeSpan UnloadTime = TimeSpan.FromSeconds(90);
 
     [DataField]
     public TimeSpan RefuelTime = TimeSpan.FromSeconds(150);

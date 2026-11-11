@@ -18,10 +18,10 @@ public sealed partial class ContactExtractionComponent : Component
     /// Pause before the next wave while extraction is offered.
     /// </summary>
     [DataField]
-    public TimeSpan BreakTime = TimeSpan.FromSeconds(45);
+    public TimeSpan BreakTime = TimeSpan.FromSeconds(75);
 
     [DataField]
-    public float ZoneRadius = 10f;
+    public float ZoneRadius = 20f;
 
     [DataField]
     public TimeSpan StartCountdown = TimeSpan.FromSeconds(10);
@@ -30,7 +30,7 @@ public sealed partial class ContactExtractionComponent : Component
     /// Defend the LZ this long before the shuttle is called.
     /// </summary>
     [DataField]
-    public TimeSpan HoldTime = TimeSpan.FromSeconds(150);
+    public TimeSpan HoldTime = TimeSpan.FromSeconds(60);
 
     /// <summary>
     /// Wave interval from the start of the hold until the end of the round.
@@ -42,7 +42,7 @@ public sealed partial class ContactExtractionComponent : Component
     /// Time on the LZ before the shuttle takes off.
     /// </summary>
     [DataField]
-    public TimeSpan BoardTime = TimeSpan.FromSeconds(30);
+    public TimeSpan BoardTime = TimeSpan.FromSeconds(90);
 
     [DataField]
     public TimeSpan CheckEvery = TimeSpan.FromSeconds(1);
