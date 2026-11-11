@@ -1,0 +1,11 @@
+<widgets:MRMonitoringTabButton xmlns="https://spacestation14.io"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:widgets="clr-namespace:Content.Client._Mriya.Monitoring">
+    <PanelContainer Name="Background" HorizontalExpand="True">
+        <Label Name="TabLabel"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Margin="8 6"
+               FontColorOverride="#2E9E57"/>
+    </PanelContainer>
+</widgets:MRMonitoringTabButton>

@@ -119,6 +119,8 @@
       - id: RMCDefibrillatorCompact
         points: 10
         recommended: true
+      - id: MRMonitoringDevice
+        points: 8
       # Mriya end
     - name: Вибухівка
       entries:
