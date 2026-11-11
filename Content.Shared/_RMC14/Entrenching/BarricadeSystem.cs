@@ -1,3 +1,4 @@
+using Content.Shared._Mriya.RoundEnd; // Mriya. Для нагород раунду
 using Content.Shared._RMC14.Barricade.Components;
 using Content.Shared._RMC14.Construction;
 using Content.Shared._RMC14.Emplacements;
@@ -273,6 +274,14 @@ public sealed class BarricadeSystem : EntitySystem
         _transform.SetLocalRotation(built, args.Direction.ToAngle());
 
         args.Handled = true;
+
+        // Mriya start. Підрахунок збудованих барикад для нагород
+        if (HasComp<BarricadeComponent>(built))
+        {
+            var builtEv = new PlayerBuiltBarricadeEvent(args.User);
+            RaiseLocalEvent(args.User, builtEv);
+        }
+        // Mriya end
     }
 
     private void OnAnchorAttempt(Entity<BarricadeComponent> ent, ref AnchorAttemptEvent args)
