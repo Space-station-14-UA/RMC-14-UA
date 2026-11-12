@@ -87,6 +87,13 @@
   quick: true
 
 - type: contactStoreEntry
+  id: MRContactStoreReagentJugGC
+  proto: MRReagentJugGC
+  category: MRContactStoreMedicine
+  price: 20
+  quick: true
+
+- type: contactStoreEntry
   id: MRContactStoreDefibrillator
   proto: CMDefibrillator
   category: MRContactStoreMedicine
