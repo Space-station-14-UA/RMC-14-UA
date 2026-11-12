@@ -18,7 +18,7 @@ public sealed partial class ContactExtractionComponent : Component
     /// Pause before the next wave while extraction is offered.
     /// </summary>
     [DataField]
-    public TimeSpan BreakTime = TimeSpan.FromSeconds(75);
+    public TimeSpan BreakTime = TimeSpan.FromSeconds(115);
 
     [DataField]
     public float ZoneRadius = 20f;
