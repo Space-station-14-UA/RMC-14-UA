@@ -29,6 +29,10 @@ using Content.Server.Chat.Managers;
 using Content.Server.Voting;
 using Content.Server.Voting.Managers;
 using Content.Shared.Chat;
+using Content.Shared._RMC14.Gibbing;
+using Content.Shared._RMC14.Xenonids;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -59,6 +63,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly IVoteManager _votes = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
 
     private static readonly EntProtoId RuleProto = "MRContactRule";
 
@@ -248,6 +253,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         // frozen (FieldEndsAt null) during an extraction offer / evacuation
         if (!comp.FieldUnavailable && time >= comp.FieldEndsAt)
         {
+            GibPlanet(comp);
             EndContact(comp, ContactResult.FieldCollapsed);
             return;
         }
@@ -315,6 +321,35 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Field collapse: everyone with a body on the colony (alive or dead, xenos aside) is gibbed with CollapseGibEffect.
+    /// </summary>
+    private void GibPlanet(ContactRuleComponent comp)
+    {
+        var victims = new List<EntityUid>();
+        var query = EntityQueryEnumerator<MobStateComponent, BodyComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out _, out var xform))
+        {
+            if (HasComp<XenoComponent>(uid) || !_rmcPlanet.IsOnPlanet(xform.Coordinates))
+                continue;
+
+            victims.Add(uid);
+        }
+
+        foreach (var uid in victims)
+        {
+            if (TerminatingOrDeleted(uid))
+                continue;
+
+            // RMCGibSystem spawns these on BeingGibbedEvent
+            var effects = EnsureComp<RMCSpawnEntitiesOnGibComponent>(uid);
+            if (!effects.Entities.Contains(comp.CollapseGibEffect))
+                effects.Entities.Add(comp.CollapseGibEffect);
+
+            _body.GibBody(uid);
+        }
     }
 
     #endregion

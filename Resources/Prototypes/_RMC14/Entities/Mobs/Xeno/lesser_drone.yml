@@ -98,6 +98,8 @@
       - XenoParasite
       - XenoEgg
       - XenoFruit
+      tags:
+      - Steamhappy # mriya
   - type: TunnelRenamer
   - type: MultiHandedHolder
     items:

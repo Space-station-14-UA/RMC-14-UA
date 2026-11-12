@@ -26,6 +26,12 @@ public sealed partial class ContactRuleComponent : Component
     [DataField]
     public List<EntProtoId> Planets = new();
 
+    /// <summary>
+    /// Field collapse: everyone with a body on the planet is gibbed with this effect.
+    /// </summary>
+    [DataField]
+    public EntProtoId CollapseGibEffect = "MRGibEffectHuman";
+
     #endregion
 
     #region Waves

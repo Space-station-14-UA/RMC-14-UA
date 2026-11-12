@@ -1,0 +1,9 @@
+
+- type: entity
+  parent: RMCBaseGibEffect
+  id: MRGibEffectHuman
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mriya/Effects/human_gib.rsi
+    state: gibbed-h
