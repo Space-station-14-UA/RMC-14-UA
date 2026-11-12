@@ -54,6 +54,7 @@
       - id: CMMRE
       - id: RMCBinoculars
       - id: RMCMotionDetectorCompact
+      - id: MRMonitoringDevice # Mriya. Моніторинг
       - id: CMBootsBlackFilled
     - name: Окуляри
       choices: { CMEyewear: 1 }

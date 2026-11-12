@@ -131,6 +131,10 @@
     #   points: 16
     - name: Медичне Обладнання
       entries:
+      # Mriya start. Моніторинг.
+      - id: MRMonitoringDevice
+        points: 8
+      # Mriya end
       - id: CMBurnKit10
         points: 2
       - id: CMTraumaKit10

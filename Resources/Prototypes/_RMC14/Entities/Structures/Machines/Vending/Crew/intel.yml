@@ -83,6 +83,10 @@
         points: 5
       - id: RMCFulton20
         points: 10
+      # Mriya start. Моніторинг.
+      - id: MRMonitoringDevice
+        points: 8
+      # Mriya end
       - id: RMCMotionDetector
         points: 15
         recommended: true
