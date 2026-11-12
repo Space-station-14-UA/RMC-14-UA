@@ -22,6 +22,7 @@
     state: savannah
   - type: Area
     powerNet: savannah
+    retrieveItemObjective: true # В теорії повинно бути лише у інтелів, але яка різниця та треба для повернення жетонів та тварин без тягання їх в інтел
 
 # ТЕХ. ПРИМІЩЕННЯ
 
@@ -244,9 +245,6 @@
   parent: MMCAreaSavannahCommand
   id: MMCAreaSavannahIO
   name: Офіс Розвідки
-  components:
-  - type: Area
-    retrieveItemObjective: true
 
 - type: entity
   parent: MMCAreaSavannahCommand
@@ -292,15 +290,12 @@
 - type: entity
   parent: MMCAreaSavannahMedical
   id: MMCAreaSavannahMedicalPreparation
-  name: Медичні Казарми
+  name: Ординаторська
 
 - type: entity
   parent: MMCAreaSavannahMedical
   id: MMCAreaSavannahMedicalResearch
   name: Лабораторія
-  components:
-  - type: Area
-    retrieveItemObjective: true
 
 - type: entity
   parent: MMCAreaSavannahMedicalResearch

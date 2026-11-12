@@ -1,0 +1,514 @@
+# pricing
+#
+# AP/EXT = 6
+# HEAP = 10
+# other = 8
+#
+# Pistols price /2
+#
+# Shotguns unique
+
+- type: contactStoreEntry
+  id: MRContactStoreBreaching
+  proto: RMCShellShotgunBreaching
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreBuckshot8g
+  proto: CMShellShotgunBuckshot
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreHeavyBuckshot
+  proto: RMCShellShotgunHeavyBuckshot
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreBuckshot
+  proto: CMShellShotgunBuckshot
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreSlugs
+  proto: CMShellShotgunSlugs
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreHeavySlugs
+  proto: RMCShellShotgunHeavySlugs
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreFlechette
+  proto: CMShellShotgunFlechette
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreHeavyFlechette
+  proto: RMCShellShotgunHeavyFlechette
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreSlugsIncendiary
+  proto: CMShellShotgunIncendiary
+  category: MRContactStoreAmmo
+  price: 4
+
+- type: contactStoreEntry
+  id: MRContactStoreBuckshotIncendiary
+  proto: CMShellShotgunIncendiaryBuckshot
+  category: MRContactStoreAmmo
+  price: 4
+
+- type: contactStoreEntry
+  id: MRContactStoreIncendiaryHeavyBuckshot
+  proto: RMCShellShotgunIncendiaryHeavyBuckshot
+  category: MRContactStoreAmmo
+  price: 4
+
+# m4SPR
+- type: contactStoreEntry
+  id: MRContactStoreM4SPRAP
+  proto: CMMagazineRifleM4SPRAP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreM4SPRExt
+  proto: CMMagazineRifleM4SPRExt
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreM4SPRHEAP
+  proto: RMCMagazineRifleM4SPRHEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreM4SPRWP
+  proto: RMCMagazineRifleM4SPRWP
+  category: MRContactStoreAmmo
+  price: 8
+  
+- type: contactStoreEntry
+  id: MRContactStoreM1984AP
+  proto: RMCMagazinePistolM1984AP
+  category: MRContactStoreAmmo
+  price: 3
+
+# RMCWeaponRifleM54CFilled
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CAP
+  proto: CMMagazineRifleM54CAP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CExt
+  proto: CMMagazineRifleM54CExt
+  category: MRContactStoreAmmo
+  price: 6
+
+# RMCWeaponRifleL24
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL24AP
+  proto: RMCMagazineRifleL24AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL24Extended
+  proto: RMCMagazineRifleL24Extended
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL24HEAP
+  proto: RMCMagazineRifleL24HEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL24Incendiary
+  proto: RMCMagazineRifleL24Incendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+# RMCWeaponRifleL42A
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL42AAP
+  proto: RMCMagazineRifleL42AAP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL42AExtended
+  proto: RMCMagazineRifleL42AExtended
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL42AIncendiary
+  proto: RMCMagazineRifleL42AIncendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL42AWP
+  proto: RMCMagazineRifleL42AWP
+  category: MRContactStoreAmmo
+  price: 8
+
+# WeaponRifleL83A3F
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL83A3AP
+  proto: RMCMagazineRifleL83A3AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL83A3Extended
+  proto: RMCMagazineRifleL83A3Extended
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL83A3HEAP
+  proto: RMCMagazineRifleL83A3HEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL83A3Incendiary
+  proto: RMCMagazineRifleL83A3Incendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+# RMCWeaponRifleL88A1Filled
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL88AP
+  proto: RMCMagazineRifleL88AP
+  category: MRContactStoreAmmo
+  price: 6
+
+# RMCWeaponRifleL90A1Filled
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL90AP
+  proto: RMCMagazineRifleL90AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL90Drum
+  proto: RMCMagazineRifleL90Drum
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL90DrumAP
+  proto: RMCMagazineRifleL90DrumAP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL90DrumHEAP
+  proto: RMCMagazineRifleL90DrumHEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL90DrumIncendiary
+  proto: RMCMagazineRifleL90DrumIncendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL90HEAP
+  proto: RMCMagazineRifleL90HEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleL90Incendiary
+  proto: RMCMagazineRifleL90Incendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+# RMCWeaponRifleM54CE2
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CE2AP
+  proto: CMMagazineRifleM54CE2AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CE2HT
+  proto: CMMagazineRifleM54CE2HT
+  category: MRContactStoreAmmo
+  price: 8
+
+# RMCWeaponRifleM54CMK1AP
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM54CMK1AP
+  proto: CMMagazineRifleM54CMK1AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM54CMK1Incendiary
+  proto: RMCMagazineRifleM54CMK1Incendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM54CMK1WP
+  proto: RMCMagazineRifleM54CMK1WP
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM54CMK1HEAP
+  proto: RMCMagazineRifleM54CMK1HEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+# RMCWeaponRifleSSG45NoLock
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleSSG45AP
+  proto: RMCMagazineRifleSSG45AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleSSG45Extended
+  proto: RMCMagazineRifleSSG45Extended
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleSSG45HEAP
+  proto: RMCMagazineRifleSSG45HEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleSSG45Incend
+  proto: RMCMagazineRifleSSG45Incend
+  category: MRContactStoreAmmo
+  price: 8
+
+# RMCWeaponRifleType71Flamer
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleType71AP
+  proto: RMCMagazineRifleType71AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleType71HEAP
+  proto: RMCMagazineRifleType71HEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+# RMCWeaponRifleType77
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleType77AP
+  proto: RMCMagazineRifleType77AP
+  category: MRContactStoreAmmo
+  price: 6
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleType77HEAP
+  proto: RMCMagazineRifleType77HEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleType77Incendiary
+  proto: RMCMagazineRifleType77Incendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+# RMCWeaponRifleMAR30
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleMAR40Ext
+  proto: RMCMagazineRifleMAR40Ext
+  category: MRContactStoreAmmo
+  price: 6
+
+# RMCWeaponSMGM63ExtendedFilled
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineSMGM63AP
+  proto: CMMagazineSMGM63AP
+  category: MRContactStoreAmmo
+  price: 3
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineSMGM63Ext
+  proto: CMMagazineSMGM63Ext
+  category: MRContactStoreAmmo
+  price: 3
+
+# RMCWeaponSMGType64
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSMGType64
+  proto: RMCMagazineSMGType64
+  category: MRContactStoreAmmo
+  price: 4
+
+# WeaponSMGMAC15
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSMGMAC15Ext
+  proto: RMCMagazineSMGMAC15Ext
+  category: MRContactStoreAmmo
+  price: 3
+
+# RMCWeaponSMGMP27
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSMGMP27Extend
+  proto: RMCMagazineSMGMP27Extend
+  category: MRContactStoreAmmo
+  price: 3
+
+# RMCWeaponSMGType19
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSMGType19Drum
+  proto: RMCMagazineSMGType19Drum
+  category: MRContactStoreAmmo
+  price: 4
+
+# RMCWeaponSMGUZI
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSMGUZIExt
+  proto: RMCMagazineSMGUZIExt
+  category: MRContactStoreAmmo
+  price: 3
+
+# RMCWeaponSMGPDW90TSE
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSMGPDW90AP
+  proto: RMCMagazineSMGPDW90AP
+  category: MRContactStoreAmmo
+  price: 3
+
+# mk80
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazinePistolMK80
+  proto: CMMagazinePistolMK80
+  category: MRContactStoreAmmo
+  price: 3
+
+# pegergrine
+- type: contactStoreEntry
+  id: MRContactStoreMagazinePistolHandcannonHI
+  proto: RMCMagazinePistolHandcannonHI
+  category: MRContactStoreAmmo
+  price: 4
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazinePistolHandcannonHIAP
+  proto: RMCMagazinePistolHandcannonHIAP
+  category: MRContactStoreAmmo
+  price: 4
+
+# m13
+- type: contactStoreEntry
+  id: MRContactStoreMagazinePistolM13DrumAP
+  proto: RMCMagazinePistolM13DrumAP
+  category: MRContactStoreAmmo
+  price: 4
+
+# m4sprcustom
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM4SPRA19
+  proto: RMCMagazineRifleM4SPRA19
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM4SPRA19Impact
+  proto: RMCMagazineRifleM4SPRA19Impact
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleM4SPRA19Incendiary
+  proto: RMCMagazineRifleM4SPRA19Incendiary
+  category: MRContactStoreAmmo
+  price: 10
+
+# smartgun
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSmartGun
+  proto: RMCMagazineSmartGun
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSmartGunirradiated
+  proto: RMCMagazineSmartGunirradiated
+  category: MRContactStoreAmmo
+  price: 15
+
+# m42c
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96C
+  proto: CMMagazineSniperM96C
+  category: MRContactStoreAmmo
+  price: 15
+
+# m96s
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96S
+  proto: CMMagazineSniperM96S
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96SIncendiary
+  proto: CMMagazineSniperM96SIncendiary
+  category: MRContactStoreAmmo
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineSniperM96SFlak
+  proto: CMMagazineSniperM96SFlak
+  category: MRContactStoreAmmo
+  price: 15
+
+# xm42
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineXM43E1AntiMateriel
+  proto: RMCMagazineSniperXM43E1AntiMateriel
+  category: MRContactStoreAmmo
+  price: 15
+
+# m2c
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineM2C
+  proto: RMCMagazineM2C
+  category: MRContactStoreAmmo
+  price: 15
+  
+# ml66d
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineML66D
+  proto: RMCMagazineML66D
+  category: MRContactStoreAmmo
+  price: 10

@@ -1,0 +1,24 @@
+- type: entity
+  parent: [ CMXenoLurker, MRContactXenoAIBase ]
+  id: MRContactXenoLurker
+  suffix: Контакт ШІ
+  components:
+  - type: ContactXenoAI
+    abilities:
+    - action: ActionXenoPounce # retreat jump
+      maxRange: 3
+      maxHealth: 0.5
+      aim: AwayFromTarget
+      awayDistance: 6
+    - action: ActionXenoTurnInvisible
+      minRange: 3
+      maxRange: 12
+      toggled: false
+    - action: ActionXenoCripplingStrike
+      maxRange: 2
+    - action: ActionXenoTailStab
+      maxRange: 2.5
+
+# if sees enemies, will go invis and try to sneak
+# attacks with crippling strike
+# if <50% hp, retreats with jump

@@ -72,6 +72,8 @@
     icon:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: morpher
+  - type: WarpPoint # Mriya. Qol
+    location: Ксено – Яйцетворець
 
 - type: entity
   id: HiveEggMorpherXenoConstructionNode
@@ -108,7 +110,7 @@
   - type: HiveConstructionLimited
     id: HiveEggMorpherXeno
   - type: WarpPoint
-    location: egg morpher
+    location: Ксено – Яйцетворець # Mriya, бо це назва
   - type: RMCAlternateSprite
     normalSprite: _RMC14/Structures/Xenos/hive_structures.rsi
     alternateSprite: _RMC14/Structures/Xenos/hive_structures_old.rsi

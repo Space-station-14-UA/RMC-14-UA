@@ -1,0 +1,179 @@
+- type: contactStoreEntry
+  id: MRContactStoreHEPacket
+  proto: CMPacketGrenadeHighExplosiveFilled
+  category: MRContactStoreSpecial
+  price: 18
+
+- type: contactStoreEntry
+  id: MRContactStoreIncendiary
+  proto: RMCPacketGrenadeIncendiaryFilled
+  category: MRContactStoreSpecial
+  price: 18
+
+- type: contactStoreEntry
+  id: MRContactStoreFrag
+  proto: CMPacketGrenadeFragFilled
+  category: MRContactStoreSpecial
+  price: 18
+
+- type: contactStoreEntry
+  id: MRContactStoreClaymores
+  proto: RMCBoxClaymoreMineFilled
+  category: MRContactStoreSpecial
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreLauncherDisposableFolded
+  proto: RMCWeaponLauncherDisposableFolded
+  category: MRContactStoreSpecial
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreLauncherM5ATL
+  proto: RMCWeaponLauncherM5ATL
+  category: MRContactStoreSpecial
+  price: 200
+
+- type: contactStoreEntry
+  id: MRContactStoreRocket84mm
+  proto: RMCRocket84mm
+  category: MRContactStoreSpecial
+  price: 30
+
+- type: contactStoreEntry
+  id: MRContactStoreRocket84mmAP
+  proto: RMCRocket84mmAntiArmor
+  category: MRContactStoreSpecial
+  price: 30
+
+- type: contactStoreEntry
+  id: MRContactStoreRocket84mmWP
+  proto: RMCRocket84mmWhitePhosphorus
+  category: MRContactStoreSpecial
+  price: 30
+
+- type: contactStoreEntry
+  id: MRContactStoreFlamer
+  proto: RMCWeaponFlamer
+  category: MRContactStoreSpecial
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreTankFlamer
+  proto: RMCTankFlamer
+  category: MRContactStoreSpecial
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreTankFlamerBGel
+  proto: RMCTankFlamerBGel
+  category: MRContactStoreSpecial
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreTankFlamerLarge
+  proto: RMCTankFlamerLarge
+  category: MRContactStoreSpecial
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactStoreTankFlamerLargeX
+  proto: RMCTankFlamerLargeX
+  category: MRContactStoreSpecial
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactStoreTankFlamerLargeB
+  proto: RMCTankFlamerLargeB
+  category: MRContactStoreSpecial
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactStoreTankFlamerLargeEX
+  proto: RMCTankFlamerLargeEX
+  category: MRContactStoreSpecial
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactStoreFireExtinguisher
+  proto: CMFireExtinguisher
+  category: MRContactStoreSpecial
+  price: 5
+
+- type: contactStoreEntry
+  id: MRContactVisorNightVision
+  proto: RMCVisorNightVision
+  category: MRContactStoreSpecial
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactMotionDetector
+  proto: RMCMotionDetector
+  category: MRContactStoreSpecial
+  price: 15
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistDemolitionist
+  proto: RMCPamphletAdminWeaponsSpecialistDemolitionist
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistPyro
+  proto: RMCPamphletAdminWeaponsSpecialistPyro
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminSmartGun1
+  proto: RMCPamphletAdminSmartGun1
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistScout
+  proto: RMCPamphletAdminWeaponsSpecialistScout
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistSniper
+  proto: RMCPamphletAdminWeaponsSpecialistSniper
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactPamphletAdminWeaponsSpecialistGrenadier
+  proto: RMCPamphletAdminWeaponsSpecialistGrenadier
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreGlassesM42SpotterSight
+  proto: CMGlassesM42SpotterSight
+  category: MRContactStoreSpecial
+  price: 100
+
+- type: contactStoreEntry
+  id: MRContactStorePowerCellSmartgun
+  proto: RMCPowerCellSmartgun
+  category: MRContactStoreSpecial
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreSmartGun
+  proto: RMCSmartGun
+  category: MRContactStoreSpecial
+  price: 200
+
+- type: contactStoreEntry
+  id: MRContactStoreWeaponLauncherM83
+  proto: WeaponLauncherM83
+  category: MRContactStoreSpecial
+  price: 200
+
+- type: contactStoreEntry
+  id: MRContactStoreWeaponFlamerSpec
+  proto: RMCWeaponFlamerSpec
+  category: MRContactStoreSpecial
+  price: 200

@@ -1,0 +1,239 @@
+# Marine
+- type: contactStoreEntry
+  id: MRContactStoreClothingMarine
+  proto: JumpsuitMarine
+  category: MRContactStoreClothing
+  price: 2
+  maxPerPurchase: 1
+
+- type: contactStoreEntry
+  id: MRContactStoreClothingMarineEngineer
+  proto: CMJumpsuitMarineEngineer
+  category: MRContactStoreClothing
+  price: 2
+  maxPerPurchase: 1
+
+- type: contactStoreEntry
+  id: MRContactStoreClothingMarineMedic
+  proto: CMJumpsuitMarineMedic
+  category: MRContactStoreClothing
+  price: 2
+  maxPerPurchase: 1
+
+- type: contactStoreEntry
+  id: MRContactStoreClothingMarineTanker
+  proto: CMJumpsuitMarineTanker
+  category: MRContactStoreClothing
+  price: 2
+  maxPerPurchase: 1
+
+# Protective
+
+- type: contactStoreEntry
+  id: MRContactStoreClothingCBRN
+  proto: RMCCBRNSuit
+  category: MRContactStoreClothing
+  price: 15
+  maxPerPurchase: 1
+
+# Officers & command
+
+- type: contactStoreEntry
+  id: MRContactStoreClothingOperations
+  proto: CMJumpsuitOperations
+  category: MRContactStoreClothing
+  price: 3
+  maxPerPurchase: 1
+
+- type: contactStoreEntry
+  id: MRContactStoreClothingASOOperations
+  proto: RMCJumpsuitASOOperations
+  category: MRContactStoreClothing
+  price: 4
+  maxPerPurchase: 1
+
+- type: contactStoreEntry
+  id: MRContactStoreClothingIntel
+  proto: RMCUniformIntel
+  category: MRContactStoreClothing
+  price: 5
+  maxPerPurchase: 1
+
+# Helmets
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM10
+  proto: ArmorHelmetM10
+  category: MRContactStoreClothing
+  price: 3
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM10Welding
+  proto: RMCArmorHelmetM10Welding
+  category: MRContactStoreClothing
+  price: 6
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM10Tech
+  proto: CMArmorHelmetM10Tech
+  category: MRContactStoreClothing
+  price: 6
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM50
+  proto: CMArmorHelmetM50
+  category: MRContactStoreClothing
+  price: 6
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM10Medic
+  proto: CMArmorHelmetM10Medic
+  category: MRContactStoreClothing
+  price: 6
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM10MedicWhite
+  proto: RMCArmorHelmetM10MedicWhite
+  category: MRContactStoreClothing
+  price: 6
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM11
+  proto: CMArmorHelmetM11
+  category: MRContactStoreClothing
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM35
+  proto: CMArmorHelmetM35
+  category: MRContactStoreClothing
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM45
+  proto: CMArmorHelmetM45
+  category: MRContactStoreClothing
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM3Scout
+  proto: RMCArmorHelmetM3Scout
+  category: MRContactStoreClothing
+  price: 8
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM12
+  proto: CMArmorHelmetM12
+  category: MRContactStoreClothing
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM12Intel
+  proto: RMCArmorHelmetM12Intel
+  category: MRContactStoreClothing
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM30
+  proto: CMArmorHelmetM30
+  category: MRContactStoreClothing
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM3TDemo
+  proto: RMCArmorHelmetM3TDemo
+  category: MRContactStoreClothing
+  price: 10
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreHelmetM3G4
+  proto: RMCArmorHelmetM3G4
+  category: MRContactStoreClothing
+  price: 14
+  maxPerPurchase: 1
+
+# pouches
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchMagazinePistolLarge
+  proto: RMCPouchMagazinePistolLarge
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchShotgunLarge
+  proto: RMCPouchShotgunLarge
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchToolsSoc
+  proto: RMCPouchToolsSocFilledTactical
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchDrumPMC
+  proto: RMCPouchDrumPMC
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchMagazineLarge
+  proto: RMCPouchMagazineLarge
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltMarine
+  proto: CMBeltMarine
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreShotgunShellLoadingRig
+  proto: RMCM276ShotgunShellLoadingRig
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltSmartGunOperator
+  proto: CMBeltSmartGunOperator
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltGrenadeLarge
+  proto: RMCBeltGrenadeLarge
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltPistol
+  proto: RMCBeltHolsterPistol
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1

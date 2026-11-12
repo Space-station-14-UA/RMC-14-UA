@@ -42,7 +42,7 @@
   parent: CMBaseWindow
   id: RMCWindowStrata
   name: вікно
-  description: Скляне вікно всередині стінної рами.
+  description: Скляне вікно. Воно виглядає тонким і крихким. Кілька ударів чим-небудь мають розбити його вщент.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/strata_window.rsi
@@ -152,8 +152,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: RMCWindowStrataHull
-  name: hull window
-  description: A glass window. Light refracts incorrectly when looking through. It looks rather strong. No way to get through here.
+  name: корпусне вікно
+  description: Скляне вікно. Щось підказує вам, що воно незнищенне. При погляді через нього світло заломлюється дивним чином.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/strata_window.rsi

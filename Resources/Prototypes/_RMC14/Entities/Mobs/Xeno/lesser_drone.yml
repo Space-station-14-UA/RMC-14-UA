@@ -47,6 +47,7 @@
     - ActionXenoSecreteStructure
     tier: 0
     hudOffset: -0.15,-0.03
+    oldHudOffset: -0.2,-0.03 # Mriya. Старі/наші версії спрайтів
     contributesToVictory: false
     countedInSlots: false
     unlockAt: 0
@@ -142,4 +143,7 @@
     strains:
     - RMCXenoLesserCarrier
     - MRXenoLesserRunner
+  - type: MriyaOldSprite # Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/LesserDrone/lesser_drone.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/LesserDrone/lesser_drone.rsi
   # Mriya end

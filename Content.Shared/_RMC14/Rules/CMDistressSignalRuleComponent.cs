@@ -80,6 +80,9 @@ public sealed partial class CMDistressSignalRuleComponent : Component
     [DataField]
     public bool ScuttleFinalCinematicStarted;
 
+    [DataField] // Mriya. To remove changes when there's only one marine left
+    public bool LastMarineEffects = true;
+
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan? ScuttleNextHeatPulseAt;
 

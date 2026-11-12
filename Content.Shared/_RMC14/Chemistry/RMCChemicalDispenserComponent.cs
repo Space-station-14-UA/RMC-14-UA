@@ -40,5 +40,5 @@ public sealed partial class RMCChemicalDispenserComponent : Component
     public FixedPoint2 DispenseSetting = 5;
 
     [DataField, AutoNetworkedField]
-    public FixedPoint2[] Settings = [5, 10, 20, 30, 40];
+    public FixedPoint2[] Settings = [5, 10, 20, 30, 40, 50]; // Mriya. Додано переливання по 50 унцій
 }

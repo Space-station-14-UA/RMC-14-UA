@@ -93,6 +93,8 @@ public sealed class CMGunSystem : EntitySystem
 
     private const string AccuracyExamineColour = "yellow";
 
+    private const float RestingAccuracyBonus = 0.15f; // Mriya. Бонус до точності лежачи
+
     public override void Initialize()
     {
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
@@ -334,13 +336,18 @@ public sealed class CMGunSystem : EntitySystem
             orderAccuracy = orderComponent.Received[0].Multiplier * orderComponent.AccuracyModifier;
             orderAccuracyPerTile = orderComponent.Received[0].Multiplier * orderComponent.AccuracyPerTileModifier;
         }
+        // Mriya start. Модифікатор
+        var accuracyMultiplier = weapon.Comp.ModifiedAccuracyMultiplier;
 
+        if (TryGetGunUser(weapon.Owner, out var gunUser) && _standing.IsDown(gunUser.Owner))
+            accuracyMultiplier += RestingAccuracyBonus;
+        // Mriya end
         for (var t = 0; t < args.FiredProjectiles.Count; ++t)
         {
             if (!TryComp(args.FiredProjectiles[t], out RMCProjectileAccuracyComponent? accuracyComponent))
                 continue;
 
-            accuracyComponent.Accuracy *= weapon.Comp.ModifiedAccuracyMultiplier;
+            accuracyComponent.Accuracy *= accuracyMultiplier; // Mriya. Модифікатор
             accuracyComponent.Accuracy += orderAccuracy;
 
             var count = 0;

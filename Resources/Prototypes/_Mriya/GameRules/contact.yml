@@ -1,0 +1,121 @@
+
+- type: entity
+  id: MRContactDistress
+  parent: CMDistressSignal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 0
+  - type: CMDistressSignalRule
+    requireXenoPlayers: false
+    spawnXenos: false
+    spawnSurvivors: false
+    autoEnd: false
+    bioscan: false
+    startARESAnnouncements: true
+    doJobSlotScaling: false
+    lastMarineEffects: false
+ 
+- type: entity
+  id: MRContactRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ContactEconomy
+    killReward: 15
+    healReward: 15
+    healStep: 20
+    reviveReward: 100
+    terminalReward: 50
+    assistFraction: 0.5
+    killRewards:
+      MRContactXenoDrone: 15
+      MRContactXenoDefender: 20
+      MRContactXenoLurker: 20
+      MRContactXenoCrusher: 30
+      MRContactXenoCharger: 30
+      MRContactXenoRavagerBerserker: 150
+      MRContactXenoBoiler: 20
+  - type: ContactShuttle
+    boardingCountdown: 30
+    unloadTime: 15
+    refuelTime: 150
+  - type: ContactExtraction
+    everyWaves: 10
+    breakTime: 45
+    zoneRadius: 10
+    startCountdown: 10
+    holdTime: 150
+    holdWaveInterval: 20
+    boardTime: 30
+  - type: ContactRule
+    announcementPreset: MRARES
+    planets:
+    - MRPlanetChancesContact
+    - MRPlanetFiorinaContact
+
+- type: contactWaves
+  id: MRContactWavesDefault
+  spawns:
+  - proto: MRContactXenoDrone
+    startWave: 1
+    rate: 2
+    ratePerWave: 0.15
+    maxAlive: 20
+  - proto: MRContactXenoDefender
+    startWave: 2
+    rate: 1
+    ratePerWave: 0.15
+    maxAlive: 15
+  - proto: MRContactXenoLurker
+    startWave: 5
+    rate: 1
+    ratePerWave: 0.15
+    maxAlive: 2
+  - proto: MRContactXenoCrusher
+    startWave: 9
+    rate: 1
+    ratePerWave: 0.15
+    maxAlive: 5
+  - proto: MRContactXenoCharger
+    startWave: 20
+    rate: 1
+    ratePerWave: 0.05
+    maxAlive: 2
+  - proto: MRContactXenoRavagerBerserker
+    startWave: 40
+    rate: 0.05
+    ratePerWave: 0
+    maxAlive: 1
+  - proto: MRContactXenoBoiler
+    startWave: 15
+    rate: 1
+    ratePerWave: 0.05
+    maxAlive: 3
+  # - proto: CMXenoQueen # boss example, spawns only at wave 20
+  #   startWave: 20
+  #   rate: 1
+  #   ratePerWave: -1
+  #   maxAlive: 1
+  buffs:
+  - wave: 20
+    health: 1.25 # + 25% from BASE
+    damage: 1.1
+    # announcement: pruvit
+  - wave: 40
+    health: 1.5 # + 50% from BASE, not from 125%
+    damage: 1.25
+  - wave: 60
+    health: 2
+    damage: 1.5
+  - wave: 80
+    health: 2.5
+    damage: 1.75
+
+- type: entity
+  parent: BaseGameRule
+  id: MRRotRuleContact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MRRotRule
+    rotTime: 60

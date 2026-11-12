@@ -1,0 +1,5 @@
+# Сюди належать фактично всі мови, бо РМС не додумалися самі їх відділити
+- type: traitCategory
+  id: MRLanguageTraits
+  name: mriya-trait-category-language
+  maxTraitPoints: 3

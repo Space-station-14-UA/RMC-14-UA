@@ -42,7 +42,7 @@
   parent: CMBaseWindow
   id: RMCWindowKutjevo
   name: вікно
-  description: Скляне вікно всередині стінної рами.
+  description: Скляне вікно. Воно виглядає тонким і крихким. Кілька ударів чим-небудь мають розбити його вщент.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/kutjevo_window.rsi
@@ -96,7 +96,7 @@
   parent: CMBaseWindow
   id: RMCWindowKutjevoReinforced
   name: армоване вікно
-  description: Скляне вікно. Видно поперечні решітки. Щоб розбити його, знадобиться кілька хороших ударів.
+  description: Скляне вікно зі спеціальною стрижневою матрицею вмонтоване у стінну раму. Виглядає досить міцним. Може знадобитися кілька хороших ударів, щоб розбити його.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Windows/kutjevo_rwindow.rsi
@@ -152,8 +152,8 @@
 - type: entity
   parent: CMBaseWindowIndestructible
   id: RMCWindowKutjevoHull
-  name: корпусне вікно
-  description: Скляне вікно. Щось підказує вам, що воно незнищенне. 
+#  name: корпусне вікно – Mriya
+  description: Скляне вікно. Щось підказує вам, що воно незнищенне.
   components:
   - type: Corrodible
     isCorrodible: false

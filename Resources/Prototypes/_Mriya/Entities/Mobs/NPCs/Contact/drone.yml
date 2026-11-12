@@ -1,0 +1,6 @@
+- type: entity
+  parent: [ CMXenoDrone, MRContactXenoAIBase ]
+  id: MRContactXenoDrone
+  suffix: Контакт ШІ
+
+# pure melee

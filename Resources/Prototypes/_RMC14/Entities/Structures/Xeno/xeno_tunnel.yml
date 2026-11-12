@@ -1,7 +1,7 @@
 - type: entity
   id: XenoTunnel
   name: Тунель
-  description: Вхід до тунелю. Виглядає так ніби його вирив якийсь звір з великими кігтями.
+  description: Вхід до тунелю. Виглядає так, ніби його вирив якийсь звір з великими кігтями.
   placement:
     mode: SnapgridCenter
   components:

@@ -30,6 +30,10 @@
       state: alive
     - map: [ "enum.XenoVisualLayers.Ovipositor" ]
       sprite: _RMC14/Mobs/Xenonids/Queen/ovipositor.rsi
+    # Mriya start. Старі/наші версії спрайтів
+    - map: [ "enum.XenoVisualLayers.OldOvipositor" ]
+      sprite: _Mriya/Mobs/OldXenonids/Queen/ovipositor.rsi
+    # Mriya end
     - map: [ "enum.RMCDamageVisualLayers.Base" ]
       visible: false
     - map: [ "enum.XenoInhandVisualLayers.Left" ]
@@ -80,6 +84,7 @@
     bypassTierCount: true
     unlockAt: 0
     hudOffset: -0.1,0
+    oldHudOffset: -0.15,0.25 # Mriya. Старі/наші версії спрайтів
   - type: XenoHeavy
   - type: XenoAcid
   - type: XenoConstruction
@@ -305,6 +310,9 @@
   parent: RMCXenoQueenBase
   id: CMXenoQueen
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Queen/queen.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Queen/queen.rsi
   - type: RMCActionOrder
     id: CMXenoQueen
     #  - type: XenoEvolution #can be enabled for events like april fools.
@@ -318,6 +326,7 @@
   components:
   - type: XenoPheromones
 
+# Mriya start. Видалено нафіг
 #- type: entity
 #  parent: RMCXenoQueenBase
 #  id: RMCXenoQueenMaid
@@ -343,12 +352,16 @@
 #  - type: OwOAccent
 #  - type: Speech
 #    speechSounds: Cat
+# Mriya end
 
 - type: entity
   parent: RMCXenoQueenBase
   id: RMCXenoQueenMagical
   suffix: Magical Girl Queen
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Extras/magicalgirl_queen/magical_queen.rsi
+    oldSprite: _RMC14/Mobs/Xenonids/Extras/magicalgirl_queen/magical_queen.rsi # Поки не маємо, але чи треба
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Extras/magicalgirl_queen/magical_queen.rsi
     layers:
@@ -356,6 +369,10 @@
       state: alive
     - map: [ "enum.XenoVisualLayers.Ovipositor" ]
       sprite: _RMC14/Mobs/Xenonids/Extras/magicalgirl_queen/magical_ovipositor.rsi
+    # Mriya start. Старі/наші версії спрайтів. Поки не маємо, але чи треба
+    - map: [ "enum.XenoVisualLayers.OldOvipositor" ]
+      sprite: _RMC14/Mobs/Xenonids/Extras/magicalgirl_queen/magical_ovipositor.rsi
+    # Mriya end
     - map: [ "enum.XenoInhandVisualLayers.Left" ]
       visible: false
     - map: [ "enum.XenoInhandVisualLayers.Right" ]
@@ -386,3 +403,6 @@
     isQueenEye: true
   - type: Visibility
     layer: 32770
+  - type: WarpPoint # Mriya. Відповідна назва
+    follow: true
+    location: Ксено – Око Королеви

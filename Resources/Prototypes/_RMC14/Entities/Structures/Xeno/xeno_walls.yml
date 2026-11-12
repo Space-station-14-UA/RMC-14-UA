@@ -2,7 +2,7 @@
   parent: CMBaseWallXeno
   id: WallXenoResin
   name: смоляна стіна
-  description: Дивний слиз, що застиг у формі стіни.
+  description: Дивний чорний слиз, що застиг у формі стіни.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
@@ -36,8 +36,8 @@
 - type: entity
   parent: WallXenoResinThick
   id: WallXenoResinImpenetrable
-  name: impenetrable resin wall
-  description: Completely invulnerable. It should degrade into a vulnerable state given enough time.
+  name: непроникна смоляна стіна
+  description: Абсолютно невразлива. За достатньо часу вона має перейти у звичайний стан.
   suffix: Invincible, 25 minutes
   components:
   - type: InvincibleHiveStructure
@@ -46,8 +46,8 @@
 - type: entity
   parent: DoorXenoResinThick
   id: DoorXenoResinImpenetrable
-  name: impenetrable resin door
-  description: Completely invulnerable. It should degrade into a vulnerable state given enough time.
+  name: непроникні смоляні двері
+  description: Абсолютно невразливі. За достатньо часу вони має перейти у звичайний стан.
   suffix: Invincible, 25 minutes
   components:
   - type: InvincibleHiveStructure
@@ -77,7 +77,7 @@
   parent: WallXenoResin
   id: WallXenoResinThick
   name: густа смоляна стіна
-  description: Багато дивного слизу, що застиг у формі стіни.
+  description: Багато дивного чорного слизу, що застиг у формі стіни.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
@@ -148,7 +148,7 @@
   parent: BaseMembraneXeno
   id: WallXenoMembrane
   name: смоляна мембрана
-  description: Дивний слиз, що затвердів у вигляді напівпрозорої стіни.
+  description: Дивний чорний слиз, що застиг у формі напівпрозорої стіни.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
@@ -174,7 +174,7 @@
   parent: BaseMembraneXeno
   id: WallXenoMembraneThick
   name: густа смоляна мембрана
-  description: Дивний, густий слиз, що затвердів у вигляді напівпрозорої стіни.
+  description: Дивний чорний густий слиз, що застиг у формі напівпрозорої стіни.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
@@ -203,8 +203,8 @@
 - type: entity
   parent: WallXenoResin
   id: WallXenoResinWeak
-  name: weak resin wall
-  description: Weird slime solidified into a wall. It already looks on the verge of collapsing...
+  name: слабка смоляна стіна
+  description: Дивний чорний слиз, що застиг у формі стіни. Вона виглядає так, ніби ось-ось розвалиться.
   components:
   - type: Destructible
     thresholds:
@@ -222,8 +222,8 @@
 - type: entity
   parent: WallXenoResin
   id: WallXenoResinWeedbound
-  name: weedbound resin wall
-  description: Weird slime solidified into a wall, bound to weeds.
+  name: трав'яна смоляна стіна
+  description: Дивний чорний слиз, який сильно пов'язаний з травою під ним, що застиг у формі стіни.
   components:
   - type: GuideHelp
     guides:
@@ -244,8 +244,8 @@
 - type: entity
   parent: WallXenoResinThick
   id: WallXenoResinThickWeedbound
-  name: thick weedbound resin wall
-  description: Weird slime solidified into a thick wall, bound to weeds.
+  name: густа трав'яна смоляна стіна
+  description: Багато дивного чорного слизу, який сильно пов'язаний з травою під ним, що застиг у формі стіни.
   components:
   - type: GuideHelp
     guides:
@@ -265,8 +265,8 @@
   abstract: true
   parent: WallXenoResin
   id: BaseWallXenoResinReflective
-  name: reflective resin wall
-  description: Weird hardened slime solidified into a fine, smooth wall.
+  name: відбивна смоляна стіна
+  description: Дивний слиз, що застиг у формі дуже гладкої стіни.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Walls/bone_resin.rsi
@@ -308,8 +308,8 @@
 - type: entity
   parent: WallXenoResinReflective
   id: WallXenoResinReflectiveUnstable
-  name: weakened reflective wall
-  description: "Weird slime with strange, hardened fragments solidified into a wall.\nIt looks ready to collapse at any moment."
+  name: слабка відбивна смоляна стіна
+  description: "Дивний чорний слиз, що застиг у формі дуже гладкої стіни.\nВона виглядає так, ніби ось-ось розвалиться."
   components:
   - type: TimedDespawn
     lifetime: 13.0

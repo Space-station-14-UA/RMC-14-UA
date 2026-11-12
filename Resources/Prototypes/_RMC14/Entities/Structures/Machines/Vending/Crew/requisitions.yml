@@ -177,7 +177,7 @@
       - id: RMCBeltHolsterM13
         amount: 10
       - id: CMBeltKnifeFilled
-        name: M276 Knife Rig (Full)
+        name: ремінь для ножів зразка М276 (Повний)
         amount: 5
       - id: RMCBeltHolsterSMG
         amount: 5
@@ -202,12 +202,12 @@
       - id: RMCPouchFirstAidInjectors
         amount: 5
       - id: RMCPouchFirstResponder
-        name: First Responder Pouch (Empty)
+        name: допоміжний медичний підсумок (Порожній)
         amount: 2
       - id: RMCPouchSyringe
         amount: 2
       - id: RMCPouchToolsFill
-        name: Tools Pouch (Full)
+        name: підсумок для інструментів (Повний)
         amount: 2
       - id: RMCPouchConstruction
         amount: 2
@@ -216,17 +216,17 @@
       - id: RMCPouchExplosive
         amount: 2
       - id: RMCPouchFlareFilled
-        name: flare pouch (Full)
+        name: підсумок для фаєрів (Повний)
         amount: 5
       - id: RMCPouchDocumentSmall
         amount: 2
       - id: RMCPouchSling
         amount: 2
       - id: RMCPouchMacheteFilled
-        name: machete pouch (Full)
+        name: підсумок Х6Б для мачете М2132 (Повний)
         amount: 1
       - id: RMCPouchBayonetFill
-        name: Bayonet Sheath (Full)
+        name: підсумок для ножів (Повний)
         amount: 2
       - id: RMCPouchGeneralMedium
         amount: 2
@@ -321,7 +321,7 @@
         boxAmount: 3
         boxSlots: 3
       - id: RMCPacketGrenadeIncendiaryFilled
-        name: упаковка гранат М40 ВІРЗ
+        name: упаковка гранат М40 ЗПП
         box: RMCGrenadeIncendiary
         boxAmount: 3
         boxSlots: 3

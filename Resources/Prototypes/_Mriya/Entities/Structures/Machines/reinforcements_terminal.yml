@@ -1,0 +1,27 @@
+- type: entity
+  id: MRContactReinforcementTerminal
+  parent: BaseStructure
+  name: термінал підкріплень
+  description: Викликає шатл з підкріпленнями, коли він заправлений і на борту є люди.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        layer:
+        - MobMask
+  - type: Sprite
+    sprite: Structures/Machines/computers.rsi
+    state: computer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: ContactReinforcementTerminal

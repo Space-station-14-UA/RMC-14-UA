@@ -10,13 +10,18 @@
     - 0,0,5,1
   - type: Sprite
     sprite: _RMC14/Objects/Storage/procase_mini.rsi
+    layers:
+    - map: [ base ]
+      state: closed
+    - map: [ label ]
+      state: shield
   - type: Icon
     sprite: _RMC14/Objects/Storage/procase_mini.rsi
     layers:
-    - state: closed
-      map: [ base ]
-    - state: loader
-      map: [ label ]
+    - map: [ base ]
+      state: closed
+    - map: [ label ]
+      state: shield
   - type: StorageFill
     contents:
     - id: MRBackpackAmmoFolded

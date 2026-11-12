@@ -1,7 +1,9 @@
 ﻿using Content.Client._RMC14.LinkAccount;
 using Content.Client._RMC14.Roadmap;
 using Content.Client.Credits;
+using Content.Client.GameTicking.Managers; // Mriya. Для інфо панелі
 using Content.Client.Gameplay;
+using Content.Client.Message; // Mriya. Для інфо панелі
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Client.UserInterface.Systems.Info;
@@ -10,10 +12,16 @@ using Content.Shared.CCVar;
 using JetBrains.Annotations;
 using Robust.Client.Console;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls; // Mriya. Для інфо панелі
 using Robust.Client.UserInterface.Controllers;
+// Mriya start. Для інфо панелі 
+using Robust.Shared.GameObjects;
+using Robust.Shared.GameObjects.Components;
+// Mriya end 
 using Robust.Shared.Configuration;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Timing; // Mriya. Вгадайте для чого? Для інфо панелі
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
@@ -31,10 +39,22 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
     [Dependency] private readonly GuidebookUIController _guidebook = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!;
 
+    // Mriya start. Залежності для інфо панелі.
+    [UISystemDependency] private readonly ClientGameTicker _gameTicker = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    // Mriya end
+
     private Options.UI.EscapeMenu? _escapeWindow;
 
-    private MenuButton? EscapeButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.EscapeButton;
+    // Mriya start. Інформаця про раунд.
+    private string _lastTime = string.Empty;
+    private string _lastMap = string.Empty;
+    private string _lastGamemode = string.Empty;
+    private string _lastRound = string.Empty;
+    private string _lastPlayers = string.Empty;
+    // Mriya end
 
+    private MenuButton? EscapeButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.EscapeButton;
 // Mriya commented. Зайві кнопки
 //    public override void Initialize()
 //    {
@@ -44,7 +64,88 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 //                _escapeWindow.PatronPerksButton.Visible = _linkAccount.CanViewPatronPerks();
 //        };
 //    }
+    // Mriya start
+    public override void Initialize()
+    {
+        base.Initialize();
+    }
 
+    public override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+        UpdateInfoPanel();
+    }
+
+    private void UpdateInfoPanel()
+    {
+        if (_escapeWindow == null || !_escapeWindow.IsOpen)
+            return;
+
+        var timeText = GetRoundTimeText();
+        var mapText = GetMapName();
+        var gamemodeText = GetGamemodeName();
+        var roundText = _gameTicker.RoundId.ToString();
+        var playersText = _gameTicker.PlayerCount.ToString();
+
+        if (_lastTime == timeText && _lastMap == mapText && _lastGamemode == gamemodeText &&
+            _lastRound == roundText && _lastPlayers == playersText)
+        {
+            return;
+        }
+
+        _lastTime = timeText;
+        _lastMap = mapText;
+        _lastGamemode = gamemodeText;
+        _lastRound = roundText;
+        _lastPlayers = playersText;
+
+        _escapeWindow.EscapeInfoHeader.SetMarkup(
+            Loc.GetString("escape-info-panel-header"));
+        _escapeWindow.EscapeInfoTime.SetMarkup(
+            Loc.GetString("escape-info-panel-time-value", ("time", timeText)));
+        _escapeWindow.EscapeInfoMapLabel.SetMarkup(
+            Loc.GetString("escape-info-panel-map-label"));
+        _escapeWindow.EscapeInfoMap.SetMarkup(
+            Loc.GetString("escape-info-panel-map-value", ("map", mapText)));
+        _escapeWindow.EscapeInfoGamemodeLabel.SetMarkup(
+            Loc.GetString("escape-info-panel-gamemode-label"));
+        _escapeWindow.EscapeInfoGamemode.SetMarkup(
+            Loc.GetString("escape-info-panel-gamemode-value", ("gamemode", gamemodeText)));
+        _escapeWindow.EscapeInfoRoundLabel.SetMarkup(
+            Loc.GetString("escape-info-panel-round-label"));
+        _escapeWindow.EscapeInfoRound.SetMarkup(
+            Loc.GetString("escape-info-panel-round-value", ("round", roundText)));
+        _escapeWindow.EscapeInfoPlayers.SetMarkup(
+            Loc.GetString("escape-info-panel-players", ("players", playersText)));
+    }
+
+    private string GetRoundTimeText()
+    {
+        if (!_gameTicker.IsGameStarted)
+            return Loc.GetString("escape-info-panel-round-not-started");
+
+        var span = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+        return $"{span.Hours:D2}:{span.Minutes:D2}:{span.Seconds:D2}";
+    }
+
+    private string GetMapName()
+    {
+        if (!string.IsNullOrEmpty(_gameTicker.PlanetName))
+            return _gameTicker.PlanetName;
+
+        if (!string.IsNullOrEmpty(_gameTicker.MapName))
+            return _gameTicker.MapName;
+
+        return "Невідома мапа";
+    }
+
+    private string GetGamemodeName()
+    {
+        return string.IsNullOrEmpty(_gameTicker.GamemodeTitle)
+            ? "Невідомий"
+            : _gameTicker.GamemodeTitle;
+    }
+    // Mriya end
     public void UnloadButton()
     {
         if (EscapeButton == null)

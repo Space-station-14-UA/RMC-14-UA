@@ -43,6 +43,7 @@
   - type: Xeno
     role: CMXenoDrone
     hudOffset: -0.1,0.15
+    oldHudOffset: -0.1,0.15 # Mriya. Старі/наші версії спрайтів
     tier: 1
     bypassTierCount: true
     unlockAt: 60 # 1 minute
@@ -120,6 +121,9 @@
   id: CMXenoDrone
   description: Чужопланетна істота з повноцінними лапами та малим хоботом, яка видається досить універсальною. # Mriya
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Drone/drone.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Drone/drone.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleDrone
@@ -167,6 +171,9 @@
   description: Чужопланетна зелена істота з повноцінними лапами та малим хоботом, виглядає особливо притягливо. # Mriya
   suffix: Gardener
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Drone/gardener_drone.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Drone/gardener_drone.rsi
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Drone/gardener_drone.rsi
     layers:
@@ -232,6 +239,9 @@
   description: Чужопланетна більш фіолетова істота з повноцінними лапами та малим хоботом. # Mriya
   suffix: Healer
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Drone/healer_drone.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Drone/healer_drone.rsi
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Drone/healer_drone.rsi
     layers:

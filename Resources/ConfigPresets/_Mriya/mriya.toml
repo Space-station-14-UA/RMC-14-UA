@@ -15,7 +15,7 @@ contraband_examine = false
 panic_bunker.enabled = false
 round_end_pvs_overrides = false
 round_restart_time = 180 # 3 хвилини
-lobbyduration = 300 # 5 хвилин
+lobbyduration = 360 # 6 хвилин
 
 [infolinks]
 discord = " https://discord.gg/MMUsHnH2Tt"

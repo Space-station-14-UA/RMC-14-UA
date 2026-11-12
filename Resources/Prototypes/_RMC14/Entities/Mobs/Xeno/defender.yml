@@ -31,6 +31,7 @@
     role: CMXenoDefender
     tier: 1
     hudOffset: -0.1,0.2
+    oldHudOffset: 0,0.2 # Mriya. Старі/наші версії спрайтів
     unlockAt: 240 # 4 minutes
   - type: XenoLight
   - type: XenoDevolve
@@ -115,6 +116,9 @@
   id: CMXenoDefender
   description: Кремезна чужопланетна істота з величезним броньованим панцирем, потужним хвостом та двома лапами. # Mriya
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Defender/defender.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Defender/defender.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleDefender
@@ -145,6 +149,9 @@
   suffix: Steelcrest
   description: Кремезна чужопланетна істота з величезним чорним броньованим панцирем та двома лапами. # Mriya
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Defender/steelcrest_defender.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Defender/steelcrest_defender.rsi
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Defender/steelcrest_defender.rsi
   - type: Xeno

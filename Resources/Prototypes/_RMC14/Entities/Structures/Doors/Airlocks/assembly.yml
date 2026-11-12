@@ -1,6 +1,8 @@
 - type: entity
   parent: AirlockAssembly
   id: CMAirlockAssembly
+  name: корпус шлюза # Mriya
+  description: Основа для шлюза, в ній не вистачає плат, проводки та інших штук, які перетворюють шматок заліза на справжній шлюз. # Mriya
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/airlock_assemblies.rsi

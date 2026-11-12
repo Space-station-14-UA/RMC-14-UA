@@ -32,6 +32,9 @@ public sealed partial class XenoComponent : Component
     [DataField, AutoNetworkedField]
     public Vector2 HudOffset;
 
+    [DataField, AutoNetworkedField] // Mriya
+    public Vector2 OldHudOffset;
+
     [DataField, AutoNetworkedField]
     public bool ContributesToVictory = true;
 

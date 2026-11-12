@@ -439,6 +439,19 @@
           icon:
             sprite: _RMC14/Interface/tech_tree.rsi
             state: cryotroops
+        # Mriya start
+        - name: mriya-intel-tech-wake-smartgun-name
+          description: mriya-intel-tech-wake-smartgun-description
+          cost: 6
+          events:
+          - !type:TechCryoSGOEvent
+          - !type:TechAnnounceEvent
+            author: rmc-intel-tech-announcement-special-assets-author
+            message: mriya-intel-tech-announcement-wake-smartgun
+          icon:
+            sprite: _RMC14/Interface/tech_tree.rsi
+            state: overshield
+        # Mriya end
         - name: rmc-intel-tech-wake-specialist-name
           description: rmc-intel-tech-wake-specialist-description
           cost: 8

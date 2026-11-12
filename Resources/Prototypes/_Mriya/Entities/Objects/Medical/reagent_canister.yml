@@ -1,0 +1,20 @@
+- type: entity
+  parent: RMCPouchReagentCanister
+  id: MRPouchReagentCanister15x3
+  suffix: 15х3, пустий
+  components:
+  - type: Storage
+    whitelist:
+      tags:
+      - RMCAutoInjectorMedical
+  - type: StorageFill
+    contents:
+    - id: RMCMedicAutoInjectorCS15
+  - type: ItemSlots
+    slots:
+      pressurized_reagent_canister:
+        name: Canister
+        whitelist:
+          tags:
+          - PressurizedCanister
+        insertOnInteract: true

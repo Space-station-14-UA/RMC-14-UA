@@ -1,13 +1,13 @@
 drink-component-on-use-is-empty = {CAPITALIZE($owner)} порожнє!
-drink-component-on-examine-is-empty = [color=gray]Порожнє[/color]
+drink-component-on-examine-is-empty = [color=gray]Відчувається порожнім...[/color]
 drink-component-on-examine-is-opened = [color=yellow]Відкрите[/color]
 drink-component-on-examine-is-sealed = Пломба ціла.
 drink-component-on-examine-is-unsealed = Пломба пошкоджена.
-drink-component-on-examine-is-full = Повне
-drink-component-on-examine-is-mostly-full = Майже повне
-drink-component-on-examine-is-half-full = На половину повне
-drink-component-on-examine-is-half-empty = На половину порожнє
-drink-component-on-examine-is-mostly-empty = Майже порожнє
+drink-component-on-examine-is-full = Відчувається повним.
+drink-component-on-examine-is-mostly-full = Відчувається майже повним.
+drink-component-on-examine-is-half-full = Відчувається на половину повним.
+drink-component-on-examine-is-half-empty = Відчувається на половину порожнім.
+drink-component-on-examine-is-mostly-empty = Відчувається майже порожнім.
 drink-component-on-examine-exact-volume = Це містить {$amount} од.
 drink-component-try-use-drink-not-open = Спочатку відкрийте {$owner}!
 drink-component-try-use-drink-is-empty = {CAPITALIZE($entity)} порожнє!

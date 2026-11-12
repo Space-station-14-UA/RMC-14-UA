@@ -1,0 +1,12 @@
+- type: entity
+  id: MRActionRespawn
+  name: Повернутися в лобі
+  description: Повернутися в лобі, щоб знову приєднатися до раунду.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: /Textures/Interface/VerbIcons/refresh.svg.192dpi.png
+    checkCanInteract: false
+    checkConsciousness: false
+  - type: InstantAction
+    event: !type:MRRespawnActionEvent

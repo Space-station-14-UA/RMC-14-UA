@@ -31,11 +31,11 @@ public sealed class RMCStandingSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<DropItemsOnRestComponent, BuckledEvent>(OnDropBuckled);
-        SubscribeLocalEvent<DropItemsOnRestComponent, PickupAttemptEvent>(CancelIfResting);
+        // SubscribeLocalEvent<DropItemsOnRestComponent, PickupAttemptEvent>(CancelIfResting);. Розблокування падіння предметів з рук при ляганні. 
         SubscribeLocalEvent<DropItemsOnRestComponent, IsEquippingAttemptEvent>(OnDropIsEquippingAttempt);
         SubscribeLocalEvent<DropItemsOnRestComponent, IsUnequippingAttemptEvent>(OnDropIsUnequippingAttempt);
-        SubscribeLocalEvent<DropItemsOnRestComponent, AttackAttemptEvent>(CancelIfResting);
-        SubscribeLocalEvent<DropItemsOnRestComponent, UseAttemptEvent>(CancelIfResting);
+        // SubscribeLocalEvent<DropItemsOnRestComponent, AttackAttemptEvent>(CancelIfResting);. Розблокування атаки під час лежання
+        // SubscribeLocalEvent<DropItemsOnRestComponent, UseAttemptEvent>(CancelIfResting);. Розблокування використання предметів під час лежання
 
         SubscribeLocalEvent<DownOnEnterComponent, EntInsertedIntoContainerMessage>(OnEnterDown);
         SubscribeLocalEvent<DownOnEnterComponent, EntRemovedFromContainerMessage>(OnLeaveDown);
@@ -75,7 +75,7 @@ public sealed class RMCStandingSystem : EntitySystem
                             if (_standing.IsDown(ent))
                                 _popup.PopupClient(Loc.GetString("rmc-standing-keep-lying"), ent, ent, PopupType.Medium);
 
-                            if (_standing.Down(ent, downedBy: ent))
+                            if (_standing.Down(ent, dropHeldItems: false, downedBy: ent)) // Mriya. Примусова заборона викидати речі.
                             {
                                 rest.Resting = true;
                                 Dirty(ent, rest);
@@ -105,11 +105,11 @@ public sealed class RMCStandingSystem : EntitySystem
             _hands.TryDrop(drop.Owner, held);
         }
     }
-
-    private void CancelIfResting<T>(Entity<DropItemsOnRestComponent> drop, ref T args) where T : CancellableEntityEventArgs
-    {
-        TryCancelIfResting(drop, ref args);
-    }
+    // Mriya. 
+    //private void CancelIfResting<T>(Entity<DropItemsOnRestComponent> drop, ref T args) where T : CancellableEntityEventArgs
+    //{
+    //    TryCancelIfResting(drop, ref args);
+    //}
 
     private void OnDropIsEquippingAttempt(Entity<DropItemsOnRestComponent> drop, ref IsEquippingAttemptEvent args)
     {

@@ -1,3 +1,4 @@
+using Content.Shared._Mriya.CCVar; // Mriya
 using Content.Client._RMC14.Xenonids.UI;
 using Content.Shared._RMC14.Xenonids.Fruit;
 using Content.Shared._RMC14.Xenonids.Fruit.Components;
@@ -5,6 +6,7 @@ using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Configuration; // Mriya
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -15,6 +17,9 @@ namespace Content.Client._RMC14.Xenonids.Fruit;
 public sealed class XenoFruitChooseBui : BoundUserInterface
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!; // Mriya
+
+    private bool _onOldSpriteChange = true; // Mriya
 
     private readonly SpriteSystem _sprite;
     private readonly SharedXenoFruitSystem _xenoFruit;
@@ -33,6 +38,13 @@ public sealed class XenoFruitChooseBui : BoundUserInterface
     protected override void Open()
     {
         base.Open();
+
+        // Mriya start
+        _config.OnValueChanged(
+        MriyaCVars.MRUseOldSprites,
+        value => _onOldSpriteChange = value,
+        invokeImmediately: true);
+        // Mriya end
 
         _window = this.CreateWindow<XenoFruitChooseWindow>();
         _buttons.Clear();
@@ -54,7 +66,13 @@ public sealed class XenoFruitChooseBui : BoundUserInterface
 
                 var name = fruit.Name;
 
-                var specifier = new SpriteSpecifier.Rsi(new ResPath("_RMC14/Structures/Xenos/xeno_fruit.rsi"), sprite);
+                // Mriya start. Наш/офіційний спрайт в залежності від налаштувань
+                var fruitSprites = _onOldSpriteChange
+                    ? "_Mriya/Structures/Xenos/old_xeno_fruit.rsi"
+                    : "_RMC14/Structures/Xenos/xeno_fruit.rsi";
+                // Mriya end
+
+                var specifier = new SpriteSpecifier.Rsi(new ResPath(fruitSprites), sprite); // Mriya. `_RMC14/Structures/Xenos/xeno_fruit.rsi` в оригіналі замість `fruitSprites`
                 control.Set(name, _sprite.Frame0(specifier));
                 control.Button.OnPressed += _ => SendPredictedMessage(new XenoFruitChooseBuiMsg(fruitId));
                 control.Button.ToolTip = fruit.Description;

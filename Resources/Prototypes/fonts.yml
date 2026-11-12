@@ -43,5 +43,13 @@
   path: /EngineFonts/NotoSans/NotoSansMono-Regular.ttf
 
 - type: font
+  id: RobotoMono
+  path: /Fonts/RobotoMono/RobotoMono-Regular.ttf
+
+- type: font
+  id: RobotoMonoBold
+  path: /Fonts/RobotoMono/RobotoMono-Bold.ttf
+
+- type: font
   id: Emoji
   path: /Fonts/NotoEmoji.ttf

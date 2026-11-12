@@ -44,6 +44,7 @@
     - ActionXenoLeap
     tier: 0
     hudOffset: -0.1,0.1
+    oldHudOffset: 0,0.4 # Mriya. Старі/наші версії спрайтів
     contributesToVictory: false
     countedInSlots: false
     unlockAt: 0
@@ -174,6 +175,9 @@
   parent: CMXenoParasiteBase
   id: CMXenoParasite
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Parasite/parasite.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Parasite/parasite.rsi
   - type: SleepNPC
   - type: ParasiteAI
   - type: XenoEvolution
@@ -187,6 +191,9 @@
   id: RMCXenoParasiteWatcher
   suffix: Parasite, Watcher
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Parasite/watcher_parasite.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Parasite/watcher_parasite.rsi
   - type: Xeno
     actionIds:
     - ActionXenoRest

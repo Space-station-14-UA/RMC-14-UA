@@ -4,6 +4,12 @@
   name: зарядник
   description: Зарядний пристрій різного обладнання. Має порти для всього, починаючи від дефібриляторів медиків та старих ПНБ-забрал та до електрошокових кийків ВСП. Справжня мрія інженера-ремонтника. # Mriya
   components:
+  # Mriya start. Можливість будувати на ньому
+  - type: Tag
+    tags:
+    - Structure
+    - AllowXenoConstruction
+  # Mriya end
   - type: Sprite
     sprite: _RMC14/Structures/Power/recharger.rsi
     drawdepth: SmallObjects

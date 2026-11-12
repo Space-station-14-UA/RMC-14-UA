@@ -1,0 +1,35 @@
+- type: contactStoreEntry
+  id: MRContactStoreBaseballBatMetal
+  proto: RMCBaseballBatMetal
+  category: MRContactStoreMelee
+  price: 20
+  
+- type: contactStoreEntry
+  id: MRContactStoreM5Bayonet
+  proto: RMCM5Bayonet
+  category: MRContactStoreMelee
+  price: 20
+
+- type: contactStoreEntry
+  id: MRContactStoreSynthBreachingHammer
+  proto: RMCSynthBreachingHammer
+  category: MRContactStoreMelee
+  price: 150
+
+- type: contactStoreEntry
+  id: MRContactStoreSwordHEFA
+  proto: RMCSwordHEFA
+  category: MRContactStoreMelee
+  price: 150
+
+- type: contactStoreEntry
+  id: MRContactStoreKatana
+  proto: RMCKatana
+  category: MRContactStoreMelee
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStorePamphletAdminMeleeWeapons2
+  proto: RMCPamphletAdminMeleeWeapons2
+  category: MRContactStoreMelee
+  price: 100

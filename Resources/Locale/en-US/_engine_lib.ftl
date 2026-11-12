@@ -54,7 +54,7 @@ zzzz-possessive-adjective = { GENDER($ent) ->
     [male] його
     [female] її
     [epicene] їх
-   *[neuter] цього
+   *[neuter] це
    }
 
 # Used internally by the REFLEXIVE() function.

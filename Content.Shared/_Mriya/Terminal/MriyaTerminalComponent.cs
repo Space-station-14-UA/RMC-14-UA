@@ -20,6 +20,9 @@ public sealed partial class MriyaTerminalComponent : Component
     public string? AuthorizedName;
 
     [DataField, AutoNetworkedField]
+    public string? AuthorizedJob;
+
+    [DataField, AutoNetworkedField]
     public List<ProtoId<AccessLevelPrototype>> RequiredAccesses = new();
 
     [DataField]

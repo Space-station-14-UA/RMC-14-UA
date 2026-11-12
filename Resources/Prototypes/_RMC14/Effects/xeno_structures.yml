@@ -1,7 +1,7 @@
 - type: entity
   id: XenoConstructionGhost
-  name: construction ghost
-  description: A preview of what will be built.
+  name: привид будівництва
+  description: Попередній перегляд того, що буде побудовано.
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
@@ -183,19 +183,19 @@
 - type: entity
   parent: WallXenoResinThick
   id: WallXenoResinQueen
-  name: queen resin wall
-  description: A heavily reinforced wall of resin, built with the queen's enhanced abilities.
+  name: королевська смоляна стіна
+  description: Багато дивного слизу, що застиг у формі стіни. Створено та укріплено Королевою за допомогою її здібностей.
   components:
   - type: Sprite
 
 - type: entity
   parent: WallXenoMembraneThick
   id: WallXenoMembraneQueen
-  name: queen membrane wall
-  description: A heavily reinforced membrane wall, built with the queen's enhanced abilities.
+  name: королевська смоляна мембрана
+  description: Багато дивний слиз, що застиг у формі напівпрозорої стіни.. Створено та укріплено Королевою за допомогою її здібностей.
 
 - type: entity
   parent: DoorXenoResinThick
   id: DoorXenoResinQueen
-  name: queen resin door
-  description: A heavily reinforced resin door, built with the queen's enhanced abilities.
+  name: королівські смоляні двері
+  description: Багато дивної чорної смола, що застигла у дуже дивній формі. Створено та укріплено Королевою за допомогою її здібностей.

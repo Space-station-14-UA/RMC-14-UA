@@ -14,7 +14,7 @@ language-Chinese-name = Китайська
 language-Russian-name = лайняна
 language-German-name = Німецька
 language-Scandinavian-name = Скандинавська
-language-SignLanguage-name = Мова Жестів
+language-SignLanguage-name = Жестова мова
 language-Primitive-name = Примітивна
 
 # Language descr

@@ -36,5 +36,6 @@ rmc-trait-german-language-desc = Ви можете спілкуватися та
 rmc-trait-scandinavian-language-name = Скандинавська мова
 rmc-trait-scandinavian-language-desc = Ви можете спілкуватися та розуміти скандинавську. Хальснігар!
 
+# Mriya. 2 нижче не використовуються
 rmc-trait-group-languages = Знання мов
 rmc-trait-group-other-speech = Особливості вимови

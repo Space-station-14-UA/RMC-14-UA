@@ -11,6 +11,9 @@
   name: Плювака
   description: Огидна жовта чужопланетна істота з якої сочиться кислота.
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Spitter/spitter.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Spitter/spitter.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleSpitter
@@ -44,6 +47,7 @@
     - ActionXenoDevolve
     tier: 2
     hudOffset: -0.15,0.025
+    oldHudOffset: -0.15,0.2 # Mriya. Старі/наші версії спрайтів
     unlockAt: 540 # 9 minutes
   - type: XenoHeavy
   - type: XenoDevolve

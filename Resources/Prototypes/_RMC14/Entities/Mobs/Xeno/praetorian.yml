@@ -38,6 +38,7 @@
     - ActionXenoDevolve
     tier: 3
     hudOffset: -0.15,0.16
+    oldHudOffset: -0.1,0.25 # Mriya. Старі/наші версії спрайтів
     unlockAt: 1200 # Mriya. 20 хвилин. 15 (900) в оригіналі
   - type: XenoHeavy
   - type: XenoDevolve
@@ -124,6 +125,9 @@
   id: CMXenoPraetorian
   description: Велика й небезпечна чужопланетна істота, у якої на шиї велика кислотна брунька. Видається досить універсальною. # Mriya
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Praetorian/praetorian.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Praetorian/praetorian.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRolePraetorian
@@ -164,12 +168,16 @@
   description: Велика й небезпечна чужопланетна істота, має характерний синій гребінь та товстий панцир й потужні лапи, а на хвості якась дивна штуковина. # Mriya
   suffix: Valkyrie
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Praetorian/valkyrie_praetorian.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Praetorian/valkyrie_praetorian.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleValkyrie
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Praetorian/valkyrie_praetorian.rsi
   - type: Xeno
+    oldHudOffset: -0.275,0.25 # Mriya. Старі/наші версії спрайтів. У Валькірії більший хвіст
     actionIds:
     - ActionXenoRest
     - ActionXenoRegurgitate
@@ -238,6 +246,9 @@
   description: Велика й небезпечна чужопланетна істота, має характерний фіолетовий гребінь та видається швидкою й дуже маневреною. # Mriya
   suffix: Dancer
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Praetorian/dancer_praetorian.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Praetorian/dancer_praetorian.rsi
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Praetorian/dancer_praetorian.rsi
   - type: XenoRegen
@@ -288,6 +299,9 @@
   description: Велика й небезпечна чужопланетна істота, у неї характерний червоний гребінь та її панцир видається досить "динамічним". # Mriya
   suffix: Vanguard
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Praetorian/vanguard_praetorian.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Praetorian/vanguard_praetorian.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleVanguard
@@ -347,6 +361,9 @@
   description: Велика й небезпечна чужопланетна істота, її хвіст виглядає набагато більшим та потужнішим. # Mriya
   suffix: Oppressor
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Praetorian/oppressor_praetorian.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Praetorian/oppressor_praetorian.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleOppressor

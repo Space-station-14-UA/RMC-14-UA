@@ -40,6 +40,7 @@
     role: CMXenoRunner
     tier: 1
     hudOffset: -0.15,0.6
+    oldHudOffset: 0,0.5 # Mriya. Старі/наші версії спрайтів
     unlockAt: 300 # 5 minutes
   - type: XenoRegen
     restHealMultiplier:  1.75
@@ -140,6 +141,9 @@
   id: CMXenoRunner
   description: Невеличка червона та дуже аеродинамічна чужопланетна істота, схоже її лапи створені для бігу.
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Runner/runner.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Runner/runner.rsi
   - type: GuideHelp
     guides:
     - RMCGuideRoleRunner
@@ -186,6 +190,9 @@
   description: Невеличка жовта та аеродинамічна чужопланетна істота, схоже її лапи створені для бігу. Весь її хребет вкритий кислотними почками. # Mriya
   suffix: Acider
   components:
+  - type: MriyaOldSprite # Mriya. Старі/наші версії спрайтів
+    normalSprite: _RMC14/Mobs/Xenonids/Runner/acider_runner.rsi
+    oldSprite: _Mriya/Mobs/OldXenonids/Runner/acider_runner.rsi
   - type: Sprite
     sprite: _RMC14/Mobs/Xenonids/Runner/acider_runner.rsi
     layers:
@@ -213,6 +220,7 @@
     - ActionXenoAcidAcider
     - ActionXenoForTheHive
     - ActionXenoDevolve
+    oldHudOffset: -0.1,0.5 # Mriya. Старі/наші версії спрайтів
   - type: XenoStrain
     name: rmc-xeno-acider-name
     description: rmc-xeno-acider-description
@@ -250,7 +258,9 @@
       duration: 20
   - type: ForTheHive
     baseSprite: _RMC14/Mobs/Xenonids/Runner/acider_runner.rsi
+    baseOldSprite: _Mriya/Mobs/OldXenonids/Runner/acider_runner.rsi # Mriya. Старі/наші версії спрайтів
     activeSprite: _RMC14/Mobs/Xenonids/Runner/acider_runner_primed.rsi
+    activeOldSprite: _Mriya/Mobs/OldXenonids/Runner/acider_runner_primed.rsi # Mriya. Старі/наші версії спрайтів
     baseDamage:
       types:
         Heat: 1

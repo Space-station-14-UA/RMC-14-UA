@@ -283,6 +283,8 @@
         crate: RMCCrateMedicalFilled
       - cost: 1500
         crate: RMCCrateMedicalPill
+      - cost: 6000 # Mriya
+        crate: MRCrateMedicalDefibrillatorCivilian
     - name: Міномет
       entries:
       - cost: 6000
@@ -315,6 +317,8 @@
         crate: MRCrateRestrictedEquipmentBiosuitUNMC
       - cost: 2000
         crate: RMCCrateRestrictedEquipmentIntelSupportKit
+      - cost: 6000 # Mriya
+        crate: MRCrateRestrictedEquipmentVanWheel
       - cost: 10000 # Mriya
         crate: MRCrateRestrictedEquipmentChairSupplyDrop
     - name: Витратники
