@@ -53,6 +53,7 @@
     planets:
     - MRPlanetChancesContact
     - MRPlanetFiorinaContact
+  - type: ContactCleanup
 
 - type: contactWaves
   id: MRContactWavesDefault
