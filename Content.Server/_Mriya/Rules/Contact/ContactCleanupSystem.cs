@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Decals;
 using Content.Server.Spawners.Components;
-using Content.Server.Spawners.EntitySystems;
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
@@ -9,6 +8,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
+using System.Numerics;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -33,11 +33,16 @@ public sealed class ContactCleanupSystem : EntitySystem
     private readonly List<EntityUid> _toDelete = new();
     private TimeSpan _nextCheck;
 
+    /// <summary>
+    /// Decal spawners seen since the last check: decals around them get picked up on the next check.
+    /// </summary>
+    private readonly List<(EntityUid Grid, Vector2 Position, float Radius)> _pendingSpawners = new();
+
     public override void Initialize()
     {
-        // after the spawner: its decals already exist, so the exact ids can be recorded
-        SubscribeLocalEvent<RandomDecalSpawnerComponent, MapInitEvent>(OnDecalSpawnerMapInit,
-            after: [typeof(RandomDecalSpawnerSystem)]);
+        // MapInit is taken by RandomDecalSpawnerSystem (one subscription per comp+event):
+        // remember where the spawner was, its decals exist by the next check
+        SubscribeLocalEvent<RandomDecalSpawnerComponent, ComponentStartup>(OnDecalSpawnerStartup);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
 
@@ -57,6 +62,7 @@ public sealed class ContactCleanupSystem : EntitySystem
         _deadSince.Clear();
         _decals.Clear();
         _trackedDecals.Clear();
+        _pendingSpawners.Clear();
         _nextCheck = TimeSpan.Zero;
     }
 
@@ -72,6 +78,7 @@ public sealed class ContactCleanupSystem : EntitySystem
             return;
 
         UpdateBodies(config, now);
+        CollectDecals(config, now);
         UpdateDecals(now);
     }
 
@@ -118,26 +125,44 @@ public sealed class ContactCleanupSystem : EntitySystem
 
     #region Decals
 
-    private void OnDecalSpawnerMapInit(Entity<RandomDecalSpawnerComponent> ent, ref MapInitEvent args)
+    private void OnDecalSpawnerStartup(Entity<RandomDecalSpawnerComponent> ent, ref ComponentStartup args)
     {
-        if (GetConfig() is not { } config)
+        if (GetConfig() == null)
             return;
 
         // the acid splash spawner is parented to the xeno: get grid-local coordinates
         var coords = _transform.GetMoverCoordinates(ent);
-        var grid = coords.EntityId;
-        if (!HasComp<MapGridComponent>(grid))
+        if (!HasComp<MapGridComponent>(coords.EntityId))
             return;
 
-        var deleteAt = _timing.CurTime + config.DecalTime;
-        foreach (var (id, decal) in _decal.GetDecalsInRange(grid, coords.Position, ent.Comp.Radius + 1f))
+        _pendingSpawners.Add((coords.EntityId, coords.Position, ent.Comp.Radius));
+    }
+
+    /// <summary>
+    /// Xeno blood decals around spawners seen since the last check start their timer.
+    /// </summary>
+    private void CollectDecals(ContactCleanupComponent config, TimeSpan now)
+    {
+        if (_pendingSpawners.Count == 0)
+            return;
+
+        var deleteAt = now + config.DecalTime;
+        foreach (var (grid, position, radius) in _pendingSpawners)
         {
-            if (!decal.Id.StartsWith(config.DecalPrefix, StringComparison.Ordinal))
+            if (TerminatingOrDeleted(grid))
                 continue;
 
-            if (_trackedDecals.Add((grid, id)))
-                _decals.Add((deleteAt, grid, id));
+            foreach (var (id, decal) in _decal.GetDecalsInRange(grid, position, radius + 1f))
+            {
+                if (!decal.Id.StartsWith(config.DecalPrefix, StringComparison.Ordinal))
+                    continue;
+
+                if (_trackedDecals.Add((grid, id)))
+                    _decals.Add((deleteAt, grid, id));
+            }
         }
+
+        _pendingSpawners.Clear();
     }
 
     private void UpdateDecals(TimeSpan now)
