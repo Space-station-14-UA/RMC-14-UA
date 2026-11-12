@@ -518,3 +518,11 @@
   proto: RMCMagazineML66D
   category: MRContactStoreAmmo
   price: 10
+
+# m60
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineLMGM60
+  proto: RMCMagazineLMGM60
+  category: MRContactStoreAmmo
+  price: 10
