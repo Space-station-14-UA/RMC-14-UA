@@ -286,70 +286,70 @@ public sealed class RoundEndAwardsSystem : EntitySystem
         }
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-treasurer-title",
-            "mr-round-end-award-treasurer-description",
+            "mriya-round-end-award-treasurer-title",
+            "mriya-round-end-award-treasurer-description",
             stats => stats.MoneyEarned,
             TreasurerMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-reaper-title",
-            "mr-round-end-award-reaper-description",
+            "mriya-round-end-award-reaper-title",
+            "mriya-round-end-award-reaper-description",
             stats => stats.Kills,
             ReaperMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-runner-title",
-            "mr-round-end-award-runner-description",
+            "mriya-round-end-award-runner-title",
+            "mriya-round-end-award-runner-description",
             stats => (int) MathF.Round(stats.Distance),
             RunnerMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-friendly-fire-title",
-            "mr-round-end-award-friendly-fire-description",
+            "mriya-round-end-award-friendly-fire-title",
+            "mriya-round-end-award-friendly-fire-description",
             stats => (int) MathF.Round(stats.FriendlyFireDamage),
             FriendlyFireMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-medic-title",
-            "mr-round-end-award-medic-description",
+            "mriya-round-end-award-medic-title",
+            "mriya-round-end-award-medic-description",
             stats => (int) MathF.Round(stats.Healing),
             MedicMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-unlucky-title",
-            "mr-round-end-award-unlucky-description",
+            "mriya-round-end-award-unlucky-title",
+            "mriya-round-end-award-unlucky-description",
             stats => stats.Deaths,
             UnluckyMinimum);
 
         AddPacifistAward(ev, participants);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-tank-title",
-            "mr-round-end-award-tank-description",
+            "mriya-round-end-award-tank-title",
+            "mriya-round-end-award-tank-description",
             stats => (int) MathF.Round(stats.MaxDamageReceived),
             TankMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-rigger-title",
-            "mr-round-end-award-rigger-description",
+            "mriya-round-end-award-rigger-title",
+            "mriya-round-end-award-rigger-description",
             stats => stats.AnchorsActivated,
             RiggerMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-gardener-title",
-            "mr-round-end-award-gardener-description",
+            "mriya-round-end-award-gardener-title",
+            "mriya-round-end-award-gardener-description",
             stats => stats.WeedsPlanted,
             GardenerMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-architect-title",
-            "mr-round-end-award-architect-description",
+            "mriya-round-end-award-architect-title",
+            "mriya-round-end-award-architect-description",
             stats => stats.BarricadesBuilt,
             ArchitectMinimum);
 
         AddMostAward(ev, participants,
-            "mr-round-end-award-leaper-title",
-            "mr-round-end-award-leaper-description",
+            "mriya-round-end-award-leaper-title",
+            "mriya-round-end-award-leaper-description",
             stats => stats.LeapHits,
             LeaperMinimum);
 
@@ -362,8 +362,8 @@ public sealed class RoundEndAwardsSystem : EntitySystem
             return;
 
         AddAward(ev,
-            "mr-round-end-award-first-blood-title",
-            "mr-round-end-award-first-blood-description",
+            "mriya-round-end-award-first-blood-title",
+            "mriya-round-end-award-first-blood-description",
             winner,
             1);
     }
@@ -433,8 +433,8 @@ public sealed class RoundEndAwardsSystem : EntitySystem
             return;
 
         AddAward(ev,
-            "mr-round-end-award-pacifist-title",
-            "mr-round-end-award-pacifist-description",
+            "mriya-round-end-award-pacifist-title",
+            "mriya-round-end-award-pacifist-description",
             winnerUser,
             bestKills);
     }
@@ -446,7 +446,7 @@ public sealed class RoundEndAwardsSystem : EntitySystem
         if (string.IsNullOrEmpty(name))
             name = player?.PlayerOOCName;
         if (string.IsNullOrEmpty(name))
-            name = Loc.GetString("mr-round-end-award-unknown-player");
+            name = Loc.GetString("mriya-round-end-award-unknown-player");
 
         ev.Awards.Add(new RoundEndMessageEvent.RoundEndAwardInfo
         {
