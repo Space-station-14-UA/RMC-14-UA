@@ -307,7 +307,7 @@ public abstract class SharedSupplyDropSystem : EntitySystem
         var dropEntityCoordinates = _transform.ToCoordinates(dropCoordinates);
 
         dropping.OpenAt = time + openDelay;
-        dropping.LandingEffect = Spawn(landingEffect, dropEntityCoordinates);
+        dropping.LandingEffect = landingEffect != null ? Spawn(landingEffect, dropEntityCoordinates) : null; // Mriya. Було Spawn(landingEffect, dropEntityCoordinates)
         dropping.LandingDamage = landingDamage;
         Dirty(droppingEntity, dropping);
 
@@ -351,6 +351,10 @@ public abstract class SharedSupplyDropSystem : EntitySystem
 
     private void RemoveWarningMarker(Entity<BeingSupplyDroppedComponent> ent)
     {
+        // Mriya start
+        if (_net.IsClient)
+            return;
+        // Mriya end
         if (!TerminatingOrDeleted(ent.Comp.LandingEffect))
         {
             QueueDel(ent.Comp.LandingEffect);
