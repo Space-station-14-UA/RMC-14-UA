@@ -1,4 +1,5 @@
-﻿using Content.Shared._RMC14.Construction.Prototypes;
+﻿using Content.Shared._Mriya.RoundEnd; // Mriya. Для нагород раунду
+using Content.Shared._RMC14.Construction.Prototypes;
 using Content.Shared._RMC14.Dropship;
 using Content.Shared._RMC14.Vehicle;
 using Content.Shared._RMC14.Emplacements;
@@ -259,9 +260,15 @@ public sealed class RMCConstructionSystem : EntitySystem
         if (!Deleted(ent))
             UpdateStackAmountUI(ent);
 
+        var barricadesBuilt = 0;         // Mriya. Підрахунок збудованих барикад для нагород
         if (args.Amount > 1)
-        {
-            SpawnMultiple(entry.Prototype, args.Amount, coordinates);
+        {   // Mriya start
+            foreach (var spawned in SpawnMultiple(entry.Prototype, args.Amount, coordinates))
+            {
+                if (HasComp<BarricadeComponent>(spawned))
+                    barricadesBuilt++;
+            }
+            // Mriya end
         }
         else
         {
@@ -274,7 +281,17 @@ public sealed class RMCConstructionSystem : EntitySystem
             // Removes collision with the construction until you leave
             if (!HasComp<BarricadeComponent>(built))
                 MakeConstructionImmuneToCollision(built, args.User);
+        // Mriya start
+            else
+                barricadesBuilt++;
         }
+
+        if (barricadesBuilt > 0)
+        {
+            var builtEv = new PlayerBuiltBarricadeEvent(args.User, barricadesBuilt);
+            RaiseLocalEvent(args.User, builtEv);
+        }
+        // Mriya end
     }
 
     /// <summary>

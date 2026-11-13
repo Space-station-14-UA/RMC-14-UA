@@ -589,6 +589,11 @@ namespace Content.Server.GameTicking
             var listOfPlayerInfoFinal = listOfPlayerInfo.OrderBy(pi => pi.PlayerOOCName).ToArray();
             var sound = RoundEndSoundCollection == null ? null : _audio.ResolveSound(new SoundCollectionSpecifier(RoundEndSoundCollection));
 
+            // Mriya start. Збирання нагород раунду
+            var awardsEvent = new RoundEndAwardsEvent(listOfPlayerInfoFinal);
+            RaiseLocalEvent(awardsEvent);
+            // Mriya end
+
             var roundEndMessageEvent = new RoundEndMessageEvent(
                 gamemodeTitle,
                 roundEndText,
@@ -596,7 +601,8 @@ namespace Content.Server.GameTicking
                 RoundId,
                 listOfPlayerInfoFinal.Length,
                 listOfPlayerInfoFinal,
-                sound
+                sound,
+                awardsEvent.Awards.ToArray() // Mriya. Додано нагороди раунду
             );
             RaiseNetworkEvent(roundEndMessageEvent);
             RaiseLocalEvent(roundEndMessageEvent);

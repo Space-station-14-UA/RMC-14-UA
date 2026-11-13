@@ -49,6 +49,8 @@ public sealed class ContactEconomySystem : EntitySystem
     private const float FireCreditRange = 8f;
 
     private readonly Dictionary<NetUserId, int> _balances = new();
+    private readonly Dictionary<NetUserId, int> _earned = new();
+    private readonly Dictionary<NetUserId, int> _terminalsActivated = new();
     private readonly List<EntityUid> _newFires = new();
     private readonly HashSet<Entity<TileFireComponent>> _fireTiles = new();
 
@@ -85,6 +87,8 @@ public sealed class ContactEconomySystem : EntitySystem
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _balances.Clear();
+        _earned.Clear();
+        _terminalsActivated.Clear();
     }
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
@@ -157,6 +161,16 @@ public sealed class ContactEconomySystem : EntitySystem
         return _balances.GetValueOrDefault(user);
     }
 
+    public int GetTotalEarned(NetUserId user)
+    {
+        return _earned.GetValueOrDefault(user);
+    }
+
+    public int GetTerminalsActivated(NetUserId user)
+    {
+        return _terminalsActivated.GetValueOrDefault(user);
+    }
+
     public int GetBalance(EntityUid player)
     {
         return TryGetUser(player, out var user) ? GetBalance(user) : 0;
@@ -177,6 +191,7 @@ public sealed class ContactEconomySystem : EntitySystem
             return;
 
         _balances[user] = GetBalance(user) + amount;
+        _earned[user] = _earned.GetValueOrDefault(user) + amount;
 
         if (!_player.TryGetSessionById(user, out var session))
             return;
@@ -211,6 +226,11 @@ public sealed class ContactEconomySystem : EntitySystem
     /// </summary>
     public void RewardTerminal(EntityUid player)
     {
+        if (TryGetUser(player, out var user))
+        {
+            _terminalsActivated[user] = _terminalsActivated.GetValueOrDefault(user) + 1;
+        }
+
         if (GetConfig() is { } config)
             AddPoints(player, config.TerminalReward, "mriya-contact-points-reason-terminal");
     }
@@ -247,6 +267,11 @@ public sealed class ContactEconomySystem : EntitySystem
         }
 
         EnsureComp<ContactSentryOwnerComponent>(args.Equipped).Owner = user;
+    }
+
+    public bool TryGetPlayerCredit(EntityUid? origin, out NetUserId user, out bool bySentry)
+    {
+        return TryGetCredit(origin, out user, out bySentry);
     }
 
     /// <summary>

@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Administration.UI.CustomControls; // Mriya. Для нагород раунду
 using Content.Client.Message;
 using Content.Shared.GameTicking;
 using Robust.Client.UserInterface.Controls;
@@ -11,11 +12,17 @@ namespace Content.Client.RoundEnd
 {
     public sealed class RoundEndSummaryWindow : DefaultWindow
     {
+        private const float AwardTextMaxWidth = 360; // Mriya. Обмеження ширини тексту нагороди
+
         private readonly IEntityManager _entityManager;
         public int RoundId;
 
         public RoundEndSummaryWindow(string gm, string roundEnd, TimeSpan roundTimeSpan, int roundId,
-            RoundEndMessageEvent.RoundEndPlayerInfo[] info, IEntityManager entityManager)
+            // Mriya start. Додано нагороди раунду
+            RoundEndMessageEvent.RoundEndPlayerInfo[] info,
+            RoundEndMessageEvent.RoundEndAwardInfo[] awards,
+            IEntityManager entityManager)
+            // Mriya end
         {
             _entityManager = entityManager;
 
@@ -31,7 +38,7 @@ namespace Content.Client.RoundEnd
 
             RoundId = roundId;
             var roundEndTabs = new TabContainer();
-            roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
+            roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId, awards)); // Mriya. Додано нагороди раунду
             roundEndTabs.AddChild(MakePlayerManifestTab(info));
 
             Contents.AddChild(roundEndTabs);
@@ -40,7 +47,8 @@ namespace Content.Client.RoundEnd
             MoveToFront();
         }
 
-        private BoxContainer MakeRoundEndSummaryTab(string gamemode, string roundEnd, TimeSpan roundDuration, int roundId)
+        private BoxContainer MakeRoundEndSummaryTab(string gamemode, string roundEnd, TimeSpan roundDuration, int roundId,
+            RoundEndMessageEvent.RoundEndAwardInfo[] awards) // Mriya. Додано нагороди раунду
         {
             var roundEndSummaryTab = new BoxContainer
             {
@@ -84,11 +92,76 @@ namespace Content.Client.RoundEnd
                 roundEndSummaryContainer.AddChild(roundEndLabel);
             }
 
+            // Mriya start. Нагороди раунду: портрет, ім'я та короткий опис
+            if (awards.Length > 0)
+            {
+                roundEndSummaryContainer.AddChild(new HSeparator { Margin = new Thickness(0, 8, 0, 8) });
+
+                var awardsHeader = new RichTextLabel();
+                awardsHeader.SetMarkup(Loc.GetString("rmc-round-end-awards-header"));
+                roundEndSummaryContainer.AddChild(awardsHeader);
+
+                foreach (var award in awards)
+                {
+                    roundEndSummaryContainer.AddChild(MakeAwardEntry(award));
+                }
+            }
+            // Mriya end
+
             roundEndSummaryContainerScrollbox.AddChild(roundEndSummaryContainer);
             roundEndSummaryTab.AddChild(roundEndSummaryContainerScrollbox);
 
             return roundEndSummaryTab;
         }
+
+        // Mriya start. Створення запису нагороди раунду
+        private BoxContainer MakeAwardEntry(RoundEndMessageEvent.RoundEndAwardInfo award)
+        {
+            var awardContainer = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Horizontal,
+                Margin = new Thickness(0, 6),
+            };
+
+            if (award.PlayerNetEntity != null &&
+                _entityManager.TryGetEntity(award.PlayerNetEntity.Value, out _))
+            {
+                awardContainer.AddChild(new SpriteView(award.PlayerNetEntity.Value, _entityManager)
+                {
+                    OverrideDirection = Direction.South,
+                    VerticalAlignment = VAlignment.Center,
+                    SetSize = new Vector2(80, 80),
+                    Margin = new Thickness(0, 0, 4, 0),
+                });
+            }
+
+            var textContainer = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Vertical,
+                VerticalAlignment = VAlignment.Center,
+                VerticalExpand = true,
+                MaxWidth = AwardTextMaxWidth,
+            };
+
+            var title = new RichTextLabel();
+            var titleMessage = new FormattedMessage();
+            titleMessage.PushColor(Color.White);
+            titleMessage.AddText(award.Title);
+            title.SetMessage(titleMessage);
+
+            var description = new RichTextLabel();
+            var descriptionMessage = new FormattedMessage();
+            descriptionMessage.PushColor(Color.FromHex("#C8C8C8"));
+            descriptionMessage.AddText(award.Description);
+            description.SetMessage(descriptionMessage);
+
+            textContainer.AddChild(title);
+            textContainer.AddChild(description);
+            awardContainer.AddChild(textContainer);
+
+            return awardContainer;
+        }
+        // Mriya end
 
         private BoxContainer MakePlayerManifestTab(RoundEndMessageEvent.RoundEndPlayerInfo[] playersInfo)
         {

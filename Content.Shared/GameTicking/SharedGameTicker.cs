@@ -222,6 +222,7 @@ namespace Content.Shared.GameTicking
         public int RoundId { get; }
         public int PlayerCount { get; }
         public RoundEndPlayerInfo[] AllPlayersEndInfo { get; }
+        public RoundEndAwardInfo[] Awards { get; } // Mriya. Нагороди раунду
 
         /// <summary>
         /// Sound gets networked due to how entity lifecycle works between client / server and to avoid clipping.
@@ -235,7 +236,8 @@ namespace Content.Shared.GameTicking
             int roundId,
             int playerCount,
             RoundEndPlayerInfo[] allPlayersEndInfo,
-            ResolvedSoundSpecifier? restartSound)
+            ResolvedSoundSpecifier? restartSound,
+            RoundEndAwardInfo[]? awards = null) // Mriya. Додано нагороди раунду
         {
             GamemodeTitle = gamemodeTitle;
             RoundEndText = roundEndText;
@@ -244,8 +246,35 @@ namespace Content.Shared.GameTicking
             PlayerCount = playerCount;
             AllPlayersEndInfo = allPlayersEndInfo;
             RestartSound = restartSound;
+    // Mriya start. Інформація про нагороду раунду
+            Awards = awards ?? Array.Empty<RoundEndAwardInfo>();
+        }
+
+        [Serializable, NetSerializable, DataDefinition]
+        public partial struct RoundEndAwardInfo
+        {
+            public string Title;
+
+            [DataField]
+            public string Description;
+
+            [DataField]
+            public NetEntity? PlayerNetEntity;
         }
     }
+
+    public sealed class RoundEndAwardsEvent : EntityEventArgs
+    {
+        public RoundEndMessageEvent.RoundEndPlayerInfo[] Players { get; }
+
+        public List<RoundEndMessageEvent.RoundEndAwardInfo> Awards { get; } = new();
+
+        public RoundEndAwardsEvent(RoundEndMessageEvent.RoundEndPlayerInfo[] players)
+        {
+            Players = players;
+        }
+    }
+    // Mriya end
 
     [Serializable, NetSerializable]
     public enum PlayerGameStatus : sbyte

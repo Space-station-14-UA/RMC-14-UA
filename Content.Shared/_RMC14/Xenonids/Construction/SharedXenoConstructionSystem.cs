@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._Mriya.RoundEnd; // Mriya. Для нагород раунду
 using Content.Shared._RMC14.Areas;
 using Content.Shared._RMC14.Entrenching;
 using Content.Shared._RMC14.CCVar;
@@ -320,6 +321,11 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
             var weeds = Spawn(args.Prototype, coordinates);
             _adminLogs.Add(LogType.RMCXenoPlantWeeds, $"Xeno {ToPrettyString(xeno):xeno} planted weeds {ToPrettyString(weeds):weeds} at {coordinates}");
             _hive.SetSameHive(xeno.Owner, weeds);
+
+            // Mriya start. Підрахунок посадження трави для нагород
+            var plantedEv = new PlayerPlantedWeedsEvent(xeno.Owner);
+            RaiseLocalEvent(xeno.Owner, plantedEv);
+            // Mriya end
         }
 
         _audio.PlayPredicted(xeno.Comp.BuildSound, coordinates, xeno);
@@ -407,6 +413,11 @@ public sealed class SharedXenoConstructionSystem : EntitySystem
 
             if (existing == null)
                 _xenoWeeds.AssignSource(newWeeds, _adjacentNodes.Last().Comp?.Source ?? _adjacentNodes.Last());
+
+            // Mriya start. Підрахунок посадження трави для нагород
+            var plantedEv = new PlayerPlantedWeedsEvent(xeno.Owner);
+            RaiseLocalEvent(xeno.Owner, plantedEv);
+            // Mriya end
         }
 
         _audio.PlayPredicted(xeno.Comp.BuildSound, coordinates, xeno.Owner);

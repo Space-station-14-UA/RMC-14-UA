@@ -1,3 +1,4 @@
+using Content.Shared._Mriya.RoundEnd; // Mriya. Для нагород раунду
 using Content.Shared._RMC14.Construction;
 using Content.Shared._RMC14.Damage;
 using Content.Shared._RMC14.Marines.Skills;
@@ -140,6 +141,11 @@ public sealed class RMCFoldingBarricadeSystem : EntitySystem
             Loc.GetString("rmc-folding-barricade-deploy-finish", ("barricade", barricade)),
             barricade,
             args.User);
+
+        // Mriya start. Підрахунок збудованих барикад для нагород
+        var builtEv = new PlayerBuiltBarricadeEvent(args.User);
+        RaiseLocalEvent(args.User, builtEv);
+        // Mriya end
     }
 
     private void OnStackRepairDoAfter(Entity<RMCFoldingBarricadeStackComponent> ent, ref RMCFoldingBarricadeRepairDoAfterEvent args)
