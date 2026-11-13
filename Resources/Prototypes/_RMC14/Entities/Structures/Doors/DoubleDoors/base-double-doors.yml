@@ -89,6 +89,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorGenericGlass
+  name: подвійний скляний шлюз # Mriya
   suffix: Generic, Glass
   components:
   - type: Sprite
@@ -97,6 +98,7 @@
 - type: entity
   parent: RMCDoubleDoorBase
   id: RMCDoubleDoorGenericSolid
+  name: подвійний шлюз # Mriya
   suffix: Generic, Solid
   components:
   - type: Sprite
