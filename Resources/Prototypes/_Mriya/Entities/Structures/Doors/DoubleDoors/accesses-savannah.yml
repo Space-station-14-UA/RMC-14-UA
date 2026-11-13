@@ -1,0 +1,18 @@
+# Нормальні подвійні
+## Корпорат
+- type: entity
+  parent: RMCDoubleDoorAlmayerGlass
+  id: MMCDoubleDoorGlassLiaisonLocked
+  suffix: Мрія. Корпорат, Скляне, Зачинено
+  components:
+  - type: AccessReader
+    access: [ [ "RMCAccessWeYa" ] ]
+
+## Пілоти
+- type: entity
+  parent: RMCDoubleDoorGenericSolid
+  id: MMCDoubleDoorSolidPilotsLocked
+  suffix: Мрія. Пілоти, Зачинено
+  components:
+  - type: AccessReader
+    access: [ [ "CMAccessDropship" ], [ "RMCAccessCommand" ] ]

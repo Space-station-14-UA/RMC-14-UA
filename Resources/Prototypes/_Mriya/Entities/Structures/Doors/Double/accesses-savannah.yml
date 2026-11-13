@@ -1,8 +1,7 @@
-# Перевести в double-doors, коли Саванну оновлюватимеш
 - type: entity
   parent: CMDoubleDoorAlmayerGlass
   id: MMCDoubleDoorBlackLiaisonLocked
-  suffix: Мрія, Корпорат, Зачинено
+  suffix: Мрія. ЗАСТАРІЛЕ. Корпорат, Скляне, Зачинено
   components:
   - type: AccessReader
     access: [ [ "RMCAccessWeYa" ] ]
@@ -10,7 +9,7 @@
 - type: entity
   parent: CMDoubleDoorPersonalSolid
   id: MMCDoubleDoorWhiteLiaisonLocked
-  suffix: Мрія, Корпорат, Зачинено
+  suffix: Мрія. ЗАСТАРІЛЕ. Корпорат, Зачинено
   components:
   - type: AccessReader
     access: [ [ "RMCAccessWeYa" ] ]
