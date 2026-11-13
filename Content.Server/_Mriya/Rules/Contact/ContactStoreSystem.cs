@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._RMC14.SupplyDrop;
 using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.EntitySystems;
@@ -34,6 +35,8 @@ public sealed class ContactStoreSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SupplyDropSystem _supplyDrop = default!;
 
     private static readonly string[] StoragePriority = { "belt", "pocket1", "pocket2", "suitstorage", "back" };
 
@@ -240,28 +243,25 @@ public sealed class ContactStoreSystem : EntitySystem
     }
 
     /// <summary>
-    /// Equip if a free slot fits, otherwise hand, otherwise the ground.
+    /// Launch a supply drop that delivers the item to the player.
     /// </summary>
     private void Deliver(EntityUid user, EntProtoId proto)
     {
+        // Spawn the item entity (same as ATM does)
         var item = Spawn(proto, Transform(user).Coordinates);
 
-        if (TryComp(user, out InventoryComponent? inventory))
-        {
-            foreach (var slot in inventory.Slots)
-            {
-                if ((slot.SlotFlags & SlotFlags.POCKET) != 0)
-                    continue;
+        // Launch the supply drop - the item will air-drop to the player
+        var dropCoordinates = _transform.GetMapCoordinates(user);
+        var skyFallDuration = 3f;
+        var dropDuration = 2f;
 
-                if (_inventory.TryEquip(user, item, slot.Name, silent: true, inventory: inventory))
-                    return;
-            }
+        _supplyDrop.LaunchSupplyDrop(item,
+            dropCoordinates,
+            skyFallDuration,
+            dropDuration,
+            TimeSpan.FromSeconds(skyFallDuration + dropDuration));
 
-            if (TryInsertIntoStorage(user, item, inventory))
-                return;
-        }
-
-        _hands.TryPickupAnyHand(user, item);
+        _popup.PopupEntity("Замовлення прийнято. Очікуйте доставки.", user, user);
     }
 
     private bool TryInsertIntoStorage(EntityUid user, EntityUid item, InventoryComponent inventory)
