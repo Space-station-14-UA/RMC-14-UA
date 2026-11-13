@@ -3,14 +3,12 @@
   proto: CMBicaridineAutoInjector
   category: MRContactStoreMedicine
   price: 1
-  quick: true
 
 - type: contactStoreEntry
   id: MRContactStoreKelotaneInjector
   proto: CMKelotaneAutoInjector
   category: MRContactStoreMedicine
   price: 1
-  quick: true
 
 - type: contactStoreEntry
   id: MRContactStoreTraumaKit
@@ -73,6 +71,7 @@
   proto: MRDefibrillatorCivilian
   category: MRContactStoreMedicine
   price: 20
+  quick: true
 
 - type: contactStoreEntry
   id: MRContactStorePouchReagentCanister15x3
@@ -85,6 +84,14 @@
   proto: MRPressurizedCanisterGC
   category: MRContactStoreMedicine
   price: 20
+  quick: true
+
+- type: contactStoreEntry
+  id: MRContactStoreReagentJugGC
+  proto: MRReagentJugGC
+  category: MRContactStoreMedicine
+  price: 20
+  quick: true
 
 - type: contactStoreEntry
   id: MRContactStoreDefibrillator
@@ -100,6 +107,19 @@
 
 - type: contactStoreEntry
   id: MRContactStorePamphletAdminMedical1
-  proto: RMCPamphletAdminMedical1
+  proto: RMCPamphletAdminMedical2
   category: MRContactStoreMedicine
   price: 100
+
+- type: contactStoreEntry
+  id: MRContactStoreGauze10
+  proto: CMGauze10
+  category: MRContactStoreMedicine
+  price: 5
+  quick: true
+
+- type: contactStoreEntry
+  id: MRContactStoreOintment10
+  proto: CMOintment10
+  category: MRContactStoreMedicine
+  price: 5

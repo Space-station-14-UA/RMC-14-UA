@@ -20,3 +20,26 @@
           Quantity: 94.08
         - ReagentId: CMDexalinPlus
           Quantity: 9.6
+
+
+- type: entity
+  parent: RMCReagentJug
+  id: MRReagentJugGC
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 500
+        reagents:
+        - ReagentId: CMKelotane
+          Quantity: 98
+        - ReagentId: CMDermaline
+          Quantity: 98
+        - ReagentId: CMTricordrazine
+          Quantity: 98
+        - ReagentId: CMMeralyne
+          Quantity: 98
+        - ReagentId: CMBicaridine
+          Quantity: 98
+        - ReagentId: CMDexalinPlus
+          Quantity: 10

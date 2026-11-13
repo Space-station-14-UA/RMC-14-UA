@@ -25,6 +25,14 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.Examine;
+using Content.Server.Chat.Managers;
+using Content.Server.Voting;
+using Content.Server.Voting.Managers;
+using Content.Shared.Chat;
+using Content.Shared._RMC14.Gibbing;
+using Content.Shared._RMC14.Xenonids;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -52,6 +60,17 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly IVoteManager _votes = default!;
+    [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+
+    private static readonly EntProtoId RuleProto = "MRContactRule";
+
+    /// <summary>
+    /// Winner of the lobby planet vote; used by ForcePlanet if it's still a Contact planet.
+    /// </summary>
+    private string? _votedPlanet;
 
     private float? _savedPreflight;
     private readonly List<MapCoordinates> _playerPositions = new();
@@ -62,9 +81,9 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         base.Initialize();
 
         SubscribeLocalEvent<DropshipLandedOnPlanetEvent>(OnDropshipLanded);
-        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<ContactWaveMobComponent, GetMeleeDamageEvent>(OnWaveMobMeleeDamage);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup, after: [typeof(CMDistressSignalRuleSystem)]);
     }
 
     private Entity<ContactRuleComponent>? GetActiveRule()
@@ -91,8 +110,8 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     }
 
     /// <summary>
-    /// Picks a Contact planet and forces it onto Distress (same as ForcePlanetMapCommand).
-    /// Overrides the lobby vote, which only knows rotation maps.
+    /// Forces a Contact planet onto Distress (same as ForcePlanetMapCommand):
+    /// the lobby Contact vote winner, random if there was no vote.
     /// </summary>
     private void ForcePlanet(ContactRuleComponent comp)
     {
@@ -109,7 +128,75 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             return;
         }
 
-        _distress.SetPlanet(_random.Pick(pool));
+        RMCPlanet? voted = null;
+        foreach (var planet in pool)
+        {
+            if (planet.Proto.ID == _votedPlanet)
+                voted = planet;
+        }
+
+        _votedPlanet = null;
+        _distress.SetPlanet(voted ?? _random.Pick(pool));
+    }
+
+    /// <summary>
+    /// Lobby with Contact as the next preset: replace Distress's rotation vote (Contact would override it anyway)
+    /// with a vote between the Contact planets.
+    /// </summary>
+    private void StartPlanetVote()
+    {
+        _votedPlanet = null;
+
+        if (!_config.GetCVar(RMCCVars.RMCPlanetMapVote))
+            return;
+
+        if (GameTicker.Preset is not { } preset || !preset.Rules.Contains(RuleProto.Id))
+            return;
+
+        if (!_prototypes.TryIndex(RuleProto, out var ruleProto) ||
+            !ruleProto.TryGetComponent(out ContactRuleComponent? rule, _compFactory))
+        {
+            return;
+        }
+
+        var planets = _rmcPlanet.GetAllPlanets()
+            .Where(p => rule.Planets.Contains(p.Proto.ID))
+            .ToList();
+
+        // nothing to choose from: keep Distress's vote, ForcePlanet picks anyway
+        if (planets.Count < 2)
+            return;
+
+        _distress.CancelPlanetVote();
+
+        var options = new List<(string text, object data)>();
+        foreach (var planet in planets)
+        {
+            options.Add((planet.Proto.Name, planet.Proto.ID));
+        }
+
+        var vote = new VoteOptions
+        {
+            Title = Loc.GetString("rmc-distress-signal-next-map-title"),
+            Options = options,
+            Duration = TimeSpan.FromMinutes(2),
+        };
+        vote.SetInitiatorOrServer(null);
+
+        var handle = _votes.CreateVote(vote);
+        handle.OnFinished += (_, args) =>
+        {
+            // tie: random between the tied ones
+            var winner = args.Winner ?? (args.Winners.Length > 0 ? _random.Pick(args.Winners) : null);
+            if (winner is not string id)
+                return;
+
+            _votedPlanet = id;
+
+            var name = planets.First(p => p.Proto.ID == id).Proto.Name;
+            var msg = Loc.GetString("rmc-distress-signal-next-map-win", ("winner", name));
+            _chat.ChatMessageToAll(ChatChannel.Server, msg, msg, EntityUid.Invalid, hideChat: false, recordReplay: true);
+        };
     }
 
     #region Round flow
@@ -127,11 +214,13 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
-        if (_savedPreflight is not { } saved)
-            return;
+        if (_savedPreflight is { } saved)
+        {
+            _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, saved);
+            _savedPreflight = null;
+        }
 
-        _config.SetCVar(RMCCVars.RMCDropshipInitialDelayMinutes, saved);
-        _savedPreflight = null;
+        StartPlanetVote();
     }
 
     private void OnDropshipLanded(ref DropshipLandedOnPlanetEvent ev)
@@ -164,6 +253,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         // frozen (FieldEndsAt null) during an extraction offer / evacuation
         if (!comp.FieldUnavailable && time >= comp.FieldEndsAt)
         {
+            GibPlanet(comp);
             EndContact(comp, ContactResult.FieldCollapsed);
             return;
         }
@@ -233,6 +323,35 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         return false;
     }
 
+    /// <summary>
+    /// Field collapse: everyone with a body on the colony (alive or dead, xenos aside) is gibbed with CollapseGibEffect.
+    /// </summary>
+    private void GibPlanet(ContactRuleComponent comp)
+    {
+        var victims = new List<EntityUid>();
+        var query = EntityQueryEnumerator<MobStateComponent, BodyComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out _, out var xform))
+        {
+            if (HasComp<XenoComponent>(uid) || !_rmcPlanet.IsOnPlanet(xform.Coordinates))
+                continue;
+
+            victims.Add(uid);
+        }
+
+        foreach (var uid in victims)
+        {
+            if (TerminatingOrDeleted(uid))
+                continue;
+
+            // RMCGibSystem spawns these on BeingGibbedEvent
+            var effects = EnsureComp<RMCSpawnEntitiesOnGibComponent>(uid);
+            if (!effects.Entities.Contains(comp.CollapseGibEffect))
+                effects.Entities.Add(comp.CollapseGibEffect);
+
+            _body.GibBody(uid);
+        }
+    }
+
     #endregion
 
     #region Anchors
@@ -273,8 +392,20 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
     private void StartWave(EntityUid uid, ContactRuleComponent comp, TimeSpan time)
     {
+        // Extraction offered between waves: no next wave until it's taken or skipped.
+        if (TryComp(uid, out ContactExtractionComponent? offer) &&
+            offer.State is ContactExtractionState.Available or ContactExtractionState.Countdown)
+        {
+            return;
+        }
+
         // evacuation: waves keep coming (faster) but don't count, so exfil at wave 10 stays wave 10
         var counting = !IsEvacuating(uid, out _);
+
+        // wave 10 is over and 11 is due: offer extraction instead
+        if (counting && TryOfferExtraction(uid, comp, time))
+            return;
+
         if (counting)
             comp.Wave++;
 
@@ -284,8 +415,6 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         {
             Log.Error($"Contact: no waves prototype {comp.Waves}");
             SendHud(comp);
-            if (counting)
-                TryOfferExtraction(uid, comp, time);
             return;
         }
 
@@ -336,8 +465,6 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             AnnounceScreen(comp, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
 
         SendHud(comp);
-        if (counting)
-            TryOfferExtraction(uid, comp, time);
     }
 
     private static ContactWaveBuffEntry? GetBuff(ContactWavesPrototype waves, int wave)

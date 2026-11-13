@@ -358,6 +358,12 @@
   category: MRContactStoreAmmo
   price: 3
 
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineSMGM63HEAP
+  proto: RMCMagazineSMGM63HEAP
+  category: MRContactStoreAmmo
+  price: 6
+
 # RMCWeaponSMGType64
 - type: contactStoreEntry
   id: MRContactStoreMagazineSMGType64
@@ -510,5 +516,13 @@
 - type: contactStoreEntry
   id: MRContactStoreMagazineML66D
   proto: RMCMagazineML66D
+  category: MRContactStoreAmmo
+  price: 10
+
+# m60
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineLMGM60
+  proto: RMCMagazineLMGM60
   category: MRContactStoreAmmo
   price: 10

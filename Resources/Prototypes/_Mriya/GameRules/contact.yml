@@ -53,6 +53,7 @@
     planets:
     - MRPlanetChancesContact
     - MRPlanetFiorinaContact
+  - type: ContactCleanup
 
 - type: contactWaves
   id: MRContactWavesDefault
@@ -113,9 +114,13 @@
     damage: 1.75
 
 - type: entity
-  parent: BaseGameRule
-  id: MRRotRuleContact
+  id: MRContactPathBlocker
   categories: [ HideSpawnMenu ]
+  name: path blocker
   components:
-  - type: MRRotRule
-    rotTime: 60
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+  - type: ContactPathBlocker

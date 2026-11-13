@@ -34,6 +34,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
     [Dependency] private readonly ContactRuleSystem _rule = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     private enum DropshipWhere : byte
     {
@@ -45,6 +46,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ContactReinforcementTerminalComponent, ActivateInWorldEvent>(OnTerminalActivate);
+        SubscribeLocalEvent<ContactReinforcementTerminalComponent, MapInitEvent>(OnTerminalMapInit);
     }
 
     private ContactShuttleComponent? GetActive()
@@ -199,12 +201,6 @@ public sealed class ContactShuttleSystem : EntitySystem
 
     #region Evacuation
 
-    public void ReserveForExtraction()
-    {
-        if (GetActive() is { } comp)
-            comp.Extraction = true;
-    }
-
     /// <summary>
     /// Sends the shuttle to the evacuation LZ. Only works once it's refueled (Ready).
     /// </summary>
@@ -265,6 +261,15 @@ public sealed class ContactShuttleSystem : EntitySystem
         return GetActive() is { } comp && TryGetDropship(comp, out var dropship) ? CountAboard(dropship) : 0;
     }
 
+    public void ReserveForExtraction()
+    {
+        if (GetActive() is not { } comp)
+            return;
+
+        comp.Extraction = true;
+        UpdateTerminals(comp);
+    }
+
     #endregion
 
     #region Flights
@@ -272,7 +277,7 @@ public sealed class ContactShuttleSystem : EntitySystem
     private void LaunchDown(ContactShuttleComponent comp, EntityUid dropship)
     {
         comp.ShipDock ??= FindNearestDestination(dropship, planet: false);
-        comp.LandingZone ??= FindDestination(planet: true);
+        comp.LandingZone = FindPrimaryLz() ?? comp.LandingZone ?? FindDestination(planet: true);
 
         if (comp.LandingZone is not { } lz)
         {
@@ -332,6 +337,40 @@ public sealed class ContactShuttleSystem : EntitySystem
     #endregion
 
     #region Reinforcement terminal
+
+    private void SetState(ContactShuttleComponent comp, ContactShuttleState state, TimeSpan? endsAt)
+    {
+        comp.State = state;
+        comp.StateEndsAt = endsAt;
+        SendHud(comp);
+        UpdateTerminals(comp);
+    }
+
+    private void OnTerminalMapInit(Entity<ContactReinforcementTerminalComponent> ent, ref MapInitEvent args)
+    {
+        var state = GetActive() is { } comp ? GetTerminalState(comp) : ContactReinforcementTerminalState.Blocked;
+        _appearance.SetData(ent, ContactReinforcementTerminalVisuals.State, state);
+    }
+
+    private ContactReinforcementTerminalState GetTerminalState(ContactShuttleComponent comp)
+    {
+        if (comp.Extraction)
+            return ContactReinforcementTerminalState.Evacuation;
+
+        return comp.State == ContactShuttleState.Ready && comp.LastAboard > 0
+            ? ContactReinforcementTerminalState.Active
+            : ContactReinforcementTerminalState.Blocked;
+    }
+
+    private void UpdateTerminals(ContactShuttleComponent comp)
+    {
+        var state = GetTerminalState(comp);
+        var query = EntityQueryEnumerator<ContactReinforcementTerminalComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            _appearance.SetData(uid, ContactReinforcementTerminalVisuals.State, state);
+        }
+    }
 
     private void OnTerminalActivate(Entity<ContactReinforcementTerminalComponent> ent, ref ActivateInWorldEvent args)
     {
@@ -471,6 +510,8 @@ public sealed class ContactShuttleSystem : EntitySystem
     {
         var found = new List<EntityUid>();
         var query = EntityQueryEnumerator<DropshipDestinationComponent, TransformComponent>();
+        if (planet && FindPrimaryLz() is { } primary)
+            return primary;
         while (query.MoveNext(out var uid, out _, out var xform))
         {
             if (_rmcPlanet.IsOnPlanet(xform.Coordinates) == planet)
@@ -478,6 +519,21 @@ public sealed class ContactShuttleSystem : EntitySystem
         }
 
         return found.Count == 0 ? null : _random.Pick(found);
+    }
+
+    /// <summary>
+    /// he designated primary LZ on the planet, if there is one.
+    /// </summary>
+    private EntityUid? FindPrimaryLz()
+    {
+        var query = EntityQueryEnumerator<PrimaryLandingZoneComponent, DropshipDestinationComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out _, out var xform))
+        {
+            if (_rmcPlanet.IsOnPlanet(xform.Coordinates))
+                return uid;
+        }
+
+        return null;
     }
 
     private EntityUid? FindNearestDestination(EntityUid dropship, bool planet)
@@ -595,13 +651,7 @@ public sealed class ContactShuttleSystem : EntitySystem
         comp.LastAboard = aboard;
         comp.LastNeeded = needed;
         SendHud(comp);
-    }
-
-    private void SetState(ContactShuttleComponent comp, ContactShuttleState state, TimeSpan? endsAt)
-    {
-        comp.State = state;
-        comp.StateEndsAt = endsAt;
-        SendHud(comp);
+        UpdateTerminals(comp);
     }
 
     private ContactShuttleHudEvent MakeHud(ContactShuttleComponent comp)

@@ -1,9 +1,14 @@
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking.Rules;
 using Content.Shared._Mriya.Respawn;
+using Content.Shared._RMC14.Medical.Defibrillator;
+using Content.Shared._RMC14.Medical.Unrevivable;
 using Content.Shared.Actions;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
+using Content.Shared.Mind;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -12,6 +17,7 @@ namespace Content.Server._Mriya.Respawn;
 
 /// <summary>
 /// Gives ghosts a "return to lobby" action while an MRRespawnRule is active, with an optional per-player limit and delay.
+/// Respawning is permadeath for the character left behind: it's killed if needed and made unrevivable.
 /// Not tied to any gamemode.
 /// </summary>
 public sealed class MRRespawnRuleSystem : GameRuleSystem<MRRespawnRuleComponent>
@@ -19,8 +25,9 @@ public sealed class MRRespawnRuleSystem : GameRuleSystem<MRRespawnRuleComponent>
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IChatManager _chat = default!;
-
-    private readonly List<ICommonSession> _toRespawn = new();
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly RMCUnrevivableSystem _unrevivable = default!;
 
     public override void Initialize()
     {
@@ -106,22 +113,41 @@ public sealed class MRRespawnRuleSystem : GameRuleSystem<MRRespawnRuleComponent>
             : Loc.GetString("mriya-respawn-done", ("left", rule.Comp.MaxRespawns - used - 1));
         _chat.DispatchServerMessage(session, message);
 
-        _toRespawn.Add(session);
+        // before Respawn: the mind still points at the old body
+        KillOldBody(session, ent);
+        GameTicker.Respawn(session);
     }
 
-    public override void Update(float frameTime)
+    /// <summary>
+    /// The character the player leaves behind is gone for good: dead (if it wasn't) and unrevivable.
+    /// The body is the mind's owned entity (ghosting from a body only "visits" the ghost),
+    /// or the original body if the mind already moved to the ghost.
+    /// </summary>
+    private void KillOldBody(ICommonSession session, EntityUid ghost)
     {
-        base.Update(frameTime);
-
-        if (_toRespawn.Count == 0)
+        if (!_mind.TryGetMind(session, out _, out var mind))
             return;
 
-        foreach (var session in _toRespawn)
+        var body = mind.OwnedEntity;
+        if (body == null || body == ghost || HasComp<GhostComponent>(body))
+            body = GetEntity(mind.OriginalOwnedEntity);
+
+        if (body is not { } old ||
+            old == ghost ||
+            HasComp<GhostComponent>(old) ||
+            TerminatingOrDeleted(old))
         {
-            GameTicker.Respawn(session);
+            return;
         }
 
-        _toRespawn.Clear();
+        // ghosted while alive (SSD): the character dies with the respawn
+        if (!_mobState.IsDead(old))
+            _mobState.ChangeMobState(old, MobState.Dead);
+
+        _unrevivable.MakeUnrevivable(old);
+
+        // bodies without RMCRevivable (non-marines): block defibs directly
+        EnsureComp<RMCDefibrillatorBlockedComponent>(old);
     }
 
     #region Admin

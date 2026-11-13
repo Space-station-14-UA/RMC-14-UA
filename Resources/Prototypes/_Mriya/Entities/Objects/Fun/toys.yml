@@ -1,0 +1,18 @@
+- type: entity
+  parent: CMPlushieBase
+  id: MRPlushieSteamhappy
+  name: плюшевий стімгеппі
+  suffix: Мрія
+  description: Плюшева іграшка, яка дарить щастя :steamhappy:. На вицвівшій бірці можна побачити напис про якусь пару та вентиль, а коли ви тримаєте її у руках, у вас з'являється незрозуміла ненавись до числа 3.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Fun/steamhappy.rsi
+    state: steamhappy
+  - type: Tag
+    tags:
+    - Payload
+    - ClothMade
+    - Steamhappy
+
+- type: Tag
+  id: Steamhappy
