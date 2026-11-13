@@ -63,11 +63,11 @@ public static class NightVisionColorExtensions
     {
         return color switch
         {
-            NightVisionColor.Orange => new Color(1.0f, 0.8f, 0.4f),
-            NightVisionColor.White => new Color(0.83f, 0.83f, 0.83f),
-            NightVisionColor.Yellow => new Color(1.0f, 1.0f, 0.4f),
+            NightVisionColor.Orange => new Color(1.0f, 0.5f, 0.08f),
+                        NightVisionColor.White => new Color(0.5f, 0.9f, 1.0f),
+            NightVisionColor.Yellow => new Color(1.0f, 0.92f, 0.08f),
             NightVisionColor.Red => new Color(1.0f, 0.2f, 0.2f),
-            NightVisionColor.Blue => new Color(0.4f, 0.8f, 1.0f),
+            NightVisionColor.Blue => new Color(0.1f, 0.55f, 1.0f),
             _ => new Color(0.22f, 1.0f, 0.08f),
         };
     }

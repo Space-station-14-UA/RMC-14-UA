@@ -9,7 +9,7 @@ void fragment() {
     highp float noise = (fract(sin(dot(UV * TIME, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
 
     // Add noise
-    color.rgb += noise * 0.01; // Adjust intensity of the grain
+    color.rgb += noise * 0.04; // Adjust intensity of the grain
 
     // Apply the night vision tint
     color.rgb *= nv_color;
