@@ -1,0 +1,164 @@
+<controls:MRMonitoringWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Mriya.Monitoring"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    Title="{Loc 'mr-monitoring-title'}"
+    MinSize="680 520">
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#04120A" BorderColor="#2E9E57" BorderThickness="2"/>
+        </PanelContainer.PanelOverride>
+        <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="6">
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#071C10" BorderColor="#154D28" BorderThickness="1"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Horizontal" Margin="10 8" SeparationOverride="10">
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                        <Label Name="HeaderTitle" Access="Public"
+                               Text="{Loc 'mr-monitoring-header'}"
+                               FontColorOverride="#5CFF8A"
+                               StyleClasses="LabelHeading"/>
+                        <Label Text="{Loc 'mr-monitoring-subheader'}"
+                               FontColorOverride="#2E9E57"
+                               StyleClasses="LabelSubText"/>
+                    </BoxContainer>
+                    <BoxContainer Orientation="Vertical" SeparationOverride="2">
+                        <BoxContainer Orientation="Horizontal" SeparationOverride="6" HorizontalAlignment="Right">
+                            <Label Name="BatteryLabel" Access="Public"
+                                   Text="{Loc 'mr-monitoring-battery'}"
+                                   FontColorOverride="#4FE07E"
+                                   VerticalAlignment="Center"/>
+                            <controls:MRMonitoringBattery Name="Battery" Access="Public"
+                                                           SetWidth="52" SetHeight="20"
+                                                           VerticalAlignment="Center"/>
+                        </BoxContainer>
+                        <BoxContainer Orientation="Horizontal" SeparationOverride="6" HorizontalAlignment="Right">
+                            <Label Text="{Loc 'mr-monitoring-signal'}"
+                                   FontColorOverride="#2E9E57"
+                                   VerticalAlignment="Center"/>
+                            <controls:MRMonitoringSignal Name="Signal" Access="Public"
+                                                          SetWidth="44" SetHeight="20"
+                                                          VerticalAlignment="Center"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </BoxContainer>
+            </PanelContainer>
+
+            <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+                <controls:MRMonitoringTabButton Name="RosterTabButton" Access="Public"
+                                                  HorizontalExpand="True" MinHeight="34"/>
+                <controls:MRMonitoringTabButton Name="TrackingTabButton" Access="Public"
+                                                  HorizontalExpand="True" MinHeight="34"/>
+            </BoxContainer>
+
+            <BoxContainer Name="RosterPage" Access="Public" Orientation="Vertical"
+                          VerticalExpand="True" SeparationOverride="4">
+                <PanelContainer>
+                    <PanelContainer.PanelOverride>
+                        <graphics:StyleBoxFlat BackgroundColor="#0A2413" BorderColor="#154D28" BorderThickness="1"/>
+                    </PanelContainer.PanelOverride>
+                    <BoxContainer Orientation="Horizontal" Margin="8 5" SeparationOverride="8">
+                        <Label Text="{Loc 'mr-monitoring-column-name'}"
+                               HorizontalExpand="True"
+                               FontColorOverride="#2E9E57"
+                               StyleClasses="LabelSubText"/>
+                        <Label Text="{Loc 'mr-monitoring-column-state'}"
+                               SetWidth="110"
+                               HorizontalAlignment="Center"
+                               FontColorOverride="#2E9E57"
+                               StyleClasses="LabelSubText"/>
+                        <Label Text="{Loc 'mr-monitoring-column-place'}"
+                               SetWidth="180"
+                               FontColorOverride="#2E9E57"
+                               StyleClasses="LabelSubText"/>
+                    </BoxContainer>
+                </PanelContainer>
+                <ScrollContainer Name="RosterScroll" Access="Public"
+                                 VerticalExpand="True" HScrollEnabled="False">
+                    <BoxContainer Name="RosterContainer" Access="Public"
+                                  Orientation="Vertical"
+                                  HorizontalExpand="True"
+                                  SeparationOverride="2"/>
+                </ScrollContainer>
+                <Label Name="RosterEmpty" Access="Public"
+                       Text="{Loc 'mr-monitoring-roster-empty'}"
+                       FontColorOverride="#2E9E57"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Visible="False"/>
+            </BoxContainer>
+
+            <BoxContainer Name="TrackingPage" Access="Public" Orientation="Vertical"
+                          VerticalExpand="True" Visible="False">
+                <PanelContainer VerticalExpand="True">
+                    <PanelContainer.PanelOverride>
+                        <graphics:StyleBoxFlat BackgroundColor="#06180D" BorderColor="#154D28" BorderThickness="1"/>
+                    </PanelContainer.PanelOverride>
+                    <BoxContainer Orientation="Vertical" Margin="12" VerticalExpand="True" SeparationOverride="6">
+                        <Label Name="TargetName" Access="Public"
+                               Text="{Loc 'mr-monitoring-no-selection'}"
+                               FontColorOverride="#7CFFA8"
+                               StyleClasses="LabelHeading"
+                               HorizontalAlignment="Center"/>
+                        <Label Name="TargetState" Access="Public"
+                               Text="—"
+                               FontColorOverride="#4FE07E"
+                               HorizontalAlignment="Center"/>
+                        <Label Name="TargetArea" Access="Public"
+                               Text=""
+                               FontColorOverride="#2E9E57"
+                               StyleClasses="LabelSubText"
+                               HorizontalAlignment="Center"/>
+                        <Control SetHeight="4"/>
+                        <GridContainer Columns="3" HorizontalAlignment="Center"
+                                       HSeparationOverride="6" VSeparationOverride="4">
+                            <Control/>
+                            <Label Text="{Loc 'mr-monitoring-direction-n'}"
+                                   FontColorOverride="#2E9E57"
+                                   HorizontalAlignment="Center"/>
+                            <Control/>
+                            <Label Text="{Loc 'mr-monitoring-direction-w'}"
+                                   FontColorOverride="#2E9E57"
+                                   VerticalAlignment="Center"/>
+                            <controls:MRMonitoringCompass Name="Compass" Access="Public"
+                                                           SetWidth="180" SetHeight="180"/>
+                            <Label Text="{Loc 'mr-monitoring-direction-e'}"
+                                   FontColorOverride="#2E9E57"
+                                   VerticalAlignment="Center"/>
+                            <Control/>
+                            <Label Text="{Loc 'mr-monitoring-direction-s'}"
+                                   FontColorOverride="#2E9E57"
+                                   HorizontalAlignment="Center"/>
+                            <Control/>
+                        </GridContainer>
+                        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="32">
+                            <BoxContainer Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label Text="{Loc 'mr-monitoring-column-direction'}"
+                                       FontColorOverride="#2E9E57"
+                                       StyleClasses="LabelSubText"
+                                       HorizontalAlignment="Center"/>
+                                <Label Name="DirectionLabel" Access="Public"
+                                       Text="—"
+                                       FontColorOverride="#7CFFA8"
+                                       HorizontalAlignment="Center"/>
+                            </BoxContainer>
+                            <BoxContainer Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label Text="{Loc 'mr-monitoring-column-distance'}"
+                                       FontColorOverride="#2E9E57"
+                                       StyleClasses="LabelSubText"
+                                       HorizontalAlignment="Center"/>
+                                <Label Name="DistanceLabel" Access="Public"
+                                       Text="—"
+                                       FontColorOverride="#7CFFA8"
+                                       HorizontalAlignment="Center"/>
+                            </BoxContainer>
+                        </BoxContainer>
+                        <Control VerticalExpand="True"/>
+                        <controls:MRMonitoringTabButton Name="BackButton" Access="Public" MinHeight="34"/>
+                    </BoxContainer>
+                </PanelContainer>
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</controls:MRMonitoringWindow>

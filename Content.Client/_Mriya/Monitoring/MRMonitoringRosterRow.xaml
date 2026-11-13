@@ -1,0 +1,27 @@
+<widgets:MRMonitoringRosterRow xmlns="https://spacestation14.io"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:widgets="clr-namespace:Content.Client._Mriya.Monitoring">
+    <PanelContainer Name="Background" HorizontalExpand="True">
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalExpand="True"
+                      VerticalAlignment="Center"
+                      Margin="8 5"
+                      SeparationOverride="8">
+            <Label Name="NameLabel"
+                   HorizontalExpand="True"
+                   VerticalAlignment="Center"
+                   ClipText="True"
+                   FontColorOverride="#CFFFD9"/>
+            <Label Name="StateLabel"
+                   SetWidth="110"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontColorOverride="#4FE07E"/>
+            <Label Name="AreaLabel"
+                   SetWidth="180"
+                   VerticalAlignment="Center"
+                   ClipText="True"
+                   FontColorOverride="#7FCF9A"/>
+        </BoxContainer>
+    </PanelContainer>
+</widgets:MRMonitoringRosterRow>

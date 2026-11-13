@@ -113,6 +113,13 @@
   price: 15
 
 - type: contactStoreEntry
+  id: MRContactStoreMonitoring
+  proto: MRMonitoringDevice
+  category: MRContactStoreSpecial
+  price: 150
+  name: mriya-contact-store-monitoring
+
+- type: contactStoreEntry
   id: MRContactPamphletAdminWeaponsSpecialistDemolitionist
   proto: RMCPamphletAdminWeaponsSpecialistDemolitionist
   category: MRContactStoreSpecial

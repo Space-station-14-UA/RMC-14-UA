@@ -1,0 +1,40 @@
+- type: entity
+  parent: BaseHandheldComputer
+  id: MRMonitoringDevice
+  name: моніторинг
+  description: Портативний термінал спостереження за особовим складом КМПОН. Відображає стан морпіхів та напрямок до обраного бійця.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Misc/monitoring.rsi
+    layers:
+    - state: icon
+    - state: working
+      visible: false
+      map: [ "enum.MRMonitoringVisualLayers.Active" ]
+  - type: Item
+    size: Small
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.MRMonitoringVisuals.Enabled:
+        enum.MRMonitoringVisualLayers.Active:
+          True: { state: working, visible: true }
+          False: { state: icon, visible: false }
+  - type: PowerCellDraw
+    drawRate: 2
+  - type: ActivatableUI
+    key: enum.MRMonitoringUI.Key
+    inHandsOnly: true
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.MRMonitoringUI.Key:
+        type: MRMonitoringBui
+  - type: MRMonitoring
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: RMCPowerCellCrap
+  - type: StaticPrice
+    price: 150
