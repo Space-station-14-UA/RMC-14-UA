@@ -114,6 +114,15 @@ rmc-tacmap-alert-no-area = Невідома зона
 rmc-ui-options-alternate-sprites = Використовувати спрайти, що не викликають тріпофобію
 
 rmc-ui-options-chat-squad-color-mode = Розфарбовувати імена морпіхів відповідно до їх загону
+# mriya port start
+rmc-ui-options-night-vision-color = Колір зображення ПНБ
+rmc-ui-options-night-vision-color-green = Зелений
+rmc-ui-options-night-vision-color-orange = Помаранчевий
+rmc-ui-options-night-vision-color-white = Білий
+rmc-ui-options-night-vision-color-yellow = Жовтий
+rmc-ui-options-night-vision-color-red = Червоний
+rmc-ui-options-night-vision-color-blue = Синій
+# mrya port end
 
 # Dialog input
 rmc-dialog-input-placeholder-default = Введіть текст
