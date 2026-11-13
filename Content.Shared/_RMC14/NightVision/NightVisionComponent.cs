@@ -1,6 +1,6 @@
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
-using Robust.Shared.Maths;
+using Robust.Shared.Maths; // mriya port
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -57,18 +57,18 @@ public enum NightVisionColor
     Blue,
 }
 
-public static class NightVisionColorExtensions
+public static class NightVisionColorExtensions // mriya port start
 {
     public static Color ToColor(this NightVisionColor color)
     {
         return color switch
         {
-            NightVisionColor.Orange => new Color(1.0f, 0.5f, 0.08f),
-                        NightVisionColor.White => new Color(0.5f, 0.9f, 1.0f),
+            NightVisionColor.Orange => new Color(1.0f, 0.5f, 0.08f), 
+            NightVisionColor.White => new Color(0.5f, 0.9f, 1.0f),
             NightVisionColor.Yellow => new Color(1.0f, 0.92f, 0.08f),
             NightVisionColor.Red => new Color(1.0f, 0.2f, 0.2f),
             NightVisionColor.Blue => new Color(0.1f, 0.55f, 1.0f),
-            _ => new Color(0.22f, 1.0f, 0.08f),
+            _ => new Color(0.22f, 1.0f, 0.08f), 
         };
     }
-}
+} // mriya portend

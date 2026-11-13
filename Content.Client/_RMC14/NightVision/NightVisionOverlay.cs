@@ -1,12 +1,12 @@
 using System.Numerics;
 using Content.Client.Examine;
-using Content.Shared._RMC14.CCVar;
+using Content.Shared._RMC14.CCVar; // mriya port
 using Content.Shared._RMC14.NightVision;
 using Content.Shared._RMC14.Xenonids;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
-using Robust.Shared.Configuration;
+using Robust.Shared.Configuration; // mriya port
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -18,7 +18,7 @@ public sealed class NightVisionOverlay : Overlay
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!; // mriya port
 
     private readonly ContainerSystem _container;
     private readonly ExamineSystem _examine;
@@ -105,9 +105,9 @@ public sealed class NightVisionOverlay : Overlay
         _shader.SetParameter("renderScale", args.Viewport.RenderScale * args.Viewport.Eye.Scale);
         _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
 
-        var colorVal = _config.GetCVar(RMCCVars.RMCNightVisionColor);
+        var colorVal = _config.GetCVar(RMCCVars.RMCNightVisionColor); // mriya port start
         var color = ((NightVisionColor) colorVal).ToColor();
-        _shader.SetParameter("nv_color", new Robust.Shared.Maths.Vector3(color.R, color.G, color.B));
+        _shader.SetParameter("nv_color", new Robust.Shared.Maths.Vector3(color.R, color.G, color.B)); // mriya port end
 
         var worldHandle = args.WorldHandle;
         worldHandle.UseShader(_shader);
