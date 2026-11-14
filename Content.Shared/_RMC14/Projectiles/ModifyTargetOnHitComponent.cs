@@ -13,4 +13,9 @@ public sealed partial class ModifyTargetOnHitComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityWhitelist? Whitelist;
+
+    // Mriya start. Збереження наявних компонентів цілі замість їх заміни (кислота СМУ).
+    [DataField, AutoNetworkedField]
+    public bool RemoveExisting = true;
+    // Mriya end
 }

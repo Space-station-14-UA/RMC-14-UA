@@ -19,4 +19,9 @@ public sealed partial class ApplyAcidStacksComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityWhitelist? Whitelist = new() { Components = ["Marine"] };
+
+    // Mriya start. Накладання кислотних зарядів лише на вже уражену ціль (СМУ).
+    [DataField, AutoNetworkedField]
+    public bool RequireExisting;
+    // Mriya end
 }

@@ -1,0 +1,227 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+# Offensive xeno caste actions: Venator, Bulwark, Reaper and Sentinel-Manticore.
+
+- type: entity
+  id: ActionXenoVenatorCorrosiveSpit
+  parent: ActionXenoBase
+  name: Кислотний плювок (45)
+  description: Виплюньте концентровану кислоту, що залишає невелику калюжу.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 11
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: venator_corrosive_spit
+  - type: TargetAction
+    repeat: true
+    range: 8
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Venator.XenoVenatorSpitActionEvent
+      projectile: XenoVenatorCorrosiveProjectile
+      speed: 24
+  - type: XenoActionPlasma
+    cost: 45
+  - type: ActionSharedCooldown
+    id: ActionXenoVenatorCorrosiveSpit
+    ids:
+    - ActionXenoVenatorAcidBlob
+    - ActionXenoVenatorEnzymaticBreath
+    cooldown: 11
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoVenatorAcidBlob
+  parent: ActionXenoVenatorCorrosiveSpit
+  name: Кислотна куля (65)
+  description: Жбурніть важкий згусток кислоти. Пряме влучання збиває з ніг, а навколо місця удару розбризкуються кислотні калюжі.
+  components:
+  - type: Action
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: venator_acid_blob
+  - type: WorldTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Venator.XenoVenatorSpitActionEvent
+      projectile: XenoVenatorAcidBlobProjectile
+      speed: 7.5
+      sound:
+        path: /Audio/_RMC14/Xeno/blobattack.ogg
+      stopAtTarget: true
+  - type: XenoActionPlasma
+    cost: 65
+  - type: ActionSharedCooldown
+    id: ActionXenoVenatorAcidBlob
+    ids:
+    - ActionXenoVenatorCorrosiveSpit
+    - ActionXenoVenatorEnzymaticBreath
+    cooldown: 11
+
+- type: entity
+  id: ActionXenoVenatorEnzymaticBreath
+  parent: ActionXenoVenatorCorrosiveSpit
+  name: Кислотний подих (55)
+  description: Видихніть короткий струмінь кислоти, що заливає землю калюжами.
+  components:
+  - type: Action
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: venator_enzymatic_breath
+  - type: WorldTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Venator.XenoVenatorSpitActionEvent
+      projectile: XenoVenatorBreathProjectile
+      shots: 5
+      deviation: 25
+      speed: 22
+  - type: XenoActionPlasma
+    cost: 55
+  - type: ActionSharedCooldown
+    id: ActionXenoVenatorEnzymaticBreath
+    ids:
+    - ActionXenoVenatorCorrosiveSpit
+    - ActionXenoVenatorAcidBlob
+    cooldown: 11
+
+- type: entity
+  id: ActionXenoPlateBash
+  parent: ActionXenoBase
+  name: Випад
+  description: Вдарте сусіднього ворога пластинами панцира. Якщо пластини не стулені, ви стрибнете на ворога.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 8
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: bulwark_plate_bash
+  - type: TargetAction
+    range: 3
+  - type: EntityTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Bulwark.XenoPlateBashActionEvent
+  - type: XenoOffensiveAction
+  - type: ActionBlockIfResting
+  - type: ActionInRangeUnobstructed
+    range: 3
+
+- type: entity
+  id: ActionXenoBulwarkTailSwing
+  parent: ActionXenoBase
+  name: Розмах хвостом
+  description: Зметіть сусідніх ворогів хвостом.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 12
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: bulwark_tail_swing
+  - type: InstantAction
+    event: !type:Content.Shared._CMU14.Xenonids.Bulwark.XenoBulwarkTailSwingActionEvent
+  - type: XenoOffensiveAction
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoRapture
+  parent: ActionXenoBase
+  name: Розрив плоті
+  description: Розірвіть сусіднього інкубатора, завдавши йому шкоди й сповільнення, та зберіть трохи плоті.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 15
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: reaper_rapture
+  - type: TargetAction
+    range: 3
+  - type: EntityTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Reaper.XenoRaptureActionEvent
+  - type: XenoOffensiveAction
+  - type: ActionBlockIfResting
+  - type: ActionInRangeUnobstructed
+    range: 3
+
+- type: entity
+  id: ActionXenoReaperRedGas
+  parent: ActionXenoBase
+  name: Червоний газ
+  description: Витратьте плоть, щоб розсіяти хвилю токсичного газу.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 25
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: gas_mine
+  - type: TargetAction
+    range: 7
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Reaper.XenoReaperRedGasActionEvent
+  - type: XenoOffensiveAction
+  - type: ActionBlockIfResting
+  - type: ActionInRangeUnobstructed
+    range: 7
+
+- type: entity
+  id: ActionXenoToxicSpit
+  parent: ActionXenoBase
+  name: Токсичний плювок (30)
+  description: Плюньте швидким токсичним снарядом. Він пролітає над союзниками, обпікає та накладає заряди інтоксикації на першу ворожу ціль.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 2
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: xeno_spit
+  - type: TargetAction
+    repeat: true
+    range: 15
+    checkCanAccess: false
+  - type: EntityTargetAction
+    targetCheckCanInteract: false
+  - type: WorldTargetAction
+    event: !type:Content.Shared._CMU14.Xenonids.Sentinel.XenoToxicSpitActionEvent
+  - type: ActionBlockIfResting
+
+- type: entity
+  id: ActionXenoToxicSlash
+  parent: ActionXenoBase
+  name: Токсичний удар (100)
+  description: Змастіть кігті токсином. Ви ненадовго отримуєте 20% швидкості руху, а наступні три удари ближнього бою накладають заряди інтоксикації.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 10
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: neuroclaws_off
+    iconOn:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: neuroclaws_on
+  - type: InstantAction
+    event: !type:Content.Shared._CMU14.Xenonids.Sentinel.XenoToxicSlashActionEvent
+  - type: XenoActionPlasma
+    cost: 100
+
+- type: entity
+  id: ActionXenoDrainSting
+  parent: ActionXenoBase
+  name: Виснажливе жало (75)
+  description: Висмокчіть інтоксикацію із сусіднього ураженого ворога. Поглинуті заряди завдають шкоди, збивають з ніг, лікують вас і відновлюють плазму. Багато зарядів тимчасово зміцнюють панцир.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 25
+    icon:
+      sprite: _CMU14/Actions/xeno_strain_actions.rsi
+      state: neuro_sting
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    targetCheckCanInteract: false
+    event: !type:Content.Shared._CMU14.Xenonids.Sentinel.XenoDrainStingActionEvent
+  - type: XenoActionPlasma
+    cost: 75
+  - type: ActionBlockIfResting
