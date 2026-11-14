@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: MRPamyiatnykSvyni
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: monument
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - material: Steel
+        amount: 50
+        doAfter: 15
+  - node: monument
+    entity: MRPamyiatnykSvyni

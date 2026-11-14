@@ -1,0 +1,13 @@
+- type: construction
+  parent: RMC
+  name: пам'ятник свині
+  id: MRPamyiatnykSvyni
+  graph: MRPamyiatnykSvyni
+  startNode: start
+  targetNode: monument
+  category: construction-category-cm-structures
+  placementMode: SnapgridCenter
+  objectType: Structure
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
