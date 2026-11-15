@@ -24,6 +24,3 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Construction
-    graph: MRPamyiatnykSvyni
-    node: monument
