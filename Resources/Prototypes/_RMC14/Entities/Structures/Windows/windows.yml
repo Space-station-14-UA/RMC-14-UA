@@ -47,6 +47,12 @@
   - type: DamageMultiplierFlags
     flags: Breaching
   - type: RMCMesonsNonviewable
+  # Mriya start. Тег Window: ШІ бачить і стріляє крізь скло. Structure повторено, бо дочірній Tag замінює список батька.
+  - type: Tag
+    tags:
+    - Structure
+    - Window
+  # Mriya end
 
 - type: entity
   abstract: true

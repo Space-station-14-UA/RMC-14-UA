@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Take from https://github.com/Marmio64/halflife-episode13/blob/16a35f42bd03669b18b95f3f6f24e47f7eee719d/hl13/icons/mob/clothing/uniform.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-INNERCLOTHING",
+      "directions": 4
+    }
+  ]
+}
