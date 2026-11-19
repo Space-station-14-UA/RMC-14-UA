@@ -552,3 +552,29 @@
   proto: RMCMagazineRifleXM40HEAP
   category: MRContactStoreAmmo
   price: 10
+
+# ammo boxes
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxBulletsRifleAP
+  proto: RMCBoxBulletsRifleAP
+  category: MRContactStoreAmmo
+  price: 120
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxBulletsRifleIncendiary
+  proto: RMCBoxBulletsRifleIncendiary
+  category: MRContactStoreAmmo
+  price: 120
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxBulletsSMGAP
+  proto: RMCBoxBulletsSMGAP
+  category: MRContactStoreAmmo
+  price: 120
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxBulletsPistolAP
+  proto: RMCBoxBulletsPistolAP
+  category: MRContactStoreAmmo
+  price: 120

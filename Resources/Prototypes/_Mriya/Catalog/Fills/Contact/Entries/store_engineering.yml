@@ -23,10 +23,22 @@
   price: 100
 
 - type: contactStoreEntry
-  id: MRContactStoreKitEngineering
-  proto: RMCKitEngineering
+  id: MRContactStoreSteel
+  proto: CMSheetMetal50
   category: MRContactStoreEngineering
-  price: 50
+  price: 25
+
+- type: contactStoreEntry
+  id: MRContactStorePlasteel
+  proto: CMSheetPlasteel50
+  category: MRContactStoreEngineering
+  price: 25
+
+- type: contactStoreEntry
+  id: MRContactStoreBarbedWire
+  proto: BarbedWireBase
+  category: MRContactStoreEngineering
+  price: 25
 
 - type: contactStoreEntry
   id: MRContactStoreToolboxMechanical
@@ -99,3 +111,33 @@
   proto: RMCPowerCellHigh
   category: MRContactStoreEngineering
   price: 15
+
+- type: contactStoreEntry
+  id: MRContactStoreFulton
+  proto: RMCFulton20
+  category: MRContactStoreEngineering
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreIntelDetector
+  proto: RMCIntelDetector
+  category: MRContactStoreEngineering
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreFoldingBarricadesMB6x3
+  proto: CMFoldingBarricadesMB6x3
+  category: MRContactStoreEngineering
+  price: 50
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxPackFlare
+  proto: RMCBoxPackFlare
+  category: MRContactStoreEngineering
+  price: 27
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxPackFlareCAS
+  proto: RMCBoxPackFlareCAS
+  category: MRContactStoreEngineering
+  price: 27
