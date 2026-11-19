@@ -98,7 +98,23 @@
   proto: RMCMagazineRifleM4SPRWP
   category: MRContactStoreAmmo
   price: 8
+
+# m5
+
+- type: contactStoreEntry
+  id: MRContactStoreM5SPRHVP
+  proto: RMCMagazineRifleM5SPRHVP
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreM5SPRHVPIP
+  proto: RMCMagazineRifleM5SPRHVHIP
+  category: MRContactStoreAmmo
+  price: 8
   
+# m1984
+
 - type: contactStoreEntry
   id: MRContactStoreM1984AP
   proto: RMCMagazinePistolM1984AP
@@ -273,6 +289,24 @@
   proto: CMMagazineRifleM54CE2HT
   category: MRContactStoreAmmo
   price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CE2WP
+  proto: RMCMagazineRifleM54CE2WP
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CE2Incendiary
+  proto: RMCMagazineRifleM54CE2Incendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CE2HEAP
+  proto: RMCMagazineRifleM54CE2HEAP
+  category: MRContactStoreAmmo
+  price: 10
 
 # RMCWeaponRifleM54CMK1AP
 - type: contactStoreEntry
@@ -578,3 +612,27 @@
   proto: RMCBoxBulletsPistolAP
   category: MRContactStoreAmmo
   price: 120
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxBulletsPistolHEAP
+  proto: MRBoxBulletsRifleHEAP
+  category: MRContactStoreAmmo
+  price: 120
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxBulletsPistolWP
+  proto: MRBoxBulletsRifleWP
+  category: MRContactStoreAmmo
+  price: 120
+
+- type: contactStoreEntry
+  id: MRContactStoreBoxBulletsRifleIncendiary
+  proto: RMCBoxBulletsRifleIncendiary
+  category: MRContactStoreAmmo
+  price: 120
+
+- type: contactStoreEntry
+  id: MRContactStoreBox458SOCOM
+  proto: RMCBox458SOCOM
+  category: MRContactStoreAmmo
+  price: 4

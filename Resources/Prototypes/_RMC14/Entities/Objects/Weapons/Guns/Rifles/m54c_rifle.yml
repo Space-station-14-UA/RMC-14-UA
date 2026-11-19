@@ -480,7 +480,7 @@
     - state: ammo_band
       color: "#9C9A19"
   - type: RefillableByBulletBox
-    bulletType: null
+    bulletType: MRBoxBulletsRifleHEAP
 
 - type: entity
   parent: RMCMagazineRifleM54CHEAP
@@ -515,6 +515,8 @@
       color: "#6365E6"
 #  - type: RefillableByBulletBox
 #    bulletType: RMCBoxBulletsRifleAP
+  - type: BulletBox
+    bulletType: MRBoxBulletsRifleWP
 
 - type: entity
   parent: CMMagazineRifleM54C
