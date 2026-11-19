@@ -184,3 +184,9 @@
   proto: RMCWeaponFlamerSpec
   category: MRContactStoreSpecial
   price: 100
+
+- type: contactStoreEntry
+  id: MRContactStorePlushieSteamhappy
+  proto: MRPlushieSteamhappy
+  category: MRContactStoreSpecial
+  price: 500

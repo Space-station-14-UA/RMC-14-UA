@@ -62,16 +62,17 @@
     startWave: 1
     rate: 2
     ratePerWave: 0.15
-    maxAlive: 20
+    maxAlive: 30
   - proto: MRContactXenoDefender
     startWave: 2
     rate: 1
     ratePerWave: 0.15
-    maxAlive: 15
+    maxAlive: 5
   - proto: MRContactXenoLurker
     startWave: 5
+    every: 2
     rate: 1
-    ratePerWave: 0.15
+    ratePerWave: 0
     maxAlive: 2
   - proto: MRContactXenoCrusher
     startWave: 9
@@ -80,12 +81,14 @@
     maxAlive: 5
   - proto: MRContactXenoCharger
     startWave: 20
+    every: 2
     rate: 1
-    ratePerWave: 0.05
-    maxAlive: 2
+    ratePerWave: 0
+    maxAlive: 1
   - proto: MRContactXenoRavagerBerserker
     startWave: 40
-    rate: 0.05
+    every: 2
+    rate: 1
     ratePerWave: 0
     maxAlive: 1
   - proto: MRContactXenoBoiler

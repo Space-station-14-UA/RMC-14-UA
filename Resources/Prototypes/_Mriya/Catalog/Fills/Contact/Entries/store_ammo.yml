@@ -118,6 +118,24 @@
   category: MRContactStoreAmmo
   price: 6
 
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CIncendiary
+  proto: RMCMagazineRifleM54CIncendiary
+  category: MRContactStoreAmmo
+  price: 8
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CHEAP
+  proto: RMCMagazineRifleM54CHEAP
+  category: MRContactStoreAmmo
+  price: 10
+
+- type: contactStoreEntry
+  id: MRContactStoreCMMagazineRifleM54CWP
+  proto: RMCMagazineRifleM54CWP
+  category: MRContactStoreAmmo
+  price: 8
+
 # RMCWeaponRifleL24
 - type: contactStoreEntry
   id: MRContactStoreMagazineRifleL24AP
@@ -524,5 +542,13 @@
 - type: contactStoreEntry
   id: MRContactStoreMagazineLMGM60
   proto: RMCMagazineLMGM60
+  category: MRContactStoreAmmo
+  price: 10
+
+# xm40
+
+- type: contactStoreEntry
+  id: MRContactStoreMagazineRifleXM40HEAP
+  proto: RMCMagazineRifleXM40HEAP
   category: MRContactStoreAmmo
   price: 10
