@@ -12,6 +12,12 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Prototypes;
+using Content.Server.Shuttles.Components;
+using Content.Shared.Buckle;
+using Content.Shared.Doors.Components;
+using Content.Shared.Shuttles.Systems;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -35,6 +41,9 @@ public sealed class ContactShuttleSystem : EntitySystem
     [Dependency] private readonly MarineAnnounceSystem _marineAnnounce = default!;
     [Dependency] private readonly ContactRuleSystem _rule = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefs = default!;
+    [Dependency] private readonly SharedBuckleSystem _buckle = default!;
 
     private enum DropshipWhere : byte
     {
@@ -42,6 +51,15 @@ public sealed class ContactShuttleSystem : EntitySystem
         Planet,
         Flight,
     }
+
+    /// <summary>
+    /// Padding tiles around dropship hulls: still the dropship's grid, so exits are past them.
+    /// </summary>
+    private const string EmptyFloor = "RMCFloorEmpty";
+
+    private const int MaxExitSteps = 5;
+
+    private static readonly Vector2i[] Cardinals = { new(0, 1), new(0, -1), new(1, 0), new(-1, 0) };
 
     public override void Initialize()
     {
@@ -91,6 +109,9 @@ public sealed class ContactShuttleSystem : EntitySystem
 
         SyncManualFlight(comp, dropship, where, now);
 
+        if (where == DropshipWhere.Planet && !comp.ExtractionFlight && IsTakingOff(dropship))
+            EjectStragglers(dropship);
+
         switch (comp.State)
         {
             case ContactShuttleState.WaitingForBoarding:
@@ -125,7 +146,6 @@ public sealed class ContactShuttleSystem : EntitySystem
                 if (comp.ExtractionFlight || now < comp.StateEndsAt)
                     break;
 
-                EjectStragglers(dropship);
                 if (comp.ShipDock is { } dock && Launch(dropship, dock))
                     SetState(comp, ContactShuttleState.Returning, null);
 
@@ -304,34 +324,87 @@ public sealed class ContactShuttleSystem : EntitySystem
     }
 
     /// <summary>
-    /// Nobody rides back up: marines still aboard are moved next to a teammate on the colony.
-    /// If nobody's on the colony, they ride back (and the round's "all marines on colony dead" check takes over).
+    /// Taking off from the colony: the FTL startup is running, the grid hasn't left yet.
+    /// </summary>
+    private bool IsTakingOff(EntityUid dropship)
+    {
+        return TryComp(dropship, out FTLComponent? ftl) && ftl.State == FTLState.Starting;
+    }
+
+    /// <summary>
+    /// Nobody rides back up: living marines aboard are put outside the dropship's doors.
+    /// No exit found: they ride back (and the round's "all marines on colony dead" check takes over).
     /// </summary>
     private void EjectStragglers(EntityUid dropship)
     {
-        var colony = new List<EntityUid>();
         var stragglers = new List<EntityUid>();
-
         var query = EntityQueryEnumerator<MarineComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out _, out var xform))
         {
-            if (_mobState.IsDead(uid))
-                continue;
-
-            if (xform.GridUid == dropship)
+            if (!_mobState.IsDead(uid) && xform.GridUid == dropship)
                 stragglers.Add(uid);
-            else if (_rmcPlanet.IsOnPlanet(xform.Coordinates))
-                colony.Add(uid);
         }
 
-        if (colony.Count == 0)
+        if (stragglers.Count == 0)
             return;
 
-        foreach (var marine in stragglers)
+        var exits = FindExits(dropship);
+        if (exits.Count == 0)
         {
-            _transform.SetCoordinates(marine, Transform(_random.Pick(colony)).Coordinates);
+            Log.Warning($"Contact shuttle: no exits found outside the doors of {ToPrettyString(dropship)}");
+            return;
+        }
+
+        for (var i = 0; i < stragglers.Count; i++)
+        {
+            var marine = stragglers[i];
+
+            // seats: unbuckle first, or the teleport fights the strap
+            _buckle.TryUnbuckle(marine, null, popup: false);
+
+            _transform.SetMapCoordinates(marine, exits[i % exits.Count]);
+            _transform.AttachToGridOrMap(marine);
             _popup.PopupEntity(Loc.GetString("mriya-contact-shuttle-ejected"), marine, marine, PopupType.MediumCaution);
         }
+    }
+
+    /// <summary>
+    /// First tile off the dropship's grid outside each exit door (doors with Docking: cargo door and hatches,
+    /// not the cockpit). From the door it walks out over empty / padding tiles; a real floor means that side is inside.
+    /// </summary>
+    private List<MapCoordinates> FindExits(EntityUid dropship)
+    {
+        var exits = new List<MapCoordinates>();
+        if (!TryComp(dropship, out MapGridComponent? grid))
+            return exits;
+
+        var query = EntityQueryEnumerator<DockingComponent, DoorComponent, TransformComponent>();
+        while (query.MoveNext(out _, out _, out _, out var xform))
+        {
+            if (xform.GridUid != dropship)
+                continue;
+
+            var door = _map.TileIndicesFor(dropship, grid, xform.Coordinates);
+            foreach (var dir in Cardinals)
+            {
+                for (var step = 1; step <= MaxExitSteps; step++)
+                {
+                    var indices = door + dir * step;
+                    if (!_map.TryGetTileRef(dropship, grid, indices, out var tile) || tile.Tile.IsEmpty)
+                    {
+                        // off the dropship: lands on the planet grid
+                        exits.Add(_map.GridTileToWorld(dropship, grid, indices));
+                        break;
+                    }
+
+                    // real floor or a wall: this side is the inside (or blocked)
+                    if (_tileDefs[tile.Tile.TypeId].ID != EmptyFloor)
+                        break;
+                }
+            }
+        }
+
+        return exits;
     }
 
     #endregion
