@@ -626,6 +626,8 @@ public sealed class ContactShuttleSystem : EntitySystem
     /// <summary>
     /// Boarding numbers for the HUD: before the first drop (aboard / half) and when reinforcements are ready.
     /// Only sent when they change.
+    /// Ready with nobody aboard -> someone boards (or refueling finishes with people waiting): announce
+    /// that reinforcements can be called from an LZ terminal.
     /// </summary>
     private void UpdateCounts(ContactShuttleComponent comp, EntityUid dropship)
     {
@@ -647,6 +649,15 @@ public sealed class ContactShuttleSystem : EntitySystem
 
         if (aboard == comp.LastAboard && needed == comp.LastNeeded)
             return;
+
+        // other states count 0 aboard, so becoming Ready with people inside also counts as "0 -> some"
+        if (comp.State == ContactShuttleState.Ready &&
+            !comp.Extraction &&
+            aboard > 0 &&
+            comp.LastAboard <= 0)
+        {
+            Announce("mriya-contact-reinforcements-waiting", ("count", aboard));
+        }
 
         comp.LastAboard = aboard;
         comp.LastNeeded = needed;

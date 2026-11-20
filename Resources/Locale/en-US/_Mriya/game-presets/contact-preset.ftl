@@ -137,6 +137,11 @@ mriya-contact-reinforcements-empty = На шатлі немає підкріпл
 mriya-contact-reinforcements-refueling = Шатл заправляється: ще {$seconds} с.
 mriya-contact-reinforcements-busy = Шатл зараз у транзиті.
 mriya-contact-reinforcements-offline = Шатл недоступний.
+mriya-contact-reinforcements-waiting = {$count ->
+    [one] На борту транспорту {$count} морпіх, готовий до висадки.
+    [few] На борту транспорту {$count} морпіхи, готові до висадки.
+   *[other] На борту транспорту {$count} морпіхів, готових до висадки.
+} Активуйте термінал підкріплень на будь-якій ПЗ, щоб викликати їх.
 
 mriya-contact-hud-shuttle = Шатл
 mriya-contact-hud-shuttle-waiting = Очікування
