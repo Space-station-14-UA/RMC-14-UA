@@ -70,7 +70,7 @@
   - type: Explosive
     explosionType: RMC
     maxIntensity: 40
-    intensitySlope: 10
+    intensitySlope: 5
     totalIntensity: 800
     maxTileBreak: 0
   - type: CMExplosionEffect
@@ -116,4 +116,4 @@
   - type: EvenSmoke
     spawn: MRSmokeThermobaricNoSpread
     initialSpread: 3
-    range: 5
+    range: 3
