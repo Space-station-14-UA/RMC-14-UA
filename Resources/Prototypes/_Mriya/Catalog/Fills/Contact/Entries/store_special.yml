@@ -29,6 +29,12 @@
   price: 25
 
 - type: contactStoreEntry
+  id: MRContactStoreLauncherRPV22
+  proto: MRWeaponLauncherRPV22
+  category: MRContactStoreSpecial
+  price: 30
+
+- type: contactStoreEntry
   id: MRContactStoreLauncherM5ATL
   proto: RMCWeaponLauncherM5ATL
   category: MRContactStoreSpecial
