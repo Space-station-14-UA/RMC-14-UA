@@ -29,4 +29,23 @@ public sealed class ContactCVars
 
     public static readonly CVarDef<float> HudSeparatedY =
         CVarDef.Create("mriya.contact_hud.separated_y", -1f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// ContactSkillPrototype id = level.
+    /// </summary>
+    public static readonly CVarDef<string> LoadoutSkills =
+        CVarDef.Create("mriya.contact_loadout.skills", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Category = ContactLoadoutItemPrototype id.
+    /// </summary>
+    public static readonly CVarDef<string> LoadoutItems =
+        CVarDef.Create("mriya.contact_loadout.items", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Attachment slot id = ContactLoadoutItemPrototype id.
+    /// </summary>
+    public static readonly CVarDef<string> LoadoutAttachments =
+        CVarDef.Create("mriya.contact_loadout.attachments", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+
 }

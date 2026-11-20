@@ -54,6 +54,11 @@
     - MRPlanetChancesContact
     - MRPlanetFiorinaContact
   - type: ContactCleanup
+  - type: ContactLoadout
+    basePoints: 16
+    milestones:
+      20: 2
+      40: 2
 
 - type: contactWaves
   id: MRContactWavesDefault

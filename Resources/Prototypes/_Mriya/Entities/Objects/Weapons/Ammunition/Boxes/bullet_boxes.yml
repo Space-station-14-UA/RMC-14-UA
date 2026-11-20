@@ -22,7 +22,7 @@
 
 - type: entity
   parent: RMCBoxBulletsBase
-  id: MRBoxBulletsRifleHEAP
+  id: MRBoxBulletsRifleWP
   name: коробка набоїв для гвинтівок (10х24 мм СП)
   description: Коробка з стіно-пробивними набоями калібру 10х24 мм. Використовується для поповнення СП магазинів M54C МК1, МК2, та М4СПГ. Має шкіряну лямку, що дозволяє носити її на спині.
   components:

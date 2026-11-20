@@ -274,13 +274,6 @@
   maxPerPurchase: 1
  
 - type: contactStoreEntry
-  id: MRContactStorePouchMagazinePistolLarge
-  proto: RMCPouchMagazinePistolLarge
-  category: MRContactStoreClothing
-  price: 16
-  maxPerPurchase: 1
- 
-- type: contactStoreEntry
   id: MRContactStorePouchDocument
   proto: RMCPouchDocument
   category: MRContactStoreClothing

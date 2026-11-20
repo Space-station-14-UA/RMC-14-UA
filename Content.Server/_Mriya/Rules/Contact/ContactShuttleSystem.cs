@@ -18,6 +18,7 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Shuttles.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Content.Shared.Shuttles.Components;
 
 namespace Content.Server._Mriya.Rules.Contact;
 

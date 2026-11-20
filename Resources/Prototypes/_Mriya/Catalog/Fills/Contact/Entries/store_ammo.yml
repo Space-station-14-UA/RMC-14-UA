@@ -596,12 +596,6 @@
   price: 120
 
 - type: contactStoreEntry
-  id: MRContactStoreBoxBulletsRifleIncendiary
-  proto: RMCBoxBulletsRifleIncendiary
-  category: MRContactStoreAmmo
-  price: 120
-
-- type: contactStoreEntry
   id: MRContactStoreBoxBulletsSMGAP
   proto: RMCBoxBulletsSMGAP
   category: MRContactStoreAmmo

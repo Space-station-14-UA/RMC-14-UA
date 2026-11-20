@@ -64,6 +64,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly ContactLoadoutSystem _loadout = default!;
 
     private static readonly EntProtoId RuleProto = "MRContactRule";
 
@@ -401,6 +402,10 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
 
         // evacuation: waves keep coming (faster) but don't count, so exfil at wave 10 stays wave 10
         var counting = !IsEvacuating(uid, out _);
+
+        // Everyone alive just survived comp.Wave: skill point milestones
+        if (counting && comp.Wave > 0)
+            _loadout.OnWaveSurvived(comp.Wave);
 
         // wave 10 is over and 11 is due: offer extraction instead
         if (counting && TryOfferExtraction(uid, comp, time))

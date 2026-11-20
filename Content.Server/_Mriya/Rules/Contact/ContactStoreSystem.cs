@@ -19,6 +19,8 @@ using Content.Shared.Whitelist;
 using Content.Shared._RMC14.Attachable.Components;
 using Content.Shared._RMC14.Weapons.Ranged.Ammo.BulletBox;
 using Content.Shared.Storage.Components;
+using Content.Shared._RMC14.Weapons.Ranged.Ammo.BulletBox;
+using Content.Shared.Storage.Components;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -350,6 +352,35 @@ public sealed class ContactStoreSystem : EntitySystem
         return whitelist.RequireAll
             ? checks.Count > 0 && checks.All(c => c)
             : checks.Any(c => c);
+    }
+
+    /// <summary>
+    /// Fits a carried gun: matches a whitelist itself (magazines, handfuls, attachments),
+    /// is a bullet box for a carried / fitting magazine, or is a box filled with something that fits
+    /// (shotgun shell boxes, .458 SOCOM box).
+    /// </summary>
+    private bool IsCompatible(EntityPrototype proto, List<EntityWhitelist> whitelists, HashSet<string> bulletTypes, int depth = 0)
+    {
+        if (whitelists.Any(w => MatchesProto(w, proto)))
+            return true;
+
+        if (proto.TryGetComponent(out BulletBoxComponent? box, _compFactory) && bulletTypes.Contains(box.BulletType.Id))
+            return true;
+
+        if (depth >= 2 || !proto.TryGetComponent(out StorageFillComponent? fill, _compFactory))
+            return false;
+
+        foreach (var content in fill.Contents)
+        {
+            if (content.PrototypeId is { } id &&
+                _prototypes.TryIndex(id, out var inner) &&
+                IsCompatible(inner, whitelists, bulletTypes, depth + 1))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }

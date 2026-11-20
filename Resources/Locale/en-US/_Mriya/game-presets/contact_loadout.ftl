@@ -1,0 +1,25 @@
+mriya-contact-loadout-title = Навички та спорядження
+mriya-contact-loadout-tab-skills = Навички
+mriya-contact-loadout-tab-gear = Спорядження
+mriya-contact-loadout-points = Очки навичок: {$left} / {$total}
+mriya-contact-loadout-cost = далі: {$cost}
+mriya-contact-loadout-apply = Застосувати
+mriya-contact-loadout-applied = Спорядження застосовано.
+mriya-contact-loadout-ship-only = Навички та спорядження можна змінити лише на кораблі.
+mriya-contact-loadout-not-enough = Недостатньо очок навичок.
+mriya-contact-loadout-keep = (залишити поточне)
+mriya-contact-loadout-none = (немає)
+mriya-contact-loadout-attachments = Модулі
+mriya-contact-loadout-no-attachments = Оберіть зброю зі слотами для модулів.
+mriya-contact-loadout-category-weapon = Зброя
+mriya-contact-loadout-category-uniform = Уніформа
+mriya-contact-loadout-category-armor = Броня
+mriya-contact-loadout-category-helmet = Шолом
+mriya-contact-loadout-milestone = Ви пережили хвилю {$wave}: +{$points} очок навичок!
+
+mriya-contact-skill-firearms = Вогнепальна зброя
+mriya-contact-skill-firearms-desc = Поводження зі зброєю, точність і перезаряджання.
+mriya-contact-skill-medical = Медицина
+mriya-contact-skill-medical-desc = Перша допомога, ліки та медичні інструменти.
+mriya-contact-skill-engineer = Інженерія
+mriya-contact-skill-engineer-desc = Ремонт, живлення та електроніка.
