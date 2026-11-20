@@ -32,6 +32,24 @@ public sealed partial class ContactRuleComponent : Component
     [DataField]
     public EntProtoId CollapseGibEffect = "MRGibEffectHuman";
 
+    /// <summary>
+    /// Player count the wave tables' RatePerWave is balanced for.
+    /// </summary>
+    [DataField]
+    public int ScaleBasePlayers = 10;
+
+    /// <summary>
+    /// RatePerWave change per player above / below ScaleBasePlayers (0.1 = 20% per 2 players).
+    /// </summary>
+    [DataField]
+    public float ScalePerPlayer = 0.1f;
+
+    /// <summary>
+    /// Lower bound for the population multiplier, so 1-2 players still get some ramp.
+    /// </summary>
+    [DataField]
+    public float MinPopulationScale = 0.2f;
+
     #endregion
 
     #region Waves

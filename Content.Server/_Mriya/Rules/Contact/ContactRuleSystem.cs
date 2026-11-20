@@ -433,6 +433,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         else
         {
             var hive = GetDistressHive();
+            var scale = GetPopulationScale(comp);
             for (var i = 0; i < waves.Spawns.Count; i++)
             {
                 var entry = waves.Spawns[i];
@@ -445,7 +446,8 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
                 if (entry.Every > 0 && (comp.Wave - entry.StartWave) % entry.Every != 0)
                     continue;
 
-                var rate = entry.Rate + entry.RatePerWave * (comp.Wave - entry.StartWave);
+                // RatePerWave is balanced for ScaleBasePlayers; scaled by the living player count
+                var rate = entry.Rate + entry.RatePerWave * scale * (comp.Wave - entry.StartWave);
                 var acc = comp.SpawnAccumulators.GetValueOrDefault(i) + rate;
                 var count = (int) acc;
                 comp.SpawnAccumulators[i] = acc - count;
@@ -465,6 +467,24 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
             AnnounceScreen(comp, Loc.GetString("mriya-contact-wave-started", ("wave", comp.Wave)));
 
         SendHud(comp);
+    }
+
+    /// <summary>
+    /// 1 at ScaleBasePlayers living marines with a player, ScalePerPlayer per player more or less, never below MinPopulationScale.
+    /// Counted every wave, so late joins and deaths adjust it.
+    /// </summary>
+    private float GetPopulationScale(ContactRuleComponent comp)
+    {
+        var players = 0;
+        var query = EntityQueryEnumerator<MarineComponent, ActorComponent, MobStateComponent>();
+        while (query.MoveNext(out var uid, out _, out _, out var mobState))
+        {
+            if (!_mobState.IsDead(uid, mobState))
+                players++;
+        }
+
+        var scale = 1f + (players - comp.ScaleBasePlayers) * comp.ScalePerPlayer;
+        return Math.Max(comp.MinPopulationScale, scale);
     }
 
     private static ContactWaveBuffEntry? GetBuff(ContactWavesPrototype waves, int wave)
