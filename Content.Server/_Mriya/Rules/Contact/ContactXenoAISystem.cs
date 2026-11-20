@@ -39,6 +39,7 @@ using Robust.Shared.Physics.Systems;
 using Content.Shared._RMC14.Xenonids.Acid;
 using Content.Shared.Prying.Components;
 using Content.Shared.Stunnable;
+using Content.Shared._RMC14.Xenonids.ClawSharpness;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -66,6 +67,7 @@ public sealed class ContactXenoAISystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!;
+    [Dependency] private readonly XenoClawsSystem _claws = default!;
 
     public const string NoiseActiveKey = "MRContactNoiseActive";
     public const string HuntActiveKey = "MRContactHuntActive";
@@ -123,6 +125,8 @@ public sealed class ContactXenoAISystem : EntitySystem
         // AI xenos aren't ghost roles and shouldn't spam hive death announcements
         RemCompDeferred<GhostTakeoverAvailableComponent>(ent);
         RemCompDeferred<XenoAnnounceDeathComponent>(ent);
+        if (TryComp(ent, out HTNComponent? htn) && !CanBreakWalls(ent))
+            htn.Blackboard.SetValue(NPCBlackboard.NavSmash, false);
     }
 
     public override void Update(float frameTime)
@@ -432,7 +436,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         if (ai.NoPryUntil is { } noPry && now >= noPry)
         {
             ai.NoPryUntil = null;
-            SetDoorNav(blackboard, true);
+            SetDoorNav(uid, blackboard, true);
         }
 
         // already smashing something
@@ -708,11 +712,20 @@ public sealed class ContactXenoAISystem : EntitySystem
     /// <summary>
     /// With NavPry off but NavSmash on, the pathfinder routes through the door and steering smashes it,
     /// so both go off together while avoiding a powered pod lock.
+    /// NavSmash only ever comes back for xenos whose claws can break walls.
     /// </summary>
-    private void SetDoorNav(NPCBlackboard blackboard, bool enabled)
+    private void SetDoorNav(EntityUid uid, NPCBlackboard blackboard, bool enabled)
     {
         blackboard.SetValue(NPCBlackboard.NavPry, enabled);
-        blackboard.SetValue(NPCBlackboard.NavSmash, enabled);
+        blackboard.SetValue(NPCBlackboard.NavSmash, enabled && CanBreakWalls(uid));
+    }
+
+    /// <summary>
+    /// Normal walls need Sharp claws (ReceiverXenoClaws default); weaker claws deal 0 damage to them.
+    /// </summary>
+    private bool CanBreakWalls(EntityUid uid)
+    {
+        return _claws.HasClawStrength(uid, XenoClawType.Sharp);
     }
 
     /// <summary>
@@ -791,7 +804,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         ai.PryDoor = null;
         ai.PryAttempts = 0;
         ai.DoorStuck = TimeSpan.Zero;
-        SetDoorNav(blackboard, false);
+        SetDoorNav(uid, blackboard, false);
         _steering.Unregister(uid);
     }
 
