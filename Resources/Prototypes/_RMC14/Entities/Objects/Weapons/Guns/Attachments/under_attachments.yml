@@ -12,8 +12,8 @@
 - type: entity
   parent: RMCUnderAttachmentBase
   id: RMCAttachmentAngledGrip # angledgrip
-  name: кутова рукоятка
-  description: Кутова рукоятка, покращує ергономіку зброї та пришвидшує час наведення на ціль. Проте, також, збільшує розмір зброї.
+  name: кутове руків'я
+  description: Кутове руків'я, покращує ергономіку зброї та пришвидшує час наведення на ціль. Проте, також, збільшує розмір зброї.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Attachments/rmc_under.rsi
@@ -689,8 +689,8 @@
 - type: entity
   parent: RMCUnderAttachmentBase
   id: RMCAttachmentVerticalGrip # verticalgrip
-  name: вертикальна рукоятка
-  description: Вертикальна рукоятка, забезпечує кращу точність, зменшену віддачу та менше розсіювання, особливо під час стрільби чергами. Однак збільшує розміри зброї. Гарний вибір, якщо ви любите стріляти тримаючи зброю в двох руках.
+  name: вертикальне руків'я
+  description: Вертикальне руків'я, забезпечує кращу точність, зменшену віддачу та менше розсіювання, особливо під час стрільби чергами. Однак збільшує розміри зброї. Гарний вибір, якщо ви любите стріляти тримаючи зброю в двох руках.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Attachments/rmc_under.rsi
@@ -719,8 +719,8 @@
 - type: entity
   parent: [ RMCUnderAttachmentBase, RMCAttachableToggleableBase ]
   id: RMCAttachmentFlashlightGrip # flashlight/grip
-  name: вертикальна рукоятка з ліхтариком
-  description: Святі небеса, чоловіче, вони поклали руку на ліхтарик! Трохи знижує віддачу та розсіювання. Працює як джерело світла. На випадок, коли вам або треба більше світла, або закінчились нормальні вертикальні рукоятки.
+  name: вертикальне руків'я з ліхтариком
+  description: Святі небеса, чоловіче, вони поклали руку на ліхтарик! Трохи знижує віддачу та розсіювання. Працює як джерело світла. На випадок, коли вам або треба більше світла, або закінчились нормальні вертикальні руків'я.
   components:
   - type: ItemTogglePointLight
   - type: ToggleableVisuals

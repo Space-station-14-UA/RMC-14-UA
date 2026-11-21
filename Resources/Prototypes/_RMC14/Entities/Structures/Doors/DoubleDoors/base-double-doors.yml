@@ -22,7 +22,7 @@
         mask:
         - FullTileMask
         layer:
-        - FullTileLayer
+        - AirlockLayer # Mriya. `FullTileLayer` в оригіналі. Щоб молі та миші пролазили під
 
 - type: entity
   parent: RMCDoubleDoorBase

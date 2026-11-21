@@ -256,8 +256,8 @@
 - type: entity
   parent: RMCHelmetGarbBase
   id: RMCHelmetGarbGasmask
-  name: інтегрований противогаз М5
-  description: Виробництво було припинено КМПОН, коли з’ясувалося, що не кожен боєць носить шолом 24/7. Якби це дивно не звучало – ця новина звела Вище Командування ОН у повний ступор.
+  name: інтегрований протигаз М5
+  description: Виробництво було припинено КМПОН, коли з'ясувалося, що не кожен боєць носить шолом 24/7. Якби це дивно не звучало – ця новина звела Вище Командування ОН у повний ступор.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/HelmetGarb/Gasmasks/gasmask.rsi
@@ -272,7 +272,7 @@
 - type: entity
   parent: RMCHelmetGarbGasmask
   id: RMCHelmetGarbGasmaskDesert
-  name: пустельний інтегрований противогаз М5
+  name: пустельний інтегрований протигаз М5
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/HelmetGarb/Gasmasks/gasmask_desert.rsi
@@ -288,7 +288,7 @@
 - type: entity
   parent: RMCHelmetGarbGasmask
   id: RMCHelmetGarbGasmaskJungle
-  name: джунглевий інтегрований противогаз М5
+  name: джунглевий інтегрований протигаз М5
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/HelmetGarb/Gasmasks/gasmask_jungle.rsi
@@ -303,7 +303,7 @@
 - type: entity
   parent: RMCHelmetGarbGasmask
   id: RMCHelmetGarbGasmaskUrban
-  name: міський інтегрований противогаз М5
+  name: міський інтегрований протигаз М5
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/HelmetGarb/Gasmasks/gasmask_urban.rsi

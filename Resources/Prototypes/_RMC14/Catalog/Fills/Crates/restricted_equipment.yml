@@ -20,7 +20,7 @@
 - type: entity
   id: RMCCrateRestrictedEquipmentIntelSupportKit
   parent: RMCCrateBase
-  name: Ящик з комплектом польового розвідника (фултони, детектор даних, великий підсумок для документів, ключ шифрування та інструкція)
+  name: Ящик з комплектом польового розвідника (фултони, детектор інформації, великий підсумок для документів, ключ шифрування та інструкція)
   components:
   - type: StorageFill
     contents:

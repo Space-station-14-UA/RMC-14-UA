@@ -3,7 +3,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechSLGear
-  name: КолМорТех стійка для обладнання Лідера Загону
+  name: КолМорТех стійка обладнання Лідера Загону
   description: Автоматизована стійка обладнання для Лідера Загону.
   components:
   - type: AccessReader
@@ -50,7 +50,7 @@
       - id: MRKitMedical
         points: 25
         recommended: true
-      # Mria end
+      # Mriya end
       - id: RMCWhistle
         points: 3
       - id: CMFireExtinguisherPortable
@@ -65,7 +65,7 @@
         points: 3
       - id: RMCLaserDesignator
         points: 5
-    - name: Візори Для Шолома
+    - name: Візори для Шолома
       entries:
       - id: RMCVisorWelding
         points: 5
@@ -161,7 +161,7 @@
         points: 4
       - id: CMRollerBedSpawnFolded
         points: 2
-    - name: Особливі Набої
+    - name: Особлива Амуніція
       entries:
       - id: CMMagazineRifleM4SPRAP
         points: 6
@@ -175,7 +175,7 @@
         points: 6
       - id: CMMagazineRifleM54CExt
         points: 6
-    - name: Набої Для Пістолетів
+    - name: Амуніція для Другої Зброї
       entries:
       - id: RMCMagazinePistolM13Ext
         points: 6
@@ -191,7 +191,7 @@
         points: 3
       - id: RMCMagazinePistolSU6
         points: 6
-    - name: Обмежені Боєприпаси
+    - name: Обмежена Амуніція
       entries:
       - id: RMCTankFlamer
         points: 3
@@ -225,7 +225,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechSLEquipment
-  name: КолМорТех автоматизована стійка морпіхотного спорядження Лідера Загону
+  name: КолМорТех автоматизована стійка спорядження Лідера Загону
   description: Автоматизована стійка, під'єднана до величезного сховища зі стандартним спорядженням Лідера Загону морської піхоти.
   components:
   - type: AccessReader
@@ -346,8 +346,8 @@
 - type: entity
   parent: RMCKitBase
   id: RMCKitRifleM4SPR
-  name: стрілецький набір M4SPR
-  description: Містить бойову гвинтівку M4SPR, 4х телескопічний приціл, глушник, подовжений ствол та 2 ББ магазини.
+  name: стрілецький набір М4СПГ
+  description: Містить бойову гвинтівку М4СПГ, 4х телескопічний приціл, глушник, подовжений ствол та 2 ББ магазини.
   components:
   - type: Storage
     maxItemSize: Huge
@@ -365,8 +365,8 @@
 - type: entity
   parent: RMCKitBase
   id: RMCKitCM54C
-  name: набір М54С
-  description: Містить штурмову гвинтівку М54С, кутовий хват, глушник, подовжений ствол та 2 ББ магазини.
+  name: набір М54С МК2
+  description: Містить штурмову гвинтівку М54С МК2, кутове руків'я, глушник, подовжений ствол та 2 ББ магазини.
   components:
   - type: Storage
     maxItemSize: Huge
@@ -385,7 +385,7 @@
   parent: RMCKitBase
   id: RMCKitEngineering
   name: набір інженерного обладнання
-  description: Містить підсумок для матеріалів (50 металевих листів, 50 пласталевих листів та 15 колючого дроту) та пісумок для електроніки (3 модулі контролю потужності та 3 батареї великої ємності).
+  description: Містить підсумок для матеріалів (50 металевих листів, 50 пласталевих листів та 15 колючого дроту) та підсумок для електроніки (3 модулі контролю потужності та 3 батареї великої ємності).
   components:
   - type: Storage
     maxItemSize: Huge

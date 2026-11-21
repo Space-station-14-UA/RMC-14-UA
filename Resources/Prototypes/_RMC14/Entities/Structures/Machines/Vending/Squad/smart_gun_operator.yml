@@ -3,7 +3,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechSGGear
-  name: КолМорТех стійка для обладнання Оператора СмартГана
+  name: КолМорТех стійка обладнання Оператора СмартГана
   description: Автоматизована стійка обладнання для Оператора СмартГана.
   components:
   - type: AccessReader
@@ -19,7 +19,7 @@
       takeAll: CMSmartGunSet
       entries:
       - id: CMSmartGunOperatorEquipmentCase
-    - name: Оснащення Для Зброї
+    - name: Оснащення для Зброї
       choices: { CMGunAttachments: 1 }
       entries:
       - id: RMCAttachmentLaserSight
@@ -46,7 +46,7 @@
         points: 20
       - id: RMCBoxClaymoreMineFilled
         points: 20
-    - name: Набої Для Пістолетів
+    - name: Набої для Пістолетів
       entries:
       - id: RMCMagazinePistolM13Ext
         points: 6
@@ -98,7 +98,7 @@
         points: 10
       - id: RMCLaserDesignator
         points: 15
-    - name: Візори Для Шолома
+    - name: Візори для Шолома
       entries:
       - id: RMCVisorMedical
         points: 15
@@ -126,7 +126,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechSGEquipment
-  name: КолМорТех автоматизована стійка морпіхотного спорядження Оператора СмартГана
+  name: КолМорТех автоматизована стійка спорядження Оператора СмартГана
   description: Автоматизована стійка, під'єднана до величезного сховища зі стандартним спорядженням Оператора СмартГану морської піхоти.
   components:
   - type: AccessReader

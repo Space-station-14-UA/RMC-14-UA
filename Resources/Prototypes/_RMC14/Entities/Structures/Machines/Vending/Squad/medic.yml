@@ -3,7 +3,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechMedicalGear
-  name: КолМорТех стійка для обладнання Бойового Медика
+  name: КолМорТех стійка обладнання Бойового Медика
   description: Автоматизована стійка обладнання для Бойового Медика.
   components:
   - type: AccessReader
@@ -144,7 +144,7 @@
         points: 20
     # - id: RMCElectroshockGrenadex3
     #   points: 16
-    - name: Особливі Набої
+    - name: Особлива Амуніція
       entries:
       - id: CMMagazineRifleM4SPRAP
         points: 6
@@ -158,7 +158,7 @@
         points: 6
       - id: CMMagazineRifleM54CExt
         points: 6
-    - name: Набої Для Пістолетів
+    - name: Амуніція для Другої Зброї
       entries:
       - id: RMCMagazinePistolM13Ext
         points: 6
@@ -212,7 +212,7 @@
         points: 10
       - id: RMCLaserDesignator
         points: 15
-    - name: Візори Для Шолома
+    - name: Візори для Шолома
       entries:
       - id: RMCVisorWelding
         points: 5
@@ -234,7 +234,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechMedicalEquipment
-  name: КолМорТех автоматизована стійка морпіхотного спорядження Бойового Медика
+  name: КолМорТех автоматизована стійка спорядження Бойового Медика
   description: Автоматизована стійка, під'єднана до величезного сховища зі стандартним спорядженням Бойового Медика морської піхоти.
   components:
   - type: AccessReader

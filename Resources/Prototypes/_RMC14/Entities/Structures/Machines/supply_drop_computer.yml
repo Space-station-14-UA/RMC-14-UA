@@ -57,6 +57,11 @@
         - MachineLayer
         hard: false
   - type: SupplyDropPad
+  # Mriya start. Ну бо їх не видно
+  - type: Sprite
+    layers:
+      - state: red
+  # Mriya end
 
 - type: entity
   parent: RMCSupplyDropPadBase
@@ -65,6 +70,13 @@
   components:
   - type: SupplyDropPad
     squad: SquadAlpha
+  # Mriya start
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _RMC14/Objects/Clothing/Mask/Scarfs/alpha.rsi
+        state: icon
+  # Mriya end
 
 - type: entity
   parent: RMCSupplyDropPadBase
@@ -73,6 +85,13 @@
   components:
   - type: SupplyDropPad
     squad: SquadBravo
+  # Mriya start
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _RMC14/Objects/Clothing/Mask/Scarfs/bravo.rsi
+        state: icon
+  # Mriya end
 
 - type: entity
   parent: RMCSupplyDropPadBase
@@ -81,6 +100,13 @@
   components:
   - type: SupplyDropPad
     squad: SquadCharlie
+  # Mriya start
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _RMC14/Objects/Clothing/Mask/Scarfs/charlie.rsi
+        state: icon
+  # Mriya end
 
 - type: entity
   parent: RMCSupplyDropPadBase
@@ -89,6 +115,13 @@
   components:
   - type: SupplyDropPad
     squad: SquadDelta
+  # Mriya start
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _RMC14/Objects/Clothing/Mask/Scarfs/delta.rsi
+        state: icon
+  # Mriya end
 
 - type: entity
   parent: RMCSupplyDropPadBase
@@ -97,3 +130,10 @@
   components:
   - type: SupplyDropPad
     squad: SquadEcho
+  # Mriya start
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _RMC14/Objects/Clothing/Mask/Scarfs/echo.rsi
+        state: icon
+  # Mriya end
