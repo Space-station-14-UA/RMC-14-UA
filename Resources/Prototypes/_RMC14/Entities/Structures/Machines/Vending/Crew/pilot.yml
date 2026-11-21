@@ -4,8 +4,8 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechDropshipCrewEquipment
-  name: ColMarTech Dropship Crew Equipment Rack
-  description: An automated equipment vendor for Dropship Crew
+  name: КолМорТех автоматизована стійка спорядження Персоналу Шатлів
+  description: Автоматизована стійка, під'єднана до величезного сховища зі стандартним спорядженням Пілотів морської піхоти.
   components:
   - type: AccessReader
     access:
@@ -19,7 +19,7 @@
     - CMPilotGunship
     sections:
     # Pilots Section
-    - name: Standard Equipment
+    - name: Стандартне Спорядження
       jobs:
       - CMPilotDropship
       - CMPilotGunship
@@ -30,7 +30,7 @@
       - id: RMCHeadCapPatrol
       - id: CMMRE
     # Dropship Crew Chief Section Start
-    - name: Standard Equipment
+    - name: Стандартне Спорядження
       jobs:
       - CMDropshipCrewChief
       takeAll: CMEquipment
@@ -39,13 +39,13 @@
       - id: RMCHeadCapPatrol
       - id: CMMRE
     # Dropship Crew Chief Section End
-    - name: Gloves
+    - name: Рукавички
       choices: { CMHands: 1 }
       entries:
       - id: CMHandsInsulated
       - id: CMHandsBlackInsulated
     # Pilots Section
-    - name: Armour
+    - name: Броня
       jobs:
       - CMPilotDropship
       - CMPilotGunship
@@ -54,30 +54,32 @@
       - id: RMCArmorVestFlak
       - id: CMArmorM3VLFlakVest
       - id: RMCCoatPilot
+      - id: RMCOuterClothingExternalWebbing # Mriya
     # Dropship Crew Chief Section Start
-    - name: Armour
+    - name: Броня
       jobs:
       - CMDropshipCrewChief
       choices: { CMArmour: 1 }
       entries:
       - id: RMCArmorVestFlak
       - id: CMArmorM3VLFlakVest
+      - id: RMCOuterClothingExternalWebbing # Mriya
     # Dropship Crew Chief Section End
-    - name: Personal Sidearm
+    - name: Особиста Друга Зброя
       choices: { CMSidearm: 1 }
       entries:
       - id: CMWeaponPistolM1984
       - id: RMCMK80
-    - name: Belts
+    - name: Ремені
       choices: { CMBelt: 1 }
       entries:
       - id: RMCBeltUtilityGeneral
       - id: CMBeltMarine
       - id: CMBeltMedicBagFilled
-        name: M276 pattern lifesaver bag (Full)
+        name: сумка рятувальника зразка М276 (Повна)
         recommended: true
       - id: CMBeltMedicalFilled
-        name: M276 pattern medical storage rig (Full)
+        name: ремінь для мед. оснащення зразка М276 (Повний)
         recommended: true
       - id: RMCBeltHolsterSMGPouch
       - id: RMCBeltHolsterPistol
@@ -85,21 +87,21 @@
       - id: RMCBeltHolsterRevolver
       - id: RMCM82FHolster
       - id: RMCM276ShotgunShellLoadingRig
-    - name: Pouches
+    - name: Підсумки
       choices: { CMPouches: 2 }
       entries:
       - id: RMCPouchFirstAidInjectors
-        name: first-aid pouch (refillable injectors)
+        name: підсумок першої допомоги (багаторазові автоін'єктори)
         recommended: true
       - id: RMCPouchFirstAidSplintsGauzeOintment
-        name: first-aid pouch (gauze, ointment)
+        name: підсумок першої допомоги (марля, мазь)
         recommended: true
       - id: RMCPouchFirstAidPills
-        name: first-aid pouch (pills)
+        name: підсумок першої допомоги (пігулки)
         recommended: true
       - id: RMCPouchFirstResponder
       - id: RMCPouchFlareFilled
-        name: flare pouch (Full)
+        name: підсумок для фаєрів (Повний)
       - id: RMCPouchGeneralLarge
       - id: RMCPouchMagazineLarge
       - id: RMCPouchMagazinePistolLarge
@@ -108,7 +110,7 @@
       - id: RMCPouchMedkit
       - id: RMCPouchPistol
       - id: RMCPouchSling
-    - name: Accessories
+    - name: Аксесуари
       choices: { CMAccessories: 1 }
       entries:
       - id: CMWebbingBrown
@@ -123,14 +125,14 @@
       - id: RMCWebbingBlackSmall
       - id: CMWebbingHolster
       - id: RMCWebbingHolsterBlack
-    - name: Glasses
+    - name: Окуляри
       choices: { CMGlasses: 1 }
       entries:
       - id: RMCSunglasses
       - id: RMCGlassesMedicalHUDGlasses
       - id: RMCGlassesAviatorsSilver
       - id: RMCGlassesAviators
-    - name: Flight Visor
+    - name: Пілотські Візори
       choices: { CMFlightVisor: 1 }
       entries:
       - id: RMCVisorPilotBlack
@@ -139,13 +141,13 @@
       - id: RMCVisorPilotPurple
       - id: RMCVisorPilotRed
       - id: RMCVisorPilotYellow
-    - name: Masks
+    - name: Маски
       choices: { CMMasks: 1 }
       entries:
       - id: CMMaskGas
       - id: CMMaskCoif
       - id: RMCMaskRebreather
-    - name: Attachments
+    - name: Оснащення для Зброї
       entries:
       - id: RMCAttachmentAngledGrip
         points: 10
@@ -185,7 +187,7 @@
         points: 10
       - id: RMCAttachmentVerticalGrip
         points: 10
-    - name: Ammunition
+    - name: Амуніція
       entries:
       - id: CMMagazineRifleM4SPRAP
         points: 10
@@ -201,22 +203,22 @@
         points: 10
       - id: RMCSpeedLoader44Marksman
         points: 10
-    - name: Utilities
+    - name: Приладдя
       entries:
       # - id: CMPOFlightsuit # TODO: Port Flightsuit (not the uniform they normally wear)
       #   points: 10
       - id: CMFireExtinguisherPortable
-        name: Fire Extinguisher (Portable)
+        #name: Fire Extinguisher (Portable) – Mriya
         points: 5
       - id: RMCPouchGeneralLarge
         points: 15
       - id: RMCPouchMagazineLarge
         points: 15
       - id: RMCScabbardMacheteFilled
-        name: machete scabbard (Full)
+        name: чохол для мачете (Повний)
         points: 10
       - id: RMCPouchMacheteFilled
-        name: machete pouch (Full)
+        name: підсумок для мачете (Повний)
         points: 15
       - id: RMCMotionDetector
         points: 15
@@ -226,8 +228,8 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechDropshipCrewWeapon
-  name: ColMarTech Dropship Crew Weapon Rack
-  description: An automated combat equipment vendor for Dropship Crew
+  name: КолМорТех стійка зброї та боєприпасів Персоналу Шатлів
+  description: Автоматизована стійка з видачі зброї та боєприпасів, підключена до невеликого сховища стандартної зброї. Доступ мають лише Пілоти.
   components:
   - type: AccessReader
     access:
@@ -245,7 +247,7 @@
     - CMPilotDropship
     - CMPilotGunship
     sections:
-    - name: Primary Firearms
+    - name: Основна Зброя
       entries:
       - id: WeaponRifleM4SPR
         amount: 4
@@ -255,7 +257,7 @@
         amount: 4
       - id: RMCWeaponRifleM54C
         amount: 4
-    - name: Primary Ammunition
+    - name: Амуніція для Основної Зброї
       entries:
       - id: RMCBoxShotgunBuckshot
         amount: 12
@@ -269,7 +271,7 @@
         amount: 24
       - id: CMMagazineRifleM54C
         amount: 24
-    - name: Sidearms
+    - name: Друга Зброя
       entries:
       - id: RMCWeaponPistolM77Empty
         amount: 4
@@ -281,7 +283,7 @@
         amount: 4
       - id: RMCWeaponPistolM82FEmpty
         amount: 4
-    - name: Sidearm Ammunition
+    - name: Амуніція для Другої Зброї
       entries:
       - id: CMMagazinePistolM77AP
         amount: 20
@@ -299,13 +301,13 @@
         amount: 10
       - id: RMCMagazinePistolM13Ext
         amount: 10
-    - name: Attachments
+    - name: Оснащення для Зброї
       entries:
       - id: RMCAttachmentRailFlashlight
         amount: 8
       - id: RMCAttachmentFlashlightGrip
         amount: 4
-    - name: Utilities
+    - name: Додаткове
       entries:
       - id: RMCFlashlight
         amount: 4

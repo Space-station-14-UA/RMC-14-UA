@@ -48,6 +48,10 @@
     blacklist:
       components:
       - Xeno
+  # Mriya start. Святий спам
+  - type: UseDelay
+    delay: 1
+  # Mriya end
 
 - type: entity
   parent: RMCMotionDetector

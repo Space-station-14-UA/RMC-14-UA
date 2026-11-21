@@ -91,7 +91,7 @@
 - type: entity
   id: RMCCrateAttachmentForegrip
   parent: RMCCrateBase
-  name: Ящик рукояток (4 шт кутових, 4 шт вертикальних)
+  name: Ящик руків'ів (4 шт кутових, 4 шт вертикальних)
   components:
   - type: StorageFill
     contents:

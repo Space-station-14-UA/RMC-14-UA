@@ -181,6 +181,10 @@
       tags:
       - CMRollerItem
   - type: HolocardContainer
+  # Mriya start. Святий спам
+  - type: UseDelay
+    delay: 1
+  # Mriya end
 
 # Folded stasis bag
 - type: entity

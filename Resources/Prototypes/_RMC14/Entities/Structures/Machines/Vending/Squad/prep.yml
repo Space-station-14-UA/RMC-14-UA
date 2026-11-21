@@ -2,7 +2,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechGuns
-  name: КолМорТех стійка для зброї та боєприпасів КМПОН
+  name: КолМорТех стійка зброї та боєприпасів КМПОН
   description: Автоматизована стійка з видачі зброї та боєприпасів для морських піхотинців КМПОН.
   components:
   - type: AccessReader
@@ -32,7 +32,7 @@
       - id: RMCWeaponRifleM54C
         amount: 30
         recommended: true
-    - name: Набої Для Основної Зброї
+    - name: Набої для Основної Зброї
       entries:
       - id: RMCBoxShotgunFlechette
         amount: 4
@@ -46,7 +46,7 @@
         amount: 25
       - id: CMMagazineRifleM54C
         amount: 25
-    - name: Пістолети
+    - name: Друга Зброя
       entries:
       - id: RMCWeaponPistolM77Empty
         amount: 25
@@ -58,7 +58,7 @@
         amount: 25
       - id: RMCWeaponPistolM82FEmpty
         amount: 10
-    - name: Набої Для Пістолетів
+    - name: Набої для Другої Зброї
       entries:
       - id: CMMagazinePistolM77AP
         amount: 25
@@ -68,7 +68,7 @@
         amount: 25
       - id: RMCMagazinePistolM13
         amount: 25
-    - name: Оснащення Для Зброї
+    - name: Оснащення для Зброї
       entries:
       - id: RMCAttachmentM63StockCollapsible
         amount: 10
@@ -89,7 +89,7 @@
       - id: CMPackFlare
         amount: 10
         recommended: true
-    - name: Magazine Boxes
+    - name: Коробки з Магазинами
       hasBoxes: true
       jobs:
       - CMQuartermaster
@@ -118,7 +118,7 @@
         box: CMMagazinePistolM1984
       - id: RMCBoxMagazinePistolM13
         box: RMCMagazinePistolM13
-    - name: Ammunition Boxes
+    - name: Коробки з Набоями
       hasBoxes: true
       jobs:
       - CMQuartermaster
@@ -148,7 +148,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechSurplus
-  name: КолМорТех стійка для додаткового спорядження КМПОН
+  name: КолМорТех стійка додаткового спорядження КМПОН
   description: Автоматизована стійка з видачі додаткового спорядження для морських піхотинців КМПОН.
   components:
   - type: AccessReader
@@ -341,7 +341,7 @@
       - id: RMCGlassesMarineRpgOld
         amount: 10
       - id: RMCHelmetGarbGasmask
-        name: інтегрований противогаз М5
+        name: інтегрований протигаз М5
         amount: 10
       - id: RMCHelmetGarbNetting
         name: бойова сітка
@@ -389,8 +389,8 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechMunitions
-  name: КолМорТех стійка для особливої додаткової амуніції КМПОН
-  description: Автоматизована стійка для особливої та додаткової амунції.
+  name: КолМорТех стійка особливої амуніції КМПОН
+  description: Автоматизована стійка для особливої та додаткової амуніції.
   components:
   - type: AccessReader
     access:
@@ -405,7 +405,7 @@
     - "CMAccessRequisitions"
     hackable: true
     sections:
-    - name: Бронебійні Набої
+    - name: Бронебійна Амуніція
       entries:
       - id: CMMagazineRifleM4SPRAP
         amount: 4
@@ -423,7 +423,7 @@
         amount: 2
       - id: RMCMagazinePistolM13Ext
         amount: 4
-    - name: Спеціальні Набої
+    - name: Спеціальна Амуніція
       entries:
       - id: RMCMagazineSmartGun
         amount: 1
@@ -433,7 +433,7 @@
         amount: 2
       - id: RMCMagazinePistolM1984AP
         amount: 2
-    - name: Додадкові Набої
+    - name: Додаткова Амуніція
       entries:
       - id: CMMagazinePistolMK80
         amount: 6
@@ -457,7 +457,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechUtilities
-  name: КолМорТех стійка для додаткового обладнання КМПОН
+  name: КолМорТех стійка додаткового обладнання КМПОН
   description: Автоматизована стійка для додаткового обладнання. Доступна кожному морпіху.
   components:
   - type: AccessReader

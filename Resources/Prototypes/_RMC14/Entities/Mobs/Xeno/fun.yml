@@ -206,6 +206,7 @@
   - type: RemoveComponents
     components:
     - type: CanBeLarvaQueued
+    - type: SSDIndicator
   - type: FiremanCarriable
     canThrow: true
     carrierWhitelist:

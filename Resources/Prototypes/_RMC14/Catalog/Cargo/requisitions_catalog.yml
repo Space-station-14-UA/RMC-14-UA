@@ -92,7 +92,7 @@
         crate: RMCCrateMagazineM2C
       - cost: 6000
         crate: RMCCrateMagazineAmmoSurplus
-    - name: Обвіси
+    - name: Оснащення для Зброї
       entries:
       - cost: 3000
         crate: RMCCrateAttachmentSmartScope

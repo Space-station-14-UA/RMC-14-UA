@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseHandheldComputer
   id: MRMonitoringDevice
-  name: моніторинг
-  description: Портативний термінал спостереження за особовим складом КМПОН. Відображає стан морпіхів та напрямок до обраного бійця.
+  name: пристрій моніторингу особового складу
+  description: Портативний термінал спостереження за особовим складом КМПОН. Здатен відображати стан морпіхів, а також напрямок й відстань до кожного.
   components:
   - type: Sprite
     sprite: _Mriya/Objects/Misc/monitoring.rsi
