@@ -138996,7 +138996,7 @@ entities:
       pos: 46.5,116.5
       parent: 1
     - type: WarpPoint
-      location: Саванна – Лабораторії
+      location: Саванна – Лабораторія
 - proto: WarpPointBeacon
   entities:
   - uid: 16016

@@ -1,5 +1,6 @@
 using Content.Server.PowerCell;
 using Content.Shared._RMC14.Areas;
+using Content.Shared._RMC14.Intel;
 using Content.Shared._RMC14.Marines;
 using Content.Shared._Mriya.Monitoring;
 using Content.Shared.IdentityManagement;
@@ -81,7 +82,8 @@ public sealed class MRMonitoringSystem : EntitySystem
         if (!TryGetEntity(args.Marine, out var target) ||
             !HasComp<MarineComponent>(target) ||
             !TryComp<NpcFactionMemberComponent>(target, out var factions) ||
-            !_factions.IsMember((target.Value, factions), UnmcFaction))
+            !_factions.IsMember((target.Value, factions), UnmcFaction) ||
+            TryComp(target, out IntelRecoverCorpseObjectiveComponent? component))
         {
             return;
         }
@@ -111,6 +113,9 @@ public sealed class MRMonitoringSystem : EntitySystem
         while (query.MoveNext(out var uid, out _, out var factions, out var mobState))
         {
             if (!_factions.IsMember((uid, factions), UnmcFaction))
+                continue;
+
+            if (TryComp(uid, out IntelRecoverCorpseObjectiveComponent? component))
                 continue;
 
             marines.Add(new MRMonitoringMarine(
