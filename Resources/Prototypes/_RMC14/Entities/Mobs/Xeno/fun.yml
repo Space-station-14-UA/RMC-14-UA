@@ -215,4 +215,7 @@
   - type: MriyaOldSprite # Старі/наші версії спрайтів
     normalSprite: _RMC14/Mobs/Xenonids/Extras/lesser_carrier.rsi
     oldSprite: _Mriya/Mobs/OldXenonids/LesserDrone/lesser_carrier.rsi
+  - type: RMCSpeciesSlowdownModifier # Сповільнення від крику квіни
+    slowModifier: 3.5 # Сповільнення на ~55% (там піздець, а не формула під капотом)
+    durationMultiplier: 0.625 # 8 в базі, 5 в результаті
   # Mriya end
