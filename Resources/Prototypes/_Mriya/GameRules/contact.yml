@@ -85,11 +85,11 @@
     ratePerWave: 0.15
     maxAlive: 5
   - proto: MRContactXenoCharger
-    startWave: -1
-    every: -1
-    rate: -1
+    startWave: 25
+    every: 2
+    rate: 1
     ratePerWave: 0
-    maxAlive: -1
+    maxAlive: 1
   - proto: MRContactXenoRavagerBerserker
     startWave: 20
     every: 2

@@ -77,6 +77,7 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         SubscribeLocalEvent<ContactPerksComponent, DamageModifyEvent>(OnPerkOwnerDamageModify);
         SubscribeLocalEvent<ContactPerksComponent, NeurotoxinInjectAttemptEvent>(OnNeurotoxinAttempt);
         SubscribeLocalEvent<ContactPerkGunComponent, AmmoShotEvent>(OnAmmoShot);
+        SubscribeLocalEvent<ContactPerksComponent, BeforeDamageChangedEvent>(OnPerkOwnerBeforeDamage);
     }
 
     /// <summary>
@@ -395,11 +396,6 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         if (args.Origin is not { } origin || !HasComp<XenoComponent>(origin) || !args.Damage.AnyPositive())
             return;
 
-        if (args.Origin == null && IsInImmuneGas(ent))
-        {
-            args.Damage = DamageSpecifier.GetNegative(args.Damage);
-            return;
-        }
 
         float? cap = null;
         foreach (var effect in _perks.GetEffects<ContactPerkDamageCap>(ent.Comp))
@@ -682,6 +678,19 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         }
 
         return Math.Clamp(1f - damageable.TotalDamage.Float() / crit.Value.Float(), 0f, 1f);
+    }
+
+    /// <summary>
+    /// Headhunter gas immunity. Raised even for armor-piercing damage (DamageModifyEvent isn't),
+    /// and RMC's gas damage-over-time has no origin.
+    /// </summary>
+    private void OnPerkOwnerBeforeDamage(Entity<ContactPerksComponent> ent, ref BeforeDamageChangedEvent args)
+    {
+        if (args.Cancelled || args.Origin != null || !args.Damage.AnyPositive())
+            return;
+
+        if (IsInImmuneGas(ent))
+            args.Cancelled = true;
     }
 
     #endregion

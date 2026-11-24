@@ -29,4 +29,10 @@ public sealed partial class ContactLoadoutStateComponent : Component
 {
     [ViewVariables]
     public List<EntityUid> Given = new();
+
+    /// <summary>
+    /// Items given by perks (store tablet, etc), replaced on every apply.
+    /// </summary>
+    [ViewVariables]
+    public List<EntityUid> PerkItems = new();
 }

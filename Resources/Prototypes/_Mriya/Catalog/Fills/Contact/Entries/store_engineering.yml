@@ -36,7 +36,7 @@
 
 - type: contactStoreEntry
   id: MRContactStoreBarbedWire
-  proto: BarbedWireBase
+  proto: BarbedWire15
   category: MRContactStoreEngineering
   price: 25
 

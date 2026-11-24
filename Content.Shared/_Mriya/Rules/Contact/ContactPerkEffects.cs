@@ -447,6 +447,23 @@ public sealed partial class ContactPerkReplaceWeapon : ContactPerkEffect
     public List<EntProtoId> Extras = new();
 }
 
-#endregion
+/// <summary>
+/// These status effects are never applied (cancelled before they start).
+/// </summary>
+public sealed partial class ContactPerkStatusImmunity : ContactPerkEffect
+{
+    [DataField(required: true)]
+    public List<string> Effects = new();
+}
 
+/// <summary>
+/// Items handed out with the loadout while the perk is owned (re-made on every apply).
+/// </summary>
+public sealed partial class ContactPerkGiveItem : ContactPerkEffect
+{
+    [DataField(required: true)]
+    public List<EntProtoId> Items = new();
+}
+
+#endregion
 #endregion

@@ -16,6 +16,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Whitelist;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Shared._Mriya.Rules.Contact;
 
@@ -56,6 +57,7 @@ public sealed class ContactPerkSystem : EntitySystem
         SubscribeLocalEvent<ContactPerksComponent, DidUnequipHandEvent>(OnUnequipHand);
         SubscribeLocalEvent<ContactPerksComponent, ShotAttemptedEvent>(OnShotAttempted);
         SubscribeLocalEvent<ContactPerkGunComponent, GunRefreshModifiersEvent>(OnGunRefresh);
+        SubscribeLocalEvent<ContactPerksComponent, BeforeStatusEffectAddedEvent>(OnBeforeStatusEffect);
     }
 
     #region API
@@ -369,5 +371,23 @@ public sealed class ContactPerkSystem : EntitySystem
         }
 
         return cap is { } max && delay > max ? max : delay;
+    }
+
+    /// <summary>
+    /// LEG Implants: can't be knocked down, stunned or knocked out. Both status systems raise this.
+    /// </summary>
+    private void OnBeforeStatusEffect(Entity<ContactPerksComponent> ent, ref BeforeStatusEffectAddedEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        foreach (var immunity in GetEffects<ContactPerkStatusImmunity>(ent.Comp))
+        {
+            if (!immunity.Effects.Contains(args.Effect.Id))
+                continue;
+
+            args.Cancelled = true;
+            return;
+        }
     }
 }

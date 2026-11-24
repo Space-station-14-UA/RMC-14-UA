@@ -198,6 +198,36 @@ public sealed class ContactLoadoutSystem : EntitySystem
         {
             GiveWeapon(player, state, weapon, ev.Attachments);
         }
+
+        GivePerkItems(player, state);
+
+    }
+
+    private void GivePerkItems(EntityUid player, ContactLoadoutStateComponent state)
+    {
+        foreach (var old in state.PerkItems)
+        {
+            if (!TerminatingOrDeleted(old))
+                QueueDel(old);
+        }
+
+        state.PerkItems.Clear();
+
+        if (!TryComp(player, out ContactPerksComponent? perks))
+            return;
+
+        var coords = Transform(player).Coordinates;
+        foreach (var give in _perks.GetEffects<ContactPerkGiveItem>(perks))
+        {
+            foreach (var proto in give.Items)
+            {
+                var item = Spawn(proto, coords);
+                state.PerkItems.Add(item);
+
+                if (!TryInsertIntoStorage(player, item))
+                    _hands.TryPickupAnyHand(player, item);
+            }
+        }
     }
 
     private void GiveReplacement(EntityUid player, ContactLoadoutStateComponent state, ContactPerkReplaceWeapon replace)

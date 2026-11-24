@@ -266,6 +266,23 @@
   - !type:ContactPerkGunStats
     recoil: 0.8
     unwielded: true
+  - !type:ContactPerkStatusImmunity
+    effects:
+    - KnockedDown
+    - Stun
+    - Unconscious
+
+- type: contactPerk
+  id: MRContactPerkRequisitionsLink
+  deck: mriya-contact-deck-utilitarian
+  name: mriya-contact-perk-reqlink
+  description: mriya-contact-perk-reqlink-desc
+  cost: 2
+  order: 480
+  effects:
+  - !type:ContactPerkGiveItem
+    items:
+    - MRContactStoreTablet
 
 - type: contactPerk
   id: MRContactPerkAdrenalInjectors

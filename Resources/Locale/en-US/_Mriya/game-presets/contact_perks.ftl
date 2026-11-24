@@ -57,6 +57,8 @@ mriya-contact-perk-hworld = Передавач п.СВ1Т
 mriya-contact-perk-hworld-desc = Будь-яка взаємодія з якорями триває 0,5 секунди.
 mriya-contact-perk-headhunter = Спорядження БЛ-'Мисливець за головами'
 mriya-contact-perk-headhunter-desc = +55% шкоди вогнепальною зброєю по ксеноморфах на відстані 10-20 клітинок. Зброя не втрачає шкоду з відстанню.
+mriya-contact-perk-reqlink = Планшет М5.1
+mriya-contact-perk-reqlink-desc = Планшет постачання: купуйте за є-бали будь-де.
 
 mriya-contact-perk-barbarian = Варвар
 mriya-contact-perk-barbarian-desc = +40% шкоди в ближньому бою по ксеноморфах.

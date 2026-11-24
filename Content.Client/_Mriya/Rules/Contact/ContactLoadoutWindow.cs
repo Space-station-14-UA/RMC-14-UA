@@ -56,7 +56,7 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         _factory = factory;
 
         Title = Loc.GetString("mriya-contact-loadout-title");
-        MinSize = new Vector2(600, 640);
+        MinSize = new Vector2(700, 640);
 
         var tabs = new TabContainer { VerticalExpand = true };
 

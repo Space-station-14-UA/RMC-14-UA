@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseItem
+  id: MRContactStoreTablet
+  name: планшет М5.1
+  description: Польовий планшент, який дозволяє під'єднатись до системи постачань та використовувати є-бали. Або ж... Для розваг, скажімо так.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Devices/store_tablet.rsi
+    state: cotablet
+  - type: Item
+    size: Small
+  - type: ContactStore
+  - type: ActivatableUI
+    key: enum.ContactStoreUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.ContactStoreUiKey.Key:
+        type: ContactStoreBoundUserInterface
