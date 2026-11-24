@@ -149,28 +149,55 @@ public sealed class ContactLoadoutSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("mriya-contact-loadout-applied"), player, player);
     }
 
+    private static readonly ContactLoadoutCategory[] ApplyOrder =
+    {
+        ContactLoadoutCategory.Uniform,
+        ContactLoadoutCategory.Armor,
+        ContactLoadoutCategory.Helmet,
+        ContactLoadoutCategory.Boots,
+        ContactLoadoutCategory.Belt,
+        ContactLoadoutCategory.Pouch,
+        ContactLoadoutCategory.Pouch2,
+    };
+
     private void ApplyGear(EntityUid player, ContactLoadoutApplyEvent ev)
     {
         var state = EnsureComp<ContactLoadoutStateComponent>(player);
 
-        // Mriya. Boundary of Death: the chosen weapon is swapped for Kizuna
+        foreach (var category in ApplyOrder)
+        {
+            if (!ev.Items.TryGetValue(category, out var id) ||
+                !_prototypes.TryIndex<ContactLoadoutItemPrototype>(id, out var item) ||
+                item.Category != ContactLoadoutHelpers.ItemCategory(category) ||
+                ContactLoadoutHelpers.ClothingSlot(category) is not { } slot)
+            {
+                continue;
+            }
+
+            try
+            {
+                ReplaceSlot(player, slot, item.Proto);
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Contact loadout: failed to put {item.Proto} into {slot} on {ToPrettyString(player)}: {e}");
+            }
+        }
+
         ContactPerkReplaceWeapon? replace = null;
         if (TryComp(player, out ContactPerksComponent? perks))
             replace = _perks.GetEffects<ContactPerkReplaceWeapon>(perks).FirstOrDefault();
 
-        foreach (var (category, id) in ev.Items)
-        {
-            if (!_prototypes.TryIndex<ContactLoadoutItemPrototype>(id, out var item) || item.Category != category)
-                continue;
-
-            if (ContactLoadoutHelpers.ClothingSlot(category) is { } slot)
-                ReplaceSlot(player, slot, item.Proto);
-            else if (category == ContactLoadoutCategory.Weapon && replace == null)
-                GiveWeapon(player, state, item, ev.Attachments);
-        }
-
         if (replace != null)
+        {
             GiveReplacement(player, state, replace);
+        }
+        else if (ev.Items.TryGetValue(ContactLoadoutCategory.Weapon, out var weaponId) &&
+                 _prototypes.TryIndex<ContactLoadoutItemPrototype>(weaponId, out var weapon) &&
+                 weapon.Category == ContactLoadoutCategory.Weapon)
+        {
+            GiveWeapon(player, state, weapon, ev.Attachments);
+        }
     }
 
     private void GiveReplacement(EntityUid player, ContactLoadoutStateComponent state, ContactPerkReplaceWeapon replace)

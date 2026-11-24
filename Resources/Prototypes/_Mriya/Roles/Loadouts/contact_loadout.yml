@@ -4,6 +4,8 @@
   proto: RMCWeaponShotgunM42A2Filled
   extras:
   - RMCBoxShotgunBuckshot
+  - RMCBoxShotgunBuckshot
+  - RMCBoxShotgunBuckshot
 
 - type: contactLoadoutItem
   id: MRContactLoadoutXM88
@@ -12,18 +14,377 @@
   extras:
   - RMCBox458SOCOM
   - RMCBox458SOCOM
+  - RMCBox458SOCOM
 
-# - type: contactLoadoutItem
-#   id: MRContactLoadoutUniformStandard
-#   category: Uniform
-#   proto: <your marine uniform id>
-#
-# - type: contactLoadoutItem
-#   id: MRContactLoadoutArmorLight
-#   category: Armor
-#   proto: <armor id>
-#
-# - type: contactLoadoutItem
-#   id: MRContactLoadoutHelmet
-#   category: Helmet
-#   proto: <helmet id>
+- type: contactLoadoutItem
+  id: MRContactLoadoutM54C
+  category: Weapon
+  proto: RMCWeaponRifleM54CFilled
+  extras:
+  - CMMagazineRifleM54CAP
+  - CMMagazineRifleM54CAP
+  - CMMagazineRifleM54CAP
+  - CMMagazineRifleM54CAP
+  - CMMagazineRifleM54CAP
+  - CMMagazineRifleM54CAP
+  - CMMagazineRifleM54CAP
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutM54CMK1
+  category: Weapon
+  proto: RMCWeaponRifleM54CMK1
+  extras:
+  - CMMagazineRifleM54CMK1AP
+  - CMMagazineRifleM54CMK1AP
+  - CMMagazineRifleM54CMK1AP
+  - CMMagazineRifleM54CMK1AP
+  - CMMagazineRifleM54CMK1AP
+  - CMMagazineRifleM54CMK1AP
+  - CMMagazineRifleM54CMK1AP
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutM4SPR
+  category: Weapon
+  proto: WeaponRifleM4SPR
+  extras:
+  - CMMagazineRifleM4SPRAP
+  - CMMagazineRifleM4SPRAP
+  - CMMagazineRifleM4SPRAP
+  - CMMagazineRifleM4SPRAP
+  - CMMagazineRifleM4SPRAP
+  - CMMagazineRifleM4SPRAP
+  - CMMagazineRifleM4SPRAP
+  - CMMagazineRifleM4SPRAP
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutM54CE2
+  category: Weapon
+  proto: RMCWeaponRifleM54CE2
+  extras:
+  - CMMagazineRifleM54CE2
+  - CMMagazineRifleM54CE2
+  - CMMagazineRifleM54CE2
+  - CMMagazineRifleM54CE2
+  - CMMagazineRifleM54CE2
+  - CMMagazineRifleM54CE2
+  - CMMagazineRifleM54CE2
+  - CMMagazineRifleM54CE2
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutL42A
+  category: Weapon
+  proto: RMCWeaponRifleL42A
+  extras:
+  - RMCMagazineRifleL42AAP
+  - RMCMagazineRifleL42AAP
+  - RMCMagazineRifleL42AAP
+  - RMCMagazineRifleL42AAP
+  - RMCMagazineRifleL42AAP
+  - RMCMagazineRifleL42AAP
+  - RMCMagazineRifleL42AAP
+  - RMCMagazineRifleL42AAP
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutM63
+  category: Weapon
+  proto: WeaponSMGM63
+  extras:
+  - CMMagazineSMGM63AP
+  - CMMagazineSMGM63AP
+  - CMMagazineSMGM63AP
+  - CMMagazineSMGM63AP
+  - CMMagazineSMGM63AP
+  - CMMagazineSMGM63AP
+  - CMMagazineSMGM63AP
+  - CMMagazineSMGM63AP
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutM13
+  category: Weapon
+  proto: RMCWeaponPistolM13
+  extras:
+  - RMCMagazinePistolM13Drum
+  - RMCMagazinePistolM13Drum
+  - RMCMagazinePistolM13Drum
+  - RMCMagazinePistolM13Drum
+  - RMCMagazinePistolM13Drum
+  - RMCMagazinePistolM13Drum
+  - RMCMagazinePistolM13Drum
+  - RMCMagazinePistolM13Drum
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutJumpsuitMarine
+  category: Uniform
+  proto: JumpsuitMarine
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutJumpsuitMarineEngineer
+  category: Uniform
+  proto: CMJumpsuitMarineEngineer
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutJumpsuitMarineMedic
+  category: Uniform
+  proto: CMJumpsuitMarineMedic
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutExternalWebbing
+  category: Armor
+  proto: RMCOuterClothingExternalWebbing
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutArmorM3Light
+  category: Armor
+  proto: CMArmorM3Light
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutArmorM3Medium
+  category: Armor
+  proto: CMArmorM3Medium
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutArmorM3Heavy
+  category: Armor
+  proto: CMArmorM3Heavy
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutArmorHelmetM10
+  category: Helmet
+  proto: ArmorHelmetM10
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutArmorHelmetM10Welding
+  category: Helmet
+  proto: RMCArmorHelmetM10Welding
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutArmorHelmetM10Medic
+  category: Helmet
+  proto: CMArmorHelmetM10Medic
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutArmorHelmetM10MedicWhite
+  category: Helmet
+  proto: RMCArmorHelmetM10MedicWhite
+
+# boots
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBootsBlack
+  category: Boots
+  proto: CMBootsBlackFilled
+  order: 0
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBootsGrey
+  category: Boots
+  proto: CMBootsGreyFilled
+  order: 1
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBootsBrown
+  category: Boots
+  proto: CMBootsBrownFilled
+  order: 2
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBootsUrban
+  category: Boots
+  proto: CMBootsUrbanFilled
+  order: 3
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBootsJungle
+  category: Boots
+  proto: CMBootsJungleFilled
+  order: 4
+
+# Belts
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltMarine
+  category: Belt
+  proto: CMBeltMarine
+  order: 0
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutM276ShotgunShellLoadingRig
+  category: Belt
+  proto: RMCM276ShotgunShellLoadingRig
+  order: 1
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltSmartGunOperator
+  category: Belt
+  proto: CMBeltSmartGunOperator
+  order: 2
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltGrenadeLarge
+  category: Belt
+  proto: RMCBeltGrenadeLarge
+  order: 3
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltHolsterPistol
+  category: Belt
+  proto: RMCBeltHolsterPistol
+  order: 4
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltUtility
+  category: Belt
+  proto: CMBeltUtility
+  order: 5
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltConstruction
+  category: Belt
+  proto: RMCBeltConstruction
+  order: 6
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltUtilityCombat
+  category: Belt
+  proto: CMBeltUtilityCombat
+  order: 7
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltMedical
+  category: Belt
+  proto: CMBeltMedical
+  order: 8
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltUtilityGeneral
+  category: Belt
+  proto: RMCBeltUtilityGeneral
+  order: 9
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutM300SOCOMBelt
+  category: Belt
+  proto: RMCM300SOCOMBelt
+  order: 10
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutBeltHolsterM13
+  category: Belt
+  proto: RMCBeltHolsterM13
+  order: 11
+
+# Pouches (offered in both pocket rows)
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchMagazinePistolLarge
+  category: Pouch
+  proto: RMCPouchMagazinePistolLarge
+  order: 0
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchShotgunLarge
+  category: Pouch
+  proto: RMCPouchShotgunLarge
+  order: 1
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchToolsSocFilledTactical
+  category: Pouch
+  proto: RMCPouchToolsSocFilledTactical
+  order: 2
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchDrumPMC
+  category: Pouch
+  proto: RMCPouchDrumPMC
+  order: 3
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchMagazineLarge
+  category: Pouch
+  proto: RMCPouchMagazineLarge
+  order: 4
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchConstruction
+  category: Pouch
+  proto: RMCPouchConstruction
+  order: 5
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchExplosive
+  category: Pouch
+  proto: RMCPouchExplosive
+  order: 6
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchFirstAid
+  category: Pouch
+  proto: RMCPouchFirstAid
+  order: 7
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchFirstAidERT
+  category: Pouch
+  proto: RMCPouchFirstAidERT
+  order: 8
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchFuelTank
+  category: Pouch
+  proto: RMCPouchFuelTank
+  order: 9
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchGeneralLarge
+  category: Pouch
+  proto: RMCPouchGeneralLarge
+  order: 10
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchMedkit
+  category: Pouch
+  proto: RMCPouchMedkit
+  order: 11
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchMedicalSoc
+  category: Pouch
+  proto: RMCPouchMedicalSoc
+  order: 12
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchAutoinjector
+  category: Pouch
+  proto: RMCPouchAutoinjector
+  order: 13
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchCommand
+  category: Pouch
+  proto: RMCPouchCommand
+  order: 14
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchDocument
+  category: Pouch
+  proto: RMCPouchDocument
+  order: 15
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchFlare
+  category: Pouch
+  proto: RMCPouchFlare
+  order: 16
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchEngineerKit
+  category: Pouch
+  proto: RMCPouchEngineerKit
+  order: 17
+
+- type: contactLoadoutItem
+  id: MRContactLoadoutPouchSling
+  category: Pouch
+  proto: RMCPouchSling
+  order: 18

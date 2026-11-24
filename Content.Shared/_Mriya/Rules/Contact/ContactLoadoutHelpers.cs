@@ -35,8 +35,20 @@ public static class ContactLoadoutHelpers
             ContactLoadoutCategory.Uniform => "jumpsuit",
             ContactLoadoutCategory.Armor => "outerClothing",
             ContactLoadoutCategory.Helmet => "head",
+            ContactLoadoutCategory.Boots => "shoes",
+            ContactLoadoutCategory.Belt => "belt",
+            ContactLoadoutCategory.Pouch => "pocket1",
+            ContactLoadoutCategory.Pouch2 => "pocket2",
             _ => null,
         };
+    }
+
+    /// <summary>
+    /// Which item category a row picks from (both pocket rows use Pouch items).
+    /// </summary>
+    public static ContactLoadoutCategory ItemCategory(ContactLoadoutCategory row)
+    {
+        return row == ContactLoadoutCategory.Pouch2 ? ContactLoadoutCategory.Pouch : row;
     }
 
     /// <summary>

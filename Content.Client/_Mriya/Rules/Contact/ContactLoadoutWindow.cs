@@ -23,6 +23,10 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         ContactLoadoutCategory.Uniform,
         ContactLoadoutCategory.Armor,
         ContactLoadoutCategory.Helmet,
+        ContactLoadoutCategory.Boots,
+        ContactLoadoutCategory.Belt,
+        ContactLoadoutCategory.Pouch,
+        ContactLoadoutCategory.Pouch2,
     };
 
     private static readonly Color DescriptionColor = Color.FromHex("#9A9A9A");
@@ -52,7 +56,7 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         _factory = factory;
 
         Title = Loc.GetString("mriya-contact-loadout-title");
-        MinSize = new Vector2(560, 600);
+        MinSize = new Vector2(600, 640);
 
         var tabs = new TabContainer { VerticalExpand = true };
 
@@ -127,7 +131,8 @@ public sealed class ContactLoadoutWindow : DefaultWindow
 
         foreach (var (category, id) in preset.Items)
         {
-            if (_prototypes.TryIndex<ContactLoadoutItemPrototype>(id, out var item) && item.Category == category)
+            if (_prototypes.TryIndex<ContactLoadoutItemPrototype>(id, out var item) &&
+                item.Category == ContactLoadoutHelpers.ItemCategory(category))
                 _items[category] = id;
         }
 
@@ -282,7 +287,7 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         {
             var cat = category;
             var options = new List<string?> { null };
-            options.AddRange(Items(cat).Select(i => i.ID));
+                        options.AddRange(Items(ContactLoadoutHelpers.ItemCategory(cat)).Select(i => i.ID));
 
             var button = MakeOption(options, _items.GetValueOrDefault(cat), "mriya-contact-loadout-keep",
                 id => _prototypes.TryIndex<ContactLoadoutItemPrototype>(id, out var item) ? ItemName(item) : id,

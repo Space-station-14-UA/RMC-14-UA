@@ -44,13 +44,24 @@ public sealed partial class ContactPerkPrototype : IPrototype
     public List<ProtoId<ContactPerkPrototype>> Excludes = new();
 }
 
-[Serializable, NetSerializable]
 public enum ContactLoadoutCategory : byte
 {
     Weapon,
     Uniform,
     Armor,
     Helmet,
+    Boots,
+    Belt,
+
+    /// <summary>
+    /// Left pocket. Pouch items are written with this category.
+    /// </summary>
+    Pouch,
+
+    /// <summary>
+    /// Right pocket: same items as Pouch, never used in YAML.
+    /// </summary>
+    Pouch2,
 }
 
 /// <summary>

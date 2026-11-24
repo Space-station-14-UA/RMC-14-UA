@@ -20,6 +20,10 @@ public sealed class ContactLoadoutSystem : EntitySystem
         ContactLoadoutCategory.Uniform,
         ContactLoadoutCategory.Armor,
         ContactLoadoutCategory.Helmet,
+        ContactLoadoutCategory.Boots,
+        ContactLoadoutCategory.Belt,
+        ContactLoadoutCategory.Pouch,
+        ContactLoadoutCategory.Pouch2,
     };
 
     private ContactLoadoutWindow? _window;
