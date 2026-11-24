@@ -13,7 +13,7 @@
     damage: 300
     perBuffLevel: 0.2
     radius: 5 # 20 studs
-    explosionType: RMC
+    explosionType: RMC # looks + bang only, the 300 damage hits xenos only
     explosionIntensity: 4
 
 - type: contactPerk
@@ -23,7 +23,7 @@
   description: mriya-contact-perk-hellion-hud-desc
   cost: 6
   order: 100
-  effects: # (batch 3: highlight)
+  effects: # (not done: highlight)
   - !type:ContactPerkDamage
     weapon: Firearm
     multiplier: 1.55
@@ -220,10 +220,11 @@
   description: mriya-contact-perk-pinpoint-desc
   cost: 5
   order: 395
-  effects: # (batch 3: infinite piercing)
+  effects:
   - !type:ContactPerkFirstShot
     idle: 1
     multiplier: 2.4 # +140%
+    piercing: true
 
 - type: contactPerk
   id: MRContactPerkFocusedFire
@@ -240,13 +241,28 @@
 # ---------------- Utilitarian ----------------
 
 - type: contactPerk
+  id: MRContactPerkHWorldTransmitter
+  deck: mriya-contact-deck-utilitarian
+  name: mriya-contact-perk-hworld
+  description: mriya-contact-perk-hworld-desc
+  cost: 1
+  order: 470
+  effects:
+  - !type:ContactPerkDoAfterSpeed
+    setSeconds: 0.5
+    whitelist:
+      components:
+      - ContactTerminal
+
+- type: contactPerk
   id: MRContactPerkLegImplants
   deck: mriya-contact-deck-utilitarian
   name: mriya-contact-perk-leg-implants
   description: mriya-contact-perk-leg-implants-desc
   cost: 2
   order: 480
-  effects: # (batch 3: immunity to xeno slows)
+  effects:
+  - !type:ContactPerkSlowImmunity
   - !type:ContactPerkGunStats
     recoil: 0.8
     unwielded: true
@@ -271,7 +287,10 @@
   description: mriya-contact-perk-headhunter-desc
   cost: 6
   order: 500
-  effects: # (batch 3: night vision + highlight, gas / tail immunity)
+  effects: # (not done: highlight, losing the flashlight, acid gas)
+  - !type:ContactPerkNightVision
+  - !type:ContactPerkNeurotoxinImmunity
+  - !type:ContactPerkDazeImmunity
   - !type:ContactPerkDamage
     weapon: Firearm
     multiplier: 1.55
@@ -325,13 +344,17 @@
   description: mriya-contact-perk-boundary-desc
   cost: 5
   order: 630
-  effects: # (batch 3: no regen, respirators, Kizuna blade, Royal Flush combo)
+  effects: # (not done: no regen, respirators, Kizuna blade)
   - !type:ContactPerkLowHealthDamage
     weapon: Melee
     steps:
       0.75: 1.25
       0.5: 2.5
       0.25: 5
+    comboPerk: MRContactPerkRoyalFlush
+    comboSteps:
+      1: 2.5
+      0.5: 5
   - !type:ContactPerkRestrict
     allowed: Melee
 
@@ -394,7 +417,9 @@
   description: mriya-contact-perk-royal-flush-desc
   cost: 5
   order: 720
-  effects: # (batch 3: reload / swap speed)
+  effects:
+  - !type:ContactPerkDoAfterSpeed
+    multiplier: 0.85
   - !type:ContactPerkDamage
     weapon: Firearm
     multiplier: 1.35

@@ -15,6 +15,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Whitelist;
 
 namespace Content.Shared._Mriya.Rules.Contact;
 
@@ -33,6 +34,7 @@ public sealed class ContactPerkSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     private static readonly ProtoId<TagPrototype> PistolTag = "Sidearm";
     private static readonly TimeSpan RestrictPopupDelay = TimeSpan.FromSeconds(1);
@@ -337,5 +339,35 @@ public sealed class ContactPerkSystem : EntitySystem
             args.MaxAngle = new Angle(args.MaxAngle.Theta * stats.Spread);
             args.MinAngle = new Angle(args.MinAngle.Theta * stats.Spread);
         }
+    }
+
+    /// <summary>
+    /// Do-after length after perks. Called by Mriya systems that start do-afters perks should affect
+    /// (anchor activation). Whitelist = only when the used item or target passes it.
+    /// </summary>
+    public TimeSpan ModifyDoAfterDelay(EntityUid user, TimeSpan delay, EntityUid? used, EntityUid? target)
+    {
+        if (!TryComp(user, out ContactPerksComponent? perks))
+            return delay;
+
+        TimeSpan? cap = null;
+        foreach (var speed in GetEffects<ContactPerkDoAfterSpeed>(perks))
+        {
+            if (speed.Whitelist is { } whitelist &&
+                !(used is { } u && _whitelist.IsWhitelistPass(whitelist, u)) &&
+                !(target is { } t && _whitelist.IsWhitelistPass(whitelist, t)))
+            {
+                continue;
+            }
+
+            delay *= speed.Multiplier;
+            if (speed.SetSeconds is { } seconds)
+            {
+                var limit = TimeSpan.FromSeconds(seconds);
+                cap = cap is { } current && current < limit ? current : limit;
+            }
+        }
+
+        return cap is { } max && delay > max ? max : delay;
     }
 }

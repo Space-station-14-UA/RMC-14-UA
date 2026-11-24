@@ -49,6 +49,12 @@ public sealed partial class ContactPerksComponent : Component
 
     [ViewVariables]
     public TimeSpan NextRestrictPopup;
+
+    /// <summary>
+    /// Server: night vision was added by a perk (and gets removed with it).
+    /// </summary>
+    [ViewVariables]
+    public bool GaveNightVision;
 }
 
 [DataDefinition, Serializable, NetSerializable]

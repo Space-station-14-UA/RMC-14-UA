@@ -1,4 +1,6 @@
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Mriya.Rules.Contact;
 
@@ -89,6 +91,15 @@ public sealed partial class ContactPerkLowHealthDamage : ContactPerkEffect
     /// </summary>
     [DataField(required: true)]
     public Dictionary<float, float> Steps = new();
+
+    /// <summary>
+    /// With this perk too, ComboSteps are used instead (Boundary of Death + Royal Flush).
+    /// </summary>
+    [DataField]
+    public ProtoId<ContactPerkPrototype>? ComboPerk;
+
+    [DataField]
+    public Dictionary<float, float>? ComboSteps;
 }
 
 /// <summary>
@@ -104,6 +115,12 @@ public sealed partial class ContactPerkFirstShot : ContactPerkEffect
 
     [DataField]
     public float Multiplier = 2.4f;
+
+    /// <summary>
+    /// The shot passes through every mob it hits without losing damage (walls still stop it).
+    /// </summary>
+    [DataField]
+    public bool Piercing;
 }
 
 /// <summary>
@@ -350,5 +367,41 @@ public sealed partial class ContactPerkFreePurchase : ContactPerkEffect
     [DataField(required: true)]
     public float Chance;
 }
+
+/// <summary>
+/// Do-afters take Multiplier as long. SetSeconds: at most this long instead.
+/// Whitelist: only do-afters whose used item or target passes it (h.WORLD: the tablet).
+/// </summary>
+public sealed partial class ContactPerkDoAfterSpeed : ContactPerkEffect
+{
+    [DataField]
+    public float Multiplier = 1f;
+
+    [DataField]
+    public float? SetSeconds;
+
+    [DataField]
+    public EntityWhitelist? Whitelist;
+}
+
+/// <summary>
+/// Xeno slows (RMC slowdown and superslowdown) are removed as soon as they land. Roots still work.
+/// </summary>
+public sealed partial class ContactPerkSlowImmunity : ContactPerkEffect;
+
+/// <summary>
+/// Daze (tail trip, abduct, neuro) is removed as soon as it lands.
+/// </summary>
+public sealed partial class ContactPerkDazeImmunity : ContactPerkEffect;
+
+/// <summary>
+/// Boiler / neurotoxin gas doesn't inject neurotoxin.
+/// </summary>
+public sealed partial class ContactPerkNeurotoxinImmunity : ContactPerkEffect;
+
+/// <summary>
+/// RMC night vision while the perk is owned.
+/// </summary>
+public sealed partial class ContactPerkNightVision : ContactPerkEffect;
 
 #endregion

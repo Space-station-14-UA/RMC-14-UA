@@ -134,7 +134,7 @@ public sealed class ContactLoadoutSystem : EntitySystem
         }
 
         _perks.SetPerks(player, perks);
-        _perkCombat.RefreshHealth(player);
+        _perkCombat.Refresh(player);
         ApplyGear(player, ev);
 
         _popup.PopupEntity(Loc.GetString("mriya-contact-loadout-applied"), player, player);

@@ -74,3 +74,5 @@ mriya-contact-perk-leg-implants = Імпланти Н0-Г4
 mriya-contact-perk-leg-implants-desc = На 20% менша віддача, коли ви цілитеся однією рукою.
 mriya-contact-perk-adrenal = Автоін'єктори 4ДР3Н4-Л
 mriya-contact-perk-adrenal-desc = Отримана від ксеноморфів шкода дає +10% швидкості на 1 секунду, ефект накопичується.
+mriya-contact-perk-hworld = Передавач п.СВ1Т
+mriya-contact-perk-hworld-desc = Будь-яка взаємодія з якорями триває 0,5 секунди.

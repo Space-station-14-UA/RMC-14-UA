@@ -1,4 +1,9 @@
+using Content.Server.Explosion.EntitySystems;
 using Content.Shared._Mriya.Rules.Contact;
+using Content.Shared._RMC14.NightVision;
+using Content.Shared._RMC14.Projectiles.Penetration;
+using Content.Shared._RMC14.Slow;
+using Content.Shared._RMC14.Xenonids.Neurotoxin;
 using Content.Shared._RMC14.Gibbing;
 using Content.Shared._RMC14.Projectiles;
 using Content.Shared._RMC14.Xenonids;
@@ -8,17 +13,17 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Projectiles;
+using Content.Shared.StatusEffect;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Server.Explosion.EntitySystems;
-using Content.Shared.Popups;
-using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -43,6 +48,7 @@ public sealed class ContactPerkCombatSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
 
     private static readonly ProtoId<DamageGroupPrototype> DamageGroup = "Brute";
 
@@ -51,13 +57,27 @@ public sealed class ContactPerkCombatSystem : EntitySystem
     /// </summary>
     private static readonly TimeSpan KillCreditWindow = TimeSpan.FromSeconds(5);
 
+    private const string DazedEffect = "Dazed";
+    private static readonly TimeSpan CleanseEvery = TimeSpan.FromSeconds(0.2);
+    private TimeSpan _nextCleanse;
+
     public override void Initialize()
     {
         // every Contact AI xeno (wave or admin-spawned)
         SubscribeLocalEvent<ContactXenoAIComponent, DamageModifyEvent>(OnXenoDamageModify);
         SubscribeLocalEvent<ContactXenoAIComponent, MobStateChangedEvent>(OnXenoMobStateChanged, before: [typeof(RMCGibSystem)]);
         SubscribeLocalEvent<ContactPerksComponent, DamageModifyEvent>(OnPerkOwnerDamageModify);
+        SubscribeLocalEvent<ContactPerksComponent, NeurotoxinInjectAttemptEvent>(OnNeurotoxinAttempt);
         SubscribeLocalEvent<ContactPerkGunComponent, AmmoShotEvent>(OnAmmoShot);
+    }
+
+    /// <summary>
+    /// Call after the perk set changed: max health and perk-given night vision.
+    /// </summary>
+    public void Refresh(EntityUid uid)
+    {
+        RefreshHealth(uid);
+        RefreshNightVision(uid);
     }
 
     #region Dealing damage
@@ -98,7 +118,7 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         foreach (var lowHealth in _perks.GetEffects<ContactPerkLowHealthDamage>(perks))
         {
             if (ContactPerkSystem.Matches(lowHealth.Weapon, used))
-                multiplier *= LowHealthMultiplier(attacker, lowHealth);
+                multiplier *= LowHealthMultiplier(attacker, perks, lowHealth);
         }
 
         // first shot after a pause: guaranteed crit instead of rolling
@@ -182,12 +202,16 @@ public sealed class ContactPerkCombatSystem : EntitySystem
     /// <summary>
     /// Health fraction = 1 - damage / crit threshold; the lowest step it's at or under applies.
     /// </summary>
-    private float LowHealthMultiplier(EntityUid uid, ContactPerkLowHealthDamage effect)
+    private float LowHealthMultiplier(EntityUid uid, ContactPerksComponent perks, ContactPerkLowHealthDamage effect)
     {
+        var steps = effect.ComboPerk is { } combo && perks.Perks.Contains(combo) && effect.ComboSteps != null
+            ? effect.ComboSteps
+            : effect.Steps;
+
         var fraction = HealthFraction(uid);
         var best = 1f;
         var bestStep = float.MaxValue;
-        foreach (var (below, multiplier) in effect.Steps)
+        foreach (var (below, multiplier) in steps)
         {
             if (fraction <= below && below < bestStep)
             {
@@ -221,10 +245,14 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         }
 
         float? firstShot = null;
+        var piercing = false;
         foreach (var effect in _perks.GetEffects<ContactPerkFirstShot>(perks))
         {
-            if (ContactPerkSystem.Matches(effect.Weapon, used) && idle >= effect.Idle)
-                firstShot = Math.Max(firstShot ?? 0f, effect.Multiplier);
+            if (!ContactPerkSystem.Matches(effect.Weapon, used) || idle < effect.Idle)
+                continue;
+
+            firstShot = Math.Max(firstShot ?? 0f, effect.Multiplier);
+            piercing |= effect.Piercing;
         }
 
         foreach (var projectile in args.FiredProjectiles)
@@ -234,6 +262,9 @@ public sealed class ContactPerkCombatSystem : EntitySystem
 
             if (firstShot is { } multiplier)
                 EnsureComp<ContactPerkFirstShotComponent>(projectile).Multiplier = multiplier;
+
+            if (piercing)
+                MakePiercing(projectile);
         }
     }
 
@@ -375,6 +406,68 @@ public sealed class ContactPerkCombatSystem : EntitySystem
 
     #endregion
 
+    #region Immunities
+
+    private void OnNeurotoxinAttempt(Entity<ContactPerksComponent> ent, ref NeurotoxinInjectAttemptEvent args)
+    {
+        if (_perks.HasEffect<ContactPerkNeurotoxinImmunity>(ent.Comp))
+            args.Cancelled = true;
+    }
+
+    /// <summary>
+    /// Slows and daze are applied from many places; instead of hooking each, perk owners are cleansed a few times a second.
+    /// </summary>
+    public override void Update(float frameTime)
+    {
+        var now = _timing.CurTime;
+        if (now < _nextCleanse)
+            return;
+
+        _nextCleanse = now + CleanseEvery;
+
+        var query = EntityQueryEnumerator<ContactPerksComponent>();
+        while (query.MoveNext(out var uid, out var perks))
+        {
+            if (perks.Perks.Count == 0)
+                continue;
+
+            if (_perks.HasEffect<ContactPerkSlowImmunity>(perks))
+            {
+                if (HasComp<RMCSlowdownComponent>(uid))
+                    RemCompDeferred<RMCSlowdownComponent>(uid);
+
+                if (HasComp<RMCSuperSlowdownComponent>(uid))
+                    RemCompDeferred<RMCSuperSlowdownComponent>(uid);
+            }
+
+            if (_perks.HasEffect<ContactPerkDazeImmunity>(perks) && _statusEffects.HasStatusEffect(uid, DazedEffect))
+                _statusEffects.TryRemoveStatusEffect(uid, DazedEffect);
+        }
+    }
+
+    /// <summary>
+    /// Night vision while a perk gives it; only removes what a perk added (goggles / innate NV stay).
+    /// </summary>
+    private void RefreshNightVision(EntityUid uid)
+    {
+        if (!TryComp(uid, out ContactPerksComponent? perks))
+            return;
+
+        var wants = _perks.HasEffect<ContactPerkNightVision>(perks);
+        if (wants && !HasComp<NightVisionComponent>(uid))
+        {
+            AddComp<NightVisionComponent>(uid);
+            perks.GaveNightVision = true;
+        }
+        else if (!wants && perks.GaveNightVision)
+        {
+            RemComp<NightVisionComponent>(uid);
+            perks.GaveNightVision = false;
+        }
+    }
+
+    #endregion
+
     #region Store
 
     /// <summary>
@@ -452,6 +545,51 @@ public sealed class ContactPerkCombatSystem : EntitySystem
 
     #region Helpers
 
+    /// <summary>
+    /// "CRIT!" over the target, shown to the attacker.
+    /// </summary>
+    private void ShowCrit(EntityUid attacker, EntityUid target)
+    {
+        _popup.PopupEntity(Loc.GetString("mriya-contact-perk-crit"), target, attacker, PopupType.LargeCaution);
+    }
+
+    /// <summary>
+    /// Looks and sound of a kill blast. The RMC explosion is small and breaks no tiles; the real damage is DamageXenosAround.
+    /// </summary>
+    private void Blast(ContactPerkKillBlast blast, MapCoordinates pos, EntityCoordinates coords)
+    {
+        if (blast.Sound != null)
+            _audio.PlayPvs(blast.Sound, coords);
+
+        if (blast.ExplosionType is { } type)
+        {
+            _explosion.QueueExplosion(pos, type,
+                totalIntensity: blast.ExplosionIntensity,
+                slope: 1f,
+                maxTileIntensity: blast.ExplosionIntensity,
+                tileBreakScale: 0f,
+                maxTileBreak: 0,
+                canCreateVacuum: false);
+        }
+
+        if (blast.Effect is { } effect)
+            Spawn(effect, pos);
+    }
+
+    /// <summary>
+    /// RMC's penetrating projectile with no loss per mob; a wall costs far more range than it has, so walls still stop it.
+    /// </summary>
+    private void MakePiercing(EntityUid projectile)
+    {
+        var pierce = EnsureComp<RMCPenetratingProjectileComponent>(projectile);
+        pierce.ShotFrom = Transform(projectile).Coordinates;
+        pierce.RangeLossPerHit = 0.001f;
+        pierce.DamageMultiplierLossPerHit = 0f;
+        pierce.WallMultiplier = 100000f;
+        pierce.BigXenoMultiplier = 1f;
+        Dirty(projectile, pierce);
+    }
+
     private void Heal(EntityUid uid, float amount)
     {
         if (amount <= 0 || _mobState.IsDead(uid))
@@ -485,37 +623,6 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         }
 
         return Math.Clamp(1f - damageable.TotalDamage.Float() / crit.Value.Float(), 0f, 1f);
-    }
-
-    /// <summary>
-    /// "CRIT!" over the target, shown to the attacker.
-    /// </summary>
-    private void ShowCrit(EntityUid attacker, EntityUid target)
-    {
-        _popup.PopupEntity(Loc.GetString("mriya-contact-perk-crit"), target, attacker, PopupType.LargeCaution);
-    }
-
-    /// <summary>
-    /// Looks and sound of a kill blast. The RMC explosion is small and breaks no tiles; the real damage is DamageXenosAround.
-    /// </summary>
-    private void Blast(ContactPerkKillBlast blast, MapCoordinates pos, EntityCoordinates coords)
-    {
-        if (blast.Sound != null)
-            _audio.PlayPvs(blast.Sound, coords);
-
-        if (blast.ExplosionType is { } type)
-        {
-            _explosion.QueueExplosion(pos, type,
-                totalIntensity: blast.ExplosionIntensity,
-                slope: 1f,
-                maxTileIntensity: blast.ExplosionIntensity,
-                tileBreakScale: 0f,
-                maxTileBreak: 0,
-                canCreateVacuum: false);
-        }
-
-        if (blast.Effect is { } effect)
-            Spawn(effect, pos);
     }
 
     #endregion

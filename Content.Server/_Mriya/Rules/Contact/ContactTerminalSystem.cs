@@ -27,6 +27,7 @@ public sealed class ContactTerminalSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly ContactEconomySystem _economy = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly ContactPerkSystem _perks = default!;
     
     private static readonly LocId[] Phonetic =
     {
@@ -109,7 +110,9 @@ public sealed class ContactTerminalSystem : EntitySystem
             return;
         }
 
-        var doAfter = new DoAfterArgs(EntityManager, args.User, ent.Comp.ActivateDelay, new ContactTerminalDoAfterEvent(), ent, ent)
+        var delay = _perks.ModifyDoAfterDelay(args.User, ent.Comp.ActivationDelay, null, ent);
+
+        var doAfter = new DoAfterArgs(EntityManager, args.User, delay, new ContactTerminalDoAfterEvent(), ent, ent)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
