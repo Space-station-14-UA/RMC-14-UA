@@ -6,14 +6,17 @@ using Content.Shared.Popups;
 using Robust.Shared.Timing;
 using Content.Shared._RMC14.Areas;
 using Content.Shared._Mriya.Rules.Contact;
+using Content.Shared.Audio;
 using Content.Shared.DoAfter;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
 /// <summary>
-/// Contact terminals ("anchors"): auto names, activation, cooldown, visuals and ARES announcements.
+/// Contact terminals ("anchors"): auto names, activation, cooldown, visuals, sounds and ARES announcements.
 /// The field/wave effect itself is applied by <see cref="ContactRuleSystem.TryActivateTerminal"/>.
+/// The working hum is the prototype's AmbientSound, switched with Activated (survives leaving PVS).
 /// </summary>
 public sealed class ContactTerminalSystem : EntitySystem
 {
@@ -28,7 +31,9 @@ public sealed class ContactTerminalSystem : EntitySystem
     [Dependency] private readonly ContactEconomySystem _economy = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ContactPerkSystem _perks = default!;
-    
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
+
     private static readonly LocId[] Phonetic =
     {
         "mriya-contact-phonetic-alpha", "mriya-contact-phonetic-bravo", "mriya-contact-phonetic-charlie",
@@ -110,6 +115,7 @@ public sealed class ContactTerminalSystem : EntitySystem
             return;
         }
 
+        // h.WORLD Transmitter and other do-after perks
         var delay = _perks.ModifyDoAfterDelay(args.User, ent.Comp.ActivateDelay, null, ent);
 
         var doAfter = new DoAfterArgs(EntityManager, args.User, delay, new ContactTerminalDoAfterEvent(), ent, ent)
@@ -150,6 +156,7 @@ public sealed class ContactTerminalSystem : EntitySystem
             ent.Comp.ReactivateAt = _timing.CurTime + cooldown;
 
         UpdateAppearance(ent);
+        _audio.PlayPvs(ent.Comp.ActivateSound, ent);
 
         var seconds = (int) bonus.TotalSeconds;
         _popup.PopupEntity(Loc.GetString("mriya-contact-terminal-activated", ("seconds", seconds)), ent, args.User);
@@ -172,15 +179,18 @@ public sealed class ContactTerminalSystem : EntitySystem
             SendAnchors();
             terminal.ReactivateAt = null;
             UpdateAppearance((uid, terminal));
+            _audio.PlayPvs(terminal.DeactivateSound, uid);
             _contact.Announce(Loc.GetString("mriya-contact-terminal-announce-available",
                 ("name", terminal.TerminalName)));
         }
     }
 
     // Reuses the sensor tower visual enum so the RMC sensor tower sprite works as-is.
+    // The AmbientSound hum follows Activated.
     private void UpdateAppearance(Entity<ContactTerminalComponent> ent)
     {
         _appearance.SetData(ent, SensorTowerLayers.Layer, ent.Comp.Activated ? SensorTowerState.On : SensorTowerState.Off);
+        _ambient.SetAmbience(ent, ent.Comp.Activated);
     }
 
     private void OnPlayerAttached(PlayerAttachedEvent ev)

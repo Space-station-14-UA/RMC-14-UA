@@ -1,3 +1,5 @@
+using Robust.Shared.Audio;
+
 namespace Content.Server._Mriya.Rules.Contact;
 
 [RegisterComponent, Access(typeof(ContactTerminalSystem))]
@@ -29,5 +31,26 @@ public sealed partial class ContactTerminalComponent : Component
 
     [DataField]
     public TimeSpan ActivateDelay = TimeSpan.FromSeconds(5);
+
+    /// <summary>
+    /// Played once when the activation finishes.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? ActivateSound = new SoundPathSpecifier("/Audio/_Mriya/Ambience/Machines/Anchor/anchor_startup.ogg");
+
+    /// <summary>
+    /// Looped while the anchor is active.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? LoopSound = new SoundPathSpecifier("/Audio/_Mriya/Ambience/Machines/Anchor/anchor_loophum.ogg");
+
+    /// <summary>
+    /// Played once when the anchor turns off again.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? DeactivateSound = new SoundPathSpecifier("/Audio/_Mriya/Ambience/Machines/Anchor/anchor_shutdown.ogg");
+
+    [ViewVariables]
+    public EntityUid? LoopStream;
     
 }
