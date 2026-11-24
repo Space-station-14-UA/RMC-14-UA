@@ -41,6 +41,7 @@ public sealed class ContactStoreSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SupplyDropSystem _supplyDrop = default!;
+    [Dependency] private readonly ContactPerkCombatSystem _perkCombat = default!;
 
     private static readonly string[] StoragePriority = { "belt", "pocket1", "pocket2", "suitstorage", "back" };
 
@@ -146,11 +147,16 @@ public sealed class ContactStoreSystem : EntitySystem
             return;
 
         var amount = Math.Clamp(args.Amount, 1, entry.MaxPerPurchase);
-        if (!_economy.TrySpend(user, entry.Price * amount))
+
+        var free = _perkCombat.RollFreePurchase(user);
+        if (!free && !_economy.TrySpend(user, entry.Price * amount))
         {
             _popup.PopupEntity(Loc.GetString("mriya-contact-store-not-enough"), ent, user);
             return;
         }
+
+        if (free)
+            _popup.PopupEntity(Loc.GetString("mriya-contact-store-free"), ent, user);
 
         for (var i = 0; i < amount; i++)
         {

@@ -66,6 +66,7 @@ mriya-contact-store-not-enough = Недостатньо є-балів.
 mriya-contact-store-none = -
 mriya-contact-store-resupply = Поповнити
 mriya-contact-store-kit-full = Набір повний
+mriya-contact-store-free = Ви виторгували найкращу ціну - безплатно!
 
 mriya-contact-store-tab-for-you = Для вас
 mriya-contact-store-tab-ammo = Набої

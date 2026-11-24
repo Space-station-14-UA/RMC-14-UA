@@ -1,5 +1,20 @@
+# ---------------- Frontliner ----------------
 
-# Frontliner
+- type: contactPerk
+  id: MRContactPerkExplosiveRounds
+  deck: mriya-contact-deck-frontliner
+  name: mriya-contact-perk-explosive-rounds
+  description: mriya-contact-perk-explosive-rounds-desc
+  cost: 3
+  order: 90
+  effects:
+  - !type:ContactPerkKillBlast
+    kills: 3
+    damage: 300
+    perBuffLevel: 0.2
+    radius: 5 # 20 studs
+    explosionType: RMC
+    explosionIntensity: 4
 
 - type: contactPerk
   id: MRContactPerkHellionHud
@@ -8,11 +23,15 @@
   description: mriya-contact-perk-hellion-hud-desc
   cost: 6
   order: 100
-  effects: # (batch 2: heal on kills, highlight)
+  effects: # (batch 3: highlight)
   - !type:ContactPerkDamage
     weapon: Firearm
     multiplier: 1.55
     maxRange: 6.25 # 25 studs
+  - !type:ContactPerkKillHeal
+    min: 8
+    maxRange: 6.25
+    anyKiller: true
 
 - type: contactPerk
   id: MRContactPerkSavage
@@ -36,10 +55,10 @@
   cost: 4
   order: 120
   effects:
-  - !type:ContactPerkSpeed
+  - !type:ContactPerkSpeed # 27%+ slowdown from armor (light armor and heavier)
     multiplier: 1.37
     minArmorSlowdown: 0.27
-  - !type:ContactPerkSpeed
+  - !type:ContactPerkSpeed # anything lighter
     multiplier: 1.1
     maxArmorSlowdown: 0.27
 
@@ -64,7 +83,10 @@
   description: mriya-contact-perk-fistful-desc
   cost: 2
   order: 210
-  effects: # (batch 2: +10 credits on pistol kills)
+  effects:
+  - !type:ContactPerkKillCredits
+    weapon: Pistol
+    amount: 10
   - !type:ContactPerkDamage
     weapon: Pistol
     multiplier: 1.2
@@ -77,9 +99,13 @@
   description: mriya-contact-perk-big-iron-desc
   cost: 2
   order: 220
-  effects: # (batch 2: crits beyond falloff range)
+  effects:
   - !type:ContactPerkNoFalloff
     weapon: Pistol
+  - !type:ContactPerkCrit # past where pistols would start losing damage
+    weapon: Pistol
+    chance: 0.1
+    minRange: 7
 
 - type: contactPerk
   id: MRContactPerkFanTheHammer
@@ -123,6 +149,20 @@
   - !type:ContactPerkRestrict
     allowed: Pistol
 
+- type: contactPerk
+  id: MRContactPerkWantedOutlaw
+  deck: mriya-contact-deck-gunslinger
+  name: mriya-contact-perk-wanted-outlaw
+  description: mriya-contact-perk-wanted-outlaw-desc
+  cost: 2
+  order: 260
+  effects:
+  - !type:ContactPerkKillSpeed
+    weapon: Pistol
+    multiplier: 1.1 # per stack
+    duration: 5
+    maxStacks: 5
+
 # ---------------- Juggernaut ----------------
 
 - type: contactPerk
@@ -145,7 +185,7 @@
   order: 310
   effects:
   - !type:ContactPerkDamageCap
-    cap: 15
+    cap: 30
     perBuffLevel: 5
 
 - type: contactPerk
@@ -162,6 +202,30 @@
 # ---------------- Sharpshooter ----------------
 
 - type: contactPerk
+  id: MRContactPerkMarksmanTraining
+  deck: mriya-contact-deck-sharpshooter
+  name: mriya-contact-perk-marksman
+  description: mriya-contact-perk-marksman-desc
+  cost: 2
+  order: 390
+  effects:
+  - !type:ContactPerkGunStats
+    recoil: 0.4
+    standingStill: true
+
+- type: contactPerk
+  id: MRContactPerkPinpointPrecision
+  deck: mriya-contact-deck-sharpshooter
+  name: mriya-contact-perk-pinpoint
+  description: mriya-contact-perk-pinpoint-desc
+  cost: 5
+  order: 395
+  effects: # (batch 3: infinite piercing)
+  - !type:ContactPerkFirstShot
+    idle: 1
+    multiplier: 2.4 # +140%
+
+- type: contactPerk
   id: MRContactPerkFocusedFire
   deck: mriya-contact-deck-sharpshooter
   name: mriya-contact-perk-focused-fire
@@ -176,13 +240,38 @@
 # ---------------- Utilitarian ----------------
 
 - type: contactPerk
+  id: MRContactPerkLegImplants
+  deck: mriya-contact-deck-utilitarian
+  name: mriya-contact-perk-leg-implants
+  description: mriya-contact-perk-leg-implants-desc
+  cost: 2
+  order: 480
+  effects: # (batch 3: immunity to xeno slows)
+  - !type:ContactPerkGunStats
+    recoil: 0.8
+    unwielded: true
+
+- type: contactPerk
+  id: MRContactPerkAdrenalInjectors
+  deck: mriya-contact-deck-utilitarian
+  name: mriya-contact-perk-adrenal
+  description: mriya-contact-perk-adrenal-desc
+  cost: 2
+  order: 490
+  effects:
+  - !type:ContactPerkHurtSpeed
+    multiplier: 1.1 # per stack
+    duration: 1
+    maxStacks: 5
+
+- type: contactPerk
   id: MRContactPerkHeadhunter
   deck: mriya-contact-deck-utilitarian
   name: mriya-contact-perk-headhunter
   description: mriya-contact-perk-headhunter-desc
   cost: 6
   order: 500
-  effects: # (batch 2: night vision + highlight, gas / tail immunity)
+  effects: # (batch 3: night vision + highlight, gas / tail immunity)
   - !type:ContactPerkDamage
     weapon: Firearm
     multiplier: 1.55
@@ -216,6 +305,36 @@
     weapon: Melee
     chance: 0.25
 
+- type: contactPerk
+  id: MRContactPerkCrowdControl
+  deck: mriya-contact-deck-vanguard
+  name: mriya-contact-perk-crowd-control
+  description: mriya-contact-perk-crowd-control-desc
+  cost: 4
+  order: 620
+  effects:
+  - !type:ContactPerkCleave
+    weapon: Melee
+    fraction: 0.75
+    radius: 5
+
+- type: contactPerk
+  id: MRContactPerkBoundaryOfDeath
+  deck: mriya-contact-deck-vanguard
+  name: mriya-contact-perk-boundary
+  description: mriya-contact-perk-boundary-desc
+  cost: 5
+  order: 630
+  effects: # (batch 3: no regen, respirators, Kizuna blade, Royal Flush combo)
+  - !type:ContactPerkLowHealthDamage
+    weapon: Melee
+    steps:
+      0.75: 1.25
+      0.5: 2.5
+      0.25: 5
+  - !type:ContactPerkRestrict
+    allowed: Melee
+
 # ---------------- Wildcard ----------------
 
 - type: contactPerk
@@ -229,6 +348,29 @@
   - !type:ContactPerkCrit
     weapon: Firearm
     chance: 0.12
+
+- type: contactPerk
+  id: MRContactPerkCharismaticCall
+  deck: mriya-contact-deck-wildcard
+  name: mriya-contact-perk-charismatic
+  description: mriya-contact-perk-charismatic-desc
+  cost: 2
+  order: 702
+  effects:
+  - !type:ContactPerkFreePurchase
+    chance: 0.33
+
+- type: contactPerk
+  id: MRContactPerkTurnAndRiver
+  deck: mriya-contact-deck-wildcard
+  name: mriya-contact-perk-turn-and-river
+  description: mriya-contact-perk-turn-and-river-desc
+  cost: 2
+  order: 705
+  effects:
+  - !type:ContactPerkKillHeal
+    min: 1
+    max: 8
 
 - type: contactPerk
   id: MRContactPerkFullHouse
@@ -252,7 +394,7 @@
   description: mriya-contact-perk-royal-flush-desc
   cost: 5
   order: 720
-  effects: # (batch 2: reload / swap speed)
+  effects: # (batch 3: reload / swap speed)
   - !type:ContactPerkDamage
     weapon: Firearm
     multiplier: 1.35
@@ -267,10 +409,6 @@
     chance: 0.15
   - !type:ContactPerkSpeed
     multiplier: 1.4
-    minArmorSlowdown: 0.27
-  - !type:ContactPerkSpeed
-    multiplier: 1.1
-    maxArmorSlowdown: 0.27
   - !type:ContactPerkGunStats
     spread: 0.6
     recoil: 0.6

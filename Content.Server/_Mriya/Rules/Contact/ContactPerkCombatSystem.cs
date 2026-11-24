@@ -1,4 +1,5 @@
 using Content.Shared._Mriya.Rules.Contact;
+using Content.Shared._RMC14.Gibbing;
 using Content.Shared._RMC14.Projectiles;
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared.Damage;
@@ -11,31 +12,50 @@ using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
+using Content.Server.Explosion.EntitySystems;
+using Content.Shared.Popups;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
 /// <summary>
-/// Server half of Contact perks: damage bonuses, crits and lifesteal against wave xenos,
-/// the xeno damage cap, no-falloff shots and max health.
+/// Server half of Contact perks: damage bonuses, crits, first shots, cleave and lifesteal against Contact xenos,
+/// kill effects (blast, heal, credits, speed), the xeno damage cap and hurt speed, no-falloff shots, max health
+/// and free store purchases.
 /// </summary>
 public sealed class ContactPerkCombatSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ContactPerkSystem _perks = default!;
     [Dependency] private readonly ContactRuleSystem _rule = default!;
     [Dependency] private readonly ContactEconomySystem _economy = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly MobThresholdSystem _thresholds = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly ExplosionSystem _explosion = default!;
 
-    private static readonly ProtoId<DamageGroupPrototype> HealGroup = "Brute";
+    private static readonly ProtoId<DamageGroupPrototype> DamageGroup = "Brute";
+
+    /// <summary>
+    /// A kill counts for whoever hit last within this window.
+    /// </summary>
+    private static readonly TimeSpan KillCreditWindow = TimeSpan.FromSeconds(5);
 
     public override void Initialize()
     {
+        // every Contact AI xeno (wave or admin-spawned)
         SubscribeLocalEvent<ContactXenoAIComponent, DamageModifyEvent>(OnXenoDamageModify);
+        SubscribeLocalEvent<ContactXenoAIComponent, MobStateChangedEvent>(OnXenoMobStateChanged, before: [typeof(RMCGibSystem)]);
         SubscribeLocalEvent<ContactPerksComponent, DamageModifyEvent>(OnPerkOwnerDamageModify);
         SubscribeLocalEvent<ContactPerkGunComponent, AmmoShotEvent>(OnAmmoShot);
     }
@@ -51,6 +71,12 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         {
             return;
         }
+
+        // who gets the kill effects if this ends up killing it
+        var lastHit = EnsureComp<ContactPerkLastHitComponent>(ent);
+        lastHit.Attacker = attacker;
+        lastHit.Weapon = used;
+        lastHit.At = _timing.CurTime;
 
         var distance = Distance(attacker, ent);
         var multiplier = 1f;
@@ -69,22 +95,45 @@ public sealed class ContactPerkCombatSystem : EntitySystem
             multiplier *= bonus.Multiplier;
         }
 
-        var critChance = 0f;
-        var critMultiplier = 1f;
-        foreach (var crit in _perks.GetEffects<ContactPerkCrit>(perks))
+        foreach (var lowHealth in _perks.GetEffects<ContactPerkLowHealthDamage>(perks))
         {
-            if (!ContactPerkSystem.Matches(crit.Weapon, used))
-                continue;
-
-            critChance += crit.Chance;
-            critMultiplier = Math.Max(critMultiplier, crit.Multiplier);
+            if (ContactPerkSystem.Matches(lowHealth.Weapon, used))
+                multiplier *= LowHealthMultiplier(attacker, lowHealth);
         }
 
-        if (critChance > 0 && _random.Prob(Math.Min(1f, critChance)))
-            multiplier *= critMultiplier;
+        // first shot after a pause: guaranteed crit instead of rolling
+        if (args.Tool is { } tool && TryComp(tool, out ContactPerkFirstShotComponent? firstShot))
+        {
+            multiplier *= firstShot.Multiplier;
+            ShowCrit(attacker, ent);
+        }
+        else
+        {
+            var critChance = 0f;
+            var critMultiplier = 1f;
+            foreach (var crit in _perks.GetEffects<ContactPerkCrit>(perks))
+            {
+                if (!ContactPerkSystem.Matches(crit.Weapon, used) ||
+                    crit.MinRange is { } critMin && distance < critMin)
+                {
+                    continue;
+                }
+
+                critChance += crit.Chance;
+                critMultiplier = Math.Max(critMultiplier, crit.Multiplier);
+            }
+
+            if (critChance > 0 && _random.Prob(Math.Min(1f, critChance)))
+            {
+                multiplier *= critMultiplier;
+                ShowCrit(attacker, ent);
+            }
+        }
 
         if (multiplier != 1f)
             args.Damage *= multiplier;
+
+        var dealt = args.Damage.GetTotal().Float();
 
         var steal = 0f;
         foreach (var lifesteal in _perks.GetEffects<ContactPerkLifesteal>(perks))
@@ -93,14 +142,18 @@ public sealed class ContactPerkCombatSystem : EntitySystem
                 steal += lifesteal.Fraction;
         }
 
-        var heal = args.Damage.GetTotal().Float() * steal;
-        if (heal > 0)
-            _damageable.TryChangeDamage(attacker, new DamageSpecifier(_prototypes.Index(HealGroup), -heal), true);
+        Heal(attacker, dealt * steal);
+
+        foreach (var cleave in _perks.GetEffects<ContactPerkCleave>(perks))
+        {
+            if (ContactPerkSystem.Matches(cleave.Weapon, used))
+                DamageXenosAround(_transform.GetMapCoordinates(ent), cleave.Radius, dealt * cleave.Fraction, attacker, ent);
+        }
     }
 
     /// <summary>
     /// Projectile from a gun = firearm / pistol; a melee weapon or bare hands = melee.
-    /// Anything else (no tool: fire, explosions...) isn't classified and gets no perks.
+    /// Anything else (no tool: fire, explosions, perk blasts and cleave) isn't classified and gets no perks.
     /// </summary>
     private bool TryClassify(EntityUid attacker, EntityUid? tool, out ContactPerkWeapon used)
     {
@@ -126,20 +179,29 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         return false;
     }
 
-    private float Distance(EntityUid a, EntityUid b)
+    /// <summary>
+    /// Health fraction = 1 - damage / crit threshold; the lowest step it's at or under applies.
+    /// </summary>
+    private float LowHealthMultiplier(EntityUid uid, ContactPerkLowHealthDamage effect)
     {
-        var posA = _transform.GetMapCoordinates(a);
-        var posB = _transform.GetMapCoordinates(b);
-        return posA.MapId == posB.MapId ? (posA.Position - posB.Position).Length() : float.MaxValue;
-    }
+        var fraction = HealthFraction(uid);
+        var best = 1f;
+        var bestStep = float.MaxValue;
+        foreach (var (below, multiplier) in effect.Steps)
+        {
+            if (fraction <= below && below < bestStep)
+            {
+                best = multiplier;
+                bestStep = below;
+            }
+        }
 
-    private bool IsHurt(EntityUid uid)
-    {
-        return TryComp(uid, out DamageableComponent? damageable) && damageable.TotalDamage > 0;
+        return best;
     }
 
     /// <summary>
-    /// Shots from these guns lose their falloff. Deferred, so RMC's own shot handlers run first.
+    /// Shots from these guns lose their falloff (deferred, so RMC's own shot handlers run first),
+    /// and the first shot after a pause is marked for its guaranteed crit.
     /// </summary>
     private void OnAmmoShot(Entity<ContactPerkGunComponent> ent, ref AmmoShotEvent args)
     {
@@ -147,6 +209,10 @@ public sealed class ContactPerkCombatSystem : EntitySystem
             return;
 
         var used = _perks.ClassifyGun(ent);
+        var now = _timing.CurTime;
+        var idle = now - perks.LastShot;
+        perks.LastShot = now;
+
         var noFalloff = false;
         foreach (var effect in _perks.GetEffects<ContactPerkNoFalloff>(perks))
         {
@@ -154,12 +220,127 @@ public sealed class ContactPerkCombatSystem : EntitySystem
                 noFalloff = true;
         }
 
-        if (!noFalloff)
-            return;
+        float? firstShot = null;
+        foreach (var effect in _perks.GetEffects<ContactPerkFirstShot>(perks))
+        {
+            if (ContactPerkSystem.Matches(effect.Weapon, used) && idle >= effect.Idle)
+                firstShot = Math.Max(firstShot ?? 0f, effect.Multiplier);
+        }
 
         foreach (var projectile in args.FiredProjectiles)
         {
-            RemCompDeferred<RMCProjectileDamageFalloffComponent>(projectile);
+            if (noFalloff)
+                RemCompDeferred<RMCProjectileDamageFalloffComponent>(projectile);
+
+            if (firstShot is { } multiplier)
+                EnsureComp<ContactPerkFirstShotComponent>(projectile).Multiplier = multiplier;
+        }
+    }
+
+    #endregion
+
+    #region Kills
+
+    private void OnXenoMobStateChanged(Entity<ContactXenoAIComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        var victimPos = _transform.GetMapCoordinates(ent);
+        HealAround(victimPos);
+
+        if (!TryComp(ent, out ContactPerkLastHitComponent? lastHit) ||
+            _timing.CurTime - lastHit.At > KillCreditWindow ||
+            TerminatingOrDeleted(lastHit.Attacker) ||
+            _mobState.IsDead(lastHit.Attacker) ||
+            !TryComp(lastHit.Attacker, out ContactPerksComponent? perks))
+        {
+            return;
+        }
+
+        var killer = lastHit.Attacker;
+        var used = lastHit.Weapon;
+
+        foreach (var heal in _perks.GetEffects<ContactPerkKillHeal>(perks))
+        {
+            if (!heal.AnyKiller && ContactPerkSystem.Matches(heal.Weapon, used))
+                Heal(killer, Roll(heal));
+        }
+
+        foreach (var credits in _perks.GetEffects<ContactPerkKillCredits>(perks))
+        {
+            if (ContactPerkSystem.Matches(credits.Weapon, used))
+                _economy.AddPoints(killer, credits.Amount);
+        }
+
+        foreach (var speed in _perks.GetEffects<ContactPerkKillSpeed>(perks))
+        {
+            if (ContactPerkSystem.Matches(speed.Weapon, used))
+                _perks.AddSpeedStack(killer, perks, speed.Multiplier, speed.Duration, "kill", speed.MaxStacks);
+        }
+
+        if (_perks.HasEffect<ContactPerkKillBlast>(perks))
+        {
+            perks.KillCount++;
+            foreach (var blast in _perks.GetEffects<ContactPerkKillBlast>(perks))
+            {
+                if (perks.KillCount < blast.Kills)
+                    continue;
+
+                perks.KillCount = 0;
+                Blast(blast, victimPos, Transform(ent).Coordinates);
+
+                var damage = blast.Damage * (1f + blast.PerBuffLevel * _rule.GetBuffLevel());
+                DamageXenosAround(victimPos, blast.Radius, damage, killer, ent);
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Any xeno death: perk owners with an AnyKiller heal (Hellion HUD) within its range get healed.
+    /// </summary>
+    private void HealAround(MapCoordinates victim)
+    {
+        var query = EntityQueryEnumerator<ContactPerksComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var perks, out var xform))
+        {
+            if (_mobState.IsDead(uid))
+                continue;
+
+            var pos = _transform.GetMapCoordinates(uid, xform);
+            if (pos.MapId != victim.MapId)
+                continue;
+
+            var distance = (pos.Position - victim.Position).Length();
+            foreach (var heal in _perks.GetEffects<ContactPerkKillHeal>(perks))
+            {
+                if (heal.AnyKiller && (heal.MaxRange is not { } range || distance <= range))
+                    Heal(uid, Roll(heal));
+            }
+        }
+    }
+
+    private float Roll(ContactPerkKillHeal heal)
+    {
+        return heal.Max is { } max && max > heal.Min ? _random.NextFloat(heal.Min, max) : heal.Min;
+    }
+
+    /// <summary>
+    /// Perk damage to living Contact xenos around a point (blasts, cleave). No tool, so it doesn't trigger perks again.
+    /// </summary>
+    private void DamageXenosAround(MapCoordinates center, float radius, float amount, EntityUid attacker, EntityUid except)
+    {
+        if (amount <= 0)
+            return;
+
+        var damage = new DamageSpecifier(_prototypes.Index(DamageGroup), FixedPoint2.New(amount));
+        foreach (var xeno in _lookup.GetEntitiesInRange<ContactXenoAIComponent>(center, radius))
+        {
+            if (xeno.Owner == except || _mobState.IsDead(xeno))
+                continue;
+
+            _damageable.TryChangeDamage(xeno, damage, origin: attacker);
         }
     }
 
@@ -168,11 +349,11 @@ public sealed class ContactPerkCombatSystem : EntitySystem
     #region Taking damage
 
     /// <summary>
-    /// Damage cap against direct xeno damage (the xeno is the origin: claws, tail, spit, abilities).
+    /// Direct xeno damage (the xeno is the origin: claws, tail, spit, abilities): damage cap, then hurt speed stacks.
     /// </summary>
     private void OnPerkOwnerDamageModify(Entity<ContactPerksComponent> ent, ref DamageModifyEvent args)
     {
-        if (args.Origin is not { } origin || !HasComp<XenoComponent>(origin))
+        if (args.Origin is not { } origin || !HasComp<XenoComponent>(origin) || !args.Damage.AnyPositive())
             return;
 
         float? cap = null;
@@ -182,12 +363,35 @@ public sealed class ContactPerkCombatSystem : EntitySystem
             cap = cap is { } current ? Math.Min(current, limit) : limit;
         }
 
-        if (cap is not { } max)
-            return;
-
         var total = args.Damage.GetTotal().Float();
-        if (total > max && total > 0)
+        if (cap is { } max && total > max && total > 0)
             args.Damage *= max / total;
+
+        foreach (var speed in _perks.GetEffects<ContactPerkHurtSpeed>(ent.Comp))
+        {
+            _perks.AddSpeedStack(ent, ent.Comp, speed.Multiplier, speed.Duration, "hurt", speed.MaxStacks);
+        }
+    }
+
+    #endregion
+
+    #region Store
+
+    /// <summary>
+    /// Called by the store before charging: true = this purchase is free.
+    /// </summary>
+    public bool RollFreePurchase(EntityUid user)
+    {
+        if (!TryComp(user, out ContactPerksComponent? perks))
+            return false;
+
+        var chance = 0f;
+        foreach (var effect in _perks.GetEffects<ContactPerkFreePurchase>(perks))
+        {
+            chance += effect.Chance;
+        }
+
+        return chance > 0 && _random.Prob(Math.Min(1f, chance));
     }
 
     #endregion
@@ -245,4 +449,100 @@ public sealed class ContactPerkCombatSystem : EntitySystem
     }
 
     #endregion
+
+    #region Helpers
+
+    private void Heal(EntityUid uid, float amount)
+    {
+        if (amount <= 0 || _mobState.IsDead(uid))
+            return;
+
+        _damageable.TryChangeDamage(uid, new DamageSpecifier(_prototypes.Index(DamageGroup), FixedPoint2.New(-amount)), true);
+    }
+
+    private float Distance(EntityUid a, EntityUid b)
+    {
+        var posA = _transform.GetMapCoordinates(a);
+        var posB = _transform.GetMapCoordinates(b);
+        return posA.MapId == posB.MapId ? (posA.Position - posB.Position).Length() : float.MaxValue;
+    }
+
+    private bool IsHurt(EntityUid uid)
+    {
+        return TryComp(uid, out DamageableComponent? damageable) && damageable.TotalDamage > 0;
+    }
+
+    /// <summary>
+    /// 1 at full health, 0 at the crit threshold.
+    /// </summary>
+    private float HealthFraction(EntityUid uid)
+    {
+        if (!TryComp(uid, out DamageableComponent? damageable) ||
+            !_thresholds.TryGetThresholdForState(uid, MobState.Critical, out var crit) ||
+            crit.Value <= 0)
+        {
+            return 1f;
+        }
+
+        return Math.Clamp(1f - damageable.TotalDamage.Float() / crit.Value.Float(), 0f, 1f);
+    }
+
+    /// <summary>
+    /// "CRIT!" over the target, shown to the attacker.
+    /// </summary>
+    private void ShowCrit(EntityUid attacker, EntityUid target)
+    {
+        _popup.PopupEntity(Loc.GetString("mriya-contact-perk-crit"), target, attacker, PopupType.LargeCaution);
+    }
+
+    /// <summary>
+    /// Looks and sound of a kill blast. The RMC explosion is small and breaks no tiles; the real damage is DamageXenosAround.
+    /// </summary>
+    private void Blast(ContactPerkKillBlast blast, MapCoordinates pos, EntityCoordinates coords)
+    {
+        if (blast.Sound != null)
+            _audio.PlayPvs(blast.Sound, coords);
+
+        if (blast.ExplosionType is { } type)
+        {
+            _explosion.QueueExplosion(pos, type,
+                totalIntensity: blast.ExplosionIntensity,
+                slope: 1f,
+                maxTileIntensity: blast.ExplosionIntensity,
+                tileBreakScale: 0f,
+                maxTileBreak: 0,
+                canCreateVacuum: false);
+        }
+
+        if (blast.Effect is { } effect)
+            Spawn(effect, pos);
+    }
+
+    #endregion
+}
+
+/// <summary>
+/// On a Contact xeno: the last perk owner who hit it, for kill effects.
+/// </summary>
+[RegisterComponent, Access(typeof(ContactPerkCombatSystem))]
+public sealed partial class ContactPerkLastHitComponent : Component
+{
+    [ViewVariables]
+    public EntityUid Attacker;
+
+    [ViewVariables]
+    public ContactPerkWeapon Weapon;
+
+    [ViewVariables]
+    public TimeSpan At;
+}
+
+/// <summary>
+/// On a projectile fired after a pause (first-shot perks): its hit deals this much more.
+/// </summary>
+[RegisterComponent, Access(typeof(ContactPerkCombatSystem))]
+public sealed partial class ContactPerkFirstShotComponent : Component
+{
+    [ViewVariables]
+    public float Multiplier = 1f;
 }

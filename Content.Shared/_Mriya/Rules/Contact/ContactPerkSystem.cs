@@ -1,24 +1,26 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._RMC14.Armor;
+using Content.Shared.Clothing;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Wieldable.Components;
 using Robust.Shared.Containers;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.Clothing;
-using Content.Shared.Inventory;
 
 namespace Content.Shared._Mriya.Rules.Contact;
 
 /// <summary>
-/// Predicted half of Contact perks: movement speed, gun handling, xeno armor, weapon restrictions.
-/// Damage, crits, caps and health live in the server's ContactPerkCombatSystem.
+/// Predicted half of Contact perks: movement speed (and speed stacks), gun handling, melee armor, weapon restrictions.
+/// Damage, crits, kills, caps and health live in the server's ContactPerkCombatSystem.
 /// </summary>
 public sealed class ContactPerkSystem : EntitySystem
 {
@@ -29,11 +31,19 @@ public sealed class ContactPerkSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     private static readonly ProtoId<TagPrototype> PistolTag = "Sidearm";
     private static readonly TimeSpan RestrictPopupDelay = TimeSpan.FromSeconds(1);
+    private static readonly TimeSpan CheckEvery = TimeSpan.FromSeconds(0.1);
+
+    /// <summary>
+    /// Below this speed counts as standing still.
+    /// </summary>
+    private const float StillSpeed = 0.1f;
+
+    private TimeSpan _nextCheck;
 
     public override void Initialize()
     {
@@ -55,6 +65,8 @@ public sealed class ContactPerkSystem : EntitySystem
     {
         var comp = EnsureComp<ContactPerksComponent>(uid);
         comp.Perks = new HashSet<ProtoId<ContactPerkPrototype>>(perks);
+        comp.SpeedStacks.Clear();
+        comp.KillCount = 0;
         Dirty(uid, comp);
         RefreshAll(uid);
     }
@@ -72,6 +84,16 @@ public sealed class ContactPerkSystem : EntitySystem
                     yield return typed;
             }
         }
+    }
+
+    public bool HasEffect<T>(ContactPerksComponent perks) where T : ContactPerkEffect
+    {
+        foreach (var _ in GetEffects<T>(perks))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public ContactPerkWeapon ClassifyGun(EntityUid gun)
@@ -103,11 +125,81 @@ public sealed class ContactPerkSystem : EntitySystem
         return TryComp(holder, out perks);
     }
 
+    /// <summary>
+    /// Server: one more speed stack from this source; at MaxStacks the oldest one is replaced.
+    /// </summary>
+    public void AddSpeedStack(EntityUid uid, ContactPerksComponent perks, float multiplier, TimeSpan duration, string source, int maxStacks)
+    {
+        var count = 0;
+        var oldest = -1;
+        for (var i = 0; i < perks.SpeedStacks.Count; i++)
+        {
+            if (perks.SpeedStacks[i].Source != source)
+                continue;
+
+            count++;
+            if (oldest == -1 || perks.SpeedStacks[i].Until < perks.SpeedStacks[oldest].Until)
+                oldest = i;
+        }
+
+        if (count >= maxStacks && oldest != -1)
+            perks.SpeedStacks.RemoveAt(oldest);
+
+        perks.SpeedStacks.Add(new ContactSpeedStack(_timing.CurTime + duration, multiplier, source));
+        Dirty(uid, perks);
+        _speed.RefreshMovementSpeedModifiers(uid);
+    }
+
     #endregion
+
+    public override void Update(float frameTime)
+    {
+        var now = _timing.CurTime;
+        if (now < _nextCheck)
+            return;
+
+        _nextCheck = now + CheckEvery;
+
+        var query = EntityQueryEnumerator<ContactPerksComponent, PhysicsComponent>();
+        while (query.MoveNext(out var uid, out var perks, out var physics))
+        {
+            // speed stacks running out
+            if (perks.SpeedStacks.RemoveAll(s => s.Until <= now) > 0)
+            {
+                Dirty(uid, perks);
+                _speed.RefreshMovementSpeedModifiers(uid);
+            }
+
+            // standing still / moving: guns with StandingStill bonuses refresh
+            var still = physics.LinearVelocity.Length() < StillSpeed;
+            if (still == perks.StandingStill)
+                continue;
+
+            perks.StandingStill = still;
+            if (HasStandingStillStats(perks))
+                RefreshHeldGuns(uid);
+        }
+    }
+
+    private bool HasStandingStillStats(ContactPerksComponent perks)
+    {
+        foreach (var stats in GetEffects<ContactPerkGunStats>(perks))
+        {
+            if (stats.StandingStill)
+                return true;
+        }
+
+        return false;
+    }
 
     private void RefreshAll(EntityUid uid)
     {
         _speed.RefreshMovementSpeedModifiers(uid);
+        RefreshHeldGuns(uid);
+    }
+
+    private void RefreshHeldGuns(EntityUid uid)
+    {
         foreach (var held in _hands.EnumerateHeld(uid))
         {
             RefreshGun(held);
@@ -147,6 +239,13 @@ public sealed class ContactPerkSystem : EntitySystem
             multiplier *= speed.Multiplier;
         }
 
+        var now = _timing.CurTime;
+        foreach (var stack in ent.Comp.SpeedStacks)
+        {
+            if (stack.Until > now)
+                multiplier *= stack.Multiplier;
+        }
+
         if (multiplier != 1f)
             args.ModifySpeed(multiplier, multiplier);
     }
@@ -167,6 +266,9 @@ public sealed class ContactPerkSystem : EntitySystem
         return 1f - modifier;
     }
 
+    /// <summary>
+    /// Marines resist xeno claws with RMC's Melee armor (XenoArmor only counts on xenos).
+    /// </summary>
     private void OnGetArmor(Entity<ContactPerksComponent> ent, ref CMGetArmorEvent args)
     {
         foreach (var armor in GetEffects<ContactPerkXenoArmor>(ent.Comp))
@@ -219,10 +321,15 @@ public sealed class ContactPerkSystem : EntitySystem
             return;
 
         var used = ClassifyGun(ent);
+        var wielded = TryComp(ent, out WieldableComponent? wieldable) && wieldable.Wielded;
         foreach (var stats in GetEffects<ContactPerkGunStats>(perks))
         {
-            if (!Matches(stats.Weapon, used))
+            if (!Matches(stats.Weapon, used) ||
+                stats.StandingStill && !perks.StandingStill ||
+                stats.Unwielded && wielded)
+            {
                 continue;
+            }
 
             args.FireRate *= stats.FireRate;
             args.CameraRecoilScalar *= stats.Recoil;
