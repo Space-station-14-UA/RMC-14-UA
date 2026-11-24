@@ -10,49 +10,23 @@ namespace Content.Shared._Mriya.Rules.Contact;
 /// </summary>
 public static class ContactLoadoutHelpers
 {
-    public static int ClampLevel(ContactSkillPrototype skill, int level)
-    {
-        return Math.Clamp(level, skill.BaseLevel, Math.Max(skill.BaseLevel, skill.MaxLevel));
-    }
-
     /// <summary>
-    /// Cost of going from level to level + 1.
+    /// Sum of perk costs; unknown ids and duplicates count once / not at all.
     /// </summary>
-    public static int NextCost(ContactSkillPrototype skill, int level)
-    {
-        if (skill.Costs.Count == 0)
-            return 0;
-
-        return skill.Costs[Math.Clamp(level, 0, skill.Costs.Count - 1)];
-    }
-
-    /// <summary>
-    /// Points spent on this skill at this level (BaseLevel is free).
-    /// </summary>
-    public static int SkillCost(ContactSkillPrototype skill, int level)
-    {
-        var cost = 0;
-        for (var l = skill.BaseLevel; l < ClampLevel(skill, level); l++)
-        {
-            cost += NextCost(skill, l);
-        }
-
-        return cost;
-    }
-
-    public static int TotalCost(IPrototypeManager prototypes, Dictionary<string, int> levels)
+    public static int TotalCost(IPrototypeManager prototypes, IEnumerable<string> perks)
     {
         var total = 0;
-        foreach (var skill in prototypes.EnumeratePrototypes<ContactSkillPrototype>())
+        foreach (var id in perks.Distinct())
         {
-            total += SkillCost(skill, levels.GetValueOrDefault(skill.ID, skill.BaseLevel));
+            if (prototypes.TryIndex<ContactPerkPrototype>(id, out var perk))
+                total += perk.Cost;
         }
 
         return total;
     }
 
     /// <summary>
-    /// Inventory slot a clothing category goes into; null for weapons and attachments.
+    /// Inventory slot a clothing category goes into; null for weapons.
     /// </summary>
     public static string? ClothingSlot(ContactLoadoutCategory category)
     {

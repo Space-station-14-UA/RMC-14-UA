@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._Mriya.Rules.Contact;
 
 /// <summary>
-/// Client side of the Contact skills/loadout window: opens it when the server says so,
+/// Client side of the Contact perks/loadout window: opens it when the server says so,
 /// keeps the preset in CVars between rounds, and sends Apply.
 /// </summary>
 public sealed class ContactLoadoutSystem : EntitySystem
@@ -69,10 +69,10 @@ public sealed class ContactLoadoutSystem : EntitySystem
     {
         var preset = new ContactLoadoutApplyEvent();
 
-        foreach (var (key, value) in Parse(_cfg.GetCVar(ContactCVars.LoadoutSkills)))
+        // perks: "a,b,c" (the CVar kept its old name)
+        foreach (var id in _cfg.GetCVar(ContactCVars.LoadoutSkills).Split(',', StringSplitOptions.RemoveEmptyEntries))
         {
-            if (int.TryParse(value, out var level))
-                preset.Skills[key] = level;
+            preset.Perks.Add(id);
         }
 
         // explicit list: the client sandbox rejects generic Enum helpers
@@ -95,7 +95,7 @@ public sealed class ContactLoadoutSystem : EntitySystem
 
     private void SavePreset(ContactLoadoutApplyEvent preset)
     {
-        _cfg.SetCVar(ContactCVars.LoadoutSkills, Join(preset.Skills, k => k, v => v.ToString()));
+        _cfg.SetCVar(ContactCVars.LoadoutSkills, string.Join(',', preset.Perks));
         _cfg.SetCVar(ContactCVars.LoadoutItems, Join(preset.Items, k => k.ToString(), v => v));
         _cfg.SetCVar(ContactCVars.LoadoutAttachments, Join(preset.Attachments, k => k, v => v));
         _cfg.SaveToFile();

@@ -3,7 +3,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._Mriya.Rules.Contact;
 
 /// <summary>
-/// Server -> client: open the skills/loadout window (on spawn, or as the answer to a request).
+/// Server -> client: open the perks/loadout window (on spawn, or as the answer to a request).
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class ContactLoadoutOpenEvent : EntityEventArgs
@@ -43,15 +43,15 @@ public sealed class ContactLoadoutPointsEvent : EntityEventArgs
 public sealed class ContactLoadoutRequestEvent : EntityEventArgs;
 
 /// <summary>
-/// Client -> server: apply this preset. The server re-checks points, levels, categories and attachment slots.
+/// Client -> server: apply this preset. The server re-checks points, categories and attachment slots.
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class ContactLoadoutApplyEvent : EntityEventArgs
 {
     /// <summary>
-    /// ContactSkillPrototype id -> level. Missing = BaseLevel.
+    /// ContactPerkPrototype ids.
     /// </summary>
-    public Dictionary<string, int> Skills = new();
+    public List<string> Perks = new();
 
     /// <summary>
     /// Category -> ContactLoadoutItemPrototype id. Missing = keep what the job gave.
@@ -59,7 +59,7 @@ public sealed class ContactLoadoutApplyEvent : EntityEventArgs
     public Dictionary<ContactLoadoutCategory, string> Items = new();
 
     /// <summary>
-    /// Weapon attachment slot id -> ContactLoadoutItemPrototype id (Attachment category).
+    /// Weapon attachment slot id -> attachment entity prototype id.
     /// </summary>
     public Dictionary<string, string> Attachments = new();
 }

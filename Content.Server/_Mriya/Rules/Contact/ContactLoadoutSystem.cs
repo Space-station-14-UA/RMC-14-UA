@@ -5,7 +5,6 @@ using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared._RMC14.Attachable.Components;
 using Content.Shared._RMC14.Attachable.Systems;
 using Content.Shared._RMC14.Marines;
-using Content.Shared._RMC14.Marines.Skills;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -24,7 +23,8 @@ using Robust.Shared.Utility;
 namespace Content.Server._Mriya.Rules.Contact;
 
 /// <summary>
-/// Contact skills (point-buy on top of RMC skills) and free loadout picks (weapon + attachments, uniform, armor, helmet).
+/// Contact perks (Creedbreaker-style, bought with skill points) and free loadout picks
+/// (weapon + attachments, uniform, armor, helmet).
 /// The window opens when a marine spawns, and from the HUD button; applying only works on the ship.
 /// The client keeps the preset (CVars); the server checks everything and keeps the milestone unlocks
 /// (wave 20 / 40 survived) in a json file, so they can't be edited client side.
@@ -32,16 +32,17 @@ namespace Content.Server._Mriya.Rules.Contact;
 public sealed class ContactLoadoutSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly IResourceManager _resources = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!;
     [Dependency] private readonly AttachableHolderSystem _attachable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
-    [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly ContactPerkSystem _perks = default!;
+    [Dependency] private readonly ContactPerkCombatSystem _perkCombat = default!;
 
     private static readonly ResPath SaveDir = new("/mriya");
     private static readonly ResPath SavePath = new("/mriya/contact_progress.json");
@@ -119,29 +120,24 @@ public sealed class ContactLoadoutSystem : EntitySystem
             return;
         }
 
-        var points = GetPoints(args.SenderSession.UserId, config);
-        if (ContactLoadoutHelpers.TotalCost(_prototypes, ev.Skills) > points)
+        var perks = new List<ProtoId<ContactPerkPrototype>>();
+        foreach (var id in ev.Perks.Distinct())
+        {
+            if (_prototypes.HasIndex<ContactPerkPrototype>(id))
+                perks.Add(id);
+        }
+
+        if (ContactLoadoutHelpers.TotalCost(_prototypes, ev.Perks) > GetPoints(args.SenderSession.UserId, config))
         {
             _popup.PopupEntity(Loc.GetString("mriya-contact-loadout-not-enough"), player, player, PopupType.SmallCaution);
             return;
         }
 
-        ApplySkills(player, ev.Skills);
+        _perks.SetPerks(player, perks);
+        _perkCombat.RefreshHealth(player);
         ApplyGear(player, ev);
 
         _popup.PopupEntity(Loc.GetString("mriya-contact-loadout-applied"), player, player);
-    }
-
-    /// <summary>
-    /// Every Contact skill is set to the chosen level (BaseLevel if not chosen); other RMC skills keep the job's value.
-    /// </summary>
-    private void ApplySkills(EntityUid player, Dictionary<string, int> levels)
-    {
-        foreach (var skill in _prototypes.EnumeratePrototypes<ContactSkillPrototype>())
-        {
-            var level = ContactLoadoutHelpers.ClampLevel(skill, levels.GetValueOrDefault(skill.ID, skill.BaseLevel));
-            _skills.SetSkill(player, skill.Skill, level);
-        }
     }
 
     private void ApplyGear(EntityUid player, ContactLoadoutApplyEvent ev)
@@ -198,7 +194,7 @@ public sealed class ContactLoadoutSystem : EntitySystem
 
     /// <summary>
     /// The previously given weapon and extras are deleted, then the new weapon is made with its attachments.
-    /// Attachments go only into unlocked slots whose whitelist they pass.
+    /// Attachments: real attachment prototypes, only into unlocked slots whose whitelist they pass.
     /// </summary>
     private void GiveWeapon(EntityUid player, ContactLoadoutStateComponent state, ContactLoadoutItemPrototype weapon, Dictionary<string, string> attachments)
     {
@@ -216,6 +212,7 @@ public sealed class ContactLoadoutSystem : EntitySystem
 
         if (TryComp(gun, out AttachableHolderComponent? holder))
         {
+            // read-only access to Slots (RMC Access): walk it and look the choice up in our dictionary
             foreach (var (slotId, slot) in holder.Slots)
             {
                 if (slot.Locked || !attachments.TryGetValue(slotId, out var attachmentId))

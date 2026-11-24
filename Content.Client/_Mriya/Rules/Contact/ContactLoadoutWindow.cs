@@ -2,15 +2,17 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared._Mriya.Rules.Contact;
 using Content.Shared._RMC14.Attachable.Components;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Prototypes;
-using Robust.Client.UserInterface;
+using Robust.Shared.Utility;
 
 namespace Content.Client._Mriya.Rules.Contact;
 
 /// <summary>
-/// Contact skills/loadout window. Tab 1: point-buy skills. Tab 2: one pick per gear category + the weapon's attachments.
+/// Contact perks/loadout window. Tab 1: perk decks, buy-once with skill points.
+/// Tab 2: one pick per gear category + the weapon's attachments.
 /// Apply saves the preset and sends it; the server re-checks everything.
 /// </summary>
 public sealed class ContactLoadoutWindow : DefaultWindow
@@ -23,23 +25,25 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         ContactLoadoutCategory.Helmet,
     };
 
+    private static readonly Color DescriptionColor = Color.FromHex("#9A9A9A");
+    private static readonly Color DeckColor = Color.FromHex("#E0B040");
+
     private readonly ContactLoadoutSystem _system;
     private readonly IPrototypeManager _prototypes;
     private readonly IComponentFactory _factory;
 
     private readonly Label _points = new();
-    private readonly BoxContainer _skillList = new() { Orientation = BoxContainer.LayoutOrientation.Vertical };
+    private readonly BoxContainer _perkList = new() { Orientation = BoxContainer.LayoutOrientation.Vertical };
     private readonly BoxContainer _gearList = new() { Orientation = BoxContainer.LayoutOrientation.Vertical };
     private readonly BoxContainer _attachmentList = new() { Orientation = BoxContainer.LayoutOrientation.Vertical };
     private readonly Label _shipOnly = new() { Visible = false };
     private readonly Button _apply = new();
 
-    private readonly Dictionary<string, int> _skills = new();
+    private readonly HashSet<string> _perks = new();
     private readonly Dictionary<ContactLoadoutCategory, string> _items = new();
     private readonly Dictionary<string, string> _attachments = new();
-    private int _maxPoints;
-
     private List<EntityPrototype>? _attachables;
+    private int _maxPoints;
 
     public ContactLoadoutWindow(ContactLoadoutSystem system, IPrototypeManager prototypes, IComponentFactory factory)
     {
@@ -48,17 +52,17 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         _factory = factory;
 
         Title = Loc.GetString("mriya-contact-loadout-title");
-        MinSize = new Vector2(540, 560);
+        MinSize = new Vector2(560, 600);
 
         var tabs = new TabContainer { VerticalExpand = true };
 
-        var skillsTab = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
-        skillsTab.AddChild(_points);
-        skillsTab.AddChild(new ScrollContainer
+        var perksTab = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
+        perksTab.AddChild(_points);
+        perksTab.AddChild(new ScrollContainer
         {
             VerticalExpand = true,
             HScrollEnabled = false,
-            Children = { _skillList },
+            Children = { _perkList },
         });
 
         var gearTab = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
@@ -81,9 +85,9 @@ public sealed class ContactLoadoutWindow : DefaultWindow
             },
         });
 
-        tabs.AddChild(skillsTab);
+        tabs.AddChild(perksTab);
         tabs.AddChild(gearTab);
-        TabContainer.SetTabTitle(skillsTab, Loc.GetString("mriya-contact-loadout-tab-skills"));
+        TabContainer.SetTabTitle(perksTab, Loc.GetString("mriya-contact-loadout-tab-skills"));
         TabContainer.SetTabTitle(gearTab, Loc.GetString("mriya-contact-loadout-tab-gear"));
 
         _shipOnly.Text = Loc.GetString("mriya-contact-loadout-ship-only");
@@ -92,7 +96,7 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         {
             _system.Apply(new ContactLoadoutApplyEvent
             {
-                Skills = new Dictionary<string, int>(_skills),
+                Perks = _perks.ToList(),
                 Items = new Dictionary<ContactLoadoutCategory, string>(_items),
                 Attachments = new Dictionary<string, string>(_attachments),
             });
@@ -107,17 +111,18 @@ public sealed class ContactLoadoutWindow : DefaultWindow
     }
 
     /// <summary>
-    /// Fill from the saved preset; levels above what the points allow are dropped back down.
+    /// Fill from the saved preset; if the points don't cover it any more, the most expensive perks are dropped.
     /// </summary>
     public void Load(ContactLoadoutApplyEvent preset, int points, bool canApply)
     {
-        _skills.Clear();
+        _perks.Clear();
         _items.Clear();
         _attachments.Clear();
 
-        foreach (var skill in SortedSkills())
+        foreach (var id in preset.Perks)
         {
-            _skills[skill.ID] = ContactLoadoutHelpers.ClampLevel(skill, preset.Skills.GetValueOrDefault(skill.ID, skill.BaseLevel));
+            if (_prototypes.HasIndex<ContactPerkPrototype>(id))
+                _perks.Add(id);
         }
 
         foreach (var (category, id) in preset.Items)
@@ -132,14 +137,12 @@ public sealed class ContactLoadoutWindow : DefaultWindow
         }
 
         _maxPoints = points;
-        while (Spent() > _maxPoints && LowerMostExpensive())
-        {
-        }
+        TrimToPoints();
 
         _apply.Disabled = !canApply;
         _shipOnly.Visible = !canApply;
 
-        RebuildSkills();
+        RebuildPerks();
         RebuildGear();
         RebuildAttachments();
     }
@@ -147,86 +150,106 @@ public sealed class ContactLoadoutWindow : DefaultWindow
     public void SetPoints(int points)
     {
         _maxPoints = points;
-        RebuildSkills();
+        TrimToPoints();
+        RebuildPerks();
     }
 
-    #region Skills
-
-    private IEnumerable<ContactSkillPrototype> SortedSkills()
-    {
-        return _prototypes.EnumeratePrototypes<ContactSkillPrototype>().OrderBy(s => s.Order).ThenBy(s => s.ID);
-    }
+    #region Perks
 
     private int Spent()
     {
-        return ContactLoadoutHelpers.TotalCost(_prototypes, _skills);
+        return ContactLoadoutHelpers.TotalCost(_prototypes, _perks);
     }
 
-    private bool LowerMostExpensive()
+    private void TrimToPoints()
     {
-        foreach (var skill in SortedSkills().OrderByDescending(s => ContactLoadoutHelpers.SkillCost(s, _skills[s.ID])))
+        while (Spent() > _maxPoints && _perks.Count > 0)
         {
-            if (_skills[skill.ID] <= skill.BaseLevel)
-                continue;
+            var priciest = _perks
+                .Select(id => _prototypes.Index<ContactPerkPrototype>(id))
+                .OrderByDescending(p => p.Cost)
+                .First();
 
-            _skills[skill.ID]--;
-            return true;
+            _perks.Remove(priciest.ID);
         }
-
-        return false;
     }
 
-    private void RebuildSkills()
+    /// <summary>
+    /// Decks in order of their first perk; each perk a checkbox with its cost and description.
+    /// A perk that doesn't fit the remaining points can't be ticked.
+    /// </summary>
+    private void RebuildPerks()
     {
         var spent = Spent();
-        _points.Text = Loc.GetString("mriya-contact-loadout-points", ("left", _maxPoints - spent), ("total", _maxPoints));
+        var left = _maxPoints - spent;
+        _points.Text = Loc.GetString("mriya-contact-loadout-points", ("left", left), ("total", _maxPoints));
 
-        _skillList.RemoveAllChildren();
-        foreach (var skill in SortedSkills())
+        _perkList.RemoveAllChildren();
+
+        var decks = _prototypes.EnumeratePrototypes<ContactPerkPrototype>()
+            .GroupBy(p => p.Deck)
+            .OrderBy(g => g.Min(p => p.Order));
+
+        foreach (var deck in decks)
         {
-            var id = skill.ID;
-            var level = _skills[id];
-            var next = ContactLoadoutHelpers.NextCost(skill, level);
-
-            var minus = new Button { Text = "-", Disabled = level <= skill.BaseLevel, MinWidth = 28 };
-            minus.OnPressed += _ =>
+            _perkList.AddChild(new Label
             {
-                _skills[id] = level - 1;
-                RebuildSkills();
-            };
-
-            var plus = new Button { Text = "+", Disabled = level >= skill.MaxLevel || spent + next > _maxPoints, MinWidth = 28 };
-            plus.OnPressed += _ =>
-            {
-                _skills[id] = level + 1;
-                RebuildSkills();
-            };
-
-            var name = new Label
-            {
-                Text = Loc.GetString(skill.Name),
-                HorizontalExpand = true,
-                ToolTip = skill.Description is { } desc ? Loc.GetString(desc) : null,
-            };
-
-            _skillList.AddChild(new BoxContainer
-            {
-                Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                Margin = new Thickness(0, 1),
-                Children =
-                {
-                    name,
-                    minus,
-                    new Label { Text = $"{level}/{skill.MaxLevel}", MinWidth = 40, Align = Label.AlignMode.Center },
-                    plus,
-                    new Label
-                    {
-                        Text = level >= skill.MaxLevel ? string.Empty : Loc.GetString("mriya-contact-loadout-cost", ("cost", next)),
-                        MinWidth = 70,
-                        Align = Label.AlignMode.Right,
-                    },
-                },
+                Text = Loc.GetString(deck.Key).ToUpperInvariant(),
+                FontColorOverride = DeckColor,
+                Margin = new Thickness(0, 8, 0, 2),
             });
+
+            foreach (var perk in deck.OrderBy(p => p.Order).ThenBy(p => p.ID))
+            {
+                var id = perk.ID;
+                var owned = _perks.Contains(id);
+
+                var check = new CheckBox
+                {
+                    Text = Loc.GetString(perk.Name),
+                    Pressed = owned,
+                    Disabled = !owned && perk.Cost > left,
+                    HorizontalExpand = true,
+                };
+
+                check.OnToggled += args =>
+                {
+                    if (args.Pressed)
+                        _perks.Add(id);
+                    else
+                        _perks.Remove(id);
+
+                    RebuildPerks();
+                };
+
+                _perkList.AddChild(new BoxContainer
+                {
+                    Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                    Children =
+                    {
+                        check,
+                        new Label
+                        {
+                            Text = Loc.GetString("mriya-contact-loadout-cost", ("cost", perk.Cost)),
+                            MinWidth = 70,
+                            Align = Label.AlignMode.Right,
+                        },
+                    },
+                });
+
+                if (perk.Description is { } desc)
+                {
+                    // RichTextLabel wraps, Label doesn't
+                    var text = new FormattedMessage();
+                    text.PushColor(DescriptionColor);
+                    text.AddText(Loc.GetString(desc));
+                    text.Pop();
+
+                    var description = new RichTextLabel { Margin = new Thickness(24, 0, 0, 4) };
+                    description.SetMessage(text);
+                    _perkList.AddChild(description);
+                }
+            }
         }
     }
 

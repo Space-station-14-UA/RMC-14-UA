@@ -1,48 +1,9 @@
-# ---------------------------------------------------------------------------
-# Skills. Fill from the Creedbreaker table: skill = RMC skill id, maxLevel, costs[n] = price of level n -> n+1.
-# baseLevel = free level everyone has. Example values below are placeholders.
-# RMC skill ids: RMCSkillFirearms, RMCSkillMeleeWeapons, RMCSkillCqc, RMCSkillEndurance, RMCSkillMedical,
-# RMCSkillSurgery, RMCSkillEngineer, RMCSkillConstruction, RMCSkillFireman, RMCSkillLeadership,
-# RMCSkillPowerLoader, RMCSkillJtac, RMCSkillSmartGun, RMCSkillSpecialistWeapons, RMCSkillIntel, RMCSkillResearch ...
-
-- type: contactSkill
-  id: MRContactSkillFirearms
-  skill: RMCSkillFirearms
-  name: mriya-contact-skill-firearms
-  description: mriya-contact-skill-firearms-desc
-  baseLevel: 1
-  maxLevel: 3
-  costs: [ 0, 2, 3 ] # 1->2 costs 2, 2->3 costs 3
-  order: 0
-
-- type: contactSkill
-  id: MRContactSkillMedical
-  skill: RMCSkillMedical
-  name: mriya-contact-skill-medical
-  description: mriya-contact-skill-medical-desc
-  maxLevel: 3
-  costs: [ 1, 2, 3 ]
-  order: 10
-
-- type: contactSkill
-  id: MRContactSkillEngineer
-  skill: RMCSkillEngineer
-  name: mriya-contact-skill-engineer
-  description: mriya-contact-skill-engineer-desc
-  maxLevel: 3
-  costs: [ 1, 2, 3 ]
-  order: 20
-
-# ---------------------------------------------------------------------------
-# Gear. One pick per category (weapon / uniform / armor / helmet), free.
-# Attachments: listed for every weapon slot whose whitelist they pass (tags/components), so just list them all.
-
 - type: contactLoadoutItem
   id: MRContactLoadoutM42A2
   category: Weapon
   proto: RMCWeaponShotgunM42A2Filled
   extras:
-  - RMCBoxShotgunBuckshot # put your shell box id here
+  - RMCBoxShotgunBuckshot
 
 - type: contactLoadoutItem
   id: MRContactLoadoutXM88
@@ -66,8 +27,3 @@
 #   id: MRContactLoadoutHelmet
 #   category: Helmet
 #   proto: <helmet id>
-#
-# - type: contactLoadoutItem
-#   id: MRContactLoadoutAttRedDot
-#   category: Attachment
-#   proto: <S5 red dot attachment id>

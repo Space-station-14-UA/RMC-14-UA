@@ -1,24 +1,23 @@
-using Content.Shared._RMC14.Marines.Skills;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Mriya.Rules.Contact;
 
 /// <summary>
-/// One buyable Contact skill, mapped onto an RMC skill (YAML type: contactSkill).
-/// Levels BaseLevel..MaxLevel; everything above BaseLevel costs skill points.
+/// One buy-once Contact perk (Creedbreaker-style skill), YAML type: contactPerk.
+/// Grouped into decks in the window; what it does is its list of effects.
 /// </summary>
 [Prototype]
-public sealed partial class ContactSkillPrototype : IPrototype
+public sealed partial class ContactPerkPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// The RMC skill this sets (RMCSkillFirearms, RMCSkillMedical, ...).
+    /// Deck heading (Frontliner, Gunslinger...).
     /// </summary>
     [DataField(required: true)]
-    public EntProtoId<SkillDefinitionComponent> Skill;
+    public LocId Deck;
 
     [DataField(required: true)]
     public LocId Name;
@@ -26,26 +25,17 @@ public sealed partial class ContactSkillPrototype : IPrototype
     [DataField]
     public LocId? Description;
 
-    /// <summary>
-    /// Free level everyone gets.
-    /// </summary>
-    [DataField]
-    public int BaseLevel;
-
     [DataField(required: true)]
-    public int MaxLevel;
+    public int Cost;
 
     /// <summary>
-    /// Costs[n] = points to go from level n to n + 1 (absolute level). Shorter than MaxLevel: the last cost repeats.
-    /// </summary>
-    [DataField(required: true)]
-    public List<int> Costs = new();
-
-    /// <summary>
-    /// Sort order in the window.
+    /// Sort order; decks are ordered by their lowest perk order.
     /// </summary>
     [DataField]
     public int Order;
+
+    [DataField]
+    public List<ContactPerkEffect> Effects = new();
 }
 
 [Serializable, NetSerializable]
@@ -55,12 +45,11 @@ public enum ContactLoadoutCategory : byte
     Uniform,
     Armor,
     Helmet,
-    Attachment,
 }
 
 /// <summary>
 /// One pickable piece of Contact gear (YAML type: contactLoadoutItem). Free, one per category.
-/// Attachments are offered for the chosen weapon's slots whose whitelist they pass.
+/// Attachments aren't listed: every attachment the chosen weapon's slot whitelist accepts is offered.
 /// </summary>
 [Prototype]
 public sealed partial class ContactLoadoutItemPrototype : IPrototype

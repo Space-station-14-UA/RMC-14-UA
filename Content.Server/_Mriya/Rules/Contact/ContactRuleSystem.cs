@@ -504,6 +504,17 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         return best;
     }
 
+    /// <summary>
+    /// How many Contact wave buffs are active right now (0 before the first). Perks scale with it.
+    /// </summary>
+    public int GetBuffLevel()
+    {
+        if (GetActiveRule() is not { } rule || !_prototypes.TryIndex(rule.Comp.Waves, out var waves))
+            return 0;
+
+        return waves.Buffs.Count(b => b.Wave <= rule.Comp.Wave);
+    }
+
     private void AnnounceBuff(ContactRuleComponent comp, ContactWaveBuffEntry buff)
     {
         var msg = buff.Announcement is { } custom
