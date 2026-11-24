@@ -1,0 +1,10 @@
+- type: entity
+  parent: RMCKatana
+  id: MRContactKizuna
+  name: "'Кізуна' ВЧ катана"
+  description: Високо-частотно катана. Щоб це не означало, але це виглядає як абсурдно технічно-складний меч.
+  components:
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 80

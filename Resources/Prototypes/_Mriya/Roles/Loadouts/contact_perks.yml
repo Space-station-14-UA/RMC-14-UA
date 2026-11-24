@@ -287,10 +287,21 @@
   description: mriya-contact-perk-headhunter-desc
   cost: 6
   order: 500
-  effects: # (not done: highlight, losing the flashlight, acid gas)
+  effects:
   - !type:ContactPerkNightVision
   - !type:ContactPerkNeurotoxinImmunity
   - !type:ContactPerkDazeImmunity
+  - !type:ContactPerkNoFlashlight
+  - !type:ContactPerkHighlight
+    minRange: 7
+    maxRange: 20
+  - !type:ContactPerkGasImmunity
+    gases:
+    - RMCSmokeAcid
+    - RMCSmokeAcidShroud
+    - RMCSmokeAcidDeathcloud
+    - RMCSmokeNeurotoxin
+    - RMCSmokeNeurotoxinShroud
   - !type:ContactPerkDamage
     weapon: Firearm
     multiplier: 1.55
@@ -344,7 +355,9 @@
   description: mriya-contact-perk-boundary-desc
   cost: 5
   order: 630
-  effects: # (not done: no regen, respirators, Kizuna blade)
+  excludes:
+  - MRContactPerkHeadhunter
+  effects:
   - !type:ContactPerkLowHealthDamage
     weapon: Melee
     steps:
@@ -357,6 +370,9 @@
       0.5: 5
   - !type:ContactPerkRestrict
     allowed: Melee
+  - !type:ContactPerkReplaceWeapon
+    proto: MRContactKizuna
+
 
 # ---------------- Wildcard ----------------
 

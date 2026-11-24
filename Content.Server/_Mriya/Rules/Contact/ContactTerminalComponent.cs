@@ -29,4 +29,5 @@ public sealed partial class ContactTerminalComponent : Component
 
     [DataField]
     public TimeSpan ActivateDelay = TimeSpan.FromSeconds(5);
+    
 }

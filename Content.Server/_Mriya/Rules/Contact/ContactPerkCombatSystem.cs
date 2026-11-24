@@ -24,6 +24,12 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared._RMC14.Damage;
+using Content.Shared.Light;
+using Content.Shared.Light.Components;
+using Content.Shared.Physics;
+using Robust.Shared.Containers;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -49,6 +55,8 @@ public sealed class ContactPerkCombatSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly SharedHandheldLightSystem _light = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
     private static readonly ProtoId<DamageGroupPrototype> DamageGroup = "Brute";
 
@@ -387,6 +395,12 @@ public sealed class ContactPerkCombatSystem : EntitySystem
         if (args.Origin is not { } origin || !HasComp<XenoComponent>(origin) || !args.Damage.AnyPositive())
             return;
 
+        if (args.Origin == null && IsInImmuneGas(ent))
+        {
+            args.Damage = DamageSpecifier.GetNegative(args.Damage);
+            return;
+        }
+
         float? cap = null;
         foreach (var effect in _perks.GetEffects<ContactPerkDamageCap>(ent.Comp))
         {
@@ -407,6 +421,27 @@ public sealed class ContactPerkCombatSystem : EntitySystem
     #endregion
 
     #region Immunities
+
+    private bool IsInImmuneGas(Entity<ContactPerksComponent> ent)
+    {
+        if (!HasComp<UserDamageOverTimeComponent>(ent))
+            return false;
+
+        foreach (var immunity in _perks.GetEffects<ContactPerkGasImmunity>(ent.Comp))
+        {
+            foreach (var contact in _physics.GetEntitiesIntersectingBody(ent, (int) (CollisionGroup.MobLayer | CollisionGroup.MobMask)))
+            {
+                if (HasComp<DamageOverTimeComponent>(contact) &&
+                    MetaData(contact).EntityPrototype?.ID is { } proto &&
+                    immunity.Gases.Contains(proto))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 
     private void OnNeurotoxinAttempt(Entity<ContactPerksComponent> ent, ref NeurotoxinInjectAttemptEvent args)
     {
@@ -442,6 +477,29 @@ public sealed class ContactPerkCombatSystem : EntitySystem
 
             if (_perks.HasEffect<ContactPerkDazeImmunity>(perks) && _statusEffects.HasStatusEffect(uid, DazedEffect))
                 _statusEffects.TryRemoveStatusEffect(uid, DazedEffect);
+
+            if (_perks.HasEffect<ContactPerkNoFlashlight>(perks))
+                TurnOffLights(uid, uid, 0);
+        }
+    }
+
+    /// <summary>
+    /// Hands, worn items, storage, gun attachments: anything lit gets switched off.
+    /// </summary>
+    private void TurnOffLights(EntityUid owner, EntityUid uid, int depth)
+    {
+        if (depth > 4 || !TryComp(uid, out ContainerManagerComponent? manager))
+            return;
+
+        foreach (var container in manager.Containers.Values)
+        {
+            foreach (var item in container.ContainedEntities)
+            {
+                if (TryComp(item, out HandheldLightComponent? light) && light.Activated && _light.TurnOff((item, light)))
+                    _popup.PopupEntity(Loc.GetString("mriya-contact-perk-no-flashlight"), owner, owner, PopupType.SmallCaution);
+
+                TurnOffLights(owner, item, depth + 1);
+            }
         }
     }
 
@@ -567,6 +625,7 @@ public sealed class ContactPerkCombatSystem : EntitySystem
                 totalIntensity: blast.ExplosionIntensity,
                 slope: 1f,
                 maxTileIntensity: blast.ExplosionIntensity,
+                cause: null,
                 tileBreakScale: 0f,
                 maxTileBreak: 0,
                 canCreateVacuum: false);

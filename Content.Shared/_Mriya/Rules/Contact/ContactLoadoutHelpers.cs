@@ -66,4 +66,24 @@ public static class ContactLoadoutHelpers
             ? checks.Count > 0 && checks.All(c => c)
             : checks.Any(c => c);
     }
+
+    /// <summary>
+    /// True if the perk excludes an owned perk, or an owned perk excludes it.
+    /// </summary>
+    public static bool Conflicts(IPrototypeManager prototypes, ContactPerkPrototype perk, IEnumerable<string> owned)
+    {
+        foreach (var id in owned)
+        {
+            if (id == perk.ID)
+                continue;
+
+            if (perk.Excludes.Contains(id) ||
+                prototypes.TryIndex<ContactPerkPrototype>(id, out var other) && other.Excludes.Contains(perk.ID))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

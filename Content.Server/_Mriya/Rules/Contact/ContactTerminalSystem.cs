@@ -110,7 +110,7 @@ public sealed class ContactTerminalSystem : EntitySystem
             return;
         }
 
-        var delay = _perks.ModifyDoAfterDelay(args.User, ent.Comp.ActivationDelay, null, ent);
+        var delay = _perks.ModifyDoAfterDelay(args.User, ent.Comp.ActivateDelay, null, ent);
 
         var doAfter = new DoAfterArgs(EntityManager, args.User, delay, new ContactTerminalDoAfterEvent(), ent, ent)
         {

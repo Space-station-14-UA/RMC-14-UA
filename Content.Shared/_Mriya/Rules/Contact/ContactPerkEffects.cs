@@ -404,4 +404,49 @@ public sealed partial class ContactPerkNeurotoxinImmunity : ContactPerkEffect;
 /// </summary>
 public sealed partial class ContactPerkNightVision : ContactPerkEffect;
 
+#region Headhunter / Boundary
+
+/// <summary>
+/// Client overlay: outlines living xenos between MinRange and MaxRange tiles, through walls.
+/// </summary>
+public sealed partial class ContactPerkHighlight : ContactPerkEffect
+{
+    [DataField]
+    public float MinRange = 10f;
+
+    [DataField]
+    public float MaxRange = 20f;
+
+    [DataField]
+    public Color Color = Color.Red;
+}
+
+/// <summary>
+/// Any handheld light carried (flashlight, helmet/armor light, gun attachment) is turned off.
+/// </summary>
+public sealed partial class ContactPerkNoFlashlight : ContactPerkEffect;
+
+/// <summary>
+/// No damage from these damage-over-time gas prototypes.
+/// </summary>
+public sealed partial class ContactPerkGasImmunity : ContactPerkEffect
+{
+    [DataField(required: true)]
+    public List<EntProtoId> Gases = new();
+}
+
+/// <summary>
+/// The loadout weapon is replaced with this one.
+/// </summary>
+public sealed partial class ContactPerkReplaceWeapon : ContactPerkEffect
+{
+    [DataField(required: true)]
+    public EntProtoId Proto;
+
+    [DataField]
+    public List<EntProtoId> Extras = new();
+}
+
+#endregion
+
 #endregion

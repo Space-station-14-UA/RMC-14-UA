@@ -1,5 +1,7 @@
 mriya-contact-perk-restricted = Ваші навички не дозволяють користуватися цією зброєю.
 mriya-contact-perk-crit = КРИТ!
+mriya-contact-perk-no-flashlight = Спорядження БЛ-"Мисливець за головами" не дозволяє викорстовувати ліхтарі.
+mriya-contact-loadout-conflict = Не поєднується з уже обраним перком.
 
 mriya-contact-deck-frontliner = Фронтовик
 mriya-contact-deck-gunslinger = Стрілець
@@ -47,7 +49,13 @@ mriya-contact-perk-steel-padding-desc = +35 до максимального зд
 mriya-contact-perk-focused-fire = Зосереджений вогонь
 mriya-contact-perk-focused-fire-desc = На 40% менший розкид і віддача для всієї вогнепальної зброї.
 
-mriya-contact-perk-headhunter = Спорядження BL-"Мисливець за головами"
+mriya-contact-perk-leg-implants = Імпланти Н0-Г4
+mriya-contact-perk-leg-implants-desc = Сповільнення від ксеноморфів на вас не діють. На 20% менша віддача, коли ви цілитеся однією рукою.
+mriya-contact-perk-adrenal = Автоін'єктори 4ДР3Н4-Л
+mriya-contact-perk-adrenal-desc = Отримана від ксеноморфів шкода дає +10% швидкості на 1 секунду, ефект накопичується.
+mriya-contact-perk-hworld = Передавач п.СВ1Т
+mriya-contact-perk-hworld-desc = Будь-яка взаємодія з якорями триває 0,5 секунди.
+mriya-contact-perk-headhunter = Спорядження БЛ-'Мисливець за головами'
 mriya-contact-perk-headhunter-desc = +55% шкоди вогнепальною зброєю по ксеноморфах на відстані 10-20 клітинок. Зброя не втрачає шкоду з відстанню.
 
 mriya-contact-perk-barbarian = Варвар
@@ -57,7 +65,7 @@ mriya-contact-perk-weakness-analyzed-desc = 25% шансу на критични
 mriya-contact-perk-crowd-control = Контроль натовпу
 mriya-contact-perk-crowd-control-desc = Удари в ближньому бою також завдають 75% своєї шкоди ксеноморфам у межах 5 клітинок від цілі.
 mriya-contact-perk-boundary = Межа смерті
-mriya-contact-perk-boundary-desc = Шкода в ближньому бою зростає, що менше у вас здоров'я: х1.25 при 75%, х2.5 при 50%, х5 при 25%. Стріляти з вогнепальної зброї не можна.
+mriya-contact-perk-boundary-desc = Отримуєте доступ до катани 'Кізуна'. Шкода в ближньому бою зростає, що менше у вас здоров'я: х1.25 при 75%, х2.5 при 50%, х5 при 25%. Стріляти з вогнепальної зброї не можна. Не можна використовувати БЛ-'Мисливець за головами'.
 
 mriya-contact-perk-ace-high = Старший туз
 mriya-contact-perk-ace-high-desc = 12% шансу на критичний удар (х3 шкоди) з усієї вогнепальної зброї.
@@ -69,10 +77,3 @@ mriya-contact-perk-charismatic = Одесіт
 mriya-contact-perk-charismatic-desc = 33% шансу, що покупка в терміналі нічого не коштуватиме.
 mriya-contact-perk-turn-and-river = Виверт і течія
 mriya-contact-perk-turn-and-river-desc = Ваші вбивства відновлюють від 1 до 8 здоров'я.
-
-mriya-contact-perk-leg-implants = Імпланти Н0-Г4
-mriya-contact-perk-leg-implants-desc = На 20% менша віддача, коли ви цілитеся однією рукою.
-mriya-contact-perk-adrenal = Автоін'єктори 4ДР3Н4-Л
-mriya-contact-perk-adrenal-desc = Отримана від ксеноморфів шкода дає +10% швидкості на 1 секунду, ефект накопичується.
-mriya-contact-perk-hworld = Передавач п.СВ1Т
-mriya-contact-perk-hworld-desc = Будь-яка взаємодія з якорями триває 0,5 секунди.

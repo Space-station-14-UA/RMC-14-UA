@@ -36,6 +36,12 @@ public sealed partial class ContactPerkPrototype : IPrototype
 
     [DataField]
     public List<ContactPerkEffect> Effects = new();
+
+    /// <summary>
+    /// Perks this one can't be taken with (checked both ways).
+    /// </summary>
+    [DataField]
+    public List<ProtoId<ContactPerkPrototype>> Excludes = new();
 }
 
 [Serializable, NetSerializable]

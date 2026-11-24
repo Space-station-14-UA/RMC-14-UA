@@ -133,6 +133,15 @@ public sealed class ContactLoadoutSystem : EntitySystem
             return;
         }
 
+        foreach (var id in perks)
+        {
+            if (ContactLoadoutHelpers.Conflicts(_prototypes, _prototypes.Index(id), ev.Perks))
+            {
+                _popup.PopupEntity(Loc.GetString("mriya-contact-loadout-conflict"), player, player, PopupType.SmallCaution);
+                return;
+            }
+        }
+
         _perks.SetPerks(player, perks);
         _perkCombat.Refresh(player);
         ApplyGear(player, ev);
@@ -144,6 +153,11 @@ public sealed class ContactLoadoutSystem : EntitySystem
     {
         var state = EnsureComp<ContactLoadoutStateComponent>(player);
 
+        // Mriya. Boundary of Death: the chosen weapon is swapped for Kizuna
+        ContactPerkReplaceWeapon? replace = null;
+        if (TryComp(player, out ContactPerksComponent? perks))
+            replace = _perks.GetEffects<ContactPerkReplaceWeapon>(perks).FirstOrDefault();
+
         foreach (var (category, id) in ev.Items)
         {
             if (!_prototypes.TryIndex<ContactLoadoutItemPrototype>(id, out var item) || item.Category != category)
@@ -151,8 +165,42 @@ public sealed class ContactLoadoutSystem : EntitySystem
 
             if (ContactLoadoutHelpers.ClothingSlot(category) is { } slot)
                 ReplaceSlot(player, slot, item.Proto);
-            else if (category == ContactLoadoutCategory.Weapon)
+            else if (category == ContactLoadoutCategory.Weapon && replace == null)
                 GiveWeapon(player, state, item, ev.Attachments);
+        }
+
+        if (replace != null)
+            GiveReplacement(player, state, replace);
+    }
+
+    private void GiveReplacement(EntityUid player, ContactLoadoutStateComponent state, ContactPerkReplaceWeapon replace)
+    {
+        foreach (var given in state.Given)
+        {
+            if (!TerminatingOrDeleted(given))
+                QueueDel(given);
+        }
+
+        state.Given.Clear();
+
+        var coords = Transform(player).Coordinates;
+        var weapon = Spawn(replace.Proto, coords);
+        state.Given.Add(weapon);
+
+        if (!_inventory.TryEquip(player, weapon, "back", silent: true) &&
+            !_inventory.TryEquip(player, weapon, "belt", silent: true) &&
+            !_inventory.TryEquip(player, weapon, "suitstorage", silent: true))
+        {
+            _hands.TryPickupAnyHand(player, weapon);
+        }
+
+        foreach (var extra in replace.Extras)
+        {
+            var item = Spawn(extra, coords);
+            state.Given.Add(item);
+
+            if (!TryInsertIntoStorage(player, item))
+                _hands.TryPickupAnyHand(player, item);
         }
     }
 

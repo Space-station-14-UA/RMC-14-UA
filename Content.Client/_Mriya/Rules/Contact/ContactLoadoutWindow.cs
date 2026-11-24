@@ -204,11 +204,13 @@ public sealed class ContactLoadoutWindow : DefaultWindow
                 var id = perk.ID;
                 var owned = _perks.Contains(id);
 
+                var conflicts = !owned && ContactLoadoutHelpers.Conflicts(_prototypes, perk, _perks);
                 var check = new CheckBox
                 {
                     Text = Loc.GetString(perk.Name),
                     Pressed = owned,
-                    Disabled = !owned && perk.Cost > left,
+                    Disabled = !owned && (perk.Cost > left || conflicts),
+                    ToolTip = conflicts ? Loc.GetString("mriya-contact-loadout-conflict") : null,
                     HorizontalExpand = true,
                 };
 
