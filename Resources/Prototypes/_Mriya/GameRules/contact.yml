@@ -54,6 +54,11 @@
     - MRPlanetChancesContact
     - MRPlanetFiorinaContact
   - type: ContactCleanup
+  - type: ContactLoadout
+    basePoints: 16
+    milestones:
+      20: 2
+      40: 2
 
 - type: contactWaves
   id: MRContactWavesDefault
@@ -62,16 +67,17 @@
     startWave: 1
     rate: 2
     ratePerWave: 0.15
-    maxAlive: 20
+    maxAlive: 30
   - proto: MRContactXenoDefender
     startWave: 2
     rate: 1
     ratePerWave: 0.15
-    maxAlive: 15
+    maxAlive: 5
   - proto: MRContactXenoLurker
     startWave: 5
+    every: 2
     rate: 1
-    ratePerWave: 0.15
+    ratePerWave: 0
     maxAlive: 2
   - proto: MRContactXenoCrusher
     startWave: 9
@@ -79,15 +85,17 @@
     ratePerWave: 0.15
     maxAlive: 5
   - proto: MRContactXenoCharger
-    startWave: 20
+    startWave: 25
+    every: 2
     rate: 1
-    ratePerWave: 0.05
-    maxAlive: 2
-  - proto: MRContactXenoRavagerBerserker
-    startWave: 40
-    rate: 0.05
     ratePerWave: 0
     maxAlive: 1
+  - proto: MRContactXenoRavagerBerserker
+    startWave: 20
+    every: 2
+    rate: 1
+    ratePerWave: 0.15
+    maxAlive: 4
   - proto: MRContactXenoBoiler
     startWave: 15
     rate: 1
@@ -124,3 +132,79 @@
     bodyType: Static
   - type: Fixtures
   - type: ContactPathBlocker
+
+
+# Casino
+# Rules. Slots return ~95% with these weights (2+4+6+8+12 = 32), any 2 cherries pay ×2.
+- type: contactCasino
+  id: MRContactCasinoDefault
+  slotBets: [ 5, 10, 25, 50 ]
+  symbols:
+  - name: mriya-contact-casino-symbol-seven
+    entity: RMCFireAxe
+    color: "#FF4D4D"
+    weight: 2
+    three: 50
+  - name: mriya-contact-casino-symbol-xeno
+    entity: CMXenoLarva
+    color: "#B05CFF"
+    weight: 4
+    three: 20
+  - name: mriya-contact-casino-symbol-bar
+    entity: CMSheetMetal1
+    color: "#FFFFFF"
+    weight: 6
+    three: 10
+  - name: mriya-contact-casino-symbol-bell
+    entity: MRPlushieSteamhappy
+    color: "#E0B040"
+    weight: 8
+    three: 6
+  - name: mriya-contact-casino-symbol-cherry
+    color: "#FF6FA0"
+    entity: FoodCherry
+    weight: 12
+    three: 4
+    two: 2
+  blackjackBets: [ 5, 10, 25, 50, 100 ]
+  blackjackSeats: 5
+  blackjackDecks: 6
+  bettingTime: 15
+  turnTime: 20
+  resultsTime: 6
+
+# Slot machine: RMC's Hybrisa prop, made playable
+- type: entity
+  parent: RMCPropSlotmachineIdle
+  id: MRContactSlotMachine
+  name: ігровий автомат
+  suffix: Контакт
+  description: Депни Є-бали, потягни за важіль, розчаруйся.
+  components:
+  - type: ContactCasino
+    slots: true
+    blackjack: false
+  - type: ActivatableUI
+    key: enum.ContactCasinoUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ContactCasinoUiKey.Key:
+        type: ContactCasinoBoundUserInterface
+
+# Blackjack table. Every table (and the store) is the same shared game.
+- type: entity
+  parent: CMTableWoodenGambling
+  id: MRContactBlackjackTable
+  name: стіл для блекджеку
+  suffix: Контакт
+  description: Ділер ніколи не спить. Його тут навіть немає. Він навіть не людина... :steamhappy:.
+  components:
+  - type: ContactCasino
+    slots: false
+    blackjack: true
+  - type: ActivatableUI
+    key: enum.ContactCasinoUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ContactCasinoUiKey.Key:
+        type: ContactCasinoBoundUserInterface

@@ -204,6 +204,106 @@
   maxPerPurchase: 1
  
 - type: contactStoreEntry
+  id: MRContactStorePouchConstruction
+  proto: RMCPouchConstruction
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchExplosive
+  proto: RMCPouchExplosive
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchFirstAid
+  proto: RMCPouchFirstAid
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchFirstAidERT
+  proto: RMCPouchFirstAidERT
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchFuelTank
+  proto: RMCPouchFuelTank
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchGeneralLarge
+  proto: RMCPouchGeneralLarge
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchMedkit
+  proto: RMCPouchMedkit
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchMedicalSoc
+  proto: RMCPouchMedicalSoc
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchAutoinjector
+  proto: RMCPouchAutoinjector
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchCommand
+  proto: RMCPouchCommand
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchDocument
+  proto: RMCPouchDocument
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchFlare
+  proto: RMCPouchFlare
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchEngineerKit
+  proto: RMCPouchEngineerKit
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStorePouchSling
+  proto: RMCPouchSling
+  category: MRContactStoreClothing
+  price: 16
+  maxPerPurchase: 1
+ 
+# belts
+
+- type: contactStoreEntry
   id: MRContactStoreBeltMarine
   proto: CMBeltMarine
   category: MRContactStoreClothing
@@ -234,6 +334,55 @@
 - type: contactStoreEntry
   id: MRContactStoreBeltPistol
   proto: RMCBeltHolsterPistol
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltUtility
+  proto: CMBeltUtility
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltConstruction
+  proto: RMCBeltConstruction
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltUtilityCombat
+  proto: CMBeltUtilityCombat
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltMedical
+  proto: CMBeltMedical
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltUtilityGeneral
+  proto: RMCBeltUtilityGeneral
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltM300SOCOMBelt
+  proto: RMCM300SOCOMBelt
+  category: MRContactStoreClothing
+  price: 17
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreBeltHolsterM13
+  proto: RMCBeltHolsterM13
   category: MRContactStoreClothing
   price: 17
   maxPerPurchase: 1

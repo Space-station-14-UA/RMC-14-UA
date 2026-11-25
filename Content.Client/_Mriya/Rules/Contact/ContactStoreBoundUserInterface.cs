@@ -16,11 +16,15 @@ public sealed class ContactStoreBoundUserInterface(EntityUid owner, Enum uiKey) 
         _window = this.CreateWindow<ContactStoreWindow>();
         _window.Buy += (entry, amount) => SendMessage(new ContactStoreBuyMessage(entry, amount));
         _window.ResupplyKit += kit => SendMessage(new ContactStoreResupplyKitMessage(kit));
+        if (EntMan.TryGetComponent(Owner, out ContactCasinoComponent? casino))
+            ContactCasinoHelpers.Wire(this, _window.EnableGames(casino));
         _window.UpdatePlayer(IoCManager.Resolve<IPlayerManager>().LocalEntity);
     }
 
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
     {
+        if (_window?.Casino is { } casinoView && ContactCasinoHelpers.Receive(casinoView, message))
+            return;
         if (message is not ContactStoreUpdateMessage update || _window == null)
             return;
 

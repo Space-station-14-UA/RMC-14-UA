@@ -43,6 +43,13 @@
   maxPerPurchase: 1
  
 - type: contactStoreEntry
+  id: MRContactStoreCoatBureauDeputy
+  proto: RMCCoatBureauDeputy
+  category: MRContactStoreArmor
+  price: 18
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
   id: MRContactStoreArmorM3Scout
   proto: RMCArmorM3Scout
   category: MRContactStoreArmor
@@ -140,4 +147,18 @@
   proto: RMCArmorM3SO
   category: MRContactStoreArmor
   price: 45
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorMARSOC
+  proto: RMCArmorMARSOC
+  category: MRContactStoreArmor
+  price: 60
+  maxPerPurchase: 1
+ 
+- type: contactStoreEntry
+  id: MRContactStoreArmorM4PMCCommando
+  proto: MRArmorM4PMCCommando
+  category: MRContactStoreArmor
+  price: 150
   maxPerPurchase: 1

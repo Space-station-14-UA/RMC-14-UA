@@ -1,0 +1,14 @@
+- files: ["anchor_loophum.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: ".daneps"
+  source: "https://github.com/Space-station-14-UA/RMC-14-UA/pull/109/changes/BASE..711a4c89c9fa349164addae939575acd239cc45e#diff-055407128281a666f7404e5aad034f3017137c91b8147db678ab63e4af8078aa"
+
+- files: ["anchor_shutdown.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: ".daneps"
+  source: "https://github.com/Space-station-14-UA/RMC-14-UA/pull/109/changes/BASE..711a4c89c9fa349164addae939575acd239cc45e#diff-d6465cedf02e5deda97e96a15f0f5067e8b1ab638fa6d9d373c4ba51530dc4dc"
+
+- files: ["anchor_startup.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: ".daneps"
+  source: "https://github.com/Space-station-14-UA/RMC-14-UA/pull/109/changes/BASE..711a4c89c9fa349164addae939575acd239cc45e#diff-e7d6f315116b909ab19e3d407eda745ca050c24e6242e440913d7de323fc870a"

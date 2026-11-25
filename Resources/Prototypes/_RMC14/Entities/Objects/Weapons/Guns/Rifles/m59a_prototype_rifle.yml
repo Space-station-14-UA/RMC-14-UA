@@ -75,6 +75,8 @@
           - CMMagazineRifleM54CMK1AP
           - RMCMagazineRifleM54CIncendiary
           - RMCMagazineRifleM54CMK1Incendiary
+          - RMCMagazineRifleM54CMK1HEAP # Mriya
+          - RMCMagazineRifleM54CMK1WP # Mriya
         startingItem: CMMagazineRifleM54CMK1AP
   - type: GunDamageModifier
     multiplier: 1.1

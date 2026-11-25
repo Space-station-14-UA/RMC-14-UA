@@ -66,6 +66,7 @@ mriya-contact-store-not-enough = Недостатньо є-балів.
 mriya-contact-store-none = -
 mriya-contact-store-resupply = Поповнити
 mriya-contact-store-kit-full = Набір повний
+mriya-contact-store-free = Ви виторгували найкращу ціну - безплатно!
 
 mriya-contact-store-tab-for-you = Для вас
 mriya-contact-store-tab-ammo = Набої
@@ -137,6 +138,11 @@ mriya-contact-reinforcements-empty = На шатлі немає підкріпл
 mriya-contact-reinforcements-refueling = Шатл заправляється: ще {$seconds} с.
 mriya-contact-reinforcements-busy = Шатл зараз у транзиті.
 mriya-contact-reinforcements-offline = Шатл недоступний.
+mriya-contact-reinforcements-waiting = {$count ->
+    [one] На борту транспорту {$count} морпіх, готовий до висадки.
+    [few] На борту транспорту {$count} морпіхи, готові до висадки.
+   *[other] На борту транспорту {$count} морпіхів, готових до висадки.
+} Активуйте термінал підкріплень на будь-якій ПЗ, щоб викликати їх.
 
 mriya-contact-hud-shuttle = Шатл
 mriya-contact-hud-shuttle-waiting = Очікування

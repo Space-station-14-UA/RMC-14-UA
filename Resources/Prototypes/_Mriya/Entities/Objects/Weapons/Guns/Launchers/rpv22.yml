@@ -1,0 +1,119 @@
+- type: entity
+  parent: RMCBaseWeaponLauncher
+  id: MRWeaponLauncherRPV22
+  name: РПВ-22 реактивний вогнемет
+  description: "Реактивний піхотний вогнемет 22 це легкий однозарядний вогнемет з термобаричною бойовою частиною, створений невеличкою компанією ДНДІХП для використання проти укріплень, бункерів, легкої техніки та, очевидно, піхоти. Навіщо викурювати противника, якщо можна його спопелити, так?\n\nЗ правого боку написано \"МІНІМАЛЬНА ВІДСТАНЬ 7 МЕТРІВ\". Досить погрозливо."
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Weapons/Guns/rpv16.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _Mriya/Objects/Weapons/Guns/rpv16.rsi
+  - type: Item
+    sprite: _Mriya/Objects/Weapons/Guns/rpv16.rsi
+  - type: BallisticAmmoProvider
+    proto: RMCRocket93mmThermobaric
+    cycleable: false
+    whitelist:
+      tags: []
+  - type: Corrodible
+    isCorrodible: false
+
+- type: entity
+  parent: RMCRocket84mm
+  id: RMCRocket93mmThermobaric
+  name: 93-мм термобарична ракета
+  description: Чому ти це тримаєш? Засунь назад у вогнемет.
+  components:
+  - type: CartridgeAmmo
+    proto: MRProjectileRocket93mmThermobaric
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Explosives/m5spec.rsi
+    layers:
+    - state: m5_84mm_wp
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: m5_84mm_wp
+    suffix: false
+  - type: IgnorePredictionHide
+
+- type: entity
+  parent: RMCBaseProjectileRocket84mm
+  id: MRProjectileRocket93mmThermobaric
+  name: 93-мм термобарична ракета
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: Projectile
+    deleteOnCollide: false
+    impactEffect: BulletImpactEffect
+    damage:
+      types:
+        Heat: 90
+    maxFixedRange: 7
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/m5spec_projectiles.rsi
+    layers:
+    - state: m5_84mm_wp
+  - type: DeleteOnTrigger
+  - type: SpawnOnTerminate
+    spawn: MRSmokeThermobaric
+    spawnOffset: -0.5
+  - type: RMCAreaDamage
+    damageArea: 3.5
+    falloffDistance: 3.5
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: RMC
+    maxIntensity: 40
+    intensitySlope: 5
+    totalIntensity: 800
+    maxTileBreak: 0
+  - type: CMExplosionEffect
+  - type: RMCScorchEffect
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: VehicleDamageMultiplier
+    multiplier: 5
+  - type: RMCKnockOutOnCollide
+    paralyzeTime: 2
+    
+
+- type: entity
+  parent: Smoke
+  id: MRSmokeThermobaricNoSpread
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Occluder
+  - type: Sprite
+    sprite: _RMC14/Effects/smoke.rsi
+    state: smoke2
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Appearance
+  - type: RMCIgniteOnCollide
+    maxStacks: 1
+    intensity: 100
+    burnColor: "#00b8ff"
+  - type: EdgeSpreader
+    id: Smoke
+
+- type: entity
+  parent: MRSmokeThermobaricNoSpread
+  id: MRSmokeThermobaric
+  components:
+  - type: EvenSmoke
+    spawn: MRSmokeThermobaricNoSpread
+    initialSpread: 3
+    range: 3

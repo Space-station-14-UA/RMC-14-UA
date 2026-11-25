@@ -64,6 +64,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly ContactLoadoutSystem _loadout = default!;
 
     private static readonly EntProtoId RuleProto = "MRContactRule";
 
@@ -402,6 +403,10 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         // evacuation: waves keep coming (faster) but don't count, so exfil at wave 10 stays wave 10
         var counting = !IsEvacuating(uid, out _);
 
+        // Everyone alive just survived comp.Wave: skill point milestones
+        if (counting && comp.Wave > 0)
+            _loadout.OnWaveSurvived(comp.Wave);
+
         // wave 10 is over and 11 is due: offer extraction instead
         if (counting && TryOfferExtraction(uid, comp, time))
             return;
@@ -433,6 +438,7 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         else
         {
             var hive = GetDistressHive();
+            var scale = GetPopulationScale(comp);
             for (var i = 0; i < waves.Spawns.Count; i++)
             {
                 var entry = waves.Spawns[i];
@@ -445,7 +451,8 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
                 if (entry.Every > 0 && (comp.Wave - entry.StartWave) % entry.Every != 0)
                     continue;
 
-                var rate = entry.Rate + entry.RatePerWave * (comp.Wave - entry.StartWave);
+                // RatePerWave is balanced for ScaleBasePlayers; scaled by the living player count
+                var rate = entry.Rate + entry.RatePerWave * scale * (comp.Wave - entry.StartWave);
                 var acc = comp.SpawnAccumulators.GetValueOrDefault(i) + rate;
                 var count = (int) acc;
                 comp.SpawnAccumulators[i] = acc - count;
@@ -467,6 +474,24 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         SendHud(comp);
     }
 
+    /// <summary>
+    /// 1 at ScaleBasePlayers living marines with a player, ScalePerPlayer per player more or less, never below MinPopulationScale.
+    /// Counted every wave, so late joins and deaths adjust it.
+    /// </summary>
+    private float GetPopulationScale(ContactRuleComponent comp)
+    {
+        var players = 0;
+        var query = EntityQueryEnumerator<MarineComponent, ActorComponent, MobStateComponent>();
+        while (query.MoveNext(out var uid, out _, out _, out var mobState))
+        {
+            if (!_mobState.IsDead(uid, mobState))
+                players++;
+        }
+
+        var scale = 1f + (players - comp.ScaleBasePlayers) * comp.ScalePerPlayer;
+        return Math.Max(comp.MinPopulationScale, scale);
+    }
+
     private static ContactWaveBuffEntry? GetBuff(ContactWavesPrototype waves, int wave)
     {
         ContactWaveBuffEntry? best = null;
@@ -477,6 +502,17 @@ public sealed partial class ContactRuleSystem : GameRuleSystem<ContactRuleCompon
         }
 
         return best;
+    }
+
+    /// <summary>
+    /// How many Contact wave buffs are active right now (0 before the first). Perks scale with it.
+    /// </summary>
+    public int GetBuffLevel()
+    {
+        if (GetActiveRule() is not { } rule || !_prototypes.TryIndex(rule.Comp.Waves, out var waves))
+            return 0;
+
+        return waves.Buffs.Count(b => b.Wave <= rule.Comp.Wave);
     }
 
     private void AnnounceBuff(ContactRuleComponent comp, ContactWaveBuffEntry buff)

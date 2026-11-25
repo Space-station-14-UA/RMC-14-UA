@@ -17,6 +17,10 @@ using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Whitelist;
 using Content.Shared._RMC14.Attachable.Components;
+using Content.Shared._RMC14.Weapons.Ranged.Ammo.BulletBox;
+using Content.Shared.Storage.Components;
+using Content.Shared._RMC14.Weapons.Ranged.Ammo.BulletBox;
+using Content.Shared.Storage.Components;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -37,6 +41,7 @@ public sealed class ContactStoreSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SupplyDropSystem _supplyDrop = default!;
+    [Dependency] private readonly ContactPerkCombatSystem _perkCombat = default!;
 
     private static readonly string[] StoragePriority = { "belt", "pocket1", "pocket2", "suitstorage", "back" };
 
@@ -142,11 +147,16 @@ public sealed class ContactStoreSystem : EntitySystem
             return;
 
         var amount = Math.Clamp(args.Amount, 1, entry.MaxPerPurchase);
-        if (!_economy.TrySpend(user, entry.Price * amount))
+
+        var free = _perkCombat.RollFreePurchase(user);
+        if (!free && !_economy.TrySpend(user, entry.Price * amount))
         {
             _popup.PopupEntity(Loc.GetString("mriya-contact-store-not-enough"), ent, user);
             return;
         }
+
+        if (free)
+            _popup.PopupEntity(Loc.GetString("mriya-contact-store-free"), ent, user);
 
         for (var i = 0; i < amount; i++)
         {
@@ -191,23 +201,35 @@ public sealed class ContactStoreSystem : EntitySystem
     {
         var carried = ContactStoreHelpers.CountCarried(EntityManager, actor);
 
-        var compatible = new HashSet<string>();
+        var whitelists = new List<EntityWhitelist>();
+        // bullet boxes refill magazines with the same BulletType
+        var bulletTypes = new HashSet<string>();
+
         foreach (var item in ContactStoreHelpers.EnumerateCarried(EntityManager, actor))
         {
+            // any carried magazine, loaded or spare
+            if (TryComp(item, out RefillableByBulletBoxComponent? refill) && refill.BulletType is { } carriedType)
+                bulletTypes.Add(carriedType.Id);
+
             if (!HasComp<GunComponent>(item))
                 continue;
 
-            var whitelists = new List<EntityWhitelist>();
-
             // magazines
             if (TryComp(item, out ItemSlotsComponent? slots) &&
-                _itemSlots.TryGetSlot(item, MagazineSlot, out var magSlot, slots) &&
-                magSlot.Whitelist != null)
+                _itemSlots.TryGetSlot(item, MagazineSlot, out var magSlot, slots))
             {
-                whitelists.Add(magSlot.Whitelist);
+                if (magSlot.Whitelist != null)
+                    whitelists.Add(magSlot.Whitelist);
+
+                if (magSlot.Item is { } loaded &&
+                    TryComp(loaded, out RefillableByBulletBoxComponent? loadedRefill) &&
+                    loadedRefill.BulletType is { } loadedType)
+                {
+                    bulletTypes.Add(loadedType.Id);
+                }
             }
 
-            // internal ammo (shotguns, U1 launcher, ...)
+            // internal ammo (shotguns, XM88, U1 launcher, ...)
             if (TryComp(item, out BallisticAmmoProviderComponent? ballistic) && ballistic.Whitelist != null)
                 whitelists.Add(ballistic.Whitelist);
 
@@ -220,12 +242,25 @@ public sealed class ContactStoreSystem : EntitySystem
                         whitelists.Add(slot.Whitelist);
                 }
             }
+        }
 
-            foreach (var entry in _entriesByProto.Values)
+        // magazines sold here that fit a carried gun: their bullet boxes count too
+        foreach (var entry in _entriesByProto.Values)
+        {
+            if (_prototypes.TryIndex(entry.Proto, out var proto) &&
+                whitelists.Any(w => MatchesProto(w, proto)) &&
+                proto.TryGetComponent(out RefillableByBulletBoxComponent? refill, _compFactory) &&
+                refill.BulletType is { } type)
             {
-                if (whitelists.Any(w => MatchesProto(w, entry.Proto)))
-                    compatible.Add(entry.ID);
+                bulletTypes.Add(type.Id);
             }
+        }
+
+        var compatible = new HashSet<string>();
+        foreach (var entry in _entriesByProto.Values)
+        {
+            if (_prototypes.TryIndex(entry.Proto, out var proto) && IsCompatible(proto, whitelists, bulletTypes))
+                compatible.Add(entry.ID);
         }
 
         var kits = new List<ContactStoreKitData>();
@@ -300,32 +335,58 @@ public sealed class ContactStoreSystem : EntitySystem
         }
     }
 
-   private bool MatchesProto(EntityWhitelist whitelist, EntProtoId protoId)
-   {
-       if (!_prototypes.TryIndex(protoId, out var proto))
-           return false;
+    private bool MatchesProto(EntityWhitelist whitelist, EntityPrototype proto)
+    {
+        var checks = new List<bool>();
 
-       var checks = new List<bool>();
+        if (whitelist.Tags is { Count: > 0 } tags)
+        {
+            var protoTags = proto.TryGetComponent(out TagComponent? tagComp, _compFactory)
+                ? tagComp.Tags
+                : new HashSet<ProtoId<TagPrototype>>();
 
-       if (whitelist.Tags is { Count: > 0 } tags)
-       {
-           var protoTags = proto.TryGetComponent(out TagComponent? tagComp, _compFactory)
-               ? tagComp.Tags
-               : new HashSet<ProtoId<TagPrototype>>();
+            checks.Add(whitelist.RequireAll ? tags.All(protoTags.Contains) : tags.Any(protoTags.Contains));
+        }
 
-           checks.Add(whitelist.RequireAll ? tags.All(protoTags.Contains) : tags.Any(protoTags.Contains));
-       }
+        if (whitelist.Components is { Length: > 0 } comps)
+        {
+            checks.Add(whitelist.RequireAll
+                ? comps.All(proto.Components.ContainsKey)
+                : comps.Any(proto.Components.ContainsKey));
+        }
 
-       if (whitelist.Components is { Length: > 0 } comps)
-       {
-           checks.Add(whitelist.RequireAll
-               ? comps.All(proto.Components.ContainsKey)
-               : comps.Any(proto.Components.ContainsKey));
-       }
+        return whitelist.RequireAll
+            ? checks.Count > 0 && checks.All(c => c)
+            : checks.Any(c => c);
+    }
 
-       return whitelist.RequireAll
-           ? checks.Count > 0 && checks.All(c => c)
-           : checks.Any(c => c);
-   }
+    /// <summary>
+    /// Fits a carried gun: matches a whitelist itself (magazines, handfuls, attachments),
+    /// is a bullet box for a carried / fitting magazine, or is a box filled with something that fits
+    /// (shotgun shell boxes, .458 SOCOM box).
+    /// </summary>
+    private bool IsCompatible(EntityPrototype proto, List<EntityWhitelist> whitelists, HashSet<string> bulletTypes, int depth = 0)
+    {
+        if (whitelists.Any(w => MatchesProto(w, proto)))
+            return true;
+
+        if (proto.TryGetComponent(out BulletBoxComponent? box, _compFactory) && bulletTypes.Contains(box.BulletType.Id))
+            return true;
+
+        if (depth >= 2 || !proto.TryGetComponent(out StorageFillComponent? fill, _compFactory))
+            return false;
+
+        foreach (var content in fill.Contents)
+        {
+            if (content.PrototypeId is { } id &&
+                _prototypes.TryIndex(id, out var inner) &&
+                IsCompatible(inner, whitelists, bulletTypes, depth + 1))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 }

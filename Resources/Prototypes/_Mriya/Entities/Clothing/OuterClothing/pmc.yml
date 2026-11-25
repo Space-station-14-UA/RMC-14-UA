@@ -6,3 +6,15 @@
   - type: ClothingSpeedModifier # SLOWDOWN_ARMOR_VERY_LIGHT
     walkModifier: 0.897
     sprintModifier: 0.897
+
+- type: entity
+  parent: RMCArmorM4PMCNoLight
+  id: MRArmorM4PMCCommando
+  suffix: Мрія, Контакт
+  components:
+  - type: ClothingRequireEquipped
+    autoUnequip: true
+    denyReason: rmc-armor-not-marine-jumpsuit
+    whitelist:
+      tags:
+      - RMCUniformMarine

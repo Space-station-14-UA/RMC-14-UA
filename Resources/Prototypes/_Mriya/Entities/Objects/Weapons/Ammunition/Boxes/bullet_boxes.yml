@@ -1,0 +1,43 @@
+- type: entity
+  parent: RMCBoxBulletsBase
+  id: MRBoxBulletsRifleHEAP
+  name: коробка набоїв для гвинтівок (10х24 мм ВБ)
+  description: Коробка з вибухово-бронебійними набоями калібру 10х24 мм. Використовується для поповнення ВБ магазинів M54C МК1, МК2, та М4СПГ. Має шкіряну лямку, що дозволяє носити її на спині.
+  components:
+  - type: Sprite
+    layers:
+    - state: rifle_box
+      color: "#9C9A19"
+    - state: rifle_box_marking
+      color: "#318b11"
+    - state: rifle_box_generic
+      color: "#ffcb26"
+    - state: rifle_ammo_full_rounds_base
+      map: [ "enum.BulletBoxLayers.Fill" ]
+    - state: rifle_ammo_full_rounds_color
+      map: [ "enum.BulletBoxLayers2.Fill" ]
+      color: "#318b11"
+  - type: BulletBox
+    bulletType: MRBoxBulletsRifleHEAP
+
+- type: entity
+  parent: RMCBoxBulletsBase
+  id: MRBoxBulletsRifleWP
+  name: коробка набоїв для гвинтівок (10х24 мм СП)
+  description: Коробка з стіно-пробивними набоями калібру 10х24 мм. Використовується для поповнення СП магазинів M54C МК1, МК2, та М4СПГ. Має шкіряну лямку, що дозволяє носити її на спині.
+  components:
+  - type: Sprite
+    layers:
+    - state: rifle_box
+      color: "#6365E6"
+    - state: rifle_box_marking
+      color: "#318b11"
+    - state: rifle_box_generic
+      color: "#ffcb26"
+    - state: rifle_ammo_full_rounds_base
+      map: [ "enum.BulletBoxLayers.Fill" ]
+    - state: rifle_ammo_full_rounds_color
+      map: [ "enum.BulletBoxLayers2.Fill" ]
+      color: "#318b11"
+  - type: BulletBox
+    bulletType: MRBoxBulletsRifleWP

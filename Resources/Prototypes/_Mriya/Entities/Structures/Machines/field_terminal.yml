@@ -19,11 +19,12 @@
         layer:
         - MobMask
   - type: Sprite
-    sprite: _RMC14/Structures/objects.rsi
+    sprite: _Mriya/Structures/anchor.rsi
     layers:
-    - state: shieldoffbr
+    - state: tower_off
       map: [ "base" ]
-    state: shieldoffbr
+    state: tower_off
+    offset: 0,2
   - type: Clickable
   - type: InteractionOutline
   - type: Appearance
@@ -31,8 +32,8 @@
     visuals:
       enum.SensorTowerLayers.Layer:
         base:
-          Off: { state: shieldoffbr }
-          On: { state: shieldonbr }
+          Off: { state: tower_off }
+          On: { state: tower_on }
   - type: ContactTerminal
   - type: MarineMapTracked
   - type: TacticalMapTracked
@@ -40,3 +41,9 @@
     icon:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: aegisob
+  - type: AmbientSound
+    enabled: false
+    range: 8
+    volume: -4
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg

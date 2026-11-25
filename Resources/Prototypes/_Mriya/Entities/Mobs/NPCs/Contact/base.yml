@@ -137,4 +137,7 @@
       - Barricade
       - XenoCrusherChargable
       - XenoToggleChargingDamage
+      - EntityStorage
+      tags:
+      - Window
   - type: XenoHidden

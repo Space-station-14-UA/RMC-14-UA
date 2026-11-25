@@ -246,6 +246,12 @@
   price: 200
 
 - type: contactStoreEntry
+  id: MRContactStoreM5SPR2
+  proto: WeaponRifleM5SPR2
+  category: MRContactStoreLongArms
+  price: 200
+
+- type: contactStoreEntry
   id: MRContactStoreMAR50
   proto: RMCWeaponMar50LMG
   category: MRContactStoreLongArms

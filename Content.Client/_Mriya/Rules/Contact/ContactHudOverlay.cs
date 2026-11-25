@@ -33,6 +33,7 @@ public sealed class ContactHudControl : Control
     private static readonly Color White = Color.FromHex("#FFFFFF");
     private static readonly Color Black = Color.FromHex("#000000");
     private static readonly Color Alert = Color.FromHex("#FF4040");
+    private readonly ContactLoadoutSystem _loadout;
 
     private const string FontPath = "/EngineFonts/NotoSans/NotoSansMono-Regular.ttf";
 
@@ -87,6 +88,7 @@ public sealed class ContactHudControl : Control
         _cfg = IoCManager.Resolve<IConfigurationManager>();
         _eye = IoCManager.Resolve<IEyeManager>();
         _transform = _ents.System<SharedTransformSystem>();
+        _loadout = _ents.System<ContactLoadoutSystem>();
 
         var cache = IoCManager.Resolve<IResourceCache>();
         _font = cache.GetFont(FontPath, 11);
@@ -199,7 +201,7 @@ public sealed class ContactHudControl : Control
     }
 
     /// <summary>
-    /// Header buttons from the right: 0 options, 1 move, 2 collapse. UI pixels, local.
+    /// Header buttons from the right: 0 options, 1 move, 2 collapse, 3 loadout. UI pixels, local.
     /// </summary>
     private static UIBox2 ButtonRect(int index)
     {
@@ -231,6 +233,11 @@ public sealed class ContactHudControl : Control
         else if (ButtonRect(0).Contains(p))
         {
             ToggleOptions();
+            args.Handle();
+        }
+        else if (ButtonRect(3).Contains(p))
+        {
+            _loadout.RequestOpen();
             args.Handle();
         }
     }
@@ -345,6 +352,14 @@ public sealed class ContactHudControl : Control
             var dy = i * options.Height * 0.22f;
             handle.DrawLine(c + new Vector2(-w, dy), c + new Vector2(w, dy), Black);
         }
+
+        // loadout: a small person (head + body)
+        var loadout = Scaled(ButtonRect(3), s);
+        handle.DrawRect(loadout, Black, filled: false);
+        c = loadout.Center;
+        var r = loadout.Width * 0.14f;
+        handle.DrawRect(new UIBox2(c.X - r, c.Y - r * 2.6f, c.X + r, c.Y - r * 0.6f), Black);
+        handle.DrawRect(new UIBox2(c.X - r * 1.8f, c.Y - r * 0.2f, c.X + r * 1.8f, c.Y + r * 2.4f), Black);
     }
 
     private static UIBox2 Scaled(UIBox2 box, float s)

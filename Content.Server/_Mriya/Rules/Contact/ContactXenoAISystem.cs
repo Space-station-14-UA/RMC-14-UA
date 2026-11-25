@@ -37,6 +37,9 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Systems;
 using Content.Shared._RMC14.Xenonids.Acid;
+using Content.Shared.Prying.Components;
+using Content.Shared.Stunnable;
+using Content.Shared._RMC14.Xenonids.ClawSharpness;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -64,6 +67,7 @@ public sealed class ContactXenoAISystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!;
+    [Dependency] private readonly XenoClawsSystem _claws = default!;
 
     public const string NoiseActiveKey = "MRContactNoiseActive";
     public const string HuntActiveKey = "MRContactHuntActive";
@@ -121,6 +125,8 @@ public sealed class ContactXenoAISystem : EntitySystem
         // AI xenos aren't ghost roles and shouldn't spam hive death announcements
         RemCompDeferred<GhostTakeoverAvailableComponent>(ent);
         RemCompDeferred<XenoAnnounceDeathComponent>(ent);
+        if (TryComp(ent, out HTNComponent? htn) && !CanBreakWalls(ent))
+            htn.Blackboard.SetValue(NPCBlackboard.NavSmash, false);
     }
 
     public override void Update(float frameTime)
@@ -430,7 +436,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         if (ai.NoPryUntil is { } noPry && now >= noPry)
         {
             ai.NoPryUntil = null;
-            SetDoorNav(blackboard, true);
+            SetDoorNav(uid, blackboard, true);
         }
 
         // already smashing something
@@ -506,7 +512,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         ResetProgress(ai);
 
         // closed door and no pry running: steering's pries are being refused (that's the sound spam)
-        if (blocker is { } door && TryComp(door, out DoorComponent? doorComp) && doorComp.CanPry)
+        if (blocker is { } door && CanPryNow(door))
         {
             ai.DoorStuck += ai.StuckTime;
             if (ai.NoPryUntil == null && ai.DoorStuck >= ai.DoorGiveUp)
@@ -641,16 +647,39 @@ public sealed class ContactXenoAISystem : EntitySystem
 
     private bool CanSmash(ContactXenoAIComponent ai, EntityUid ent)
     {
-        return HasComp<DamageableComponent>(ent) && _whitelist.IsWhitelistPass(ai.SmashWhitelist, ent);
+        if (!HasComp<DamageableComponent>(ent) || !CanBeDestroyed(ent))
+            return false;
+
+        // doors it can't pry get clawed open instead, on the list or not (secure windoors etc.)
+        return !CanPryNow(ent) && HasComp<DoorComponent>(ent) || _whitelist.IsWhitelistPass(ai.SmashWhitelist, ent);
+    }
+
+    /// <summary>
+    /// A door steering can actually pry: CanPry, and not a PryUnpowered door with power (windoors never lose it).
+    /// </summary>
+    private bool CanPryNow(EntityUid ent)
+    {
+        if (!TryComp(ent, out DoorComponent? door) || !door.CanPry)
+            return false;
+
+        return !HasComp<PryUnpoweredComponent>(ent) || !_power.IsPowered(ent);
+    }
+
+    /// <summary>
+    /// Has at least one Destructible threshold: something clawing can finish. Ultra windows (thresholds: []) don't.
+    /// </summary>
+    private bool CanBeDestroyed(EntityUid ent)
+    {
+        return TryComp(ent, out DestructibleComponent? destructible) && destructible.Thresholds.Count > 0;
     }
 
     /// <summary>
     /// Closed, not welded, not locked crate: open it (RMC blocks xeno interaction with crates, so do it directly).
-    /// Open crates don't collide, so the xeno walks through.
+    /// Only when opening clears the way: storage that still collides when open (closets) gets smashed instead.
     /// </summary>
     private bool TryOpenCrate(EntityUid ent)
     {
-        if (!TryComp(ent, out EntityStorageComponent? storage) || storage.Open)
+        if (!TryComp(ent, out EntityStorageComponent? storage) || storage.Open || storage.IsCollidableWhenOpen)
             return false;
 
         if (_weldable.IsWelded(ent) || TryComp(ent, out LockComponent? lockComp) && lockComp.Locked)
@@ -683,11 +712,20 @@ public sealed class ContactXenoAISystem : EntitySystem
     /// <summary>
     /// With NavPry off but NavSmash on, the pathfinder routes through the door and steering smashes it,
     /// so both go off together while avoiding a powered pod lock.
+    /// NavSmash only ever comes back for xenos whose claws can break walls.
     /// </summary>
-    private void SetDoorNav(NPCBlackboard blackboard, bool enabled)
+    private void SetDoorNav(EntityUid uid, NPCBlackboard blackboard, bool enabled)
     {
         blackboard.SetValue(NPCBlackboard.NavPry, enabled);
-        blackboard.SetValue(NPCBlackboard.NavSmash, enabled);
+        blackboard.SetValue(NPCBlackboard.NavSmash, enabled && CanBreakWalls(uid));
+    }
+
+    /// <summary>
+    /// Normal walls need Sharp claws (ReceiverXenoClaws default); weaker claws deal 0 damage to them.
+    /// </summary>
+    private bool CanBreakWalls(EntityUid uid)
+    {
+        return _claws.HasClawStrength(uid, XenoClawType.Sharp);
     }
 
     /// <summary>
@@ -766,7 +804,7 @@ public sealed class ContactXenoAISystem : EntitySystem
         ai.PryDoor = null;
         ai.PryAttempts = 0;
         ai.DoorStuck = TimeSpan.Zero;
-        SetDoorNav(blackboard, false);
+        SetDoorNav(uid, blackboard, false);
         _steering.Unregister(uid);
     }
 
@@ -778,6 +816,13 @@ public sealed class ContactXenoAISystem : EntitySystem
     {
         if (ai.Abilities.Count == 0 || now < ai.NextAbility)
             return;
+
+        if (_mobState.IsIncapacitated(uid) ||
+            HasComp<StunnedComponent>(uid) ||
+            HasComp<KnockedDownComponent>(uid))
+        {
+            return;
+        }
 
         if (ai.Target is not { } target || !Exists(target) || _mobState.IsDead(target))
             return;

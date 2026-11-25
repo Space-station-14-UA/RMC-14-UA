@@ -77,6 +77,13 @@ public sealed class ContactStoreWindow : FancyWindow
     private readonly BoxContainer _folderList;
     private readonly BoxContainer _folderContents;
 
+    // Mriya. games view (top right button swaps the store body for it)
+    private readonly BoxContainer _root;
+    private readonly BoxContainer _body;
+    private readonly RetroButton _gamesButton;
+
+    public ContactCasinoView? Casino { get; private set; }
+
     private readonly List<(RetroButton Button, Control Contents, string Title)> _folders = new();
 
     // buy buttons -> price, to grey out what you can't afford
@@ -106,7 +113,7 @@ public sealed class ContactStoreWindow : FancyWindow
             VerticalExpand = true,
         };
 
-        var root = new BoxContainer
+        var root = _root = new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Vertical,
             SeparationOverride = 10,
@@ -116,12 +123,21 @@ public sealed class ContactStoreWindow : FancyWindow
         var titleBar = new PanelContainer { PanelOverride = Box(Phosphor, margin: 8) };
         var titleRow = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
         titleRow.AddChild(Text(Loc.GetString("mriya-contact-store-title").ToUpperInvariant(), Black, _fontHeading, expand: true));
+
+        _gamesButton = new RetroButton($">{Loc.GetString("mriya-contact-casino-games").ToUpperInvariant()}", _font)
+        {
+            Visible = false,
+            Margin = new Thickness(0, 0, 12, 0),
+        };
+        _gamesButton.OnPressed += _ => ShowGames(!_gamesButton.Selected);
+        titleRow.AddChild(_gamesButton);
+
         _balanceLabel = Text(string.Empty, Black, _fontHeading);
         titleRow.AddChild(_balanceLabel);
         titleBar.AddChild(titleRow);
         root.AddChild(titleBar);
 
-        var body = new BoxContainer
+        var body = _body = new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Horizontal,
             SeparationOverride = 12,
@@ -264,6 +280,33 @@ public sealed class ContactStoreWindow : FancyWindow
         SelectFolder(0);
         SetBalance(0);
     }
+
+    #region Games
+
+    /// <summary>
+    /// The BUI calls this when the terminal has ContactCasino: shows the games button and makes the view.
+    /// </summary>
+    public ContactCasinoView EnableGames(ContactCasinoComponent casino)
+    {
+        if (Casino != null)
+            return Casino;
+
+        Casino = new ContactCasinoView(casino) { Visible = false };
+        _root.AddChild(Casino);
+        Casino.SetPositionInParent(_body.GetPositionInParent() + 1);
+        _gamesButton.Visible = true;
+        return Casino;
+    }
+
+    private void ShowGames(bool games)
+    {
+        _gamesButton.Selected = games;
+        _body.Visible = !games;
+        if (Casino != null)
+            Casino.Visible = games;
+    }
+
+    #endregion
 
     private void ApplyFilter(FilterFolder f)
     {
