@@ -53,6 +53,7 @@
     planets:
     - MRPlanetChancesContact
     - MRPlanetFiorinaContact
+    - MRPlanetSolaris
   - type: ContactCleanup
   - type: ContactLoadout
     basePoints: 16
