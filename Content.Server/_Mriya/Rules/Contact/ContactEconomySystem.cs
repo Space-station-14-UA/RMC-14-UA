@@ -222,6 +222,19 @@ public sealed class ContactEconomySystem : EntitySystem
     }
 
     /// <summary>
+    /// Mriya. Games (winnings, refunds): balance only. Not counted as earned, no popup.
+    /// </summary>
+    public void AddWinnings(NetUserId user, int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        _balances[user] = GetBalance(user) + amount;
+        if (_player.TryGetSessionById(user, out var session))
+            SendBalanceTo(session);
+    }
+
+    /// <summary>
     /// Called by ContactTerminalSystem when a player finishes activating a terminal.
     /// </summary>
     public void RewardTerminal(EntityUid player)

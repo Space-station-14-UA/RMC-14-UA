@@ -38,3 +38,4 @@
     icon:
       sprite: /Textures/_RMC14/Interface/map_blips.rsi
       state: asrs
+  - type: ContactCasino
