@@ -1,4 +1,5 @@
 using System.Collections.Generic; //RMC
+using Content.Server._Mriya.NPC; // Mriya. Вікна та вогонь чергами для ШІ.
 using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Interaction;
@@ -212,13 +213,24 @@ public sealed partial class NPCCombatSystem
 
             if (gun.NextFire > _timing.CurTime)
             {
-                return;
+                // Mriya start. Замінено return на continue, щоб перезарядка однієї зброї не зупиняла оновлення інших NPC.
+                continue;
+                // Mriya end
             }
+
+            // Mriya start. Вогонь чергами замість утримання гачка до кінця магазину.
+            if (NPCRangedBurst.IsPaused(comp, _timing.CurTime))
+                continue;
+            // Mriya end
 
 #pragma warning disable RA0002
             gun.Target = comp.Target;
 #pragma warning restore RA0002
             _gun.AttemptShoot(uid, gunUid, gun, targetCordinates);
+
+            // Mriya start. Лічильник черги та пауза між чергами.
+            NPCRangedBurst.OnShot(comp, _timing.CurTime, _random);
+            // Mriya end
         }
     }
 
@@ -227,6 +239,11 @@ public sealed partial class NPCCombatSystem
     {
         if (blocker == target || blocker == owner)
             return false;
+
+        // Mriya start. Вікна прозорі для ШІ: скло не вважається укриттям.
+        if (NPCLineOfSight.IsSeeThrough(blocker, EntityManager))
+            return true;
+        // Mriya end
 
         if (_mobState.IsDead(blocker))
             return true;

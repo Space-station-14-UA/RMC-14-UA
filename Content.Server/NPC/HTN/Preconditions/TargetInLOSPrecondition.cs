@@ -1,4 +1,5 @@
 using System.Collections.Generic; //RMC
+using Content.Server._Mriya.NPC; // Mriya. Вікна прозорі для ШІ.
 using Content.Server.Interaction;
 using Content.Shared._RMC14.Weapons.Ranged.IFF; //RMC
 using Content.Shared.Mobs.Systems; //RMC
@@ -55,6 +56,11 @@ public sealed partial class TargetInLOSPrecondition : HTNPrecondition
     {
         if (blocker == target || blocker == owner)
             return false;
+
+        // Mriya start. Вікна прозорі для ШІ: скло не вважається укриттям.
+        if (NPCLineOfSight.IsSeeThrough(blocker, _entManager))
+            return true;
+        // Mriya end
 
         if (_mobState.IsDead(blocker))
             return true;

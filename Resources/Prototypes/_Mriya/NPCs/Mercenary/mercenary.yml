@@ -1,0 +1,77 @@
+- type: startingGear
+  id: MercenaryGear
+  equipment:
+    mask: MRMaskGasMercenary
+    ears: RMCHeadsetDistressDukes
+    jumpsuit: MRJumpsuitMercenary
+    gloves: RMCHandsBlack
+    shoes: RMCShoesJackbootsFilled
+    id: RMCIDCardFreelancer
+    belt: RMCBeltMarineMK2
+    outerClothing: MRSuitMercenary
+    pocket1: CMGrenadeFrag
+  inhand:
+  - RMCWeaponRifleM54CFilled
+
+- type: entity
+  name: Найманець
+  parent: CMMobHuman
+  id: MobMercenary
+  suffix: ШІ, Мрія
+  description: ""
+  components:
+  - type: RemoveComponents
+    components:
+    - type: ActiveInputMover
+    - type: SSDIndicator
+  - type: NpcFactionMember
+    factions:
+    - CLF
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: Skills
+    skills:
+      RMCSkillFirearms: 1
+      RMCSkillMeleeWeapons: 1
+      RMCSkillFireman: 1
+      RMCSkillEndurance: 1
+  - type: Loadout
+    prototypes:
+    - MercenaryGear
+  - type: InputMover
+  - type: MobMover
+  - type: AIPlanner
+    useDefaultActions: true
+    useDefaultGoals: true
+    planCooldown: 0.4
+    sensorInterval: 0.2
+    meleeZoneRadius: 1.5
+    rangedRange: 12
+    visionRange: 14
+    blindFireDuration: 2
+    suppressionDuration: 1.25
+    targetMemoryDuration: 12
+    searchDuration: 6
+    flankCooldown: 6
+    squadRoleDuration: 9
+    squadGrenadeCooldown: 16
+    grenadeCooldown: 16
+    grenadeThrowRange: 10
+    grenadeCoverWindow: 6
+    grenadeDangerRadius: 6
+    grenadeFriendlyRadius: 3.5
+    burstSize: 3
+    burstPause: 0.85
+    burstPauseJitter: 0.35
+    dodgeDuration: 0.4
+    dodgeCooldown: 1.25
+    coverSearchDistance: 4
+    ambushDistance: 5
+    patrolRadius: 6
+    patrolGroupRadius: 24
+    patrolMinGroupSize: 3
+    patrolMaxGroupSize: 5
+    coverCompromisedWindow: 3
+    reloadDuration: 1.5
+    squadRadius: 8
+    hasGrenade: true

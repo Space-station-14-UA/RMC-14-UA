@@ -1,0 +1,39 @@
+- type: entity
+  parent: RMCMarineUniformBase
+  id: MRJumpsuitMercenary
+  name: поліцейська форма
+  suffix: Мрія
+  description: Якісна тактична форма. Попри те що вона призначена для носіння під бронею, її носить і цивільна поліція.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Clothing/Uniforms/mercenary.rsi
+  - type: Clothing
+    sprite: _Mriya/Objects/Clothing/Uniforms/mercenary.rsi
+  - type: FactionClothingRestriction
+    factions:
+    - CLF
+
+- type: entity
+  parent: RMCBaseArmor
+  id: MRSuitMercenary
+  name: композитна броня
+  suffix: Мрія
+  description: Стара, дешева але міцна броня масового виробництва. На обох плечах зображений незрозумілий символ.
+  components:
+  - type: Sprite
+    sprite: _Mriya/Objects/Clothing/OuterClothing/Armor/mercenary.rsi
+  - type: Clothing
+    sprite: _Mriya/Objects/Clothing/OuterClothing/Armor/mercenary.rsi
+  - type: CMArmor 
+    melee: 25 
+    bullet: 25
+    bio: 15
+    explosionArmor: 20
+  - type: RMCArmorSpeedTier
+    speedTier: light
+  - type: FactionClothingRestriction
+    factions:
+    - CLF
+  - type: ClothingSpeedModifier
+    walkModifier: 0.725
+    sprintModifier: 0.725
