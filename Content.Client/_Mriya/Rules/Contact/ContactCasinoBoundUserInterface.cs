@@ -51,6 +51,9 @@ public static class ContactCasinoHelpers
             case ContactBlackjackStateMessage table:
                 view.BlackjackState(table);
                 return true;
+            case ContactCasinoBalanceMessage balance:
+                view.SetBalance(balance.Balance);
+                return true;
             default:
                 return false;
         }

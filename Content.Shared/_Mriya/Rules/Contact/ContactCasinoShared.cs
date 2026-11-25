@@ -1,6 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Content.Shared._RMC14.PlayingCards;
+using Robust.Shared.Audio;
 
 namespace Content.Shared._Mriya.Rules.Contact;
 
@@ -77,6 +78,39 @@ public sealed partial class ContactCasinoPrototype : IPrototype
     /// </summary>
     [DataField]
     public TimeSpan ResultsTime = TimeSpan.FromSeconds(6);
+
+    /// <summary>
+    /// When the last reel stops on the client; the win sound plays then.
+    /// </summary>
+    [DataField]
+    public TimeSpan SpinTime = TimeSpan.FromSeconds(1.9);
+
+    [DataField]
+    public SoundSpecifier? LeverSound = new SoundPathSpecifier("/Audio/Items/ratchet.ogg");
+
+    /// <summary>
+    /// Client: every reel step (each symbol rolling by).
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? TickSound = new SoundPathSpecifier("/Audio/Items/pen_click.ogg", AudioParams.Default.WithVolume(-6f));
+
+    /// <summary>
+    /// Client: each reel stopping.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? StopSound = new SoundPathSpecifier("/Audio/Machines/button.ogg");
+
+    [DataField]
+    public SoundSpecifier? WinSound = new SoundPathSpecifier("/Audio/Effects/Arcade/win.ogg");
+
+    [DataField]
+    public SoundSpecifier? JackpotSound = new SoundPathSpecifier("/Audio/Machines/vending_jingle.ogg");
+
+    /// <summary>
+    /// A win of bet × this or more plays JackpotSound instead of WinSound.
+    /// </summary>
+    [DataField]
+    public int JackpotMultiplier = 20;
 }
 
 [DataDefinition]
@@ -114,6 +148,15 @@ public sealed partial class ContactSlotSymbol
 }
 
 #region Messages
+
+/// <summary>
+/// Balance for whoever has a casino UI open: on open and every second (locks bets you can't pay).
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class ContactCasinoBalanceMessage(int balance) : BoundUserInterfaceMessage
+{
+    public readonly int Balance = balance;
+}
 
 [Serializable, NetSerializable]
 public sealed class ContactSlotSpinMessage(int bet) : BoundUserInterfaceMessage

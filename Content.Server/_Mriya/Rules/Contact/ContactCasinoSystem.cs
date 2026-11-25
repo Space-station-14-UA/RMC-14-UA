@@ -7,6 +7,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._Mriya.Rules.Contact;
 
@@ -24,6 +25,7 @@ public sealed class ContactCasinoSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ContactEconomySystem _economy = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     private static readonly TimeSpan RefreshEvery = TimeSpan.FromSeconds(1);
 
@@ -82,11 +84,13 @@ public sealed class ContactCasinoSystem : EntitySystem
 
     private void OnOpened(Entity<ContactCasinoComponent> ent, ref BoundUIOpenedEvent args)
     {
-        if (!IsCasinoKey(args.UiKey) || !ent.Comp.Blackjack)
+        if (!IsCasinoKey(args.UiKey))
             return;
 
         _viewers[args.Actor] = (ent, args.UiKey);
-        SendTable(args.Actor);
+        SendBalance(args.Actor);
+        if (ent.Comp.Blackjack)
+            SendTable(args.Actor);
     }
 
     private void OnClosed(Entity<ContactCasinoComponent> ent, ref BoundUIClosedEvent args)
@@ -123,6 +127,8 @@ public sealed class ContactCasinoSystem : EntitySystem
         var payout = args.Bet * SlotMultiplier(rules, reels);
         if (payout > 0 && _economy.TryGetUser(user, out var userId))
             _economy.AddWinnings(userId, payout);
+
+        _audio.PlayPvs(rules.LeverSound, ent);
 
         _ui.ServerSendUiMessage(ent.Owner, args.UiKey,
             new ContactSlotResultMessage(reels, args.Bet, payout, _economy.GetBalance(user)), user);
@@ -452,10 +458,23 @@ public sealed class ContactCasinoSystem : EntitySystem
                 break;
         }
 
-        if (changed || now >= _nextRefresh && _phase != ContactBlackjackPhase.Idle)
+        if (changed || now >= _nextRefresh)
         {
-            _nextRefresh = now + RefreshEvery;
-            SendTableToAll();
+            var refresh = now >= _nextRefresh;
+            if (refresh)
+                _nextRefresh = now + RefreshEvery;
+
+            if (changed || _phase != ContactBlackjackPhase.Idle)
+                SendTableToAll();
+
+            // slot machines have no table state: keep their balance fresh
+            if (refresh)
+            {
+                foreach (var actor in _viewers.Keys.ToList())
+                {
+                    SendBalance(actor);
+                }
+            }
         }
     }
 
@@ -465,9 +484,9 @@ public sealed class ContactCasinoSystem : EntitySystem
 
     private bool IsViewing(NetUserId user)
     {
-        foreach (var actor in _viewers.Keys)
+        foreach (var (actor, view) in _viewers)
         {
-            if (_economy.TryGetUser(actor, out var viewer) && viewer == user)
+            if (IsTableViewer(view.Source) && _economy.TryGetUser(actor, out var viewer) && viewer == user)
                 return true;
         }
 
@@ -482,9 +501,35 @@ public sealed class ContactCasinoSystem : EntitySystem
         }
     }
 
+    private bool IsTableViewer(EntityUid source)
+    {
+        return CompOrNull<ContactCasinoComponent>(source)?.Blackjack == true;
+    }
+
+    /// <summary>
+    /// Still looking at that UI? Drops stale viewers.
+    /// </summary>
+    private bool TryGetViewer(EntityUid actor, out (EntityUid Source, Enum Key) viewer)
+    {
+        if (!_viewers.TryGetValue(actor, out viewer))
+            return false;
+
+        if (!TerminatingOrDeleted(viewer.Source) && _ui.IsUiOpen(viewer.Source, viewer.Key, actor))
+            return true;
+
+        _viewers.Remove(actor);
+        return false;
+    }
+
+    private void SendBalance(EntityUid actor)
+    {
+        if (TryGetViewer(actor, out var viewer))
+            _ui.ServerSendUiMessage(viewer.Source, viewer.Key, new ContactCasinoBalanceMessage(_economy.GetBalance(actor)), actor);
+    }
+
     private void SendTable(EntityUid actor)
     {
-        if (!_viewers.TryGetValue(actor, out var viewer))
+        if (!TryGetViewer(actor, out var viewer) || !IsTableViewer(viewer.Source))
             return;
 
         if (TerminatingOrDeleted(viewer.Source) || !_ui.IsUiOpen(viewer.Source, viewer.Key, actor))

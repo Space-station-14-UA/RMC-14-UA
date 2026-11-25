@@ -1,18 +1,16 @@
 using System.Linq;
+using Content.Client.Resources;
 using Content.Shared._Mriya.Rules.Contact;
+using System.Numerics;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using static Content.Client._Mriya.Rules.Contact.ContactRetro;
-using System.Numerics;
-using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
-using Content.Client.Resources;
-using Content.Client.UserInterface.Controls;
+using static Content.Client._Mriya.Rules.Contact.ContactRetro;
 
 namespace Content.Client._Mriya.Rules.Contact;
 
@@ -22,19 +20,12 @@ namespace Content.Client._Mriya.Rules.Contact;
 /// </summary>
 public sealed class ContactCasinoView : BoxContainer
 {
-    private static readonly TimeSpan SpinTime = TimeSpan.FromSeconds(1.2);
-    private static readonly TimeSpan SpinTimeout = TimeSpan.FromSeconds(4);
-    private static readonly TimeSpan ReelStep = TimeSpan.FromSeconds(0.07);
-
-    private readonly IGameTiming _timing;
-    private readonly IRobustRandom _random;
     private static readonly ResPath CardRsi = new("_RMC14/Objects/Fun/playing_cards.rsi");
     private static readonly Vector2 CardSize = new(48, 48);
 
+    private readonly IGameTiming _timing;
     private readonly SpriteSystem _sprite;
-
     private readonly Font _font;
-    private readonly Font _fontSmall;
     private readonly Font _fontBig;
 
     public event Action<int>? Spin;
@@ -42,17 +33,7 @@ public sealed class ContactCasinoView : BoxContainer
 
     private readonly List<(RetroButton Button, Control Panel)> _tabs = new();
 
-    // slots
-    private readonly ContactCasinoPrototype? _slotRules;
-    private readonly Label[] _reels = new Label[3];
-    private readonly EntityPrototypeView[] _reelViews = new EntityPrototypeView[3];
-    private readonly Label _slotResult;
-    private readonly Label _slotBalance;
-    private readonly List<RetroButton> _spinButtons = new();
-    private bool _spinning;
-    private TimeSpan _spinStarted;
-    private TimeSpan _nextReelStep;
-    private ContactSlotResultMessage? _pendingResult;
+    private readonly ContactSlotMachineControl? _slots;
 
     // blackjack
     private readonly Label _bjStatus;
@@ -71,12 +52,10 @@ public sealed class ContactCasinoView : BoxContainer
     public ContactCasinoView(ContactCasinoComponent casino)
     {
         _timing = IoCManager.Resolve<IGameTiming>();
-        _random = IoCManager.Resolve<IRobustRandom>();
         _sprite = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<SpriteSystem>();
         var protos = IoCManager.Resolve<IPrototypeManager>();
         var cache = IoCManager.Resolve<IResourceCache>();
         _font = cache.GetFont(FontPath, 12);
-        _fontSmall = cache.GetFont(FontPath, 10);
         _fontBig = cache.GetFont(FontPath, 22);
 
         Orientation = LayoutOrientation.Vertical;
@@ -90,75 +69,12 @@ public sealed class ContactCasinoView : BoxContainer
         AddChild(panels);
 
         // ---------- slots ----------
-        _slotResult = Text(string.Empty, Phosphor, _font);
-        _slotBalance = Text(string.Empty, White, _font);
         if (casino.Slots && protos.TryIndex(casino.Rules, out var rules) && rules.Symbols.Count > 0)
         {
-            _slotRules = rules;
             var slots = Frame(VBox(10));
-            var inner = (BoxContainer) slots.GetChild(0);
-
-            inner.AddChild(_slotBalance);
-
-            var reelRow = HBox(12);
-            reelRow.HorizontalAlignment = HAlignment.Center;
-            for (var i = 0; i < _reels.Length; i++)
-            {
-                // PanelContainer stacks its children: text and sprite overlap, one is hidden
-                var reel = new PanelContainer { PanelOverride = Box(Black, Phosphor, 2, 12), MinSize = new(150, 90) };
-                _reels[i] = Text(string.Empty, Phosphor, _fontBig);
-                _reels[i].HorizontalAlignment = HAlignment.Center;
-                _reels[i].VerticalAlignment = VAlignment.Center;
-                _reelViews[i] = new EntityPrototypeView
-                {
-                    SetSize = new Vector2(72, 72),
-                    Scale = new Vector2(2, 2),
-                    HorizontalAlignment = HAlignment.Center,
-                    VerticalAlignment = VAlignment.Center,
-                };
-                reel.AddChild(_reels[i]);
-                reel.AddChild(_reelViews[i]);
-                reelRow.AddChild(reel);
-                SetReel(i, rules.Symbols[i % rules.Symbols.Count]);
-            }
-
-            inner.AddChild(reelRow);
-            _slotResult.HorizontalAlignment = HAlignment.Center;
-            inner.AddChild(_slotResult);
-
-            var bets = HBox();
-            bets.HorizontalAlignment = HAlignment.Center;
-            foreach (var bet in rules.SlotBets)
-            {
-                var amount = bet;
-                var button = new RetroButton(Loc.GetString("mriya-contact-casino-spin", ("bet", bet)).ToUpperInvariant(), _font)
-                {
-                    MinWidth = 110,
-                };
-                button.OnPressed += _ => StartSpin(amount);
-                _spinButtons.Add(button);
-                bets.AddChild(button);
-            }
-
-            inner.AddChild(bets);
-
-            // payout table
-            inner.AddChild(Text($">{Loc.GetString("mriya-contact-casino-payouts").ToUpperInvariant()}", White, _font));
-            foreach (var symbol in rules.Symbols.Where(s => s.Three > 0 || s.Two > 0).OrderByDescending(s => s.Three))
-            {
-                var row = HBox(12);
-                row.AddChild(SymbolRun(symbol, 3));
-                row.AddChild(new Control { HorizontalExpand = true });
-                row.AddChild(Text($"×{symbol.Three}", White, _font));
-                if (symbol.Two > 0)
-                {
-                    row.AddChild(SymbolRun(symbol, 2));
-                    row.AddChild(Text($"×{symbol.Two}", White, _font));
-                }
-
-                inner.AddChild(row);
-            }
-
+            _slots = new ContactSlotMachineControl(rules, _font, _fontBig);
+            _slots.Spin += bet => Spin?.Invoke(bet);
+            slots.GetChild(0).AddChild(_slots);
             AddTab(tabRow, panels, Loc.GetString("mriya-contact-casino-tab-slots"), slots);
         }
 
@@ -269,94 +185,9 @@ public sealed class ContactCasinoView : BoxContainer
 
     #region Slots
 
-    private void StartSpin(int bet)
-    {
-        if (_spinning)
-            return;
-
-        _spinning = true;
-        _spinStarted = _timing.RealTime;
-        _pendingResult = null;
-        _slotResult.Text = string.Empty;
-        foreach (var button in _spinButtons)
-        {
-            button.Disabled = true;
-        }
-
-        Spin?.Invoke(bet);
-    }
-
     public void SlotResult(ContactSlotResultMessage msg)
     {
-        _pendingResult = msg;
-        SetBalance(msg.Balance);
-    }
-
-    private void FinishSpin()
-    {
-        _spinning = false;
-        foreach (var button in _spinButtons)
-        {
-            button.Disabled = false;
-        }
-
-        if (_pendingResult is not { } result || _slotRules == null)
-            return;
-
-        for (var i = 0; i < _reels.Length && i < result.Reels.Length; i++)
-        {
-            SetReel(i, _slotRules.Symbols[Math.Clamp(result.Reels[i], 0, _slotRules.Symbols.Count - 1)]);
-        }
-
-        _slotResult.Text = result.Payout > 0
-            ? Loc.GetString("mriya-contact-casino-slot-win", ("amount", result.Payout)).ToUpperInvariant()
-            : Loc.GetString("mriya-contact-casino-slot-lose").ToUpperInvariant();
-        _slotResult.FontColorOverride = result.Payout > 0 ? Gold : Teal;
-        _pendingResult = null;
-    }
-
-    /// <summary>
-    /// Entity sprite if the symbol has one, otherwise its text.
-    /// </summary>
-    private void SetReel(int index, ContactSlotSymbol symbol)
-    {
-        var hasEntity = symbol.Entity != null;
-        _reelViews[index].Visible = hasEntity;
-        _reels[index].Visible = !hasEntity;
-
-        if (hasEntity)
-        {
-            _reelViews[index].SetPrototype(symbol.Entity);
-            _reelViews[index].ToolTip = Loc.GetString(symbol.Name);
-        }
-        else
-        {
-            _reels[index].Text = Loc.GetString(symbol.Name);
-            _reels[index].FontColorOverride = symbol.Color;
-        }
-    }
-
-    /// <summary>
-    /// "XENO XENO XENO" in the payout table, as sprites when the symbol has an entity.
-    /// </summary>
-    private Control SymbolRun(ContactSlotSymbol symbol, int count)
-    {
-        var box = HBox(2);
-        for (var i = 0; i < count; i++)
-        {
-            if (symbol.Entity is { } entity)
-            {
-                var view = new EntityPrototypeView { SetSize = new Vector2(32, 32), ToolTip = Loc.GetString(symbol.Name) };
-                view.SetPrototype(entity);
-                box.AddChild(view);
-            }
-            else
-            {
-                box.AddChild(Text(Loc.GetString(symbol.Name), symbol.Color, _font));
-            }
-        }
-
-        return box;
+        _slots?.Result(msg);
     }
 
     #endregion
@@ -374,8 +205,8 @@ public sealed class ContactCasinoView : BoxContainer
     public void SetBalance(int balance)
     {
         var text = Loc.GetString("mriya-contact-store-balance", ("balance", balance)).ToUpperInvariant();
-        _slotBalance.Text = text;
         _bjBalance.Text = text;
+        _slots?.SetBalance(balance);
     }
 
     private void UpdateBlackjack()
@@ -475,30 +306,8 @@ public sealed class ContactCasinoView : BoxContainer
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
-        var now = _timing.RealTime;
 
         if (_bjState is { Phase: not ContactBlackjackPhase.Idle })
             UpdateStatus();
-
-        if (!_spinning || _slotRules == null)
-            return;
-
-        var elapsed = now - _spinStarted;
-
-        // result in and the reels have spun long enough, or the server never answered (not enough points)
-        if (_pendingResult != null && elapsed >= SpinTime || elapsed >= SpinTimeout)
-        {
-            FinishSpin();
-            return;
-        }
-
-        if (now < _nextReelStep)
-            return;
-
-        _nextReelStep = now + ReelStep;
-        for (var i = 0; i < _reels.Length; i++)
-        {
-            SetReel(i, _random.Pick(_slotRules.Symbols));
-        }
     }
 }
