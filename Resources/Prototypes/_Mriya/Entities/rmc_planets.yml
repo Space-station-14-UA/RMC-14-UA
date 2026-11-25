@@ -33,10 +33,10 @@
 
 - type: entity
   id: MRPlanetChancesContact
-  name: ЖЗ-522 Земля Фортуни
+  name: ЖЗ-522 Земля Фортуни (А-Блок)
   components:
   - type: RMCPlanetMapPrototype
-    map: /Maps/_Mriya/Planets/contact_chances.yml
+    map: /Maps/_Mriya/Planets/contact_chances_ablock.yml
     camouflage: Classic
     inRotation: false
     specialFaxes:
@@ -45,12 +45,21 @@
 
 - type: entity
   id: MRPlanetFiorinaContact
-  name: Науковий Комплекс Фіоріна
+  name: Науковий Комплекс Фіоріна (Південь)
   components:
   - type: RMCPlanetMapPrototype
-    map: /Maps/_Mriya/Planets/contact_prison.yml
+    map: /Maps/_Mriya/Planets/contact_prison_south.yml
     camouflage: Classic
     inRotation: false
     specialFaxes:
       Liaison: RMCPaperWeYaLiaisonBriefingFiorina
     announcement: "Сигнал лиха було отримано з в'язниці суворого режиму \"Орбітальна Тюрма Фіоріна\". Початково станція існувала на орбіті планети Фіоріна-161 заради розвідки покладів платини цієї ж планети, але після їх вичерпання була перебудована у Орбітальну тюрму та Науковий комплекс, ціллю дослідження якого стало ████████. На станції підтверждено інфестацію ХХ-121, найближчим часом з ДКП-Саванна \"Січ\" буде відправлена група реагування."
+
+- type: entity
+  id: RMCPlanetSolaris
+  name: Хребет Солярис (Копальня)
+  components:
+  - type: RMCPlanetMapPrototype
+    map: /Maps/_Mriya/Planets/contact_solaris_mining.yml
+    camouflage: Desert
+    announcement: "Вестон-Ямада втратили зв'язок з одним зі своїх біосховищ, колонією Хребет Солярис на планеті ЖЗ-1413 (Рутерра-І). Початково вона використовувалась для експериментів з тераформуванням лишайником, але після їх провалу – продана корпорації Вестон-Ямада. На колонії підтверждено зараження ХХ-121."
