@@ -261,8 +261,8 @@
       color: "#771A10"
 # - type: RefillableByBulletBox no ammo box
 #   bulletType: RMCBoxBulletsRifleAP
-  - type: BulletBox
-    bulletType: RMCBoxBulletsRifleIncendiary
+  - type: BulletBox # mriya
+    bulletType: RMCBoxBulletsRifleIncendiary # mriya
 
 - type: entity
   parent: CMMagazineRifleM54CMK1
@@ -289,7 +289,7 @@
     - state: ammo_band
       color: "#9C9A19"
   - type: RefillableByBulletBox
-    bulletType: MRBoxBulletsRifleHEAP
+    bulletType: MRBoxBulletsRifleHEAP # null mriya
 
 - type: entity
   parent: CMMagazineRifleM54CMK1
@@ -317,8 +317,8 @@
       color: "#6365E6"
 #  - type: RefillableByBulletBox disabled till HEAP bulletboxes
 #    bulletType: RMCBoxBulletsRifleAP
-  - type: BulletBox
-    bulletType: MRBoxBulletsRifleWP
+  - type: BulletBox # mriya
+    bulletType: MRBoxBulletsRifleWP # mriya
 
 - type: Tag
   id: RMCWeaponRifleM54CMK1

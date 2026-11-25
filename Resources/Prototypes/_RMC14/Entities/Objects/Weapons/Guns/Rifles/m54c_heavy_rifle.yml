@@ -241,8 +241,8 @@
       map: [ "enum.GunVisualLayers.Mag" ]
     - state: ammo_band
       color: "#9C9A19"
-  - type: RefillableByBulletBox
-    bulletType: MRBoxBulletsRifleHEAP
+  - type: RefillableByBulletBox # mriya
+    bulletType: MRBoxBulletsRifleHEAP # mriya
 
 - type: entity
   parent: CMMagazineRifleM54CE2
@@ -265,8 +265,8 @@
       map: [ "enum.GunVisualLayers.Mag" ]
     - state: ammo_band
       color: "#6365E6"
-  - type: BulletBox
-    bulletType: MRBoxBulletsRifleWP
+  - type: BulletBox # mriya
+    bulletType: MRBoxBulletsRifleWP # mriya
 
 - type: entity
   parent: CMMagazineRifleM54CE2
@@ -289,8 +289,8 @@
       map: [ "enum.GunVisualLayers.Mag" ]
     - state: ammo_band
       color: "#771A10"
-  - type: BulletBox
-    bulletType: RMCBoxBulletsRifleIncendiary
+  - type: BulletBox # mriya
+    bulletType: RMCBoxBulletsRifleIncendiary # mriya
 
 - type: Tag
   id: RMCWeaponRifleM54CE2
