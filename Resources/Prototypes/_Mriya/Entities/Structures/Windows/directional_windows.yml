@@ -4,6 +4,5 @@
   id: MMCWindowUltraDirectionalUnmeltable
   suffix: Мрія. Неплавибильне
   components:
-  - type: RemoveComponents
-    components:
-    - type: Corrodible
+  - type: Corrodible
+    isCorrodible: false
