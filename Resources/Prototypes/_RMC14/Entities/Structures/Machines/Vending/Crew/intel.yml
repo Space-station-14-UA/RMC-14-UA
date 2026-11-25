@@ -1,8 +1,8 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechIntelGear
-  name: ColMarTech intelligence officer gear rack
-  description: An automated gear rack for IOs.
+  name: КолМорТех стійка обладнання Офіцера Розвідки
+  description: Автоматизована стійка обладнання для Офіцерів Розвідки.
   components:
   - type: AccessReader
     access:
@@ -13,11 +13,11 @@
     jobs:
     - CMIntelOfficer
     sections:
-    - name: Intelligence Set (Mandatory)
+    - name: Набір Розвідника (Обов'язково)
       takeAll: RMCIntelSet
       entries:
       - id: RMCVendorBundleIntel
-    - name: Engineering Supplies
+    - name: Інженерне Обладнання
       entries:
       - id: CMAPCElectronics
         points: 5
@@ -25,7 +25,7 @@
         points: 10
       - id: RMCWeldingGoggles
         points: 5
-    - name: Primary Ammunition
+    - name: Особлива Амуніція
       entries:
       - id: CMMagazineRifleM4SPRAP
         points: 10
@@ -37,7 +37,7 @@
         points: 10
       - id: CMMagazineRifleM54CExt
         points: 10
-    - name: Sidearm Ammunition
+    - name: Амуніція для Другої Зброї
       entries:
       - id: RMCMagazinePistolM13Ext
         points: 10
@@ -51,17 +51,17 @@
         points: 10
       - id: RMCMagazinePistolSU6
         points: 10
-    - name: Restricted Firearms
+    - name: Обмежена Зброя
       entries:
       - id: RMCGunCasePistolMK80
         points: 15
       - id: RMCGunCasePistolSmart
         points: 15
-    - name: Restricted Gear
+    - name: Обмежене Обладнання
       entries:
       - id: CMBeltUtilityCombatFilled
         points: 15
-    - name: Pouches
+    - name: Підсумки
       entries:
       # Mriya start. Чому ні
       - id: RMCPouchGeneralLarge
@@ -77,7 +77,7 @@
       - id: RMCPouchMacheteFilled
         name: machete pouch (Full)
         points: 10
-    - name: Utilities
+    - name: Додаткове Обладнання
       entries:
       - id: CMFireExtinguisherPortable
         points: 5
@@ -92,7 +92,7 @@
         recommended: true
       - id: RMCIntelDetector
         points: 5
-    - name: Binoculars
+    - name: Біноклі
       entries:
       - id: RMCBinoculars
         points: 5
@@ -100,7 +100,7 @@
         points: 10
       - id: RMCLaserDesignator
         points: 15
-    - name: Helmet Optics
+    - name: Візори для Шолома
       entries:
       - id: RMCVisorMedical
         points: 5
@@ -109,21 +109,21 @@
       - id: RMCVisorNightVision
         points: 25
         recommended: true
-    - name: Radio Keys
+    - name: Ключі Шифрування
       entries:
       - id: CMEncryptionKeyIntel
         points: 5
-    - name: Spare Intel Kit
+    - name: Додатковий Комплект Розвідника
       entries:
       - id: RMCKitIntel
-        name: field intelligence support kit (for untrained personnel)
+        name: комплект польового розвідника (для нетренованого персоналу)
         points: 20
 
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechIntelEquipment
-  name: ColMarTech intelligence officer equipment rack
-  description: An automated rack hooked up to a colossal storage of IO standard-issue equipment.
+  name: КолМорТех автоматизована стійка спорядження Офіцера Розвідки
+  description: Автоматизована стійка, під'єднана до величезного сховища зі стандартним спорядженням Офіцера Розвідки морської піхоти.
   components:
   - type: AccessReader
     access:
@@ -134,27 +134,27 @@
     jobs:
     - CMIntelOfficer
     sections:
-    - name: Standard Equipment
+    - name: Стандартне Спорядження
       takeAll: RMCIntelEquipment
       entries:
       - id: CMHeadsetIntel
       - id: CMMRE
-    - name: Gloves
+    - name: Рукавички
       choices: { CMHands: 1 }
       entries:
       - id: CMHandsInsulated
       - id: CMHandsBlackInsulated
-    - name: Armor
+    - name: Броня
       takeOne: CMArmor
       entries:
       - id: RMCArmorXM4
       - id: RMCArmorM3LightVariants
       - id: RMCArmorVestIntel
-    - name: Jacket
+    - name: Куртки
       choices: { CMCoat: 1 }
       entries:
       - id: RMCCoatService
-    - name: Backpack
+    - name: Рюкзаки
       choices: { CMBag: 1 }
       entries:
       - id: CMSatchelMarineIntel
@@ -168,18 +168,18 @@
         recommended: true
       - id: RMCBackpackRTO
         replaceSlot: back
-    - name: Helmet
+    - name: Шоломи
       choices: { CMHelmet: 1 }
       entries:
       - id: RMCArmorHelmetM12Intel
         recommended: true
-    - name: Hat
+    - name: Головні убори
       choices: { CMHat: 1 }
       entries:
       - id: RMCHeadBeretGreen
       - id: CMHeadBeretTan
       - id: CMHeadCapOfficer
-    - name: Belt
+    - name: Ремені
       choices: { CMBelt: 1 }
       entries:
       - id: RMCBeltUtilityGeneral
@@ -191,21 +191,21 @@
       - id: RMCBeltHolsterM13
       - id: RMCM276ShotgunShellLoadingRig
       - id: CMBeltUtilityFilled
-        name: M276 pattern toolbelt rig (Full)
+        name: ремінь для інструментів зразка М276 (Повний)
         recommended: true
-    - name: Pouches
+    - name: Підсумки
       choices: { CMPouches: 2 }
       entries:
       - id: RMCPouchDocument
         recommended: true
       - id: RMCPouchFirstAidInjectors
-        name: first-aid pouch (refillable injectors)
+        name: підсумок першої допомоги (багаторазові автоін'єктори)
       - id: RMCPouchFirstAidSplintsGauzeOintment
-        name: first-aid pouch (gauze, ointment) # TODO RMC14 splints comma
+        name: підсумок першої допомоги (марля, мазь) # TODO RMC14 splints comma
       - id: RMCPouchFirstAidPills
-        name: first-aid pouch (pill packets)
+        name: підсумок першої допомоги (пігулки)
       - id: RMCPouchFlareFilled
-        name: flare pouch (Full)
+        name: підсумок для фаєрів (Повний)
       - id: RMCPouchFuelTank
       - id: RMCPouchGeneralLarge
       - id: RMCPouchMagazinePistolLarge
@@ -213,12 +213,17 @@
       - id: RMCPouchShotgun
       - id: RMCPouchPistol
       - id: RMCPouchToolsFill
-        name: tools pouch (Full)
+        name: підсумок для інструментів (Повний)
         recommended: true
       - id: RMCPouchSling
-    - name: Accessories
+    - name: Ремінно-Плечові Системи
       choices: { CMAccessories: 1 }
       entries:
+      # Mriya start
+      - id: RMCToolWebbingSmallFilled
+        name: маленький жилет для інструментів (Повний)
+        recommended: true
+      # Mriya end
       - id: CMWebbingBlack
       - id: CMWebbingBrown
         recommended: true
@@ -230,7 +235,7 @@
       - id: RMCWebbingBlackSmall
       - id: RMCWebbingDropPouch
       - id: RMCWebbingDropPouchBlack
-    - name: Mask
+    - name: Маски
       choices: { CMMask: 1 }
       entries:
       - id: CMMaskGas
@@ -239,8 +244,8 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechIntelWeapons
-  name: ColMarTech intelligence officer weapons rack
-  description: An automated weapon rack hooked up to a small storage of standard-issue weapons. Can be accessed only by the Intelligence Officers.
+  name: КолМорТех стійка зброї та боєприпасів Офіцерів Розвідки
+  description: Автоматизована стійка з видачі зброї та боєприпасів, підключена до невеликого сховища стандартної зброї. Доступ мають лише Офіцери Розвідки.
   components:
   - type: AccessReader
     access:
@@ -256,7 +261,7 @@
     jobs:
     - CMIntelOfficer
     sections:
-    - name: Primary Firearms
+    - name: Основна Зброя
       entries:
       - id: WeaponRifleM4SPR
         amount: 4
@@ -266,7 +271,7 @@
         amount: 4
       - id: RMCWeaponRifleM54C
         amount: 4
-    - name: Primary Ammunition
+    - name: Амуніція для Основної Зброї
       entries:
       - id: RMCBoxShotgunBuckshot
         amount: 12
@@ -280,7 +285,7 @@
         amount: 24
       - id: CMMagazineRifleM54C
         amount: 24
-    - name: Sidearms
+    - name: Друга Зброя
       entries:
       - id: RMCWeaponPistolM77Empty
         amount: 4
@@ -290,7 +295,7 @@
         amount: 4
       - id: RMCWeaponPistolM13Empty
         amount: 4
-    - name: Sidearm Ammunition
+    - name: Амуніція для Другої Зброї
       entries:
       - id: RMCMagazinePistolM13
         amount: 20
@@ -308,14 +313,14 @@
         amount: 8
       - id: CMMagazinePistolMK80
         amount: 20
-    - name: Attachments
+    - name: Оснащення для Зброї
       entries:
       - id: RMCAttachmentRailFlashlight
         amount: 8
       - id: RMCAttachmentFlashlightGrip
         amount: 4
         recommended: true
-    - name: Utilities
+    - name: Додаткове
       entries:
       - id: CMM11Knife
         amount: 18
@@ -330,8 +335,8 @@
 - type: entity
   parent: CMVendorBundleRiflemanApparel
   id: RMCVendorBundleIntel
-  name: essential intel set
-  description: Contains a crowbar, fultons, an intel detector, and binoculars.
+  name: необхідний набір розвідника
+  description: Містить лом, пристрої Фултона, детектор інформації та бінокль.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Tools/intel_detector.rsi
@@ -346,7 +351,7 @@
 - type: entity
   parent: RMCKitBase
   id: RMCKitIntel
-  name: field intelligence support kit
+  name: комплект польового розвідника
   components:
   - type: Storage
     maxItemSize: Huge

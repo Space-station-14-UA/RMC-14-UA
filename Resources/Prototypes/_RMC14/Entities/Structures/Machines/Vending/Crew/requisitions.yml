@@ -38,7 +38,7 @@
       sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/guns.rsi
       state: vend
     sections:
-    - name: Основна зброя
+    - name: Основна Зброя
       entries:
       - id: WeaponShotgunM42A2
         amount: 30
@@ -48,7 +48,7 @@
         amount: 60
       - id: WeaponRifleM4SPR
         amount: 20
-    - name: Пістолети
+    - name: Друга Зброя
       entries:
       - id: RMCWeaponPistolM77Empty
         amount: 50
@@ -118,7 +118,7 @@
         amount: 3
       - id: RMCExplosiveBreachingCharge
         amount: 2
-    - name: Ремінно-плечові системи
+    - name: Ремінно-Плечові Системи
       entries:
       - id: CMWebbingBrown
         amount: 2
@@ -246,7 +246,7 @@
         amount: 1
       - id: RMCPouchShotgunLarge
         amount: 1
-    - name: Основні пристрої
+    - name: Основне Обладнання
       entries:
       - id: RMCMotionDetector
         amount: 4
@@ -264,7 +264,7 @@
         amount: 4
       - id: CMSparePDTLBattleBuddyKit
         amount: 4
-    - name: Ліхтарі та фаєри
+    - name: Ліхтарі та Фаєри
       entries:
       - id: RMCFlashlight # Combat Flashlight
         amount: 8
@@ -272,7 +272,7 @@
         amount: 2
       - id: CMPackFlare
         amount: 10
-    - name: Додаткове обладнання
+    - name: Додаткове Обладнання
       entries:
       - id: CMEntrenchingTool
         amount: 4
@@ -398,7 +398,7 @@
       sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_wall/ammo.rsi
       state: vend
     sections:
-    - name: Звичайні набої
+    - name: Звичайна Амуніція
       entries:
       - id: RMCBoxShotgunBuckshot
         amount: 56
@@ -420,7 +420,7 @@
         amount: 100
       - id: RMCMagazinePistolM13
         amount: 100
-    - name: Бронебійні набої
+    - name: Бронебійна Амуніція
       entries:
       - id: CMMagazinePistolM77AP
         amount: 50
@@ -432,7 +432,7 @@
         amount: 10
       - id: RMCMagazinePistolM1984AP
         amount: 2
-    - name: Збільшені магазини
+    - name: Збільшені Магазини
       entries:
       - id: CMMagazineSMGM63Ext
         amount: 10
@@ -442,7 +442,7 @@
         amount: 8
       - id: RMCMagazinePistolM13Ext
         amount: 5
-    - name: Спеціальні набої
+    - name: Спеціальна Амуніція
       entries:
       - id: RMCPowerCellSmartgun
         amount: 4
@@ -458,7 +458,7 @@
         amount: 2
       - id: RMCBox458SOCOM
         amount: 4
-    - name: Додаткові набої
+    - name: Додаткова Амуніція
       entries:
       - id: CMMagazinePistolMK80
         amount: 11
@@ -480,7 +480,7 @@
         amount: 2
       - id: RMCMagazineShotgunXM51
         amount: 3
-    - name: Коробки з магазинами
+    - name: Коробки з Магазинами
       hasBoxes: true
       entries:
       - id: RMCBoxMagazinePistolM13
@@ -608,7 +608,7 @@
 #      - name: Magazine Box (UT-Napthal Fuel x 8)
 #        box: CMMagazineSMGM63
 
-    - name: Коробки з набоями
+    - name: Коробки з Набоями
       hasBoxes: true
       entries:
       - id: RMCBoxBulletsSMG
@@ -680,7 +680,7 @@
         amount: 7
       - id: RMCAttachmentShotgunChoke
         amount: 5
-    - name: Рейкова планка
+    - name: Рейкова Планка
       entries:
       - id: RMCAttachmentB8SmartScope
         amount: 4
@@ -698,7 +698,7 @@
         amount: 10
       - id: RMCAttachmentS84xTelescopicScope
         amount: 5
-    - name: Підствольне кріплення
+    - name: Підствольне Кріплення
       entries:
       - id: RMCAttachmentAngledGrip
         amount: 7
@@ -782,7 +782,7 @@
         amount: 5
       - id: CMBootsGrey
         amount: 5
-    - name: Рюкзази
+    - name: Рюкзаки
       entries:
       - id: CMBackpackMarine
         amount: 20

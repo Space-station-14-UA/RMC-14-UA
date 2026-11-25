@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Зроблено Miyugi (ДС) для білду РМС Мрії. На основі cmss13 at https://github.com/cmss13-devs/cmss13/blob/bb00705387c77af87cf86b948e6b34441c60300c/icons/mob/xenonids/carrier.dmi, parasite overlay sprites by Sio",
+  "copyright": "Зроблено Miyugi (ДС) для білду РМС Мрії. На основі cmss13 at https://github.com/cmss13-devs/cmss13/blob/bb00705387c77af87cf86b948e6b34441c60300c/icons/mob/xenonids/carrier.dmi, parasite overlay sprites by Sio. Чорні спрайти - це відсутній оверлей паразитів, ТОДО, а також власний спрайт паразитів у руці та оновлений для яєць.",
   "size": {
     "x": 32,
     "y": 32
@@ -13,14 +13,6 @@
     },
     {
       "name": "lesser_egg_right",
-      "directions": 4
-    },
-    {
-      "name": "lesser_parasite_left",
-      "directions": 4
-    },
-    {
-      "name": "lesser_parasite_right",
       "directions": 4
     },
     {

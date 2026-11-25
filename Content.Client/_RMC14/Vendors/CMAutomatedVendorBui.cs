@@ -380,7 +380,7 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
             {
                 if (takeAll == null || !takeAll.Contains((section.TakeAll, entry.Id)))
                 {
-                    name.AddText(" (TAKE ALL)");
+                    name.AddText(" (ВЗЯТИ ВСЕ)"); // Mriya. Переклад
                     break;
                 }
             }
@@ -389,19 +389,19 @@ public sealed class CMAutomatedVendorBui : BoundUserInterface
         {
             var takeOne = user?.TakeOne;
             if (takeOne == null || !takeOne.Contains(section.TakeOne))
-                name.AddText(" (TAKE ONE)");
+                name.AddText(" (ВЗЯТИ ОДНЕ)"); // Mriya. Переклад
         }
         else if (section.Choices is { } choices)
         {
             if (user == null)
             {
-                name.AddText($" (CHOOSE {choices.Amount})");
+                name.AddText($" (ОБРАТИ {choices.Amount})"); // Mriya. Переклад
             }
             else
             {
                 var left = choices.Amount - user.Choices.GetValueOrDefault(choices.Id);
                 if (left > 0)
-                    name.AddText($" (CHOOSE {left})");
+                    name.AddText($" (ОБРАТИ {left})"); // Mriya. Переклад
             }
         }
 

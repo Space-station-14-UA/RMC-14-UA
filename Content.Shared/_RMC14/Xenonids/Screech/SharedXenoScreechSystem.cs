@@ -1,6 +1,7 @@
 using Content.Shared._RMC14.Deafness;
 using Content.Shared._RMC14.Marines;
 using Content.Shared._RMC14.CameraShake;
+using Content.Shared._RMC14.Slow; // Mriya
 using Content.Shared._RMC14.Xenonids.Parasite;
 using Content.Shared._RMC14.Xenonids.Plasma;
 using Content.Shared.Coordinates;
@@ -26,10 +27,12 @@ public sealed class XenoScreechSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly XenoSystem _xeno = default!;
     [Dependency] private readonly RMCCameraShakeSystem _cameraShake = default!;
+    [Dependency] private readonly RMCSlowSystem _slow = default!; // Mriya
 
     private readonly HashSet<Entity<MobStateComponent>> _mobs = new();
     private readonly HashSet<Entity<MobStateComponent>> _closeMobs = new();
     private readonly HashSet<Entity<XenoParasiteComponent>> _parasites = new();
+    private readonly HashSet<EntityUid> _lesserCarriers = new(); // Mriya
 
     public override void Initialize()
     {
@@ -103,6 +106,20 @@ public sealed class XenoScreechSystem : EntitySystem
 
             _cameraShake.ShakeCamera(receiver, xeno.Comp.CloseScreenShakeShakes, xeno.Comp.CloseScreenShakeStrength);
         }
+
+        // Mriya start. Сповільнення малих носійок від крику
+        _lesserCarriers.Clear();
+        _entityLookup.GetEntitiesInRange(xform.Coordinates, xeno.Comp.ParasiteStunRange, _lesserCarriers);
+
+        foreach (var receiver in _lesserCarriers)
+        {
+            var metadata = MetaData(receiver);
+            if (metadata.EntityPrototype?.ID != "RMCXenoLesserCarrier")
+                continue;
+
+            _slow.TrySlowdown(receiver, xeno.Comp.ParasiteStunTime);
+        }
+        // Mriya end
 
         if (_net.IsServer)
             SpawnAttachedTo(xeno.Comp.Effect, xeno.Owner.ToCoordinates());

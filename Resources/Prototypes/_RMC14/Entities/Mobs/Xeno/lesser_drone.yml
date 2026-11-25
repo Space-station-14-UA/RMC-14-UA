@@ -140,6 +140,7 @@
   - type: RemoveComponents
     components:
     - type: CanBeLarvaQueued
+    - type: SSDIndicator # Mriya
   # Mriya start
   - type: XenoEvolution # Стрейни нашого виробництва (не важкі наркотики, траст мі)
     strains:

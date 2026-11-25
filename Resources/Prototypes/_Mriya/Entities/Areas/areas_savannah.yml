@@ -558,5 +558,15 @@
 
 - type: entity
   parent: MMCAreaSavannah
+  id: MMCAreaSavannahRosienne
+  name: Об'єкт С-2-1-РЛ # Офіс Розіенне (Міюгі)
+  components:
+  - type: Sprite
+    state: charlie
+  - type: Area
+    avoidBioscan: true
+
+- type: entity
+  parent: MMCAreaSavannah
   id: MMCAreaSavannahAICoreReception
   name: Стійка доступу до ядра АРЕС

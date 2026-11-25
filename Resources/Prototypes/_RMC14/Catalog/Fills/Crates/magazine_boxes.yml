@@ -125,7 +125,7 @@
 - type: entity
   parent: RMCCrateAmmo
   id: RMCCrateBoxMagazinePistolM1984HP
-  name: Magazine box (M1984, 16x HP mags)
+  name: Коробка з магазинами (М1984, 16 шт експансивних)
   components:
   - type: StorageFill
     contents:

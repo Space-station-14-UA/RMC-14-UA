@@ -157,9 +157,9 @@ public sealed class XenoEggRoleSystem : EntitySystem
         var timeSinceDeath = _gameTiming.CurTime.Subtract(ghostComp.TimeOfDeath);
 
         // Must have been dead for 3 minutes
-        if (timeSinceDeath < TimeSpan.FromMinutes(3))
+        if (timeSinceDeath < TimeSpan.FromMinutes(2)) // Mriya. 3 в оригіналі
         {
-            _popup.PopupEntity(Loc.GetString("rmc-xeno-egg-ghost-need-time", ("seconds", 180 - (int)timeSinceDeath.TotalSeconds)), user, user, PopupType.MediumCaution);
+            _popup.PopupEntity(Loc.GetString("rmc-xeno-egg-ghost-need-time", ("seconds", 120 - (int)timeSinceDeath.TotalSeconds)), user, user, PopupType.MediumCaution); // Mriya. 180 в оригіналі
             return false;
         }
 

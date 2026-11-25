@@ -1,3 +1,7 @@
+# Застаріле, бо це фактично 2 половинки подвійної двері, замість цільного ентіті.
+# Деінде ще юзаються, але всюди здебільшого вже повноцінні. Дивіться _RMC14 або _Mriya/Entities/Structures/Doors/DoubleDoors/...
+
+## Корпорат
 - type: entity
   parent: CMDoubleDoorAlmayerGlass
   id: MMCDoubleDoorBlackLiaisonLocked

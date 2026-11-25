@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseStructureDynamic
   id: RMCCoffeeMachine
-  name: coffee machine
-  description: A coffee machine
+  name: кавомашина
+  description: Сучасний електричний пристрій для повністю автоматичного заварювання будь-якої кави, яку ви тільки можете забажати! На жаль, панель вибору схоже не працює та воно постійно готує американо без молока... Смачного! # Mriya
   components:
   - type: RMCCoffeeMachine
     reagent: RMCCoffee
@@ -11,7 +11,7 @@
   - type: ItemSlots
     slots:
       coffee_machine_slot:
-        name: Coffee Machine
+        name: Кавомашина # Mriya. Переклад
         whitelist:
           tags:
           - DrinkGlass

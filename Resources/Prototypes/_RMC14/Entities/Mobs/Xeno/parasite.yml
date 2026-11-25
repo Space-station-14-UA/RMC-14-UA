@@ -170,6 +170,7 @@
     components:
     - type: ComplexInteraction
     - type: CanBeLarvaQueued
+    - type: SSDIndicator # Mriya
 
 - type: entity
   parent: CMXenoParasiteBase

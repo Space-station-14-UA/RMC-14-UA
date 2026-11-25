@@ -98,7 +98,7 @@ namespace Content.Client.RoundEnd
                 roundEndSummaryContainer.AddChild(new HSeparator { Margin = new Thickness(0, 8, 0, 8) });
 
                 var awardsHeader = new RichTextLabel();
-                awardsHeader.SetMarkup(Loc.GetString("rmc-round-end-awards-header"));
+                awardsHeader.SetMarkup(Loc.GetString("mriya-round-end-awards-header"));
                 roundEndSummaryContainer.AddChild(awardsHeader);
 
                 foreach (var award in awards)

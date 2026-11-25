@@ -42,7 +42,7 @@
         RMCSkillOverwatch: 1
         RMCSkillPolice: 1
         RMCSkillPowerLoader: 2
-        RMCSkillVehicles: 1
+        RMCSkillVehicles: 2 # Mriya. 1 в оригіналі
     - type: CMVendorUser
       id: CMChiefEngineer
       points: 45

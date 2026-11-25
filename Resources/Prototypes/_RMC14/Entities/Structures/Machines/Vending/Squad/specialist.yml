@@ -77,7 +77,7 @@
           state: spec_anti_materiel_sniper
         linkedEntries:
         - CMSniperEquipmentCase
-    - name: Додаткові Набої Розвідника
+    - name: Додаткова Амуніція Розвідника
       entries:
       - id: RMCMagazineRifleM4SPRA19Impact
         points: 40
@@ -85,7 +85,7 @@
         points: 40
       - id: RMCMagazineRifleM4SPRA19
         points: 40
-    - name: Додаткові Набої Снайперів
+    - name: Додаткова Амуніція Снайперів
       entries:
       - id: CMMagazineSniperM96SFlak
         points: 40
@@ -109,6 +109,12 @@
         name: М40 ФПП фугасні гранати (х6)
         points: 40
         spawn: 6
+      # Mriya start. HEFA is back
+      - id: CMGrenadeFrag
+        name: М40 ОФ осколкові гранати (х6)
+        points: 40
+        spawn: 6
+      # Mriya end
       - id: RMCGrenadeIncendiary
         name: М40 ЗПП запалювальні гранати (х6)
         points: 40
@@ -138,7 +144,7 @@
       # Mriya end
       # -id: RMCElectroshockGrenadex6
       # points: 40
-    - name: Додаткові Баки Для Вогнемету
+    - name: Додаткове Паливо для Вогнемету
       entries:
       - id: RMCTankFlamerLarge
         points: 40
@@ -150,7 +156,7 @@
 - type: entity
   parent: [ColMarTechBase, RMCVendorWeaponsSpecialistGearBase]
   id: ColMarTechSWSGear
-  name: КолМорТех стійка для обладнання Збройного Спеціаліста
+  name: КолМорТех стійка обладнання Збройного Спеціаліста
   description: Автоматизована стійка обладнання для Збройного Спеціаліста.
   components:
   - type: RMCVendorSpecialist
@@ -188,7 +194,7 @@
 - type: entity
   parent: ColMarTechBase
   id: ColMarTechSWSEquipment
-  name: КолМорТех автоматизована стійка морпіхотного спорядження Збройного Спеціаліста
+  name: КолМорТех автоматизована стійка спорядження Збройного Спеціаліста
   description: Автоматизована стійка, під'єднана до величезного сховища зі стандартним спорядженням Збройного Спеціаліста морської піхоти.
   components:
   - type: AccessReader
@@ -272,7 +278,7 @@
         points: 15
       - id: RMCGunCasePistolSmart
         points: 15
-    - name: Набої Для Пістолетів
+    - name: Амуніція для Другої Зброї
       entries:
       - id: RMCMagazinePistolM13Ext
         points: 6
@@ -331,7 +337,7 @@
         points: 10
       - id: RMCLaserDesignator
         points: 15
-    - name: Візори Для Шолома
+    - name: Візори для Шолома
       entries:
       - id: RMCVisorMedical
         points: 15
