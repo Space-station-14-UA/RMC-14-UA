@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._RMC14.OnCollide;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedOnCollideSystem))]
+[Access(typeof(SharedOnCollideSystem), typeof(Content.Shared._CMU14.Xenonids.Venator.XenoVenatorSystem))] // Mriya. Доступ для системи Венатора зі СМУ.
 public sealed partial class DamageOnCollideComponent : Component
 {
     [DataField, AutoNetworkedField]

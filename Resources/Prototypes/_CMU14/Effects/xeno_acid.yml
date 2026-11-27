@@ -1,0 +1,34 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+# Acid pools and flesh bloom effects for the ported castes.
+
+- type: entity
+  parent: XenoAcidSprayAcidStacks
+  id: XenoVenatorAcidBlobPool
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ApplyAcidStacks
+    amount: 2
+    damage:
+      types:
+        Heat: 30
+    requireExisting: true
+
+- type: entity
+  id: XenoFleshBloom
+  name: flesh bloom
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    drawdepth: Puddles
+    color: "#7A2447"
+    layers:
+    - state: acid2
+  - type: TimedDespawn
+    lifetime: 8
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: XenoFleshBloom

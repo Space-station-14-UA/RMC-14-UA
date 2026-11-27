@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._RMC14.Actions;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedRMCActionsSystem))]
+[Access(typeof(SharedRMCActionsSystem), typeof(Content.Shared._CMU14.Xenonids.Venator.XenoVenatorSystem))] // Mriya. Доступ для системи Венатора зі СМУ.
 public sealed partial class ActionSharedCooldownComponent : Component
 {
     [DataField, AutoNetworkedField]

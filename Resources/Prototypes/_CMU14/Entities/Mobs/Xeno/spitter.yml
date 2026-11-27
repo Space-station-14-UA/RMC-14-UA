@@ -1,0 +1,63 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+- type: entity
+  parent: CMXenoSpitter
+  id: CMUXenoSpitterVenator
+  description: ТОДО разом з спрайтами. # Mriya
+  suffix: CMU. Ловчиця
+  components:
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenonids/Spitter/venator_spitter.rsi
+  - type: Xeno
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoRegurgitate
+    - ActionXenoWatch
+    - ActionXenoTailStab
+    - ActionXenoVenatorCorrosiveSpit
+    - ActionXenoVenatorAcidBlob
+    - ActionXenoVenatorEnzymaticBreath
+    - ActionXenoStoreAcid
+    - ActionXenoDevolve
+  - type: XenoStrain
+    name: cmu-xeno-venator-name
+    description: cmu-xeno-venator-description
+    popup: cmu-xeno-venator-popup
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      400: Critical
+      500: Dead
+  - type: XenoPlasma
+    plasma: 600
+    maxPlasma: 600
+    plasmaRegenOnWeeds: 4.5
+  - type: CMArmor
+    xenoArmor: 25
+    explosionArmor: 20
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7.5
+        Slash: 7.5
+        Piercing: 7.5
+  - type: XenoTailStab
+    inject: {}
+    tailDamage:
+      types:
+        Blunt: 12
+        Slash: 12
+        Piercing: 12
+  - type: RMCXenoDamageVisuals
+    prefix: venator
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.8
+    baseSprintSpeed: 3.2
+  - type: Evasion
+    evasion: 0
+  - type: XenoVenator
+  - type: XenoHidden
+  - type: RMCActionOrder
+    id: CMUXenoSpitterVenator
+  - type: RemoveComponents
+    components:
+    - type: XenoEvolution

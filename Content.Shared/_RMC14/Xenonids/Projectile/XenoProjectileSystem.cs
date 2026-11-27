@@ -441,7 +441,8 @@ public sealed class XenoProjectileSystem : EntitySystem
         float? stopAtDistance = null,
         EntityUid? target = null,
         bool predicted = true,
-        int? projectileHitLimit = null)
+        int? projectileHitLimit = null,
+        bool stopAtTarget = false) // Mriya. Зупинка снаряда на цілі (кислотна куля СМУ).
     {
         if (!predicted && _net.IsClient)
             return false;
@@ -471,6 +472,11 @@ public sealed class XenoProjectileSystem : EntitySystem
         var xoroshiro = _rmcPseudoRandom.GetXoroshiro64S(xeno);
 
         var originalDiff = targetMap.Position - origin.Position;
+        // Mriya start. Снаряд СМУ зупиняється на цілі замість того, щоб летіти далі.
+        if (stopAtTarget)
+            stopAtDistance = originalDiff.Length();
+        // Mriya end
+
         var halfDeviation = deviation / 2;
         if (projectileHitLimit != null)
             _limitHitsId++;

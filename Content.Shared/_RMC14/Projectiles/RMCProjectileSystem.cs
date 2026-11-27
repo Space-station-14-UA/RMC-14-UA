@@ -1,6 +1,8 @@
 using System.Numerics;
+using Content.Shared._CMU14.Weapons.Ranged.Brute; // Mriya. Компонент СМУ: кулі пролітають крізь сестер вулика.
 using Content.Shared._RMC14.Evasion;
 using Content.Shared._RMC14.Random;
+using Content.Shared._RMC14.Xenonids; // Mriya. Для RMCProjectileSkipXenosComponent.
 using Content.Shared._RMC14.Xenonids.Hive;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
@@ -47,6 +49,7 @@ public sealed class RMCProjectileSystem : EntitySystem
         SubscribeLocalEvent<SpawnOnTerminateComponent, ProjectileHitEvent>(OnSpawnOnTerminateProjectileHit);
 
         SubscribeLocalEvent<PreventCollideWithDeadComponent, PreventCollideEvent>(OnPreventCollideWithDead);
+        SubscribeLocalEvent<RMCProjectileSkipXenosComponent, PreventCollideEvent>(OnSkipXenosPreventCollide); // Mriya. Кулі СМУ пролітають крізь сестер вулика.
     }
 
     private void OnDeleteOnCollideStartCollide(Entity<DeleteOnCollideComponent> ent, ref StartCollideEvent args)
@@ -60,7 +63,7 @@ public sealed class RMCProjectileSystem : EntitySystem
         if (!_whitelist.IsWhitelistPassOrNull(ent.Comp.Whitelist, args.Target))
             return;
         if (ent.Comp.Add is { } add)
-            EntityManager.AddComponents(args.Target, add);
+            EntityManager.AddComponents(args.Target, add, ent.Comp.RemoveExisting); // Mriya. Зберігати наявні компоненти цілі (кислота СМУ).
     }
 
     private void OnProjectileMaxRangeMapInit(Entity<ProjectileMaxRangeComponent> ent, ref MapInitEvent args)
@@ -259,6 +262,27 @@ public sealed class RMCProjectileSystem : EntitySystem
         ent.Comp.SpawnOffset = offset;
         Dirty(ent);
     }
+
+    // Mriya start. Снаряди СМУ, що не зачіпають сестер того самого вулика.
+    private void OnSkipXenosPreventCollide(Entity<RMCProjectileSkipXenosComponent> projectile, ref PreventCollideEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (!TryComp(projectile, out ProjectileComponent? projectileComp) ||
+            projectileComp.Shooter is not { } shooter ||
+            _hive.GetHive(shooter) is not { } hive)
+        {
+            return;
+        }
+
+        if (HasComp<XenoComponent>(args.OtherEntity) &&
+            _hive.IsMember(args.OtherEntity, hive.Owner))
+        {
+            args.Cancelled = true;
+        }
+    }
+    // Mriya end
 
     private void OnPreventCollideWithDead(Entity<PreventCollideWithDeadComponent> ent, ref PreventCollideEvent args)
     {

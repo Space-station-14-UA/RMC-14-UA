@@ -1,0 +1,34 @@
+# Ported from Colonial Marines Universe (https://github.com/AU-14/ColonialMarinesUniverse), licensed under AGPL-3.0.
+- type: entity
+  parent: CMXenoParasiteBase
+  id: CMUXenoParasiteRunner
+  description: ТОДО разом з спрайтами. # Mriya
+  suffix: CMU. Бігунка
+  components:
+  - type: Sprite
+    sprite: _CMU14/Mobs/Xenonids/Parasite/parasite_runner.rsi
+  - type: Xeno
+    muteOnSpawn: false
+  - type: XenoLeap
+    delay: 0
+  - type: XenoStrain
+    name: cmu-xeno-parasite-runner-name
+    description: cmu-xeno-parasite-runner-description
+    popup: cmu-xeno-parasite-runner-popup
+  - type: RMCActionOrder
+    id: CMUXenoParasiteRunner
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.55
+    baseSprintSpeed: 10
+  - type: FixedIdentity
+    name: cmu-parasite-runner
+    whitelist:
+      components:
+      - Xeno
+  - type: RemoveComponents
+    components:
+    - type: DamageOffWeeds
+    - type: XenoRankNames
+    - type: IntrinsicRadioReceiver
+    - type: IntrinsicRadioTransmitter
+    - type: ActiveRadio
