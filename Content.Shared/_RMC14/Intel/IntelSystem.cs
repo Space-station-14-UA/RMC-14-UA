@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared._RMC14.Areas;
 using Content.Shared._RMC14.ARES;
 using Content.Shared._RMC14.ARES.Logs;
@@ -27,6 +27,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.NameModifier.EntitySystems;
+using Content.Shared.Nuke;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Sprite;
@@ -124,6 +125,12 @@ public sealed class IntelSystem : EntitySystem
     private static readonly EntProtoId TechnicalManualProto = "RMCIntelTechnicalManual";
     // private static readonly EntProtoId ResearchPaperProto = "RMCIntelResearchPaper";
     // private static readonly EntProtoId VialBoxProto = "RMCIntelVialBox";
+
+    // Mriya start. The nuclear protocol needs exactly one authentication disk seeded into colony intel.
+    private static readonly EntProtoId MRNukeDiskProto = "MRNukeDisk";
+    private const string RMCNukeDiskPrototypeId = "RMCNukeDisk";
+    private const string MRNukeDiskPrototypeId = "MRNukeDisk";
+    // Mriya end.
 
     private static readonly EntProtoId[] ExperimentalDeviceProtos =
     [
@@ -1346,6 +1353,80 @@ public sealed class IntelSystem : EntitySystem
         return items;
     }
 
+    // Mriya start. Replaces legacy nuke disks with one Mriya authentication disk in colony intel.
+    private void EnsureSingleMRNukeDisk()
+    {
+        var disks = new List<EntityUid>();
+        var legacyDisks = new List<EntityUid>();
+        var diskQuery = EntityQueryEnumerator<NukeDiskComponent, MetaDataComponent>();
+        while (diskQuery.MoveNext(out var uid, out _, out var metadata))
+        {
+            if (metadata.EntityPrototype?.ID == MRNukeDiskPrototypeId)
+                disks.Add(uid);
+            else if (metadata.EntityPrototype?.ID == RMCNukeDiskPrototypeId)
+                legacyDisks.Add(uid);
+        }
+
+        foreach (var legacy in legacyDisks)
+        {
+            QueueDel(legacy);
+        }
+
+        for (var i = 1; i < disks.Count; i++)
+        {
+            QueueDel(disks[i]);
+        }
+
+        if (disks.Count > 0)
+            return;
+
+        SpawnMRNukeDisk();
+    }
+
+    private void SpawnMRNukeDisk()
+    {
+        List<Entity<IntelSpawnerComponent>>? spawners = null;
+        var type = _random.Pick(_diskChances);
+        if (!_spawners.TryGetValue(type, out spawners) ||
+            spawners.Count <= 0)
+        {
+            foreach (var candidates in _spawners.Values)
+            {
+                if (candidates.Count <= 0)
+                    continue;
+
+                spawners = candidates;
+                break;
+            }
+        }
+
+        if (spawners == null ||
+            spawners.Count <= 0)
+        {
+            return;
+        }
+
+        var spawner = _random.Pick(spawners);
+        var coords = _transform.GetMoverCoordinates(spawner);
+        var disk = Spawn(MRNukeDiskProto, coords);
+
+        _nearby.Clear();
+        _entityLookup.GetEntitiesInRange(coords, 0.5f, _nearby, LookupFlags.Uncontained);
+
+        foreach (var nearby in _nearby)
+        {
+            if (HasComp<StorageComponent>(nearby) &&
+                _storage.Insert(nearby, disk, out _))
+            {
+                break;
+            }
+
+            if (_entityStorage.Insert(disk, nearby))
+                break;
+        }
+    }
+    // Mriya end.
+
     public Entity<IntelTechTreeComponent> EnsureTechTree()
     {
         if (TryGetTechTree(out var tree))
@@ -1406,6 +1487,10 @@ public sealed class IntelSystem : EntitySystem
             }
 
             var tree = EnsureTechTree();
+            // Mriya start. Seed the single authentication disk after intel spawners are initialized.
+            EnsureSingleMRNukeDisk();
+            // Mriya end.
+
             var lows = SpawnIntel(PaperScrapProto, _paperScraps, _paperScrapChances);
             var reports = SpawnIntel(ProgressReportProto, _progressReports, _progressReportChances);
             var folders = SpawnIntel(FolderProto, _folders, _folderChances);
