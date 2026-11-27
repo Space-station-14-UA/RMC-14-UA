@@ -51,6 +51,18 @@
     id: RMCTileFire
     extinguishInstantly: true
     duration: 20
+    # Mriya start. Оновлення вогню.
+    canSpread: true
+    baseSpreadChance: 0.35
+    spreadFalloffPerTile: 0.05
+    minSpreadChance: 0.02
+    distancePenaltyPerTile: 0.2
+    maxSpreadDistance: 5
+    spreadCheckInterval: 1.5
+    maxSpreadsPerCheck: 2
+    emptyTileFactor: 0.6
+    # Mriya end
+    cookOffMultiplier: 1.0 # Mriya. Базова швидкість підриву боєприпасів.
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -92,6 +104,7 @@
     extinguishInstantly: false
     patExtinguishMultiplier: 2
     sprayExtinguishMultiplier: 3
+    cookOffMultiplier: 1.6 # Mriya. Napalm B — повільніший підрив боєприпасів.
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.666
     sprintSpeedModifier: 0.666
@@ -124,6 +137,18 @@
     duration: 40
     extinguishInstantly: false
     patExtinguishMultiplier: 2
+    # Mriya start. Оновлення вогню.
+    canSpread: true
+    baseSpreadChance: 0.8
+    spreadFalloffPerTile: 0
+    minSpreadChance: 0
+    distancePenaltyPerTile: 0
+    maxSpreadDistance: 1
+    spreadCheckInterval: 1.5
+    maxSpreadsPerCheck: 2
+    emptyTileFactor: 1.0
+    # Mriya end
+    cookOffMultiplier: 0.35 # Mriya. Napalm X — набагато швидший підрив боєприпасів.
   - type: GenericVisualizer
     visuals:
       enum.TileFireLayers.Base:
@@ -153,6 +178,7 @@
     id: RMCTileFireOB
     duration: 70
     extinguishInstantly: false
+    cookOffMultiplier: 0.25 # Mriya. Дуже гарячий вогонь — дуже швидкий підрив боєприпасів.
   - type: GenericVisualizer
     visuals:
       enum.TileFireLayers.Base:
@@ -181,6 +207,7 @@
     id: RMCTileFireOBAegis
     duration: 70
     extinguishInstantly: false
+    cookOffMultiplier: 0.25 # Mriya. Дуже гарячий вогонь — дуже швидкий підрив боєприпасів.
   - type: RMCFireImmunityBypass  # This component allows it to bypass fire immunity
   - type: GenericVisualizer
     visuals:
@@ -215,6 +242,7 @@
     burnColor: "#EE6515"
   - type: TileFire
     duration: 5
+    cookOffMultiplier: 0.4 # Mriya. Гарячий вогонь — швидкий підрив боєприпасів.
   - type: PointLight
     color: "#EE6515"
   - type: GenericVisualizer
@@ -232,6 +260,7 @@
   components:
   - type: TileFire
     duration: 30
+    cookOffMultiplier: 0.8 # Mriya. Трохи швидший підрив боєприпасів.
   - type: RMCIgniteOnCollide
     maxStacks: 60
     intensity: 30
@@ -244,6 +273,7 @@
   components:
   - type: TileFire
     duration: 30
+    cookOffMultiplier: 1.0 # Mriya. Базова швидкість підриву боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 20
     duration: 30
@@ -263,6 +293,7 @@
       state: blue_4
   - type: TileFire
     duration: 15
+    cookOffMultiplier: 0.45 # Mriya. Гарячий вогонь — швидкий підрив боєприпасів.
   - type: RMCIgniteOnCollide
     maxStacks: 15
     intensity: 50
@@ -290,6 +321,7 @@
       state: red_4
   - type: TileFire
     duration: 25
+    cookOffMultiplier: 0.45 # Mriya. Гарячий вогонь — швидкий підрив боєприпасів.
   - type: RMCIgniteOnCollide
     maxStacks: 25
     intensity: 50
@@ -312,6 +344,7 @@
   components:
   - type: TileFire
     duration: 20
+    cookOffMultiplier: 0.9 # Mriya. Трохи швидший підрив боєприпасів.
   - type: RMCIgniteOnCollide
     maxStacks: 25
     intensity: 25
@@ -498,6 +531,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 50
+    cookOffMultiplier: 1.3 # Mriya. Слабший вогонь — повільніший підрив боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 15
     duration: 50
@@ -526,6 +560,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 10
+    cookOffMultiplier: 0.5 # Mriya. Гарячий вогонь — швидкий підрив боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 45
     duration: 10
@@ -554,6 +589,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 50
+    cookOffMultiplier: 1.3 # Mriya. Слабший вогонь — повільніший підрив боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 15
     duration: 50
@@ -583,6 +619,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 40
+    cookOffMultiplier: 0.35 # Mriya. Napalm EX — набагато швидший підрив боєприпасів, як Napalm X.
   - type: RMCIgniteOnCollide
     intensity: 40
     duration: 40
@@ -612,6 +649,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 30
+    cookOffMultiplier: 0.4 # Mriya. Гарячий вогонь — швидкий підрив боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 50
     duration: 30
@@ -641,6 +679,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 38
+    cookOffMultiplier: 1.0 # Mriya. Базова швидкість підриву боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 27
     duration: 38
@@ -667,6 +706,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 15
+    cookOffMultiplier: 1.2 # Mriya. Слабший вогонь — повільніший підрив боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 15
     duration: 15
@@ -693,6 +733,7 @@
       state: dynamic_4
   - type: TileFire
     duration: 10
+    cookOffMultiplier: 1.5 # Mriya. Слабкий вогонь — повільніший підрив боєприпасів.
   - type: RMCIgniteOnCollide
     intensity: 10
     duration: 10

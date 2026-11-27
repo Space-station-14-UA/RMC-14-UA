@@ -132,6 +132,30 @@
   components:
   - type: Item
     size: Normal
+  # Mriya start. Оновлення вогню.
+  - type: Explosive
+    explosionType: RMC
+    maxIntensity: 20
+    intensitySlope: 6
+    totalIntensity: 250
+    canCreateVacuum: false
+  - type: Flammable
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 3
+  - type: Flammability
+    flammability: 0.9
+    burnSupport: 0.9
+    burnDurationBonus: 15
+  - type: CookOff
+    minCookTime: 2
+    maxCookTime: 5
+    spawnFireAfter: true
+    fireProto: RMCTileFireNapalmBase
+    fireRange: 3
+    fireDuration: 30
+  # Mriya end
   - type: RMCFlushableSolution
     solution: rmc_flamer_tank
     flushTime: 1.5

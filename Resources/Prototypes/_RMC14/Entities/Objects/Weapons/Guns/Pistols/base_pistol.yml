@@ -121,6 +121,32 @@
     blacklist:
       components:
       - Xeno
+  # Mriya start. Оновлення вогню.
+  - type: Explosive
+    explosionType: RMC
+    maxIntensity: 6
+    intensitySlope: 8
+    totalIntensity: 40
+    maxTileBreak: 0
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger
+  - type: Flammable
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 2
+  - type: Flammability
+    flammability: 0.5
+    burnSupport: 0.4
+    burnDurationBonus: 5
+  - type: CookOff
+    minCookTime: 5
+    maxCookTime: 10
+    spawnFireAfter: true
+    fireProto: RMCTileFire
+    fireRange: 1
+    fireDuration: 8
+  # Mriya end
 
 - type: entity
   abstract: true
